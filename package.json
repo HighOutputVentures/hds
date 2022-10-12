@@ -1,0 +1,12 @@
+{
+  "name": "highoutput-hds",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^5.6.2",
+    "nx": "14.8.4",
+    "@nrwl/nx-cloud": "latest"
+  }
+}
