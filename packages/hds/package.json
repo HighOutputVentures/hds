@@ -15,7 +15,7 @@
     "build": "tsdx test --passWithNoTests && tsdx build",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
-    "prepare": "sdx test --passWithNoTests && tsdx build",
+    "prepare": "tsdx test --passWithNoTests && tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
@@ -106,7 +106,7 @@
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
     }
   },
-  "gitHead": "788435d324298f8088d3b1706158faf34e42367c",
+  "gitHead": "5de6bf6801e691ca285d433b58638c57fd0b9d47",
   "readme": "ERROR: No README data found!",
   "_id": "@highoutput/hds@0.1.15"
 }
