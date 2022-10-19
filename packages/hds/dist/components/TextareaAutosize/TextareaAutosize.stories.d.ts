@@ -1,7 +1,7 @@
 import * as React from 'react';
 declare const _default: {
     title: string;
-    component: React.ForwardRefExoticComponent<import("@chakra-ui/textarea").TextareaProps & {
+    component: React.ForwardRefExoticComponent<import("@chakra-ui/react").TextareaProps & {
         minRows?: number | undefined;
         maxRows?: number | undefined;
     } & React.RefAttributes<HTMLTextAreaElement>>;

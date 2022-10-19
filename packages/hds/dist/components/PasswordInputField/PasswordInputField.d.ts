@@ -14,5 +14,5 @@ export interface PasswordInputProps extends UseFormRegisterReturn {
     errorMsg?: string;
     onPressEnter?: () => void;
 }
-declare const PasswordInputField: React.ForwardRefExoticComponent<Pick<PasswordInputProps, "pattern" | "partProps" | "onChange" | "onBlur" | "placeholder" | "required" | "disabled" | "max" | "maxLength" | "min" | "minLength" | "name" | "errorMsg" | "onPressEnter"> & React.RefAttributes<HTMLInputElement>>;
+declare const PasswordInputField: React.ForwardRefExoticComponent<Pick<PasswordInputProps, "max" | "min" | "name" | "onBlur" | "onChange" | "pattern" | "partProps" | "placeholder" | "required" | "disabled" | "maxLength" | "minLength" | "errorMsg" | "onPressEnter"> & React.RefAttributes<HTMLInputElement>>;
 export default PasswordInputField;
