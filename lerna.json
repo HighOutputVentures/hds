@@ -1,6 +1,22 @@
 {
-  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-  "useNx": true,
+  "npmClient": "npm",
+  "packages": [
+    "packages/*"
+  ],
   "useWorkspaces": true,
-  "version": "0.0.1-alpha.2"
+  "version": "independent",
+  "command": {
+    "publish": {
+      "ignoreChanges": [
+        "package-lock.json"
+      ],
+      "message": "chore: publish"
+    },
+    "bootstrap": {
+      "npmClientArgs": [
+        "--no-package-lock"
+      ]
+    }
+  },
+  "useNx": true
 }
