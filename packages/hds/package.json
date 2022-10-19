@@ -106,7 +106,7 @@
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
     }
   },
-  "gitHead": "6cc1ae32b7a1cda7f677cad3c649e2881725916d",
+  "gitHead": "e72d02e423c8f66af0332e7fb66017567de9f2da",
   "readme": "ERROR: No README data found!",
   "_id": "@highoutput/hds@0.1.15"
 }
