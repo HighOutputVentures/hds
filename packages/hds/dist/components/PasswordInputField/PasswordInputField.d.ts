@@ -2,17 +2,17 @@ import { ButtonProps, InputElementProps, InputGroupProps, InputProps } from '@ch
 import React from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 declare type WithoutChildren<T> = Omit<T, 'children'>;
-export interface PasswordInputProps extends UseFormRegisterReturn {
+export interface PasswordInputFieldProps extends UseFormRegisterReturn {
     partProps?: Partial<{
-        button: WithoutChildren<ButtonProps>;
-        input: WithoutChildren<InputProps>;
-        inputGroup: WithoutChildren<InputGroupProps>;
-        inputLeftElement: WithoutChildren<InputElementProps>;
-        inputRightElement: WithoutChildren<InputElementProps>;
+        button?: WithoutChildren<ButtonProps>;
+        input?: WithoutChildren<InputProps>;
+        inputGroup?: WithoutChildren<InputGroupProps>;
+        inputLeftElement?: WithoutChildren<InputElementProps>;
+        inputRightElement?: WithoutChildren<InputElementProps>;
     }>;
     placeholder: string;
     errorMsg?: string;
     onPressEnter?: () => void;
 }
-declare const PasswordInputField: React.ForwardRefExoticComponent<Pick<PasswordInputProps, "pattern" | "partProps" | "onChange" | "onBlur" | "placeholder" | "required" | "disabled" | "max" | "maxLength" | "min" | "minLength" | "name" | "errorMsg" | "onPressEnter"> & React.RefAttributes<HTMLInputElement>>;
+declare const PasswordInputField: React.ForwardRefExoticComponent<Pick<PasswordInputFieldProps, "pattern" | "disabled" | "name" | "placeholder" | "onBlur" | "onChange" | "max" | "maxLength" | "min" | "minLength" | "required" | "partProps" | "errorMsg" | "onPressEnter"> & React.RefAttributes<HTMLInputElement>>;
 export default PasswordInputField;

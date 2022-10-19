@@ -1,21 +1,21 @@
-import { InputElementProps, InputGroupProps, InputProps, ButtonProps, TextProps, IconProps } from '@chakra-ui/react';
+import { ButtonProps, IconProps, InputElementProps, InputGroupProps, InputProps, TextProps } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { ArrayFieldTypeValues } from './validation';
 declare type WithoutChildren<T> = Omit<T, 'children'>;
 export interface ArrayFieldProps {
     partProps?: {
-        input: WithoutChildren<InputProps>;
-        labelProps: WithoutChildren<TextProps>;
-        inputGroup: WithoutChildren<InputGroupProps>;
-        inputLeftElement: WithoutChildren<InputElementProps>;
-        inputRightElement: WithoutChildren<InputElementProps>;
-        buttonRemoveProps: {
-            buttonProps: WithoutChildren<ButtonProps>;
-            iconProps: WithoutChildren<IconProps>;
+        input?: WithoutChildren<InputProps>;
+        labelProps?: WithoutChildren<TextProps>;
+        inputGroup?: WithoutChildren<InputGroupProps>;
+        inputLeftElement?: WithoutChildren<InputElementProps>;
+        inputRightElement?: WithoutChildren<InputElementProps>;
+        buttonRemoveProps?: {
+            buttonProps?: WithoutChildren<ButtonProps>;
+            iconProps?: WithoutChildren<IconProps>;
         };
-        buttonAddProps: {
-            buttonProps: WithoutChildren<ButtonProps>;
-            iconProps: WithoutChildren<IconProps>;
+        buttonAddProps?: {
+            buttonProps?: WithoutChildren<ButtonProps>;
+            iconProps?: WithoutChildren<IconProps>;
         };
     };
     buttonRemoveChildren?: ReactNode;

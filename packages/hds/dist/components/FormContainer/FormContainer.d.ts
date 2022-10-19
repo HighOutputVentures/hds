@@ -2,20 +2,21 @@ import { FormControlProps, FormErrorMessageProps, FormLabelProps, HelpTextProps,
 import { FC, ReactNode } from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 declare type WithoutChildren<T> = Omit<T, 'children'>;
+export interface FormContainerPartProps {
+    formControl?: WithoutChildren<FormControlProps>;
+    formLabel?: WithoutChildren<FormLabelProps>;
+    formErrorMessage?: WithoutChildren<FormErrorMessageProps>;
+    formHelperText?: WithoutChildren<HelpTextProps>;
+}
 export interface FormContainerProps extends Partial<UseFormRegisterReturn>, ThemingProps {
-    id: string;
+    id?: string;
     label?: string;
     labelColor?: string;
     errorMsg?: string;
     helperMsg?: string;
     disabled?: boolean;
     children?: ReactNode;
-    partProps?: Partial<{
-        formControl: WithoutChildren<FormControlProps>;
-        formLabel: WithoutChildren<FormLabelProps>;
-        formErrorMessage: WithoutChildren<FormErrorMessageProps>;
-        formHelperText: WithoutChildren<HelpTextProps>;
-    }>;
+    partProps?: Partial<FormContainerPartProps>;
 }
 declare const FormContainer: FC<FormContainerProps>;
 export default FormContainer;

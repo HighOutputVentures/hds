@@ -8,9 +8,9 @@ export interface ContagePageProps extends BoxProps {
     iconNode?: ReactNode;
     url?: string;
     partProps?: {
-        contactCard: WithoutChildren<ContactCardProps>;
-        title: WithoutChildren<TextProps>;
-        secondaryTitle: WithoutChildren<TextProps>;
+        contactCard?: WithoutChildren<ContactCardProps>;
+        title?: WithoutChildren<TextProps>;
+        secondaryTitle?: WithoutChildren<TextProps>;
     };
 }
 declare const ContactPage: FC<ContagePageProps>;
