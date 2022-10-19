@@ -5,18 +5,5 @@
   ],
   "useWorkspaces": true,
   "version": "independent",
-  "command": {
-    "publish": {
-      "ignoreChanges": [
-        "package-lock.json"
-      ],
-      "message": "chore: publish"
-    },
-    "bootstrap": {
-      "npmClientArgs": [
-        "--no-package-lock"
-      ]
-    }
-  },
   "useNx": true
 }
