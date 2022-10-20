@@ -57,5 +57,6 @@
       "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
     }
-  }
+  },
+  "gitHead": "e085a4a0b8f0b617a113a065319faaf9fb2cee58"
 }
