@@ -9,6 +9,9 @@
     "build:hds": "npx nx build @highoutput/hds",
     "storybook:hds": "npx nx storybook @highoutput/hds",
     "build-storybook:hds": "npx nx build-storybook @highoutput/hds",
+
+    "test:spinner": "npx nx test @highoutput/hds-spinner",
+
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=c97132e80915"

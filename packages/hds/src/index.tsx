@@ -20,7 +20,7 @@ import FormContainer, {
 import InputField, {
   InputFieldProps,
 } from './components/InputField/InputField';
-import LogoSpinner from './components/LogoSpinner/LogoSpinner';
+
 import Pagination, {
   PaginationProps,
 } from './components/Pagination/Pagination';
@@ -654,7 +654,6 @@ export {
   useAuthService,
   logout,
   useAuthState,
-  LogoSpinner,
   ArrayField,
   ArrayFieldProps,
 };

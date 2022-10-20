@@ -3,7 +3,7 @@ import { isValidMotionProp, motion, SVGMotionProps } from 'framer-motion';
 import * as React from 'react';
 
 type WithoutChildren<T> = Omit<T, 'children'>;
-type LogoSpinnerProps = {
+export type LogoSpinnerProps = {
   logo?: JSX.Element;
   duration?: number;
   partProps?: Partial<{
@@ -142,5 +142,5 @@ function DefaultLogo(props: SVGMotionProps<SVGSVGElement>) {
 }
 
 const BoxMotion = chakra(motion.div, {
-  shouldForwardProp: prop => isValidMotionProp(prop) || prop === 'children',
+  shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === 'children',
 });
