@@ -8,7 +8,10 @@
     "test:hds": "npx nx test @highoutput/hds",
     "build:hds": "npx nx build @highoutput/hds",
     "storybook:hds": "npx nx storybook @highoutput/hds",
-    "build-storybook:hds": "npx nx build-storybook @highoutput/hds"
+    "build-storybook:hds": "npx nx build-storybook @highoutput/hds",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token=c97132e80915"
   },
   "devDependencies": {
     "@babel/core": "7.19.3",

@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { OTPFormProps } from './OTPForm';
 import { AuthenticateSchemaValues, GenerateEmailOTPSchemaValues } from './validation';
 export interface OTPVerificationProps extends OTPFormProps {

@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export declare type ForProps<T extends unknown[]> = {
     each: T;
     getKey?: (context: T[number], index: number) => string | number;
