@@ -17,13 +17,13 @@ designed to be integrated with `@highoutput/email-auth`
 
 ```typescript
 // src/pages/_app.tsx
-import {ApolloProvider} from '@apollo/client';
-import {ThemeProvider} from '@highoutput/ui-components';
-import type {AppProps} from 'next/app';
+import { ApolloProvider } from '@apollo/client';
+import { ThemeProvider } from '@highoutput/hds';
+import type { AppProps } from 'next/app';
 import client from '~/config/client';
-import {AuthProvider} from '@highoutput/ui-components';
+import { AuthProvider } from '@highoutput/hds';
 
-export default function App({Component, pageProps}: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <AuthProvider hostname={process.env.NEXT_PUBLIC_API_URL}>
       <ApolloProvider client={client}>
@@ -179,9 +179,9 @@ What we can do is to check if token is in the cookie by taking advantage of Next
 
 ```typescript
 // src/_middleware.ts
-import {constants} from '@highoutput/ui-components';
-import type {NextRequest} from 'next/server';
-import {NextResponse} from 'next/server';
+import { constants } from '@highoutput/hds';
+import type { NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
 
 export function middleware(req: NextRequest) {
   // this is how you would access the token from cookie when running in ssr

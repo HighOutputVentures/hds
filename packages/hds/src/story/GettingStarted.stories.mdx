@@ -9,11 +9,11 @@ import { Meta, Preview } from '@storybook/addon-docs';
   }}
 />
 
-# HOV UI Components
+# HOV HDS
 
 **CURRENT VERSION:** 0.4.8
 
-**@highoutput/ui-components** is a ui component library that is built around [chakra ui](https://chakra-ui.com/), and aims to be:
+**@highoutput/hds** is a ui component library that is built around [chakra ui](https://chakra-ui.com/), and aims to be:
 
 - a reusable block of components
 - very customizable with ease of styling
@@ -24,7 +24,7 @@ import { Meta, Preview } from '@storybook/addon-docs';
 To install package, use:
 
 ```bash
-npm i @highoutput/ui-components
+npm i @highoutput/hds
 ```
 
 ### Usage
@@ -32,7 +32,7 @@ npm i @highoutput/ui-components
 ```typescript
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { ThemeProvider } from '@highoutput/ui-components';
+import { ThemeProvider } from '@highoutput/hds';
 
 const App = () => {
   return (<ThemeProvider><div>{...components here}</div></ThemeProvider>);
@@ -42,7 +42,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
 ```typescript
-import { RadioImageGroup } from '@highoutput/ui-components';
+import { RadioImageGroup } from '@highoutput/hds';
 
 export const SamplePage = () => {
   const [value, setValue] = useState('');
@@ -69,7 +69,7 @@ export const SamplePage = () => {
             image: 'https://randomuser.me/api/portraits/women/95.jpg',
           },
         ]}
-        onChange={v => setValue(v)}
+        onChange={(v) => setValue(v)}
       />
     </>
   );

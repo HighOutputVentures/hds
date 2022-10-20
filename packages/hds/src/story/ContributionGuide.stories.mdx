@@ -78,13 +78,8 @@ const RadioImage = forwardRef<HTMLDivElement, RadioImageProps>((props, ref) => {
   const { image, size, variant, selectColor, ...rest } = props;
   const styles = useStyleConfig('RadioImage', { size, variant });
 
-  const {
-    state,
-    getInputProps,
-    getCheckboxProps,
-    htmlProps,
-    getLabelProps,
-  } = useRadio(rest);
+  const { state, getInputProps, getCheckboxProps, htmlProps, getLabelProps } =
+    useRadio(rest);
 
   return (
     <chakra.label {...htmlProps} cursor="pointer">
@@ -130,7 +125,7 @@ export default {
   component: RadioImage,
 } as ComponentMeta<typeof RadioImage>;
 
-const Template: ComponentStory<typeof RadioImage> = args => (
+const Template: ComponentStory<typeof RadioImage> = (args) => (
   <ThemeProvider>
     <RadioImage {...args} />
   </ThemeProvider>
@@ -390,7 +385,7 @@ to know more about theme/color styling please go to this documentation [chakra u
 
 ### How to run library
 
-To run library go to ui-components root directory and run command:
+To run library go to hds root directory and run command:
 
 ```
 npm install
