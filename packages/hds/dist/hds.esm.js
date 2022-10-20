@@ -1,16 +1,15 @@
 import { DeleteIcon, AddIcon, ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import { useMultiStyleConfig, FormControl, FormLabel, FormErrorMessage, FormHelperText, InputGroup, InputLeftElement, Input, InputRightElement, Flex as Flex$1, Text as Text$1, VStack, Button as Button$1, Icon, chakra, HStack, Select as Select$1, IconButton, useStyleConfig, PinInput, PinInputField as PinInputField$1, useRadio, Box as Box$1, Image, useRadioGroup, Stack as Stack$1, Textarea, extendTheme as extendTheme$1, ChakraProvider, Center, Heading as Heading$1, Alert, AlertIcon, AlertDescription } from '@chakra-ui/react';
+import { useMultiStyleConfig, FormControl, FormLabel, FormErrorMessage, FormHelperText, InputGroup, InputLeftElement, Input, InputRightElement, Flex as Flex$1, Text as Text$1, VStack, Button as Button$1, Icon, HStack, Select as Select$1, IconButton, useStyleConfig, PinInput, PinInputField as PinInputField$1, useRadio, chakra, Box as Box$1, Image, useRadioGroup, Stack as Stack$1, Textarea, extendTheme as extendTheme$1, ChakraProvider, Center, Heading as Heading$1, Alert, AlertIcon, AlertDescription } from '@chakra-ui/react';
 export { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Alert, AlertDescription, AlertDialog, AlertDialogBody, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogOverlay, AlertIcon, AlertTitle, AspectRatio, Avatar, AvatarBadge, AvatarGroup, Badge, Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, Button, ButtonGroup, ButtonSpinner, Center, Checkbox, CheckboxGroup, Circle, CircularProgress, CircularProgressLabel, CloseButton, Collapse, Container, Divider, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Fade, Flex, FormControl, FormErrorIcon, FormErrorMessage, FormHelperText, FormLabel, GlobalStyle, Grid, GridItem, HStack, Heading, Hide, Icon, IconButton, Image, Img, Input, InputAddon, InputGroup, InputLeftAddon, InputLeftElement, InputRightAddon, InputRightElement, LightMode, Link, LinkBox, LinkOverlay, List, ListItem, Menu, MenuButton, MenuDivider, MenuGroup, MenuItem, MenuItemOption, MenuList, MenuOptionGroup, Modal, ModalBody, ModalCloseButton, ModalContent, ModalContextProvider, ModalFocusScope, ModalFooter, ModalHeader, ModalOverlay, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, OrderedList, PinInputField as Pin, PinInput, Popover, PopoverAnchor, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Portal, Progress, ProgressLabel, Radio, RadioGroup, ScaleFade, Select, Show, SimpleGrid, Skeleton, SkeletonCircle, SkeletonText, Slide, SlideFade, Slider, SliderFilledTrack, SliderMark, SliderThumb, SliderTrack, Spacer, Spinner, Square, Stack, Stat, StatArrow, StatGroup, StatHelpText, StatLabel, StatNumber, Switch, Tab, TabList, TabPanel, TabPanels, Table, TableCaption, TableContainer, Tabs, Tag, TagCloseButton, TagLabel, TagLeftIcon, TagRightIcon, Tbody, Td, Text, Textarea, Tfoot, Th, Thead, Tooltip, Tr, UnorderedList, VStack, Wrap, WrapItem, chakra, createStandaloneToast, forwardRef, keyframes, shouldShowFallbackImage, useBoolean, useBreakpoint, useBreakpointValue, useButtonGroup, useCheckbox, useCheckboxGroup, useClipboard, useColorModeValue, useConst, useDisclosure, useImage, useInputGroupStyles, useMediaQuery, useMenuButton, useModal, useMultiStyleConfig, useOutsideClick, usePrefersReducedMotion, useRadio, useRadioGroup, useSlider, useTheme, useToast } from '@chakra-ui/react';
 import { yupResolver } from '@hookform/resolvers/yup';
-import React__default, { useId, forwardRef, createContext, createElement, useContext, useCallback, useState, useEffect, Fragment, useMemo } from 'react';
+import React__default, { useId, forwardRef, createContext, createElement, useContext, useCallback, useState, useEffect, useMemo, Fragment } from 'react';
 import { useForm, useFieldArray } from 'react-hook-form';
 import { object, array, string } from 'yup';
 import cookies from 'js-cookie';
-import { motion, isValidMotionProp } from 'framer-motion';
-export { isValidMotionProp, motion } from 'framer-motion';
 import ReactTextareaAutosize from 'react-textarea-autosize';
 import omit from 'lodash-es/omit';
 import merge from 'lodash-es/merge';
+export { isValidMotionProp, motion } from 'framer-motion';
 
 function _regeneratorRuntime() {
   _regeneratorRuntime = function () {
@@ -787,120 +786,6 @@ function useProfile() {
   return {};
 }
 
-var _excluded$1 = ["children"];
-/**
- *
- * @example
- * <LogoSpinner duration={1500}>
- *    <div>Hello, World!</div>
- * </LogoSpinner>
- */
-function LogoSpinner(_ref) {
-  var logo = _ref.logo,
-    _ref$duration = _ref.duration,
-    duration = _ref$duration === void 0 ? 1000 : _ref$duration,
-    partProps = _ref.partProps,
-    children = _ref.children;
-  var _React$useState = useState(true),
-    loading = _React$useState[0],
-    setLoading = _React$useState[1];
-  useEffect(function () {
-    setTimeout(function () {
-      setLoading(false);
-    }, duration != null ? duration : 100);
-  }, [duration]);
-  if (!loading) return createElement(Fragment, null, children);
-  return createElement(Container, Object.assign({}, partProps == null ? void 0 : partProps.container), createElement(Flex$1, Object.assign({
-    position: "relative",
-    w: "200px",
-    h: "200px",
-    align: "center",
-    justify: "center"
-  }, partProps == null ? void 0 : partProps.wrapper), createElement(BoxMotion, Object.assign({
-    width: "125px",
-    height: "125px",
-    position: "absolute",
-    border: "2px solid",
-    borderColor: "#32CAB1",
-    animate: {
-      rotate: [0, 360],
-      scale: [1, 1.25, 1],
-      opacity: [0, 1, 0]
-    },
-    initial: {
-      opacity: 0
-    },
-    // @ts-ignore "Bug"
-    transition: {
-      duration: 4,
-      repeat: Infinity
-    }
-  }, partProps == null ? void 0 : partProps.square1)), createElement(BoxMotion, Object.assign({
-    width: "100px",
-    height: "100px",
-    position: "absolute",
-    border: "2px solid",
-    borderColor: "#7070DD",
-    animate: {
-      rotate: [360, 0],
-      scale: [1, 1.25, 1],
-      opacity: [0, 1, 0]
-    },
-    initial: {
-      opacity: 0
-    },
-    // @ts-ignore "Bug"
-    transition: {
-      duration: 3,
-      repeat: Infinity
-    }
-  }, partProps == null ? void 0 : partProps.square2)), !logo ? createElement(DefaultLogo, Object.assign({}, partProps == null ? void 0 : partProps.logo)) : createElement(Fragment, null, logo)));
-}
-var Container = function Container(_ref2) {
-  var children = _ref2.children,
-    props = _objectWithoutPropertiesLoose(_ref2, _excluded$1);
-  return createElement(Flex$1, Object.assign({
-    top: 0,
-    left: 0,
-    align: "center",
-    justify: "center",
-    width: "100vw",
-    height: "100vh",
-    zIndex: 1000000,
-    position: "fixed",
-    bgColor: "rgba(15,15,15,1)"
-  }, props), children);
-};
-function DefaultLogo(props) {
-  return createElement(motion.svg, Object.assign({
-    animate: {
-      scale: [1, 1.5, 1.5, 1],
-      opacity: [0.5, 1, 1, 0.5]
-    },
-    initial: {
-      opacity: 0
-    },
-    // @ts-ignore "Bug"
-    transition: {
-      duration: 3,
-      repeat: Infinity
-    },
-    width: "32",
-    height: "32",
-    viewBox: "0 0 32 32",
-    fill: "none",
-    xmlns: "http://www.w3.org/2000/svg"
-  }, props), createElement("path", {
-    d: "M0 32L3.55556 28.4444V32H0ZM14.2222 32V26.6667L10.6667 30.2222V32H7.11111V24.8889L10.6667 21.3333V24.8889V26.6667L14.2222 23.1111V17.7778L17.7778 14.2222V17.7778V24.8889V32H14.2222ZM28.4444 17.7778V10.6667V7.11111L24.8889 10.6667V17.7778V28.4444H28.4444V17.7778ZM28.4444 32H24.8889H21.3333V17.7778V10.6667L24.8889 7.11111L28.4444 3.55556L32 0V3.55556V10.6667V17.7778V32H28.4444Z",
-    fill: "#4d4d4d"
-  }));
-}
-var BoxMotion = /*#__PURE__*/chakra(motion.div, {
-  shouldForwardProp: function shouldForwardProp(prop) {
-    return isValidMotionProp(prop) || prop === 'children';
-  }
-});
-
 function ChevronLeftIcon(props) {
   return createElement("svg", Object.assign({
     xmlns: "http://www.w3.org/2000/svg",
@@ -1111,13 +996,13 @@ var PinInputField = /*#__PURE__*/forwardRef(function (props, _) {
 });
 PinInputField.displayName = 'PinInputField';
 
-var _excluded$2 = ["image", "size", "variant", "selectColor"];
+var _excluded$1 = ["image", "size", "variant", "selectColor"];
 var RadioImage = /*#__PURE__*/forwardRef(function (props, ref) {
   var image = props.image,
     size = props.size,
     variant = props.variant,
     selectColor = props.selectColor,
-    rest = _objectWithoutPropertiesLoose(props, _excluded$2);
+    rest = _objectWithoutPropertiesLoose(props, _excluded$1);
   var styles = useStyleConfig('RadioImage', {
     size: size,
     variant: variant
@@ -1213,11 +1098,11 @@ var SelectField = /*#__PURE__*/forwardRef(function (props, ref) {
   })));
 });
 
-var _excluded$3 = ["minRows", "maxRows"];
+var _excluded$2 = ["minRows", "maxRows"];
 var TextareaAutosize = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var minRows = _ref.minRows,
     maxRows = _ref.maxRows,
-    props = _objectWithoutPropertiesLoose(_ref, _excluded$3);
+    props = _objectWithoutPropertiesLoose(_ref, _excluded$2);
   var uid = useId();
   return createElement(Textarea, Object.assign({
     as: ReactTextareaAutosize,
@@ -2646,10 +2531,10 @@ var extendTheme = function extendTheme(customTheme) {
   return extendTheme$1(merge(theme, customTheme));
 };
 
-var _excluded$4 = ["children"];
+var _excluded$3 = ["children"];
 var ThemeProvider = function ThemeProvider(_ref) {
   var children = _ref.children,
-    props = _objectWithoutPropertiesLoose(_ref, _excluded$4);
+    props = _objectWithoutPropertiesLoose(_ref, _excluded$3);
   return React__default.createElement(ChakraProvider, Object.assign({}, props, {
     theme: extendTheme(props.theme)
   }), children);
@@ -3391,5 +3276,5 @@ function Mount(props) {
   return !when ? fallback : createElement(Fragment, null, children);
 }
 
-export { ArrayField, AuthContext, AuthProvider, AutoForm, ContactCard, ContactForm, ContactPage, CredentialLoginForm, For, FormContainer, InputField, LogoSpinner, Mount, OTPForm, OTPVerificationForm, Pagination, PasswordInputField, PinInputField, RadioImage, RadioImageGroup, SelectField, TextAreaField, TextareaAutosize, ThemeProvider, constants, extendTheme, getAuthState, logout, theme, useAuthService, useAuthState, useProfile, useSupport, withContactFormSchema };
+export { ArrayField, AuthContext, AuthProvider, AutoForm, ContactCard, ContactForm, ContactPage, CredentialLoginForm, For, FormContainer, InputField, Mount, OTPForm, OTPVerificationForm, Pagination, PasswordInputField, PinInputField, RadioImage, RadioImageGroup, SelectField, TextAreaField, TextareaAutosize, ThemeProvider, constants, extendTheme, getAuthState, logout, theme, useAuthService, useAuthState, useProfile, useSupport, withContactFormSchema };
 //# sourceMappingURL=hds.esm.js.map
