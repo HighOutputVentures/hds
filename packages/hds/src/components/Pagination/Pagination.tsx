@@ -3,7 +3,6 @@ import {
   Flex,
   FlexProps,
   HStack,
-  Icon,
   IconButton,
   IconProps,
   Select,
@@ -15,8 +14,7 @@ import {
   useMultiStyleConfig,
 } from '@chakra-ui/react';
 import React, { FC, useCallback, useId } from 'react';
-import ChevronLeftIcon from './ChevronLeftIcon';
-import ChevronRightIcon from './ChevronRightIcon';
+import { ChevronLeftIcon, ChevronRightIcon } from '../../../../icons/src/index';
 
 type WithoutChildren<T> = Omit<T, 'children'>;
 
@@ -138,13 +136,15 @@ const Pagination: FC<PaginationProps> = ({
             aria-label=""
             data-testid={`${id}-pagination.controls.prev`}
             icon={
-              <Icon
-                as={ChevronLeftIcon}
+              <ChevronLeftIcon
+                color="white"
                 sx={styles.controlIcons}
                 {...partProps?.controlIcons}
               />
             }
             onClick={handlePageChange('decrement')}
+            paddingTop="10px"
+            paddingLeft="12px"
             disabled={!hasPrev}
             sx={styles.iconButton}
             {...partProps?.controls}
@@ -154,14 +154,16 @@ const Pagination: FC<PaginationProps> = ({
             aria-label=""
             data-testid={`${id}-pagination.controls.next`}
             icon={
-              <Icon
-                as={ChevronRightIcon}
+              <ChevronRightIcon
+                color="white"
                 sx={styles.controlIcons}
                 {...partProps?.controlIcons}
               />
             }
             onClick={handlePageChange('increment')}
             disabled={!hasNext}
+            paddingTop="10px"
+            paddingLeft="12px"
             sx={styles.iconButton}
             {...partProps?.controls}
           />

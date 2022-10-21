@@ -2,15 +2,17 @@
   "name": "highoutput-hds",
   "private": false,
   "workspaces": [
-    "packages/*"
+    "packages/**"
   ],
   "scripts": {
     "test:hds": "npx nx test @highoutput/hds",
     "build:hds": "npx nx build @highoutput/hds",
-    "storybook:hds": "npx nx storybook @highoutput/hds",
-    "build-storybook:hds": "npx nx build-storybook @highoutput/hds",
 
     "test:spinner": "npx nx test @highoutput/hds-spinner",
+    "build:spinner": "npx nx build @highoutput/hds-spinner",
+
+    "test:icons": "npx nx test @highoutput/hds-icons",
+    "build:icons": "npx nx build @highoutput/hds-icons",
 
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",

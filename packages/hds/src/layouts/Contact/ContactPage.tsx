@@ -1,6 +1,6 @@
 import { Box, BoxProps, Center, Text, TextProps } from '@chakra-ui/react';
 import React, { FC, ReactNode } from 'react';
-import { HovIcon } from '../../icons';
+import { HovIcon } from '../../../../icons/src/index';
 
 import ContactCard, { ContactCardProps } from './ContactCard';
 
@@ -18,7 +18,7 @@ export interface ContagePageProps extends BoxProps {
   };
 }
 
-const ContactPage: FC<ContagePageProps> = props => {
+const ContactPage: FC<ContagePageProps> = (props) => {
   const {
     partProps,
     title = 'Contact Us',
