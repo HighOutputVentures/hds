@@ -1,13 +1,20 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
+
 import LogoSpinner from './LogoSpinner';
+import LogoSpinnerMDX from './LogoSpinner.mdx';
 
 export default {
   title: 'Components/Spinner/LogoSpinner',
   component: LogoSpinner,
+  parameters: {
+    docs: {
+      page: LogoSpinnerMDX,
+    },
+  },
 } as ComponentMeta<typeof LogoSpinner>;
 
-const Template: ComponentStory<typeof LogoSpinner> = args => (
+const Template: ComponentStory<typeof LogoSpinner> = (args) => (
   <LogoSpinner {...args}>
     <div>Hello, world!</div>
   </LogoSpinner>

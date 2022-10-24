@@ -2,19 +2,22 @@ import { Grid, GridItem, Text } from '@chakra-ui/react';
 import React from 'react';
 
 import ThemeProvider from '../../../hds/src/components/ThemeProvider';
+import IconsMDX from './Icons.mdx';
 import ChevronLeftIcon from './ChevronLeftIcon';
 import ChevronRightIcon from './ChevronRightIcon';
 import HovIcon from './HovIcon';
 
 export default {
   title: 'Components/Icons',
+  parameters: {
+    docs: {
+      page: IconsMDX,
+    },
+  },
 };
 
 const ArrowsTemplate = () => (
   <ThemeProvider>
-    <Text size="label-md-bold" ml="22px" mb="22px">
-      Arrows
-    </Text>
     <Grid templateColumns="repeat(5, 1fr)" gap={4}>
       <GridItem w="100%" h="80px" textAlign="center">
         <ChevronLeftIcon />
@@ -30,9 +33,6 @@ const ArrowsTemplate = () => (
 
 const CompanyTemplate = () => (
   <ThemeProvider>
-    <Text size="label-md-bold" ml="22px" mb="22px">
-      Company
-    </Text>
     <Grid templateColumns="repeat(5, 1fr)" gap={4}>
       <GridItem w="100%" h="80px" textAlign="center">
         <HovIcon />
