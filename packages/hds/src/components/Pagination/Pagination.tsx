@@ -14,7 +14,7 @@ import {
   useMultiStyleConfig,
 } from '@chakra-ui/react';
 import React, { FC, useCallback, useId } from 'react';
-// import { ChevronLeftIcon, ChevronRightIcon } from '../../../../icons/src/index';
+import { ChevronLeftIcon, ChevronRightIcon } from '@highoutput/hds-icons';
 
 type WithoutChildren<T> = Omit<T, 'children'>;
 
@@ -135,13 +135,13 @@ const Pagination: FC<PaginationProps> = ({
           <IconButton
             aria-label=""
             data-testid={`${id}-pagination.controls.prev`}
-            // icon={
-            //   <ChevronLeftIcon
-            //     color="white"
-            //     sx={styles.controlIcons}
-            //     {...partProps?.controlIcons}
-            //   />
-            // }
+            icon={
+              <ChevronLeftIcon
+                color="white"
+                sx={styles.controlIcons}
+                {...partProps?.controlIcons}
+              />
+            }
             onClick={handlePageChange('decrement')}
             paddingTop="10px"
             paddingLeft="12px"
@@ -153,13 +153,13 @@ const Pagination: FC<PaginationProps> = ({
           <IconButton
             aria-label=""
             data-testid={`${id}-pagination.controls.next`}
-            // icon={
-            //   <ChevronRightIcon
-            //     color="white"
-            //     sx={styles.controlIcons}
-            //     {...partProps?.controlIcons}
-            //   />
-            // }
+            icon={
+              <ChevronRightIcon
+                color="white"
+                sx={styles.controlIcons}
+                {...partProps?.controlIcons}
+              />
+            }
             onClick={handlePageChange('increment')}
             disabled={!hasNext}
             paddingTop="10px"

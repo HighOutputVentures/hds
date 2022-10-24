@@ -59,5 +59,8 @@
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
     }
   },
-  "gitHead": "e085a4a0b8f0b617a113a065319faaf9fb2cee58"
+  "gitHead": "e085a4a0b8f0b617a113a065319faaf9fb2cee58",
+  "dependencies": {
+    "@highoutput/hds-icons": "^1.0.1-y.0"
+  }
 }

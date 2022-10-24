@@ -13,7 +13,7 @@ export interface ContactCardProps extends BoxProps {
   };
 }
 
-const ContactCard: FC<ContactCardProps> = props => {
+const ContactCard: FC<ContactCardProps> = (props) => {
   const { children, title = 'Drop your message', partProps, url } = props;
   return (
     <Box
@@ -27,7 +27,7 @@ const ContactCard: FC<ContactCardProps> = props => {
     >
       <Center mb={8} data-testid="center.contactcard.titleposition">
         <Text
-          size="text-3xl"
+          size="heading-web-4"
           {...partProps?.text}
           data-testid="text.contactcard.title"
         >
