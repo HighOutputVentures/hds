@@ -786,32 +786,6 @@ function useProfile() {
   return {};
 }
 
-function ChevronLeftIcon(props) {
-  return createElement("svg", Object.assign({
-    xmlns: "http://www.w3.org/2000/svg",
-    className: "h-5 w-5",
-    viewBox: "0 0 20 20",
-    fill: "currentColor"
-  }, props), createElement("path", {
-    fillRule: "evenodd",
-    d: "M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z",
-    clipRule: "evenodd"
-  }));
-}
-
-function ChevronRightIcon(props) {
-  return createElement("svg", Object.assign({
-    xmlns: "http://www.w3.org/2000/svg",
-    className: "h-5 w-5",
-    viewBox: "0 0 20 20",
-    fill: "currentColor"
-  }, props), createElement("path", {
-    fillRule: "evenodd",
-    d: "M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z",
-    clipRule: "evenodd"
-  }));
-}
-
 var Pagination = function Pagination(_ref) {
   var page = _ref.page,
     size = _ref.size,
@@ -879,22 +853,32 @@ var Pagination = function Pagination(_ref) {
   }, partProps == null ? void 0 : partProps.caption), getPageInfo()), React__default.createElement(HStack, Object.assign({}, partProps == null ? void 0 : partProps.controlsContainer), React__default.createElement(IconButton, Object.assign({
     "aria-label": "",
     "data-testid": id + "-pagination.controls.prev",
-    icon: React__default.createElement(Icon, Object.assign({
-      as: ChevronLeftIcon,
-      sx: styles.controlIcons
-    }, partProps == null ? void 0 : partProps.controlIcons)),
+    // icon={
+    //   <ChevronLeftIcon
+    //     color="white"
+    //     sx={styles.controlIcons}
+    //     {...partProps?.controlIcons}
+    //   />
+    // }
     onClick: handlePageChange('decrement'),
+    paddingTop: "10px",
+    paddingLeft: "12px",
     disabled: !hasPrev,
     sx: styles.iconButton
   }, partProps == null ? void 0 : partProps.controls)), React__default.createElement(IconButton, Object.assign({
     "aria-label": "",
     "data-testid": id + "-pagination.controls.next",
-    icon: React__default.createElement(Icon, Object.assign({
-      as: ChevronRightIcon,
-      sx: styles.controlIcons
-    }, partProps == null ? void 0 : partProps.controlIcons)),
+    // icon={
+    //   <ChevronRightIcon
+    //     color="white"
+    //     sx={styles.controlIcons}
+    //     {...partProps?.controlIcons}
+    //   />
+    // }
     onClick: handlePageChange('increment'),
     disabled: !hasNext,
+    paddingTop: "10px",
+    paddingLeft: "12px",
     sx: styles.iconButton
   }, partProps == null ? void 0 : partProps.controls)))));
 };
@@ -3101,18 +3085,6 @@ var ContactCard = function ContactCard(props) {
   })));
 };
 
-var HovIcon = function HovIcon(props) {
-  return React__default.createElement(Icon, Object.assign({
-    width: "32px",
-    height: "32px",
-    viewBox: "0 0 32 32",
-    fill: "none"
-  }, props), React__default.createElement("path", {
-    d: "M0 32L3.55556 28.4444V32H0ZM14.2222 32V26.6667L10.6667 30.2222V32H7.11111V24.8889L10.6667 21.3333V24.8889V26.6667L14.2222 23.1111V17.7778L17.7778 14.2222V17.7778V24.8889V32H14.2222ZM28.4444 17.7778V10.6667V7.11111L24.8889 10.6667V17.7778V28.4444H28.4444V17.7778ZM28.4444 32H24.8889H21.3333V17.7778V10.6667L24.8889 7.11111L28.4444 3.55556L32 0V3.55556V10.6667V17.7778V32H28.4444Z",
-    fill: "white"
-  }));
-};
-
 var ContactPage = function ContactPage(props) {
   var partProps = props.partProps,
     _props$title = props.title,
@@ -3136,9 +3108,9 @@ var ContactPage = function ContactPage(props) {
     pt: 20,
     pb: 8,
     "data-testid": "center.contactpage.iconposition"
-  }, iconNode ? iconNode : React__default.createElement(HovIcon, {
-    "data-testid": "icon.contactpage.hovicon"
-  })), React__default.createElement(Center, {
+  }, iconNode ? iconNode :
+  // <HovIcon data-testid="icon.contactpage.hovicon" />
+  ''), React__default.createElement(Center, {
     "data-testid": "center.contactpage.titlepostion"
   }, React__default.createElement(Text$1, Object.assign({
     size: "text-5xl",

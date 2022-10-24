@@ -2,18 +2,15 @@
   "name": "highoutput-hds",
   "private": false,
   "workspaces": [
-    "packages/**"
+    "packages/*"
   ],
   "scripts": {
     "test:hds": "npx nx test @highoutput/hds",
     "build:hds": "npx nx build @highoutput/hds",
-
     "test:spinner": "npx nx test @highoutput/hds-spinner",
     "build:spinner": "npx nx build @highoutput/hds-spinner",
-
     "test:icons": "npx nx test @highoutput/hds-icons",
     "build:icons": "npx nx build @highoutput/hds-icons",
-
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=c97132e80915"
@@ -25,6 +22,7 @@
     "@mdx-js/mdx": "1.6.22",
     "@mdx-js/react": "1.6.22",
     "@nrwl/nx-cloud": "latest",
+    "@rollup/plugin-replace": "^5.0.1",
     "@storybook/addon-a11y": "6.5.12",
     "@storybook/addon-docs": "6.5.12",
     "@storybook/addon-essentials": "6.5.12",

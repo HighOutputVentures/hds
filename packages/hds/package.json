@@ -12,10 +12,10 @@
   },
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx test --passWithNoTests && tsdx build",
+    "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
-    "prepare": "tsdx test --passWithNoTests && tsdx build",
+    "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "generate:types": "chakra-cli tokens ./src/theme/index.ts"
