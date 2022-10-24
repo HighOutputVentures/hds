@@ -6,6 +6,7 @@ import React__default, { useId, forwardRef, createContext, createElement, useCon
 import { useForm, useFieldArray } from 'react-hook-form';
 import { object, array, string } from 'yup';
 import cookies from 'js-cookie';
+import { ChevronLeftIcon, ChevronRightIcon, HovIcon } from '@highoutput/hds-icons';
 import ReactTextareaAutosize from 'react-textarea-autosize';
 import omit from 'lodash-es/omit';
 import merge from 'lodash-es/merge';
@@ -853,13 +854,10 @@ var Pagination = function Pagination(_ref) {
   }, partProps == null ? void 0 : partProps.caption), getPageInfo()), React__default.createElement(HStack, Object.assign({}, partProps == null ? void 0 : partProps.controlsContainer), React__default.createElement(IconButton, Object.assign({
     "aria-label": "",
     "data-testid": id + "-pagination.controls.prev",
-    // icon={
-    //   <ChevronLeftIcon
-    //     color="white"
-    //     sx={styles.controlIcons}
-    //     {...partProps?.controlIcons}
-    //   />
-    // }
+    icon: React__default.createElement(ChevronLeftIcon, Object.assign({
+      color: "white",
+      sx: styles.controlIcons
+    }, partProps == null ? void 0 : partProps.controlIcons)),
     onClick: handlePageChange('decrement'),
     paddingTop: "10px",
     paddingLeft: "12px",
@@ -868,13 +866,10 @@ var Pagination = function Pagination(_ref) {
   }, partProps == null ? void 0 : partProps.controls)), React__default.createElement(IconButton, Object.assign({
     "aria-label": "",
     "data-testid": id + "-pagination.controls.next",
-    // icon={
-    //   <ChevronRightIcon
-    //     color="white"
-    //     sx={styles.controlIcons}
-    //     {...partProps?.controlIcons}
-    //   />
-    // }
+    icon: React__default.createElement(ChevronRightIcon, Object.assign({
+      color: "white",
+      sx: styles.controlIcons
+    }, partProps == null ? void 0 : partProps.controlIcons)),
     onClick: handlePageChange('increment'),
     disabled: !hasNext,
     paddingTop: "10px",
@@ -3077,7 +3072,7 @@ var ContactCard = function ContactCard(props) {
     mb: 8,
     "data-testid": "center.contactcard.titleposition"
   }, React__default.createElement(Text$1, Object.assign({
-    size: "text-3xl"
+    size: "heading-web-4"
   }, partProps == null ? void 0 : partProps.text, {
     "data-testid": "text.contactcard.title"
   }), title)), children ? children : React__default.createElement(ContactForm, Object.assign({}, partProps == null ? void 0 : partProps.contactForm, {
@@ -3108,19 +3103,19 @@ var ContactPage = function ContactPage(props) {
     pt: 20,
     pb: 8,
     "data-testid": "center.contactpage.iconposition"
-  }, iconNode ? iconNode :
-  // <HovIcon data-testid="icon.contactpage.hovicon" />
-  ''), React__default.createElement(Center, {
+  }, iconNode ? iconNode : React__default.createElement(HovIcon, {
+    color: "white",
+    "data-testid": "icon.contactpage.hovicon"
+  })), React__default.createElement(Center, {
     "data-testid": "center.contactpage.titlepostion"
   }, React__default.createElement(Text$1, Object.assign({
-    size: "text-5xl",
+    size: "heading-web-3",
     color: "white"
   }, partProps == null ? void 0 : partProps.title, {
     "data-testid": "text.contactpage.title"
   }), title)), React__default.createElement(Center, {
     "data-testid": "center.contactpage.secondarytitleposition"
   }, React__default.createElement(Text$1, Object.assign({
-    size: "text-base",
     color: "gray.200"
   }, partProps == null ? void 0 : partProps.secondaryTitle, {
     "data-testid": "text.contactpage.secondarytitle"
