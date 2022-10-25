@@ -12,8 +12,6 @@ npm i @highoutput/hds-spinner
 
 ### Usage
 
-
-
 ```typescript
 import { LogoSpinner } from '@highoutput/hds-spinner';
 
@@ -27,7 +25,3 @@ export const SamplePage = () => {
   );
 };
 ```
-
-## Other Documented Usage
-
-- [Components Live Preview](https://hov-hds-highoutput.vercel.app/)

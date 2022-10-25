@@ -21,9 +21,6 @@ import InputField, {
   InputFieldProps,
 } from './components/InputField/InputField';
 
-import Pagination, {
-  PaginationProps,
-} from './components/Pagination/Pagination';
 import PasswordInputField, {
   PasswordInputFieldProps,
 } from './components/PasswordInputField/PasswordInputField';
@@ -640,8 +637,6 @@ export {
   extendTheme,
   // hooks
   useSupport,
-  Pagination,
-  PaginationProps,
   // auth provider
   AuthConfig,
   AuthContext,

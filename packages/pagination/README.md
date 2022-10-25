@@ -7,64 +7,37 @@ We aim to build a library of custom ReactJS components that implements our uniqu
 To install package, use:
 
 ```bash
-npm i @highoutput/hds
+npm i @highoutput/hds-pagination
 ```
 
 ### Usage
 
-```typescript
-// React main
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { ThemeProvider } from '@highoutput/hds';
 
-const App = () => {
-  return (<ThemeProvider><div>{...components here}</div></ThemeProvider>);
-};
-
-ReactDOM.render(<App />, document.getElementById('root'));
-```
-
-```typescript
-import { RadioImageGroup } from '@highoutput/hds';
+```jsx
+import { Pagination } from '@highoutput/hds-pagination';
 
 export const SamplePage = () => {
-  const [value, setValue] = useState('');
 
   return (
     <>
-      <Text>Select Image: {value}</Text>
-      <RadioImageGroup
-        avatars={[
-          {
-            value: 'Kat',
-            image: 'https://randomuser.me/api/portraits/women/44.jpg',
-          },
-          {
-            value: 'Kevin',
-            image: 'https://randomuser.me/api/portraits/men/86.jpg',
-          },
-          {
-            value: 'Andy',
-            image: 'https://randomuser.me/api/portraits/men/29.jpg',
-          },
-          {
-            value: 'Jess',
-            image: 'https://randomuser.me/api/portraits/women/95.jpg',
-          },
-        ]}
-        onChange={v => setValue(v)}
-      />
+       <Pagination
+          onPageChange={() => {}}
+          onSizeChange={function noRefCheck() {}}
+          options={{
+            sizes: [
+              5,
+              10,
+              25,
+              50
+            ]
+          }}
+          page={1}
+          size={5}
+          total={75}
+        />
     </>
   );
 };
 ```
 
-## Other Documented Usage
 
-- [Components Live Preview](https://hov-hds-highoutput.vercel.app/)
-- [Contact Us Form](https://www.notion.so/highoutput/Contact-us-form-6b4a49c0cbe24891a34d96e1b34b1e6e)
-
-## Contribute
-
-- [document for contributing in this library](https://github.com/HighOutputVentures/experiments/tree/main/016)

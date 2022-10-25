@@ -7,7 +7,7 @@ We aim to build a library of custom ReactJS components that implements our uniqu
 To install package, use:
 
 ```bash
-npm i @highoutput/hds-spinner
+npm i @highoutput/hds-icons
 ```
 
 ### Usage
@@ -15,19 +15,13 @@ npm i @highoutput/hds-spinner
 
 
 ```typescript
-import { LogoSpinner } from '@highoutput/hds-spinner';
+import { HovIcon } from '@highoutput/hds-icons';
 
 export const SamplePage = () => {
   return (
     <>
-     <LogoSpinner duration={3000}>
-        <div>Hello, World!</div>
-      </LogoSpinner>
+     <HovIcon />
     </>
   );
 };
 ```
-
-## Other Documented Usage
-
-- [Components Live Preview](https://hov-hds-highoutput.vercel.app/)
