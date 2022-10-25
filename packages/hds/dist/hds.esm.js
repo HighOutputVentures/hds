@@ -1,15 +1,15 @@
 import { DeleteIcon, AddIcon, ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import { useMultiStyleConfig, FormControl, FormLabel, FormErrorMessage, FormHelperText, InputGroup, InputLeftElement, Input, InputRightElement, Flex as Flex$1, Text as Text$1, VStack, Button as Button$1, Icon, HStack, Select as Select$1, IconButton, useStyleConfig, PinInput, PinInputField as PinInputField$1, useRadio, chakra, Box as Box$1, Image, useRadioGroup, Stack as Stack$1, Textarea, extendTheme as extendTheme$1, ChakraProvider, Center, Heading as Heading$1, Alert, AlertIcon, AlertDescription } from '@chakra-ui/react';
+import { useMultiStyleConfig, FormControl, FormLabel, FormErrorMessage, FormHelperText, InputGroup, InputLeftElement, Input, InputRightElement, Flex as Flex$1, Text as Text$1, VStack, Button as Button$1, Icon, useStyleConfig, HStack, PinInput, PinInputField as PinInputField$1, useRadio, chakra, Box as Box$1, Image, useRadioGroup, Stack as Stack$1, Select as Select$1, Textarea, extendTheme as extendTheme$1, ChakraProvider, Center, Heading as Heading$1, Alert, AlertIcon, AlertDescription } from '@chakra-ui/react';
 export { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Alert, AlertDescription, AlertDialog, AlertDialogBody, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogOverlay, AlertIcon, AlertTitle, AspectRatio, Avatar, AvatarBadge, AvatarGroup, Badge, Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, Button, ButtonGroup, ButtonSpinner, Center, Checkbox, CheckboxGroup, Circle, CircularProgress, CircularProgressLabel, CloseButton, Collapse, Container, Divider, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Fade, Flex, FormControl, FormErrorIcon, FormErrorMessage, FormHelperText, FormLabel, GlobalStyle, Grid, GridItem, HStack, Heading, Hide, Icon, IconButton, Image, Img, Input, InputAddon, InputGroup, InputLeftAddon, InputLeftElement, InputRightAddon, InputRightElement, LightMode, Link, LinkBox, LinkOverlay, List, ListItem, Menu, MenuButton, MenuDivider, MenuGroup, MenuItem, MenuItemOption, MenuList, MenuOptionGroup, Modal, ModalBody, ModalCloseButton, ModalContent, ModalContextProvider, ModalFocusScope, ModalFooter, ModalHeader, ModalOverlay, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, OrderedList, PinInputField as Pin, PinInput, Popover, PopoverAnchor, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Portal, Progress, ProgressLabel, Radio, RadioGroup, ScaleFade, Select, Show, SimpleGrid, Skeleton, SkeletonCircle, SkeletonText, Slide, SlideFade, Slider, SliderFilledTrack, SliderMark, SliderThumb, SliderTrack, Spacer, Spinner, Square, Stack, Stat, StatArrow, StatGroup, StatHelpText, StatLabel, StatNumber, Switch, Tab, TabList, TabPanel, TabPanels, Table, TableCaption, TableContainer, Tabs, Tag, TagCloseButton, TagLabel, TagLeftIcon, TagRightIcon, Tbody, Td, Text, Textarea, Tfoot, Th, Thead, Tooltip, Tr, UnorderedList, VStack, Wrap, WrapItem, chakra, createStandaloneToast, forwardRef, keyframes, shouldShowFallbackImage, useBoolean, useBreakpoint, useBreakpointValue, useButtonGroup, useCheckbox, useCheckboxGroup, useClipboard, useColorModeValue, useConst, useDisclosure, useImage, useInputGroupStyles, useMediaQuery, useMenuButton, useModal, useMultiStyleConfig, useOutsideClick, usePrefersReducedMotion, useRadio, useRadioGroup, useSlider, useTheme, useToast } from '@chakra-ui/react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React__default, { useId, forwardRef, createContext, createElement, useContext, useCallback, useState, useEffect, useMemo, Fragment } from 'react';
 import { useForm, useFieldArray } from 'react-hook-form';
 import { object, array, string } from 'yup';
 import cookies from 'js-cookie';
-import { ChevronLeftIcon, ChevronRightIcon, HovIcon } from '@highoutput/hds-icons';
 import ReactTextareaAutosize from 'react-textarea-autosize';
 import omit from 'lodash-es/omit';
 import merge from 'lodash-es/merge';
+import { HovIcon } from '@highoutput/hds-icons';
 export { isValidMotionProp, motion } from 'framer-motion';
 
 function _regeneratorRuntime() {
@@ -786,97 +786,6 @@ function useAuthState(_temp) {
 function useProfile() {
   return {};
 }
-
-var Pagination = function Pagination(_ref) {
-  var page = _ref.page,
-    size = _ref.size,
-    total = _ref.total,
-    onPageChange = _ref.onPageChange,
-    onSizeChange = _ref.onSizeChange,
-    options = _ref.options,
-    partProps = _ref.partProps,
-    variant = _ref.variant;
-  var styles = useMultiStyleConfig('Pagination', {
-    variant: variant
-  });
-  var id = useId();
-  var hasPrev = page > 1;
-  var hasNext = page * size < total;
-  var handleSizeChange = function handleSizeChange(e) {
-    if (onSizeChange) onSizeChange(parseInt(e.target.value));
-  };
-  var handlePageChange = function handlePageChange(type) {
-    var newPage = type === 'increment' ? page + 1 : page - 1;
-    return function () {
-      return onPageChange ? onPageChange(newPage) : newPage;
-    };
-  };
-  var indexStart = (page - 1) * size + 1;
-  var indexStop = page * size;
-  var remainder = total % size;
-  var getPageInfo = useCallback(function () {
-    var pageInfo = '';
-    pageInfo += 'Page ';
-    pageInfo += indexStart;
-    pageInfo += '-';
-    pageInfo += indexStop > total ? indexStart - 1 + remainder : indexStop;
-    pageInfo += ' of ';
-    pageInfo += total;
-    return pageInfo;
-  }, [indexStart, indexStop, total, remainder]);
-  return React__default.createElement(Flex$1, Object.assign({
-    id: id,
-    alignItems: "center",
-    justifyContent: "space-between",
-    sx: styles.container
-  }, partProps == null ? void 0 : partProps.container), React__default.createElement(HStack, Object.assign({
-    spacing: 2
-  }, partProps == null ? void 0 : partProps.dropdownContainer), React__default.createElement(Text$1, Object.assign({
-    as: "span",
-    whiteSpace: "nowrap",
-    sx: styles.dropdownLabel
-  }, partProps == null ? void 0 : partProps.dropdownLabel), "Show rows per page"), React__default.createElement(Select$1, Object.assign({
-    "data-testid": id + "-pagination.dropdown",
-    onChange: handleSizeChange,
-    value: size,
-    sx: styles.dropdown
-  }, partProps == null ? void 0 : partProps.dropdown), options.sizes.map(function (size, index) {
-    return React__default.createElement("option", {
-      value: size,
-      key: id + size + index,
-      "data-testid": id + "-" + size + "-" + index
-    }, size);
-  }))), React__default.createElement(HStack, Object.assign({
-    spacing: 4
-  }, partProps == null ? void 0 : partProps.captionAndControlsContainer), React__default.createElement(Text$1, Object.assign({
-    as: "span",
-    sx: styles.caption
-  }, partProps == null ? void 0 : partProps.caption), getPageInfo()), React__default.createElement(HStack, Object.assign({}, partProps == null ? void 0 : partProps.controlsContainer), React__default.createElement(IconButton, Object.assign({
-    "aria-label": "",
-    "data-testid": id + "-pagination.controls.prev",
-    icon: React__default.createElement(ChevronLeftIcon, Object.assign({
-      color: "white",
-      sx: styles.controlIcons
-    }, partProps == null ? void 0 : partProps.controlIcons)),
-    onClick: handlePageChange('decrement'),
-    paddingTop: "10px",
-    paddingLeft: "12px",
-    disabled: !hasPrev,
-    sx: styles.iconButton
-  }, partProps == null ? void 0 : partProps.controls)), React__default.createElement(IconButton, Object.assign({
-    "aria-label": "",
-    "data-testid": id + "-pagination.controls.next",
-    icon: React__default.createElement(ChevronRightIcon, Object.assign({
-      color: "white",
-      sx: styles.controlIcons
-    }, partProps == null ? void 0 : partProps.controlIcons)),
-    onClick: handlePageChange('increment'),
-    disabled: !hasNext,
-    paddingTop: "10px",
-    paddingLeft: "12px",
-    sx: styles.iconButton
-  }, partProps == null ? void 0 : partProps.controls)))));
-};
 
 var PasswordInputField = /*#__PURE__*/forwardRef(function (props, _) {
   var partProps = props.partProps,
@@ -3243,5 +3152,5 @@ function Mount(props) {
   return !when ? fallback : createElement(Fragment, null, children);
 }
 
-export { ArrayField, AuthContext, AuthProvider, AutoForm, ContactCard, ContactForm, ContactPage, CredentialLoginForm, For, FormContainer, InputField, Mount, OTPForm, OTPVerificationForm, Pagination, PasswordInputField, PinInputField, RadioImage, RadioImageGroup, SelectField, TextAreaField, TextareaAutosize, ThemeProvider, constants, extendTheme, getAuthState, logout, theme, useAuthService, useAuthState, useProfile, useSupport, withContactFormSchema };
+export { ArrayField, AuthContext, AuthProvider, AutoForm, ContactCard, ContactForm, ContactPage, CredentialLoginForm, For, FormContainer, InputField, Mount, OTPForm, OTPVerificationForm, PasswordInputField, PinInputField, RadioImage, RadioImageGroup, SelectField, TextAreaField, TextareaAutosize, ThemeProvider, constants, extendTheme, getAuthState, logout, theme, useAuthService, useAuthState, useProfile, useSupport, withContactFormSchema };
 //# sourceMappingURL=hds.esm.js.map

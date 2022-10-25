@@ -29,6 +29,7 @@ export default create({
   inputBorderRadius: 4,
 
   brandTitle: "Highoutput Venture Design System",
-  brandUrl: "https://hov-ui-components-highoutput.vercel.app/",
+  brandUrl:
+    "https://hds-highoutput.vercel.app/?path=/story/getting-started--page",
   brandTarget: "_self",
 });
