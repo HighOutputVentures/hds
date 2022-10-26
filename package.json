@@ -13,6 +13,8 @@
     "build:icons": "npx nx build @highoutput/hds-icons",
     "test:array-field": "npx nx test @highoutput/hds-array-field",
     "build:array-field": "npx nx build @highoutput/hds-array-field",
+    "test:auto-form": "npx nx test @highoutput/hds-auto-form",
+    "build:auto-form": "npx nx build @highoutput/hds-auto-form",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=c97132e80915"
