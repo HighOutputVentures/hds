@@ -5,11 +5,11 @@ import { ThemeProvider } from '../..';
 import InputField from './InputField';
 
 export default {
-  title: 'Components/Form/Input Field',
+  title: 'Components/Form Fields/Input Field',
   component: InputField,
 } as ComponentMeta<typeof InputField>;
 
-const Template: ComponentStory<typeof InputField> = args => (
+const Template: ComponentStory<typeof InputField> = (args) => (
   <ThemeProvider>
     <InputField {...args} />
   </ThemeProvider>

@@ -5,11 +5,11 @@ import { ThemeProvider } from '../..';
 import SelectField from './SelectField';
 
 export default {
-  title: 'Components/Form/Select Field',
+  title: 'Components/Form Fields/Select Field',
   component: SelectField,
 } as ComponentMeta<typeof SelectField>;
 
-const Template: ComponentStory<typeof SelectField> = args => (
+const Template: ComponentStory<typeof SelectField> = (args) => (
   <ThemeProvider>
     <SelectField {...args} />
   </ThemeProvider>

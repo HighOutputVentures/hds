@@ -6,11 +6,11 @@ import { ThemeProvider } from '../..';
 import FormContainer from './FormContainer';
 
 export default {
-  title: 'Components/Form/Form Container',
+  title: 'Components/Form Fields/Form Container',
   component: FormContainer,
 } as ComponentMeta<typeof FormContainer>;
 
-const Template: ComponentStory<typeof FormContainer> = args => (
+const Template: ComponentStory<typeof FormContainer> = (args) => (
   <ThemeProvider>
     <FormContainer {...args} />
   </ThemeProvider>

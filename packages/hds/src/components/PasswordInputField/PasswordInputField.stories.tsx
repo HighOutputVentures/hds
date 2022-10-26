@@ -5,11 +5,11 @@ import { ThemeProvider } from '../..';
 import PasswordInputField from './PasswordInputField';
 
 export default {
-  title: 'Components/Form/Password Input Field',
+  title: 'Components/Form Fields/Password Input Field',
   component: PasswordInputField,
 } as ComponentMeta<typeof PasswordInputField>;
 
-const Template: ComponentStory<typeof PasswordInputField> = args => (
+const Template: ComponentStory<typeof PasswordInputField> = (args) => (
   <ThemeProvider>
     <PasswordInputField {...args} />
   </ThemeProvider>

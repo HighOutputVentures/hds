@@ -5,11 +5,11 @@ import { ThemeProvider } from '../..';
 import TextareaField from './TextareaField';
 
 export default {
-  title: 'Components/Form/Textarea Field',
+  title: 'Components/Form Fields/Textarea Field',
   component: TextareaField,
 } as ComponentMeta<typeof TextareaField>;
 
-const Template: ComponentStory<typeof TextareaField> = args => (
+const Template: ComponentStory<typeof TextareaField> = (args) => (
   <ThemeProvider>
     <TextareaField {...args} />
   </ThemeProvider>

@@ -5,11 +5,11 @@ import { ThemeProvider } from '../..';
 import PinInputField from './PinInputField';
 
 export default {
-  title: 'Components/Form/Pin Input Field',
+  title: 'Components/Form Fields/Pin Input Field',
   component: PinInputField,
 } as ComponentMeta<typeof PinInputField>;
 
-const Template: ComponentStory<typeof PinInputField> = args => (
+const Template: ComponentStory<typeof PinInputField> = (args) => (
   <ThemeProvider>
     <PinInputField {...args} />
   </ThemeProvider>
