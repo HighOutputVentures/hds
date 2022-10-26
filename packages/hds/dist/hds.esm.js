@@ -1,6 +1,6 @@
 import React__default, { createContext, createElement, useContext, useCallback, useState, useEffect, useId, forwardRef, useMemo, Fragment } from 'react';
 import cookies from 'js-cookie';
-import { useMultiStyleConfig, FormControl, FormLabel, FormErrorMessage, FormHelperText, InputGroup, InputLeftElement, Input, InputRightElement, Button as Button$1, useStyleConfig, HStack, PinInput, PinInputField as PinInputField$1, useRadio, chakra, Box as Box$1, Image, useRadioGroup, Stack as Stack$1, Select as Select$1, Textarea, extendTheme as extendTheme$1, ChakraProvider, Center, Text as Text$1, Heading as Heading$1, Alert, AlertIcon, AlertDescription, VStack } from '@chakra-ui/react';
+import { useMultiStyleConfig, FormControl, FormLabel, FormErrorMessage, FormHelperText, InputGroup, InputLeftElement, Input, InputRightElement, Button as Button$1, useStyleConfig, HStack, PinInput, PinInputField as PinInputField$1, Select as Select$1, Textarea, extendTheme as extendTheme$1, ChakraProvider, Box as Box$1, Center, Text as Text$1, Stack as Stack$1, Heading as Heading$1, Alert, AlertIcon, AlertDescription } from '@chakra-ui/react';
 export { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Alert, AlertDescription, AlertDialog, AlertDialogBody, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogOverlay, AlertIcon, AlertTitle, AspectRatio, Avatar, AvatarBadge, AvatarGroup, Badge, Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, Button, ButtonGroup, ButtonSpinner, Center, Checkbox, CheckboxGroup, Circle, CircularProgress, CircularProgressLabel, CloseButton, Collapse, Container, Divider, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Fade, Flex, FormControl, FormErrorIcon, FormErrorMessage, FormHelperText, FormLabel, GlobalStyle, Grid, GridItem, HStack, Heading, Hide, Icon, IconButton, Image, Img, Input, InputAddon, InputGroup, InputLeftAddon, InputLeftElement, InputRightAddon, InputRightElement, LightMode, Link, LinkBox, LinkOverlay, List, ListItem, Menu, MenuButton, MenuDivider, MenuGroup, MenuItem, MenuItemOption, MenuList, MenuOptionGroup, Modal, ModalBody, ModalCloseButton, ModalContent, ModalContextProvider, ModalFocusScope, ModalFooter, ModalHeader, ModalOverlay, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, OrderedList, PinInputField as Pin, PinInput, Popover, PopoverAnchor, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Portal, Progress, ProgressLabel, Radio, RadioGroup, ScaleFade, Select, Show, SimpleGrid, Skeleton, SkeletonCircle, SkeletonText, Slide, SlideFade, Slider, SliderFilledTrack, SliderMark, SliderThumb, SliderTrack, Spacer, Spinner, Square, Stack, Stat, StatArrow, StatGroup, StatHelpText, StatLabel, StatNumber, Switch, Tab, TabList, TabPanel, TabPanels, Table, TableCaption, TableContainer, Tabs, Tag, TagCloseButton, TagLabel, TagLeftIcon, TagRightIcon, Tbody, Td, Text, Textarea, Tfoot, Th, Thead, Tooltip, Tr, UnorderedList, VStack, Wrap, WrapItem, chakra, createStandaloneToast, forwardRef, keyframes, shouldShowFallbackImage, useBoolean, useBreakpoint, useBreakpointValue, useButtonGroup, useCheckbox, useCheckboxGroup, useClipboard, useColorModeValue, useConst, useDisclosure, useImage, useInputGroupStyles, useMediaQuery, useMenuButton, useModal, useMultiStyleConfig, useOutsideClick, usePrefersReducedMotion, useRadio, useRadioGroup, useSlider, useTheme, useToast } from '@chakra-ui/react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import ReactTextareaAutosize from 'react-textarea-autosize';
@@ -734,71 +734,6 @@ var PinInputField = /*#__PURE__*/forwardRef(function (props, _) {
 });
 PinInputField.displayName = 'PinInputField';
 
-var _excluded$1 = ["image", "size", "variant", "selectColor"];
-var RadioImage = /*#__PURE__*/forwardRef(function (props, ref) {
-  var image = props.image,
-    size = props.size,
-    variant = props.variant,
-    selectColor = props.selectColor,
-    rest = _objectWithoutPropertiesLoose(props, _excluded$1);
-  var styles = useStyleConfig('RadioImage', {
-    size: size,
-    variant: variant
-  });
-  var uid = useId();
-  var _useRadio = useRadio(rest),
-    state = _useRadio.state,
-    getInputProps = _useRadio.getInputProps,
-    getCheckboxProps = _useRadio.getCheckboxProps,
-    htmlProps = _useRadio.htmlProps,
-    getLabelProps = _useRadio.getLabelProps;
-  return React__default.createElement(chakra.label, Object.assign({}, htmlProps, {
-    cursor: "pointer"
-  }), React__default.createElement(chakra.input, Object.assign({}, getInputProps({}), {
-    hidden: true,
-    "data-testid": uid + "-radio-image-input"
-  })), React__default.createElement(Box$1, Object.assign({
-    ref: ref,
-    w: 12,
-    p: 1,
-    sx: styles
-  }, getCheckboxProps(), {
-    rounded: "full",
-    bg: state.isChecked ? selectColor || styles.color || 'green.500' : 'transparent',
-    "data-testid": uid + "-radio-image-box"
-  }), React__default.createElement(Image, Object.assign({
-    src: image,
-    rounded: "full"
-  }, getLabelProps(), {
-    "data-testid": uid + "-radio-image-container"
-  }))));
-});
-
-var RadioImageGroup = function RadioImageGroup(_ref) {
-  var avatars = _ref.avatars,
-    onChange = _ref.onChange,
-    defaultValue = _ref.defaultValue;
-  var _useRadioGroup = useRadioGroup({
-      defaultValue: defaultValue || '',
-      onChange: onChange
-    }),
-    getRadioProps = _useRadioGroup.getRadioProps,
-    getRootProps = _useRadioGroup.getRootProps;
-  var uid = useId();
-  return React__default.createElement(Stack$1, Object.assign({}, getRootProps(), {
-    "data-testid": uid + "-radio-image-group-stack-container"
-  }), React__default.createElement(HStack, {
-    "data-testid": uid + "-radio-image-group-horizontal-stack"
-  }, avatars.map(function (avatar) {
-    return React__default.createElement(RadioImage, Object.assign({}, getRadioProps({
-      value: avatar.value
-    }), {
-      key: avatar.value,
-      image: avatar.image
-    }));
-  })));
-};
-
 var SelectField = /*#__PURE__*/forwardRef(function (props, ref) {
   var options = props.options,
     onChange = props.onChange,
@@ -836,11 +771,11 @@ var SelectField = /*#__PURE__*/forwardRef(function (props, ref) {
   })));
 });
 
-var _excluded$2 = ["minRows", "maxRows"];
+var _excluded$1 = ["minRows", "maxRows"];
 var TextareaAutosize = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var minRows = _ref.minRows,
     maxRows = _ref.maxRows,
-    props = _objectWithoutPropertiesLoose(_ref, _excluded$2);
+    props = _objectWithoutPropertiesLoose(_ref, _excluded$1);
   var uid = useId();
   return createElement(Textarea, Object.assign({
     as: ReactTextareaAutosize,
@@ -2102,7 +2037,7 @@ var Link = {
   }
 };
 
-var RadioImage$1 = {
+var RadioImage = {
   baseStyle: function baseStyle() {
     return {
       padding: 1,
@@ -2218,7 +2153,7 @@ var components = {
   Text: Text,
   Drawer: Drawer,
   Select: Select,
-  RadioImage: RadioImage$1
+  RadioImage: RadioImage
 };
 
 var config = {
@@ -2269,10 +2204,10 @@ var extendTheme = function extendTheme(customTheme) {
   return extendTheme$1(merge(theme, customTheme));
 };
 
-var _excluded$3 = ["children"];
+var _excluded$2 = ["children"];
 var ThemeProvider = function ThemeProvider(_ref) {
   var children = _ref.children,
-    props = _objectWithoutPropertiesLoose(_ref, _excluded$3);
+    props = _objectWithoutPropertiesLoose(_ref, _excluded$2);
   return React__default.createElement(ChakraProvider, Object.assign({}, props, {
     theme: extendTheme(props.theme)
   }), children);
@@ -2889,86 +2824,6 @@ var ContactPage = function ContactPage(props) {
   }, partProps == null ? void 0 : partProps.contactCard))));
 };
 
-var InputTypeEnum;
-(function (InputTypeEnum) {
-  InputTypeEnum["Textarea"] = "textarea";
-  InputTypeEnum["Input"] = "input";
-})(InputTypeEnum || (InputTypeEnum = {}));
-var getInputType = function getInputType(input, type, form) {
-  var _errors;
-  var key = input.key,
-    placeholder = input.placeholder,
-    label = input.label,
-    partProps = input.partProps;
-  var register = form.register,
-    formState = form.formState;
-  var isSubmitting = formState.isSubmitting,
-    errors = formState.errors;
-  var error = (_errors = errors["" + key]) == null ? void 0 : _errors.message;
-  var input_type = {
-    textarea: React__default.createElement(TextAreaField, Object.assign({}, partProps == null ? void 0 : partProps.textarea, register(key), {
-      key: key,
-      id: key,
-      label: label,
-      placeholder: placeholder,
-      errorMsg: error,
-      disabled: isSubmitting,
-      width: "100%"
-    })),
-    input: React__default.createElement(InputField, Object.assign({}, register(key), {
-      key: key,
-      id: key,
-      label: label,
-      placeholder: placeholder,
-      errorMsg: error,
-      disabled: isSubmitting,
-      partProps: {
-        input: _extends({
-          width: '100%'
-        }, partProps == null ? void 0 : partProps.input)
-      }
-    }))
-  };
-  return input_type[type];
-};
-var AutoForm = function AutoForm(props) {
-  var yupSchema = props.yupSchema,
-    partProps = props.partProps,
-    onSubmitForm = props.onSubmitForm,
-    placeholders = props.placeholders;
-  var dataKey = Object.keys(yupSchema.fields);
-  var form = useForm({
-    resolver: yupResolver(yupSchema),
-    shouldUnregister: true
-  });
-  var handleSubmit = form.handleSubmit;
-  var onSubmitData = function onSubmitData(s) {
-    if (onSubmitForm) onSubmitForm(s);
-  };
-  return React__default.createElement(Box$1, Object.assign({
-    width: 512
-  }, partProps == null ? void 0 : partProps.boxContainer), React__default.createElement(VStack, {
-    as: 'form',
-    onSubmitCapture: handleSubmit(onSubmitData)
-  }, dataKey.map(function (key, idx) {
-    var _yupSchema$fields$spe, _yupSchema$fields$spe2, _yupSchema$fields$spe3;
-    var input = {
-      key: key,
-      label: (_yupSchema$fields$spe = yupSchema.fields["" + key].spec.label) != null ? _yupSchema$fields$spe : key.charAt(0).toUpperCase() + key.slice(1),
-      placeholder: placeholders == null ? void 0 : placeholders[idx],
-      partProps: partProps
-    };
-    var type = ((_yupSchema$fields$spe2 = yupSchema.fields["" + key].spec) == null ? void 0 : (_yupSchema$fields$spe3 = _yupSchema$fields$spe2.meta) == null ? void 0 : _yupSchema$fields$spe3.type) || 'input';
-    return getInputType(input, type, form);
-  }), React__default.createElement(Button$1, Object.assign({
-    type: "submit",
-    variant: 'primary',
-    width: '100%'
-  }, partProps == null ? void 0 : partProps.button, {
-    "data-testid": "button.form.submit"
-  }), "Submit")));
-};
-
 function For(props) {
   var _Object$assign = Object.assign(defaultProps, props),
     each = _Object$assign.each,
@@ -3002,5 +2857,5 @@ function Mount(props) {
   return !when ? fallback : createElement(Fragment, null, children);
 }
 
-export { AuthContext, AuthProvider, AutoForm, ContactCard, ContactForm, ContactPage, CredentialLoginForm, For, FormContainer, InputField, Mount, OTPForm, OTPVerificationForm, PasswordInputField, PinInputField, RadioImage, RadioImageGroup, SelectField, TextAreaField, TextareaAutosize, ThemeProvider, constants, extendTheme, getAuthState, logout, theme, useAuthService, useAuthState, useProfile, useSupport, withContactFormSchema };
+export { AuthContext, AuthProvider, ContactCard, ContactForm, ContactPage, CredentialLoginForm, For, FormContainer, InputField, Mount, OTPForm, OTPVerificationForm, PasswordInputField, PinInputField, SelectField, TextAreaField, TextareaAutosize, ThemeProvider, constants, extendTheme, getAuthState, logout, theme, useAuthService, useAuthState, useProfile, useSupport, withContactFormSchema };
 //# sourceMappingURL=hds.esm.js.map

@@ -740,71 +740,6 @@ var PinInputField = /*#__PURE__*/React.forwardRef(function (props, _) {
 });
 PinInputField.displayName = 'PinInputField';
 
-var _excluded$1 = ["image", "size", "variant", "selectColor"];
-var RadioImage = /*#__PURE__*/React.forwardRef(function (props, ref) {
-  var image = props.image,
-    size = props.size,
-    variant = props.variant,
-    selectColor = props.selectColor,
-    rest = _objectWithoutPropertiesLoose(props, _excluded$1);
-  var styles = react.useStyleConfig('RadioImage', {
-    size: size,
-    variant: variant
-  });
-  var uid = React.useId();
-  var _useRadio = react.useRadio(rest),
-    state = _useRadio.state,
-    getInputProps = _useRadio.getInputProps,
-    getCheckboxProps = _useRadio.getCheckboxProps,
-    htmlProps = _useRadio.htmlProps,
-    getLabelProps = _useRadio.getLabelProps;
-  return React__default.createElement(react.chakra.label, Object.assign({}, htmlProps, {
-    cursor: "pointer"
-  }), React__default.createElement(react.chakra.input, Object.assign({}, getInputProps({}), {
-    hidden: true,
-    "data-testid": uid + "-radio-image-input"
-  })), React__default.createElement(react.Box, Object.assign({
-    ref: ref,
-    w: 12,
-    p: 1,
-    sx: styles
-  }, getCheckboxProps(), {
-    rounded: "full",
-    bg: state.isChecked ? selectColor || styles.color || 'green.500' : 'transparent',
-    "data-testid": uid + "-radio-image-box"
-  }), React__default.createElement(react.Image, Object.assign({
-    src: image,
-    rounded: "full"
-  }, getLabelProps(), {
-    "data-testid": uid + "-radio-image-container"
-  }))));
-});
-
-var RadioImageGroup = function RadioImageGroup(_ref) {
-  var avatars = _ref.avatars,
-    onChange = _ref.onChange,
-    defaultValue = _ref.defaultValue;
-  var _useRadioGroup = react.useRadioGroup({
-      defaultValue: defaultValue || '',
-      onChange: onChange
-    }),
-    getRadioProps = _useRadioGroup.getRadioProps,
-    getRootProps = _useRadioGroup.getRootProps;
-  var uid = React.useId();
-  return React__default.createElement(react.Stack, Object.assign({}, getRootProps(), {
-    "data-testid": uid + "-radio-image-group-stack-container"
-  }), React__default.createElement(react.HStack, {
-    "data-testid": uid + "-radio-image-group-horizontal-stack"
-  }, avatars.map(function (avatar) {
-    return React__default.createElement(RadioImage, Object.assign({}, getRadioProps({
-      value: avatar.value
-    }), {
-      key: avatar.value,
-      image: avatar.image
-    }));
-  })));
-};
-
 var SelectField = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var options = props.options,
     onChange = props.onChange,
@@ -842,11 +777,11 @@ var SelectField = /*#__PURE__*/React.forwardRef(function (props, ref) {
   })));
 });
 
-var _excluded$2 = ["minRows", "maxRows"];
+var _excluded$1 = ["minRows", "maxRows"];
 var TextareaAutosize = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   var minRows = _ref.minRows,
     maxRows = _ref.maxRows,
-    props = _objectWithoutPropertiesLoose(_ref, _excluded$2);
+    props = _objectWithoutPropertiesLoose(_ref, _excluded$1);
   var uid = React.useId();
   return React.createElement(react.Textarea, Object.assign({
     as: ReactTextareaAutosize,
@@ -2108,7 +2043,7 @@ var Link = {
   }
 };
 
-var RadioImage$1 = {
+var RadioImage = {
   baseStyle: function baseStyle() {
     return {
       padding: 1,
@@ -2224,7 +2159,7 @@ var components = {
   Text: Text,
   Drawer: Drawer,
   Select: Select,
-  RadioImage: RadioImage$1
+  RadioImage: RadioImage
 };
 
 var config = {
@@ -2275,10 +2210,10 @@ var extendTheme = function extendTheme(customTheme) {
   return react.extendTheme(merge(theme, customTheme));
 };
 
-var _excluded$3 = ["children"];
+var _excluded$2 = ["children"];
 var ThemeProvider = function ThemeProvider(_ref) {
   var children = _ref.children,
-    props = _objectWithoutPropertiesLoose(_ref, _excluded$3);
+    props = _objectWithoutPropertiesLoose(_ref, _excluded$2);
   return React__default.createElement(react.ChakraProvider, Object.assign({}, props, {
     theme: extendTheme(props.theme)
   }), children);
@@ -2893,86 +2828,6 @@ var ContactPage = function ContactPage(props) {
     w: "512px",
     url: url
   }, partProps == null ? void 0 : partProps.contactCard))));
-};
-
-var InputTypeEnum;
-(function (InputTypeEnum) {
-  InputTypeEnum["Textarea"] = "textarea";
-  InputTypeEnum["Input"] = "input";
-})(InputTypeEnum || (InputTypeEnum = {}));
-var getInputType = function getInputType(input, type, form) {
-  var _errors;
-  var key = input.key,
-    placeholder = input.placeholder,
-    label = input.label,
-    partProps = input.partProps;
-  var register = form.register,
-    formState = form.formState;
-  var isSubmitting = formState.isSubmitting,
-    errors = formState.errors;
-  var error = (_errors = errors["" + key]) == null ? void 0 : _errors.message;
-  var input_type = {
-    textarea: React__default.createElement(TextAreaField, Object.assign({}, partProps == null ? void 0 : partProps.textarea, register(key), {
-      key: key,
-      id: key,
-      label: label,
-      placeholder: placeholder,
-      errorMsg: error,
-      disabled: isSubmitting,
-      width: "100%"
-    })),
-    input: React__default.createElement(InputField, Object.assign({}, register(key), {
-      key: key,
-      id: key,
-      label: label,
-      placeholder: placeholder,
-      errorMsg: error,
-      disabled: isSubmitting,
-      partProps: {
-        input: _extends({
-          width: '100%'
-        }, partProps == null ? void 0 : partProps.input)
-      }
-    }))
-  };
-  return input_type[type];
-};
-var AutoForm = function AutoForm(props) {
-  var yupSchema = props.yupSchema,
-    partProps = props.partProps,
-    onSubmitForm = props.onSubmitForm,
-    placeholders = props.placeholders;
-  var dataKey = Object.keys(yupSchema.fields);
-  var form = reactHookForm.useForm({
-    resolver: yup.yupResolver(yupSchema),
-    shouldUnregister: true
-  });
-  var handleSubmit = form.handleSubmit;
-  var onSubmitData = function onSubmitData(s) {
-    if (onSubmitForm) onSubmitForm(s);
-  };
-  return React__default.createElement(react.Box, Object.assign({
-    width: 512
-  }, partProps == null ? void 0 : partProps.boxContainer), React__default.createElement(react.VStack, {
-    as: 'form',
-    onSubmitCapture: handleSubmit(onSubmitData)
-  }, dataKey.map(function (key, idx) {
-    var _yupSchema$fields$spe, _yupSchema$fields$spe2, _yupSchema$fields$spe3;
-    var input = {
-      key: key,
-      label: (_yupSchema$fields$spe = yupSchema.fields["" + key].spec.label) != null ? _yupSchema$fields$spe : key.charAt(0).toUpperCase() + key.slice(1),
-      placeholder: placeholders == null ? void 0 : placeholders[idx],
-      partProps: partProps
-    };
-    var type = ((_yupSchema$fields$spe2 = yupSchema.fields["" + key].spec) == null ? void 0 : (_yupSchema$fields$spe3 = _yupSchema$fields$spe2.meta) == null ? void 0 : _yupSchema$fields$spe3.type) || 'input';
-    return getInputType(input, type, form);
-  }), React__default.createElement(react.Button, Object.assign({
-    type: "submit",
-    variant: 'primary',
-    width: '100%'
-  }, partProps == null ? void 0 : partProps.button, {
-    "data-testid": "button.form.submit"
-  }), "Submit")));
 };
 
 function For(props) {
@@ -4180,7 +4035,6 @@ Object.defineProperty(exports, 'motion', {
 });
 exports.AuthContext = AuthContext;
 exports.AuthProvider = AuthProvider;
-exports.AutoForm = AutoForm;
 exports.ContactCard = ContactCard;
 exports.ContactForm = ContactForm;
 exports.ContactPage = ContactPage;
@@ -4193,8 +4047,6 @@ exports.OTPForm = OTPForm;
 exports.OTPVerificationForm = OTPVerificationForm;
 exports.PasswordInputField = PasswordInputField;
 exports.PinInputField = PinInputField;
-exports.RadioImage = RadioImage;
-exports.RadioImageGroup = RadioImageGroup;
 exports.SelectField = SelectField;
 exports.TextAreaField = TextAreaField;
 exports.TextareaAutosize = TextareaAutosize;
