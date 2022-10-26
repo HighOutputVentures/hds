@@ -54,7 +54,7 @@ import {
   withContactFormSchema,
   withContactFormSchemaValues,
 } from './layouts/Contact/validation';
-import AutoForm, { AutoFormProps } from './layouts/Forms/AutoForm';
+
 import theme from './theme';
 import { extendTheme } from './utils/theme.utils';
 
@@ -618,8 +618,6 @@ export {
   TextAreaFieldProps,
   FormContainer,
   FormContainerProps,
-  AutoForm,
-  AutoFormProps,
   // default theme
   theme,
   extendTheme,

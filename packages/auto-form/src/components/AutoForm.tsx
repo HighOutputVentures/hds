@@ -10,13 +10,12 @@ import {
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { FC } from 'react';
 import { useForm, UseFormReturn } from 'react-hook-form';
-
-import InputField, {
+import {
+  InputField,
   InputFieldProps,
-} from '../../components/InputField/InputField';
-import TextAreaField, {
+  TextAreaField,
   TextAreaFieldProps,
-} from '../../components/TextareaField/TextareaField';
+} from '@highoutput/hds';
 
 type WithoutChildren<T> = Omit<T, 'children'>;
 
@@ -55,7 +54,7 @@ const getInputType = (
   const { key, placeholder, label, partProps } = input;
   const { register, formState } = form;
   const { isSubmitting, errors } = formState;
-  const error = (errors[`${key}`]?.message as unknown) as string;
+  const error = errors[`${key}`]?.message as unknown as string;
 
   const input_type = {
     textarea: (
@@ -88,7 +87,7 @@ const getInputType = (
   return input_type[type];
 };
 
-const AutoForm: FC<AutoFormProps> = props => {
+const AutoForm: FC<AutoFormProps> = (props) => {
   const { yupSchema, partProps, onSubmitForm, placeholders } = props;
 
   const dataKey = Object.keys(yupSchema.fields);

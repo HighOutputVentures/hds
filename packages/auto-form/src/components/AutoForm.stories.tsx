@@ -1,16 +1,22 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
-import { ThemeProvider } from '../..';
+import ThemeProvider from '../../../hds/src/components/ThemeProvider';
 import AutoForm from './AutoForm';
 import { autoFormSchema } from './validations';
+import AutoFormMDX from './AutoForm.mdx';
 
 export default {
-  title: 'Layouts/Form/AutoForm',
+  title: 'Components/Auto Form',
   component: AutoForm,
+  parameters: {
+    docs: {
+      page: AutoFormMDX,
+    },
+  },
 } as ComponentMeta<typeof AutoForm>;
 
-const Template: ComponentStory<typeof AutoForm> = args => (
+const Template: ComponentStory<typeof AutoForm> = (args) => (
   <ThemeProvider>
     <AutoForm {...args} />
   </ThemeProvider>
