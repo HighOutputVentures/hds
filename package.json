@@ -11,6 +11,8 @@
     "build:spinner": "npx nx build @highoutput/hds-spinner",
     "test:icons": "npx nx test @highoutput/hds-icons",
     "build:icons": "npx nx build @highoutput/hds-icons",
+    "test:array-field": "npx nx test @highoutput/hds-array-field",
+    "build:array-field": "npx nx build @highoutput/hds-array-field",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=c97132e80915"
