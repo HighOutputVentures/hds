@@ -24,12 +24,7 @@ import PasswordInputField, {
 import PinInputField, {
   PinInputFieldProps,
 } from './components/PinInputField/PinInputField';
-import RadioImage, {
-  RadioImageProps,
-} from './components/RadioImage/RadioImage';
-import RadioImageGroup, {
-  RadioImageGroupProps,
-} from './components/RadioImageGroup/RadioImageGroup';
+
 import SelectField, {
   SelectFieldProps,
 } from './components/SelectField/SelectField';
@@ -591,10 +586,6 @@ export { default as Mount, MountProps } from './components/Mount/Mount';
 export {
   ThemeProvider,
   ThemeProviderProps,
-  RadioImageGroup,
-  RadioImageGroupProps,
-  RadioImage,
-  RadioImageProps,
   TextareaAutosize,
   TextareaAutosizeProps,
   ContactForm,
