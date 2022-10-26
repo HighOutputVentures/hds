@@ -2,7 +2,7 @@
   "name": "highoutput-hds",
   "private": false,
   "workspaces": [
-    "packages/*"
+    "packages/**"
   ],
   "scripts": {
     "test:hds": "npx nx test @highoutput/hds",

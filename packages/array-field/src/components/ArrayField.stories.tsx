@@ -1,15 +1,21 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
-import { ThemeProvider } from '../..';
+import ThemeProvider from '../../../hds/src/components/ThemeProvider';
 import ArrayField from './ArrayField';
+import ArrayFieldMDX from './ArrayField.mdx';
 
 export default {
-  title: 'Components/Form/Array Field',
+  title: 'Components/Array Field',
   component: ArrayField,
+  parameters: {
+    docs: {
+      page: ArrayFieldMDX,
+    },
+  },
 } as ComponentMeta<typeof ArrayField>;
 
-const Template: ComponentStory<typeof ArrayField> = args => (
+const Template: ComponentStory<typeof ArrayField> = (args) => (
   <ThemeProvider>
     <ArrayField {...args} />
   </ThemeProvider>
@@ -27,4 +33,5 @@ Default.args = {
       },
     ],
   },
+  maxValue: 10,
 };

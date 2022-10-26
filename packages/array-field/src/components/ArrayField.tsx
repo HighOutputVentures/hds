@@ -15,7 +15,7 @@ import {
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { ReactNode } from 'react';
 import { useFieldArray, useForm } from 'react-hook-form';
-import InputField from '../InputField/InputField';
+import { InputField } from '@highoutput/hds';
 import { ArrayFieldSchema, ArrayFieldTypeValues } from './validation';
 
 type WithoutChildren<T> = Omit<T, 'children'>;
@@ -77,7 +77,7 @@ const ArrayField = (props: ArrayFieldProps) => {
     name: 'input',
   });
 
-  const handleAddField = handleSubmit(async data => {
+  const handleAddField = handleSubmit(async (data) => {
     if (maxValue && fields.length <= maxValue - 1) {
       append({
         value: '',
@@ -86,15 +86,15 @@ const ArrayField = (props: ArrayFieldProps) => {
     }
   });
 
-  const handleOnBlurInput = handleSubmit(async data => {
+  const handleOnBlurInput = handleSubmit(async (data) => {
     onBlur(data);
   });
 
-  const handleRemove = handleSubmit(async data => {
+  const handleRemove = handleSubmit(async (data) => {
     onRemove(data);
   });
 
-  const handleOnChangeInput = handleSubmit(async data => {
+  const handleOnChangeInput = handleSubmit(async (data) => {
     onChange(data);
   });
 

@@ -1,6 +1,3 @@
-import ArrayField, {
-  ArrayFieldProps,
-} from './components/ArrayField/ArrayField';
 import {
   AuthConfig,
   AuthContext,
@@ -649,6 +646,4 @@ export {
   useAuthService,
   logout,
   useAuthState,
-  ArrayField,
-  ArrayFieldProps,
 };
