@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { postJson } from '../../utils/http.utils';
+import { postJson } from './http.utils';
 import { ContactFormInputProps } from './validation';
 
 const useSupport = () => {

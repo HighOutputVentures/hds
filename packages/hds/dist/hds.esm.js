@@ -1,6 +1,6 @@
 import React__default, { createContext, createElement, useContext, useCallback, useState, useEffect, useId, forwardRef, useMemo, Fragment } from 'react';
 import cookies from 'js-cookie';
-import { useMultiStyleConfig, FormControl, FormLabel, FormErrorMessage, FormHelperText, InputGroup, InputLeftElement, Input, InputRightElement, Button as Button$1, useStyleConfig, HStack, PinInput, PinInputField as PinInputField$1, Select as Select$1, Textarea, extendTheme as extendTheme$1, ChakraProvider, Box as Box$1, Center, Text as Text$1, Stack as Stack$1, Heading as Heading$1, Alert, AlertIcon, AlertDescription } from '@chakra-ui/react';
+import { useMultiStyleConfig, FormControl, FormLabel, FormErrorMessage, FormHelperText, InputGroup, InputLeftElement, Input, InputRightElement, Button as Button$1, useStyleConfig, HStack, PinInput, PinInputField as PinInputField$1, Select as Select$1, Textarea, extendTheme as extendTheme$1, ChakraProvider, Box as Box$1, Center, Text as Text$1, Stack as Stack$1, Heading as Heading$1 } from '@chakra-ui/react';
 export { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Alert, AlertDescription, AlertDialog, AlertDialogBody, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogOverlay, AlertIcon, AlertTitle, AspectRatio, Avatar, AvatarBadge, AvatarGroup, Badge, Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, Button, ButtonGroup, ButtonSpinner, Center, Checkbox, CheckboxGroup, Circle, CircularProgress, CircularProgressLabel, CloseButton, Collapse, Container, Divider, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Fade, Flex, FormControl, FormErrorIcon, FormErrorMessage, FormHelperText, FormLabel, GlobalStyle, Grid, GridItem, HStack, Heading, Hide, Icon, IconButton, Image, Img, Input, InputAddon, InputGroup, InputLeftAddon, InputLeftElement, InputRightAddon, InputRightElement, LightMode, Link, LinkBox, LinkOverlay, List, ListItem, Menu, MenuButton, MenuDivider, MenuGroup, MenuItem, MenuItemOption, MenuList, MenuOptionGroup, Modal, ModalBody, ModalCloseButton, ModalContent, ModalContextProvider, ModalFocusScope, ModalFooter, ModalHeader, ModalOverlay, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, OrderedList, PinInputField as Pin, PinInput, Popover, PopoverAnchor, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Portal, Progress, ProgressLabel, Radio, RadioGroup, ScaleFade, Select, Show, SimpleGrid, Skeleton, SkeletonCircle, SkeletonText, Slide, SlideFade, Slider, SliderFilledTrack, SliderMark, SliderThumb, SliderTrack, Spacer, Spinner, Square, Stack, Stat, StatArrow, StatGroup, StatHelpText, StatLabel, StatNumber, Switch, Tab, TabList, TabPanel, TabPanels, Table, TableCaption, TableContainer, Tabs, Tag, TagCloseButton, TagLabel, TagLeftIcon, TagRightIcon, Tbody, Td, Text, Textarea, Tfoot, Th, Thead, Tooltip, Tr, UnorderedList, VStack, Wrap, WrapItem, chakra, createStandaloneToast, forwardRef, keyframes, shouldShowFallbackImage, useBoolean, useBreakpoint, useBreakpointValue, useButtonGroup, useCheckbox, useCheckboxGroup, useClipboard, useColorModeValue, useConst, useDisclosure, useImage, useInputGroupStyles, useMediaQuery, useMenuButton, useModal, useMultiStyleConfig, useOutsideClick, usePrefersReducedMotion, useRadio, useRadioGroup, useSlider, useTheme, useToast } from '@chakra-ui/react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import ReactTextareaAutosize from 'react-textarea-autosize';
@@ -9,7 +9,6 @@ import merge from 'lodash-es/merge';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { object, string } from 'yup';
-import { HovIcon } from '@highoutput/hds-icons';
 export { isValidMotionProp, motion } from 'framer-motion';
 
 var AuthContext = /*#__PURE__*/createContext({
@@ -336,20 +335,6 @@ function _asyncToGenerator(fn) {
       _next(undefined);
     });
   };
-}
-function _extends() {
-  _extends = Object.assign ? Object.assign.bind() : function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-    return target;
-  };
-  return _extends.apply(this, arguments);
 }
 function _objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
@@ -2542,288 +2527,6 @@ var OTPVerificationForm = function OTPVerificationForm(props) {
   })));
 };
 
-var postJson$1 = /*#__PURE__*/function () {
-  var _ref = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(u, d) {
-    var response, parsed;
-    return _regeneratorRuntime().wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            _context.next = 2;
-            return fetch(u, {
-              body: JSON.stringify(d),
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              }
-            });
-          case 2:
-            response = _context.sent;
-            _context.next = 5;
-            return response.json();
-          case 5:
-            parsed = _context.sent;
-            if (response.ok) {
-              _context.next = 8;
-              break;
-            }
-            throw new Error(parsed.error.message);
-          case 8:
-            return _context.abrupt("return", parsed);
-          case 9:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  }));
-  return function postJson(_x, _x2) {
-    return _ref.apply(this, arguments);
-  };
-}();
-
-var useSupport = function useSupport() {
-  var _useState = useState(false),
-    hasError = _useState[0],
-    setHasError = _useState[1];
-  var _useState2 = useState(false),
-    isLoading = _useState2[0],
-    setLoading = _useState2[1];
-  var _useState3 = useState(false),
-    isSuccess = _useState3[0],
-    setSuccess = _useState3[1];
-  var postSupport = /*#__PURE__*/function () {
-    var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(url, data) {
-      var response;
-      return _regeneratorRuntime().wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              setHasError(false);
-              setSuccess(false);
-              setLoading(true);
-              _context.prev = 3;
-              _context.next = 6;
-              return postJson$1(url, _extends({}, data));
-            case 6:
-              response = _context.sent;
-              if (response) {
-                setSuccess(true);
-              }
-              _context.next = 13;
-              break;
-            case 10:
-              _context.prev = 10;
-              _context.t0 = _context["catch"](3);
-              setHasError(true);
-            case 13:
-              setLoading(false);
-            case 14:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee, null, [[3, 10]]);
-    }));
-    return function postSupport(_x, _x2) {
-      return _ref.apply(this, arguments);
-    };
-  }();
-  return {
-    postSupport: postSupport,
-    isLoading: isLoading,
-    hasError: hasError,
-    isSuccess: isSuccess
-  };
-};
-
-var withContactFormSchema = /*#__PURE__*/object().shape({
-  emailAddress: /*#__PURE__*/string().email('Please enter a valid email address.').required('Email is required.'),
-  message: /*#__PURE__*/string().required('Description is required.'),
-  details: /*#__PURE__*/object().shape({
-    name: /*#__PURE__*/string().required('Name is required.')
-  })
-});
-
-var ContactForm = function ContactForm(props) {
-  var _errors$details, _errors$details$name, _errors$emailAddress, _errors$message;
-  var onSubmit = props.onSubmit,
-    url = props.url,
-    partProps = props.partProps;
-  var _useSupport = useSupport(),
-    postSupport = _useSupport.postSupport,
-    hasError = _useSupport.hasError,
-    isSuccess = _useSupport.isSuccess,
-    isLoading = _useSupport.isLoading;
-  var _useForm = useForm({
-      resolver: yupResolver(withContactFormSchema),
-      defaultValues: {
-        emailAddress: '',
-        message: '',
-        details: {
-          name: ''
-        }
-      },
-      shouldUnregister: true
-    }),
-    register = _useForm.register,
-    handleSubmit = _useForm.handleSubmit,
-    formState = _useForm.formState,
-    reset = _useForm.reset;
-  var onSubmitForm = /*#__PURE__*/function () {
-    var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(values) {
-      return _regeneratorRuntime().wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              if (!url) {
-                _context.next = 4;
-                break;
-              }
-              _context.next = 3;
-              return postSupport(url, values);
-            case 3:
-              reset({
-                emailAddress: '',
-                message: '',
-                details: {
-                  name: ''
-                }
-              });
-            case 4:
-              if (onSubmit) onSubmit(values);
-            case 5:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee);
-    }));
-    return function onSubmitForm(_x) {
-      return _ref.apply(this, arguments);
-    };
-  }();
-  var isSubmitting = formState.isSubmitting,
-    errors = formState.errors;
-  return React__default.createElement(Box$1, {
-    maxW: 512,
-    "data-testid": "box.contactform.container"
-  }, React__default.createElement(Box$1, {
-    as: "form",
-    onSubmitCapture: handleSubmit(onSubmitForm),
-    "data-testid": "box.contactform.form"
-  }, React__default.createElement(Stack$1, {
-    spacing: 4
-  }, React__default.createElement(InputField, Object.assign({}, partProps == null ? void 0 : partProps.input, register('details.name'), {
-    id: "name",
-    label: "Name",
-    placeholder: "Input your name",
-    errorMsg: (_errors$details = errors.details) == null ? void 0 : (_errors$details$name = _errors$details.name) == null ? void 0 : _errors$details$name.message,
-    disabled: isSubmitting
-  })), React__default.createElement(InputField, Object.assign({}, partProps == null ? void 0 : partProps.input, register('emailAddress'), {
-    id: "emailAddress",
-    label: "Email",
-    placeholder: "Input your email address",
-    errorMsg: (_errors$emailAddress = errors.emailAddress) == null ? void 0 : _errors$emailAddress.message,
-    disabled: isSubmitting,
-    "data-testid": "input.contactform.email"
-  })), React__default.createElement(TextAreaField, Object.assign({}, partProps == null ? void 0 : partProps.textarea, register('message'), {
-    id: "message",
-    label: "Desciption of concern",
-    placeholder: "Enter description",
-    errorMsg: (_errors$message = errors.message) == null ? void 0 : _errors$message.message,
-    disabled: isSubmitting,
-    "data-testid": "textarea.contactform.description"
-  })), React__default.createElement(Button$1, Object.assign({
-    w: "full",
-    variant: "primary",
-    isLoading: isSubmitting || isLoading
-  }, partProps == null ? void 0 : partProps.button, {
-    type: "submit",
-    "data-testid": "button.contactform.submit"
-  }), "Send"), hasError && React__default.createElement(Alert, {
-    status: "error"
-  }, React__default.createElement(AlertIcon, null), React__default.createElement(AlertDescription, null, "Ops, Something went wrong.")), isSuccess && React__default.createElement(Alert, {
-    status: "success"
-  }, React__default.createElement(AlertIcon, null), React__default.createElement(AlertDescription, null, "Message successfully sent!")))));
-};
-
-var ContactCard = function ContactCard(props) {
-  var children = props.children,
-    _props$title = props.title,
-    title = _props$title === void 0 ? 'Drop your message' : _props$title,
-    partProps = props.partProps,
-    url = props.url;
-  return React__default.createElement(Box$1, Object.assign({
-    w: 512,
-    bg: "white",
-    borderRadius: "8px",
-    padding: "56px",
-    boxShadow: "0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05)"
-  }, props, {
-    "data-testid": "box.contactcard.container"
-  }), React__default.createElement(Center, {
-    mb: 8,
-    "data-testid": "center.contactcard.titleposition"
-  }, React__default.createElement(Text$1, Object.assign({
-    size: "heading-web-4"
-  }, partProps == null ? void 0 : partProps.text, {
-    "data-testid": "text.contactcard.title"
-  }), title)), children ? children : React__default.createElement(ContactForm, Object.assign({}, partProps == null ? void 0 : partProps.contactForm, {
-    url: url
-  })));
-};
-
-var ContactPage = function ContactPage(props) {
-  var partProps = props.partProps,
-    _props$title = props.title,
-    title = _props$title === void 0 ? 'Contact Us' : _props$title,
-    _props$secondaryTitle = props.secondaryTitle,
-    secondaryTitle = _props$secondaryTitle === void 0 ? "Tell us what you need and we'll help you out." : _props$secondaryTitle,
-    iconNode = props.iconNode,
-    url = props.url;
-  return React__default.createElement(Box$1, {
-    pos: "relative",
-    w: "100%",
-    "data-testid": "box.contactpage.container"
-  }, React__default.createElement(Box$1, Object.assign({
-    minW: '600px',
-    bg: "#000",
-    w: "100%",
-    h: "400px"
-  }, props, {
-    "data-testid": "box.contactpage.banner"
-  }), React__default.createElement(Center, {
-    pt: 20,
-    pb: 8,
-    "data-testid": "center.contactpage.iconposition"
-  }, iconNode ? iconNode : React__default.createElement(HovIcon, {
-    color: "white",
-    "data-testid": "icon.contactpage.hovicon"
-  })), React__default.createElement(Center, {
-    "data-testid": "center.contactpage.titlepostion"
-  }, React__default.createElement(Text$1, Object.assign({
-    size: "heading-web-3",
-    color: "white"
-  }, partProps == null ? void 0 : partProps.title, {
-    "data-testid": "text.contactpage.title"
-  }), title)), React__default.createElement(Center, {
-    "data-testid": "center.contactpage.secondarytitleposition"
-  }, React__default.createElement(Text$1, Object.assign({
-    color: "gray.200"
-  }, partProps == null ? void 0 : partProps.secondaryTitle, {
-    "data-testid": "text.contactpage.secondarytitle"
-  }), secondaryTitle))), React__default.createElement(Center, {
-    minW: '600px',
-    "data-testid": "center.contactpage.secondarytitleposition"
-  }, React__default.createElement(ContactCard, Object.assign({
-    pos: "absolute",
-    top: "250px",
-    w: "512px",
-    url: url
-  }, partProps == null ? void 0 : partProps.contactCard))));
-};
-
 function For(props) {
   var _Object$assign = Object.assign(defaultProps, props),
     each = _Object$assign.each,
@@ -2857,5 +2560,5 @@ function Mount(props) {
   return !when ? fallback : createElement(Fragment, null, children);
 }
 
-export { AuthContext, AuthProvider, ContactCard, ContactForm, ContactPage, CredentialLoginForm, For, FormContainer, InputField, Mount, OTPForm, OTPVerificationForm, PasswordInputField, PinInputField, SelectField, TextAreaField, TextareaAutosize, ThemeProvider, constants, extendTheme, getAuthState, logout, theme, useAuthService, useAuthState, useProfile, useSupport, withContactFormSchema };
+export { AuthContext, AuthProvider, CredentialLoginForm, For, FormContainer, InputField, Mount, OTPForm, OTPVerificationForm, PasswordInputField, PinInputField, SelectField, TextAreaField, TextareaAutosize, ThemeProvider, constants, extendTheme, getAuthState, logout, theme, useAuthService, useAuthState, useProfile };
 //# sourceMappingURL=hds.esm.js.map

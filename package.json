@@ -15,6 +15,8 @@
     "build:array-field": "npx nx build @highoutput/hds-array-field",
     "test:auto-form": "npx nx test @highoutput/hds-auto-form",
     "build:auto-form": "npx nx build @highoutput/hds-auto-form",
+    "test:contact-us": "npx nx test @highoutput/hds-contact-us",
+    "build:contact-us": "npx nx build @highoutput/hds-contact-us",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=c97132e80915"

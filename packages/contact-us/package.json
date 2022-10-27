@@ -34,18 +34,18 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@highoutput/hds-array-field",
+  "name": "@highoutput/hds-contact-us",
   "author": {
     "name": "Niel Berongoy"
   },
   "module": "dist/hds-array-field.esm.js",
   "size-limit": [
     {
-      "path": "dist/hds-array-field.cjs.production.min.js",
+      "path": "dist/hds-contact-us.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/hds-array-field.esm.js",
+      "path": "dist/hds-contact-us.esm.js",
       "limit": "10 KB"
     }
   ],

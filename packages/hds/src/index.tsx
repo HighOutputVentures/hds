@@ -45,15 +45,6 @@ import OTPForm, { OTPFormProps } from './layouts/Auth/OTPForm';
 import OTPVerificationForm, {
   OTPVerificationProps,
 } from './layouts/Auth/OTPVerificationForm';
-import ContactCard, { ContactCardProps } from './layouts/Contact/ContactCard';
-import ContactForm, { ContactFormProps } from './layouts/Contact/ContactForm';
-import ContactPage, { ContagePageProps } from './layouts/Contact/ContactPage';
-import useSupport from './layouts/Contact/useSupport';
-import {
-  ContactFormInputProps,
-  withContactFormSchema,
-  withContactFormSchemaValues,
-} from './layouts/Contact/validation';
 
 import theme from './theme';
 import { extendTheme } from './utils/theme.utils';
@@ -588,20 +579,11 @@ export {
   ThemeProviderProps,
   TextareaAutosize,
   TextareaAutosizeProps,
-  ContactForm,
-  ContactFormProps,
-  ContactCard,
-  ContactCardProps,
-  ContactPage,
-  ContagePageProps,
   CredentialLoginForm,
   CredentialLoginFormProps,
   CredentialLoginFormEmailProps,
   CredentialLoginFormNameProps,
   CredentialLoginFormDefaultProps,
-  ContactFormInputProps,
-  withContactFormSchemaValues,
-  withContactFormSchema,
   OTPVerificationForm,
   OTPVerificationProps,
   OTPForm,
@@ -621,8 +603,6 @@ export {
   // default theme
   theme,
   extendTheme,
-  // hooks
-  useSupport,
   // auth provider
   AuthConfig,
   AuthContext,

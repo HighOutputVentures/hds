@@ -11,12 +11,13 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import React, { FC } from 'react';
 import { useForm } from 'react-hook-form';
 
-import InputField, {
+import {
+  InputField,
   InputFieldProps,
-} from '../../components/InputField/InputField';
-import TextAreaField, {
+  TextAreaField,
   TextAreaFieldProps,
-} from '../../components/TextareaField/TextareaField';
+} from '@highoutput/hds';
+
 import useSupport from './useSupport';
 import {
   ContactFormInputProps,
@@ -36,22 +37,21 @@ export interface ContactFormProps {
   }>;
 }
 
-const ContactForm: FC<ContactFormProps> = props => {
+const ContactForm: FC<ContactFormProps> = (props) => {
   const { onSubmit, url, partProps } = props;
   const { postSupport, hasError, isSuccess, isLoading } = useSupport();
-  const { register, handleSubmit, formState, reset } = useForm<
-    withContactFormSchemaValues
-  >({
-    resolver: yupResolver(withContactFormSchema),
-    defaultValues: {
-      emailAddress: '',
-      message: '',
-      details: {
-        name: '',
+  const { register, handleSubmit, formState, reset } =
+    useForm<withContactFormSchemaValues>({
+      resolver: yupResolver(withContactFormSchema),
+      defaultValues: {
+        emailAddress: '',
+        message: '',
+        details: {
+          name: '',
+        },
       },
-    },
-    shouldUnregister: true,
-  });
+      shouldUnregister: true,
+    });
 
   const onSubmitForm = async (values: withContactFormSchemaValues) => {
     if (url) {

@@ -10,11 +10,6 @@ import ThemeProvider, { ThemeProviderProps } from './components/ThemeProvider';
 import CredentialLoginForm, { CredentialLoginFormDefaultProps, CredentialLoginFormEmailProps, CredentialLoginFormNameProps, CredentialLoginFormProps } from './layouts/Auth/CredentialLoginForm';
 import OTPForm, { OTPFormProps } from './layouts/Auth/OTPForm';
 import OTPVerificationForm, { OTPVerificationProps } from './layouts/Auth/OTPVerificationForm';
-import ContactCard, { ContactCardProps } from './layouts/Contact/ContactCard';
-import ContactForm, { ContactFormProps } from './layouts/Contact/ContactForm';
-import ContactPage, { ContagePageProps } from './layouts/Contact/ContactPage';
-import useSupport from './layouts/Contact/useSupport';
-import { ContactFormInputProps, withContactFormSchema, withContactFormSchemaValues } from './layouts/Contact/validation';
 import theme from './theme';
 import { extendTheme } from './utils/theme.utils';
 export { Accordion, AccordionButton, AccordionButtonProps, AccordionIcon, AccordionItem, AccordionItemProps, AccordionPanel, AccordionPanelProps, AccordionProps, 
@@ -265,4 +260,4 @@ Wrap, WrapItem, WrapItemProps, WrapProps, } from '@chakra-ui/react';
 export { isValidMotionProp, motion } from 'framer-motion';
 export { default as For, ForProps } from './components/For/For';
 export { default as Mount, MountProps } from './components/Mount/Mount';
-export { ThemeProvider, ThemeProviderProps, TextareaAutosize, TextareaAutosizeProps, ContactForm, ContactFormProps, ContactCard, ContactCardProps, ContactPage, ContagePageProps, CredentialLoginForm, CredentialLoginFormProps, CredentialLoginFormEmailProps, CredentialLoginFormNameProps, CredentialLoginFormDefaultProps, ContactFormInputProps, withContactFormSchemaValues, withContactFormSchema, OTPVerificationForm, OTPVerificationProps, OTPForm, OTPFormProps, PinInputField, PinInputFieldProps, InputField, InputFieldProps, SelectField, SelectFieldProps, PasswordInputField, PasswordInputFieldProps, TextAreaField, TextAreaFieldProps, FormContainer, FormContainerProps, theme, extendTheme, useSupport, AuthConfig, AuthContext, AuthProvider, AuthService, AuthState, constants, useProfile, getAuthState, useAuthService, logout, useAuthState, };
+export { ThemeProvider, ThemeProviderProps, TextareaAutosize, TextareaAutosizeProps, CredentialLoginForm, CredentialLoginFormProps, CredentialLoginFormEmailProps, CredentialLoginFormNameProps, CredentialLoginFormDefaultProps, OTPVerificationForm, OTPVerificationProps, OTPForm, OTPFormProps, PinInputField, PinInputFieldProps, InputField, InputFieldProps, SelectField, SelectFieldProps, PasswordInputField, PasswordInputFieldProps, TextAreaField, TextAreaFieldProps, FormContainer, FormContainerProps, theme, extendTheme, AuthConfig, AuthContext, AuthProvider, AuthService, AuthState, constants, useProfile, getAuthState, useAuthService, logout, useAuthState, };

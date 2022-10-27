@@ -1,15 +1,21 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
-import { ThemeProvider } from '../..';
+import ThemeProvider from '../../../hds/src/components/ThemeProvider';
 import ContactPage from './ContactPage';
+import ContactPageMDX from './ContactPage.mdx';
 
 export default {
   title: 'Layouts/Contact/Contact Page',
   component: ContactPage,
+  parameters: {
+    docs: {
+      page: ContactPageMDX,
+    },
+  },
 } as ComponentMeta<typeof ContactPage>;
 
-const Template: ComponentStory<typeof ContactPage> = args => (
+const Template: ComponentStory<typeof ContactPage> = (args) => (
   <ThemeProvider>
     <ContactPage {...args} />
   </ThemeProvider>
