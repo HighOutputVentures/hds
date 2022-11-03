@@ -1,6 +1,6 @@
 import { ComponentStyleConfig } from '@chakra-ui/react';
 import Box from './box';
-import Button from './button';
+import Button from './button/button';
 import Checkbox from './checkbox';
 import Drawer from './drawer';
 import Flex from './flex';
