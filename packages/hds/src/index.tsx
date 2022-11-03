@@ -4,14 +4,12 @@ import FormContainer, {
 import InputField, {
   InputFieldProps,
 } from './components/InputField/InputField';
-
 import PasswordInputField, {
   PasswordInputFieldProps,
 } from './components/PasswordInputField/PasswordInputField';
 import PinInputField, {
   PinInputFieldProps,
 } from './components/PinInputField/PinInputField';
-
 import SelectField, {
   SelectFieldProps,
 } from './components/SelectField/SelectField';
@@ -22,9 +20,47 @@ import TextAreaField, {
   TextAreaFieldProps,
 } from './components/TextareaField/TextareaField';
 import ThemeProvider, { ThemeProviderProps } from './components/ThemeProvider';
+import SocialButton, {
+  SocialButtonProps,
+  SocialButtonPartProps,
+} from './components/Button/SocialButton';
+import CloseButton, {
+  CloseButtonPartProps,
+  CloseButtonProps,
+} from './components/Button/CloseButton';
 
 import theme from './theme';
 import { extendTheme } from './utils/theme.utils';
+
+export { default as For, ForProps } from './components/For/For';
+export { default as Mount, MountProps } from './components/Mount/Mount';
+export {
+  ThemeProvider,
+  ThemeProviderProps,
+  TextareaAutosize,
+  TextareaAutosizeProps,
+  PinInputField,
+  PinInputFieldProps,
+  InputField,
+  InputFieldProps,
+  SelectField,
+  SelectFieldProps,
+  PasswordInputField,
+  PasswordInputFieldProps,
+  TextAreaField,
+  TextAreaFieldProps,
+  FormContainer,
+  FormContainerProps,
+  SocialButton,
+  SocialButtonProps,
+  SocialButtonPartProps,
+  CloseButton,
+  CloseButtonPartProps,
+  CloseButtonProps,
+  // default theme
+  theme,
+  extendTheme,
+};
 
 export {
   Accordion,
@@ -121,8 +157,7 @@ export {
   CircularProgressLabel,
   CircularProgressLabelProps,
   CircularProgressProps,
-  CloseButton,
-  CloseButtonProps,
+
   /**
    * @reference https://chakra-ui.com/docs/components/transitions/usage#collapse-transition
    */
@@ -549,26 +584,3 @@ export {
   WrapProps,
 } from '@chakra-ui/react';
 export { isValidMotionProp, motion } from 'framer-motion';
-export { default as For, ForProps } from './components/For/For';
-export { default as Mount, MountProps } from './components/Mount/Mount';
-export {
-  ThemeProvider,
-  ThemeProviderProps,
-  TextareaAutosize,
-  TextareaAutosizeProps,
-  PinInputField,
-  PinInputFieldProps,
-  InputField,
-  InputFieldProps,
-  SelectField,
-  SelectFieldProps,
-  PasswordInputField,
-  PasswordInputFieldProps,
-  TextAreaField,
-  TextAreaFieldProps,
-  FormContainer,
-  FormContainerProps,
-  // default theme
-  theme,
-  extendTheme,
-};
