@@ -12,9 +12,8 @@ import {
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { FC, ReactNode } from 'react';
 import { useForm } from 'react-hook-form';
-import InputField, {
-  InputFieldProps,
-} from '../../components/InputField/InputField';
+import { InputField, InputFieldProps } from '@highoutput/hds';
+
 import {
   CredentialFormInputEmailProps,
   CredentialFormInputNameProps,
@@ -53,7 +52,7 @@ export type CredentialLoginFormProps =
   | CredentialLoginFormNameProps
   | CredentialLoginFormEmailProps;
 
-const CredentialLoginForm: FC<CredentialLoginFormProps> = props => {
+const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
   const {
     partProps,
     signUpTitle,
@@ -98,13 +97,13 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = props => {
         ) : !isSignUp && loginTitle ? (
           loginTitle
         ) : !isSignUp && !loginTitle ? (
-          <Text size="text-3xl" my={8} {...partProps?.title}>
+          <Text size="heading-web-3" my={8} {...partProps?.title}>
             Login
           </Text>
         ) : (
           isSignUp &&
           !signUpTitle && (
-            <Text size="text-3xl" my={8} {...partProps?.title}>
+            <Text size="heading-web-3" my={8} {...partProps?.title}>
               Sign up
             </Text>
           )
@@ -158,7 +157,7 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = props => {
               _hover={{ background: 'none' }}
               _active={{ background: 'none' }}
               aria-label={showPassword ? 'show-password' : 'hide-password'}
-              onClick={() => setShowPassword(prev => !prev)}
+              onClick={() => setShowPassword((prev) => !prev)}
             >
               {showPassword ? <ViewIcon /> : <ViewOffIcon />}
             </Button>
@@ -190,7 +189,7 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = props => {
             data-testid={'switch-form-link'}
             _hover={{ textDecoration: 'underline', cursor: 'pointer' }}
             aria-label={isSignUp ? 'login-link-label' : 'signup-link-label'}
-            onClick={() => setIsSignUp(prev => !prev)}
+            onClick={() => setIsSignUp((prev) => !prev)}
             fontWeight={'bold'}
             role={'link'}
           >

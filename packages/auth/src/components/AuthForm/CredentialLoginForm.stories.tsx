@@ -1,14 +1,21 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
-import { ThemeProvider } from '../..';
+import ThemeProvider from '../../../../hds/src/components/ThemeProvider';
 import CredentialLoginForm from './CredentialLoginForm';
+import CredentialLoginFormMDX from './CredentialLoginForm.mdx';
+
 export default {
-  title: 'Layouts/Auth/Credential Login',
+  title: 'Components/Auth Form/Credential Login',
   component: CredentialLoginForm,
+  parameters: {
+    docs: {
+      page: CredentialLoginFormMDX,
+    },
+  },
 } as ComponentMeta<typeof CredentialLoginForm>;
 
-const Template: ComponentStory<typeof CredentialLoginForm> = args => (
+const Template: ComponentStory<typeof CredentialLoginForm> = (args) => (
   <ThemeProvider>
     <CredentialLoginForm {...args} />
   </ThemeProvider>

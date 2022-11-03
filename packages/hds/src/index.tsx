@@ -1,16 +1,3 @@
-import {
-  AuthConfig,
-  AuthContext,
-  AuthProvider,
-  AuthService,
-  AuthState,
-  constants,
-  getAuthState,
-  logout,
-  useAuthService,
-  useAuthState,
-  useProfile,
-} from './components/AuthProvider';
 import FormContainer, {
   FormContainerProps,
 } from './components/FormContainer/FormContainer';
@@ -35,16 +22,6 @@ import TextAreaField, {
   TextAreaFieldProps,
 } from './components/TextareaField/TextareaField';
 import ThemeProvider, { ThemeProviderProps } from './components/ThemeProvider';
-import CredentialLoginForm, {
-  CredentialLoginFormDefaultProps,
-  CredentialLoginFormEmailProps,
-  CredentialLoginFormNameProps,
-  CredentialLoginFormProps,
-} from './layouts/Auth/CredentialLoginForm';
-import OTPForm, { OTPFormProps } from './layouts/Auth/OTPForm';
-import OTPVerificationForm, {
-  OTPVerificationProps,
-} from './layouts/Auth/OTPVerificationForm';
 
 import theme from './theme';
 import { extendTheme } from './utils/theme.utils';
@@ -579,15 +556,6 @@ export {
   ThemeProviderProps,
   TextareaAutosize,
   TextareaAutosizeProps,
-  CredentialLoginForm,
-  CredentialLoginFormProps,
-  CredentialLoginFormEmailProps,
-  CredentialLoginFormNameProps,
-  CredentialLoginFormDefaultProps,
-  OTPVerificationForm,
-  OTPVerificationProps,
-  OTPForm,
-  OTPFormProps,
   PinInputField,
   PinInputFieldProps,
   InputField,
@@ -603,16 +571,4 @@ export {
   // default theme
   theme,
   extendTheme,
-  // auth provider
-  AuthConfig,
-  AuthContext,
-  AuthProvider,
-  AuthService,
-  AuthState,
-  constants,
-  useProfile,
-  getAuthState,
-  useAuthService,
-  logout,
-  useAuthState,
 };

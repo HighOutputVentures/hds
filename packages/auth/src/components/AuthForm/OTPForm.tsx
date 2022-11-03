@@ -9,14 +9,11 @@ import {
   TextProps,
 } from '@chakra-ui/react';
 import { yupResolver } from '@hookform/resolvers/yup';
-
 import React, { ReactNode } from 'react';
 import { useForm } from 'react-hook-form';
-import PinInputField from '../../components/PinInputField/PinInputField';
-import {
-  authenticateSchema,
-  AuthenticateSchemaValues,
-} from '../../layouts/Auth/validation';
+import { PinInputField } from '@highoutput/hds';
+
+import { authenticateSchema, AuthenticateSchemaValues } from './validation';
 
 type WithoutChildren<T> = Omit<T, 'children'>;
 export interface OTPFormProps {

@@ -2,10 +2,9 @@ import { Box, Button } from '@chakra-ui/react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { InputField } from '@highoutput/hds';
 
-import InputField from '../../components/InputField/InputField';
 import OTPForm, { OTPFormProps } from './OTPForm';
-
 import {
   AuthenticateSchemaValues,
   generateEmailOTPSchema,
@@ -31,15 +30,14 @@ const OTPVerificationForm = (props: OTPVerificationProps) => {
     partProps,
   } = props;
 
-  const { register, handleSubmit, formState } = useForm<
-    GenerateEmailOTPSchemaValues
-  >({
-    resolver: yupResolver(generateEmailOTPSchema),
-    defaultValues: {
-      emailAddress: '',
-    },
-    shouldUnregister: true,
-  });
+  const { register, handleSubmit, formState } =
+    useForm<GenerateEmailOTPSchemaValues>({
+      resolver: yupResolver(generateEmailOTPSchema),
+      defaultValues: {
+        emailAddress: '',
+      },
+      shouldUnregister: true,
+    });
 
   const onSubmitEmail = async (value: GenerateEmailOTPSchemaValues) => {
     if (onSubmitEmailValue) {
@@ -96,7 +94,7 @@ const OTPVerificationForm = (props: OTPVerificationProps) => {
             partProps={partProps}
             title={title}
             subTitle={subTitle}
-            onSubmitOTPValue={value => onSubmitOTP(value)}
+            onSubmitOTPValue={(value) => onSubmitOTP(value)}
             numberOfFields={numberOfFields}
           />
         </Box>

@@ -17,6 +17,8 @@
     "build:auto-form": "npx nx build @highoutput/hds-auto-form",
     "test:contact-us": "npx nx test @highoutput/hds-contact-us",
     "build:contact-us": "npx nx build @highoutput/hds-contact-us",
+    "test:auth": "npx nx test @highoutput/hds-auth",
+    "build:auth": "npx nx build @highoutput/hds-auth",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=c97132e80915"
