@@ -11,9 +11,9 @@ export const parameters = {
       order: [
         "Getting Started",
         "System Design",
+        "Provider and Hooks",
         "Layouts",
         "Components",
-        "Provider and Hooks",
         "Releases",
       ],
     },

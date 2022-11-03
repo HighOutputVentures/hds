@@ -13,6 +13,12 @@ import { Meta, Preview } from '@storybook/addon-docs';
 
 designed to be integrated with `@highoutput/email-auth`
 
+To install package, run command:
+
+```bash
+npm i @highoutput/hds-auth
+```
+
 ### Usage
 
 ```typescript
@@ -21,7 +27,7 @@ import { ApolloProvider } from '@apollo/client';
 import { ThemeProvider } from '@highoutput/hds';
 import type { AppProps } from 'next/app';
 import client from '~/config/client';
-import { AuthProvider } from '@highoutput/hds';
+import { AuthProvider } from '@highoutput/hds-auth';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
