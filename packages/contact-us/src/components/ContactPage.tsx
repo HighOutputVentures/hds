@@ -1,6 +1,6 @@
 import { Box, BoxProps, Center, Text, TextProps } from '@chakra-ui/react';
 import React, { FC, ReactNode } from 'react';
-// import { HovIcon } from '@highoutput/hds-icons';
+import { HovIcon } from '@highoutput/hds-icons';
 
 import ContactCard, { ContactCardProps } from './ContactCard';
 
@@ -37,10 +37,11 @@ const ContactPage: FC<ContagePageProps> = (props) => {
         data-testid="box.contactpage.banner"
       >
         <Center pt={20} pb={8} data-testid="center.contactpage.iconposition">
-          {iconNode
-            ? iconNode
-            : // <HovIcon color="white" data-testid="icon.contactpage.hovicon" />
-              ' '}
+          {iconNode ? (
+            iconNode
+          ) : (
+            <HovIcon color="white" data-testid="icon.contactpage.hovicon" />
+          )}
         </Center>
 
         <Center data-testid="center.contactpage.titlepostion">
