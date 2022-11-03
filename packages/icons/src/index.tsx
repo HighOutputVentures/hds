@@ -8,6 +8,7 @@ import DribbleIcon from './components/DribbleIcon';
 import FacebookIcon from './components/FacebookIcon';
 import FigmaIcon from './components/FigmaIcon';
 import GoogleIcon from './components/GoogleIcon';
+import TwitterIcon from './components/TwitterIcon';
 
 export {
   HovIcon,
@@ -19,4 +20,5 @@ export {
   FacebookIcon,
   FigmaIcon,
   GoogleIcon,
+  TwitterIcon,
 };

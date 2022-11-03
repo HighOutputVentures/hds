@@ -61,6 +61,6 @@
   },
   "gitHead": "220c468183d0032ba2f8eb5b26d89cf5712292c0",
   "dependencies": {
-    "@highoutput/hds-icons": "^1.0.5-0.1.0.0"
+    "@highoutput/hds-icons": "^1.0.5-y.0"
   }
 }
