@@ -13,9 +13,7 @@ import PinInputField, {
 import SelectField, {
   SelectFieldProps,
 } from './components/SelectField/SelectField';
-import TextareaAutosize, {
-  TextareaAutosizeProps,
-} from './components/TextareaAutosize/TextareaAutosize';
+
 import TextAreaField, {
   TextAreaFieldProps,
 } from './components/TextareaField/TextareaField';
@@ -37,8 +35,6 @@ export { default as Mount, MountProps } from './components/Mount/Mount';
 export {
   ThemeProvider,
   ThemeProviderProps,
-  TextareaAutosize,
-  TextareaAutosizeProps,
   PinInputField,
   PinInputFieldProps,
   InputField,
