@@ -64,6 +64,8 @@
     "@chakra-ui/icons": "^2.0.11",
     "@chakra-ui/react": "^2.3.7",
     "@highoutput/hds-icons": "^0.1.4",
-    "framer-motion": "^7.6.4"
+    "framer-motion": "^7.6.4",
+    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21"
   }
 }
