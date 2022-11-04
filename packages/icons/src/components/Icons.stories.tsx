@@ -7,6 +7,15 @@ import ChevronLeftIcon from './ChevronLeftIcon';
 import ChevronRightIcon from './ChevronRightIcon';
 import HovIcon from './HovIcon';
 
+import {
+  AppleIcon,
+  DribbleIcon,
+  FacebookIcon,
+  FigmaIcon,
+  GoogleIcon,
+  TwitterIcon,
+} from '../index';
+
 export default {
   title: 'Components/Icons',
   parameters: {
@@ -42,5 +51,38 @@ const CompanyTemplate = () => (
   </ThemeProvider>
 );
 
+const SocialTemplate = () => (
+  <ThemeProvider>
+    <Grid templateColumns="repeat(5, 1fr)" gap={4}>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <AppleIcon variant="outline" />
+        <Text>{'AppleIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <DribbleIcon variant="outline" />
+        <Text>{'DribbleIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <FacebookIcon variant="outline" />
+        <Text>{'FacebookIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <FigmaIcon />
+        <Text>{'FigmaIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <GoogleIcon />
+        <Text>{'GoogleIcon'}</Text>
+      </GridItem>
+
+      <GridItem w="100%" h="80px" textAlign="center">
+        <TwitterIcon variant="outline" />
+        <Text>{'TwitterIcon'}</Text>
+      </GridItem>
+    </Grid>
+  </ThemeProvider>
+);
+
 export const Arrows = ArrowsTemplate.bind({});
 export const Company = CompanyTemplate.bind({});
+export const Social = SocialTemplate.bind({});
