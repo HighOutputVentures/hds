@@ -51,8 +51,6 @@
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "7.0.8",
-    "rollup-plugin-import-css": "^3.1.0",
-    "rollup-plugin-url": "^3.0.1",
     "size-limit": "7.0.8"
   },
   "jest": {
