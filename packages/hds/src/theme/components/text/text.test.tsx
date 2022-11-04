@@ -128,7 +128,7 @@ describe('Test text sizes values', () => {
   };
 
   const headingweb1 = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '80px',
@@ -136,7 +136,7 @@ describe('Test text sizes values', () => {
     letterSpacing: '-0.02em',
   };
   const headingweb2 = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '56px',
@@ -144,7 +144,7 @@ describe('Test text sizes values', () => {
     letterSpacing: '-0.02em',
   };
   const headingweb3 = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '40px',
@@ -152,7 +152,7 @@ describe('Test text sizes values', () => {
     letterSpacing: '-0.02em',
   };
   const headingweb4 = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '32px',
@@ -160,7 +160,7 @@ describe('Test text sizes values', () => {
     letterSpacing: '-0.02em',
   };
   const headingweb5 = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '24px',
@@ -168,7 +168,7 @@ describe('Test text sizes values', () => {
     letterSpacing: '-0.02em',
   };
   const headingweb6 = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '20px',
@@ -176,7 +176,7 @@ describe('Test text sizes values', () => {
     letterSpacing: '-0.02em',
   };
   const headingmobile1 = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '44px',
@@ -184,7 +184,7 @@ describe('Test text sizes values', () => {
     letterSpacing: '-0.012em',
   };
   const headingmobile2 = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '32px',
@@ -192,7 +192,7 @@ describe('Test text sizes values', () => {
     letterSpacing: '-0.012em',
   };
   const headingmobile3 = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '24px',
@@ -200,7 +200,7 @@ describe('Test text sizes values', () => {
     letterSpacing: '-0.012em',
   };
   const headingmobile4 = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '20px',
@@ -208,7 +208,7 @@ describe('Test text sizes values', () => {
     letterSpacing: '-0.012em',
   };
   const headingmobile5 = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '18px',
@@ -216,7 +216,7 @@ describe('Test text sizes values', () => {
     letterSpacing: '-0.012em',
   };
   const headingmobile6 = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '16px',
@@ -224,84 +224,84 @@ describe('Test text sizes values', () => {
     letterSpacing: '-0.012em',
   };
   const paragraphxxldefault = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '32px',
     lineHeight: '48px',
   };
   const paragraphxldefault = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '34px',
     lineHeight: '36px',
   };
   const paragraphlgdefault = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '20px',
     lineHeight: '32px',
   };
   const paragraphmddefault = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '18px',
     lineHeight: '28px',
   };
   const paragraphsmdefault = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '16px',
     lineHeight: '24px',
   };
   const paragraphxsdefault = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '14px',
     lineHeight: '20px',
   };
   const paragraphxxsdefault = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '12px',
     lineHeight: '16px',
   };
   const paragraphxxlitalic = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '32px',
     lineHeight: '48px',
   };
   const paragraphxlitalic = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '34px',
     lineHeight: '36px',
   };
   const paragraphlgitalic = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '20px',
     lineHeight: '32px',
   };
   const paragraphmditalic = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '18px',
     lineHeight: '28px',
   };
   const paragraphsmitalic = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '16px',
@@ -309,7 +309,7 @@ describe('Test text sizes values', () => {
     letterSpacing: '0.02em',
   };
   const paragraphxsitalic = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '14px',
@@ -317,7 +317,7 @@ describe('Test text sizes values', () => {
     letterSpacing: '0.02em',
   };
   const paragraphxxsitalic = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '12px',
@@ -325,35 +325,35 @@ describe('Test text sizes values', () => {
     letterSpacing: '0.02em',
   };
   const paragraphxxlbold = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '32px',
     lineHeight: '48px',
   };
   const paragraphxlbold = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '34px',
     lineHeight: '36px',
   };
   const paragraphlgbold = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '20px',
     lineHeight: '32px',
   };
   const paragraphmdbold = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '18px',
     lineHeight: '28px',
   };
   const paragraphsmbold = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '16px',
@@ -361,7 +361,7 @@ describe('Test text sizes values', () => {
     letterSpacing: '0.02em',
   };
   const paragraphxsbold = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '14px',
@@ -369,7 +369,7 @@ describe('Test text sizes values', () => {
     letterSpacing: '0.02em',
   };
   const paragraphxxsbold = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '12px',
@@ -377,35 +377,35 @@ describe('Test text sizes values', () => {
     letterSpacing: '0.02em',
   };
   const labelxldefault = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '32px',
     lineHeight: '32px',
   };
   const labellgdefault = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '28px',
     lineHeight: '28px',
   };
   const labelmddefault = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '20px',
     lineHeight: '20px',
   };
   const labelsmdefault = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '18px',
     lineHeight: '18px',
   };
   const labelxsdefault = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '14px',
@@ -413,7 +413,7 @@ describe('Test text sizes values', () => {
     letterSpacing: '0.02em',
   };
   const labelxxsdefault = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '12px',
@@ -421,35 +421,35 @@ describe('Test text sizes values', () => {
     letterSpacing: '0.02em',
   };
   const labelxlitalic = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '32px',
     lineHeight: '32px',
   };
   const labellgitalic = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '28px',
     lineHeight: '28px',
   };
   const labelmditalic = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '20px',
     lineHeight: '20px',
   };
   const labelsmitalic = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '18px',
     lineHeight: '18px',
   };
   const labelxsitalic = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '14px',
@@ -457,7 +457,7 @@ describe('Test text sizes values', () => {
     letterSpacing: '0.02em',
   };
   const labelxxsitalic = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '12px',
@@ -465,35 +465,35 @@ describe('Test text sizes values', () => {
     letterSpacing: '0.02em',
   };
   const labelxlmedium = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '32px',
     lineHeight: '32px',
   };
   const labellgmedium = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '28px',
     lineHeight: '28px',
   };
   const labelmdmedium = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '20px',
     lineHeight: '20px',
   };
   const labelsmmedium = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '18px',
     lineHeight: '18px',
   };
   const labelxsmedium = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '14px',
@@ -501,7 +501,7 @@ describe('Test text sizes values', () => {
     letterSpacing: '0.02em',
   };
   const labelxxsmedium = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '12px',
@@ -509,35 +509,35 @@ describe('Test text sizes values', () => {
     letterSpacing: '0.02em',
   };
   const labelxlbold = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '32px',
     lineHeight: '32px',
   };
   const labellgbold = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '28px',
     lineHeight: '28px',
   };
   const labelmdbold = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '20px',
     lineHeight: '20px',
   };
   const labelsmbold = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '18px',
     lineHeight: '18px',
   };
   const labelxsbold = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '14px',
@@ -545,7 +545,7 @@ describe('Test text sizes values', () => {
     letterSpacing: '0.02em',
   };
   const labelxxsbold = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '12px',
@@ -555,7 +555,7 @@ describe('Test text sizes values', () => {
   const uppercasexldefault = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '32px',
@@ -564,7 +564,7 @@ describe('Test text sizes values', () => {
   const uppercaselgdefault = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '28px',
@@ -573,7 +573,7 @@ describe('Test text sizes values', () => {
   const uppercasemddefault = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '20px',
@@ -582,7 +582,7 @@ describe('Test text sizes values', () => {
   const uppercasesmdefault = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '18px',
@@ -591,7 +591,7 @@ describe('Test text sizes values', () => {
   const uppercasexsdefault = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '14px',
@@ -600,7 +600,7 @@ describe('Test text sizes values', () => {
   const uppercasexxsdefault = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '12px',
@@ -609,7 +609,7 @@ describe('Test text sizes values', () => {
   const uppercasexlitalic = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '32px',
@@ -618,7 +618,7 @@ describe('Test text sizes values', () => {
   const uppercaselgitalic = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '28px',
@@ -627,7 +627,7 @@ describe('Test text sizes values', () => {
   const uppercasemditalic = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '20px',
@@ -636,7 +636,7 @@ describe('Test text sizes values', () => {
   const uppercasesmitalic = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '18px',
@@ -645,7 +645,7 @@ describe('Test text sizes values', () => {
   const uppercasexsitalic = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '14px',
@@ -654,7 +654,7 @@ describe('Test text sizes values', () => {
   const uppercasexxsitalic = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '12px',
@@ -663,7 +663,7 @@ describe('Test text sizes values', () => {
   const uppercasexlmedium = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '32px',
@@ -672,7 +672,7 @@ describe('Test text sizes values', () => {
   const uppercaselgmedium = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '28px',
@@ -681,7 +681,7 @@ describe('Test text sizes values', () => {
   const uppercasemdmedium = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '20px',
@@ -690,7 +690,7 @@ describe('Test text sizes values', () => {
   const uppercasesmmedium = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '18px',
@@ -699,7 +699,7 @@ describe('Test text sizes values', () => {
   const uppercasexsmedium = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '14px',
@@ -708,7 +708,7 @@ describe('Test text sizes values', () => {
   const uppercasexxsmedium = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '12px',
@@ -717,7 +717,7 @@ describe('Test text sizes values', () => {
   const uppercasexlbold = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '32px',
@@ -726,7 +726,7 @@ describe('Test text sizes values', () => {
   const uppercaselgbold = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '28px',
@@ -735,7 +735,7 @@ describe('Test text sizes values', () => {
   const uppercasemdbold = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '20px',
@@ -744,7 +744,7 @@ describe('Test text sizes values', () => {
   const uppercasesmbold = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '18px',
@@ -753,7 +753,7 @@ describe('Test text sizes values', () => {
   const uppercasexsbold = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '14px',
@@ -762,7 +762,7 @@ describe('Test text sizes values', () => {
   const uppercasexxsbold = {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '12px',
@@ -938,14 +938,14 @@ describe('Test text sizes values', () => {
     lineHeight: '12px',
   };
   const buttondefault = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '18px',
     lineHeight: '24px',
   };
   const buttonuppercase = {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '18px',

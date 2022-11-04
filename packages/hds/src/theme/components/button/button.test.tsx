@@ -243,7 +243,7 @@ describe('Test button sizes values', () => {
   };
   const sm = {
     p: '8px 14px',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontWeight: 500,
     fontSize: '12px',
     lineHeight: '12px',
@@ -251,7 +251,7 @@ describe('Test button sizes values', () => {
   };
   const md = {
     p: '10px 16px',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontWeight: 500,
     fontSize: '14px',
     lineHeight: '14px',
@@ -259,21 +259,21 @@ describe('Test button sizes values', () => {
   };
   const lg = {
     p: '10px 18px',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontWeight: 500,
     fontSize: '18px',
     lineHeight: '24px',
   };
   const xl = {
     p: '12px 20px',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontWeight: 500,
     fontSize: '20px',
     lineHeight: '20px',
   };
   const xl2 = {
     p: '16px 28px',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontWeight: 500,
     fontSize: '18px',
     lineHeight: '24px',

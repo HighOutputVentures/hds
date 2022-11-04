@@ -199,7 +199,7 @@ export const buttonVariants = {
 export const buttonSizes = {
   sm: {
     p: '8px 14px',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontWeight: 500,
     fontSize: '12px',
     lineHeight: '12px',
@@ -207,7 +207,7 @@ export const buttonSizes = {
   },
   md: {
     p: '10px 16px',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontWeight: 500,
     fontSize: '14px',
     lineHeight: '14px',
@@ -215,21 +215,21 @@ export const buttonSizes = {
   },
   lg: {
     p: '10px 18px',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontWeight: 500,
     fontSize: '18px',
     lineHeight: '24px',
   },
   xl: {
     p: '12px 20px',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontWeight: 500,
     fontSize: '20px',
     lineHeight: '20px',
   },
   '2xl': {
     p: '16px 28px',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontWeight: 500,
     fontSize: '18px',
     lineHeight: '24px',

@@ -65,6 +65,9 @@
   "dependencies": {
     "@chakra-ui/icons": "^2.0.2",
     "@chakra-ui/react": "^2.2.1",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@fontsource/inter": "^4.5.14",
     "@highoutput/hds-icons": "^0.1.6",
     "framer-motion": "^7.6.4",
     "lodash": "^4.17.21",

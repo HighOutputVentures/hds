@@ -1,6 +1,6 @@
 export const sizeText = {
   'heading-web-1': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '80px',
@@ -8,7 +8,7 @@ export const sizeText = {
     letterSpacing: '-0.02em',
   },
   'heading-web-2': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '56px',
@@ -16,7 +16,7 @@ export const sizeText = {
     letterSpacing: '-0.02em',
   },
   'heading-web-3': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '40px',
@@ -24,7 +24,7 @@ export const sizeText = {
     letterSpacing: '-0.02em',
   },
   'heading-web-4': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '32px',
@@ -32,7 +32,7 @@ export const sizeText = {
     letterSpacing: '-0.02em',
   },
   'heading-web-5': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '24px',
@@ -40,7 +40,7 @@ export const sizeText = {
     letterSpacing: '-0.02em',
   },
   'heading-web-6': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '20px',
@@ -49,7 +49,7 @@ export const sizeText = {
   },
 
   'heading-mobile-1': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '44px',
@@ -57,7 +57,7 @@ export const sizeText = {
     letterSpacing: '-0.012em',
   },
   'heading-mobile-2': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '32px',
@@ -65,7 +65,7 @@ export const sizeText = {
     letterSpacing: '-0.012em',
   },
   'heading-mobile-3': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '24px',
@@ -73,7 +73,7 @@ export const sizeText = {
     letterSpacing: '-0.012em',
   },
   'heading-mobile-4': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '20px',
@@ -81,7 +81,7 @@ export const sizeText = {
     letterSpacing: '-0.012em',
   },
   'heading-mobile-5': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '18px',
@@ -89,7 +89,7 @@ export const sizeText = {
     letterSpacing: '-0.012em',
   },
   'heading-mobile-6': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '16px',
@@ -98,49 +98,49 @@ export const sizeText = {
   },
 
   'paragraph-xxl-default': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '32px',
     lineHeight: '48px',
   },
   'paragraph-xl-default': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '34px',
     lineHeight: '36px',
   },
   'paragraph-lg-default': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '20px',
     lineHeight: '32px',
   },
   'paragraph-md-default': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '18px',
     lineHeight: '28px',
   },
   'paragraph-sm-default': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '16px',
     lineHeight: '24px',
   },
   'paragraph-xs-default': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '14px',
     lineHeight: '20px',
   },
   'paragraph-xxs-default': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '12px',
@@ -148,35 +148,35 @@ export const sizeText = {
   },
 
   'paragraph-xxl-italic': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '32px',
     lineHeight: '48px',
   },
   'paragraph-xl-italic': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '34px',
     lineHeight: '36px',
   },
   'paragraph-lg-italic': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '20px',
     lineHeight: '32px',
   },
   'paragraph-md-italic': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '18px',
     lineHeight: '28px',
   },
   'paragraph-sm-italic': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '16px',
@@ -184,7 +184,7 @@ export const sizeText = {
     letterSpacing: '0.02em',
   },
   'paragraph-xs-italic': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '14px',
@@ -192,7 +192,7 @@ export const sizeText = {
     letterSpacing: '0.02em',
   },
   'paragraph-xxs-italic': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '12px',
@@ -201,35 +201,35 @@ export const sizeText = {
   },
 
   'paragraph-xxl-bold': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '32px',
     lineHeight: '48px',
   },
   'paragraph-xl-bold': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '34px',
     lineHeight: '36px',
   },
   'paragraph-lg-bold': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '20px',
     lineHeight: '32px',
   },
   'paragraph-md-bold': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '18px',
     lineHeight: '28px',
   },
   'paragraph-sm-bold': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '16px',
@@ -237,7 +237,7 @@ export const sizeText = {
     letterSpacing: '0.02em',
   },
   'paragraph-xs-bold': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '14px',
@@ -245,7 +245,7 @@ export const sizeText = {
     letterSpacing: '0.02em',
   },
   'paragraph-xxs-bold': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '12px',
@@ -254,35 +254,35 @@ export const sizeText = {
   },
 
   'label-xl-default': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '32px',
     lineHeight: '32px',
   },
   'label-lg-default': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '28px',
     lineHeight: '28px',
   },
   'label-md-default': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '20px',
     lineHeight: '20px',
   },
   'label-sm-default': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '18px',
     lineHeight: '18px',
   },
   'label-xs-default': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '14px',
@@ -290,7 +290,7 @@ export const sizeText = {
     letterSpacing: '0.02em',
   },
   'label-xxs-default': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '12px',
@@ -299,35 +299,35 @@ export const sizeText = {
   },
 
   'label-xl-italic': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '32px',
     lineHeight: '32px',
   },
   'label-lg-italic': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '28px',
     lineHeight: '28px',
   },
   'label-md-italic': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '20px',
     lineHeight: '20px',
   },
   'label-sm-italic': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '18px',
     lineHeight: '18px',
   },
   'label-xs-italic': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '14px',
@@ -335,7 +335,7 @@ export const sizeText = {
     letterSpacing: '0.02em',
   },
   'label-xxs-italic': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '12px',
@@ -344,35 +344,35 @@ export const sizeText = {
   },
 
   'label-xl-medium': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '32px',
     lineHeight: '32px',
   },
   'label-lg-medium': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '28px',
     lineHeight: '28px',
   },
   'label-md-medium': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '20px',
     lineHeight: '20px',
   },
   'label-sm-medium': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '18px',
     lineHeight: '18px',
   },
   'label-xs-medium': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '14px',
@@ -380,7 +380,7 @@ export const sizeText = {
     letterSpacing: '0.02em',
   },
   'label-xxs-medium': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '12px',
@@ -389,35 +389,35 @@ export const sizeText = {
   },
 
   'label-xl-bold': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '32px',
     lineHeight: '32px',
   },
   'label-lg-bold': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '28px',
     lineHeight: '28px',
   },
   'label-md-bold': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '20px',
     lineHeight: '20px',
   },
   'label-sm-bold': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '18px',
     lineHeight: '18px',
   },
   'label-xs-bold': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '14px',
@@ -425,7 +425,7 @@ export const sizeText = {
     letterSpacing: '0.02em',
   },
   'label-xxs-bold': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '12px',
@@ -436,7 +436,7 @@ export const sizeText = {
   'uppercase-xl-default': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '32px',
@@ -445,7 +445,7 @@ export const sizeText = {
   'uppercase-lg-default': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '28px',
@@ -454,7 +454,7 @@ export const sizeText = {
   'uppercase-md-default': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '20px',
@@ -463,7 +463,7 @@ export const sizeText = {
   'uppercase-sm-default': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '18px',
@@ -472,7 +472,7 @@ export const sizeText = {
   'uppercase-xs-default': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '14px',
@@ -481,7 +481,7 @@ export const sizeText = {
   'uppercase-xxs-default': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '12px',
@@ -491,7 +491,7 @@ export const sizeText = {
   'uppercase-xl-italic': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '32px',
@@ -500,7 +500,7 @@ export const sizeText = {
   'uppercase-lg-italic': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '28px',
@@ -509,7 +509,7 @@ export const sizeText = {
   'uppercase-md-italic': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '20px',
@@ -518,7 +518,7 @@ export const sizeText = {
   'uppercase-sm-italic': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '18px',
@@ -527,7 +527,7 @@ export const sizeText = {
   'uppercase-xs-italic': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '14px',
@@ -536,7 +536,7 @@ export const sizeText = {
   'uppercase-xxs-italic': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'italic',
     fontWeight: '400',
     fontSize: '12px',
@@ -546,7 +546,7 @@ export const sizeText = {
   'uppercase-xl-medium': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '32px',
@@ -555,7 +555,7 @@ export const sizeText = {
   'uppercase-lg-medium': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '28px',
@@ -564,7 +564,7 @@ export const sizeText = {
   'uppercase-md-medium': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '20px',
@@ -573,7 +573,7 @@ export const sizeText = {
   'uppercase-sm-medium': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '18px',
@@ -582,7 +582,7 @@ export const sizeText = {
   'uppercase-xs-medium': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '14px',
@@ -591,7 +591,7 @@ export const sizeText = {
   'uppercase-xxs-medium': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '12px',
@@ -601,7 +601,7 @@ export const sizeText = {
   'uppercase-xl-bold': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '32px',
@@ -610,7 +610,7 @@ export const sizeText = {
   'uppercase-lg-bold': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '28px',
@@ -619,7 +619,7 @@ export const sizeText = {
   'uppercase-md-bold': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '20px',
@@ -628,7 +628,7 @@ export const sizeText = {
   'uppercase-sm-bold': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '18px',
@@ -637,7 +637,7 @@ export const sizeText = {
   'uppercase-xs-bold': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '14px',
@@ -646,7 +646,7 @@ export const sizeText = {
   'uppercase-xxs-bold': {
     textTransform: 'upperCase',
     letterSpacing: '0.05em',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: '12px',
@@ -827,14 +827,14 @@ export const sizeText = {
   },
 
   'button-default': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '18px',
     lineHeight: '24px',
   },
   'button-uppercase': {
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '18px',
@@ -845,7 +845,7 @@ export const sizeText = {
 };
 
 export const Text = {
-  baseStyle: { fontStyle: 'Helvetica Neue', fontColor: 'neutrals.900' },
+  baseStyle: { fontStyle: 'Inter', fontColor: 'neutrals.900' },
   sizes: sizeText,
 };
 

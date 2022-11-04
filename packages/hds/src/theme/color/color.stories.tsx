@@ -30,7 +30,7 @@ const ColorSytemComponent: FC<any> = () => {
     <Box>
       {/* Alpha */}
       <Heading size="lg">Alpha</Heading>
-      <SimpleGrid columns={4} spacing={10}>
+      <SimpleGrid columns={3} spacing={10}>
         <ColorCircle color="alpha.white.500" isWhite />
         <ColorCircle color="alpha.black.500" />
       </SimpleGrid>
@@ -39,7 +39,7 @@ const ColorSytemComponent: FC<any> = () => {
       <Heading size="lg" mt="35">
         Canvas
       </Heading>
-      <SimpleGrid columns={4} spacing={10}>
+      <SimpleGrid columns={3} spacing={10}>
         <ColorCircle color="canvas.light.500" />
         <ColorCircle color="canvas.dark.500" />
       </SimpleGrid>
@@ -48,7 +48,7 @@ const ColorSytemComponent: FC<any> = () => {
       <Heading size="lg" mt="35">
         Brand Primary
       </Heading>
-      <SimpleGrid columns={4} spacing={10}>
+      <SimpleGrid columns={3} spacing={10}>
         <ColorCircle color="brand.primary.900" />
         <ColorCircle color="brand.primary.800" />
         <ColorCircle color="brand.primary.700" />
@@ -60,7 +60,7 @@ const ColorSytemComponent: FC<any> = () => {
       <Heading size="lg" mt="35">
         Brand Secondary
       </Heading>
-      <SimpleGrid columns={4} spacing={10}>
+      <SimpleGrid columns={3} spacing={10}>
         <ColorCircle color="brand.secondary.900" />
         <ColorCircle color="brand.secondary.800" />
         <ColorCircle color="brand.secondary.700" />
@@ -72,7 +72,7 @@ const ColorSytemComponent: FC<any> = () => {
       <Heading size="lg" mt="35">
         Brand Tertiary
       </Heading>
-      <SimpleGrid columns={4} spacing={10}>
+      <SimpleGrid columns={3} spacing={10}>
         <ColorCircle color="brand.tertiary.900" />
         <ColorCircle color="brand.tertiary.800" />
         <ColorCircle color="brand.tertiary.700" />
@@ -84,7 +84,7 @@ const ColorSytemComponent: FC<any> = () => {
       <Heading size="lg" mt="35">
         Neutrals
       </Heading>
-      <SimpleGrid columns={5} spacing={10}>
+      <SimpleGrid columns={3} spacing={10}>
         <ColorCircle color="neutrals.900" />
         <ColorCircle color="neutrals.800" />
         <ColorCircle color="neutrals.700" />
@@ -92,7 +92,7 @@ const ColorSytemComponent: FC<any> = () => {
         <ColorCircle color="neutrals.500" />
       </SimpleGrid>
 
-      <SimpleGrid mt="25" columns={5} spacing={10}>
+      <SimpleGrid mt="25" columns={3} spacing={10}>
         <ColorCircle color="neutrals.400" />
         <ColorCircle color="neutrals.300" />
         <ColorCircle color="neutrals.200" />
@@ -103,7 +103,7 @@ const ColorSytemComponent: FC<any> = () => {
       <Heading size="lg" mt="35">
         Interface Error
       </Heading>
-      <SimpleGrid columns={4} spacing={10}>
+      <SimpleGrid columns={3} spacing={10}>
         <ColorCircle color="interface.error.900" />
         <ColorCircle color="interface.error.800" />
         <ColorCircle color="interface.error.700" />
@@ -115,7 +115,7 @@ const ColorSytemComponent: FC<any> = () => {
       <Heading size="lg" mt="35">
         Interface Success
       </Heading>
-      <SimpleGrid columns={4} spacing={10}>
+      <SimpleGrid columns={3} spacing={10}>
         <ColorCircle color="interface.success.900" />
         <ColorCircle color="interface.success.800" />
         <ColorCircle color="interface.success.700" />
@@ -127,7 +127,7 @@ const ColorSytemComponent: FC<any> = () => {
       <Heading size="lg" mt="35">
         Interface Warning
       </Heading>
-      <SimpleGrid columns={4} spacing={10}>
+      <SimpleGrid columns={3} spacing={10}>
         <ColorCircle color="interface.warning.900" />
         <ColorCircle color="interface.warning.800" />
         <ColorCircle color="interface.warning.700" />
@@ -143,7 +143,7 @@ export default {
   component: ColorSytemComponent,
 } as ComponentMeta<typeof ColorSytemComponent>;
 
-const Template: ComponentStory<typeof ColorSytemComponent> = args => (
+const Template: ComponentStory<typeof ColorSytemComponent> = (args) => (
   <ThemeProvider>
     <ColorSytemComponent {...args} />
   </ThemeProvider>

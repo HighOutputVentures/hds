@@ -77,7 +77,7 @@ const SocialButton = (props: Omit<SocialButtonProps, 'children'>) => {
       borderRadius: '4px',
       fontSize: '18px',
       fontWeight: 500,
-      fontFamily: 'Helvetica Neue',
+      fontFamily: 'Inter',
       boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
       _hover: {
         bg: variant === 'outline' ? 'white' : '#F9FAFB',
@@ -101,7 +101,7 @@ const SocialButton = (props: Omit<SocialButtonProps, 'children'>) => {
       borderRadius: '4px',
       fontSize: '18px',
       fontWeight: 500,
-      fontFamily: 'Helvetica Neue',
+      fontFamily: 'Inter',
       boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
       _hover: {
         bg: variant === 'outline' ? 'white' : '#0C63D4',
@@ -125,7 +125,7 @@ const SocialButton = (props: Omit<SocialButtonProps, 'children'>) => {
       borderRadius: '4px',
       fontSize: '18px',
       fontWeight: 500,
-      fontFamily: 'Helvetica Neue',
+      fontFamily: 'Inter',
       boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
       _hover: {
         bg: variant === 'outline' ? 'white' : '#000000',
@@ -153,7 +153,7 @@ const SocialButton = (props: Omit<SocialButtonProps, 'children'>) => {
       borderRadius: '4px',
       fontSize: '18px',
       fontWeight: 500,
-      fontFamily: 'Helvetica Neue',
+      fontFamily: 'Inter',
       boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
       _hover: {
         bg: variant === 'outline' ? 'white' : '#000000',
@@ -177,7 +177,7 @@ const SocialButton = (props: Omit<SocialButtonProps, 'children'>) => {
       borderRadius: '4px',
       fontSize: '18px',
       fontWeight: 500,
-      fontFamily: 'Helvetica Neue',
+      fontFamily: 'Inter',
       boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
       _hover: {
         bg: variant === 'outline' ? 'white' : '#EA4C89',
@@ -201,7 +201,7 @@ const SocialButton = (props: Omit<SocialButtonProps, 'children'>) => {
       borderRadius: '4px',
       fontSize: '18px',
       fontWeight: 500,
-      fontFamily: 'Helvetica Neue',
+      fontFamily: 'Inter',
       boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
       _hover: {
         bg: variant === 'outline' ? 'white' : '#0C63D4',
