@@ -8,6 +8,7 @@ import Form from './form';
 import Heading from './heading';
 import Link from './link';
 import RadioImage from './radioImage';
+import PinInputField from './pinInputField';
 import Select from './select';
 import Stack from './stack';
 import Switch from './switch';
@@ -29,6 +30,7 @@ const components: { [key: string]: ComponentStyleConfig } = {
   Drawer,
   Select,
   RadioImage,
+  PinInputField,
 };
 
 export default components;
