@@ -11,7 +11,7 @@ import { Meta, Preview } from '@storybook/addon-docs';
 
 # Highoutput Venture Design System
 
-**CURRENT VERSION:** 0.4.8
+**CURRENT VERSION:** 0.1.22
 
 **@highoutput/hds** is a ui component library that is built around [chakra ui](https://chakra-ui.com/), and aims to be:
 
@@ -39,39 +39,4 @@ const App = () => {
 };
 
 ReactDOM.render(<App />, document.getElementById('root'));
-```
-
-```typescript
-import { RadioImageGroup } from '@highoutput/hds';
-
-export const SamplePage = () => {
-  const [value, setValue] = useState('');
-
-  return (
-    <>
-      <Text>Select Image: {value}</Text>
-      <RadioImageGroup
-        avatars={[
-          {
-            value: 'Kat',
-            image: 'https://randomuser.me/api/portraits/women/44.jpg',
-          },
-          {
-            value: 'Kevin',
-            image: 'https://randomuser.me/api/portraits/men/86.jpg',
-          },
-          {
-            value: 'Andy',
-            image: 'https://randomuser.me/api/portraits/men/29.jpg',
-          },
-          {
-            value: 'Jess',
-            image: 'https://randomuser.me/api/portraits/women/95.jpg',
-          },
-        ]}
-        onChange={(v) => setValue(v)}
-      />
-    </>
-  );
-};
 ```
