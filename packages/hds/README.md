@@ -1,70 +1,66 @@
-### Getting started
+# HDS
+We aim to build a library of custom ReactJS components that implements our unique UI design conventions (HDS). Our components will be based primarily on Chakra UI. React Storybook will be used for documentation and testing.
 
-We aim to build a library of custom ReactJS components that implements our unique UI design conventions. The ReactJS components will be based primarily on Chakra UI components. React Storybook will be used for documentation and testing.
+- Reusable block of components
+- HDS integrated styling 
+- Easy to implement
 
-## Commands
-
-To install package, use:
+## Installation
 
 ```bash
 npm i @highoutput/hds
 ```
 
-### Usage
+
+In your main app file import theme provider and make it a parent of all components.
 
 ```typescript
-// React main
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { ThemeProvider } from '@highoutput/hds';
 
 const App = () => {
-  return (<ThemeProvider><div>{...components here}</div></ThemeProvider>);
+  return (<ThemeProvider>{...components here}</ThemeProvider>);
 };
 
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
-```typescript
-import { RadioImageGroup } from '@highoutput/hds';
+After that you can use all the components within hds core.
 
-export const SamplePage = () => {
-  const [value, setValue] = useState('');
+```jsx
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { InputField, Box } from '@highoutput/hds';
 
+const Form = () => {
   return (
-    <>
-      <Text>Select Image: {value}</Text>
-      <RadioImageGroup
-        avatars={[
-          {
-            value: 'Kat',
-            image: 'https://randomuser.me/api/portraits/women/44.jpg',
-          },
-          {
-            value: 'Kevin',
-            image: 'https://randomuser.me/api/portraits/men/86.jpg',
-          },
-          {
-            value: 'Andy',
-            image: 'https://randomuser.me/api/portraits/men/29.jpg',
-          },
-          {
-            value: 'Jess',
-            image: 'https://randomuser.me/api/portraits/women/95.jpg',
-          },
-        ]}
-        onChange={v => setValue(v)}
-      />
-    </>
-  );
+    <Box>
+      <InputField
+        helperMsg="This is a hint text to help user"
+        id="name"
+        label="Name"
+        onBlur={() => {}}
+        onChange={() => {}}
+        onPressEnter={() => {}}
+        placeholder="Input your name" />
+    </Box>);
 };
+
+export default Form
 ```
 
-## Other Documented Usage
+## Check out for more information
+- [Storybook Documentation and Preview](https://hds-highoutput.vercel.app/?path=/story/getting-started--page)
+- [Chakra Components](https://chakra-ui.com/docs/components)
 
-- [Components Live Preview](https://hov-hds-highoutput.vercel.app/)
-- [Contact Us Form](https://www.notion.so/highoutput/Contact-us-form-6b4a49c0cbe24891a34d96e1b34b1e6e)
 
-## Contribute
+## Other Packages
 
-- [document for contributing in this library](https://github.com/HighOutputVentures/experiments/tree/main/016)
+- [@highoutput/hds-icons](https://www.npmjs.com/package/@highoutput/hds-icons)
+- [@highoutput/hds-auth](https://www.npmjs.com/package/@highoutput/hds-auth)
+- [@highoutput/hds-spinner](https://www.npmjs.com/package/@highoutput/hds-spinner)
+- [@highoutput/hds-pagination](https://www.npmjs.com/package/@highoutput/hds-pagination)
+- [@highoutput/hds-array-field](https://www.npmjs.com/package/@highoutput/hds-array-field)
+- [@highoutput/hds-auto-form](https://www.npmjs.com/package/@highoutput/hds-auto-form)
+- [@highoutput/hds-contact-us](https://www.npmjs.com/package/@highoutput/hds-contact-us)
