@@ -1,7 +1,7 @@
 import { Meta, Preview } from '@storybook/addon-docs';
 
 <Meta
-  title="Contribution Guide"
+  title="Contribution Guide/HDS Core"
   parameters={{
     previewTabs: {
       canvas: { hidden: true },
@@ -9,14 +9,14 @@ import { Meta, Preview } from '@storybook/addon-docs';
   }}
 />
 
-# Contribution Guide
+# Contribution Guide - Core
 
 1. [Component](#component-guide)
 2. [Hook](#hook-guide)
 3. [Utility](#utility-guide)
 4. [Theme](#theme-guide)
 
-Folder structure under src folder
+Folder structure under `./packages/hds/src` folder
 
 ```
 - src
@@ -301,7 +301,6 @@ library _(user can overide this one)_
   - fonts.ts
   - fontSizes.ts
   - index.ts
-  - zIndices.ts
   - styles.ts
 ```
 
@@ -385,7 +384,7 @@ to know more about theme/color styling please go to this documentation [chakra u
 
 ### How to run library
 
-To run library go to hds root directory and run command:
+To run library storybook go to hds root directory and run command:
 
 ```
 npm install
@@ -395,5 +394,11 @@ npm run storybook
 To test components, run command:
 
 ```
-npm test
+npm run test:hds
+```
+
+To test build of components, run command:
+
+```
+npm run build:hds
 ```

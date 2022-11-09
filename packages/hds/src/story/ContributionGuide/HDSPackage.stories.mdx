@@ -1,0 +1,103 @@
+import { Meta, Preview } from '@storybook/addon-docs';
+
+<Meta
+  title="Contribution Guide/HDS Package"
+  parameters={{
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+# Contribution Guide - Packages
+
+In contributing for a seperate package we have slight different approach and files are more minimize and sizes are more light.
+Install first tsdx a zero-config cli to help us create a bare typescript packages without setting up anything:
+
+```bash
+npm i tsdx -g
+```
+
+then after installing it you can start creating a package, go to `./packages`
+under it in your terminal run command
+
+(Note: select only the **basic template**):
+
+```bash
+npx tsdx create `package_name`
+```
+
+After creating the package open up `package.json` file under that project and
+replace the project name to `@highoutput/hds-{package_name}` make sure to use kebab naming if package
+name is longer.
+
+Folder structure under `./packages/{package_name}/src` folder
+
+```
+- src
+  - components [folder for all components needs]
+  - index.tsx [export file]
+```
+
+### Component Guide
+
+`components` - under components all the files needed for the single reusable component can be added under it, sample below:
+
+```
+- components
+    - RadioImage.tsx [reusable component]
+    - RadioImage.stories.tsx [storybook component for testing/demo the component]
+    - RadioImage.docs.mdx [to customize docs tab]
+    - RadioImage.test.tsx [test file]
+```
+
+after creating all those files you can now import your component into `src/index.tsx`
+file which would make it available to anyone who use the library, you can export interfaces, utils, hooks and etc.
+if you want it to be expose
+
+```typescript
+//index.tsx
+import RadioImage, {
+  RadioImageProps,
+} from './components/RadioImage/RadioImage';
+
+export {
+  RadioImage,
+  RadioImageProps, // note: always include exporting the component props
+};
+```
+
+### Theme Guide
+
+For `theme` guide you can still follow the document in **HDS Core** all custom styling should be under it.
+
+### How to run library/test component
+
+To run library go to hds root directory and run command:
+
+```
+npm install
+npm run storybook
+```
+
+To test components, run command:
+
+```
+npm test
+```
+
+### Publishing
+
+In order to publish new package created run first:
+
+```bash
+lerna bootstrap
+```
+
+if all run successfully then run:
+
+```bash
+lerna publish
+```
+
+make sure to install `npm i lerna-cli -g` to run lerna commands.
