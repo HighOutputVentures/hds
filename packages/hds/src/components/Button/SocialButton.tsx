@@ -1,10 +1,4 @@
-import {
-  Button,
-  ButtonProps,
-  IconButton,
-  IconButtonProps,
-} from '@chakra-ui/react';
-import React from 'react';
+import { Button, IconButton } from '@chakra-ui/react';
 import {
   AppleIcon,
   DribbleIcon,
@@ -13,59 +7,33 @@ import {
   GoogleIcon,
   TwitterIcon,
 } from '@highoutput/hds-icons';
-
-type WithoutChildren<T> = Omit<T, 'children'>;
-
-export interface SocialButtonPartProps {
-  button?: WithoutChildren<ButtonProps>;
-  icon?: WithoutChildren<IconButtonProps>;
-}
+import React from 'react';
 
 export interface SocialButtonProps {
   onClicked?: () => void;
   type: 'google' | 'dribble' | 'twitter' | 'figma' | 'facebook' | 'apple';
   buttonText?: string;
   variant: 'outline' | 'solid';
-  partProps?: Partial<SocialButtonPartProps>;
+  disabled?: boolean;
 }
 
 const SocialButton = (props: Omit<SocialButtonProps, 'children'>) => {
-  const { partProps, type = 'google', variant, buttonText, onClicked } = props;
+  const { disabled, type = 'google', variant, buttonText, onClicked } = props;
 
   const useIcon = () => {
     switch (type) {
       case 'apple':
-        return (
-          <AppleIcon
-            isDisabled={partProps?.button?.disabled}
-            variant={variant}
-          />
-        );
+        return <AppleIcon isDisabled={disabled} variant={variant} />;
       case 'dribble':
-        return (
-          <DribbleIcon
-            isDisabled={partProps?.button?.disabled}
-            variant={variant}
-          />
-        );
+        return <DribbleIcon isDisabled={disabled} variant={variant} />;
       case 'facebook':
-        return (
-          <FacebookIcon
-            isDisabled={partProps?.button?.disabled}
-            variant={variant}
-          />
-        );
+        return <FacebookIcon isDisabled={disabled} variant={variant} />;
       case 'figma':
-        return <FigmaIcon isDisabled={partProps?.button?.disabled} />;
+        return <FigmaIcon isDisabled={disabled} />;
       case 'google':
-        return <GoogleIcon isDisabled={partProps?.button?.disabled} />;
+        return <GoogleIcon isDisabled={disabled} />;
       case 'twitter':
-        return (
-          <TwitterIcon
-            isDisabled={partProps?.button?.disabled}
-            variant={variant}
-          />
-        );
+        return <TwitterIcon isDisabled={disabled} variant={variant} />;
     }
   };
 
@@ -228,7 +196,7 @@ const SocialButton = (props: Omit<SocialButtonProps, 'children'>) => {
           {...defaultStyle[type]}
           leftIcon={useIcon()}
           variant={variant}
-          {...partProps?.button}
+          isDisabled={disabled}
           data-testid={`${type}.social.btn`}
           onClick={onClicked}
         >
@@ -241,9 +209,8 @@ const SocialButton = (props: Omit<SocialButtonProps, 'children'>) => {
           height={'44px'}
           data-testid={`${type}.social.btn`}
           aria-label={`btn-${useIcon()}`}
-          disabled={props.partProps?.button?.disabled}
+          disabled={disabled}
           icon={useIcon()}
-          {...partProps?.icon}
           onClick={onClicked}
         />
       )}
