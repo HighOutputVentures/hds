@@ -3,5 +3,5 @@ import merge from 'lodash/merge';
 
 import defaultTheme from '../theme';
 
-export const extendTheme = (customTheme: any) =>
+export const extendTheme: any = (customTheme: any) =>
   chakraExtendTheme(merge(defaultTheme, customTheme));

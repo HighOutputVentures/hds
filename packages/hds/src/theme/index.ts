@@ -7,7 +7,7 @@ import fontSizes from './fontSizes';
 import styles from './styles';
 import zIndices from './zIndices';
 
-const theme = extendTheme({
+const theme: any = extendTheme({
   config,
   styles,
   colors,
