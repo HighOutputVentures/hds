@@ -20,19 +20,19 @@ import TextAreaField, {
 import ThemeProvider, { ThemeProviderProps } from './components/ThemeProvider';
 import SocialButton, {
   SocialButtonProps,
-  SocialButtonPartProps,
 } from './components/Button/SocialButton';
-import CloseButton, {
-  CloseButtonPartProps,
-  CloseButtonProps,
-} from './components/Button/CloseButton';
+import CloseButton, { CloseButtonProps } from './components/Button/CloseButton';
 
 import theme from './theme';
 import { extendTheme } from './utils/theme.utils';
+import For, { ForProps } from './components/For/For';
+import Mount, { MountProps } from './components/Mount/Mount';
 
-export { default as For, ForProps } from './components/For/For';
-export { default as Mount, MountProps } from './components/Mount/Mount';
 export {
+  For,
+  ForProps,
+  Mount,
+  MountProps,
   ThemeProvider,
   ThemeProviderProps,
   PinInputField,
@@ -49,9 +49,7 @@ export {
   FormContainerProps,
   SocialButton,
   SocialButtonProps,
-  SocialButtonPartProps,
   CloseButton,
-  CloseButtonPartProps,
   CloseButtonProps,
   // default theme
   theme,
