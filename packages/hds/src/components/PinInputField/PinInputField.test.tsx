@@ -10,6 +10,7 @@ describe('Pin Input Field Component', () => {
   beforeAll(() => {
     render(
       <PinInputField
+        numberOfFields={6}
         id="otpPin"
         name="otpPin"
         onBlur={jest.fn()}
