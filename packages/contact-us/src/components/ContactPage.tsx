@@ -1,26 +1,25 @@
-import { Box, BoxProps, Center, Text, TextProps } from '@chakra-ui/react';
+import { Box, BoxProps, Center, Text } from '@chakra-ui/react';
 import React, { FC, ReactNode } from 'react';
 import { HovIcon } from '@highoutput/hds-icons';
 
-import ContactCard, { ContactCardProps } from './ContactCard';
+import ContactCard from './ContactCard';
 
-type WithoutChildren<T> = Omit<T, 'children'>;
+// type WithoutChildren<T> = Omit<T, 'children'>;
 
 export interface ContagePageProps extends BoxProps {
   title?: string;
   secondaryTitle?: string;
   iconNode?: ReactNode;
   url?: string;
-  partProps?: {
-    contactCard?: WithoutChildren<ContactCardProps>;
-    title?: WithoutChildren<TextProps>;
-    secondaryTitle?: WithoutChildren<TextProps>;
-  };
+  // partProps?: {
+  //   contactCard?: WithoutChildren<ContactCardProps>;
+  //   title?: WithoutChildren<TextProps>;
+  //   secondaryTitle?: WithoutChildren<TextProps>;
+  // };
 }
 
 const ContactPage: FC<ContagePageProps> = (props) => {
   const {
-    partProps,
     title = 'Contact Us',
     secondaryTitle = `Tell us what you need and we'll help you out.`,
     iconNode,
@@ -48,7 +47,7 @@ const ContactPage: FC<ContagePageProps> = (props) => {
           <Text
             size="heading-web-3"
             color="white"
-            {...partProps?.title}
+            // {...partProps?.title}
             data-testid="text.contactpage.title"
           >
             {title}
@@ -58,7 +57,7 @@ const ContactPage: FC<ContagePageProps> = (props) => {
         <Center data-testid="center.contactpage.secondarytitleposition">
           <Text
             color="gray.200"
-            {...partProps?.secondaryTitle}
+            // {...partProps?.secondaryTitle}
             data-testid="text.contactpage.secondarytitle"
           >
             {secondaryTitle}
@@ -74,7 +73,7 @@ const ContactPage: FC<ContagePageProps> = (props) => {
           top="250px"
           w="512px"
           url={url}
-          {...partProps?.contactCard}
+          // {...partProps?.contactCard}
         />
       </Center>
     </Box>

@@ -1,20 +1,20 @@
-import { Box, BoxProps, Center, Text, TextProps } from '@chakra-ui/react';
+import { Box, BoxProps, Center, Text } from '@chakra-ui/react';
 import React, { FC, ReactNode } from 'react';
-import ContactForm, { ContactFormProps } from './ContactForm';
+import ContactForm from './ContactForm';
 
-type WithoutChildren<T> = Omit<T, 'children'>;
+// type WithoutChildren<T> = Omit<T, 'children'>;
 export interface ContactCardProps extends BoxProps {
   children?: ReactNode;
   title?: string;
   url?: string;
-  partProps?: {
-    contactForm?: WithoutChildren<ContactFormProps>;
-    text?: WithoutChildren<TextProps>;
-  };
+  // partProps?: {
+  //   contactForm?: WithoutChildren<ContactFormProps>;
+  //   text?: WithoutChildren<TextProps>;
+  // };
 }
 
 const ContactCard: FC<ContactCardProps> = (props) => {
-  const { children, title = 'Drop your message', partProps, url } = props;
+  const { children, title = 'Drop your message', url } = props;
   return (
     <Box
       w={512}
@@ -26,18 +26,17 @@ const ContactCard: FC<ContactCardProps> = (props) => {
       data-testid="box.contactcard.container"
     >
       <Center mb={8} data-testid="center.contactcard.titleposition">
-        <Text
-          size="heading-web-4"
-          {...partProps?.text}
-          data-testid="text.contactcard.title"
-        >
+        <Text size="heading-web-4" data-testid="text.contactcard.title">
           {title}
         </Text>
       </Center>
       {children ? (
         children
       ) : (
-        <ContactForm {...partProps?.contactForm} url={url} />
+        <ContactForm
+          // {...partProps?.contactForm}
+          url={url}
+        />
       )}
     </Box>
   );
