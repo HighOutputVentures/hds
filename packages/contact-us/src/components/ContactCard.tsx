@@ -3,7 +3,7 @@ import React, { FC, ReactNode } from 'react';
 import ContactForm from './ContactForm';
 
 // type WithoutChildren<T> = Omit<T, 'children'>;
-export interface ContactCardProps extends BoxProps {
+export interface ContactCardProps extends Pick<BoxProps, 'pos' | 'top' | 'w'> {
   children?: ReactNode;
   title?: string;
   url?: string;
