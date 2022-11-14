@@ -1,10 +1,9 @@
+import { ThemeProvider } from '@highoutput/hds';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-
-import ThemeProvider from '../../../hds/src/components/ThemeProvider';
 import AutoForm from './AutoForm';
-import { autoFormSchema } from './validations';
 import AutoFormMDX from './AutoForm.mdx';
+import { autoFormSchema } from './validations';
 
 export default {
   title: 'Components/Auto Form',

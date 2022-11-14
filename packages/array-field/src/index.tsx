@@ -1,3 +1,4 @@
-import ArrayField, { ArrayFieldProps } from './components/ArrayField';
-
-export { ArrayField, ArrayFieldProps };
+export {
+  ArrayFieldProps,
+  default as ArrayField,
+} from './components/ArrayField';
