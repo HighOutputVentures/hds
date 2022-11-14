@@ -64,6 +64,7 @@
     "@highoutput/hds": "^0.1.27",
     "@highoutput/hds-forms": "^0.1.0",
     "@hookform/resolvers": "^2.9.10",
+    "react-hook-form": "7.38.0",
     "yup": "^0.32.11"
   }
 }

@@ -1,3 +1,13 @@
+import CloseButton, { CloseButtonProps } from './components/Button/CloseButton';
+import SocialButton, {
+  SocialButtonProps,
+} from './components/Button/SocialButton';
+import For, { ForProps } from './components/For/For';
+import Mount, { MountProps } from './components/Mount/Mount';
+import ThemeProvider, { ThemeProviderProps } from './components/ThemeProvider';
+import theme from './theme';
+import extendTheme from './utils/extendTheme';
+
 export {
   Accordion,
   AccordionButton,
@@ -349,20 +359,17 @@ export {
   WrapProps,
 } from '@chakra-ui/react';
 export { isValidMotionProp, motion } from 'framer-motion';
-/* TODO: replace with built-in CloseButton👌 */
 export {
+  CloseButton,
   CloseButtonProps,
-  default as CloseButton,
-} from './components/Button/CloseButton';
-export {
-  default as SocialButton,
+  SocialButton,
   SocialButtonProps,
-} from './components/Button/SocialButton';
-export { default as For, ForProps } from './components/For/For';
-export { default as Mount, MountProps } from './components/Mount/Mount';
-export {
-  default as ThemeProvider,
+  For,
+  ForProps,
+  Mount,
+  MountProps,
+  ThemeProvider,
   ThemeProviderProps,
-} from './components/ThemeProvider';
-export { default as theme } from './theme';
-export { default as extendTheme } from './utils/extendTheme';
+  theme,
+  extendTheme,
+};

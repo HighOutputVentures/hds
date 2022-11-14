@@ -1,19 +1,14 @@
-export {
+import CredentialLoginForm, {
   CredentialLoginFormDefaultProps,
   CredentialLoginFormEmailProps,
   CredentialLoginFormNameProps,
   CredentialLoginFormProps,
-  default as CredentialLoginForm,
 } from './components/AuthForm/CredentialLoginForm';
-export {
-  default as OTPForm,
-  OTPFormProps,
-} from './components/AuthForm/OTPForm';
-export {
-  default as OTPVerificationForm,
+import OTPForm, { OTPFormProps } from './components/AuthForm/OTPForm';
+import OTPVerificationForm, {
   OTPVerificationProps,
 } from './components/AuthForm/OTPVerificationForm';
-export {
+import {
   AuthConfig,
   AuthContext,
   AuthProvider,
@@ -26,3 +21,26 @@ export {
   useAuthState,
   useProfile,
 } from './components/AuthProvider';
+
+export {
+  CredentialLoginForm,
+  CredentialLoginFormProps,
+  CredentialLoginFormDefaultProps,
+  CredentialLoginFormEmailProps,
+  CredentialLoginFormNameProps,
+  OTPForm,
+  OTPFormProps,
+  OTPVerificationForm,
+  OTPVerificationProps,
+  AuthConfig,
+  AuthContext,
+  AuthProvider,
+  AuthService,
+  AuthState,
+  constants,
+  getAuthState,
+  logout,
+  useAuthService,
+  useAuthState,
+  useProfile,
+};

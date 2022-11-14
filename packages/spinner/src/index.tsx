@@ -1,4 +1,3 @@
-export {
-  default as LogoSpinner,
-  LogoSpinnerProps,
-} from './components/LogoSpinner';
+import LogoSpinner, { LogoSpinnerProps } from './components/LogoSpinner';
+
+export { LogoSpinner, LogoSpinnerProps };

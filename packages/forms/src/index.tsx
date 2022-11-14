@@ -1,27 +1,37 @@
-export {
-  default as FormContainer,
+import FormContainer, {
   FormContainerPartProps,
   FormContainerProps,
 } from './FormContainer/FormContainer';
-export {
-  default as InputField,
+import InputField, {
   InputFieldPartProps,
   InputFieldProps,
 } from './InputField/InputField';
-export {
-  default as PasswordInputField,
+import PasswordInputField, {
   PasswordInputFieldProps,
 } from './PasswordInputField/PasswordInputField';
-export {
-  default as PinInputField,
+import PinInputField, {
   PinInputFieldPartProps,
   PinInputFieldProps,
 } from './PinInputField/PinInputField';
-export {
-  default as SelectField,
-  SelectFieldProps,
-} from './SelectField/SelectField';
-export {
-  default as TextAreaField,
+import SelectField, { SelectFieldProps } from './SelectField/SelectField';
+import TextAreaField, {
   TextAreaFieldProps,
 } from './TextareaField/TextareaField';
+
+export {
+  FormContainer,
+  FormContainerPartProps,
+  FormContainerProps,
+  InputField,
+  InputFieldPartProps,
+  InputFieldProps,
+  PasswordInputField,
+  PasswordInputFieldProps,
+  PinInputField,
+  PinInputFieldPartProps,
+  PinInputFieldProps,
+  SelectField,
+  SelectFieldProps,
+  TextAreaField,
+  TextAreaFieldProps,
+};

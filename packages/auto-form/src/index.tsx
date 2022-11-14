@@ -1,1 +1,3 @@
-export { AutoFormProps, default as AutoForm } from './components/AutoForm';
+import AutoForm, { AutoFormProps } from './components/AutoForm';
+
+export { AutoForm, AutoFormProps };

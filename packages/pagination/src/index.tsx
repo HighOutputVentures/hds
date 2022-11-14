@@ -1,4 +1,3 @@
-export {
-  default as Pagination,
-  PaginationProps,
-} from './components/Pagination';
+import Pagination, { PaginationProps } from './components/Pagination';
+
+export { Pagination, PaginationProps };

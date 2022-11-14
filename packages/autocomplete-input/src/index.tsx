@@ -1,7 +1,14 @@
-export {
+import AutoCompleteInput, {
   AutoCompleteInputFieldPartProps,
   AutoCompleteInputFieldProps,
-  default as AutoCompleteInput,
   Item,
   OptionItem,
 } from './AutoCompleteInput/AutoCompleteInput';
+
+export {
+  AutoCompleteInput,
+  AutoCompleteInputFieldPartProps,
+  AutoCompleteInputFieldProps,
+  Item,
+  OptionItem,
+};
