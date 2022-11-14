@@ -1,40 +1,13 @@
 import { AddIcon, DeleteIcon } from '@chakra-ui/icons';
-import {
-  Button,
-  ButtonProps,
-  Flex,
-  Icon,
-  IconProps,
-  InputElementProps,
-  InputGroupProps,
-  InputProps,
-  Text,
-  TextProps,
-  VStack,
-} from '@chakra-ui/react';
+import { Button, Flex, Icon, Text, VStack } from '@chakra-ui/react';
+import { InputField } from '@highoutput/hds';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { ReactNode } from 'react';
 import { useFieldArray, useForm } from 'react-hook-form';
-import { InputField } from '@highoutput/hds';
 import { ArrayFieldSchema, ArrayFieldTypeValues } from './validation';
 
 type WithoutChildren<T> = Omit<T, 'children'>;
 export interface ArrayFieldProps {
-  partProps?: {
-    input?: WithoutChildren<InputProps>;
-    labelProps?: WithoutChildren<TextProps>;
-    inputGroup?: WithoutChildren<InputGroupProps>;
-    inputLeftElement?: WithoutChildren<InputElementProps>;
-    inputRightElement?: WithoutChildren<InputElementProps>;
-    buttonRemoveProps?: {
-      buttonProps?: WithoutChildren<ButtonProps>;
-      iconProps?: WithoutChildren<IconProps>;
-    };
-    buttonAddProps?: {
-      buttonProps?: WithoutChildren<ButtonProps>;
-      iconProps?: WithoutChildren<IconProps>;
-    };
-  };
   buttonRemoveChildren?: ReactNode;
   buttonAddChildren?: ReactNode;
   defaultValues: {
@@ -54,7 +27,7 @@ const ArrayField = (props: ArrayFieldProps) => {
   const {
     placeholder,
     defaultValues,
-    partProps,
+
     onChange,
     onRemove,
     onBlur,
@@ -100,7 +73,7 @@ const ArrayField = (props: ArrayFieldProps) => {
 
   return (
     <Flex flexDir="column" gap={2}>
-      {label && <Text {...partProps?.labelProps}>{label}</Text>}
+      {label && <Text>{label}</Text>}
       {fields.map((item, idx) => (
         <Flex
           gap={2}
@@ -112,7 +85,6 @@ const ArrayField = (props: ArrayFieldProps) => {
             id={'input'}
             placeholder={placeholder ?? ''}
             {...register(`input.${idx}.value`)}
-            partProps={partProps}
             errorMsg={
               isRequired ? formState.errors?.input?.[idx]?.value?.message : ''
             }
@@ -127,15 +99,11 @@ const ArrayField = (props: ArrayFieldProps) => {
               disabled={fields.length <= 1}
               width="32px"
               height="40px"
-              {...partProps?.buttonRemoveProps?.buttonProps}
             >
               {buttonRemoveChildren ? (
                 buttonRemoveChildren
               ) : (
-                <Icon
-                  {...partProps?.buttonRemoveProps?.iconProps}
-                  as={DeleteIcon}
-                />
+                <Icon as={DeleteIcon} />
               )}
             </Button>
             {idx === fields.length - 1 && (
@@ -145,16 +113,8 @@ const ArrayField = (props: ArrayFieldProps) => {
                 height="40px"
                 disabled={maxValue === fields.length}
                 onClick={handleAddField}
-                {...partProps?.buttonAddProps?.buttonProps}
               >
-                {buttonAddChildren ? (
-                  buttonAddChildren
-                ) : (
-                  <Icon
-                    {...partProps?.buttonAddProps?.iconProps}
-                    as={AddIcon}
-                  />
-                )}
+                {buttonAddChildren ? buttonAddChildren : <Icon as={AddIcon} />}
               </Button>
             )}
           </VStack>
