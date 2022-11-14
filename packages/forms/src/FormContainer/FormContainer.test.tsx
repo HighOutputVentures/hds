@@ -21,19 +21,19 @@ describe('Form Container Component', () => {
     );
   });
 
-  it('should renders form container form control', () => {
+  it('should render FormControl', () => {
     expect(screen.queryByRole('group')).toBeDefined();
   });
 
-  it('should renders form container form label', () => {
+  it('should render FormLabel', () => {
     expect(screen.queryByText('Name')).toBeDefined();
   });
 
-  it('should renders form container form error message', () => {
+  it('should render FormErrorMessage', () => {
     expect(screen.queryByText('Error Message')).toBeDefined();
   });
 
-  it('should renders form container children react node', () => {
+  it('should render child Input', () => {
     expect(screen.queryByRole('textbox')).toBeDefined();
   });
 });
