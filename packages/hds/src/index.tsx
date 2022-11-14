@@ -8,15 +8,9 @@ export {
   AccordionPanel,
   AccordionPanelProps,
   AccordionProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/feedback/alert
-   */
   Alert,
   AlertDescription,
   AlertDescriptionProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/overlay/alert-dialog
-   */
   AlertDialog,
   AlertDialogBody,
   AlertDialogContent,
@@ -29,33 +23,18 @@ export {
   AlertProps,
   AlertTitle,
   AlertTitleProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/layout/aspect-ratio
-   */
   AspectRatio,
   AspectRatioProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/media-and-icons/avatar
-   */
   Avatar,
   AvatarBadge,
   AvatarBadgeProps,
   AvatarGroup,
   AvatarGroupProps,
   AvatarProps,
-  /**
-   * @reference  https://chakra-ui.com/docs/components/data-display/badge
-   */
   Badge,
   BadgeProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/layout/box
-   */
   Box,
   BoxProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/navigation/breadcrumb
-   */
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbItemProps,
@@ -70,47 +49,31 @@ export {
   ButtonOptions,
   ButtonProps,
   ButtonSpinner,
-  /**
-   * @reference https://chakra-ui.com/docs/components/layout/center
-   */
   Center,
   CenterProps,
   chakra,
-  /**
-   * @reference https://chakra-ui.com/docs/components/form/checkbox
-   */
   Checkbox,
   CheckboxGroup,
   CheckboxGroupContext,
   CheckboxGroupProps,
+  CheckboxIcon,
   CheckboxProps,
   CheckboxState,
   Circle,
-  /**
-   * @reference https://chakra-ui.com/docs/components/feedback/circular-progress
-   */
   CircularProgress,
   CircularProgressLabel,
   CircularProgressLabelProps,
   CircularProgressProps,
-
-  /**
-   * @reference https://chakra-ui.com/docs/components/transitions/usage#collapse-transition
-   */
+  Code,
+  CodeProps,
   Collapse,
   CollapseProps,
   ComponentStyleConfig,
-  /**
-   * @reference https://chakra-ui.com/docs/components/layout/container
-   */
   Container,
   ContainerProps,
   createStandaloneToast,
   CreateStandAloneToastParam,
   Divider,
-  /**
-   * @reference https://chakra-ui.com/docs/components/overlay/drawer
-   */
   Drawer,
   DrawerBody,
   DrawerCloseButton,
@@ -120,19 +83,10 @@ export {
   DrawerHeader,
   DrawerOverlay,
   DrawerProps,
-  /**
-   * @refernce https://chakra-ui.com/docs/components/transitions/usage#fade-transition
-   */
   Fade,
   FadeProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/layout/flex
-   */
   Flex,
   FlexProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/form/form-control
-   */
   FormControl,
   FormControlProps,
   FormErrorIcon,
@@ -143,45 +97,26 @@ export {
   FormLabelProps,
   forwardRef,
   GlobalStyle,
-  /**
-   * @reference https://chakra-ui.com/docs/components/layout/grid
-   */
   Grid,
   GridItem,
   GridItemProps,
   GridProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/typography/text
-   */
   Heading,
   HeadingProps,
   HelpTextProps,
-  /**
-   * @refernce https://chakra-ui.com/docs/components/show-hide/usage
-   */
   Hide,
   HideProps,
+  Highlight,
+  HighlightProps,
   HStack,
-  /**
-   * @reference https://chakra-ui.com/docs/components/media-and-icons/icon
-   */
   Icon,
-  /**
-   * @reference https://chakra-ui.com/docs/components/form/icon-button
-   */
   IconButton,
   IconButtonProps,
   IconProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/media-and-icons/image
-   */
   Image,
   ImageProps,
   Img,
   ImgProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/form/input
-   */
   Input,
   InputAddon,
   InputAddonProps,
@@ -193,33 +128,21 @@ export {
   InputProps,
   InputRightAddon,
   InputRightElement,
+  Kbd,
+  KbdProps,
   keyframes,
-  /**
-   * @reference https://chakra-ui.com/docs/styled-system/recipes/page-specific-color-mode
-   */
   LightMode,
-  /**
-   * @reference https://chakra-ui.com/docs/components/navigation/link
-   */
   Link,
   LinkBox,
   LinkBoxProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/navigation/link-overlay
-   */
   LinkOverlay,
   LinkOverlayProps,
   LinkProps,
-  /**
-   * @reference  https://chakra-ui.com/docs/components/data-display/list
-   */
   List,
+  ListIcon,
   ListItem,
   ListItemProps,
   ListProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/overlay/menu
-   */
   Menu,
   MenuButton,
   MenuButtonProps,
@@ -235,9 +158,6 @@ export {
   MenuListProps,
   MenuOptionGroup,
   MenuOptionGroupProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/overlay/modal
-   */
   Modal,
   ModalBody,
   ModalBodyProps,
@@ -257,9 +177,6 @@ export {
   NumberDecrementStepperProps,
   NumberIncrementStepper,
   NumberIncrementStepperProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/form/number-input
-   */
   NumberInput,
   NumberInputField,
   NumberInputFieldProps,
@@ -267,16 +184,10 @@ export {
   NumberInputStepper,
   NumberInputStepperProps,
   OrderedList,
-  /**
-   * @reference https://chakra-ui.com/docs/components/form/pin-input
-   */
   PinInput,
   PinInputField as Pin,
   PinInputFieldProps as PinProps,
   PinInputProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/overlay/popover
-   */
   Popover,
   PopoverAnchor,
   PopoverArrow,
@@ -293,57 +204,30 @@ export {
   PopoverHeaderProps,
   PopoverProps,
   PopoverTrigger,
-  /**
-   * @reference https://chakra-ui.com/docs/components/other/portal
-   */
   Portal,
   PortalProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/feedback/progress
-   */
   Progress,
   ProgressLabel,
   ProgressLabelProps,
   ProgressProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/form/pin-input
-   */
   Radio,
   RadioGroup,
   RadioGroupProps,
   RadioProps,
-  /**
-   * @refernce https://chakra-ui.com/docs/components/transitions/usage#scalefade-transition
-   */
   ScaleFade,
   ScaleFadeProps,
-  /**
-   * @reference  https://chakra-ui.com/docs/components/form/select
-   */
   Select,
   SelectProps,
   shouldShowFallbackImage,
-  /**
-   * @refernce https://chakra-ui.com/docs/components/show-hide/usage
-   */
   Show,
   ShowProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/layout/simple-grid
-   */
   SimpleGrid,
   SimpleGridProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/feedback/skeleton
-   */
   Skeleton,
   SkeletonCircle,
   SkeletonProps,
   SkeletonText,
   SkeletonTextProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/transitions/usage#slide-transition
-   */
   Slide,
   SlideFade,
   SlideFadeProps,
@@ -360,21 +244,12 @@ export {
   SliderTrackProps,
   Spacer,
   SpacerProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/spinner
-   */
   Spinner,
   SpinnerProps,
   Square,
   SquareProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/layout/stack
-   */
   Stack,
   StackProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/stat
-   */
   Stat,
   StatArrow,
   StatArrowProps,
@@ -387,15 +262,10 @@ export {
   StatNumber,
   StatNumberProps,
   StatProps,
-  /**
-   * @reference  https://chakra-ui.com/docs/components/form/switch
-   */
+  StyleFunctionProps,
   Switch,
   SwitchProps,
   Tab,
-  /**
-   * @reference  https://chakra-ui.com/docs/components/data-display/table
-   */
   Table,
   TableBodyProps,
   TableCaption,
@@ -415,14 +285,8 @@ export {
   TabPanels,
   TabPanelsProps,
   TabProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/disclosure/tabs
-   */
   Tabs,
   TabsProps,
-  /**
-   * @reference https://chakra-ui.com/docs/components/data-display/tag
-   */
   Tag,
   TagCloseButton,
   TagCloseButtonProps,
@@ -433,51 +297,29 @@ export {
   TagRightIcon,
   Tbody,
   Td,
-  /**
-   * @reference https://chakra-ui.com/docs/components/typography/text
-   */
   Text,
-  /**
-   * @reference  https://chakra-ui.com/docs/components/form/switch
-   */
   Textarea,
   TextareaProps,
   TextProps,
   Tfoot,
   Th,
   Thead,
+  ThemeConfig,
   ToastId,
-  /**
-   * @reference https://chakra-ui.com/docs/components/overlay/popover
-   */
   Tooltip,
   TooltipProps,
   Tr,
   UnorderedList,
-  /**
-   * @reference https://chakra-ui.com/docs/styled-system/utility-hooks/use-boolean?scroll=true
-   */
   useBoolean,
-  /**
-   * @reference https://chakra-ui.com/docs/styled-system/utility-hooks/use-breakpoint-value
-   */
   useBreakpoint,
   useBreakpointValue,
   useButtonGroup,
   useCheckbox,
   useCheckboxGroup,
-  /**
-   * @reference https://chakra-ui.com/docs/styled-system/utility-hooks/use-clipboard
-   */
   useClipboard,
   useColorModeValue,
-  /**
-   * @reference https://chakra-ui.com/docs/styled-system/utility-hooks/use-const
-   */
   useConst,
-  /**
-   * @refernce https://chakra-ui.com/docs/styled-system/utility-hooks/use-disclosure
-   */
+  useDimensions,
   useDisclosure,
   UseDisclosureProps,
   UseDisclosureReturn,
@@ -485,41 +327,29 @@ export {
   UseImageProps,
   UseImageReturn,
   useInputGroupStyles,
-  /**
-   * @reference https://chakra-ui.com/docs/styled-system/utility-hooks/use-media-query
-   */
   useMediaQuery,
   useMenuButton,
   UseMenuButtonProps,
   useModal,
   useMultiStyleConfig,
-  /**
-   * @reference https://chakra-ui.com/docs/styled-system/utility-hooks/use-outside-click
-   */
   useOutsideClick,
+  UseOutsideClickProps,
   usePrefersReducedMotion,
   useRadio,
   useRadioGroup,
   useSlider,
-  /**
-   * @reference https://chakra-ui.com/docs/styled-system/utility-hooks/use-theme
-   */
+  useStyleConfig,
   useTheme,
-  /**
-   * @reference https://chakra-ui.com/docs/components/toast/usage
-   */
   useToast,
   UseToastOptions,
   VStack,
-  /**
-   * @reference https://chakra-ui.com/docs/components/layout/wrap
-   */
   Wrap,
   WrapItem,
   WrapItemProps,
   WrapProps,
 } from '@chakra-ui/react';
 export { isValidMotionProp, motion } from 'framer-motion';
+/* TODO: replace with built-in CloseButton👌 */
 export {
   CloseButtonProps,
   default as CloseButton,
