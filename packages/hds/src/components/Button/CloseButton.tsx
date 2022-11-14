@@ -1,5 +1,6 @@
 import { CloseIcon } from '@chakra-ui/icons';
-import { Button, Icon, ThemingProps } from '@chakra-ui/react';
+import { Icon, ThemingProps } from '@chakra-ui/react';
+import { Button } from '@highoutput/hds';
 import React from 'react';
 
 export interface CloseButtonProps {

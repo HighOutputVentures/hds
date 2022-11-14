@@ -1,4 +1,5 @@
-import { Button, IconButton } from '@chakra-ui/react';
+import { IconButton } from '@chakra-ui/react';
+import { Button } from '@highoutput/hds';
 import {
   AppleIcon,
   DribbleIcon,
@@ -8,7 +9,6 @@ import {
   TwitterIcon,
 } from '@highoutput/hds-icons';
 import React from 'react';
-
 export interface SocialButtonProps {
   onClicked?: () => void;
   type: 'google' | 'dribble' | 'twitter' | 'figma' | 'facebook' | 'apple';
