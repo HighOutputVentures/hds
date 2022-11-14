@@ -1,24 +1,19 @@
 import {
+  Box,
   HStack,
   PinInput,
   PinInputField as Pin,
-  PinInputFieldProps as PinProps,
   PinInputProps,
   useStyleConfig,
-  Box,
 } from '@chakra-ui/react';
 import React, { forwardRef, useId, useMemo } from 'react';
 import { ChangeHandler } from 'react-hook-form';
 
 import FormContainer, {
-  FormContainerPartProps,
   FormContainerProps,
 } from '../FormContainer/FormContainer';
+import InputField from '../InputField/InputField';
 
-type WithoutChildren<T> = Omit<T, 'children'>;
-export interface PinInputFieldPartProps extends FormContainerPartProps {
-  pin?: WithoutChildren<PinProps>;
-}
 export interface PinInputFieldProps
   extends Omit<
       FormContainerProps,
@@ -28,8 +23,6 @@ export interface PinInputFieldProps
   numberOfFields?: number;
   onChange: ChangeHandler;
   errorMsg?: string | undefined;
-
-  partProps?: Partial<PinInputFieldPartProps>;
 }
 
 const PinInputField = forwardRef<HTMLInputElement, PinInputFieldProps>(
@@ -39,7 +32,6 @@ const PinInputField = forwardRef<HTMLInputElement, PinInputFieldProps>(
       onChange,
       size,
       variant = 'outline',
-      partProps,
       name,
       type = 'alphanumeric',
       onComplete,
@@ -98,7 +90,6 @@ const PinInputField = forwardRef<HTMLInputElement, PinInputFieldProps>(
                     h="12"
                     key={idx}
                     sx={styles}
-                    {...partProps?.pin}
                     data-testid={`${uid}-pininput-pin-${idx}`}
                   />
                 </React.Fragment>
@@ -106,6 +97,7 @@ const PinInputField = forwardRef<HTMLInputElement, PinInputFieldProps>(
             })}
           </PinInput>
         </HStack>
+        <InputField />
       </FormContainer>
     );
   }
