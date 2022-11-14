@@ -12,7 +12,7 @@
       "noUnusedLocals": true, // noUnused* overlap with @typescript-eslint/no-unused-vars, can disable if duplicative
       "noUnusedParameters": true,
       "moduleResolution": "node", // use Node's module resolution algorithm, instead of the legacy TS one
-      "jsx": "preserve", // transpile JSX to React.createElement
+      "jsx": "react", // transpile JSX to React.createElement
       "esModuleInterop": true, // interop between ESM and CJS modules. Recommended by TS
       "skipLibCheck": true, // significant perf increase by skipping checking .d.ts files, particularly those in node_modules. Recommended by TS
       "forceConsistentCasingInFileNames": true, // error out if import and file system have a casing mismatch. Recommended by TS
