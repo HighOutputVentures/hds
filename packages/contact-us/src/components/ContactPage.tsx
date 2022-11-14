@@ -1,4 +1,4 @@
-import { Box, BoxProps, Center, Text } from '@chakra-ui/react';
+import { Box, Center, Text } from '@chakra-ui/react';
 import React, { FC, ReactNode } from 'react';
 import { HovIcon } from '@highoutput/hds-icons';
 
@@ -6,7 +6,7 @@ import ContactCard from './ContactCard';
 
 // type WithoutChildren<T> = Omit<T, 'children'>;
 
-export interface ContagePageProps extends BoxProps {
+export interface ContagePageProps {
   title?: string;
   secondaryTitle?: string;
   iconNode?: ReactNode;
@@ -32,7 +32,7 @@ const ContactPage: FC<ContagePageProps> = (props) => {
         bg="#000"
         w="100%"
         h="400px"
-        {...props}
+        // {...props}
         data-testid="box.contactpage.banner"
       >
         <Center pt={20} pb={8} data-testid="center.contactpage.iconposition">
