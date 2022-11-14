@@ -6,7 +6,6 @@ import React, { ReactNode } from 'react';
 import { useFieldArray, useForm } from 'react-hook-form';
 import { ArrayFieldSchema, ArrayFieldTypeValues } from './validation';
 
-type WithoutChildren<T> = Omit<T, 'children'>;
 export interface ArrayFieldProps {
   buttonRemoveChildren?: ReactNode;
   buttonAddChildren?: ReactNode;
