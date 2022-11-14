@@ -97,6 +97,7 @@ const PinInputField = forwardRef<HTMLInputElement, PinInputFieldProps>(
                     h="12"
                     key={idx}
                     sx={styles}
+                    role="textbox"
                     {...partProps?.pin}
                     data-testid={`${uid}-pininput-pin-${idx}`}
                   />

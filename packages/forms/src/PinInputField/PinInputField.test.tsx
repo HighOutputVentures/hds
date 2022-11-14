@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@highoutput/hds';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/react/dont-cleanup-after-each';
@@ -8,25 +9,25 @@ import PinInputField from './PinInputField';
 describe('Pin Input Field Component', () => {
   beforeAll(() => {
     render(
-      <PinInputField
-        numberOfFields={6}
-        id="otpPin"
-        name="otpPin"
-        onBlur={jest.fn()}
-        onChange={jest.fn()}
-      />
+      <ThemeProvider>
+        <PinInputField
+          numberOfFields={6}
+          id="otpPin"
+          name="otpPin"
+          onBlur={jest.fn()}
+          onChange={jest.fn()}
+        />
+      </ThemeProvider>
     );
   });
 
-  it('should render pin input field form container', async () => {
-    const formControl = await screen.findAllByTestId(
-      ':r1:-form-container-form-control'
-    );
-    expect(formControl).toHaveLength(1);
+  it('should render pin input field form container', () => {
+    expect(
+      screen.queryByTestId(':r1:-form-container-form-control')
+    ).toBeDefined();
   });
 
-  it('should render pin input field pin', async () => {
-    const pin = await screen.findAllByTestId(/:r0:-pininput-pin/i);
-    expect(pin).toHaveLength(6);
+  it('should render pin input field pin', () => {
+    expect(screen.queryAllByTestId(/:r0:-pininput-pin/i)).toHaveLength(6);
   });
 });
