@@ -12,7 +12,7 @@ module.exports = {
   ],
   features: {
     previewMdx2: true, // 👈 MDX 2 enabled here
-    postcss: false,
+    postcss: true,
     emotionAlias: false,
   },
   // https://storybook.js.org/docs/react/configure/typescript#mainjs-configuration
