@@ -18,7 +18,9 @@ const StorybookHeader: React.FC<StorybookHeaderProps> = ({
         <Text size="heading-web-2" marginBottom={5}>
           {title}
         </Text>
-        <Text marginBottom={2}>To install package, run command:</Text>
+        <Text size="paragraph-md-default" marginBottom={2}>
+          To install package, run command:
+        </Text>
         <Code colorScheme="yellow" children={command} />
       </Box>
     </ThemeProvider>

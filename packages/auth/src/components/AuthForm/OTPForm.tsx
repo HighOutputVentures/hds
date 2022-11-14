@@ -1,13 +1,4 @@
-import {
-  Box,
-  BoxProps,
-  Button,
-  ButtonProps,
-  Heading,
-  PinInputFieldProps as PinProps,
-  Text,
-  TextProps,
-} from '@chakra-ui/react';
+import { Box, Button, Heading, Text } from '@chakra-ui/react';
 import { PinInputField } from '@highoutput/hds-forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { ReactNode } from 'react';
@@ -15,7 +6,6 @@ import { useForm } from 'react-hook-form';
 
 import { authenticateSchema, AuthenticateSchemaValues } from './validation';
 
-type WithoutChildren<T> = Omit<T, 'children'>;
 export interface OTPFormProps {
   title?: ReactNode;
   subTitle?: ReactNode;
@@ -23,13 +13,6 @@ export interface OTPFormProps {
   buttonText?: string;
   otpType?: 'number' | 'alphanumeric';
   onSubmitOTPValue?(value: AuthenticateSchemaValues): void;
-  partProps?: {
-    title?: WithoutChildren<TextProps>;
-    subTitle?: WithoutChildren<TextProps>;
-    button?: WithoutChildren<ButtonProps>;
-    container?: WithoutChildren<BoxProps>;
-    pin?: WithoutChildren<PinProps>;
-  };
 }
 const OTPForm = (props: OTPFormProps) => {
   const {
@@ -39,7 +22,6 @@ const OTPForm = (props: OTPFormProps) => {
     numberOfFields = 6,
     buttonText,
     onSubmitOTPValue,
-    partProps,
   } = props;
   const buttonRef = React.useRef<HTMLButtonElement>(null);
   const {
@@ -65,13 +47,12 @@ const OTPForm = (props: OTPFormProps) => {
       w={350}
       data-testid="box.otpform.form"
       onSubmit={handleSubmitOtp(onSubmitOTP)}
-      {...partProps?.container}
     >
       <Box mb="6">
         {title ? (
           title
         ) : (
-          <Heading as="h1" mb={2} {...partProps?.title}>
+          <Heading as="h1" mb={2}>
             Check your inbox
           </Heading>
         )}
@@ -79,9 +60,7 @@ const OTPForm = (props: OTPFormProps) => {
         {subTitle ? (
           subTitle
         ) : (
-          <Text {...partProps?.subTitle}>
-            We have sent a 6-digit code to your email{' '}
-          </Text>
+          <Text>We have sent a 6-digit code to your email </Text>
         )}
       </Box>
 
@@ -94,7 +73,6 @@ const OTPForm = (props: OTPFormProps) => {
         autoFocus
         onComplete={buttonRef.current?.click}
         type={otpType}
-        partProps={{ pin: partProps?.pin }}
       />
       <Button
         variant={'primary'}
@@ -104,7 +82,6 @@ const OTPForm = (props: OTPFormProps) => {
         width={'100%'}
         data-testid="button.otp.submit"
         marginTop={5}
-        {...partProps?.button}
       >
         {buttonText ? buttonText : 'Sign In'}
       </Button>

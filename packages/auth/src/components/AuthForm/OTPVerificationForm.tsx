@@ -27,7 +27,6 @@ const OTPVerificationForm = (props: OTPVerificationProps) => {
     title,
     subTitle,
     onSubmitOTPValue,
-    partProps,
   } = props;
 
   const { register, handleSubmit, formState } =
@@ -59,7 +58,6 @@ const OTPVerificationForm = (props: OTPVerificationProps) => {
           as={'form'}
           data-testid="box.emailform.form"
           w={350}
-          {...partProps?.container}
           onSubmit={handleSubmit(onSubmitEmail)}
         >
           <InputField
@@ -83,7 +81,6 @@ const OTPVerificationForm = (props: OTPVerificationProps) => {
             width={'100%'}
             marginTop={'10px'}
             data-testid="button.email.submit"
-            {...partProps?.button}
           >
             Sign In
           </Button>
@@ -91,7 +88,6 @@ const OTPVerificationForm = (props: OTPVerificationProps) => {
       ) : (
         <Box data-testid="otp.component">
           <OTPForm
-            partProps={partProps}
             title={title}
             subTitle={subTitle}
             onSubmitOTPValue={(value) => onSubmitOTP(value)}

@@ -8,11 +8,6 @@ export interface ContagePageProps extends BoxProps {
   secondaryTitle?: string;
   iconNode?: ReactNode;
   url?: string;
-  // partProps?: {
-  //   contactCard?: WithoutChildren<ContactCardProps>;
-  //   title?: WithoutChildren<TextProps>;
-  //   secondaryTitle?: WithoutChildren<TextProps>;
-  // };
 }
 
 const ContactPage: FC<ContagePageProps> = (props) => {
@@ -29,7 +24,7 @@ const ContactPage: FC<ContagePageProps> = (props) => {
         bg="#000"
         w="100%"
         h="400px"
-        {...props}
+        // {...props}
         data-testid="box.contactpage.banner"
       >
         <Center pt={20} pb={8} data-testid="center.contactpage.iconposition">
