@@ -1,14 +1,13 @@
 import { ThemeProvider } from '@highoutput/hds';
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/react/dont-cleanup-after-each';
+import { render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
 
 import PinInputField from './PinInputField';
 
 describe('Pin Input Field Component', () => {
-  beforeAll(() => {
-    render(
+  beforeEach(() => {
+    const { debug } = render(
       <ThemeProvider>
         <PinInputField
           numberOfFields={6}
@@ -19,15 +18,17 @@ describe('Pin Input Field Component', () => {
         />
       </ThemeProvider>
     );
+
+    debug();
   });
 
-  it('should render pin input field form container', () => {
-    expect(
-      screen.queryByTestId(':r1:-form-container-form-control')
-    ).toBeDefined();
+  it('should render FormControl', () => {
+    expect(screen.queryByRole('group')).toBeDefined();
   });
 
-  it('should render pin input field pin', () => {
-    expect(screen.queryAllByTestId(/:r0:-pininput-pin/i)).toHaveLength(6);
+  it('should render PinInputFields', async () => {
+    await waitFor(() => {
+      expect(screen.getAllByPlaceholderText('0')).toHaveLength(6);
+    });
   });
 });
