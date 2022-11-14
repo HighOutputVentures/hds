@@ -1,10 +1,7 @@
 import { Box, BoxProps, Center, Text } from '@chakra-ui/react';
-import React, { FC, ReactNode } from 'react';
 import { HovIcon } from '@highoutput/hds-icons';
-
+import React, { FC, ReactNode } from 'react';
 import ContactCard from './ContactCard';
-
-// type WithoutChildren<T> = Omit<T, 'children'>;
 
 export interface ContagePageProps extends BoxProps {
   title?: string;

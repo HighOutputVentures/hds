@@ -1,61 +1,3 @@
-import FormContainer, {
-  FormContainerProps,
-} from './components/FormContainer/FormContainer';
-import InputField, {
-  InputFieldProps,
-} from './components/InputField/InputField';
-import PasswordInputField, {
-  PasswordInputFieldProps,
-} from './components/PasswordInputField/PasswordInputField';
-import PinInputField, {
-  PinInputFieldProps,
-} from './components/PinInputField/PinInputField';
-import SelectField, {
-  SelectFieldProps,
-} from './components/SelectField/SelectField';
-
-import TextAreaField, {
-  TextAreaFieldProps,
-} from './components/TextareaField/TextareaField';
-import ThemeProvider, { ThemeProviderProps } from './components/ThemeProvider';
-import SocialButton, {
-  SocialButtonProps,
-} from './components/Button/SocialButton';
-import CloseButton, { CloseButtonProps } from './components/Button/CloseButton';
-
-import theme from './theme';
-import { extendTheme } from './utils/theme.utils';
-import For, { ForProps } from './components/For/For';
-import Mount, { MountProps } from './components/Mount/Mount';
-
-export {
-  For,
-  ForProps,
-  Mount,
-  MountProps,
-  ThemeProvider,
-  ThemeProviderProps,
-  PinInputField,
-  PinInputFieldProps,
-  InputField,
-  InputFieldProps,
-  SelectField,
-  SelectFieldProps,
-  PasswordInputField,
-  PasswordInputFieldProps,
-  TextAreaField,
-  TextAreaFieldProps,
-  FormContainer,
-  FormContainerProps,
-  SocialButton,
-  SocialButtonProps,
-  CloseButton,
-  CloseButtonProps,
-  // default theme
-  theme,
-  extendTheme,
-};
-
 export {
   Accordion,
   AccordionButton,
@@ -578,3 +520,19 @@ export {
   WrapProps,
 } from '@chakra-ui/react';
 export { isValidMotionProp, motion } from 'framer-motion';
+export {
+  CloseButtonProps,
+  default as CloseButton,
+} from './components/Button/CloseButton';
+export {
+  default as SocialButton,
+  SocialButtonProps,
+} from './components/Button/SocialButton';
+export { default as For, ForProps } from './components/For/For';
+export { default as Mount, MountProps } from './components/Mount/Mount';
+export {
+  default as ThemeProvider,
+  ThemeProviderProps,
+} from './components/ThemeProvider';
+export { default as theme } from './theme';
+export { default as extendTheme } from './utils/extendTheme';

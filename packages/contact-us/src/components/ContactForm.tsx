@@ -6,12 +6,10 @@ import {
   Button,
   Stack,
 } from '@chakra-ui/react';
+import { InputField, TextAreaField } from '@highoutput/hds-forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { FC } from 'react';
 import { useForm } from 'react-hook-form';
-
-import { InputField, TextAreaField } from '@highoutput/hds';
-
 import useSupport from './useSupport';
 import {
   ContactFormInputProps,
@@ -19,16 +17,9 @@ import {
   withContactFormSchemaValues,
 } from './validation';
 
-// type WithoutChildren<T> = Omit<T, 'children'>;
-
 export interface ContactFormProps {
   onSubmit?(values: ContactFormInputProps): void;
   url?: string;
-  // partProps?: Partial<{
-  //   input?: WithoutChildren<InputFieldProps>;
-  //   textarea?: WithoutChildren<TextAreaFieldProps>;
-  //   button?: WithoutChildren<ButtonProps>;
-  // }>;
 }
 
 const ContactForm: FC<ContactFormProps> = (props) => {

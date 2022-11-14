@@ -7,15 +7,15 @@ import {
   TextareaProps,
   VStack,
 } from '@chakra-ui/react';
-import { yupResolver } from '@hookform/resolvers/yup';
-import React, { FC } from 'react';
-import { useForm, UseFormReturn } from 'react-hook-form';
 import {
   InputField,
   InputFieldProps,
   TextAreaField,
   TextAreaFieldProps,
-} from '@highoutput/hds';
+} from '@highoutput/hds-forms';
+import { yupResolver } from '@hookform/resolvers/yup';
+import React, { FC } from 'react';
+import { useForm, UseFormReturn } from 'react-hook-form';
 
 type WithoutChildren<T> = Omit<T, 'children'>;
 

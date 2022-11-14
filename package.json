@@ -7,6 +7,10 @@
   "scripts": {
     "test:hds": "npx nx test @highoutput/hds",
     "build:hds": "npx nx build @highoutput/hds",
+    "test:forms": "npx nx test @highoutput/hds-forms",
+    "build:forms": "npx nx build @highoutput/hds-forms",
+    "test:autocomplete-input": "npx nx test @highoutput/hds-autocomplete-input",
+    "build:autocomplete-input": "npx nx build @highoutput/hds-autocomplete-input",
     "test:spinner": "npx nx test @highoutput/hds-spinner",
     "build:spinner": "npx nx build @highoutput/hds-spinner",
     "test:icons": "npx nx test @highoutput/hds-icons",

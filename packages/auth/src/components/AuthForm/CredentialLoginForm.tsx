@@ -9,10 +9,10 @@ import {
   Text,
   TextProps,
 } from '@chakra-ui/react';
+import { InputField, InputFieldProps } from '@highoutput/hds-forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { FC, ReactNode } from 'react';
 import { useForm } from 'react-hook-form';
-import { InputField, InputFieldProps } from '@highoutput/hds';
 
 import {
   CredentialFormInputEmailProps,

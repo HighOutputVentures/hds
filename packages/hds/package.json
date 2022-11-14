@@ -64,6 +64,8 @@
     "@chakra-ui/styled-system": "^2.3.4",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@highoutput/hds": "^0.1.26",
+    "@highoutput/hds-forms": "^0.1.0",
     "@highoutput/hds-icons": "^0.1.9",
     "framer-motion": "^7.6.4",
     "lodash": "^4.17.21",

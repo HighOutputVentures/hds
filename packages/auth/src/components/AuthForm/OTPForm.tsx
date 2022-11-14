@@ -8,10 +8,10 @@ import {
   Text,
   TextProps,
 } from '@chakra-ui/react';
+import { PinInputField } from '@highoutput/hds-forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { ReactNode } from 'react';
 import { useForm } from 'react-hook-form';
-import { PinInputField } from '@highoutput/hds';
 
 import { authenticateSchema, AuthenticateSchemaValues } from './validation';
 
