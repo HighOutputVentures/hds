@@ -54,10 +54,18 @@
     "size-limit": "7.0.8"
   },
   "jest": {
+    "verbose": true,
     "moduleNameMapper": {
       "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
-    }
+    },
+    "transform": {
+      "^.+\\.[tj]sx?$": "babel-jest",
+      "^.+\\.mdx?$": "@storybook/addon-docs/jest-transform-mdx"
+    },
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/(?!(@storybook/addon-docs))"
+    ]
   },
   "gitHead": "220c468183d0032ba2f8eb5b26d89cf5712292c0",
   "dependencies": {
