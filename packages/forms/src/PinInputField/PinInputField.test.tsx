@@ -7,7 +7,7 @@ import PinInputField from './PinInputField';
 
 describe('Pin Input Field Component', () => {
   beforeEach(() => {
-    const { debug } = render(
+    render(
       <ThemeProvider>
         <PinInputField
           numberOfFields={6}
@@ -18,8 +18,6 @@ describe('Pin Input Field Component', () => {
         />
       </ThemeProvider>
     );
-
-    debug();
   });
 
   it('should render FormControl', () => {
