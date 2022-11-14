@@ -1,5 +1,5 @@
 {
-  "version": "0.1.17",
+  "version": "0.1.18",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/auto-form/src/index.d.ts",
@@ -61,7 +61,7 @@
   },
   "gitHead": "220c468183d0032ba2f8eb5b26d89cf5712292c0",
   "dependencies": {
-    "@highoutput/hds": "^0.1.26",
+    "@highoutput/hds": "^0.1.27",
     "@hookform/resolvers": "^2.9.10",
     "yup": "^0.32.11"
   }
