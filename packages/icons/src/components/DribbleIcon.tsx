@@ -1,12 +1,11 @@
-import { Icon, IconProps } from '@chakra-ui/react';
+import { Icon } from '@chakra-ui/react';
 import React, { FC } from 'react';
 export interface DribbleIconProps {
-  iconProps?: Omit<IconProps, 'children' | 'css'>;
   isDisabled?: boolean;
   variant?: 'outline' | 'solid';
 }
-const DribbleIcon: FC<DribbleIconProps> = props => {
-  const { iconProps, isDisabled, variant } = props;
+const DribbleIcon: FC<DribbleIconProps> = (props) => {
+  const { isDisabled, variant } = props;
   return (
     <Icon
       width="24px"
@@ -14,7 +13,6 @@ const DribbleIcon: FC<DribbleIconProps> = props => {
       verticalAlign={'center'}
       viewBox="0 0 24 24"
       fill="none"
-      {...iconProps}
     >
       <path
         fillRule="evenodd"
