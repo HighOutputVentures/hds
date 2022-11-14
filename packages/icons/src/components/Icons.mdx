@@ -1,34 +1,26 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 
+import StorybookHeader from '../../../../components/StorybookHeader';
+import StorybookTitle from '../../../../components/StorybookTitle';
+
 <Meta title="Component/Icons" />
 
-<>
+<StorybookHeader
+  title="HDS ICONS"
+  command="npm install @highoutput/hds-icons"
+/>
 
-<h1 style={{ fontSize: 24, fontWeight: 700 }}>
-  HDS ICONS
-  <br />
-</h1>
-
-<p style={{ fontSize: 18 }}>
-  To install package, run command: <br />
-</p>
-
-<code style={{ padding: '1em', fontSize: 12 }}>
-  npm install @highoutput/hds-icons <br />
-</code>
-
-<h1 style={{ fontSize: 22, fontWeight: 700 }}>Arrows</h1>
+<StorybookTitle title="Arrows" />
 <Canvas>
   <Story id="components-icons--arrows"></Story>
 </Canvas>
 
-<h1 style={{ fontSize: 22, fontWeight: 700 }}>Company</h1>
+<StorybookTitle title="Company" />
 <Canvas>
   <Story id="components-icons--company"></Story>
 </Canvas>
 
-<h1 style={{ fontSize: 22, fontWeight: 700 }}>Social</h1>
+<StorybookTitle title="Social" />
 <Canvas>
   <Story id="components-icons--social"></Story>
 </Canvas>
-</>
