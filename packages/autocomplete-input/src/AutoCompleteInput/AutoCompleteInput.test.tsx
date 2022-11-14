@@ -1,7 +1,6 @@
-import ThemeProvider from '@highoutput/hds/src/components/ThemeProvider';
+import { ThemeProvider } from '@highoutput/hds';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-
 import AutoCompleteInput from './AutoCompleteInput';
 
 const OPTIONS = ['user1', 'user2', 'user3', 'user4', 'user5'];
