@@ -267,8 +267,13 @@ const Template: ComponentStory<typeof Text> = () => (
                 type="google"
                 variant={'outline'}
                 buttonText={'Disabled Button '}
+                disabled={true}
               />,
-              <SocialButton type="google" variant={'outline'} />,
+              <SocialButton
+                type="google"
+                variant={'outline'}
+                disabled={true}
+              />,
             ]}
           />
         </Tbody>
