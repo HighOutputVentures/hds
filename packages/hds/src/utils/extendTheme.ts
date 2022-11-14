@@ -6,7 +6,7 @@ type Dict = Record<string, any>;
 
 export default function extendTheme(...customTheme: Dict[]): Dict {
   return chakraExtendTheme(
-    customTheme.reduce((t, c) => {
+    [...customTheme].filter(Boolean).reduce((t, c) => {
       return mergeDeep(t, c);
     }, defaultTheme)
   );

@@ -5,9 +5,13 @@ import Fonts from './Fonts';
 
 export interface ThemeProviderProps extends ChakraProviderProps {}
 
-const ThemeProvider: FC<ThemeProviderProps> = ({ children, ...props }) => {
+const ThemeProvider: FC<ThemeProviderProps> = ({
+  theme,
+  children,
+  ...props
+}) => {
   return (
-    <ChakraProvider {...props} theme={extendTheme(props.theme)}>
+    <ChakraProvider theme={extendTheme(theme)} {...props}>
       <Fonts />
       {children}
     </ChakraProvider>
