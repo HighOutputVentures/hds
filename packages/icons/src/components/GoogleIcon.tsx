@@ -1,11 +1,10 @@
-import { Icon, IconProps } from '@chakra-ui/react';
+import { Icon } from '@chakra-ui/react';
 import React, { FC } from 'react';
 export interface GoogleIconProps {
-  iconProps?: Omit<IconProps, 'children' | 'css'>;
   isDisabled?: boolean;
 }
-const GoogleIcon: FC<GoogleIconProps> = props => {
-  const { iconProps, isDisabled } = props;
+const GoogleIcon: FC<GoogleIconProps> = (props) => {
+  const { isDisabled } = props;
   return (
     <Icon
       width="24px"
@@ -13,7 +12,6 @@ const GoogleIcon: FC<GoogleIconProps> = props => {
       verticalAlign={'center'}
       viewBox="0 0 24 24"
       fill="none"
-      {...iconProps}
     >
       <path
         d="M23.7663 12.2764C23.7663 11.4607 23.7001 10.6406 23.559 9.83807H12.2402V14.4591H18.722C18.453 15.9494 17.5888 17.2678 16.3233 18.1056V21.1039H20.1903C22.4611 19.0139 23.7663 15.9274 23.7663 12.2764Z"
