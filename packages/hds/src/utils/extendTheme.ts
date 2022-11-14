@@ -1,8 +1,13 @@
 import { extendTheme as chakraExtendTheme } from '@chakra-ui/react';
-import merge from 'lodash/merge';
 import defaultTheme from '../theme';
+import mergeDeep from './mergeDeep';
 
-const extendTheme: any = (customTheme: any) =>
-  chakraExtendTheme(merge(defaultTheme, customTheme));
+type Dict = Record<string, any>;
 
-export default extendTheme;
+export default function extendTheme(...customTheme: Dict[]): Dict {
+  return chakraExtendTheme(
+    customTheme.reduce((t, c) => {
+      return mergeDeep(t, c);
+    }, defaultTheme)
+  );
+}
