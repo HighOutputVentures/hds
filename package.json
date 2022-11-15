@@ -28,7 +28,10 @@
     "build:contact-us": "npx nx build @highoutput/hds-contact-us",
 
     "test:auth": "npx nx test @highoutput/hds-auth",
-    "build:auth": "npx nx build @highoutput/hds-auth"
+    "build:auth": "npx nx build @highoutput/hds-auth",
+
+    "test:forms": "npx nx test @highoutput/hds-forms",
+    "build:forms": "npx nx build @highoutput/hds-forms"
   },
   "devDependencies": {
     "@babel/core": "7.20.2",
