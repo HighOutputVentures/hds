@@ -62,7 +62,6 @@
   "gitHead": "220c468183d0032ba2f8eb5b26d89cf5712292c0",
   "dependencies": {
     "@highoutput/hds": "^0.1.27",
-    "@highoutput/hds-forms": "^0.1.0",
     "@hookform/resolvers": "^2.9.10",
     "js-cookie": "^3.0.1",
     "yup": "^0.32.11"

@@ -4,7 +4,7 @@ import {
   FormContainer,
   FormContainerPartProps,
   FormContainerProps,
-} from '@highoutput/hds-forms';
+} from '@highoutput/hds';
 import {
   chakraComponents,
   ChakraStylesConfig,

@@ -50,7 +50,6 @@
   ],
   "dependencies": {
     "@highoutput/hds": "^0.1.26",
-    "@highoutput/hds-forms": "^0.1.0",
     "chakra-react-select": "4.4.0"
   }
 }

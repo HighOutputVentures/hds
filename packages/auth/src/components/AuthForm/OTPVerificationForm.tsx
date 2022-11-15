@@ -1,9 +1,8 @@
 import { Box, Button } from '@chakra-ui/react';
-import { InputField } from '@highoutput/hds-forms';
+import { InputField } from '@highoutput/hds';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-
 import OTPForm, { OTPFormProps } from './OTPForm';
 import {
   AuthenticateSchemaValues,
