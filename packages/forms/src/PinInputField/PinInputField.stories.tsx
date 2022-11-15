@@ -4,7 +4,7 @@ import React from 'react';
 import PinInputField from './PinInputField';
 
 export default {
-  title: 'Components/Form Fields/Pin Input Field',
+  title: 'Components/Form Fields/Preview/Pin Input Field',
   component: PinInputField,
 } as ComponentMeta<typeof PinInputField>;
 

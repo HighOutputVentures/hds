@@ -4,7 +4,7 @@ import React from 'react';
 import SelectField from './SelectField';
 
 export default {
-  title: 'Components/Form Fields/Select Field',
+  title: 'Components/Form Fields/Preview/Select Field',
   component: SelectField,
 } as ComponentMeta<typeof SelectField>;
 

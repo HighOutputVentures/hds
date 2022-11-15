@@ -4,7 +4,7 @@ import React from 'react';
 import PasswordInputField from './PasswordInputField';
 
 export default {
-  title: 'Components/Form Fields/Password Input Field',
+  title: 'Components/Form Fields/Preview/Password Input Field',
   component: PasswordInputField,
 } as ComponentMeta<typeof PasswordInputField>;
 

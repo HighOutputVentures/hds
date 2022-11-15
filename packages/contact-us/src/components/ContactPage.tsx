@@ -47,11 +47,7 @@ const ContactPage: FC<ContagePageProps> = (props) => {
         </Center>
 
         <Center data-testid="center.contactpage.secondarytitleposition">
-          <Text
-            color="gray.200"
-            // {...partProps?.secondaryTitle}
-            data-testid="text.contactpage.secondarytitle"
-          >
+          <Text color="gray.200" data-testid="text.contactpage.secondarytitle">
             {secondaryTitle}
           </Text>
         </Center>

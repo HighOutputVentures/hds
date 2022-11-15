@@ -5,7 +5,7 @@ import React from 'react';
 import FormContainer from './FormContainer';
 
 export default {
-  title: 'Components/Form Fields/Form Container',
+  title: 'Components/Form Fields/Preview/Form Container',
   component: FormContainer,
 } as ComponentMeta<typeof FormContainer>;
 
