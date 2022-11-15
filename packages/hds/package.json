@@ -57,6 +57,9 @@
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
     }
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "gitHead": "220c468183d0032ba2f8eb5b26d89cf5712292c0",
   "dependencies": {
     "@chakra-ui/icons": "^2.0.11",

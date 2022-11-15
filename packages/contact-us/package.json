@@ -67,6 +67,9 @@
       "<rootDir>/node_modules/(?!(@storybook/addon-docs))"
     ]
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "gitHead": "220c468183d0032ba2f8eb5b26d89cf5712292c0",
   "dependencies": {
     "@highoutput/hds": "^0.1.30",

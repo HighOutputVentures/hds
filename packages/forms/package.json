@@ -48,6 +48,9 @@
       "limit": "10 KB"
     }
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@highoutput/hds": "^0.1.30",
     "@hookform/resolvers": "2.9.9",

@@ -48,6 +48,9 @@
       "limit": "10 KB"
     }
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@size-limit/preset-small-lib": "7.0.8",
     "size-limit": "7.0.8"
