@@ -74,13 +74,13 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
         ) : !isSignUp && loginTitle ? (
           loginTitle
         ) : !isSignUp && !loginTitle ? (
-          <Text size="heading-web-3" my={8}>
+          <Text size="header-3" my={8}>
             Login
           </Text>
         ) : (
           isSignUp &&
           !signUpTitle && (
-            <Text size="heading-web-3" my={8}>
+            <Text size="header-3" my={8}>
               Sign up
             </Text>
           )

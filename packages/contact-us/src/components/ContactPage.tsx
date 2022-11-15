@@ -37,7 +37,7 @@ const ContactPage: FC<ContagePageProps> = (props) => {
 
         <Center data-testid="center.contactpage.titlepostion">
           <Text
-            size="heading-web-3"
+            size="header-3"
             color="white"
             // {...partProps?.title}
             data-testid="text.contactpage.title"

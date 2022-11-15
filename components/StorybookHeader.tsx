@@ -15,7 +15,7 @@ const StorybookHeader: React.FC<StorybookHeaderProps> = ({
   return (
     <ThemeProvider>
       <Box marginBottom={20}>
-        <Text size="heading-web-2" marginBottom={5}>
+        <Text size="header-3" marginBottom={5}>
           {title}
         </Text>
         <Text size="paragraph-md-default" marginBottom={2}>

@@ -10,7 +10,7 @@ interface StorybookTitleProps {
 const StorybookTitle: React.FC<StorybookTitleProps> = ({ title }) => {
   return (
     <ThemeProvider>
-      <Text size="heading-web-4">{title}</Text>
+      <Text size="header-4">{title}</Text>
     </ThemeProvider>
   );
 };

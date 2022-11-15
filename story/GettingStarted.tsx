@@ -21,7 +21,7 @@ const GettingStarted = () => {
       <Box>
         <Stack direction="row" mb={5}>
           <HovIcon />
-          <Text pos="relative" top={-1} size="heading-web-3">
+          <Text pos="relative" top={-1} size="header-3">
             HOV Design System
           </Text>
         </Stack>
@@ -101,7 +101,7 @@ export default Form;
 `}
         </SyntaxHighlighter>
 
-        <Text mt={5} mb={5} size="heading-web-4">
+        <Text mt={5} mb={5} size="header-4">
           Check out for more information
         </Text>
 
@@ -126,7 +126,7 @@ export default Form;
           </ListItem>
         </OrderedList>
 
-        <Text mb={5} size="heading-web-4">
+        <Text mb={5} size="header-4">
           Other Packages
         </Text>
 

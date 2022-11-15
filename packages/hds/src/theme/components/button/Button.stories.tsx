@@ -53,12 +53,12 @@ const Template: ComponentStory<typeof Text> = () => (
         <Thead>
           <Tr>
             <Th>
-              <Text size="heading-web-6">
+              <Text size="header-5">
                 <Text size="paragraph-md-bold">Component Type</Text>
               </Text>
             </Th>
             <Th>
-              <Text size="heading-web-5">
+              <Text size="header-5">
                 <Text size="paragraph-md-bold">Variant Type</Text>
               </Text>
             </Th>

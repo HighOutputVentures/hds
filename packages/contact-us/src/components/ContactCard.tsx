@@ -21,7 +21,7 @@ const ContactCard: FC<ContactCardProps> = (props) => {
       data-testid="box.contactcard.container"
     >
       <Center mb={8} data-testid="center.contactcard.titleposition">
-        <Text size="heading-web-4" data-testid="text.contactcard.title">
+        <Text size="header-4" data-testid="text.contactcard.title">
           {title}
         </Text>
       </Center>
