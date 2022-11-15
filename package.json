@@ -7,7 +7,9 @@
   "scripts": {
     "test:hds": "npx nx test @highoutput/hds",
     "build:hds": "npx nx build @highoutput/hds",
-    "test:spinner": "npx nx test @highoutput/hds-spinner",
+    "test:forms": "npx nx test @highoutput/hds-forms",
+    "build:forms": "npx nx build @highoutput/hds-forms",
+    "test:spinner": "npx nx test @highoutput/forms-spinner",
     "build:spinner": "npx nx build @highoutput/hds-spinner",
     "test:icons": "npx nx test @highoutput/hds-icons",
     "build:icons": "npx nx build @highoutput/hds-icons",
