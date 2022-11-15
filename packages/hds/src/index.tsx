@@ -6,7 +6,7 @@ import For, { ForProps } from './components/For/For';
 import Mount, { MountProps } from './components/Mount/Mount';
 import ThemeProvider, { ThemeProviderProps } from './components/ThemeProvider';
 import theme from './theme';
-import { extendTheme } from './utils/theme.utils';
+import extendTheme from './utils/extendTheme';
 
 export {
   Accordion,
@@ -90,9 +90,6 @@ export {
   DrawerHeader,
   DrawerOverlay,
   DrawerProps,
-  /**
-   * @refernce https://chakra-ui.com/docs/components/transitions/usage#fade-transition
-   */
   Fade,
   FadeProps,
   Flex,
@@ -114,9 +111,6 @@ export {
   Heading,
   HeadingProps,
   HelpTextProps,
-  /**
-   * @refernce https://chakra-ui.com/docs/components/show-hide/usage
-   */
   Hide,
   HideProps,
   HStack,
@@ -222,17 +216,11 @@ export {
   RadioGroup,
   RadioGroupProps,
   RadioProps,
-  /**
-   * @refernce https://chakra-ui.com/docs/components/transitions/usage#scalefade-transition
-   */
   ScaleFade,
   ScaleFadeProps,
   Select,
   SelectProps,
   shouldShowFallbackImage,
-  /**
-   * @refernce https://chakra-ui.com/docs/components/show-hide/usage
-   */
   Show,
   ShowProps,
   SimpleGrid,
@@ -331,9 +319,6 @@ export {
   useClipboard,
   useColorModeValue,
   useConst,
-  /**
-   * @refernce https://chakra-ui.com/docs/styled-system/utility-hooks/use-disclosure
-   */
   useDisclosure,
   UseDisclosureProps,
   UseDisclosureReturn,
@@ -372,7 +357,6 @@ export {
   SocialButtonProps,
   CloseButton,
   CloseButtonProps,
-  // default theme
   theme,
   extendTheme,
 };
