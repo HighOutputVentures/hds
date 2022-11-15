@@ -49,6 +49,9 @@
     }
   ],
   "dependencies": {
-    "@highoutput/hds": "^0.1.26"
+    "@highoutput/hds": "^0.1.26",
+    "@hookform/resolvers": "^2.9.10",
+    "react-hook-form": "^7.38.0",
+    "yup": "^0.32.11"
   }
 }
