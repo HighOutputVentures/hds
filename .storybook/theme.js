@@ -1,5 +1,5 @@
 import { create } from "@storybook/theming";
-import HOV from "../assets/hov_logo.png";
+import HOV from "../assets/hov_logo_black.png";
 
 export default create({
   base: "light",
