@@ -1,10 +1,9 @@
 import { Input } from '@chakra-ui/react';
-import { ThemeProvider } from '@highoutput/hds';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/react/dont-cleanup-after-each';
 import React from 'react';
-
+import ThemeProvider from '../ThemeProvider';
 import FormContainer from './FormContainer';
 
 describe('Form Container Component', () => {
