@@ -5,23 +5,30 @@
     "packages/**"
   ],
   "scripts": {
-    "test:hds": "npx nx test @highoutput/hds",
-    "build:hds": "npx nx build @highoutput/hds",
-    "test:spinner": "npx nx test @highoutput/hds-spinner",
-    "build:spinner": "npx nx build @highoutput/hds-spinner",
-    "test:icons": "npx nx test @highoutput/hds-icons",
-    "build:icons": "npx nx build @highoutput/hds-icons",
-    "test:array-field": "npx nx test @highoutput/hds-array-field",
-    "build:array-field": "npx nx build @highoutput/hds-array-field",
-    "test:auto-form": "npx nx test @highoutput/hds-auto-form",
-    "build:auto-form": "npx nx build @highoutput/hds-auto-form",
-    "test:contact-us": "npx nx test @highoutput/hds-contact-us",
-    "build:contact-us": "npx nx build @highoutput/hds-contact-us",
-    "test:auth": "npx nx test @highoutput/hds-auth",
-    "build:auth": "npx nx build @highoutput/hds-auth",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic --project-token=c97132e80915"
+    "chromatic": "npx chromatic --project-token=c97132e80915",
+
+    "test:hds": "npx nx test @highoutput/hds",    
+    "build:hds": "npx nx build @highoutput/hds",
+
+    "test:spinner": "npx nx test @highoutput/hds-spinner",
+    "build:spinner": "npx nx build @highoutput/hds-spinner",
+
+    "test:icons": "npx nx test @highoutput/hds-icons",
+    "build:icons": "npx nx build @highoutput/hds-icons",
+
+    "test:array-field": "npx nx test @highoutput/hds-array-field",
+    "build:array-field": "npx nx build @highoutput/hds-array-field",
+
+    "test:auto-form": "npx nx test @highoutput/hds-auto-form",
+    "build:auto-form": "npx nx build @highoutput/hds-auto-form",
+
+    "test:contact-us": "npx nx test @highoutput/hds-contact-us",
+    "build:contact-us": "npx nx build @highoutput/hds-contact-us",
+
+    "test:auth": "npx nx test @highoutput/hds-auth",
+    "build:auth": "npx nx build @highoutput/hds-auth"
   },
   "devDependencies": {
     "@babel/core": "7.20.2",
