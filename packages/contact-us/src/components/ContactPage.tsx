@@ -1,21 +1,13 @@
 import { Box, Center, Text } from '@chakra-ui/react';
-import React, { FC, ReactNode } from 'react';
 import { HovIcon } from '@highoutput/hds-icons';
-
+import React, { FC, ReactNode } from 'react';
 import ContactCard from './ContactCard';
-
-// type WithoutChildren<T> = Omit<T, 'children'>;
 
 export interface ContagePageProps {
   title?: string;
   secondaryTitle?: string;
   iconNode?: ReactNode;
   url?: string;
-  // partProps?: {
-  //   contactCard?: WithoutChildren<ContactCardProps>;
-  //   title?: WithoutChildren<TextProps>;
-  //   secondaryTitle?: WithoutChildren<TextProps>;
-  // };
 }
 
 const ContactPage: FC<ContagePageProps> = (props) => {

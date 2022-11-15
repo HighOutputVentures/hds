@@ -1,7 +1,6 @@
+import { ThemeProvider } from '@highoutput/hds';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-
-import ThemeProvider from '../../../hds/src/components/ThemeProvider';
 import ContactForm from './ContactForm';
 import ContactFormMDX from './ContactForm.mdx';
 

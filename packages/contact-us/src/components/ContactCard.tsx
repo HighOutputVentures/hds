@@ -2,15 +2,10 @@ import { Box, BoxProps, Center, Text } from '@chakra-ui/react';
 import React, { FC, ReactNode } from 'react';
 import ContactForm from './ContactForm';
 
-// type WithoutChildren<T> = Omit<T, 'children'>;
 export interface ContactCardProps extends Pick<BoxProps, 'pos' | 'top' | 'w'> {
   children?: ReactNode;
   title?: string;
   url?: string;
-  // partProps?: {
-  //   contactForm?: WithoutChildren<ContactFormProps>;
-  //   text?: WithoutChildren<TextProps>;
-  // };
 }
 
 const ContactCard: FC<ContactCardProps> = (props) => {

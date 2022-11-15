@@ -1,6 +1,6 @@
 import { AddIcon, DeleteIcon } from '@chakra-ui/icons';
 import { Button, Flex, Icon, Text, VStack } from '@chakra-ui/react';
-import { InputField } from '@highoutput/hds';
+import { InputField } from '@highoutput/hds-forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { ReactNode } from 'react';
 import { useFieldArray, useForm } from 'react-hook-form';
