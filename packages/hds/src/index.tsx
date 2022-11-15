@@ -1,3 +1,4 @@
+import Button, { ButtonProps } from './components/Button/Button';
 import CloseButton, { CloseButtonProps } from './components/Button/CloseButton';
 import SocialButton, {
   SocialButtonProps,
@@ -17,6 +18,8 @@ import {
 import { extendTheme } from './utils/theme.utils';
 
 export {
+  Button,
+  ButtonProps,
   CloseButtonVariantTypes,
   ButtonVariantsTypes,
   ButtonSizeTypes,
@@ -81,11 +84,9 @@ export {
   BreadcrumbProps,
   BreadcrumbSeparator,
   BreadcrumbSeparatorProps,
-  Button,
   ButtonGroup,
   ButtonGroupProps,
   ButtonOptions,
-  ButtonProps,
   ButtonSpinner,
   Center,
   CenterProps,
