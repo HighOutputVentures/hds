@@ -6,7 +6,35 @@ import For, { ForProps } from './components/For/For';
 import Mount, { MountProps } from './components/Mount/Mount';
 import ThemeProvider, { ThemeProviderProps } from './components/ThemeProvider';
 import theme from './theme';
+import {
+  ButtonSizeTypes,
+  CloseButtonSizeTypes,
+} from './theme/components/button/sizes';
+import {
+  ButtonVariantsTypes,
+  CloseButtonVariantTypes,
+} from './theme/components/button/variants';
 import { extendTheme } from './utils/theme.utils';
+
+export {
+  CloseButtonVariantTypes,
+  ButtonVariantsTypes,
+  ButtonSizeTypes,
+  CloseButtonSizeTypes,
+  For,
+  ForProps,
+  Mount,
+  MountProps,
+  ThemeProvider,
+  ThemeProviderProps,
+  SocialButton,
+  SocialButtonProps,
+  CloseButton,
+  CloseButtonProps,
+  // default theme
+  theme,
+  extendTheme,
+};
 
 export {
   Accordion,
@@ -361,18 +389,3 @@ export {
   WrapProps,
 } from '@chakra-ui/react';
 export { isValidMotionProp, motion } from 'framer-motion';
-export {
-  For,
-  ForProps,
-  Mount,
-  MountProps,
-  ThemeProvider,
-  ThemeProviderProps,
-  SocialButton,
-  SocialButtonProps,
-  CloseButton,
-  CloseButtonProps,
-  // default theme
-  theme,
-  extendTheme,
-};
