@@ -1,19 +1,7 @@
-export const Heading = {
-  baseStyle: {
-    marginBottom: 4,
-  },
-  variants: {
-    primary: {
-      fontSize: '39px',
-      lineHeight: '52px',
-      color: 'gray.700',
-    },
-    modalTitle: {
-      fontSize: '32px',
-      lineHeight: '42px',
-      color: 'gray.700',
-    },
-  },
-}
+import Text from './text/text';
 
-export default Heading
+export const Heading = {
+  sizes: Text.sizes,
+};
+
+export default Heading;
