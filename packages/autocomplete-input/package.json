@@ -47,5 +47,10 @@
       "path": "dist/hds-autocomplete-input.esm.js",
       "limit": "10 KB"
     }
-  ]
+  ],
+  "dependencies": {
+    "@highoutput/hds": "^0.1.27",
+    "@highoutput/hds-forms": "^0.1.1",
+    "chakra-react-select": "4.4.0"
+  }
 }
