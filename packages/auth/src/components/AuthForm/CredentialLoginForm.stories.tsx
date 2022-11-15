@@ -1,7 +1,6 @@
+import { ThemeProvider } from '@highoutput/hds';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-
-import ThemeProvider from '../../../../hds/src/components/ThemeProvider';
 import CredentialLoginForm from './CredentialLoginForm';
 import CredentialLoginFormMDX from './CredentialLoginForm.mdx';
 

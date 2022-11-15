@@ -1,7 +1,6 @@
-import '@testing-library/react/dont-cleanup-after-each';
-
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
+import '@testing-library/react/dont-cleanup-after-each';
 import React from 'react';
 import AutoForm from './AutoForm';
 import { autoFormSchema } from './validations';

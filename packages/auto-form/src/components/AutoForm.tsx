@@ -1,5 +1,5 @@
 import { Box, Button, VStack } from '@chakra-ui/react';
-import { InputField, TextAreaField } from '@highoutput/hds';
+import { InputField, TextAreaField } from '@highoutput/hds-forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { FC } from 'react';
 import { useForm, UseFormReturn } from 'react-hook-form';
