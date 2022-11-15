@@ -1,4 +1,4 @@
-import { sizeText } from './text/text';
+import Text from './text/text';
 
 export const Link = {
   baseStyle: {
@@ -6,7 +6,7 @@ export const Link = {
       textDecoration: 'underline',
     },
   },
-  sizes: sizeText,
+  sizes: Text.sizes,
   variants: {
     primary: {
       fontWeight: 'medium',

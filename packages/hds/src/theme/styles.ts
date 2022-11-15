@@ -7,7 +7,7 @@ const styles: Styles = {
     },
     body: {
       minH: '100vh',
-      color: 'gray.800',
+      color: 'neutrals.900',
       bgColor: 'white',
       scrollBehavior: 'smooth',
     },
