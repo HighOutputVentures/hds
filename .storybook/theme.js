@@ -1,6 +1,5 @@
-// .storybook/YourTheme.js
-
 import { create } from "@storybook/theming";
+import HOV from "../assets/hov_logo.png";
 
 export default create({
   base: "light",
@@ -28,7 +27,8 @@ export default create({
   inputTextColor: "#0F0F0F",
   inputBorderRadius: 4,
 
-  brandTitle: "Highoutput Venture Design System",
+  brandImage: HOV,
+  brandTitle: "HDS",
   brandUrl:
     "https://hds-highoutput.vercel.app/?path=/story/getting-started--page",
   brandTarget: "_self",

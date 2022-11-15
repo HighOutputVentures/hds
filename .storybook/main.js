@@ -13,7 +13,7 @@ module.exports = {
     "@storybook/addon-docs",
     "@storybook/mdx2-csf",
   ],
-
+  staticDirs: ["../assets"],
   features: {
     previewMdx2: true, // 👈 MDX 2 enabled here
     postcss: true,
