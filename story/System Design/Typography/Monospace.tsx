@@ -9,7 +9,17 @@ export default function Monospace() {
         Will be adding this soon...
       </Text>
       <Box mt="102px">
-        <Text textAlign="center" py="48px" size="header-4">
+        <Text
+          textAlign="center"
+          w="770px"
+          mx="auto"
+          py="48px"
+          size="header-4"
+          border="1px solid"
+          borderColor="neutrals.200"
+          rounded="4px"
+          color="neutrals.700"
+        >
           Coming soon
         </Text>
       </Box>
