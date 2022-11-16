@@ -1,8 +1,8 @@
-import { omit } from "./utils";
+import {omit} from './utils';
 
-describe("utils", () => {
-  describe("omit", () => {
-    it("Should omit props by keys (0)", () => {
+describe('utils', () => {
+  describe('omit', () => {
+    it('Should omit props by keys (0)', () => {
       const subject = {
         Aa: 1,
         Bb: 2,
@@ -11,7 +11,7 @@ describe("utils", () => {
         Ee: 5,
       };
 
-      expect(omit(subject, "Aa", "Bb", "Cc")).toStrictEqual(
+      expect(omit(subject, 'Aa', 'Bb', 'Cc')).toStrictEqual(
         expect.objectContaining({
           Dd: 4,
           Ee: 5,
@@ -19,8 +19,8 @@ describe("utils", () => {
       );
     });
 
-    it("Should omit props by keys (1)", () => {
-      expect(omit({ Aa: 1 }, "Aa")).toStrictEqual(expect.objectContaining({}));
+    it('Should omit props by keys (1)', () => {
+      expect(omit({Aa: 1}, 'Aa')).toStrictEqual(expect.objectContaining({}));
     });
   });
 });

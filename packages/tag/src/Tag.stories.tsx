@@ -1,12 +1,12 @@
-import { Box, extendTheme, HStack, VStack } from "@chakra-ui/react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import * as React from "react";
-import { theme, ThemeProvider } from "../../hds/src";
-import Tag from "./Tag";
-import withTag from "./withTag";
+import {Box, extendTheme, HStack, VStack} from '@chakra-ui/react';
+import {ComponentMeta, ComponentStory} from '@storybook/react';
+import * as React from 'react';
+import {theme, ThemeProvider} from '../../hds/src';
+import Tag from './Tag';
+import withTag from './withTag';
 
 export default {
-  title: "Components/Tag",
+  title: 'Components/Tag',
   component: Tag,
 } as ComponentMeta<typeof Tag>;
 

@@ -8,38 +8,44 @@ import {
   TagLabel,
   TagLeftIcon,
   useMultiStyleConfig,
-} from "@chakra-ui/react";
-import * as React from "react";
-import { omit } from "./utils";
+} from '@chakra-ui/react';
+import * as React from 'react';
+import {omit} from './utils';
 
 type Closable =
-  | { closable?: false }
+  | {
+      closable?: false;
+    }
   | {
       closable: true;
       onClose(): void;
     };
 
 type Badgeable =
-  | { badge?: false }
+  | {
+      badge?: false;
+    }
   | {
       badge: true;
       badgeCount: number;
     };
 
 type Checkable =
-  | { checkbox?: false }
+  | {
+      checkbox?: false;
+    }
   | {
       checkbox: true;
       checked?: boolean;
       onCheck(value: boolean): void;
     };
 
-type Size = "sm" | "md" | "lg";
+type Size = 'sm' | 'md' | 'lg';
 
 type BaseProps = {
   label: string;
   size?: Size;
-  icon?: (props: React.ComponentProps<"svg">) => JSX.Element;
+  icon?: (props: React.ComponentProps<'svg'>) => JSX.Element;
   avatar?: string;
   indicator?: boolean;
 };
@@ -52,9 +58,9 @@ export type TagProps =
     Checkable;
 
 export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref) {
-  const { size, variant, label, ...props } = Object.assign({ variant: "hds" }, p);
+  const {size, variant, label, ...props} = Object.assign({variant: 'hds'}, p);
 
-  const styles = useMultiStyleConfig("Tag", { size, variant });
+  const styles = useMultiStyleConfig('Tag', {size, variant});
 
   return (
     <Tag
@@ -64,17 +70,17 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref
       __css={{
         ...omit(
           props,
-          "icon",
-          "badge",
-          "avatar",
-          "closable",
-          "checkbox",
-          "indicator",
+          'icon',
+          'badge',
+          'avatar',
+          'closable',
+          'checkbox',
+          'indicator',
           /* @ts-expect-error "TypeScript doesn't know how to handle union types just yet 🤐" */
-          "onClose",
-          "checked",
-          "onCheck",
-          "badgeCount",
+          'onClose',
+          'checked',
+          'onCheck',
+          'badgeCount',
         ),
         /* inbuilt styles should not be overridable 🫠 */
         ...styles.container,
@@ -83,7 +89,7 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref
       {!!props.checkbox && (
         <Checkbox
           checked={props.checked}
-          onChange={function handleChange({ target: { checked } }) {
+          onChange={function handleChange({target: {checked}}) {
             props.onCheck(checked);
           }}
           aria-label="Select Item"

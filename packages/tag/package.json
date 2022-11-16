@@ -31,6 +31,8 @@
   },
   "prettier": {
     "printWidth": 100,
+    "singleQuote": true,
+    "bracketSpacing": false,
     "trailingComma": "all"
   },
   "name": "@highoutput/hds-tag",
