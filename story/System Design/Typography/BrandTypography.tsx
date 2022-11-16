@@ -1,13 +1,13 @@
-import { Box, BoxProps, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Heading, Image, Text } from "@chakra-ui/react";
 import * as React from "react";
 // @ts-ignore
 import helveticaNeue from "../../../assets/typography/helvetica-neue.png";
 // @ts-ignore
 import sfMono from "../../../assets/typography/sf-mono.png";
 
-export default function BrandTypography(props: BoxProps) {
+export default function BrandTypography() {
   return (
-    <Box mt="250px" {...props}>
+    <Box mt="250px">
       <Heading size="header-2">Brand typography</Heading>
 
       <Text mt="64px" size="paragraph-xxl-default" color="neutrals.700">

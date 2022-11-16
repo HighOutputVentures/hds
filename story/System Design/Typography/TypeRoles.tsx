@@ -29,7 +29,7 @@ export default function TypeRoles(props: BoxProps) {
 function HeadersAndSubheaders() {
   return (
     <Flex mt="64px" gap="156px">
-      <Box>
+      <Box maxW="716px">
         <Heading size="header-3">Headers and subheaders</Heading>
         <Text mt="28px" size="paragraph-xxl-default" color="neutrals.700">
           Headers and subheaders have typically tighter line spacing compared to the paragraph
@@ -43,7 +43,7 @@ function HeadersAndSubheaders() {
           typically applied to subheaders (H4-H6).
         </Text>
       </Box>
-      <Box px="64px" py="48px">
+      <Flex direction="column" gap="24px" px="64px" py="48px">
         {[
           ["80px", "Heading 1"],
           ["56px", "Heading 2"],
@@ -52,7 +52,7 @@ function HeadersAndSubheaders() {
           ["24px", "Heading 5"],
           ["20px", "Heading 6"],
         ].map(([px, header]) => (
-          <Flex gap="40px" alignItems="flex-end">
+          <Flex gap="43px" alignItems="flex-end">
             <Text
               fontFamily="'SF Mono', monospace"
               fontSize="20px"
@@ -64,7 +64,7 @@ function HeadersAndSubheaders() {
             <Heading size={header.replace(/ing\s/, "er-").toLowerCase()}>{header}</Heading>
           </Flex>
         ))}
-      </Box>
+      </Flex>
     </Flex>
   );
 }
@@ -93,25 +93,36 @@ function Paragraphs() {
         </UnorderedList>
       </Box>
 
-      <Box mt="68px">
-        <Image src={browser} alt="" />
-        <Heading>Recommended size for web paragraphs is 20px</Heading>
-        <Text>
-          Type scaling helps with ensuring the typography readability and how will it behave
-          from larger screen vs smaller screens.
-        </Text>
-        <Text>
-          <em>
+      <Box mt="69px" w="1046px" h="596px" position="relative">
+        <Box pt="104px" px="48px" pb="44px" position="relative" zIndex={1}>
+          <Heading size="header-1">Recommended size for web paragraphs is 20px</Heading>
+          <Text size="paragraph-lg-default" mt="48px">
             Type scaling helps with ensuring the typography readability and how will it behave
             from larger screen vs smaller screens.
-          </em>
-        </Text>
-        <Text>
-          <strong>
-            Type scaling helps with ensuring the typography readability and how will it behave
-            from larger screen vs smaller screens.
-          </strong>
-        </Text>
+          </Text>
+          <Text size="paragraph-lg-default" mt="16px">
+            <em>
+              Type scaling helps with ensuring the typography readability and how will it behave
+              from larger screen vs smaller screens.
+            </em>
+          </Text>
+          <Text size="paragraph-lg-default" mt="16px">
+            <strong>
+              Type scaling helps with ensuring the typography readability and how will it behave
+              from larger screen vs smaller screens.
+            </strong>
+          </Text>
+        </Box>
+
+        <Image
+          src={browser}
+          alt=""
+          width="full"
+          height="full"
+          position="absolute"
+          top={0}
+          left={0}
+        />
       </Box>
 
       {/* <!-- TODO: mobile --> */}
@@ -121,13 +132,15 @@ function Paragraphs() {
 
 function LabelsAndButtons() {
   return (
-    <Box>
-      <Heading>Labels and Buttons</Heading>
-      <Text>
+    <Box mt="104px">
+      <Heading size="header-3">Labels and Buttons</Heading>
+      <Text mt="28px" size="paragraph-xxl-default" color="neutrals.700">
         Buttons and labels should be in their base line height in order to maintain the margins
         and paddings proportion. They are mostly one liner and sometimes two lines. Buttons are
         in most cases one line.
       </Text>
+
+      <Flex px="76px" mt="64px"></Flex>
     </Box>
   );
 }
