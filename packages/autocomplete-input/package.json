@@ -1,5 +1,5 @@
 {
-  "version": "0.1.8",
+  "version": "0.1.9",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/autocomplete-input/src/index.d.ts",
@@ -52,7 +52,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@highoutput/hds-forms": "^0.1.7",
+    "@highoutput/hds-forms": "^0.1.8",
     "chakra-react-select": "4.4.0"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "version": "0.1.7",
+  "version": "0.1.8",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -52,7 +52,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@highoutput/hds": "^0.1.32",
+    "@highoutput/hds": "^0.1.33",
     "@hookform/resolvers": "2.9.9",
     "react-hook-form": "7.38.0",
     "yup": "0.32.11"
