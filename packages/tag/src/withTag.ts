@@ -7,7 +7,16 @@ import { MultiStyleConfig } from "@chakra-ui/react";
 
 export default function withTag() {
   const Tag: MultiStyleConfig = {
-    parts: "icon|label|badge|avatar|container|indicator|closeButton".split(/\|/g),
+    parts: [
+      "icon",
+      "label",
+      "badge",
+      "avatar",
+      "container",
+      "indicator",
+      "closeButton",
+      "checkbox",
+    ],
     baseStyle: {
       container: {
         rounded: "6px",
@@ -19,6 +28,9 @@ export default function withTag() {
         minWidth: "unset",
         minHeight: "unset",
       },
+      icon: {},
+      badge: {},
+      avatar: {},
     },
     variants: {
       hds() {

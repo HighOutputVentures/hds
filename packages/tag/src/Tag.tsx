@@ -51,32 +51,30 @@ export type TagProps =
     Closable &
     Checkable;
 
-export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(props, ref) {
-  const styles = useMultiStyleConfig("Tag", {
-    size: props.size,
-    variant: "hds",
-  });
+export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref) {
+  const { size, variant, label, ...props } = Object.assign({ variant: "hds" }, p);
+
+  const styles = useMultiStyleConfig("Tag", { size, variant });
 
   return (
     <Tag
       ref={ref}
-      variant="hds"
-      size={props.size}
+      size={size}
+      variant={variant}
       __css={{
         ...omit(
           props,
-          "size",
-          "label",
           "icon",
-          "avatar",
-          "indicator",
           "badge",
-          "badgeCount",
+          "avatar",
           "closable",
-          "onClose",
           "checkbox",
+          "indicator",
+          /* @ts-expect-error "TypeScript doesn't know how to handle union types just yet 🤐" */
+          "onClose",
           "checked",
           "onCheck",
+          "badgeCount",
         ),
         /* inbuilt styles should not be overridable 🫠 */
         ...styles.container,
@@ -98,7 +96,7 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(props,
       {!!props.indicator && <Box __css={styles.indicator} />}
 
       <TagLabel role="contentinfo" __css={styles.label}>
-        {props.label}
+        {label}
       </TagLabel>
 
       {!!props.closable && (
