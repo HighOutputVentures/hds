@@ -3,8 +3,6 @@ import CloseButton, { CloseButtonProps } from './components/Button/CloseButton';
 import SocialButton, {
   SocialButtonProps,
 } from './components/Button/SocialButton';
-import For, { ForProps } from './components/For/For';
-import Mount, { MountProps } from './components/Mount/Mount';
 import ThemeProvider, { ThemeProviderProps } from './components/ThemeProvider';
 import theme from './theme';
 import {
@@ -367,10 +365,6 @@ export {
   ButtonVariantsTypes,
   ButtonSizeTypes,
   CloseButtonSizeTypes,
-  For,
-  ForProps,
-  Mount,
-  MountProps,
   ThemeProvider,
   ThemeProviderProps,
   SocialButton,
