@@ -3,16 +3,27 @@ import {
   BoxProps,
   Flex,
   Heading,
+  Icon,
   Image,
   ListItem,
   Text,
   UnorderedList,
 } from "@chakra-ui/react";
 import * as React from "react";
+import ArrowIcon from "./icons/ArrowIcon";
 // @ts-ignore
 import browser from "../../../assets/typography/browser.png";
 // @ts-ignore
+import illustration1 from "../../../assets/typography/labels-and-buttons-1.png";
+// @ts-ignore
+import illustration2 from "../../../assets/typography/labels-and-buttons-2.png";
+// @ts-ignore
+import illustration3 from "../../../assets/typography/labels-and-buttons-3.png";
+// @ts-ignore
+import illustration4 from "../../../assets/typography/labels-and-buttons-4.png";
+// @ts-ignore
 import iphone from "../../../assets/typography/iphone.png";
+// @ts-ignore
 
 export default function TypeRoles(props: BoxProps) {
   return (
@@ -179,7 +190,86 @@ function LabelsAndButtons() {
         in most cases one line.
       </Text>
 
-      <Flex px="76px" mt="64px"></Flex>
+      <Flex mt="64px" columnGap="72px" rowGap="60px" flexWrap="wrap">
+        <Recipe />
+        <HowToCookLumpia />
+        <AdvancedSearch />
+        <Buttons />
+      </Flex>
+    </Box>
+  );
+}
+
+function Buttons() {
+  return (
+    <Box>
+      <Image w="648px" h="312px" src={illustration4} alt="" />
+    </Box>
+  );
+}
+
+function AdvancedSearch() {
+  return (
+    <Box>
+      <Image w="648px" h="312px" src={illustration3} alt="" />
+
+      <Box mt="54px" ml="140px" position="relative" width="fit-content">
+        <Icon
+          as={ArrowIcon}
+          width="100px"
+          height="150px"
+          position="absolute"
+          top="0"
+          left="50%"
+          transform="translateX(-50%)"
+          marginTop="-160px"
+        />
+        <Text size="label-xs-default">Label text</Text>
+      </Box>
+    </Box>
+  );
+}
+
+function HowToCookLumpia() {
+  return (
+    <Box>
+      <Image w="526px" h="312px" src={illustration2} alt="" />
+
+      <Box mt="54px" ml="155px" position="relative" width="fit-content">
+        <Icon
+          as={ArrowIcon}
+          width="61px"
+          height="61px"
+          position="absolute"
+          top="0"
+          left="50%"
+          transform="translateX(-50%)"
+          marginTop="-70px"
+        />
+        <Text size="label-xs-default">Label</Text>
+      </Box>
+    </Box>
+  );
+}
+
+function Recipe() {
+  return (
+    <Box>
+      <Image src={illustration1} alt="" w="770px" h="362px" />
+
+      <Box pos="relative" mt="37px" ml="250px" width="fit-content">
+        <Icon
+          as={ArrowIcon}
+          width="101px"
+          height="101px"
+          position="absolute"
+          top="0"
+          left="50%"
+          transform="translateX(-50%)"
+          marginTop="-110px"
+        />
+        <Text size="label-xs-default">Button text</Text>
+      </Box>
     </Box>
   );
 }

@@ -10,10 +10,10 @@ import {
   Text,
 } from "@chakra-ui/react";
 import * as React from "react";
-import CheckCircleIcon from "./CheckCircleIcon";
-import CheckDoneIcon from "./CheckDoneIcon";
-import SunIcon from "./SunIcon";
-import XCircleIcon from "./XCircleIcon";
+import CheckCircleIcon from "./icons/CheckCircleIcon";
+import CheckDoneIcon from "./icons/CheckDoneIcon";
+import SunIcon from "./icons/SunIcon";
+import XCircleIcon from "./icons/XCircleIcon";
 
 export default function DosAndDonts() {
   return (
