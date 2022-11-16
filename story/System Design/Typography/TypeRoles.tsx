@@ -190,7 +190,7 @@ function LabelsAndButtons() {
         in most cases one line.
       </Text>
 
-      <Flex mt="64px" columnGap="72px" rowGap="60px" flexWrap="wrap">
+      <Flex justifyContent="center" mt="64px" columnGap="72px" rowGap="60px" flexWrap="wrap">
         <Recipe />
         <HowToCookLumpia />
         <AdvancedSearch />
