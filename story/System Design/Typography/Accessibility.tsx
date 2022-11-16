@@ -1,5 +1,6 @@
 import {
   Box,
+  Flex,
   Heading,
   Table,
   TableContainer,
@@ -17,7 +18,7 @@ export default function Accessibility() {
     <Box mt="252px">
       <Heading size="header-2">Accessibility</Heading>
 
-      <Text size="paragraph-xxl-default" mt="64px">
+      <Text size="paragraph-xxl-default" mt="64px" color="neutrals.700">
         Headers and subheaders have typically tighter letter spacing compared to the paragraph.
       </Text>
 
@@ -31,14 +32,7 @@ export default function Accessibility() {
             },
           }}
         >
-          <Thead
-            sx={{
-              td: {
-                paddingX: "48px",
-                paddingY: "32px",
-              },
-            }}
-          >
+          <Thead>
             <Tr
               sx={{
                 th: {
@@ -59,6 +53,7 @@ export default function Accessibility() {
           <Tbody
             sx={{
               tr: {
+                padding: 0,
                 td: {
                   _notFirst: {
                     textAlign: "center",
@@ -75,6 +70,7 @@ export default function Accessibility() {
                     td: {
                       paddingY: "32px",
                       paddingRight: "48px",
+                      paddingLeft: 0,
                       _notFirst: {
                         paddingLeft: "48px",
                         fontSize: "32px",
@@ -95,7 +91,7 @@ export default function Accessibility() {
               );
             })}
 
-            <Tr>
+            <Tr h="100px">
               <Td colSpan={4} />
             </Tr>
 
@@ -106,6 +102,7 @@ export default function Accessibility() {
                     td: {
                       paddingY: "18px",
                       paddingRight: "48px",
+                      paddingLeft: 0,
                       _notFirst: {
                         paddingLeft: "48px",
                         fontSize: "32px",
@@ -126,7 +123,7 @@ export default function Accessibility() {
               );
             })}
 
-            <Tr>
+            <Tr h="100px">
               <Td colSpan={4} />
             </Tr>
 
@@ -137,6 +134,7 @@ export default function Accessibility() {
                     td: {
                       paddingY: "12px",
                       paddingRight: "48px",
+                      paddingLeft: 0,
                       _notFirst: {
                         paddingLeft: "48px",
                         fontSize: "20px",
@@ -159,6 +157,22 @@ export default function Accessibility() {
           </Tbody>
         </Table>
       </TableContainer>
+
+      <Box mt="100px">
+        <Flex gap="211px">
+          <Text size="button-default">buttons.default</Text>
+          <Text size="label-md-default">18 * 100% = 18px</Text>
+        </Flex>
+        <Flex mt="44px" gap="124px">
+          <Text size="button-uppercase">buttons.uppercase</Text>
+          <Text size="label-md-default">
+            18 * 100% = 18px
+            <br />
+            <br />
+            5% letter space
+          </Text>
+        </Flex>
+      </Box>
     </Box>
   );
 }
