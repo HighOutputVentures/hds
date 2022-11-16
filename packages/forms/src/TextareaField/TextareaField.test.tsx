@@ -1,31 +1,26 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/react/dont-cleanup-after-each';
 import React from 'react';
 import TextareaField from './TextareaField';
 
-describe('Form Container Component', () => {
-  beforeAll(() => {
+describe('TextareaField', () => {
+  beforeEach(() => {
     render(
       <TextareaField
         id="description"
         label="description"
-        placeholder="Write something here ..."
+        placeholder="Write something here..."
       />
     );
   });
 
-  it('should renders form container', async () => {
-    const formControl = await screen.findAllByTestId(
-      /form-container-form-control/i
-    );
-    expect(formControl).toHaveLength(1);
+  it('should render FormControl', () => {
+    expect(screen.queryByRole('group', { name: 'Form Group' })).toBeDefined();
   });
 
-  it('should renders text area field input', async () => {
-    const textareInput = await screen.findAllByTestId(
-      ':r0:-textarea-field-input'
-    );
-    expect(textareInput).toHaveLength(1);
+  it('should renders Textarea', () => {
+    expect(
+      screen.queryByPlaceholderText('Write something here...')
+    ).toBeDefined();
   });
 });

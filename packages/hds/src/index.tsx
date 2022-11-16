@@ -16,24 +16,6 @@ import {
 import { extendTheme } from './utils/theme.utils';
 
 export {
-  Button,
-  ButtonProps,
-  CloseButtonVariantTypes,
-  ButtonVariantsTypes,
-  ButtonSizeTypes,
-  CloseButtonSizeTypes,
-  ThemeProvider,
-  ThemeProviderProps,
-  SocialButton,
-  SocialButtonProps,
-  CloseButton,
-  CloseButtonProps,
-  // default theme
-  theme,
-  extendTheme,
-};
-
-export {
   Accordion,
   AccordionButton,
   AccordionButtonProps,
@@ -113,9 +95,6 @@ export {
   DrawerHeader,
   DrawerOverlay,
   DrawerProps,
-  /**
-   * @refernce https://chakra-ui.com/docs/components/transitions/usage#fade-transition
-   */
   Fade,
   FadeProps,
   Flex,
@@ -137,9 +116,6 @@ export {
   Heading,
   HeadingProps,
   HelpTextProps,
-  /**
-   * @refernce https://chakra-ui.com/docs/components/show-hide/usage
-   */
   Hide,
   HideProps,
   HStack,
@@ -162,6 +138,8 @@ export {
   InputProps,
   InputRightAddon,
   InputRightElement,
+  Kbd,
+  KbdProps,
   keyframes,
   LightMode,
   Link,
@@ -171,6 +149,7 @@ export {
   LinkOverlayProps,
   LinkProps,
   List,
+  ListIcon,
   ListItem,
   ListItemProps,
   ListProps,
@@ -245,17 +224,11 @@ export {
   RadioGroup,
   RadioGroupProps,
   RadioProps,
-  /**
-   * @refernce https://chakra-ui.com/docs/components/transitions/usage#scalefade-transition
-   */
   ScaleFade,
   ScaleFadeProps,
   Select,
   SelectProps,
   shouldShowFallbackImage,
-  /**
-   * @refernce https://chakra-ui.com/docs/components/show-hide/usage
-   */
   Show,
   ShowProps,
   SimpleGrid,
@@ -299,6 +272,8 @@ export {
   StatNumber,
   StatNumberProps,
   StatProps,
+  StyleConfig,
+  StyleFunctionProps,
   Switch,
   SwitchProps,
   Tab,
@@ -340,6 +315,7 @@ export {
   Tfoot,
   Th,
   Thead,
+  ThemeConfig,
   ToastId,
   Tooltip,
   TooltipProps,
@@ -354,9 +330,6 @@ export {
   useClipboard,
   useColorModeValue,
   useConst,
-  /**
-   * @refernce https://chakra-ui.com/docs/styled-system/utility-hooks/use-disclosure
-   */
   useDisclosure,
   UseDisclosureProps,
   UseDisclosureReturn,
@@ -374,6 +347,7 @@ export {
   useRadio,
   useRadioGroup,
   useSlider,
+  useStyleConfig,
   useTheme,
   useToast,
   UseToastOptions,
@@ -384,3 +358,19 @@ export {
   WrapProps,
 } from '@chakra-ui/react';
 export { isValidMotionProp, motion } from 'framer-motion';
+export {
+  Button,
+  ButtonProps,
+  CloseButtonVariantTypes,
+  ButtonVariantsTypes,
+  ButtonSizeTypes,
+  CloseButtonSizeTypes,
+  ThemeProvider,
+  ThemeProviderProps,
+  SocialButton,
+  SocialButtonProps,
+  CloseButton,
+  CloseButtonProps,
+  theme,
+  extendTheme,
+};

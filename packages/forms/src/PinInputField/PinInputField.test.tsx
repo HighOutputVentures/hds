@@ -1,11 +1,10 @@
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/react/dont-cleanup-after-each';
+import { render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
 import PinInputField from './PinInputField';
 
-describe('Pin Input Field Component', () => {
-  beforeAll(() => {
+describe('PinInputField', () => {
+  beforeEach(() => {
     render(
       <PinInputField
         numberOfFields={6}
@@ -17,15 +16,13 @@ describe('Pin Input Field Component', () => {
     );
   });
 
-  it('should render pin input field form container', async () => {
-    const formControl = await screen.findAllByTestId(
-      ':r1:-form-container-form-control'
-    );
-    expect(formControl).toHaveLength(1);
+  it('should render FormControl', () => {
+    expect(screen.queryByRole('group', { name: 'Form Group' })).toBeDefined();
   });
 
-  it('should render pin input field pin', async () => {
-    const pin = await screen.findAllByTestId(/:r0:-pininput-pin/i);
-    expect(pin).toHaveLength(6);
+  it('should render PinInputField', async () => {
+    await waitFor(() => {
+      expect(screen.queryAllByPlaceholderText('0')).toHaveLength(6);
+    });
   });
 });
