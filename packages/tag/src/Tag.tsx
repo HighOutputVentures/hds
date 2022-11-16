@@ -88,6 +88,7 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(props,
           onChange={function handleChange({ target: { checked } }) {
             props.onCheck(checked);
           }}
+          aria-label="Select Item"
           __css={styles.checkbox}
         />
       )}
@@ -96,7 +97,7 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(props,
       {!!props.avatar && <Avatar src={props.avatar} __css={styles.avatar} />}
       {!!props.indicator && <Box __css={styles.indicator} />}
 
-      <TagLabel role="contentinfo" aria-label="Tag Label" __css={styles.label}>
+      <TagLabel role="contentinfo" __css={styles.label}>
         {props.label}
       </TagLabel>
 
