@@ -15,7 +15,7 @@ import TypeScaling from "./TypeScaling";
 export default function Typography() {
   return (
     <ThemeProvider theme={theme}>
-      <Box w="1520px" mx="auto">
+      <Box minW="1520px" mx="auto">
         <Hero />
         <BrandTypography />
         <TypeScaling />

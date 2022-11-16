@@ -11,6 +11,8 @@ import {
 import * as React from "react";
 // @ts-ignore
 import browser from "../../../assets/typography/browser.png";
+// @ts-ignore
+import iphone from "../../../assets/typography/iphone.png";
 
 export default function TypeRoles(props: BoxProps) {
   return (
@@ -93,39 +95,76 @@ function Paragraphs() {
         </UnorderedList>
       </Box>
 
-      <Box mt="69px" w="1046px" h="596px" position="relative">
-        <Box pt="104px" px="48px" pb="44px" position="relative" zIndex={1}>
-          <Heading size="header-1">Recommended size for web paragraphs is 20px</Heading>
-          <Text size="paragraph-lg-default" mt="48px">
-            Type scaling helps with ensuring the typography readability and how will it behave
-            from larger screen vs smaller screens.
-          </Text>
-          <Text size="paragraph-lg-default" mt="16px">
-            <em>
+      <Flex justifyContent="space-between" mt="69px">
+        <Box w="1046px" h="596px" flexShrink={0} position="relative">
+          <Box pt="104px" px="48px" pb="44px" position="relative" zIndex={1}>
+            <Heading size="header-1">Recommended size for web paragraphs is 20px</Heading>
+            <Text size="paragraph-lg-default" mt="48px">
               Type scaling helps with ensuring the typography readability and how will it behave
               from larger screen vs smaller screens.
-            </em>
-          </Text>
-          <Text size="paragraph-lg-default" mt="16px">
-            <strong>
-              Type scaling helps with ensuring the typography readability and how will it behave
-              from larger screen vs smaller screens.
-            </strong>
-          </Text>
+            </Text>
+            <Text size="paragraph-lg-default" mt="16px">
+              <em>
+                Type scaling helps with ensuring the typography readability and how will it
+                behave from larger screen vs smaller screens.
+              </em>
+            </Text>
+            <Text size="paragraph-lg-default" mt="16px">
+              <strong>
+                Type scaling helps with ensuring the typography readability and how will it
+                behave from larger screen vs smaller screens.
+              </strong>
+            </Text>
+          </Box>
+
+          <Image
+            src={browser}
+            alt=""
+            width="full"
+            height="full"
+            position="absolute"
+            top={0}
+            left={0}
+          />
         </Box>
 
-        <Image
-          src={browser}
-          alt=""
-          width="full"
-          height="full"
-          position="absolute"
-          top={0}
-          left={0}
-        />
-      </Box>
-
-      {/* <!-- TODO: mobile --> */}
+        <Box w="407px" h="460px" flexShrink={0} position="relative">
+          <Box position="relative" zIndex={1} pt="62px" px="30px">
+            <Text
+              size="paragraph-sm-default"
+              fontFamily="'SF Mono', monospace"
+              color="neutrals.600"
+            >
+              Recommended size for mobile paragraphs&nbsp;is&nbsp;16px
+            </Text>
+            <Text size="paragraph-sm-default" letterSpacing="0.02em" mt="18px">
+              Type scaling helps with ensuring the typography readability and how will it behave
+              from larger screen vs smaller screens.
+            </Text>
+            <Text size="paragraph-sm-default" letterSpacing="0.02em" mt="18px">
+              <em>
+                Type scaling helps with ensuring the typography readability and how will it
+                behave from larger screen vs smaller screens.
+              </em>
+            </Text>
+            <Text size="paragraph-sm-default" letterSpacing="0.02em" mt="18px">
+              <strong>
+                Type scaling helps with ensuring the typography readability and how will it
+                behave from larger screen vs smaller screens.
+              </strong>
+            </Text>
+          </Box>
+          <Image
+            src={iphone}
+            alt=""
+            width="full"
+            height="full"
+            position="absolute"
+            top={0}
+            left={0}
+          />
+        </Box>
+      </Flex>
     </Box>
   );
 }
