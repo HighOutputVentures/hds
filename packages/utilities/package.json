@@ -47,8 +47,5 @@
       "path": "dist/hds-utilities.esm.js",
       "limit": "10 KB"
     }
-  ],
-  "dependencies": {
-    "@highoutput/hds": "^0.1.30"
-  }
+  ]
 }
