@@ -1,5 +1,5 @@
 {
-  "version": "0.1.6",
+  "version": "0.1.7",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/autocomplete-input/src/index.d.ts",
@@ -48,8 +48,11 @@
       "limit": "10 KB"
     }
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
-    "@highoutput/hds-forms": "^0.1.5",
+    "@highoutput/hds-forms": "^0.1.6",
     "chakra-react-select": "4.4.0"
   }
 }
