@@ -18,7 +18,7 @@ import SocialButton from '../../../components/Button/SocialButton';
 import ThemeProvider from '../../../components/ThemeProvider';
 
 export default {
-  title: 'System Design/Button System',
+  title: 'Components/Button System',
   component: Text,
 } as ComponentMeta<typeof Text>;
 interface ButtonRowProps {

@@ -139,7 +139,7 @@ const ColorSytemComponent: FC<any> = () => {
 };
 
 export default {
-  title: 'System Design/Color System',
+  title: 'Components/Color System',
   component: ColorSytemComponent,
 } as ComponentMeta<typeof ColorSytemComponent>;
 
