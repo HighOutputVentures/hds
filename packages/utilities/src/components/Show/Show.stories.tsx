@@ -2,14 +2,14 @@ import { Box, Button, Text } from '@chakra-ui/react';
 import { useArgs } from '@storybook/addons';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import Mount from './Mount';
+import Show from './Show';
 
 export default {
-  title: 'Components/Utilities/Mount',
-  component: Mount,
-} as ComponentMeta<typeof Mount>;
+  title: 'Utilities/Show',
+  component: Show,
+} as ComponentMeta<typeof Show>;
 
-const Template: ComponentStory<typeof Mount> = defaultArgs => {
+const Template: ComponentStory<typeof Show> = defaultArgs => {
   const [args, setArgs] = useArgs();
 
   const toggle = () => {
@@ -18,9 +18,9 @@ const Template: ComponentStory<typeof Mount> = defaultArgs => {
 
   return (
     <Box p={4}>
-      <Mount {...defaultArgs}>
+      <Show {...defaultArgs}>
         <Text>Hello World!!</Text>
-      </Mount>
+      </Show>
 
       <Button mt={4} onClick={toggle}>
         Toggle
