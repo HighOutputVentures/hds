@@ -47,5 +47,8 @@
       "path": "dist/hds-tag.esm.js",
       "limit": "10 KB"
     }
-  ]
+  ],
+  "jest": {
+    "verbose": true
+  }
 }

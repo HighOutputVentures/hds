@@ -1,4 +1,21 @@
+import {ChakraProvider, extendTheme} from '@chakra-ui/react';
+import '@testing-library/jest-dom/extend-expect';
+import {render} from '@testing-library/react';
+import * as React from 'react';
+import Tag from './Tag';
+import withTag from './withTag';
+
 describe('Tag', () => {
+  beforeEach(() => {
+    const {debug} = render(
+      <ChakraProvider theme={extendTheme(withTag())}>
+        <Tag />
+      </ChakraProvider>,
+    );
+
+    debug();
+  });
+
   it.todo('Should render tag');
   it.todo('Should render label');
   it.todo('Should render indicator');

@@ -5,7 +5,7 @@ export function omit<T extends Record<string, any>, K extends (keyof T)[]>(
   const copy = {...subject}; /* do NOT mutate original object 😏 */
 
   for (const key of keys) {
-    if (Object.hasOwn(copy, key)) {
+    if (key in copy) {
       delete copy[key];
     }
   }
