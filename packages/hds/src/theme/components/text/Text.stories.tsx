@@ -14,7 +14,7 @@ import ThemeProvider from '../../../components/ThemeProvider';
 import text from './text';
 
 export default {
-  title: 'System Design/Text System',
+  title: 'Components/Text System',
   component: Text,
 } as ComponentMeta<typeof Text>;
 interface TextRowProps {
