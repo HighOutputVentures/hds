@@ -29,17 +29,17 @@ export default function TypeScaling(props: BoxProps) {
         ))}
       </Flex>
 
-      <Text>
+      <Text mt="64px" size="paragraph-xxl-default" color="neutrals.700">
         We need to create sets of breakpoints for web and mobile. 4 px, 8 px, 16 px, 20 px, ....
         N px
       </Text>
 
-      <Box>
+      <Flex mt="64px" gap="72px" px="76px">
         <Example size="web" />
         <Example size="mobile" />
-      </Box>
+      </Flex>
 
-      <Text>
+      <Text mt="64px" size="paragraph-xxl-default" color="neutrals.700">
         To keep the buttons, tags, and labels components proportion according to its baseline,
         we will multiply them with 100%.
       </Text>
@@ -47,17 +47,78 @@ export default function TypeScaling(props: BoxProps) {
   );
 }
 
-function Example(_: { size: "web" | "mobile" }) {
+function Example({ size = "web" }: { size: "web" | "mobile" }) {
   return (
-    <Box>
-      <Text>This is a monospace.sm</Text>
-      <Heading>Header 1 in web</Heading>
-      <Text>
+    <Box py="48px" px="64px">
+      <Text
+        fontFamily="'SF Mono', monospace"
+        fontSize="18px"
+        lineHeight="21.48px"
+        color="neutrals.600"
+        {...(size === "mobile" && {
+          fontSize: "14px",
+          lineHeight: "17px",
+        })}
+      >
+        This is a monospace.sm
+      </Text>
+      <Heading
+        mt="24px"
+        size="header-1"
+        {...(size === "mobile" && {
+          mt: "18px",
+          fontSize: "44px",
+          lineHeight: "48px",
+          letterSpacing: "-0.015em",
+        })}
+      >
+        Header 1 in web
+      </Heading>
+      <Text
+        mt="24px"
+        size="paragraph-lg-default"
+        {...(size === "mobile" && {
+          mt: "18px",
+          fontSize: "16px",
+          lineHeight: "24px",
+          letterSpacing: "0.02em",
+        })}
+      >
         Type scaling helps with ensuring the typography readability and how will it behave from
         larger screen vs smaller screens.
       </Text>
-      <Text>Header computation: 80px * 1.2 = 96px ~88px</Text>
-      <Text>Paragraph computation: 20px * 1.5 = 30px ~32px</Text>
+      <Text
+        mt="24px"
+        size="label-md-default"
+        color="neutrals.700"
+        {...(size === "mobile" && {
+          mt: "18px",
+          fontSize: "14px",
+          lineHeight: "14px",
+          letterSpacing: "0.02em",
+        })}
+      >
+        Header computation: 80px * 1.2 = 96px{" "}
+        <Text as="span" color="#8A68EF">
+          ~88px
+        </Text>
+      </Text>
+      <Text
+        mt="24px"
+        size="label-md-default"
+        color="neutrals.700"
+        {...(size === "mobile" && {
+          mt: "18px",
+          fontSize: "14px",
+          lineHeight: "14px",
+          letterSpacing: "0.02em",
+        })}
+      >
+        Paragraph computation: 20px * 1.5 = 30px{" "}
+        <Text as="span" color="#8A68EF">
+          ~32px
+        </Text>
+      </Text>
     </Box>
   );
 }

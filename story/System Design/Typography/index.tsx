@@ -1,5 +1,5 @@
 import * as React from "react";
-import { theme, ThemeProvider } from "../../../packages/hds/dist";
+import { Box, theme, ThemeProvider } from "../../../packages/hds/dist";
 import Accessibility from "./Accessibility";
 import ApplyingColors from "./ApplyingColors";
 import BoundingBox from "./BoundingBox";
@@ -15,17 +15,19 @@ import TypeScaling from "./TypeScaling";
 export default function Typography() {
   return (
     <ThemeProvider theme={theme}>
-      <Hero />
-      <BrandTypography />
-      <TypeScaling />
-      <TypeRoles />
-      <BoundingBox />
-      <ApplyingColors />
-      <EnsuringReadability />
-      <DosAndDonts />
-      <Accessibility />
-      <Monospace />
-      <Footer />
+      <Box width="1780px">
+        <Hero />
+        <BrandTypography />
+        <TypeScaling />
+        <TypeRoles />
+        <BoundingBox />
+        <ApplyingColors />
+        <EnsuringReadability />
+        <DosAndDonts />
+        <Accessibility />
+        <Monospace />
+        <Footer />
+      </Box>
     </ThemeProvider>
   );
 }

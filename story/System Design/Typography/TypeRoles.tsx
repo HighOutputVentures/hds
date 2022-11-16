@@ -14,8 +14,9 @@ import browser from "../../../assets/typography/browser.png";
 
 export default function TypeRoles(props: BoxProps) {
   return (
-    <Box {...props}>
-      <Text>
+    <Box mt="250px" {...props}>
+      <Heading size="header-2">Type roles</Heading>
+      <Text size="paragraph-xxl-default" color="neutrals.700" mt="64px">
         Different size, different roles. This ensures proper heirarchy of our interfaces.
       </Text>
       <HeadersAndSubheaders />
@@ -27,17 +28,22 @@ export default function TypeRoles(props: BoxProps) {
 
 function HeadersAndSubheaders() {
   return (
-    <Box>
+    <Flex mt="64px" gap="156px">
       <Box>
-        <Heading>Headers and subheaders</Heading>
-        <Text>
+        <Heading size="header-3">Headers and subheaders</Heading>
+        <Text mt="28px" size="paragraph-xxl-default" color="neutrals.700">
           Headers and subheaders have typically tighter line spacing compared to the paragraph
-          and are mostly one to three liners. When it comes to font-weight, the smaller the
-          font-size gets, the lighter the weights. Headers and subheaders weights ranges from
-          700 maximum typically H1-H3 and 500 minimum typically applied to subheaders (H4-H6).
+          and are mostly one to three liners.
+          <br />
+          <br />
+          When it comes to font-weight, the smaller the font-size gets, the lighter the weights.
+          <br />
+          <br />
+          Headers and subheaders weights ranges from 700 maximum typically H1-H3 and 500 minimum
+          typically applied to subheaders (H4-H6).
         </Text>
       </Box>
-      <Box>
+      <Box px="64px" py="48px">
         {[
           ["80px", "Heading 1"],
           ["56px", "Heading 2"],
@@ -46,33 +52,48 @@ function HeadersAndSubheaders() {
           ["24px", "Heading 5"],
           ["20px", "Heading 6"],
         ].map(([px, header]) => (
-          <Flex>
-            <Text>{px}</Text>
-            <Heading>{header}</Heading>
+          <Flex gap="40px" alignItems="flex-end">
+            <Text
+              fontFamily="'SF Mono', monospace"
+              fontSize="20px"
+              lineHeight="24px"
+              color="neutrals.700"
+            >
+              {px}
+            </Text>
+            <Heading size={header.replace(/ing\s/, "er-").toLowerCase()}>{header}</Heading>
           </Flex>
         ))}
       </Box>
-    </Box>
+    </Flex>
   );
 }
 
 function Paragraphs() {
   return (
-    <Box>
-      <Heading>Paragraphs</Heading>
-      <Text>
-        Paragraphs are typically multi-line so we want to give them more breathability.
-      </Text>
-      <Text>We have three different font-style for each sizes:</Text>
-      <UnorderedList>
-        <ListItem>Regular</ListItem>
-        <ListItem>Italic</ListItem>
-        <ListItem>
-          <strong>Bold</strong>
-        </ListItem>
-      </UnorderedList>
+    <Box mt="104px">
+      <Heading size="header-3" color="neutrals.800">
+        Paragraphs
+      </Heading>
+      <Box as={Text} size="paragraph-xxl-default" mt="28px" color="neutrals.700">
+        <Text>
+          Paragraphs are typically multi-line so we want to give them more breathability.
+        </Text>
+        <br />
+        <Text>We have three different font-style for each sizes:</Text>
+        <br />
+        <UnorderedList>
+          <ListItem>Regular</ListItem>
+          <ListItem>
+            <em>Italic</em>
+          </ListItem>
+          <ListItem>
+            <strong>Bold</strong>
+          </ListItem>
+        </UnorderedList>
+      </Box>
 
-      <Box>
+      <Box mt="68px">
         <Image src={browser} alt="" />
         <Heading>Recommended size for web paragraphs is 20px</Heading>
         <Text>
