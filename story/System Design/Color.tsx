@@ -88,7 +88,7 @@ const Color = () => {
     <ThemeProvider>
       <Box>
         <Stack direction="row" mb={5}>
-          <Text pos="relative" top={-1} size="heading-web-1">
+          <Text pos="relative" top={-1} size="header-1">
             Color system
           </Text>
         </Stack>
@@ -96,7 +96,7 @@ const Color = () => {
           We use HSB to determine the brand’s primary color palette and the
           100-900 neutral colors.
         </Text>
-        <Text size="heading-web-2" marginBottom={"64px"}>
+        <Text size="header-2" marginBottom={"64px"}>
           Color usage
         </Text>
         <Text size="paragraph-xxl-default" mb={"250px"}>
@@ -107,12 +107,12 @@ const Color = () => {
           lastly, the interface colors which represents our state palettes,
           success, errors, and warning.
         </Text>
-        <Text size="heading-web-2" mb={"64px"}>
+        <Text size="header-2" mb={"64px"}>
           Brand palette
         </Text>
         <Text size="paragraph-xxl-default" mb={"50px"}>
           We use{" "}
-          <Text as="span" size="paragraph-xxl-bold">
+          <Text as="span" size="paragraph-xxl-default" fontWeight={"bold"}>
             HSB (Hue, Saturation, Brightness)
           </Text>{" "}
           instead of using hex to define our primary palette. It is mostly
@@ -128,7 +128,7 @@ const Color = () => {
           Then for dark, we typically leave the saturation alone and decrease
           the brightness down to ~50.
         </Text>
-        <Text size="paragraph-xxl-bold" mt={15}>
+        <Text size="paragraph-xxl-default" fontWeight={"bold"} mt={15}>
           Standardization
         </Text>
         <Text size="paragraph-xxl-default" mt={5}>
@@ -141,7 +141,7 @@ const Color = () => {
           when applying our brand to UI. This rule guides us how and when to use
           the brand color palettes.
         </Text>
-        <Text size="paragraph-xxl-bold" mb={"24px"}>
+        <Text size="paragraph-xxl-default" fontWeight={"bold"} mb={"24px"}>
           What is the 60-30-10 Rule?
         </Text>
         <Text size="paragraph-xxl-default" mb={"64px"}>
@@ -152,14 +152,14 @@ const Color = () => {
         <Center w="full">
           <Image src={rule_603010} />
         </Center>
-        <Text size="heading-web-2" mt={"367px"} mb="64px">
+        <Text size="header-2" mt={"367px"} mb="64px">
           Color as a system
         </Text>
         <Text size="paragraph-xxl-default" mb={"150px"}>
           Defining the shades of HDS. Colors are intentional, has meaning, and
           able to communicate.
         </Text>
-        <Text size="heading-web-3" mb="28px">
+        <Text size="header-3" mb="28px">
           Color roles
         </Text>
         <Text size="paragraph-xxl-default" mb="28px">
@@ -265,10 +265,10 @@ const Color = () => {
             </Text>
           </HStack>
         </Flex>
-        <Text size="heading-web-3" mb="28px">
+        <Text size="header-3" mb="28px">
           Brand colors (Primary)
         </Text>
-        <Text size="paragraph-xxl-bold" mb={"24px"}>
+        <Text size="paragraph-xxl-default" fontWeight={"bold"} mb={"24px"}>
           Single-use of color policy
         </Text>
         <Text size="paragraph-xxl-default" mb={"64px "}>
@@ -307,7 +307,7 @@ const Color = () => {
             })}
           </Flex>
         </Center>
-        <Text size="heading-web-3" mb="28px">
+        <Text size="header-3" mb="28px">
           Neutral colors (Secondary)
         </Text>
         <Text size="paragraph-xxl-default" mb={"32px "}>
@@ -316,7 +316,7 @@ const Color = () => {
           as the lightest to 900 darkest.
         </Text>
         <Text size="paragraph-xxl-default" mb={"32px "}>
-          <Text size="paragraph-xxl-bold" as="span">
+          <Text size="paragraph-xxl-default" fontWeight={"bold"} as="span">
             Standardize the hue
           </Text>{" "}
           - Neutral colors play as the secondary and supporting role in the
@@ -324,7 +324,7 @@ const Color = () => {
           as the lightest to 900 darkest.
         </Text>
         <Text size="paragraph-xxl-default" mb={"32px "}>
-          <Text size="paragraph-xxl-bold" as="span">
+          <Text size="paragraph-xxl-default" fontWeight={"bold"} as="span">
             Computation
           </Text>{" "}
           - I just changed the brightness and stick with the 8-grid system
@@ -413,7 +413,7 @@ const Color = () => {
             </Box>
           </Flex>
         </VStack>
-        <Text size="heading-web-3" mb="28px">
+        <Text size="header-3" mb="28px">
           Accent colors (Tertiary)
         </Text>
         <Text size="paragraph-xxl-default" mb={"48px"}>
@@ -487,13 +487,13 @@ const Color = () => {
             })}
           </Flex>
         </Center>
-        <Text size="heading-web-3" mb="28px">
+        <Text size="header-3" mb="28px">
           Interface state colors
         </Text>
         <Text size="paragraph-xxl-default" mb={"32px "}>
           It is important to define the state colors for errors, warning, and
           success. Keeping the{" "}
-          <Text size="paragraph-xxl-bold" as="span">
+          <Text size="paragraph-xxl-default" fontWeight={"bold"} as="span">
             Hue
           </Text>{" "}
           value standardized with your primary colors will be helpful with your
@@ -547,7 +547,7 @@ const Color = () => {
           </Flex>
         </Center>
         <VStack height={"212px"} spacing="28px" align={"start"} justify="end">
-          <Text size="heading-web-2">Is this document helpful?</Text>
+          <Text size="header-2">Is this document helpful?</Text>
           <Text size="paragraph-xxl-default">
             Give us some feedback for us to improve it at design@hov.co
           </Text>
