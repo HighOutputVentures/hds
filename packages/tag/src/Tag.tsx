@@ -84,6 +84,7 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref
       __css={{
         ...omit(
           props,
+          'size',
           'icon',
           'badge',
           'avatar',
