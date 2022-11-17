@@ -1,5 +1,9 @@
-export type AvatarGroupProps = {};
+import { PropsWithChildren } from 'react';
 
-export default function AvatarGroup({}: AvatarGroupProps) {
+export type AvatarGroupProps = {
+  [key: string]: any;
+};
+
+export default function AvatarGroup({}: PropsWithChildren<AvatarGroupProps>) {
   return null;
 }
