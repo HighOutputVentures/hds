@@ -1,7 +1,13 @@
 import withTag from './withTag';
 
 describe('withTag', () => {
-  it('Should return theme as object', () => {
-    expect(withTag()).toEqual(expect.any(Object));
+  it("Should return theme for 'Tag'", () => {
+    expect(withTag()).toEqual(
+      expect.objectContaining({
+        components: {
+          Tag: expect.any(Object),
+        },
+      }),
+    );
   });
 });
