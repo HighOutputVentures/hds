@@ -6,6 +6,7 @@ describe('withTag', () => {
       expect.objectContaining({
         components: {
           Tag: expect.any(Object),
+          Checkbox: expect.any(Object),
         },
       }),
     );

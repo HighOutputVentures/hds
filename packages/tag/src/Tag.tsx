@@ -1,8 +1,6 @@
 import {
   Avatar,
   Box,
-  Spacer,
-  SpacerProps,
   SystemStyleObject,
   Tag,
   TagCloseButton,
@@ -13,7 +11,7 @@ import {
 } from '@chakra-ui/react';
 import * as React from 'react';
 import Checkbox from './Checkbox';
-import { omit } from './utils';
+import { omit, space } from './utils';
 
 type Closable =
   | {
@@ -96,8 +94,7 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref
         ...styles.container,
       }}
     >
-      {/* <!-- Checkbox --> */}
-      {!!props.checkbox && (
+      {!!props.checkbox /* <!-- Checkbox --> */ && (
         <React.Fragment>
           {space(true, { width: { sm: '5px', md: '4px', lg: '5px' }[size] })}
 
@@ -116,8 +113,7 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref
         </React.Fragment>
       )}
 
-      {/* <!-- Icon  --> */}
-      {!!props.icon && (
+      {!!props.icon /* <!-- Icon  --> */ && (
         <React.Fragment>
           {space(true, { width: { sm: '4px', md: '5px', lg: '6px' }[size] })}
 
@@ -127,8 +123,7 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref
         </React.Fragment>
       )}
 
-      {/* <!-- Avatar --> */}
-      {!!props.avatar && (
+      {!!props.avatar /* <!-- Avatar --> */ && (
         <React.Fragment>
           {space(true, { width: { sm: '4px', md: '5px', lg: '6px' }[size] })}
 
@@ -138,8 +133,7 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref
         </React.Fragment>
       )}
 
-      {/* <!-- Indicator --> */}
-      {!!props.indicator && (
+      {!!props.indicator /* <!-- Indicator --> */ && (
         <React.Fragment>
           {space(true, { width: { sm: '7px', md: '8px', lg: '10px' }[size] })}
 
@@ -149,21 +143,23 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref
         </React.Fragment>
       )}
 
-      {/* <!-- Label --> */}
-      {space(![props.icon, props.avatar, props.indicator, props.checkbox].some(Boolean), {
-        width: { sm: '8px', md: '9px', lg: '10px' }[size],
-      })}
+      {!!label /* <!-- Label --> */ && (
+        <React.Fragment>
+          {space(![props.icon, props.avatar, props.indicator, props.checkbox].some(Boolean), {
+            width: { sm: '8px', md: '9px', lg: '10px' }[size],
+          })}
 
-      <TagLabel role="contentinfo" __css={styles.label}>
-        {label}
-      </TagLabel>
+          <TagLabel role="contentinfo" __css={styles.label}>
+            {label}
+          </TagLabel>
 
-      {space(!props.closable && !props.badge, {
-        width: { sm: '8px', md: '9px', lg: '10px' }[size],
-      })}
+          {space(![props.closable, props.badge].some(Boolean), {
+            width: { sm: '8px', md: '9px', lg: '10px' }[size],
+          })}
+        </React.Fragment>
+      )}
 
-      {/* <!-- Close Button --> */}
-      {!!props.closable && (
+      {!!props.closable /* <!-- Close Button --> */ && (
         <React.Fragment>
           {space(true, { width: { sm: '5px', md: '5px', lg: '6px' }[size] })}
 
@@ -178,8 +174,7 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref
         </React.Fragment>
       )}
 
-      {/* <!-- Badge --> */}
-      {!!props.badge && (
+      {!!props.badge /* <!-- Badge --> */ && (
         <React.Fragment>
           {space(true, { width: { sm: '8px', md: '10px', lg: '12px' }[size] })}
 
@@ -191,7 +186,3 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref
     </Tag>
   );
 });
-
-function space(when: boolean, props: SpacerProps) {
-  return !when ? null : <Spacer height="1px" {...props} />;
-}

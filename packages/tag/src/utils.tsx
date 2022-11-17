@@ -1,3 +1,6 @@
+import { Spacer, SpacerProps } from '@chakra-ui/react';
+import * as React from 'react';
+
 export function omit<T extends Record<string, any>, K extends (keyof T)[]>(
   subject: T,
   ...keys: K
@@ -11,4 +14,8 @@ export function omit<T extends Record<string, any>, K extends (keyof T)[]>(
   }
 
   return copy;
+}
+
+export function space(when: boolean, props: SpacerProps) {
+  return !when ? null : <Spacer height="1px" {...props} />;
 }
