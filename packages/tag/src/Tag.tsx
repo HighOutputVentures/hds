@@ -190,19 +190,15 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref
   );
 });
 
-function useActualSize(size: TagProps['size']) {
-  const actualBreakpoint = useBreakpoint();
-  const psuedoBreakpoint = React.useMemo(() => {
-    return 'sm|md|lg'.split(/\|/g).includes(actualBreakpoint)
-      ? actualBreakpoint
-      : ['base'].includes(actualBreakpoint)
-      ? 'sm'
-      : 'lg';
-  }, []);
-
+function useActualSize(size: TagProps['size'], fallback = 'md') {
+  const breakpoint = useBreakpoint();
   const keys = Object.keys(size);
 
   return typeof size === 'string'
     ? size
-    : size[psuedoBreakpoint] ?? /* fallback to closest given size */ size[keys[keys.length - 1]];
+    : breakpoint in size
+    ? size[breakpoint]
+    : keys.length
+    ? size[keys.at(-1)]
+    : fallback;
 }

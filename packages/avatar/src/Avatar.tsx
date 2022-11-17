@@ -1,4 +1,4 @@
-import { Avatar, AvatarBadge, Icon } from '@chakra-ui/react';
+import { Avatar, AvatarBadge, Icon, useBreakpoint } from '@chakra-ui/react';
 import { SystemStyleObject } from '@chakra-ui/styled-system';
 import * as React from 'react';
 import UserIcon from './icons/UserIcon';
@@ -19,11 +19,12 @@ type Badgeable =
     };
 
 type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+type Breakpoints = 'base' | 'sm' | 'md' | 'lg' | 'xl';
 
 type BaseProps = {
   src?: string;
   name?: string;
-  size?: Size;
+  size?: Size | Record<Breakpoints, Size>;
   online?: boolean;
   verified?: boolean;
 };
@@ -31,15 +32,9 @@ type BaseProps = {
 export type AvatarProps = SystemStyleObject & BaseProps & Badgeable & Clickable;
 
 export default function HdsAvatar(props: AvatarProps) {
-  const {
-    src,
-    name,
-    size = 'md',
-    online,
-    variant,
-    verified,
-    ...p
-  } = Object.assign({}, props, { variant: 'hds' } /* force override 👻 */);
+  const { src, name, variant, ...p } = Object.assign({ size: 'md' }, props, { variant: 'hds' });
+
+  const size = useActualSize(p.size);
 
   return (
     <Avatar
@@ -59,17 +54,31 @@ export default function HdsAvatar(props: AvatarProps) {
       sx={{
         ...omit(
           p,
+          'size',
+          'badge',
+          'clickable',
           /* @ts-ignore "Include types which utilizes type guard-ing." */
           'onClick',
-          'clickable',
-          'badge',
           'badgeIcon',
         ),
       }}
     >
-      {online && <AvatarBadge />}
-      {verified && <AvatarBadge />}
-      {p.badge && <AvatarBadge />}
+      {!!p.badge && <AvatarBadge />}
+      {!!p.online && <AvatarBadge />}
+      {!!p.verified && <AvatarBadge />}
     </Avatar>
   );
+}
+
+function useActualSize(size: AvatarProps['size'], fallback = 'md') {
+  const breakpoint = useBreakpoint();
+  const keys = Object.keys(size);
+
+  return typeof size === 'string'
+    ? size
+    : breakpoint in size
+    ? size[breakpoint]
+    : keys.length
+    ? size[keys.at(-1)]
+    : fallback;
 }
