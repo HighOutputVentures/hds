@@ -7,7 +7,7 @@ We aim to build a library of custom ReactJS components that implements our uniqu
 To install the package, use:
 
 ```bash
-npm i @highoutput/tag
+npm i @highoutput/hds-tag
 ```
 
 ### Usage
