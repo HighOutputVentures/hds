@@ -200,5 +200,9 @@ export function useActualSize(size: TagProps['size']) {
       : 'lg';
   }, []);
 
-  return typeof size === 'string' ? size : size[psuedoBreakpoint] ?? 'md';
+  const keys = Object.keys(size);
+
+  return typeof size === 'string'
+    ? size
+    : size[psuedoBreakpoint] ?? /* fallback to closest given size */ size[keys[keys.length - 1]];
 }
