@@ -1,4 +1,4 @@
-import {MultiStyleConfig} from '@chakra-ui/react';
+import { MultiStyleConfig } from '@chakra-ui/react';
 
 /*
  *
@@ -19,41 +19,34 @@ export default function withTag() {
       'container',
       'indicator',
       'closeButton',
-      'checkbox',
+      /* Checkbox is separated below 👇 */
     ],
-    baseStyle: {
-      container: {
-        rounded: '6px',
-      },
-      label: {
-        fontWeight: 'medium',
-      },
-      closeButton: {
-        minWidth: 'unset',
-        minHeight: 'unset',
-      },
-      icon: {},
-      badge: {},
-      avatar: {},
-    },
+    baseStyle: {},
     variants: {
       hds() {
         return {
           container: {
             bgColor: 'white',
             border: '1px solid #F0F0F0',
+            paddingX: '0px',
+            rounded: '6px',
           },
           label: {
+            fontWeight: 'medium',
             color: '#525252',
+            margin: '0px',
           },
           closeButton: {
+            minWidth: 'unset',
+            minHeight: 'unset',
             color: '#C2C2C2',
             rounded: '3px',
+            margin: '0px',
             _hover: {
               color: '#7A7A7A',
             },
             _active: {
-              boxShadow: '0px 0px 0px 4px #F2F4F7',
+              boxShadow: '0px 0px 0px 4px #F2F4F7;',
             },
           },
           indicator: {
@@ -61,16 +54,28 @@ export default function withTag() {
             height: '6px',
             bgColor: '#00C408',
             rounded: 'full',
+            margin: '0px',
           },
-          icon: {},
-          avatar: {},
+          icon: {
+            width: '16px',
+            height: '16px',
+            margin: '0px',
+          },
+          avatar: {
+            width: '16px',
+            height: '16px',
+            margin: '0px',
+          },
+          badge: {
+            color: '#2E2E2E',
+            margin: '0px',
+          },
         };
       },
     },
     sizes: {
       sm: {
         container: {
-          paddingX: '8px',
           paddingY: '3px',
         },
         label: {
@@ -80,17 +85,15 @@ export default function withTag() {
         closeButton: {
           width: '10px',
           height: '10px',
-          marginLeft: '5px',
-          padding: '2px',
         },
-        indicator: {
-          marginRight: '5px',
+        badge: {
+          fontSize: '12px',
+          lineHeight: '18px',
         },
       },
       md: {
         container: {
-          paddingX: '9px',
-          paddingY: '2px',
+          paddingY: '3px',
         },
         label: {
           fontSize: '14px',
@@ -99,16 +102,14 @@ export default function withTag() {
         closeButton: {
           width: '12px',
           height: '12px',
-          marginLeft: '5px',
-          padding: '2px',
         },
-        indicator: {
-          marginRight: '6px',
+        badge: {
+          fontSize: '12px',
+          lineHeight: '18px',
         },
       },
       lg: {
         container: {
-          paddingX: '10px',
           paddingY: '4px',
         },
         label: {
@@ -118,19 +119,77 @@ export default function withTag() {
         closeButton: {
           width: '14px',
           height: '14px',
-          marginLeft: '6px',
-          padding: '3px',
         },
-        indicator: {
-          marginRight: '7px',
+        badge: {
+          fontSize: '14px',
+          lineHeight: '20px',
         },
       },
     },
     defaultProps: {
       size: 'md',
-      variant: 'hds',
     },
   };
 
-  return {components: {Tag}};
+  const Checkbox: MultiStyleConfig = {
+    parts: ['icon', 'container', 'control', 'label'],
+    baseStyle: {},
+    variants: {
+      hds() {
+        return {
+          container: {
+            margin: 0,
+          },
+          label: {},
+          control: {
+            rounded: '4px',
+            bgColor: 'white',
+            borderColor: '#F0F0F0',
+            _hover: {
+              bgColor: '#EDE8FC',
+              borderColor: '#8A68EF',
+            },
+            _checked: {
+              bgColor: '#8A68EF',
+              borderColor: '#8A68EF',
+              _hover: {
+                bgColor: '#4A3880',
+                borderColor: '#4A3880',
+              },
+            },
+            _focus: {
+              boxShadow: 'none',
+            },
+            _active: {
+              boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F4EBFF',
+            },
+            transition: 'all 300ms ease-in-out',
+          },
+        };
+      },
+    },
+    sizes: {
+      sm: {
+        container: {
+          width: '14px',
+          height: '14px',
+        },
+      },
+      md: {
+        container: {
+          width: '16px',
+          height: '16px',
+        },
+      },
+      lg: {
+        container: {
+          width: '18px',
+          height: '18px',
+        },
+      },
+    },
+    defaultProps: {},
+  };
+
+  return { components: { Tag, Checkbox } };
 }
