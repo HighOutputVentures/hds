@@ -101,17 +101,17 @@ const Template: ComponentStory<typeof Text> = () => (
             button={<Button variant={'ghost-error'}>Ghost Error</Button>}
           />
           <ButtonRow
-            type="CloseButton"
+            type="IconButton"
             variant="solid-close-btn"
             button={<CloseButton variant={'solid-close-btn'} />}
           />
           <ButtonRow
-            type="CloseButton"
+            type="IconButton"
             variant="outline-close-btn"
             button={<CloseButton variant={'outline-close-btn'} />}
           />
           <ButtonRow
-            type="CloseButton"
+            type="IconButton"
             variant="ghost-close-btn"
             button={<CloseButton variant={'ghost-close-btn'} />}
           />

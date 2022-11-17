@@ -3,7 +3,7 @@ import React from 'react';
 import For, { ForProps } from './For';
 
 export default {
-  title: 'Components/Utilities/For',
+  title: 'Utilities/For',
   component: For,
 } as ComponentMeta<typeof For>;
 
@@ -11,8 +11,8 @@ export default {
 // so this is merely a workaround
 const Alias = (props: ForProps<{ id: number; name: string }[]>) => For(props);
 
-const Template: ComponentStory<typeof Alias> = args => (
-  <For {...args}>{user => <div>{user.name}</div>}</For>
+const Template: ComponentStory<typeof Alias> = (args) => (
+  <For {...args}>{(user) => <div>{user.name}</div>}</For>
 );
 
 export const Default = Template.bind({});
