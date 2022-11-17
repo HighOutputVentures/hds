@@ -49,6 +49,7 @@ type BaseProps = {
   icon?: (props: React.ComponentProps<'svg'>) => JSX.Element;
   avatar?: string;
   indicator?: boolean;
+  __testId?: string;
 };
 
 export type TagProps =
@@ -66,7 +67,9 @@ export type TagProps =
  */
 
 export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref) {
-  const { size, variant, label, ...props } = Object.assign({ size: 'md' }, p, { variant: 'hds' });
+  const { size, variant, label, __testId, ...props } = Object.assign({ size: 'md' }, p, {
+    variant: 'hds',
+  });
 
   const styles = useMultiStyleConfig('Tag', { size, variant });
 
@@ -93,6 +96,7 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref
         /* inbuilt styles should not be overridable 🫠 */
         ...styles.container,
       }}
+      data-testid={__testId}
     >
       {!!props.checkbox /* <!-- Checkbox --> */ && (
         <React.Fragment>
@@ -117,7 +121,7 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref
         <React.Fragment>
           {space(true, { width: { sm: '4px', md: '5px', lg: '6px' }[size] })}
 
-          <TagLeftIcon as={props.icon} sx={styles.icon} />
+          <TagLeftIcon as={props.icon} role="img" aria-label="Tag Icon" sx={styles.icon} />
 
           {space(true, { width: { sm: '4px', md: '5px', lg: '6px' }[size] })}
         </React.Fragment>
@@ -127,7 +131,7 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref
         <React.Fragment>
           {space(true, { width: { sm: '4px', md: '5px', lg: '6px' }[size] })}
 
-          <Avatar src={props.avatar} sx={styles.avatar} />
+          <Avatar src={props.avatar} role="img" aria-label="Tag Avatar" sx={styles.avatar} />
 
           {space(true, { width: { sm: '4px', md: '5px', lg: '6px' }[size] })}
         </React.Fragment>
@@ -137,7 +141,7 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref
         <React.Fragment>
           {space(true, { width: { sm: '7px', md: '8px', lg: '10px' }[size] })}
 
-          <Box sx={styles.indicator} />
+          <Box role="presentation" aria-label="Green Dot" sx={styles.indicator} />
 
           {space(true, { width: { sm: '5px', md: '6px', lg: '7px' }[size] })}
         </React.Fragment>
@@ -163,12 +167,7 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref
         <React.Fragment>
           {space(true, { width: { sm: '5px', md: '5px', lg: '6px' }[size] })}
 
-          <TagCloseButton
-            role="button"
-            aria-label="Close Tag"
-            onClick={props.onClose}
-            __css={styles.closeButton}
-          />
+          <TagCloseButton role="button" aria-label="Close Tag" onClick={props.onClose} />
 
           {space(true, { width: { sm: '7px', md: '6px', lg: '7px' }[size] })}
         </React.Fragment>
