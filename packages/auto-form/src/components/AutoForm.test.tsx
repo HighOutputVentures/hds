@@ -1,31 +1,34 @@
 import '@testing-library/jest-dom';
-import { fireEvent, render, screen } from '@testing-library/react';
-import '@testing-library/react/dont-cleanup-after-each';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
+import { act } from 'react-dom/test-utils';
 import AutoForm from './AutoForm';
 import { autoFormSchema } from './validations';
 
 describe('Auto form component', () => {
-  beforeAll(() => {
+  beforeEach(() => {
     render(<AutoForm yupSchema={autoFormSchema} />);
   });
 
-  it('should render form inputs', async () => {
-    const inputs = await screen.findAllByTestId(':r0:-input-field-group');
-    expect(inputs).toHaveLength(1);
+  it('should render form inputs', () => {
+    const inputs = screen.queryByTestId(':r0:-input-field-group');
+    expect(inputs).toBeDefined();
   });
 
-  it('should render form textarea', async () => {
-    const inputs = await screen.findAllByTestId(/textarea-field-input/i);
-    expect(inputs).toHaveLength(1);
+  it('should render form textarea', () => {
+    const inputs = screen.queryByTestId(/textarea-field-input/i);
+    expect(inputs).toBeDefined();
   });
 
   test('user clicks submit with no value or invalid input and renders error messages', async () => {
-    const submit = await screen.findByTestId('button.form.submit');
-    await fireEvent.submit(submit);
-    const errorFormControl = await screen.findAllByTestId(
-      /form-container-error/i
-    );
-    expect(errorFormControl).toHaveLength(2);
+    const submit = screen.getByTestId('button.form.submit');
+
+    await act(async () => {
+      fireEvent.submit(submit);
+    });
+
+    await waitFor(() => {
+      expect(screen.queryAllByTestId(/form-container-error/i)).toHaveLength(2);
+    });
   });
 });
