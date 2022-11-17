@@ -13,7 +13,7 @@ npm i @highoutput/hds-tag
 ### Usage
 
 ```typescript
-import { Tag, withTag } from '@highoutput/tag';
+import { Tag, withTag } from '@highoutput/hds-tag';
 import { ThemeProvider, extendTheme } from '@highoutput/hds';
 import { useCallback } from 'react';
 
