@@ -1,0 +1,53 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "name": "@highoutput/hds-avatar",
+  "author": "calvo-jp",
+  "module": "dist/hds-avatar.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/hds-avatar.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/hds-avatar.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "jest": {
+    "verbose": true
+  }
+}
