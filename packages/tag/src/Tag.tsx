@@ -190,7 +190,7 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref
   );
 });
 
-export function useActualSize(size: TagProps['size']) {
+function useActualSize(size: TagProps['size']) {
   const actualBreakpoint = useBreakpoint();
   const psuedoBreakpoint = React.useMemo(() => {
     return 'sm|md|lg'.split(/\|/g).includes(actualBreakpoint)
