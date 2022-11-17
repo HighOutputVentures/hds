@@ -64,3 +64,6 @@ export default Form
 - [@highoutput/hds-array-field](https://www.npmjs.com/package/@highoutput/hds-array-field)
 - [@highoutput/hds-auto-form](https://www.npmjs.com/package/@highoutput/hds-auto-form)
 - [@highoutput/hds-contact-us](https://www.npmjs.com/package/@highoutput/hds-contact-us)
+- [@highoutput/hds-utilities](https://www.npmjs.com/package/@highoutput/hds-utilities)
+- [@highoutput/hds-forms](https://www.npmjs.com/package/@highoutput/hds-forms)
+- [@highoutput/hds-autocomplete-input](https://www.npmjs.com/package/@highoutput/hds-autocomplete-input)
