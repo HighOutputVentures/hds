@@ -87,7 +87,7 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref
           'closable',
           'checkbox',
           'indicator',
-          /* @ts-expect-error "TypeScript doesn't know how to handle union types just yet 🤐" */
+          /* @ts-ignore "TypeScript doesn't know how to handle union types just yet 🤐" */
           'onClose',
           'checked',
           'onCheck',
