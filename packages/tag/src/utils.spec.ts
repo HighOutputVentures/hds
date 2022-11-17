@@ -1,4 +1,4 @@
-import {omit} from './utils';
+import { omit } from './utils';
 
 describe('utils', () => {
   describe('omit', () => {
@@ -20,7 +20,7 @@ describe('utils', () => {
     });
 
     it('Should omit props by keys (1)', () => {
-      expect(omit({Aa: 1}, 'Aa')).toStrictEqual(expect.objectContaining({}));
+      expect(omit({ Aa: 1 }, 'Aa')).toStrictEqual(expect.objectContaining({}));
     });
   });
 });

@@ -2,7 +2,7 @@ import { Box, extendTheme, HStack, VStack } from '@chakra-ui/react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { theme, ThemeProvider } from '../../hds/src';
-import AUIcon from './AUIcon';
+import AUIcon from './examples/AUIcon';
 import Tag from './Tag';
 import withTag from './withTag';
 
