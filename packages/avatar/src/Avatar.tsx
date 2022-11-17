@@ -1,6 +1,7 @@
-import { Avatar, AvatarBadge, Icon, useBreakpoint } from '@chakra-ui/react';
+import { Avatar, AvatarBadge, Icon } from '@chakra-ui/react';
 import { SystemStyleObject } from '@chakra-ui/styled-system';
 import * as React from 'react';
+import { useActualSize } from './hooks';
 import UserIcon from './icons/UserIcon';
 import { omit } from './utils';
 
@@ -24,7 +25,7 @@ type Breakpoints = 'base' | 'sm' | 'md' | 'lg' | 'xl';
 type BaseProps = {
   src?: string;
   name?: string;
-  size?: Size | Record<Breakpoints, Size>;
+  size?: Size | Partial<Record<Breakpoints, Size>>;
   online?: boolean;
   verified?: boolean;
 };
@@ -68,17 +69,4 @@ export default function HdsAvatar(props: AvatarProps) {
       {!!p.verified && <AvatarBadge />}
     </Avatar>
   );
-}
-
-function useActualSize(size: AvatarProps['size'], fallback = 'md') {
-  const breakpoint = useBreakpoint();
-  const keys = Object.keys(size);
-
-  return typeof size === 'string'
-    ? size
-    : breakpoint in size
-    ? size[breakpoint]
-    : keys.length
-    ? size[keys.at(-1)]
-    : fallback;
 }

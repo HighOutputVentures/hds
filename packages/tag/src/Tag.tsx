@@ -7,11 +7,11 @@ import {
   TagLabel,
   TagLeftIcon,
   Text,
-  useBreakpoint,
   useMultiStyleConfig,
 } from '@chakra-ui/react';
 import * as React from 'react';
 import Checkbox from './Checkbox';
+import { useActualSize } from './hooks';
 import { omit, space } from './utils';
 
 type Closable =
@@ -189,16 +189,3 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref
     </Tag>
   );
 });
-
-function useActualSize(size: TagProps['size'], fallback = 'md') {
-  const breakpoint = useBreakpoint();
-  const keys = Object.keys(size);
-
-  return typeof size === 'string'
-    ? size
-    : breakpoint in size
-    ? size[breakpoint]
-    : keys.length
-    ? size[keys.at(-1)]
-    : fallback;
-}
