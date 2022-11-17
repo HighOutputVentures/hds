@@ -7,6 +7,7 @@ import {
   TagLabel,
   TagLeftIcon,
   Text,
+  useBreakpoint,
   useMultiStyleConfig,
 } from '@chakra-ui/react';
 import * as React from 'react';
@@ -42,10 +43,11 @@ type Checkable =
     };
 
 type Size = 'sm' | 'md' | 'lg';
+type Breakpoints = 'base' | 'sm' | 'md' | 'lg' | 'xl';
 
 type BaseProps = {
   label: string;
-  size?: Size;
+  size?: Size | Partial<Record<Breakpoints, Size>>;
   icon?: (props: React.ComponentProps<'svg'>) => JSX.Element;
   avatar?: string;
   indicator?: boolean;
@@ -67,10 +69,11 @@ export type TagProps =
  */
 
 export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref) {
-  const { size, variant, label, __testId, ...props } = Object.assign({ size: 'md' }, p, {
+  const { variant, label, __testId, ...props } = Object.assign({ size: 'md' }, p, {
     variant: 'hds',
   });
 
+  const size = useActualSize(props.size);
   const styles = useMultiStyleConfig('Tag', { size, variant });
 
   return (
@@ -81,6 +84,7 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref
       __css={{
         ...omit(
           props,
+          'size',
           'icon',
           'badge',
           'avatar',
@@ -185,3 +189,20 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref
     </Tag>
   );
 });
+
+function useActualSize(size: TagProps['size']) {
+  const actualBreakpoint = useBreakpoint();
+  const psuedoBreakpoint = React.useMemo(() => {
+    return 'sm|md|lg'.split(/\|/g).includes(actualBreakpoint)
+      ? actualBreakpoint
+      : ['base'].includes(actualBreakpoint)
+      ? 'sm'
+      : 'lg';
+  }, []);
+
+  const keys = Object.keys(size);
+
+  return typeof size === 'string'
+    ? size
+    : size[psuedoBreakpoint] ?? /* fallback to closest given size */ size[keys[keys.length - 1]];
+}
