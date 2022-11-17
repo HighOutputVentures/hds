@@ -7,6 +7,15 @@ import Tag from './Tag';
 const handleCheck = jest.fn();
 const handleClose = jest.fn();
 
+jest.mock('@chakra-ui/react', () => {
+  return {
+    ...jest.requireActual('@chakra-ui/react'),
+    useBreakpoint() {
+      return 'lg';
+    },
+  };
+});
+
 describe('Tag', () => {
   beforeEach(() => {
     render(
