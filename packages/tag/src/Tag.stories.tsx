@@ -10,6 +10,18 @@ import withTag from './withTag';
 export default {
   title: 'Components/Tag',
   component: Tag,
+  argTypes: {
+    size: {
+      name: 'size',
+      type: {
+        name: 'string',
+        required: false,
+      },
+      defaultValue: 'md',
+      control: 'select',
+      options: ['sm', 'md', 'lg'],
+    },
+  },
 } as ComponentMeta<typeof Tag>;
 
 const Template: ComponentStory<typeof Tag> = (args) => {
@@ -34,7 +46,6 @@ const Template: ComponentStory<typeof Tag> = (args) => {
 export const Default = Template.bind({});
 
 Default.args = {
-  size: 'lg',
   label: 'Label',
   closable: true,
   onClose: () => {},
