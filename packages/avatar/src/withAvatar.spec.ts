@@ -6,6 +6,7 @@ describe('withAvatar', () => {
       expect.objectContaining({
         components: {
           Avatar: expect.any(Object),
+          AvatarLabel: expect.any(Object),
         },
       }),
     );

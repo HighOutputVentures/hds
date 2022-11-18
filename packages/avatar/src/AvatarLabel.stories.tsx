@@ -8,7 +8,6 @@ import Avatar from './Avatar';
 import AvatarLabel from './AvatarLabel';
 import CompanyIcon from './examples/CompanyIcon';
 import withAvatar from './withAvatar';
-import withAvatarLabel from './withAvatarLabel';
 
 export default {
   title: 'Components/Avatar/AvatarLabel',
@@ -28,7 +27,7 @@ export default {
 
 const Template: ComponentStory<typeof Avatar> = (args) => {
   return (
-    <ThemeProvider theme={extendTheme(theme, withAvatar(), withAvatarLabel())}>
+    <ThemeProvider theme={extendTheme(theme, withAvatar())}>
       <HStack align="start" spacing={8}>
         <Flex gap={4} direction="column">
           <AvatarLabel src="https://i.pravatar.cc/300?u=1" online {...args}>
