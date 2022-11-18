@@ -68,7 +68,7 @@ export type TagProps =
  *
  */
 
-export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(p, ref) {
+export default React.forwardRef<HTMLDivElement, any>(function HdsTag(p, ref) {
   const { variant, label, __testId, ...props } = Object.assign({ size: 'md' }, p, {
     variant: 'hds',
   });
@@ -200,9 +200,10 @@ function useActualSize(size: TagProps['size']) {
       : 'lg';
   }, []);
 
-  const keys = Object.keys(size);
+  const keys = Object.keys(size || {});
 
   return typeof size === 'string'
     ? size
-    : size[psuedoBreakpoint] ?? /* fallback to closest given size */ size[keys[keys.length - 1]];
+    : (size || {})[psuedoBreakpoint] ??
+        /* fallback to closest given size */ (size || {})[keys[keys.length - 1]];
 }

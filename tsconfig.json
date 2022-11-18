@@ -6,7 +6,7 @@
     "declaration": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "strict": false,
+    "strict": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
@@ -17,7 +17,8 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
-    "allowJs": true
+    "allowJs": true,
+    "noImplicitAny": false,
   },
   "include": ["packages"],
   "exclude": ["node_modules"]
