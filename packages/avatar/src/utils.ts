@@ -12,3 +12,16 @@ export function omit<T extends Record<string, any>, K extends (keyof T)[]>(
 
   return copy;
 }
+
+export function pick<T extends Record<string, any>, K extends (keyof T)[]>(obj: T, ...keys: K) {
+  const copy = { ...obj };
+  const picked: Partial<Record<K[number], T[K[number]]>> = {};
+
+  for (const key of keys) {
+    if (key in copy) {
+      picked[key] = copy[key];
+    }
+  }
+
+  return picked;
+}

@@ -5,32 +5,34 @@ import UserIcon from './icons/UserIcon';
 import VerifiedIcon from './icons/VerifiedIcon';
 import { omit } from './utils';
 
-type Clickable =
+export type Clickable =
   | { clickable?: false }
   | {
       clickable: true;
       onClick(): void;
     };
 
-type Badgeable =
+export type Badgeable =
   | { badge?: false }
   | {
       badge: true;
       badgeIcon(props: React.ComponentProps<'svg'>): JSX.Element;
     };
 
-type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
-type Breakpoints = 'base' | 'sm' | 'md' | 'lg' | 'xl';
+export type AvatarSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 
-type BaseProps = {
-  src?: string;
-  name?: string;
-  size?: Size | Partial<Record<Breakpoints, Size>>;
-  online?: boolean;
-  verified?: boolean;
-};
+export type Breakpoints = 'base' | 'sm' | 'md' | 'lg' | 'xl';
 
-export type AvatarProps = SystemStyleObject & BaseProps & Badgeable & Clickable;
+export type AvatarBaseProps = Badgeable &
+  Clickable & {
+    src?: string;
+    name?: string;
+    size?: AvatarSize | Partial<Record<Breakpoints, AvatarSize>>;
+    online?: boolean;
+    verified?: boolean;
+  };
+
+export type AvatarProps = SystemStyleObject & AvatarBaseProps;
 
 export default function HdsAvatar(props: AvatarProps) {
   const { src, name, variant, size, ...p } = Object.assign({ size: 'md' }, props, {
@@ -46,12 +48,10 @@ export default function HdsAvatar(props: AvatarProps) {
       size={size}
       name={name}
       icon={<Icon as={UserIcon} color="#475467" />}
-      /* box-shadow will be based here */
       data-fallback={!src}
       {...(p.clickable && {
         tabIndex: 0,
         onClick: p.onClick,
-        /* cursor will be based here */
         'data-clickable': true,
       })}
       sx={{
@@ -65,15 +65,13 @@ export default function HdsAvatar(props: AvatarProps) {
         ),
       }}
     >
+      {!!p.verified /* <!-- Verified --> */ && <Icon as={VerifiedIcon} sx={styles.verified} />}
       {!!p.online /* <!-- Online --> */ && <AvatarBadge />}
-
       {!!p.badge /* <!-- Badge --> */ && (
         <Box sx={styles.customIcon}>
           <Icon as={p.badgeIcon} />
         </Box>
       )}
-
-      {!!p.verified /* <!-- Verified --> */ && <Icon as={VerifiedIcon} sx={styles.verified} />}
     </Avatar>
   );
 }

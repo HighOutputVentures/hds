@@ -23,4 +23,8 @@ describe('utils', () => {
       expect(omit({ Aa: 1 }, 'Aa')).toStrictEqual(expect.objectContaining({}));
     });
   });
+
+  describe('pick', () => {
+    it.todo('Should pick props by keys');
+  });
 });

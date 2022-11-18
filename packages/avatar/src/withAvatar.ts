@@ -11,9 +11,11 @@ export default function withAvatar() {
             bgColor: '#F9FAFB',
             fontWeight: 'medium',
             padding: '0px',
+            /* clickable */
             cursor: context['data-clickable'] ? 'pointer' : 'default',
             _focus: {
               outline: 'none',
+              /* box-shadow depends if "src" exists or not */
               boxShadow: context['data-fallback'] ? '0 0 0 4px #F2F4F7' : '0 0 0 4px #F4EBFF',
             },
             transition: 'box-shadow 300ms ease-in-out',

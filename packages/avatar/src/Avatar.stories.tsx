@@ -21,6 +21,10 @@ const Template: ComponentStory<typeof Avatar> = () => {
         <Avatar size="lg" badge badgeIcon={CompanyIcon} clickable onClick={() => {}} />
         <Avatar size="xl" badge badgeIcon={CompanyIcon} clickable onClick={() => {}} />
         <Avatar size="2xl" badge badgeIcon={CompanyIcon} clickable onClick={() => {}} />
+
+        <Avatar size="sm" src="https://i.pravatar.cc/300" verified />
+        <Avatar size="md" src="https://i.pravatar.cc/300" verified />
+        <Avatar size="lg" src="https://i.pravatar.cc/300" verified />
       </VStack>
     </ThemeProvider>
   );
