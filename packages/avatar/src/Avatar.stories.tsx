@@ -3,7 +3,6 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { theme, ThemeProvider } from '../../hds/src';
 import Avatar from './Avatar';
-import CompanyIcon from './examples/CompanyIcon';
 import withAvatar from './withAvatar';
 
 export default {
@@ -12,19 +11,19 @@ export default {
 } as ComponentMeta<typeof Avatar>;
 
 const Template: ComponentStory<typeof Avatar> = () => {
+  const src = 'https://i.pravatar.cc/300';
+
+  const onClick = function noop() {};
+
   return (
     <ThemeProvider theme={extendTheme(theme, withAvatar())}>
       <VStack align="start" spacing={4}>
-        <Avatar size="xs" badge badgeIcon={CompanyIcon} clickable onClick={() => {}} />
-        <Avatar size="sm" badge badgeIcon={CompanyIcon} clickable onClick={() => {}} />
-        <Avatar size="md" badge badgeIcon={CompanyIcon} clickable onClick={() => {}} />
-        <Avatar size="lg" badge badgeIcon={CompanyIcon} clickable onClick={() => {}} />
-        <Avatar size="xl" badge badgeIcon={CompanyIcon} clickable onClick={() => {}} />
-        <Avatar size="2xl" badge badgeIcon={CompanyIcon} clickable onClick={() => {}} />
-
-        <Avatar size="sm" src="https://i.pravatar.cc/300" verified />
-        <Avatar size="md" src="https://i.pravatar.cc/300" verified />
-        <Avatar size="lg" src="https://i.pravatar.cc/300" verified />
+        <Avatar src={src} size="xs" online clickable onClick={onClick} />
+        <Avatar src={src} size="sm" online clickable onClick={onClick} />
+        <Avatar src={src} size="md" online clickable onClick={onClick} />
+        <Avatar src={src} size="lg" online clickable onClick={onClick} />
+        <Avatar src={src} size="xl" online clickable onClick={onClick} />
+        <Avatar src={src} size="2xl" online clickable onClick={onClick} />
       </VStack>
     </ThemeProvider>
   );
