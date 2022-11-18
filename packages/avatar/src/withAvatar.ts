@@ -1,5 +1,9 @@
 import { MultiStyleConfig } from '@chakra-ui/react';
 
+// 💡NOTE
+// Sizes 3xl, 4xl and 5xl are normally used for "AvatarProfile"
+// and shouldn't be used for regular "Avatar"
+
 export default function withAvatar() {
   const Avatar: MultiStyleConfig = {
     parts: ['badge', 'container', 'excessLabel', 'group', 'verified', 'customIcon'],
@@ -15,11 +19,38 @@ export default function withAvatar() {
             cursor: context['data-clickable'] ? 'pointer' : 'default',
             _focus: {
               outline: 'none',
-              /* box-shadow depends if "src" exists or not */
+              /* box-shadow depends if "src" exists or not 🐸 */
               boxShadow: context['data-fallback'] ? '0 0 0 4px #F2F4F7' : '0 0 0 4px #F4EBFF',
             },
             transition: 'box-shadow 300ms ease-in-out',
-            border: context['data-bordered'] ? '1.5px solid #FFFFFF' : undefined,
+            /* elevations for '3xl', '4xl' and '5xl' which will normally be used for profile pic */
+            shadow: context['data-elevated']
+              ? context.size === '3xl'
+                ? [
+                    '0px 4px 8px -2px rgba(16, 24, 40, 0.1)',
+                    '0px 2px 4px -2px rgba(16, 24, 40, 0.06)',
+                  ].join()
+                : context.size === '4xl'
+                ? [
+                    '0px 12px 16px -4px rgba(16, 24, 40, 0.08)',
+                    '0px 4px 6px -2px rgba(16, 24, 40, 0.03)',
+                  ].join()
+                : context.size === '5xl'
+                ? [
+                    '0px 12px 16px -4px rgba(16, 24, 40, 0.08)',
+                    '0px 4px 6px -2px rgba(16, 24, 40, 0.03)',
+                  ].join()
+                : undefined
+              : undefined,
+            border: context['data-bordered']
+              ? context.size === '3xl'
+                ? '3px solid #FFFFFF'
+                : context.size === '4xl'
+                ? '4px solid #FFFFFF'
+                : context.size === '5xl'
+                ? '4px solid #FFFFFF'
+                : '1.5px solid #FFFFFF'
+              : undefined,
           },
           badge: {
             color: '#00C408',
@@ -278,6 +309,73 @@ export default function withAvatar() {
             height: '20px',
           },
         },
+      },
+
+      /* <!-- Sizes here will be normally used for avatar profile 👌 --> */
+
+      '3xl': {
+        container: {
+          width: '72px',
+          height: '72px',
+          fontSize: '28px',
+          lineHeight: '28px',
+          svg: {
+            width: '30px',
+            height: '30px',
+          },
+        },
+        verified: {
+          width: '20px!important',
+          height: '20px!important',
+          left: 'calc(52px - 6px)' /* minus border */,
+          top: 'calc(52px - 6px)' /* minus border */,
+        },
+        /* NOT SUPPORTED */
+        badge: {},
+        customIcon: {},
+      },
+      '4xl': {
+        container: {
+          width: '96px',
+          height: '96px',
+          fontSize: '32px',
+          lineHeight: '32px',
+          svg: {
+            width: '40px',
+            height: '40px',
+          },
+        },
+        verified: {
+          width: '24px!important',
+          height: '24px!important',
+          left: 'calc(70px - 8px)' /* minus the border */,
+          top: 'calc(70px - 8px)' /* minus the border */,
+        },
+        /* NOT SUPPORTED */
+        badge: {},
+        customIcon: {},
+      },
+      '5xl': {
+        container: {
+          width: '160px',
+          height: '160px',
+          fontSize: '56px',
+          lineHeight: '64px',
+          letterSpacing: '-0.02em',
+          svg: {
+            width: '66.67px',
+            height: '66.67px',
+          },
+        },
+        verified: {
+          width: '32px!important',
+          height: '32px!important',
+          left: 'calc(124px - 8px)' /* minus border */,
+          top: 'calc(124px - 8px)' /* minus border */,
+        },
+        /* NOT SUPPORTED */
+        badge: {},
+        customIcon: {},
       },
     },
     /* Please don't add anything so we don't override any global theme */

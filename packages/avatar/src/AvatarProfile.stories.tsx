@@ -3,18 +3,20 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { theme, ThemeProvider } from '../../hds/src';
 import AvatarProfile from './AvatarProfile';
-import withAvatarProfile from './withAvatarProfile';
+import withAvatar from './withAvatar';
 
 export default {
-  title: 'Components/Avatar/AvatarLabel',
+  title: 'Components/Avatar/AvatarProfile',
   component: AvatarProfile,
 } as ComponentMeta<typeof AvatarProfile>;
 
 const Template: ComponentStory<typeof AvatarProfile> = () => {
   return (
-    <ThemeProvider theme={extendTheme(theme, withAvatarProfile())}>
+    <ThemeProvider theme={extendTheme(theme, withAvatar())}>
       <VStack align="start" spacing={4}>
-        <AvatarProfile src="https://i.pravatar.cc/300" size="lg" name="JP Calvo" />
+        <AvatarProfile src="https://i.pravatar.cc/300" verified size="sm" name="JP Calvo" />
+        <AvatarProfile src="https://i.pravatar.cc/300" verified size="md" name="JP Calvo" />
+        <AvatarProfile src="https://i.pravatar.cc/300" verified size="lg" name="JP Calvo" />
       </VStack>
     </ThemeProvider>
   );
