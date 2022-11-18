@@ -22,7 +22,17 @@ export type AvatarLabelProps =
   Clickable;
 
 export default function AvatarLabel(props: PropsWithChildren<AvatarLabelProps>) {
-  const { src, name, size = 'md', fallback = true, children, supportText, ...others } = props;
+  const {
+    src,
+    name,
+    size = 'md',
+    fallback = true,
+    children,
+    supportText,
+    online,
+    onlineIndicator,
+    ...others
+  } = props;
 
   const styles = useMultiStyleConfig('AvatarLabel', { size, variant: 'hds' });
 
@@ -37,7 +47,6 @@ export default function AvatarLabel(props: PropsWithChildren<AvatarLabelProps>) 
           others,
           'badge',
           'clickable',
-          'online',
           'verified',
           /* @ts-ignore "This uses type guards here" */
           'onClick',
@@ -49,12 +58,13 @@ export default function AvatarLabel(props: PropsWithChildren<AvatarLabelProps>) 
       <Box sx={styles.avatar}>
         {React.cloneElement<{ [key: string]: any }>(children, {
           name: fallback ? name : undefined,
+          online,
+          onlineIndicator,
           ...pick(
             props,
             'src',
             'size',
             'badge',
-            'online',
             'verified',
             'clickable',
             /* @ts-ignore "This uses type guards here" */

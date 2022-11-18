@@ -25,9 +25,9 @@ const Template: ComponentStory<typeof AvatarProfile> = (args) => {
   return (
     <ThemeProvider theme={extendTheme(theme, withAvatar())}>
       <VStack align="start" spacing={4}>
-        <AvatarProfile verified name="John Doe" src="https://i.pravatar.cc/300" {...args} />
-        <AvatarProfile verified name="John Doe" {...args} />
-        <AvatarProfile verified {...args} />
+        <AvatarProfile name="John Doe" src="https://i.pravatar.cc/300" {...args} />
+        <AvatarProfile name="John Doe" {...args} />
+        <AvatarProfile {...args} />
       </VStack>
     </ThemeProvider>
   );
@@ -35,4 +35,6 @@ const Template: ComponentStory<typeof AvatarProfile> = (args) => {
 
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.args = {
+  verified: true,
+};

@@ -13,6 +13,7 @@ export type AvatarBaseProps = {
   name?: string;
   size?: AvatarSize | ResponsiveSize<AvatarSize>;
   online?: boolean;
+  onlineIndicator?: boolean;
   verified?: boolean;
   /* 🔒 internals  */
   __elevated?: boolean;
@@ -34,7 +35,7 @@ export type AvatarProps = SystemStyleObject & AvatarBaseProps & Badgeable & Clic
  *
  */
 export default function HdsAvatar(props: AvatarProps) {
-  const { src, name, size = 'md', __bordered, __elevated, ...p } = props;
+  const { src, name, size = 'md', onlineIndicator, online, __bordered, __elevated, ...p } = props;
 
   const styles = useMultiStyleConfig('Avatar', { size, variant: 'hds' });
 
@@ -45,6 +46,7 @@ export default function HdsAvatar(props: AvatarProps) {
       size={size}
       name={name}
       icon={<Icon as={UserIcon} color="#475467" />}
+      data-online={!!online}
       data-fallback={!src}
       data-elevated={!!__elevated}
       data-bordered={!!__bordered}
@@ -65,7 +67,7 @@ export default function HdsAvatar(props: AvatarProps) {
       }}
     >
       {!!p.verified /* <!-- Verified --> */ && <Icon as={VerifiedIcon} sx={styles.verified} />}
-      {!!p.online /* <!-- Online --> */ && <AvatarBadge />}
+      {!!onlineIndicator /* <!-- Online --> */ && <AvatarBadge />}
       {!!p.badge /* <!-- Badge --> */ && (
         <Box sx={styles.customIcon}>
           <Icon as={p.badgeIcon} />

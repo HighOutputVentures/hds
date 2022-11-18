@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-import { extendTheme, Flex, VStack } from '@chakra-ui/react';
+import { extendTheme, Flex, HStack } from '@chakra-ui/react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { theme, ThemeProvider } from '../../hds/src';
@@ -29,54 +29,42 @@ const Template: ComponentStory<typeof Avatar> = (args) => {
 
   return (
     <ThemeProvider theme={extendTheme(theme, withAvatar())}>
-      <VStack align="start" spacing={8}>
-        <Flex gap={4}>
-          <Avatar clickable onClick={onClick} {...args} />
-          <Avatar online clickable onClick={onClick} {...args} />
-          <Avatar verified clickable onClick={onClick} {...args} />
-          <Avatar badge badgeIcon={CompanyIcon} clickable onClick={onClick} {...args} />
+      <HStack align="start" spacing={8}>
+        {/* <!-- Basic --> */}
+        <Flex gap={6} direction="column">
+          <Avatar src="https://i.pravatar.cc/300?u=1" {...args} />
+          <Avatar name="John Doe" {...args} />
+          <Avatar {...args} />
         </Flex>
-        <Flex gap={4}>
-          <Avatar name="John Doe" clickable onClick={onClick} {...args} />
-          <Avatar name="John Doe" online clickable onClick={onClick} {...args} />
-          <Avatar name="John Doe" verified clickable onClick={onClick} {...args} />
-          <Avatar
-            name="John Doe"
-            badge
-            badgeIcon={CompanyIcon}
-            clickable
-            onClick={onClick}
-            {...args}
-          />
+
+        {/* <!-- Online --> */}
+        <Flex gap={6} direction="column">
+          <Avatar onlineIndicator src="https://i.pravatar.cc/300?u=2" {...args} />
+          <Avatar onlineIndicator name="John Doe" {...args} />
+          <Avatar onlineIndicator {...args} />
         </Flex>
-        <Flex gap={4}>
-          <Avatar src="https://i.pravatar.cc/300?u=1" clickable onClick={onClick} {...args} />
-          <Avatar
-            src="https://i.pravatar.cc/300?u=2"
-            online
-            clickable
-            onClick={onClick}
-            {...args}
-          />
-          <Avatar
-            src="https://i.pravatar.cc/300?u=3"
-            verified
-            clickable
-            onClick={onClick}
-            {...args}
-          />
-          <Avatar
-            src="https://i.pravatar.cc/300?u=4"
-            badge
-            badgeIcon={CompanyIcon}
-            clickable
-            onClick={onClick}
-            {...args}
-          />
+
+        {/* <!-- Verified --> */}
+        <Flex gap={6} direction="column">
+          <Avatar verified src="https://i.pravatar.cc/300?u=3" {...args} />
+          <Avatar verified name="John Doe" {...args} />
+          <Avatar verified {...args} />
         </Flex>
-      </VStack>
+
+        {/* <!-- Badge --> */}
+        <Flex gap={6} direction="column">
+          <Avatar badge badgeIcon={CompanyIcon} src="https://i.pravatar.cc/300?u=4" {...args} />
+          <Avatar badge badgeIcon={CompanyIcon} name="John Doe" {...args} />
+          <Avatar badge badgeIcon={CompanyIcon} {...args} />
+        </Flex>
+      </HStack>
     </ThemeProvider>
   );
 };
 
 export const Default = Template.bind({});
+
+Default.args = {
+  online: true,
+  clickable: true,
+};

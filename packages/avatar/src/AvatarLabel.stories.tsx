@@ -65,6 +65,18 @@ const Template: ComponentStory<typeof Avatar> = (args) => {
             <Avatar />
           </AvatarLabel>
         </Flex>
+
+        <Flex gap={4} direction="column">
+          <AvatarLabel src="https://i.pravatar.cc/300?u=3" onlineIndicator {...args}>
+            <Avatar />
+          </AvatarLabel>
+          <AvatarLabel onlineIndicator {...args}>
+            <Avatar />
+          </AvatarLabel>
+          <AvatarLabel onlineIndicator fallback={false} {...args}>
+            <Avatar />
+          </AvatarLabel>
+        </Flex>
       </HStack>
     </ThemeProvider>
   );
@@ -75,4 +87,5 @@ export const Default = Template.bind({});
 Default.args = {
   name: 'John Doe',
   supportText: 'johndoe@dummy.bla',
+  online: true,
 };

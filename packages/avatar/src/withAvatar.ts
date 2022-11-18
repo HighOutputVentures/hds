@@ -54,7 +54,7 @@ export default function withAvatar() {
           },
           badge: {
             color: '#00C408',
-            bgColor: '#00C408',
+            bgColor: context['data-online'] ? '#00C408' : '#F0F0F0',
             border: '1.5px solid',
             borderColor: 'white',
             right: 'unset',

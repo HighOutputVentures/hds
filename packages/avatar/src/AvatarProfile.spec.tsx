@@ -7,5 +7,5 @@ describe('AvatarProfile', () => {
     render(<AvatarProfile />);
   });
 
-  it.todo('Should render image');
+  it.todo("Should render just like regular 'Avatar'");
 });
