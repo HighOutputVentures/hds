@@ -8,14 +8,25 @@ import withAvatar from './withAvatar';
 
 export default {
   title: 'Components/Avatar/AvatarGroup',
-  component: AvatarGroup,
+  argTypes: {
+    size: {
+      name: 'size',
+      type: {
+        name: 'string',
+        required: false,
+      },
+      defaultValue: 'md',
+      control: 'select',
+      options: 'xs|sm|md'.split(/\|/g),
+    },
+  },
 } as ComponentMeta<typeof AvatarGroup>;
 
-const Template: ComponentStory<typeof AvatarGroup> = () => {
+const Template: ComponentStory<typeof AvatarGroup> = (args) => {
   return (
     <ThemeProvider theme={extendTheme(theme, withAvatar())}>
       <VStack align="start" spacing="8px">
-        <AvatarGroup max={3} include={['plus']}>
+        <AvatarGroup max={3} size="md" hasAddButton onAddButtonClick={() => {}} {...args}>
           <Avatar src="https://i.pravatar.cc/200?u=1" />
           <Avatar src="https://i.pravatar.cc/200?u=2" />
           <Avatar src="https://i.pravatar.cc/200?u=3" />

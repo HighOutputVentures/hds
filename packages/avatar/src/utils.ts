@@ -1,3 +1,5 @@
+import { Breakpoints } from './types';
+
 export function omit<T extends Record<string, any>, K extends (keyof T)[]>(
   subject: T,
   ...keys: K
@@ -24,4 +26,39 @@ export function pick<T extends Record<string, any>, K extends (keyof T)[]>(obj: 
   }
 
   return picked;
+}
+
+export function findClosestBreakpoint(breakpoints: (Breakpoints | string)[], base: string) {
+  if (breakpoints.length > 0) {
+    if (breakpoints.length === 1) return breakpoints[0];
+
+    if (base === 'xl') {
+      if (breakpoints.includes('xl')) return 'xl';
+      if (breakpoints.includes('lg')) return 'lg';
+      if (breakpoints.includes('md')) return 'md';
+      if (breakpoints.includes('sm')) return 'sm';
+      if (breakpoints.includes('base')) return 'base';
+    }
+
+    if (base === 'lg') {
+      if (breakpoints.includes('lg')) return 'lg';
+      if (breakpoints.includes('md')) return 'md';
+      if (breakpoints.includes('sm')) return 'sm';
+      if (breakpoints.includes('base')) return 'base';
+    }
+
+    if (base === 'md') {
+      if (breakpoints.includes('md')) return 'md';
+      if (breakpoints.includes('sm')) return 'sm';
+      if (breakpoints.includes('base')) return 'base';
+    }
+
+    if (base === 'sm') {
+      if (breakpoints.includes('sm')) return 'sm';
+      if (breakpoints.includes('base')) return 'base';
+    }
+  }
+
+  /* shouldn't be reached but just in case. 😅 */
+  return 'md';
 }

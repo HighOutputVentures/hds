@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { extendTheme, VStack } from '@chakra-ui/react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
@@ -28,15 +30,10 @@ const Template: ComponentStory<typeof Tag> = (args) => {
   return (
     <ThemeProvider theme={extendTheme(theme, withTag())}>
       <VStack align="start" spacing={4}>
-        {/* @ts-ignore */}
         <Tag label="" {...omit(args, 'icon', 'avatar', 'checkbox', 'indicator', 'closable')} />
-        {/* @ts-ignore */}
         <Tag label="" {...omit(args, 'icon', 'avatar', 'checkbox', 'indicator')} />
-        {/* @ts-ignore */}
         <Tag label="" {...omit(args, 'icon', 'avatar', 'checkbox')} />
-        {/* @ts-ignore */}
         <Tag label="" {...omit(args, 'icon', 'indicator')} />
-        {/* @ts-ignore */}
         <Tag label="" {...omit(args, 'avatar', 'indicator')} />
       </VStack>
     </ThemeProvider>

@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { extendTheme, VStack } from '@chakra-ui/react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
@@ -9,19 +11,44 @@ import withAvatarLabel from './withAvatarLabel';
 
 export default {
   title: 'Components/Avatar/AvatarLabel',
-  component: AvatarLabel,
+  argTypes: {
+    size: {
+      name: 'size',
+      type: {
+        name: 'string',
+        required: false,
+      },
+      defaultValue: 'md',
+      control: 'select',
+      options: 'sm|md|lg|xl'.split(/\|/g),
+    },
+  },
 } as ComponentMeta<typeof AvatarLabel>;
 
-const Template: ComponentStory<typeof Avatar> = () => {
+const Template: ComponentStory<typeof Avatar> = (args) => {
   return (
     <ThemeProvider theme={extendTheme(theme, withAvatar(), withAvatarLabel())}>
       <VStack align="start" spacing={4}>
         <AvatarLabel
           src="https://i.pravatar.cc/300"
-          size="lg"
           name="JP Calvo"
           supportText="calvojp92@gmail.com"
           online
+          {...args}
+        >
+          <Avatar />
+        </AvatarLabel>
+
+        <AvatarLabel name="JP Calvo" supportText="calvojp92@gmail.com" online {...args}>
+          <Avatar />
+        </AvatarLabel>
+
+        <AvatarLabel
+          name="JP Calvo"
+          fallback={false}
+          supportText="calvojp92@gmail.com"
+          online
+          {...args}
         >
           <Avatar />
         </AvatarLabel>
@@ -32,6 +59,4 @@ const Template: ComponentStory<typeof Avatar> = () => {
 
 export const Default = Template.bind({});
 
-Default.args = {
-  ...Default.args,
-};
+Default.args = {};

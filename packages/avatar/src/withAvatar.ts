@@ -378,7 +378,7 @@ export default function withAvatar() {
         customIcon: {},
       },
     },
-    /* Please don't add anything so we don't override any global theme */
+    /* Please don't set any global style which affects other themes */
     baseStyle: {},
     defaultProps: {},
   };

@@ -2,33 +2,29 @@ import { Box, Heading, SystemStyleObject, Text, useMultiStyleConfig } from '@cha
 import * as React from 'react';
 import { PropsWithChildren } from 'react';
 import { AvatarBaseProps } from './Avatar';
+import { Badgeable, Clickable, FreeSize } from './types';
 import { omit, pick } from './utils';
 
 type Size = 'sm' | 'md' | 'lg' | 'xl';
 
 type AvatarLabelBaseProps = {
   size?: Size;
+  fallback?: boolean;
   supportText?: string;
 };
 
-type AvatarWithoutSize = Omit<AvatarBaseProps, 'size'>;
-
-export type AvatarLabelProps = SystemStyleObject & AvatarWithoutSize & AvatarLabelBaseProps;
+// prettier-ignore
+export type AvatarLabelProps = 
+  SystemStyleObject &
+  FreeSize<AvatarBaseProps> &
+  AvatarLabelBaseProps &
+  Badgeable &
+  Clickable;
 
 export default function AvatarLabel(props: PropsWithChildren<AvatarLabelProps>) {
-  const {
-    src,
-    name,
-    size = 'md',
-    variant,
-    children,
-    supportText,
-    ...others
-  } = Object.assign({}, props, {
-    variant: 'hds',
-  });
+  const { src, name, size = 'md', fallback = true, children, supportText, ...others } = props;
 
-  const styles = useMultiStyleConfig('AvatarLabel', { size, variant });
+  const styles = useMultiStyleConfig('AvatarLabel', { size, variant: 'hds' });
 
   if (!React.isValidElement(children)) {
     throw new Error("'AvatarLabel' only accepts a single 'Avatar' child");
@@ -51,12 +47,11 @@ export default function AvatarLabel(props: PropsWithChildren<AvatarLabelProps>) 
       }}
     >
       <Box sx={styles.avatar}>
-        {React.cloneElement<{ [key: string]: any }>(
-          children,
-          pick(
+        {React.cloneElement<{ [key: string]: any }>(children, {
+          name: fallback ? name : undefined,
+          ...pick(
             props,
             'src',
-            'name',
             'size',
             'badge',
             'online',
@@ -66,7 +61,7 @@ export default function AvatarLabel(props: PropsWithChildren<AvatarLabelProps>) 
             'onClick',
             'badgeIcon',
           ),
-        )}
+        })}
       </Box>
 
       <Box sx={styles.label}>

@@ -86,6 +86,7 @@ export default function withAvatarLabel() {
         },
       },
     },
+    /* Please don't set any global style which affects other themes */
     baseStyle: {},
     defaultProps: {},
   };

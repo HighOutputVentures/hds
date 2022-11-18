@@ -1,4 +1,4 @@
-import { omit } from './utils';
+import { findClosestBreakpoint, omit, pick } from './utils';
 
 describe('utils', () => {
   describe('omit', () => {
@@ -25,6 +25,23 @@ describe('utils', () => {
   });
 
   describe('pick', () => {
-    it.todo('Should pick props by keys');
+    it('Should pick props by keys', () => {
+      const picked = pick({ Aa: 1, Bb: 2, Cc: 3, Dd: 4, Ee: 5 }, 'Aa', 'Bb', 'Cc');
+
+      expect(picked).toEqual(
+        expect.objectContaining({
+          Aa: 1,
+          Bb: 2,
+          Cc: 3,
+        }),
+      );
+    });
+  });
+
+  describe('findClosestBreakpoint', () => {
+    it('Should return closest breakpoint', () => {
+      const breakpoint = findClosestBreakpoint(['base', 'sm', 'lg'], 'md');
+      expect(breakpoint).toBe('sm');
+    });
   });
 });

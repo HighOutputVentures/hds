@@ -3,39 +3,23 @@ import { SystemStyleObject } from '@chakra-ui/styled-system';
 import * as React from 'react';
 import UserIcon from './icons/UserIcon';
 import VerifiedIcon from './icons/VerifiedIcon';
-import { ResponsiveSize } from './types';
+import { Badgeable, Clickable, ResponsiveSize } from './types';
 import { omit } from './utils';
-
-type Clickable =
-  | { clickable?: false }
-  | {
-      clickable: true;
-      onClick(): void;
-    };
-
-type Badgeable =
-  | { badge?: false }
-  | {
-      badge: true;
-      badgeIcon(props: React.ComponentProps<'svg'>): JSX.Element;
-    };
 
 type AvatarSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl';
 
-/* prettier-ignore */
 export type AvatarBaseProps = {
   src?: string;
   name?: string;
   size?: AvatarSize | ResponsiveSize<AvatarSize>;
   online?: boolean;
   verified?: boolean;
-  /* internals 🤐 */
+  /* 🔒 internals  */
   __elevated?: boolean;
   __bordered?: boolean;
-} & Badgeable 
-  & Clickable;
+};
 
-export type AvatarProps = SystemStyleObject & AvatarBaseProps;
+export type AvatarProps = SystemStyleObject & AvatarBaseProps & Badgeable & Clickable;
 
 /**
  *
@@ -50,16 +34,13 @@ export type AvatarProps = SystemStyleObject & AvatarBaseProps;
  *
  */
 export default function HdsAvatar(props: AvatarProps) {
-  const { src, name, variant, size, __bordered, __elevated, ...p } = Object.assign(
-    { size: 'md', ...props },
-    { variant: 'hds' },
-  );
+  const { src, name, size = 'md', __bordered, __elevated, ...p } = props;
 
-  const styles = useMultiStyleConfig('Avatar', { size, variant });
+  const styles = useMultiStyleConfig('Avatar', { size, variant: 'hds' });
 
   return (
     <Avatar
-      variant={variant}
+      variant="hds"
       src={src}
       size={size}
       name={name}

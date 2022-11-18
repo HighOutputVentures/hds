@@ -7,16 +7,27 @@ import withAvatar from './withAvatar';
 
 export default {
   title: 'Components/Avatar/AvatarProfile',
-  component: AvatarProfile,
+  argTypes: {
+    size: {
+      name: 'size',
+      type: {
+        name: 'string',
+        required: false,
+      },
+      defaultValue: 'md',
+      control: 'select',
+      options: 'sm|md|lg'.split(/\|/g),
+    },
+  },
 } as ComponentMeta<typeof AvatarProfile>;
 
-const Template: ComponentStory<typeof AvatarProfile> = () => {
+const Template: ComponentStory<typeof AvatarProfile> = (args) => {
   return (
     <ThemeProvider theme={extendTheme(theme, withAvatar())}>
       <VStack align="start" spacing={4}>
-        <AvatarProfile src="https://i.pravatar.cc/300" verified size="sm" name="JP Calvo" />
-        <AvatarProfile src="https://i.pravatar.cc/300" verified size="md" name="JP Calvo" />
-        <AvatarProfile src="https://i.pravatar.cc/300" verified size="lg" name="JP Calvo" />
+        <AvatarProfile verified name="John Doe" src="https://i.pravatar.cc/300" {...args} />
+        <AvatarProfile verified name="John Doe" {...args} />
+        <AvatarProfile verified {...args} />
       </VStack>
     </ThemeProvider>
   );
@@ -24,6 +35,4 @@ const Template: ComponentStory<typeof AvatarProfile> = () => {
 
 export const Default = Template.bind({});
 
-Default.args = {
-  ...Default.args,
-};
+Default.args = {};
