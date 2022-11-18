@@ -2,7 +2,7 @@
   "version": "0.1.1",
   "license": "MIT",
   "main": "dist/index.js",
-  "typings": "dist/src/tag/index.d.ts",
+  "typings": "dist/tag/src/index.d.ts",
   "files": [
     "dist",
     "src"
