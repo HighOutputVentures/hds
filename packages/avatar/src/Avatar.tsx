@@ -3,6 +3,7 @@ import { SystemStyleObject } from '@chakra-ui/styled-system';
 import * as React from 'react';
 import UserIcon from './icons/UserIcon';
 import VerifiedIcon from './icons/VerifiedIcon';
+import { ResponsiveSize } from './types';
 import { omit } from './utils';
 
 export type Clickable =
@@ -21,13 +22,11 @@ export type Badgeable =
 
 export type AvatarSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 
-export type Breakpoints = 'base' | 'sm' | 'md' | 'lg' | 'xl';
-
 export type AvatarBaseProps = Badgeable &
   Clickable & {
     src?: string;
     name?: string;
-    size?: AvatarSize | Partial<Record<Breakpoints, AvatarSize>>;
+    size?: AvatarSize | ResponsiveSize<AvatarSize>;
     online?: boolean;
     verified?: boolean;
     __bordered?: boolean;

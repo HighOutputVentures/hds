@@ -36,17 +36,19 @@ export default function AvatarLabel(props: PropsWithChildren<AvatarLabelProps>) 
 
   return (
     <Box
-      sx={styles.container}
-      {...omit(
-        others,
-        'badge',
-        'clickable',
-        'online',
-        'verified',
-        /* @ts-ignore "This uses type guards here" */
-        'onClick',
-        'badgeIcon',
-      )}
+      sx={{
+        ...omit(
+          others,
+          'badge',
+          'clickable',
+          'online',
+          'verified',
+          /* @ts-ignore "This uses type guards here" */
+          'onClick',
+          'badgeIcon',
+        ),
+        ...styles.container,
+      }}
     >
       <Box sx={styles.avatar}>
         {React.cloneElement<{ [key: string]: any }>(
