@@ -3,6 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { theme, ThemeProvider } from '../../hds/src';
 import Avatar from './Avatar';
+import CompanyIcon from './examples/CompanyIcon';
 import withAvatar from './withAvatar';
 
 export default {
@@ -14,12 +15,12 @@ const Template: ComponentStory<typeof Avatar> = () => {
   return (
     <ThemeProvider theme={extendTheme(theme, withAvatar())}>
       <VStack align="start" spacing={4}>
-        <Avatar size="xs" src="https://i.pravatar.cc/300" />
-        <Avatar size="sm" />
-        <Avatar size="md" name="John Calvo" />
-        <Avatar size="lg" />
-        <Avatar size="xl" src="https://i.pravatar.cc/300" clickable onClick={() => {}} />
-        <Avatar size="2xl" clickable onClick={() => {}} />
+        <Avatar size="xs" badge badgeIcon={CompanyIcon} clickable onClick={() => {}} />
+        <Avatar size="sm" badge badgeIcon={CompanyIcon} clickable onClick={() => {}} />
+        <Avatar size="md" badge badgeIcon={CompanyIcon} clickable onClick={() => {}} />
+        <Avatar size="lg" badge badgeIcon={CompanyIcon} clickable onClick={() => {}} />
+        <Avatar size="xl" badge badgeIcon={CompanyIcon} clickable onClick={() => {}} />
+        <Avatar size="2xl" badge badgeIcon={CompanyIcon} clickable onClick={() => {}} />
       </VStack>
     </ThemeProvider>
   );

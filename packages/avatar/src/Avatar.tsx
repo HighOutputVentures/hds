@@ -1,8 +1,8 @@
-import { Avatar, AvatarBadge, Icon } from '@chakra-ui/react';
+import { Avatar, AvatarBadge, Box, Icon, useMultiStyleConfig } from '@chakra-ui/react';
 import { SystemStyleObject } from '@chakra-ui/styled-system';
 import * as React from 'react';
-import { useActualSize } from './hooks';
 import UserIcon from './icons/UserIcon';
+import VerifiedIcon from './icons/VerifiedIcon';
 import { omit } from './utils';
 
 type Clickable =
@@ -33,9 +33,11 @@ type BaseProps = {
 export type AvatarProps = SystemStyleObject & BaseProps & Badgeable & Clickable;
 
 export default function HdsAvatar(props: AvatarProps) {
-  const { src, name, variant, ...p } = Object.assign({ size: 'md' }, props, { variant: 'hds' });
+  const { src, name, variant, size, ...p } = Object.assign({ size: 'md' }, props, {
+    variant: 'hds',
+  });
 
-  const size = useActualSize(p.size);
+  const styles = useMultiStyleConfig('Avatar', { size, variant });
 
   return (
     <Avatar
@@ -55,7 +57,6 @@ export default function HdsAvatar(props: AvatarProps) {
       sx={{
         ...omit(
           p,
-          'size',
           'badge',
           'clickable',
           /* @ts-ignore "Include types which utilizes type guard-ing." */
@@ -64,9 +65,15 @@ export default function HdsAvatar(props: AvatarProps) {
         ),
       }}
     >
-      {!!p.badge && <AvatarBadge />}
-      {!!p.online && <AvatarBadge />}
-      {!!p.verified && <AvatarBadge />}
+      {!!p.online /* <!-- Online --> */ && <AvatarBadge />}
+
+      {!!p.badge /* <!-- Badge --> */ && (
+        <Box sx={styles.customIcon}>
+          <Icon as={p.badgeIcon} />
+        </Box>
+      )}
+
+      {!!p.verified /* <!-- Verified --> */ && <Icon as={VerifiedIcon} sx={styles.verified} />}
     </Avatar>
   );
 }
