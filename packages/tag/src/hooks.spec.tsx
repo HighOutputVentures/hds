@@ -6,7 +6,7 @@ jest.mock('@chakra-ui/react', () => {
     __esModule: true,
     ...jest.requireActual('@chakra-ui/react'),
     useBreakpoint() {
-      return 'lg';
+      return 'sm';
     },
   };
 });
@@ -22,7 +22,7 @@ describe('hooks', () => {
         }),
       );
 
-      expect(result.current).toBe('lg');
+      expect(result.current).toBe('sm');
     });
 
     it('Should be able to use fallback', () => {
@@ -32,9 +32,9 @@ describe('hooks', () => {
     });
 
     it('Should use closest size', () => {
-      const { result } = renderHook(() => useActualSize({ md: 'md', base: 'sm' }, 'md'));
+      const { result } = renderHook(() => useActualSize({ md: 'md', base: 'sm' }));
 
-      expect(result.current).toBe('md');
+      expect(result.current).toBe('sm');
     });
   });
 });
