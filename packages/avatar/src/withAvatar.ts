@@ -19,6 +19,7 @@ export default function withAvatar() {
               boxShadow: context['data-fallback'] ? '0 0 0 4px #F2F4F7' : '0 0 0 4px #F4EBFF',
             },
             transition: 'box-shadow 300ms ease-in-out',
+            border: context['data-bordered'] ? '1.5px solid #FFFFFF' : undefined,
           },
           badge: {
             color: '#00C408',
@@ -41,6 +42,17 @@ export default function withAvatar() {
             alignItems: 'center',
             justifyContent: 'center',
           },
+          excessLabel: {
+            color: '#475467',
+            bgColor: '#F9FAFB',
+            border: '2px solid #FFFFFF',
+            fontWeight: 'medium',
+            zIndex: 999,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          },
+          group: {},
         };
       },
     },
@@ -78,6 +90,12 @@ export default function withAvatar() {
             height: '10px',
           },
         },
+        excessLabel: {
+          width: '24px',
+          height: '24px',
+          fontSize: '12px',
+          lineHeight: '18px',
+        },
       },
       sm: {
         container: {
@@ -112,6 +130,12 @@ export default function withAvatar() {
             height: '12px',
           },
         },
+        excessLabel: {
+          width: '32px',
+          height: '32px',
+          fontSize: '14px',
+          lineHeight: '20px',
+        },
       },
       md: {
         container: {
@@ -145,6 +169,12 @@ export default function withAvatar() {
             width: '14px',
             height: '14px',
           },
+        },
+        excessLabel: {
+          width: '40px',
+          height: '40px',
+          fontSize: '16px',
+          lineHeight: '24px',
         },
       },
       lg: {

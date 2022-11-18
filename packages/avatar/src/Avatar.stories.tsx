@@ -30,3 +30,7 @@ const Template: ComponentStory<typeof Avatar> = () => {
 };
 
 export const Default = Template.bind({});
+
+Default.args = {
+  ...Default.args,
+};

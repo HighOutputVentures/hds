@@ -30,14 +30,17 @@ export type AvatarBaseProps = Badgeable &
     size?: AvatarSize | Partial<Record<Breakpoints, AvatarSize>>;
     online?: boolean;
     verified?: boolean;
+    __bordered?: boolean;
+    __elevated?: boolean;
   };
 
 export type AvatarProps = SystemStyleObject & AvatarBaseProps;
 
 export default function HdsAvatar(props: AvatarProps) {
-  const { src, name, variant, size, ...p } = Object.assign({ size: 'md' }, props, {
-    variant: 'hds',
-  });
+  const { src, name, variant, size, __bordered, __elevated, ...p } = Object.assign(
+    { size: 'md', ...props },
+    { variant: 'hds' },
+  );
 
   const styles = useMultiStyleConfig('Avatar', { size, variant });
 
@@ -49,6 +52,8 @@ export default function HdsAvatar(props: AvatarProps) {
       name={name}
       icon={<Icon as={UserIcon} color="#475467" />}
       data-fallback={!src}
+      data-bordered={!!__bordered}
+      data-elevated={!!__elevated}
       {...(p.clickable && {
         tabIndex: 0,
         onClick: p.onClick,

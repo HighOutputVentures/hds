@@ -14,11 +14,13 @@ export default {
 const Template: ComponentStory<typeof AvatarGroup> = () => {
   return (
     <ThemeProvider theme={extendTheme(theme, withAvatar())}>
-      <VStack align="start" spacing={4}>
-        <AvatarGroup>
-          <Avatar size="sm" src={'https://i.pravatar.cc/200?u=' + Date.now()} />
-          <Avatar size="md" src={'https://i.pravatar.cc/250?u=' + Date.now()} />
-          <Avatar size="lg" src={'https://i.pravatar.cc/300?u=' + Date.now()} />
+      <VStack align="start" spacing="8px">
+        <AvatarGroup max={3} include={['plus']}>
+          <Avatar src="https://i.pravatar.cc/200?u=1" />
+          <Avatar src="https://i.pravatar.cc/200?u=2" />
+          <Avatar src="https://i.pravatar.cc/200?u=3" />
+          <Avatar src="https://i.pravatar.cc/200?u=4" />
+          <Avatar src="https://i.pravatar.cc/200?u=5" />
         </AvatarGroup>
       </VStack>
     </ThemeProvider>

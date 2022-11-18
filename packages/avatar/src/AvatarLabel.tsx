@@ -1,4 +1,4 @@
-import { Box, Heading, Text, useMultiStyleConfig } from '@chakra-ui/react';
+import { Box, Heading, SystemStyleObject, Text, useMultiStyleConfig } from '@chakra-ui/react';
 import * as React from 'react';
 import { PropsWithChildren } from 'react';
 import { AvatarBaseProps } from './Avatar';
@@ -6,10 +6,14 @@ import { omit, pick } from './utils';
 
 type Size = 'sm' | 'md' | 'lg' | 'xl';
 
-export type AvatarLabelProps = Omit<AvatarBaseProps, 'size'> & {
+type AvatarLabelBaseProps = {
   size?: Size;
   supportText?: string;
 };
+
+type AvatarWithoutSize = Omit<AvatarBaseProps, 'size'>;
+
+export type AvatarLabelProps = SystemStyleObject & AvatarWithoutSize & AvatarLabelBaseProps;
 
 export default function AvatarLabel(props: PropsWithChildren<AvatarLabelProps>) {
   const {
