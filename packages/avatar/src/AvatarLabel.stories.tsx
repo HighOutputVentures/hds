@@ -1,11 +1,12 @@
 // @ts-nocheck
 
-import { extendTheme, VStack } from '@chakra-ui/react';
+import { extendTheme, Flex, HStack } from '@chakra-ui/react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { theme, ThemeProvider } from '../../hds/src';
 import Avatar from './Avatar';
 import AvatarLabel from './AvatarLabel';
+import CompanyIcon from './examples/CompanyIcon';
 import withAvatar from './withAvatar';
 import withAvatarLabel from './withAvatarLabel';
 
@@ -28,35 +29,50 @@ export default {
 const Template: ComponentStory<typeof Avatar> = (args) => {
   return (
     <ThemeProvider theme={extendTheme(theme, withAvatar(), withAvatarLabel())}>
-      <VStack align="start" spacing={4}>
-        <AvatarLabel
-          src="https://i.pravatar.cc/300"
-          name="JP Calvo"
-          supportText="calvojp92@gmail.com"
-          online
-          {...args}
-        >
-          <Avatar />
-        </AvatarLabel>
+      <HStack align="start" spacing={8}>
+        <Flex gap={4} direction="column">
+          <AvatarLabel src="https://i.pravatar.cc/300?u=1" online {...args}>
+            <Avatar />
+          </AvatarLabel>
+          <AvatarLabel online {...args}>
+            <Avatar />
+          </AvatarLabel>
+          <AvatarLabel online fallback={false} {...args}>
+            <Avatar />
+          </AvatarLabel>
+        </Flex>
 
-        <AvatarLabel name="JP Calvo" supportText="calvojp92@gmail.com" online {...args}>
-          <Avatar />
-        </AvatarLabel>
+        <Flex gap={4} direction="column">
+          <AvatarLabel src="https://i.pravatar.cc/300?u=2" verified {...args}>
+            <Avatar />
+          </AvatarLabel>
+          <AvatarLabel verified {...args}>
+            <Avatar />
+          </AvatarLabel>
+          <AvatarLabel verified fallback={false} {...args}>
+            <Avatar />
+          </AvatarLabel>
+        </Flex>
 
-        <AvatarLabel
-          name="JP Calvo"
-          fallback={false}
-          supportText="calvojp92@gmail.com"
-          online
-          {...args}
-        >
-          <Avatar />
-        </AvatarLabel>
-      </VStack>
+        <Flex gap={4} direction="column">
+          <AvatarLabel src="https://i.pravatar.cc/300?u=3" badge badgeIcon={CompanyIcon} {...args}>
+            <Avatar />
+          </AvatarLabel>
+          <AvatarLabel badge badgeIcon={CompanyIcon} {...args}>
+            <Avatar />
+          </AvatarLabel>
+          <AvatarLabel badge badgeIcon={CompanyIcon} fallback={false} {...args}>
+            <Avatar />
+          </AvatarLabel>
+        </Flex>
+      </HStack>
     </ThemeProvider>
   );
 };
 
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.args = {
+  name: 'John Doe',
+  supportText: 'johndoe@dummy.bla',
+};
