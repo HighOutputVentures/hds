@@ -20,11 +20,7 @@
     "analyze": "size-limit --why",
     "generate:types": "chakra-cli tokens ./src/theme/index.ts"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
+ 
   "prettier": {
     "printWidth": 80,
     "semi": true,
