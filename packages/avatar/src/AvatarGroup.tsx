@@ -6,6 +6,7 @@ import {
   SystemStyleObject,
   Tooltip,
   useBreakpoint,
+  useMultiStyleConfig,
 } from '@chakra-ui/react';
 import * as React from 'react';
 import { useActualSize } from './hooks';
@@ -29,17 +30,15 @@ export default function HdsAvatarGroup(props: React.PropsWithChildren<AvatarGrou
 
   const actualMax = useActualMax(max);
   const actualSize = useActualSize(size);
-  const spacing = React.useMemo(() => {
-    return {
-      xs: '-4px',
-      sm: '-8px',
-      md: '-12px',
-    }[actualSize];
-  }, [actualSize]);
 
   return (
     <HStack __css={others} spacing="8px" /* retain spacing */>
-      <AvatarGroup variant="hds" max={actualMax} size={size} spacing={spacing}>
+      <AvatarGroup
+        variant="hds"
+        max={actualMax}
+        size={size}
+        spacing={{ xs: '-4px', sm: '-8px', md: '-12px' }[actualSize]}
+      >
         {React.Children.map(children, (child, zIndex) => {
           if (!React.isValidElement(child)) return null;
 
@@ -59,53 +58,12 @@ export default function HdsAvatarGroup(props: React.PropsWithChildren<AvatarGrou
 type AddButtonProps = React.ComponentProps<'button'> & { size: string /* unsafe. 🤐 */ };
 
 function AddButton({ size, ...props }: AddButtonProps) {
-  const buttonSize = React.useMemo(
-    () => ({
-      xs: { width: '24px', height: '24px' },
-      sm: { width: '32px', height: '32px' },
-      md: { width: '40px', height: '40px' },
-    }),
-    [],
-  );
-
-  const iconStyle = React.useMemo(
-    () => ({
-      xs: { color: '#525252', width: '16px', height: '16px' },
-      sm: { color: '#525252', width: '16px', height: '16px' },
-      md: { color: '#525252', width: '20px', height: '20px' },
-    }),
-    [],
-  );
+  const styles = useMultiStyleConfig('AvatarGroupButton', { size });
 
   return (
-    <Tooltip
-      hasArrow
-      label="Add user"
-      placement="top"
-      marginBottom="3px"
-      bgColor="#0F0F0F"
-      rounded="8px"
-      fontFamily="'Inter', sans-serif"
-      fontSize="12px"
-      lineHeight="18px"
-      fontWeight="500"
-      paddingY="8px"
-      paddingX="12px"
-    >
-      <chakra.button
-        role="button"
-        aria-label="Add User"
-        sx={{
-          border: '1px dashed #C2C2C2',
-          rounded: 'full',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          ...buttonSize[size],
-        }}
-        {...props}
-      >
-        <Icon as={PlusIcon} sx={iconStyle[size]} />
+    <Tooltip variant="hds-avatar" hasArrow label="Add user" placement="top">
+      <chakra.button role="button" aria-label="Add User" sx={styles.container} {...props}>
+        <Icon as={PlusIcon} sx={styles.icon} />
       </chakra.button>
     </Tooltip>
   );

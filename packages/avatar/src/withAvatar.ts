@@ -1,4 +1,4 @@
-import { MultiStyleConfig } from '@chakra-ui/react';
+import { cssVar, defineStyleConfig, MultiStyleConfig } from '@chakra-ui/react';
 
 // 💡NOTE
 // Sizes 3xl, 4xl and 5xl are normally used for "AvatarProfile"
@@ -473,5 +473,77 @@ export default function withAvatar() {
     defaultProps: {},
   };
 
-  return { components: { Avatar, AvatarLabel } };
+  const arrowBg = cssVar('popper-arrow-bg');
+  const Tooltip = defineStyleConfig({
+    variants: {
+      'hds-avatar': (context) => {
+        return {
+          marginBottom: context.placement === 'top' ? '3px' : undefined,
+          fontFamily: "'Inter', sans-serif",
+          fontSize: '12px',
+          lineHeight: '18px',
+          fontWeight: '500',
+          color: '#FCFCFC',
+          bgColor: '#0F0F0F',
+          rounded: '8px',
+          paddingY: '8px',
+          paddingX: '12px',
+          [arrowBg.variable]: '#0F0F0F',
+        };
+      },
+    },
+  });
+
+  const AvatarGroupButton: MultiStyleConfig = {
+    parts: ['container', 'icon'],
+    baseStyle: {
+      container: {
+        border: '1px dashed #C2C2C2',
+        rounded: 'full',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+      icon: {
+        color: '#525252',
+      },
+    },
+    sizes: {
+      xs: {
+        container: {
+          width: '24px',
+          height: '24px',
+        },
+        icon: {
+          color: '#525252',
+          width: '16px',
+          height: '16px',
+        },
+      },
+      sm: {
+        container: {
+          width: '32px',
+          height: '32px',
+        },
+        icon: {
+          color: '#525252',
+          width: '16px',
+          height: '16px',
+        },
+      },
+      md: {
+        container: {
+          width: '40px',
+          height: '40px',
+        },
+        icon: {
+          color: '#525252',
+          width: '20px',
+          height: '20px',
+        },
+      },
+    },
+  };
+
+  return { components: { Avatar, AvatarLabel, Tooltip, AvatarGroupButton } };
 }
