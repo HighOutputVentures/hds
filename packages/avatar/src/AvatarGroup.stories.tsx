@@ -26,12 +26,17 @@ const Template: ComponentStory<typeof AvatarGroup> = (args) => {
   return (
     <ThemeProvider theme={extendTheme(theme, withAvatar())}>
       <VStack align="start" spacing="8px">
-        <AvatarGroup max={3} size="md" hasAddButton onAddButtonClick={() => {}} {...args}>
+        <AvatarGroup {...args}>
+          <Avatar src="https://i.pravatar.cc/200?u=0" />
           <Avatar src="https://i.pravatar.cc/200?u=1" />
           <Avatar src="https://i.pravatar.cc/200?u=2" />
           <Avatar src="https://i.pravatar.cc/200?u=3" />
           <Avatar src="https://i.pravatar.cc/200?u=4" />
           <Avatar src="https://i.pravatar.cc/200?u=5" />
+          <Avatar src="https://i.pravatar.cc/200?u=6" />
+          <Avatar src="https://i.pravatar.cc/200?u=7" />
+          <Avatar src="https://i.pravatar.cc/200?u=8" />
+          <Avatar src="https://i.pravatar.cc/200?u=9" />
         </AvatarGroup>
       </VStack>
     </ThemeProvider>
@@ -39,3 +44,8 @@ const Template: ComponentStory<typeof AvatarGroup> = (args) => {
 };
 
 export const Default = Template.bind({});
+
+Default.args = {
+  max: 5,
+  hasAddButton: true,
+};
