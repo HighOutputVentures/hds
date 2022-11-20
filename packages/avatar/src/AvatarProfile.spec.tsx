@@ -7,7 +7,7 @@ import { render } from '@testing-library/react';
 import * as React from 'react';
 import AvatarProfile from './AvatarProfile';
 
-jest.mock('@chakra-ui/react', () => {
+jest.mock('@chakra-ui/react', function mockUseBreakpointHook() {
   return {
     ...jest.requireActual('@chakra-ui/react'),
     useBreakpoint() {
