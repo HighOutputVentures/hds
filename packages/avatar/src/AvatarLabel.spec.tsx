@@ -1,18 +1,26 @@
 import { Avatar } from '@chakra-ui/react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import * as React from 'react';
 import AvatarLabel from './AvatarLabel';
 
 describe('AvatarLabel', () => {
   beforeEach(() => {
     render(
-      <AvatarLabel>
+      <AvatarLabel src="" name="John Doe" supportText="johndoe@dummy.blaa">
         <Avatar />
       </AvatarLabel>,
     );
   });
 
-  it.todo('Should render name');
-  it.todo('Should render image');
-  it.todo('Should render support text');
+  it('Should render avatar', () => {
+    expect(screen.queryByRole('img', { name: 'avatar' })).toBeDefined();
+  });
+
+  it('Should render name', () => {
+    expect(screen.queryByText('John Doe')).toBeDefined();
+  });
+
+  it('Should render support text', () => {
+    expect(screen.queryByText('johndoe@dummy.blaa')).toBeDefined();
+  });
 });
