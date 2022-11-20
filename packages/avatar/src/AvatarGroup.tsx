@@ -26,7 +26,7 @@ type AvatarGroupBaseProps = {
 export type AvatarGroupProps = SystemStyleObject & AvatarGroupBaseProps;
 
 export default function HdsAvatarGroup(props: React.PropsWithChildren<AvatarGroupProps>) {
-  const { max, size = 'md', children, hasAddButton, onAddButtonClick, ...others } = props;
+  const { max = 5, size = 'md', children, hasAddButton, onAddButtonClick, ...others } = props;
 
   const actualMax = useActualMax(max);
   const actualSize = useActualSize(size);
@@ -38,6 +38,7 @@ export default function HdsAvatarGroup(props: React.PropsWithChildren<AvatarGrou
         max={actualMax}
         size={size}
         spacing={{ xs: '-4px', sm: '-8px', md: '-12px' }[actualSize]}
+        aria-label="Group of users"
       >
         {React.Children.map(children, (child, zIndex) => {
           if (!React.isValidElement(child)) return null;
@@ -61,7 +62,14 @@ function AddButton({ size, ...props }: AddButtonProps) {
   const styles = useMultiStyleConfig('AvatarGroupButton', { size });
 
   return (
-    <Tooltip variant="hds-avatar" hasArrow label="Add user" placement="top">
+    <Tooltip
+      variant="hds-avatar"
+      hasArrow
+      label="Add user"
+      placement="top"
+      role="tooltip"
+      aria-label="Add user"
+    >
       <chakra.button role="button" aria-label="Add User" sx={styles.container} {...props}>
         <Icon as={PlusIcon} sx={styles.icon} />
       </chakra.button>
