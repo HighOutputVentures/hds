@@ -1,6 +1,6 @@
-import { Avatar } from '@chakra-ui/react';
 import { render, screen } from '@testing-library/react';
 import * as React from 'react';
+import Avatar from './Avatar';
 import AvatarLabel from './AvatarLabel';
 
 describe('AvatarLabel', () => {

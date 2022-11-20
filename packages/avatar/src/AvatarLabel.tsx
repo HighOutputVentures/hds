@@ -56,14 +56,14 @@ export default function AvatarLabel(props: PropsWithChildren<AvatarLabelProps>) 
       }}
     >
       <Box sx={styles.avatar}>
-        {React.cloneElement<{ [key: string]: any }>(children, {
+        {React.cloneElement<any>(children, {
+          src,
           name: fallback ? name : undefined,
+          size,
           online,
           onlineIndicator,
           ...pick(
-            props,
-            'src',
-            'size',
+            others,
             'badge',
             'verified',
             'clickable',

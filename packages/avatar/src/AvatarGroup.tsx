@@ -32,7 +32,7 @@ export default function HdsAvatarGroup(props: React.PropsWithChildren<AvatarGrou
   const actualSize = useActualSize(size);
 
   return (
-    <HStack __css={others} spacing="8px" /* retain spacing */>
+    <HStack sx={others} spacing="8px" /* retain spacing */>
       <AvatarGroup
         variant="hds"
         max={actualMax}
@@ -42,7 +42,7 @@ export default function HdsAvatarGroup(props: React.PropsWithChildren<AvatarGrou
         {React.Children.map(children, (child, zIndex) => {
           if (!React.isValidElement(child)) return null;
 
-          return React.cloneElement<Record<string, any>>(child, {
+          return React.cloneElement<any>(child, {
             size,
             zIndex,
             __bordered: true,
