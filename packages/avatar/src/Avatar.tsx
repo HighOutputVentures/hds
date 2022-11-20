@@ -50,10 +50,10 @@ export default function HdsAvatar(props: AvatarProps) {
       data-fallback={!src}
       data-elevated={!!__elevated}
       data-bordered={!!__bordered}
+      data-clickable={!!p.clickable}
       {...(p.clickable && {
-        tabIndex: 0,
+        tabIndex: 1,
         onClick: p.onClick,
-        'data-clickable': true,
       })}
       sx={{
         ...omit(
