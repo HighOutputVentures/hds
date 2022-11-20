@@ -60,7 +60,7 @@ describe('Avatar', () => {
       expect(queryByRole('presentation', { name: 'Online' })).toBeDefined();
     });
 
-    it('Should be able to add online indicator', () => {
+    it('Should be able to add offline indicator', () => {
       const { queryByRole } = render(
         <ChakraProvider>
           <Avatar onlineIndicator />
