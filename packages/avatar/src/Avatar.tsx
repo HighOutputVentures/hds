@@ -52,7 +52,7 @@ export default function HdsAvatar(props: AvatarProps) {
       data-bordered={!!__bordered}
       data-clickable={!!p.clickable}
       {...(p.clickable && {
-        tabIndex: 1,
+        tabIndex: 0,
         onClick: p.onClick,
       })}
       sx={{
@@ -75,7 +75,7 @@ export default function HdsAvatar(props: AvatarProps) {
       )}
 
       {!!p.badge /* <!-- Badge --> */ && (
-        <Box sx={styles.customIcon} role="presentation" aria-label="Company Icon">
+        <Box role="presentation" aria-label="Company Icon" sx={styles.customIcon}>
           <Icon as={p.badgeIcon} />
         </Box>
       )}
