@@ -37,7 +37,9 @@ export default function AvatarLabel(props: PropsWithChildren<AvatarLabelProps>) 
   const styles = useMultiStyleConfig('AvatarLabel', { size, variant: 'hds' });
 
   if (!React.isValidElement(children)) {
-    throw new Error("'AvatarLabel' only accepts a single 'Avatar' child");
+    console.error("'AvatarLabel' only accepts a single 'Avatar' child");
+
+    return null;
   }
 
   return (
