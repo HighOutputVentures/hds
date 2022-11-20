@@ -66,10 +66,16 @@ export default function HdsAvatar(props: AvatarProps) {
         ),
       }}
     >
-      {!!onlineIndicator /* <!-- Online Indicator --> */ && <AvatarBadge />}
-      {!!p.verified /* <!-- Verified --> */ && <Icon as={VerifiedIcon} sx={styles.verified} />}
+      {!!onlineIndicator /* <!-- Online Indicator --> */ && (
+        <AvatarBadge role="presentation" aria-label={online ? 'Online' : 'Offline'} />
+      )}
+
+      {!!p.verified /* <!-- Verified --> */ && (
+        <Icon as={VerifiedIcon} role="presentation" aria-label="Verified" sx={styles.verified} />
+      )}
+
       {!!p.badge /* <!-- Badge --> */ && (
-        <Box sx={styles.customIcon}>
+        <Box sx={styles.customIcon} role="presentation" aria-label="Company Icon">
           <Icon as={p.badgeIcon} />
         </Box>
       )}

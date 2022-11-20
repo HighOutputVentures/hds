@@ -17,7 +17,7 @@ export default function CompanyIcon(props: React.ComponentProps<'svg'>) {
         height="17.5"
         rx="8.75"
         stroke="white"
-        stroke-width="1.5"
+        strokeWidth="1.5"
       />
       <defs>
         <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
