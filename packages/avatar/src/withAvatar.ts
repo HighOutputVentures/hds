@@ -545,5 +545,5 @@ export default function withAvatar() {
     },
   };
 
-  return { components: { Avatar, AvatarLabel, Tooltip, AvatarGroupButton } };
+  return { components: { Avatar, AvatarLabel, AvatarGroupButton, Tooltip } };
 }
