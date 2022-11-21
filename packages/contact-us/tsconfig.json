@@ -2,7 +2,10 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "jsx": "react",
+    "paths": {
+      "@highoutput/hds-forms/*": ["../../node_modules/@highoutput/hds-forms/*"]
+    }
   },
   "include": ["src"],
-  "exclude": ["node_modules", "types/*.ts"],
+  "exclude": ["node_modules", "types/*.ts"]
 }
