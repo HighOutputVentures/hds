@@ -1,29 +1,25 @@
-import { SystemStyleObject } from "@chakra-ui/react";
+// No need to do lots of tests here
+// This just calls avatar underneath
+// thus checking if avatar is rendered would be enough
+
+import "@testing-library/jest-dom";
+import { render } from "@testing-library/react";
 import * as React from "react";
-import Avatar, { AvatarBaseProps } from "./Avatar";
-import { useActualSize } from "./hooks";
-import { Clickable, ResponsiveSize } from "./types";
+import AvatarProfile from "./AvatarProfile";
 
-type AvatarProfileSize = "sm" | "md" | "lg";
+jest.mock("@chakra-ui/react", function mockUseBreakpointHook() {
+  return {
+    ...jest.requireActual("@chakra-ui/react"),
+    useBreakpoint() {
+      return "lg";
+    },
+  };
+});
 
-type AvatarProfileBaseProps = {
-  size?: AvatarProfileSize | ResponsiveSize<AvatarProfileSize>;
-};
+describe("AvatarProfile", () => {
+  it("Should render just like regular 'Avatar'", () => {
+    const { queryByRole } = render(<AvatarProfile src="" name="John Doe" />);
 
-type InheritedAvatarProps = Pick<AvatarBaseProps, "src" | "name" | "verified">;
-
-// prettier-ignore
-export type AvatarProfileProps =
-  SystemStyleObject &
-  InheritedAvatarProps &
-  AvatarProfileBaseProps &
-  Clickable;
-
-export default function AvatarProfile(props: AvatarProfileProps) {
-  const { size, ...others } = Object.assign({ size: "md" }, props);
-
-  const actualSize = useActualSize(size);
-  const psuedoSize = { sm: "3xl", md: "4xl", lg: "5xl" } as const;
-
-  return <Avatar size={psuedoSize[actualSize]} {...others} __elevated __bordered />;
-}
+    expect(queryByRole("img", { name: "avatar" })).toBeDefined();
+  });
+});
