@@ -1,4 +1,5 @@
 import {
+  Box,
   FormControl,
   FormHelperText,
   FormLabel,
@@ -8,54 +9,59 @@ import {
 } from "@chakra-ui/react";
 import * as React from "react";
 
-type SwitchValue = "on" | "off";
-
 type SwitchSize = "sm" | "md";
 
 type ResponsiveSize<T> = Record<"base" | "sm" | "md" | "lg" | "xl", T>;
 
 export type SwitchBaseProps = {
   size?: SwitchSize | ResponsiveSize<SwitchSize>;
-  value?: SwitchValue;
-  onToggle?(value: SwitchValue): void;
+  disabled?: boolean;
+  checked?: boolean;
+  onCheck?(value: boolean): void;
   label?: string;
   helperText?: string;
+  colorScheme?: "dark" | "light";
 };
 
-export type SwitchProps = SwitchBaseProps & SystemStyleObject;
+export type SwitchProps = SwitchBaseProps & Omit<SystemStyleObject, "colorScheme">;
 
 export default React.forwardRef<HTMLInputElement, SwitchProps>(function HdsSwitch(props, ref) {
-  const { size, value, onToggle, label, helperText, ...others } = Object.assign(
-    defaultProps,
-    props,
-  );
+  const { size, checked, onCheck, label, helperText, disabled, colorScheme, ...others } =
+    Object.assign(defaultProps, props);
 
-  const styles = useMultiStyleConfig("Switch", { size, variant: "hds" });
+  const styles = useMultiStyleConfig("Switch", { variant: "hds", size, colorScheme });
   const uniqid = React.useId();
 
   return (
-    <FormControl sx={{ ...others, ...styles.control }}>
+    <FormControl variant="unstyled" sx={{ ...others, ...styles.control }}>
       <Switch
+        variant="hds"
         ref={ref}
         id={uniqid}
-        isChecked={value === "on"}
+        size={size}
+        isChecked={checked}
+        colorScheme={colorScheme}
+        isDisabled={disabled}
         onChange={(e) => {
-          onToggle(e.target.checked ? "on" : "off");
+          onCheck(e.target.checked);
         }}
       />
 
-      {label && (
-        <FormLabel htmlFor={uniqid} sx={styles.label}>
-          {label}
-        </FormLabel>
-      )}
-      {helperText && <FormHelperText sx={styles.helperText}>{helperText}</FormHelperText>}
+      <Box>
+        {label && (
+          <FormLabel htmlFor={uniqid} sx={styles.label}>
+            {label}
+          </FormLabel>
+        )}
+        {helperText && <FormHelperText sx={styles.helperText}>{helperText}</FormHelperText>}
+      </Box>
     </FormControl>
   );
 });
 
 const defaultProps = {
   size: "md",
-  value: "off",
-  onToggle() {},
+  checked: false,
+  onCheck() {},
+  colorScheme: "light",
 };
