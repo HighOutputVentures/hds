@@ -1,7 +1,7 @@
 import * as React from 'react';
 declare const _default: import("@storybook/csf").ComponentAnnotations<import("@storybook/react").ReactFramework, (import("@chakra-ui/styled-system").CSSWithMultiValues & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -14,7 +14,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     checkbox?: false;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -29,7 +29,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     onCheck(value: boolean): void;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -43,7 +43,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     checkbox?: false;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -59,7 +59,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     onCheck(value: boolean): void;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -73,7 +73,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     checkbox?: false;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -89,7 +89,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     onCheck(value: boolean): void;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -104,7 +104,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     checkbox?: false;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -121,7 +121,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     onCheck(value: boolean): void;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursivePseudo<import("@chakra-ui/styled-system").CSSWithMultiValues> & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -134,7 +134,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     checkbox?: false;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursivePseudo<import("@chakra-ui/styled-system").CSSWithMultiValues> & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -149,7 +149,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     onCheck(value: boolean): void;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursivePseudo<import("@chakra-ui/styled-system").CSSWithMultiValues> & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -163,7 +163,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     checkbox?: false;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursivePseudo<import("@chakra-ui/styled-system").CSSWithMultiValues> & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -179,7 +179,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     onCheck(value: boolean): void;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursivePseudo<import("@chakra-ui/styled-system").CSSWithMultiValues> & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -193,7 +193,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     checkbox?: false;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursivePseudo<import("@chakra-ui/styled-system").CSSWithMultiValues> & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -209,7 +209,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     onCheck(value: boolean): void;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursivePseudo<import("@chakra-ui/styled-system").CSSWithMultiValues> & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -224,7 +224,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     checkbox?: false;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursivePseudo<import("@chakra-ui/styled-system").CSSWithMultiValues> & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -241,7 +241,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     onCheck(value: boolean): void;
 } & React.RefAttributes<HTMLDivElement>) | (Pick<import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursiveCSSSelector<import("@chakra-ui/styled-system").CSSWithMultiValues> & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -254,7 +254,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     checkbox?: false;
 }, React.Key> & React.RefAttributes<HTMLDivElement>) | (Pick<import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursiveCSSSelector<import("@chakra-ui/styled-system").CSSWithMultiValues> & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -269,7 +269,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     onCheck(value: boolean): void;
 }, React.Key> & React.RefAttributes<HTMLDivElement>) | (Pick<import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursiveCSSSelector<import("@chakra-ui/styled-system").CSSWithMultiValues> & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -283,7 +283,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     checkbox?: false;
 }, React.Key> & React.RefAttributes<HTMLDivElement>) | (Pick<import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursiveCSSSelector<import("@chakra-ui/styled-system").CSSWithMultiValues> & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -299,7 +299,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     onCheck(value: boolean): void;
 }, React.Key> & React.RefAttributes<HTMLDivElement>) | (Pick<import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursiveCSSSelector<import("@chakra-ui/styled-system").CSSWithMultiValues> & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -313,7 +313,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     checkbox?: false;
 }, React.Key> & React.RefAttributes<HTMLDivElement>) | (Pick<import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursiveCSSSelector<import("@chakra-ui/styled-system").CSSWithMultiValues> & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -329,7 +329,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     onCheck(value: boolean): void;
 }, React.Key> & React.RefAttributes<HTMLDivElement>) | (Pick<import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursiveCSSSelector<import("@chakra-ui/styled-system").CSSWithMultiValues> & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
@@ -344,7 +344,7 @@ declare const _default: import("@storybook/csf").ComponentAnnotations<import("@s
     checkbox?: false;
 }, React.Key> & React.RefAttributes<HTMLDivElement>) | (Pick<import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursiveCSSSelector<import("@chakra-ui/styled-system").CSSWithMultiValues> & {
     label: string;
-    size?: "md" | "lg" | "sm" | Partial<Record<"md" | "xl" | "lg" | "sm" | "base", "md" | "lg" | "sm">>;
+    size?: "sm" | "md" | "lg" | Partial<Record<"base" | "sm" | "md" | "lg" | "xl", "sm" | "md" | "lg">>;
     icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
     avatar?: string;
     indicator?: boolean;
