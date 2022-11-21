@@ -1,5 +1,5 @@
 import { CSSObject, InputElementProps, InputGroupProps, InputProps, ThemeTypings } from '@chakra-ui/react';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { FormContainerPartProps, FormContainerProps } from '../FormContainer/FormContainer';
 declare type WithoutChildren<T> = Omit<T, 'children'>;
 export interface InputFieldPartProps extends FormContainerPartProps {
@@ -26,5 +26,5 @@ export interface InputFieldProps extends Omit<FormContainerProps, 'partProps'> {
     inputValue?: string | undefined;
     partProps?: Partial<InputFieldPartProps>;
 }
-declare const InputField: any;
+declare const InputField: React.ForwardRefExoticComponent<Pick<InputFieldProps, "children" | "label" | "pattern" | "autoComplete" | "autoFocus" | "disabled" | "max" | "maxLength" | "min" | "minLength" | "name" | "placeholder" | "readOnly" | "required" | "size" | "type" | "onChange" | "defaultValue" | "id" | "onBlur" | "_hover" | "colorScheme" | "variant" | "orientation" | "styleConfig" | "partProps" | "labelColor" | "errorMsg" | "helperMsg" | "leftIcon" | "rightIcon" | "onPressEnter" | "inputValue"> & React.RefAttributes<HTMLInputElement>>;
 export default InputField;
