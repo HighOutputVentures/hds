@@ -40,6 +40,44 @@ var Checkbox = /*#__PURE__*/React.forwardRef(function HdsCheckbox(props, ref) {
   }, props));
 });
 
+function useActualSize(size, fallback) {
+  if (fallback === void 0) {
+    fallback = 'md';
+  }
+  var breakpoint = react.useBreakpoint();
+  var keys = typeof size === 'string' ? [] : Object.keys(size);
+  return typeof size === 'string' ? size : breakpoint in size ? size[breakpoint] : keys.length ? size[findClosestBreakpoint(keys, breakpoint)] : fallback;
+}
+function findClosestBreakpoint(keys, base) {
+  if (keys.length > 0) {
+    if (keys.length === 1) return keys[0];
+    if (base === 'xl') {
+      if (keys.includes('xl')) return 'xl';
+      if (keys.includes('lg')) return 'lg';
+      if (keys.includes('md')) return 'md';
+      if (keys.includes('sm')) return 'sm';
+      if (keys.includes('base')) return 'base';
+    }
+    if (base === 'lg') {
+      if (keys.includes('lg')) return 'lg';
+      if (keys.includes('md')) return 'md';
+      if (keys.includes('sm')) return 'sm';
+      if (keys.includes('base')) return 'base';
+    }
+    if (base === 'md') {
+      if (keys.includes('md')) return 'md';
+      if (keys.includes('sm')) return 'sm';
+      if (keys.includes('base')) return 'base';
+    }
+    if (base === 'sm') {
+      if (keys.includes('sm')) return 'sm';
+      if (keys.includes('base')) return 'base';
+    }
+  }
+  /* shouldn't be reached but just in case. 😅 */
+  return 'md';
+}
+
 function omit(subject) {
   var copy = _extends({}, subject); /* do NOT mutate original object 😏 */
   for (var _len = arguments.length, keys = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -205,15 +243,6 @@ var Tag = /*#__PURE__*/React.forwardRef(function HdsTag(p, ref) {
     }[size]
   })));
 });
-function useActualSize(size) {
-  var _size$psuedoBreakpoin;
-  var actualBreakpoint = react.useBreakpoint();
-  var psuedoBreakpoint = React.useMemo(function () {
-    return 'sm|md|lg'.split(/\|/g).includes(actualBreakpoint) ? actualBreakpoint : ['base'].includes(actualBreakpoint) ? 'sm' : 'lg';
-  }, []);
-  var keys = Object.keys(size);
-  return typeof size === 'string' ? size : (_size$psuedoBreakpoin = size[psuedoBreakpoint]) != null ? _size$psuedoBreakpoin : /* fallback to closest given size */size[keys[keys.length - 1]];
-}
 
 /*
  *

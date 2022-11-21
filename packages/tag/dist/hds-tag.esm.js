@@ -1,5 +1,5 @@
-import { Checkbox as Checkbox$1, Spacer, useMultiStyleConfig, Tag as Tag$1, TagLeftIcon, Avatar, Box, TagLabel, TagCloseButton, Text, useBreakpoint } from '@chakra-ui/react';
-import { forwardRef, createElement, Fragment, useMemo } from 'react';
+import { Checkbox as Checkbox$1, useBreakpoint, Spacer, useMultiStyleConfig, Tag as Tag$1, TagLeftIcon, Avatar, Box, TagLabel, TagCloseButton, Text } from '@chakra-ui/react';
+import { forwardRef, createElement, Fragment } from 'react';
 
 function _extends() {
   _extends = Object.assign ? Object.assign.bind() : function (target) {
@@ -35,6 +35,44 @@ var Checkbox = /*#__PURE__*/forwardRef(function HdsCheckbox(props, ref) {
     variant: "hds"
   }, props));
 });
+
+function useActualSize(size, fallback) {
+  if (fallback === void 0) {
+    fallback = 'md';
+  }
+  var breakpoint = useBreakpoint();
+  var keys = typeof size === 'string' ? [] : Object.keys(size);
+  return typeof size === 'string' ? size : breakpoint in size ? size[breakpoint] : keys.length ? size[findClosestBreakpoint(keys, breakpoint)] : fallback;
+}
+function findClosestBreakpoint(keys, base) {
+  if (keys.length > 0) {
+    if (keys.length === 1) return keys[0];
+    if (base === 'xl') {
+      if (keys.includes('xl')) return 'xl';
+      if (keys.includes('lg')) return 'lg';
+      if (keys.includes('md')) return 'md';
+      if (keys.includes('sm')) return 'sm';
+      if (keys.includes('base')) return 'base';
+    }
+    if (base === 'lg') {
+      if (keys.includes('lg')) return 'lg';
+      if (keys.includes('md')) return 'md';
+      if (keys.includes('sm')) return 'sm';
+      if (keys.includes('base')) return 'base';
+    }
+    if (base === 'md') {
+      if (keys.includes('md')) return 'md';
+      if (keys.includes('sm')) return 'sm';
+      if (keys.includes('base')) return 'base';
+    }
+    if (base === 'sm') {
+      if (keys.includes('sm')) return 'sm';
+      if (keys.includes('base')) return 'base';
+    }
+  }
+  /* shouldn't be reached but just in case. 😅 */
+  return 'md';
+}
 
 function omit(subject) {
   var copy = _extends({}, subject); /* do NOT mutate original object 😏 */
@@ -201,15 +239,6 @@ var Tag = /*#__PURE__*/forwardRef(function HdsTag(p, ref) {
     }[size]
   })));
 });
-function useActualSize(size) {
-  var _size$psuedoBreakpoin;
-  var actualBreakpoint = useBreakpoint();
-  var psuedoBreakpoint = useMemo(function () {
-    return 'sm|md|lg'.split(/\|/g).includes(actualBreakpoint) ? actualBreakpoint : ['base'].includes(actualBreakpoint) ? 'sm' : 'lg';
-  }, []);
-  var keys = Object.keys(size);
-  return typeof size === 'string' ? size : (_size$psuedoBreakpoin = size[psuedoBreakpoint]) != null ? _size$psuedoBreakpoin : /* fallback to closest given size */size[keys[keys.length - 1]];
-}
 
 /*
  *
