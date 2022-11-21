@@ -519,16 +519,16 @@ var ContactForm = function ContactForm(props) {
   }();
   var isSubmitting = formState.isSubmitting,
     errors = formState.errors;
-  return /*#__PURE__*/React.createElement(Box, {
+  return React.createElement(Box, {
     maxW: 512,
     "data-testid": "box.contactform.container"
-  }, /*#__PURE__*/React.createElement(Box, {
+  }, React.createElement(Box, {
     as: "form",
     onSubmitCapture: handleSubmit(onSubmitForm),
     "data-testid": "box.contactform.form"
-  }, /*#__PURE__*/React.createElement(Stack, {
+  }, React.createElement(Stack, {
     spacing: 4
-  }, /*#__PURE__*/React.createElement(InputField
+  }, React.createElement(InputField
   // {...partProps?.input}
   , Object.assign({}, register('details.name'), {
     id: "name",
@@ -536,7 +536,7 @@ var ContactForm = function ContactForm(props) {
     placeholder: "Input your name",
     errorMsg: (_errors$details = errors.details) == null ? void 0 : (_errors$details$name = _errors$details.name) == null ? void 0 : _errors$details$name.message,
     disabled: isSubmitting
-  })), /*#__PURE__*/React.createElement(InputField
+  })), React.createElement(InputField
   // {...partProps?.input}
   , Object.assign({}, register('emailAddress'), {
     id: "emailAddress",
@@ -545,7 +545,7 @@ var ContactForm = function ContactForm(props) {
     errorMsg: (_errors$emailAddress = errors.emailAddress) == null ? void 0 : _errors$emailAddress.message,
     disabled: isSubmitting,
     "data-testid": "input.contactform.email"
-  })), /*#__PURE__*/React.createElement(TextAreaField
+  })), React.createElement(TextAreaField
   // {...partProps?.textarea}
   , Object.assign({}, register('message'), {
     id: "message",
@@ -554,18 +554,18 @@ var ContactForm = function ContactForm(props) {
     errorMsg: (_errors$message = errors.message) == null ? void 0 : _errors$message.message,
     disabled: isSubmitting,
     "data-testid": "textarea.contactform.description"
-  })), /*#__PURE__*/React.createElement(Button, {
+  })), React.createElement(Button, {
     w: "full",
     variant: "primary",
     isLoading: isSubmitting || isLoading,
     // {...partProps?.button}
     type: "submit",
     "data-testid": "button.contactform.submit"
-  }, "Send"), hasError && /*#__PURE__*/React.createElement(Alert, {
+  }, "Send"), hasError && React.createElement(Alert, {
     status: "error"
-  }, /*#__PURE__*/React.createElement(AlertIcon, null), /*#__PURE__*/React.createElement(AlertDescription, null, "Ops, Something went wrong.")), isSuccess && /*#__PURE__*/React.createElement(Alert, {
+  }, React.createElement(AlertIcon, null), React.createElement(AlertDescription, null, "Ops, Something went wrong.")), isSuccess && React.createElement(Alert, {
     status: "success"
-  }, /*#__PURE__*/React.createElement(AlertIcon, null), /*#__PURE__*/React.createElement(AlertDescription, null, "Message successfully sent!")))));
+  }, React.createElement(AlertIcon, null), React.createElement(AlertDescription, null, "Message successfully sent!")))));
 };
 
 var ContactCard = function ContactCard(props) {
@@ -573,7 +573,7 @@ var ContactCard = function ContactCard(props) {
     _props$title = props.title,
     title = _props$title === void 0 ? 'Drop your message' : _props$title,
     url = props.url;
-  return /*#__PURE__*/React.createElement(Box, Object.assign({
+  return React.createElement(Box, Object.assign({
     w: 512,
     bg: "white",
     borderRadius: "8px",
@@ -581,13 +581,13 @@ var ContactCard = function ContactCard(props) {
     boxShadow: "0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05)"
   }, props, {
     "data-testid": "box.contactcard.container"
-  }), /*#__PURE__*/React.createElement(Center, {
+  }), React.createElement(Center, {
     mb: 8,
     "data-testid": "center.contactcard.titleposition"
-  }, /*#__PURE__*/React.createElement(Text, {
+  }, React.createElement(Text, {
     size: "header-4",
     "data-testid": "text.contactcard.title"
-  }, title)), children ? children : /*#__PURE__*/React.createElement(ContactForm
+  }, title)), children ? children : React.createElement(ContactForm
   // {...partProps?.contactForm}
   , {
     // {...partProps?.contactForm}
@@ -602,38 +602,38 @@ var ContactPage = function ContactPage(props) {
     secondaryTitle = _props$secondaryTitle === void 0 ? "Tell us what you need and we'll help you out." : _props$secondaryTitle,
     iconNode = props.iconNode,
     url = props.url;
-  return /*#__PURE__*/React.createElement(Box, {
+  return React.createElement(Box, {
     pos: "relative",
     w: "100%",
     "data-testid": "box.contactpage.container"
-  }, /*#__PURE__*/React.createElement(Box, {
+  }, React.createElement(Box, {
     minW: '600px',
     bg: "#000",
     w: "100%",
     h: "400px",
     "data-testid": "box.contactpage.banner"
-  }, /*#__PURE__*/React.createElement(Center, {
+  }, React.createElement(Center, {
     pt: 20,
     pb: 8,
     "data-testid": "center.contactpage.iconposition"
-  }, iconNode ? iconNode : /*#__PURE__*/React.createElement(HovIcon, {
+  }, iconNode ? iconNode : React.createElement(HovIcon, {
     color: "white",
     "data-testid": "icon.contactpage.hovicon"
-  })), /*#__PURE__*/React.createElement(Center, {
+  })), React.createElement(Center, {
     "data-testid": "center.contactpage.titlepostion"
-  }, /*#__PURE__*/React.createElement(Text, {
+  }, React.createElement(Text, {
     size: "header-3",
     color: "white",
     "data-testid": "text.contactpage.title"
-  }, title)), /*#__PURE__*/React.createElement(Center, {
+  }, title)), React.createElement(Center, {
     "data-testid": "center.contactpage.secondarytitleposition"
-  }, /*#__PURE__*/React.createElement(Text, {
+  }, React.createElement(Text, {
     color: "gray.200",
     "data-testid": "text.contactpage.secondarytitle"
-  }, secondaryTitle))), /*#__PURE__*/React.createElement(Center, {
+  }, secondaryTitle))), React.createElement(Center, {
     minW: '600px',
     "data-testid": "center.contactpage.secondarytitleposition"
-  }, /*#__PURE__*/React.createElement(ContactCard, {
+  }, React.createElement(ContactCard, {
     pos: "absolute",
     top: "250px",
     w: "512px",

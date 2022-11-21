@@ -526,16 +526,16 @@ var ContactForm = function ContactForm(props) {
   }();
   var isSubmitting = formState.isSubmitting,
     errors = formState.errors;
-  return /*#__PURE__*/React__default.createElement(react.Box, {
+  return React__default.createElement(react.Box, {
     maxW: 512,
     "data-testid": "box.contactform.container"
-  }, /*#__PURE__*/React__default.createElement(react.Box, {
+  }, React__default.createElement(react.Box, {
     as: "form",
     onSubmitCapture: handleSubmit(onSubmitForm),
     "data-testid": "box.contactform.form"
-  }, /*#__PURE__*/React__default.createElement(react.Stack, {
+  }, React__default.createElement(react.Stack, {
     spacing: 4
-  }, /*#__PURE__*/React__default.createElement(hdsForms.InputField
+  }, React__default.createElement(hdsForms.InputField
   // {...partProps?.input}
   , Object.assign({}, register('details.name'), {
     id: "name",
@@ -543,7 +543,7 @@ var ContactForm = function ContactForm(props) {
     placeholder: "Input your name",
     errorMsg: (_errors$details = errors.details) == null ? void 0 : (_errors$details$name = _errors$details.name) == null ? void 0 : _errors$details$name.message,
     disabled: isSubmitting
-  })), /*#__PURE__*/React__default.createElement(hdsForms.InputField
+  })), React__default.createElement(hdsForms.InputField
   // {...partProps?.input}
   , Object.assign({}, register('emailAddress'), {
     id: "emailAddress",
@@ -552,7 +552,7 @@ var ContactForm = function ContactForm(props) {
     errorMsg: (_errors$emailAddress = errors.emailAddress) == null ? void 0 : _errors$emailAddress.message,
     disabled: isSubmitting,
     "data-testid": "input.contactform.email"
-  })), /*#__PURE__*/React__default.createElement(hdsForms.TextAreaField
+  })), React__default.createElement(hdsForms.TextAreaField
   // {...partProps?.textarea}
   , Object.assign({}, register('message'), {
     id: "message",
@@ -561,18 +561,18 @@ var ContactForm = function ContactForm(props) {
     errorMsg: (_errors$message = errors.message) == null ? void 0 : _errors$message.message,
     disabled: isSubmitting,
     "data-testid": "textarea.contactform.description"
-  })), /*#__PURE__*/React__default.createElement(react.Button, {
+  })), React__default.createElement(react.Button, {
     w: "full",
     variant: "primary",
     isLoading: isSubmitting || isLoading,
     // {...partProps?.button}
     type: "submit",
     "data-testid": "button.contactform.submit"
-  }, "Send"), hasError && /*#__PURE__*/React__default.createElement(react.Alert, {
+  }, "Send"), hasError && React__default.createElement(react.Alert, {
     status: "error"
-  }, /*#__PURE__*/React__default.createElement(react.AlertIcon, null), /*#__PURE__*/React__default.createElement(react.AlertDescription, null, "Ops, Something went wrong.")), isSuccess && /*#__PURE__*/React__default.createElement(react.Alert, {
+  }, React__default.createElement(react.AlertIcon, null), React__default.createElement(react.AlertDescription, null, "Ops, Something went wrong.")), isSuccess && React__default.createElement(react.Alert, {
     status: "success"
-  }, /*#__PURE__*/React__default.createElement(react.AlertIcon, null), /*#__PURE__*/React__default.createElement(react.AlertDescription, null, "Message successfully sent!")))));
+  }, React__default.createElement(react.AlertIcon, null), React__default.createElement(react.AlertDescription, null, "Message successfully sent!")))));
 };
 
 var ContactCard = function ContactCard(props) {
@@ -580,7 +580,7 @@ var ContactCard = function ContactCard(props) {
     _props$title = props.title,
     title = _props$title === void 0 ? 'Drop your message' : _props$title,
     url = props.url;
-  return /*#__PURE__*/React__default.createElement(react.Box, Object.assign({
+  return React__default.createElement(react.Box, Object.assign({
     w: 512,
     bg: "white",
     borderRadius: "8px",
@@ -588,13 +588,13 @@ var ContactCard = function ContactCard(props) {
     boxShadow: "0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05)"
   }, props, {
     "data-testid": "box.contactcard.container"
-  }), /*#__PURE__*/React__default.createElement(react.Center, {
+  }), React__default.createElement(react.Center, {
     mb: 8,
     "data-testid": "center.contactcard.titleposition"
-  }, /*#__PURE__*/React__default.createElement(react.Text, {
+  }, React__default.createElement(react.Text, {
     size: "header-4",
     "data-testid": "text.contactcard.title"
-  }, title)), children ? children : /*#__PURE__*/React__default.createElement(ContactForm
+  }, title)), children ? children : React__default.createElement(ContactForm
   // {...partProps?.contactForm}
   , {
     // {...partProps?.contactForm}
@@ -609,38 +609,38 @@ var ContactPage = function ContactPage(props) {
     secondaryTitle = _props$secondaryTitle === void 0 ? "Tell us what you need and we'll help you out." : _props$secondaryTitle,
     iconNode = props.iconNode,
     url = props.url;
-  return /*#__PURE__*/React__default.createElement(react.Box, {
+  return React__default.createElement(react.Box, {
     pos: "relative",
     w: "100%",
     "data-testid": "box.contactpage.container"
-  }, /*#__PURE__*/React__default.createElement(react.Box, {
+  }, React__default.createElement(react.Box, {
     minW: '600px',
     bg: "#000",
     w: "100%",
     h: "400px",
     "data-testid": "box.contactpage.banner"
-  }, /*#__PURE__*/React__default.createElement(react.Center, {
+  }, React__default.createElement(react.Center, {
     pt: 20,
     pb: 8,
     "data-testid": "center.contactpage.iconposition"
-  }, iconNode ? iconNode : /*#__PURE__*/React__default.createElement(hdsIcons.HovIcon, {
+  }, iconNode ? iconNode : React__default.createElement(hdsIcons.HovIcon, {
     color: "white",
     "data-testid": "icon.contactpage.hovicon"
-  })), /*#__PURE__*/React__default.createElement(react.Center, {
+  })), React__default.createElement(react.Center, {
     "data-testid": "center.contactpage.titlepostion"
-  }, /*#__PURE__*/React__default.createElement(react.Text, {
+  }, React__default.createElement(react.Text, {
     size: "header-3",
     color: "white",
     "data-testid": "text.contactpage.title"
-  }, title)), /*#__PURE__*/React__default.createElement(react.Center, {
+  }, title)), React__default.createElement(react.Center, {
     "data-testid": "center.contactpage.secondarytitleposition"
-  }, /*#__PURE__*/React__default.createElement(react.Text, {
+  }, React__default.createElement(react.Text, {
     color: "gray.200",
     "data-testid": "text.contactpage.secondarytitle"
-  }, secondaryTitle))), /*#__PURE__*/React__default.createElement(react.Center, {
+  }, secondaryTitle))), React__default.createElement(react.Center, {
     minW: '600px',
     "data-testid": "center.contactpage.secondarytitleposition"
-  }, /*#__PURE__*/React__default.createElement(ContactCard, {
+  }, React__default.createElement(ContactCard, {
     pos: "absolute",
     top: "250px",
     w: "512px",
