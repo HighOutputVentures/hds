@@ -1,12 +1,12 @@
-import ContactCard, { ContactCardProps } from './components/ContactCard';
-import ContactForm, { ContactFormProps } from './components/ContactForm';
-import ContactPage, { ContagePageProps } from './components/ContactPage';
-import useSupport from './components/useSupport';
+import ContactCard, { ContactCardProps } from './ContactCard';
+import ContactForm, { ContactFormProps } from './ContactForm';
+import ContactPage, { ContagePageProps } from './ContactPage';
+import useSupport from './useSupport';
 import {
   ContactFormInputProps,
   withContactFormSchema,
   withContactFormSchemaValues,
-} from './components/validation';
+} from './validation';
 
 export {
   ContactCard,
