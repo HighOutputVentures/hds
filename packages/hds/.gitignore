@@ -5,4 +5,3 @@ node_modules
 !.vscode
 storybook-static
 .vercel
-dist
