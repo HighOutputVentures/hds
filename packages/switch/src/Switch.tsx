@@ -31,18 +31,24 @@ export default React.forwardRef<HTMLInputElement, SwitchProps>(function HdsSwitc
   );
 
   const styles = useMultiStyleConfig("Switch", { size, variant: "hds" });
+  const uniqid = React.useId();
 
   return (
     <FormControl sx={{ ...others, ...styles.control }}>
       <Switch
         ref={ref}
+        id={uniqid}
         isChecked={value === "on"}
         onChange={(e) => {
           onToggle(e.target.checked ? "on" : "off");
         }}
       />
 
-      {label && <FormLabel sx={styles.label}>{label}</FormLabel>}
+      {label && (
+        <FormLabel htmlFor={uniqid} sx={styles.label}>
+          {label}
+        </FormLabel>
+      )}
       {helperText && <FormHelperText sx={styles.helperText}>{helperText}</FormHelperText>}
     </FormControl>
   );
