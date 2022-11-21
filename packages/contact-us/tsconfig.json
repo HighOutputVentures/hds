@@ -3,7 +3,7 @@
   "compilerOptions": {
     "jsx": "react",
     "paths": {
-      "@highoutput/hds-forms/*": ["../../node_modules/@highoutput/hds-forms/*"]
+      "@highoutput/hds-forms/*": ["./node_modules/@highoutput/hds-forms/*"]
     }
   },
   "include": ["src"],
