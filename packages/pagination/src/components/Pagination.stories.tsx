@@ -38,7 +38,6 @@ const Template: ComponentStory<typeof Pagination> = (props) => {
         loading={args.loading}
         onPageChange={handlePageChange}
         onSizeChange={handleSizeChange}
-        partProps={args.styles}
       />
     </ThemeProvider>
   );
