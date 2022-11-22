@@ -36,5 +36,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - run: npm install
+      - run: vercel pull --yes
       - run: vercel build --prod
       - run: vercel --prebuilt --prod
