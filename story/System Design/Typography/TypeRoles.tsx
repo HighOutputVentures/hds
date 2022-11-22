@@ -11,19 +11,6 @@ import {
 } from "@chakra-ui/react";
 import * as React from "react";
 import ArrowIcon from "./icons/ArrowIcon";
-// @ts-ignore
-import browser from "../../../assets/typography/browser.png";
-// @ts-ignore
-import illustration1 from "../../../assets/typography/labels-and-buttons-1.png";
-// @ts-ignore
-import illustration2 from "../../../assets/typography/labels-and-buttons-2.png";
-// @ts-ignore
-import illustration3 from "../../../assets/typography/labels-and-buttons-3.png";
-// @ts-ignore
-import illustration4 from "../../../assets/typography/labels-and-buttons-4.png";
-// @ts-ignore
-import iphone from "../../../assets/typography/iphone.png";
-// @ts-ignore
 
 export default function TypeRoles(props: BoxProps) {
   return (
@@ -45,8 +32,8 @@ function HeadersAndSubheaders() {
       <Box maxW="716px">
         <Heading size="header-3">Headers and subheaders</Heading>
         <Text mt="28px" size="paragraph-xxl-default" color="neutrals.700">
-          Headers and subheaders have typically tighter line spacing compared to the paragraph
-          and are mostly one to three liners.
+          Headers and subheaders have typically tighter line spacing compared to the paragraph and
+          are mostly one to three liners.
           <br />
           <br />
           When it comes to font-weight, the smaller the font-size gets, the lighter the weights.
@@ -89,9 +76,7 @@ function Paragraphs() {
         Paragraphs
       </Heading>
       <Box as={Text} size="paragraph-xxl-default" mt="28px" color="neutrals.700">
-        <Text>
-          Paragraphs are typically multi-line so we want to give them more breathability.
-        </Text>
+        <Text>Paragraphs are typically multi-line so we want to give them more breathability.</Text>
         <br />
         <Text>We have three different font-style for each sizes:</Text>
         <br />
@@ -116,20 +101,20 @@ function Paragraphs() {
             </Text>
             <Text size="paragraph-lg-default" mt="16px">
               <em>
-                Type scaling helps with ensuring the typography readability and how will it
-                behave from larger screen vs smaller screens.
+                Type scaling helps with ensuring the typography readability and how will it behave
+                from larger screen vs smaller screens.
               </em>
             </Text>
             <Text size="paragraph-lg-default" mt="16px">
               <strong>
-                Type scaling helps with ensuring the typography readability and how will it
-                behave from larger screen vs smaller screens.
+                Type scaling helps with ensuring the typography readability and how will it behave
+                from larger screen vs smaller screens.
               </strong>
             </Text>
           </Box>
 
           <Image
-            src={browser}
+            src="typography/browser.png"
             alt=""
             width="full"
             height="full"
@@ -154,19 +139,19 @@ function Paragraphs() {
             </Text>
             <Text size="paragraph-sm-default" letterSpacing="0.02em" mt="18px">
               <em>
-                Type scaling helps with ensuring the typography readability and how will it
-                behave from larger screen vs smaller screens.
+                Type scaling helps with ensuring the typography readability and how will it behave
+                from larger screen vs smaller screens.
               </em>
             </Text>
             <Text size="paragraph-sm-default" letterSpacing="0.02em" mt="18px">
               <strong>
-                Type scaling helps with ensuring the typography readability and how will it
-                behave from larger screen vs smaller screens.
+                Type scaling helps with ensuring the typography readability and how will it behave
+                from larger screen vs smaller screens.
               </strong>
             </Text>
           </Box>
           <Image
-            src={iphone}
+            src="/typography/iphone.png"
             alt=""
             width="full"
             height="full"
@@ -185,9 +170,9 @@ function LabelsAndButtons() {
     <Box mt="104px">
       <Heading size="header-3">Labels and Buttons</Heading>
       <Text mt="28px" size="paragraph-xxl-default" color="neutrals.700">
-        Buttons and labels should be in their base line height in order to maintain the margins
-        and paddings proportion. They are mostly one liner and sometimes two lines. Buttons are
-        in most cases one line.
+        Buttons and labels should be in their base line height in order to maintain the margins and
+        paddings proportion. They are mostly one liner and sometimes two lines. Buttons are in most
+        cases one line.
       </Text>
 
       <Flex justifyContent="center" mt="64px" columnGap="72px" rowGap="60px" flexWrap="wrap">
@@ -203,7 +188,7 @@ function LabelsAndButtons() {
 function Buttons() {
   return (
     <Box>
-      <Image w="648px" h="312px" src={illustration4} alt="" />
+      <Image w="648px" h="312px" src="/typography/labels-and-buttons-4.png" alt="" />
     </Box>
   );
 }
@@ -211,7 +196,7 @@ function Buttons() {
 function AdvancedSearch() {
   return (
     <Box>
-      <Image w="648px" h="312px" src={illustration3} alt="" />
+      <Image w="648px" h="312px" src="/typography/labels-and-buttons-3.png" alt="" />
 
       <Box mt="54px" ml="140px" position="relative" width="fit-content">
         <Icon
@@ -233,7 +218,7 @@ function AdvancedSearch() {
 function HowToCookLumpia() {
   return (
     <Box>
-      <Image w="526px" h="312px" src={illustration2} alt="" />
+      <Image w="526px" h="312px" src="/typography/labels-and-buttons-2.png" alt="" />
 
       <Box mt="54px" ml="155px" position="relative" width="fit-content">
         <Icon
@@ -255,7 +240,7 @@ function HowToCookLumpia() {
 function Recipe() {
   return (
     <Box>
-      <Image src={illustration1} alt="" w="770px" h="362px" />
+      <Image src="/typography/labels-and-buttons-1.png" alt="" w="770px" h="362px" />
 
       <Box pos="relative" mt="37px" ml="250px" width="fit-content">
         <Icon
