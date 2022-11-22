@@ -1,23 +1,6 @@
-import {
-  Box,
-  Flex,
-  Heading,
-  Icon,
-  Image,
-  ListItem,
-  Text,
-  UnorderedList,
-} from "@chakra-ui/react";
+import { Box, Flex, Heading, Icon, Image, ListItem, Text, UnorderedList } from "@chakra-ui/react";
 import * as React from "react";
 import ArrowIcon from "./icons/ArrowIcon";
-// @ts-ignore
-import illustration1 from "../../../assets/typography/applying-colors-1.png";
-// @ts-ignore
-import illustration2 from "../../../assets/typography/applying-colors-2.png";
-// @ts-ignore
-import illustration3 from "../../../assets/typography/applying-colors-3.png";
-// @ts-ignore
-import illustration4 from "../../../assets/typography/applying-colors-4.png";
 
 export default function ApplyingColors() {
   return (
@@ -41,7 +24,7 @@ export default function ApplyingColors() {
 function Email() {
   return (
     <Box>
-      <Image w="526px" h="312px" src={illustration4} alt="" />
+      <Image w="526px" h="312px" src="/typography/applying-colors-4.png" alt="" />
 
       <Box pos="relative" mt="24px" ml="76px" width="fit-content">
         <Flex gap="40px">
@@ -85,13 +68,13 @@ function Email() {
 }
 
 function LoginForm() {
-  return <Image w="770px" h="362px" src={illustration3} alt="" />;
+  return <Image w="770px" h="362px" src="typography/applying-colors-3.png" alt="" />;
 }
 
 function HowToCookLumpia() {
   return (
     <Box>
-      <Image w="526px" h="312px" src={illustration2} alt="" />
+      <Image w="526px" h="312px" src="/typography/applying-colors-2.png" alt="" />
 
       <Box pos="relative" mt="55px" ml="110px" width="fit-content">
         <Flex gap="50px">
@@ -137,7 +120,7 @@ function HowToCookLumpia() {
 function Recipe() {
   return (
     <Box>
-      <Image src={illustration1} alt="" w="770px" h="362px" />
+      <Image src="/typography/applying-colors-1.png" alt="" w="770px" h="362px" />
 
       <Box pos="relative" mt="55px" ml="140px" width="fit-content">
         <Flex gap="80px">

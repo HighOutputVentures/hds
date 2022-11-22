@@ -1,13 +1,5 @@
 import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import * as React from "react";
-// @ts-ignore
-import boundingBox from "../../../assets/typography/bounding-box.png";
-// @ts-ignore
-import padding from "../../../assets/typography/padding.png";
-// @ts-ignore
-import identifi0 from "../../../assets/typography/identifi-0.png";
-// @ts-ignore
-import identifi1 from "../../../assets/typography/identifi-1.png";
 
 export default function BoundingBox() {
   return (
@@ -26,19 +18,19 @@ export default function BoundingBox() {
       </Box>
 
       <Flex mt="64px" gap="72px">
-        <Image w="648px" src={boundingBox} alt="" />
-        <Image w="648px" src={padding} alt="" />
+        <Image w="648px" src="/typography/bounding-box.png" alt="" />
+        <Image w="648px" src="/typography/padding.png" alt="" />
       </Flex>
 
       <Flex mt="96px" gap="72px">
         <Box w="648px">
-          <Image w="full" src={identifi0} alt="" />
+          <Image w="full" src="/typography/identifi-0.png" alt="" />
           <Text size="label-xs-default" mt={4}>
             Middle/Center
           </Text>
         </Box>
         <Box w="648px">
-          <Image w="full" src={identifi1} alt="" />
+          <Image w="full" src="/typography/identifi-1.png" alt="" />
           <Text size="label-xs-default" mt={4}>
             Baseline
           </Text>

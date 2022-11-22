@@ -1,24 +1,13 @@
-import {
-  Box,
-  Heading,
-  Icon,
-  Image,
-  Link,
-  ListItem,
-  Text,
-  UnorderedList,
-} from "@chakra-ui/react";
+import { Box, Heading, Icon, Image, Link, ListItem, Text, UnorderedList } from "@chakra-ui/react";
 import * as React from "react";
-// @ts-ignore
-import hero from "../../../assets/typography/hero.png";
 
 export default function Hero() {
   return (
     <Box maxWidth="full">
       <Heading size="header-1">Type system</Heading>
       <Text mt={5} size="paragraph-xxl-default" color="neutrals.700">
-        Building a robust responsive set of typescale system for designing real products for
-        both web and mobile platforms.{" "}
+        Building a robust responsive set of typescale system for designing real products for both
+        web and mobile platforms.{" "}
         <Link
           href="https://www.playbook.com/s/hovdesign/CxvyNG1btuHMzu9W5GAFX7a5"
           target="_blank"
@@ -44,9 +33,7 @@ export default function Hero() {
           <ListItem>Buttons</ListItem>
         </UnorderedList>
 
-        <Text mt={16}>
-          Breakpoints - We need to create sets of breakpoints for web and mobile.
-        </Text>
+        <Text mt={16}>Breakpoints - We need to create sets of breakpoints for web and mobile.</Text>
       </Box>
 
       <Box mt="67px" px="100px" position="relative">
@@ -70,7 +57,7 @@ export default function Hero() {
 
           <Icon as={ArrowIcon} width="375px" height="187px" fill="#75AEE4" />
         </Box>
-        <Image src={hero} alt="Hero" maxWidth="full" />
+        <Image src="/typography/hero.png" alt="Hero" maxWidth="full" />
       </Box>
     </Box>
   );

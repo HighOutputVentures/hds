@@ -1441,6 +1441,12 @@ Object.defineProperty(exports, 'AlertDialogBody', {
     return react.AlertDialogBody;
   }
 });
+Object.defineProperty(exports, 'AlertDialogCloseButton', {
+  enumerable: true,
+  get: function () {
+    return react.AlertDialogCloseButton;
+  }
+});
 Object.defineProperty(exports, 'AlertDialogContent', {
   enumerable: true,
   get: function () {
@@ -1565,6 +1571,12 @@ Object.defineProperty(exports, 'CheckboxGroup', {
   enumerable: true,
   get: function () {
     return react.CheckboxGroup;
+  }
+});
+Object.defineProperty(exports, 'CheckboxIcon', {
+  enumerable: true,
+  get: function () {
+    return react.CheckboxIcon;
   }
 });
 Object.defineProperty(exports, 'Circle', {
@@ -1975,16 +1987,16 @@ Object.defineProperty(exports, 'OrderedList', {
     return react.OrderedList;
   }
 });
-Object.defineProperty(exports, 'Pin', {
-  enumerable: true,
-  get: function () {
-    return react.PinInputField;
-  }
-});
 Object.defineProperty(exports, 'PinInput', {
   enumerable: true,
   get: function () {
     return react.PinInput;
+  }
+});
+Object.defineProperty(exports, 'PinInputField', {
+  enumerable: true,
+  get: function () {
+    return react.PinInputField;
   }
 });
 Object.defineProperty(exports, 'Popover', {
@@ -2069,6 +2081,42 @@ Object.defineProperty(exports, 'RadioGroup', {
   enumerable: true,
   get: function () {
     return react.RadioGroup;
+  }
+});
+Object.defineProperty(exports, 'RangeSlider', {
+  enumerable: true,
+  get: function () {
+    return react.RangeSlider;
+  }
+});
+Object.defineProperty(exports, 'RangeSliderFilledTrack', {
+  enumerable: true,
+  get: function () {
+    return react.RangeSliderFilledTrack;
+  }
+});
+Object.defineProperty(exports, 'RangeSliderMark', {
+  enumerable: true,
+  get: function () {
+    return react.RangeSliderMark;
+  }
+});
+Object.defineProperty(exports, 'RangeSliderProvider', {
+  enumerable: true,
+  get: function () {
+    return react.RangeSliderProvider;
+  }
+});
+Object.defineProperty(exports, 'RangeSliderThumb', {
+  enumerable: true,
+  get: function () {
+    return react.RangeSliderThumb;
+  }
+});
+Object.defineProperty(exports, 'RangeSliderTrack', {
+  enumerable: true,
+  get: function () {
+    return react.RangeSliderTrack;
   }
 });
 Object.defineProperty(exports, 'ScaleFade', {
@@ -2377,12 +2425,6 @@ Object.defineProperty(exports, 'WrapItem', {
     return react.WrapItem;
   }
 });
-Object.defineProperty(exports, 'chakra', {
-  enumerable: true,
-  get: function () {
-    return react.chakra;
-  }
-});
 Object.defineProperty(exports, 'createStandaloneToast', {
   enumerable: true,
   get: function () {
@@ -2393,6 +2435,12 @@ Object.defineProperty(exports, 'forwardRef', {
   enumerable: true,
   get: function () {
     return react.forwardRef;
+  }
+});
+Object.defineProperty(exports, 'hds', {
+  enumerable: true,
+  get: function () {
+    return react.chakra;
   }
 });
 Object.defineProperty(exports, 'keyframes', {
