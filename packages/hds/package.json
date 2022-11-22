@@ -1,5 +1,5 @@
 {
-  "version": "0.1.35",
+  "version": "0.1.37",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -55,7 +55,10 @@
     "moduleNameMapper": {
       "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
-    }
+    },
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ]
   },
   "publishConfig": {
     "access": "public"
@@ -67,7 +70,7 @@
     "@chakra-ui/styled-system": "^2.3.4",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@highoutput/hds-icons": "^0.1.11",
+    "@highoutput/hds-icons": "^0.1.12",
     "framer-motion": "^7.6.4",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",

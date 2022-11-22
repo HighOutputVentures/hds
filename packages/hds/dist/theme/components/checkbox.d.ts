@@ -1,51 +1,71 @@
 export declare const Checkbox: {
     baseStyle: {
         control: {
+            borderColor: string;
             borderRadius: string;
             padding: string;
-        };
-    };
-    variants: {
-        primary: {
-            control: {
+            _focus: {
+                boxShadow: string;
+            };
+            bg: string;
+            _disabled: {
                 borderColor: string;
-                pointerEvents: string;
-                _focus: {
-                    shadow: string;
-                };
+                bg: string;
                 _checked: {
+                    borderColor: string;
                     bg: string;
                     color: string;
-                    borderColor: string;
-                    _hover: {
-                        bg: string;
-                        color: string;
-                        borderColor: string;
-                    };
                 };
             };
         };
-        orange: {
+    };
+    sizes: {
+        sm: {
             control: {
-                borderColor: string;
-                _focus: {
-                    shadow: string;
-                };
+                w: string;
+                h: string;
+            };
+        };
+        md: {
+            control: {
+                w: string;
+                h: string;
+            };
+        };
+        lg: {
+            control: {
+                w: string;
+                h: string;
+            };
+        };
+    };
+    variants: {
+        'primary.outlined': {
+            control: {
+                pointerEvents: string;
                 _checked: {
                     bg: string;
                     color: string;
                     borderColor: string;
-                    _hover: {
-                        bg: string;
-                        color: string;
-                        borderColor: string;
-                    };
+                    border: string;
+                };
+            };
+        };
+        'primary.solid': {
+            control: {
+                pointerEvents: string;
+                _checked: {
+                    bg: string;
+                    color: string;
+                    borderColor: string;
+                    border: string;
                 };
             };
         };
     };
     defaultProps: {
         variant: string;
+        size: string;
     };
 };
 export default Checkbox;
