@@ -19,7 +19,14 @@ import { ThemeProvider, extendTheme } from "@highoutput/hds";
 export default function Example() {
   return (
     <ThemeProvider theme={extendTheme(withRangeSlider())}>
-      <RangeSlider size="md" value={[25, 50]} onChange={function noop() {}} />
+      <RangeSlider
+        size="md"
+        value={[25, 50]}
+        onChange={function noop([_0, _1]) {
+          console.log(_0);
+          console.log(_1);
+        }}
+      />
     </ThemeProvider>
   );
 }
