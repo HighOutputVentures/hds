@@ -83,6 +83,7 @@ export default function withSwitch() {
           gap: "8px",
         },
         label: {
+          margin: "0px",
           fontSize: "14px",
           lineHeight: "20px",
         },
