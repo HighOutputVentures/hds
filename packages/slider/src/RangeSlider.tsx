@@ -30,7 +30,7 @@ export default React.forwardRef<HTMLDivElement, RangeSliderProps>(function HdsRa
 
   const styles = useMultiStyleConfig("Slider", { variant: "hds" });
 
-  const [value, setValue] = React.useState(defaultValue);
+  const [value, setValue] = React.useState(defaultValue || []);
 
   return (
     <RangeSlider
@@ -48,7 +48,7 @@ export default React.forwardRef<HTMLDivElement, RangeSliderProps>(function HdsRa
       }}
       onChangeEnd={(newValue) => {
         invariant(newValue.length === 2);
-        onChange([newValue[0], newValue[1]]);
+        onChange && onChange([newValue[0], newValue[1]]);
       }}
       sx={{
         ...others,

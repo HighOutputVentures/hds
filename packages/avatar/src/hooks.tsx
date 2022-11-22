@@ -11,8 +11,8 @@ export function useActualSize<T extends ResponsiveSize>(size: T, fallback = "md"
   return typeof size === "string"
     ? size
     : breakpoint in size
-    ? size[breakpoint]
+    ? size[breakpoint as keyof typeof size]
     : keys.length
-    ? size[findClosestBreakpoint(keys, breakpoint)]
+    ? size[findClosestBreakpoint(keys, breakpoint) as keyof typeof size]
     : fallback;
 }

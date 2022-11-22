@@ -29,7 +29,7 @@ export default function HdsAvatarGroup(props: React.PropsWithChildren<AvatarGrou
   const { max = 5, size = "md", children, hasAddButton, onAddButtonClick, ...others } = props;
 
   const actualMax = useActualMax(max);
-  const actualSize = useActualSize(size);
+  const actualSize = useActualSize(size) || "md";
 
   return (
     <HStack sx={others} spacing="8px" /* retain spacing */>
@@ -37,7 +37,7 @@ export default function HdsAvatarGroup(props: React.PropsWithChildren<AvatarGrou
         variant="hds"
         max={actualMax}
         size={size}
-        spacing={{ xs: "-4px", sm: "-8px", md: "-12px" }[actualSize]}
+        spacing={getSizeSpace({ xs: "-4px", sm: "-8px", md: "-12px" }, actualSize)}
         aria-label="Group of users"
       >
         {React.Children.map(children, (child, zIndex) => {
@@ -80,13 +80,17 @@ function AddButton({ size, ...props }: AddButtonProps) {
 function useActualMax(max: AvatarGroupProps["max"], fallback = "md") {
   const breakpoint = useBreakpoint({ fallback });
 
-  const breakpoints = typeof max === "number" ? [] : Object.keys(max);
+  const breakpoints = typeof max === "number" ? [] : Object.keys(max || {});
 
   return typeof max === "number"
     ? max
-    : breakpoint in max
-    ? max[breakpoint]
+    : breakpoint in (max || {})
+    ? (max as any)[breakpoint]
     : breakpoints.length
-    ? max[findClosestBreakpoint(breakpoints, breakpoint)]
+    ? (max as any)[findClosestBreakpoint(breakpoints, breakpoint)]
     : fallback;
+}
+
+function getSizeSpace(obj: any, size: string): string {
+  return obj[size];
 }

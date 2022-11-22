@@ -85,11 +85,11 @@ var Tag = /*#__PURE__*/forwardRef(function HdsTag(p, ref) {
     'onClose', 'checked', 'onCheck', 'badgeCount'), styles.container),
     "data-testid": __testId
   }, !!props.checkbox /* <!-- Checkbox --> */ && createElement(Fragment, null, space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '5px',
       md: '4px',
       lg: '5px'
-    }[size]
+    }, size)
   }), createElement(Checkbox, {
     size: size,
     variant: variant,
@@ -99,106 +99,106 @@ var Tag = /*#__PURE__*/forwardRef(function HdsTag(p, ref) {
       props.onCheck(target.checked);
     }
   }), space(![props.avatar, props.icon].some(Boolean), {
-    width: {
+    width: getSizeSpace({
       sm: '4px',
       md: '5px',
       lg: '6px'
-    }[size]
+    }, size)
   })), !!props.icon /* <!-- Icon  --> */ && createElement(Fragment, null, space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '4px',
       md: '5px',
       lg: '6px'
-    }[size]
+    }, size)
   }), createElement(TagLeftIcon, {
     as: props.icon,
     role: "img",
     "aria-label": "Tag Icon",
     sx: styles.icon
   }), space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '4px',
       md: '5px',
       lg: '6px'
-    }[size]
+    }, size)
   })), !!props.avatar /* <!-- Avatar --> */ && createElement(Fragment, null, space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '4px',
       md: '5px',
       lg: '6px'
-    }[size]
+    }, size)
   }), createElement(Avatar, {
     src: props.avatar,
     role: "img",
     "aria-label": "Tag Avatar",
     sx: styles.avatar
   }), space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '4px',
       md: '5px',
       lg: '6px'
-    }[size]
+    }, size)
   })), !!props.indicator /* <!-- Indicator --> */ && createElement(Fragment, null, space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '7px',
       md: '8px',
       lg: '10px'
-    }[size]
+    }, size)
   }), createElement(Box, {
     role: "presentation",
     "aria-label": "Green Dot",
     sx: styles.indicator
   }), space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '5px',
       md: '6px',
       lg: '7px'
-    }[size]
+    }, size)
   })), !!label /* <!-- Label --> */ && createElement(Fragment, null, space(![props.icon, props.avatar, props.indicator, props.checkbox].some(Boolean), {
-    width: {
+    width: getSizeSpace({
       sm: '8px',
       md: '9px',
       lg: '10px'
-    }[size]
+    }, size)
   }), createElement(TagLabel, {
     role: "contentinfo",
     __css: styles.label
   }, label), space(![props.closable, props.badge].some(Boolean), {
-    width: {
+    width: getSizeSpace({
       sm: '8px',
       md: '9px',
       lg: '10px'
-    }[size]
+    }, size)
   })), !!props.closable /* <!-- Close Button --> */ && createElement(Fragment, null, space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '5px',
       md: '5px',
       lg: '6px'
-    }[size]
+    }, size)
   }), createElement(TagCloseButton, {
     role: "button",
     "aria-label": "Close Tag",
     onClick: props.onClose
   }), space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '7px',
       md: '6px',
       lg: '7px'
-    }[size]
+    }, size)
   })), !!props.badge /* <!-- Badge --> */ && createElement(Fragment, null, space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '8px',
       md: '10px',
       lg: '12px'
-    }[size]
+    }, size)
   }), createElement(Text, {
     sx: styles.badge
   }, props.badgeCount), space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '8px',
       md: '8px',
       lg: '10px'
-    }[size]
+    }, size)
   })));
 });
 function useActualSize(size) {
@@ -207,8 +207,11 @@ function useActualSize(size) {
   var psuedoBreakpoint = useMemo(function () {
     return 'sm|md|lg'.split(/\|/g).includes(actualBreakpoint) ? actualBreakpoint : ['base'].includes(actualBreakpoint) ? 'sm' : 'lg';
   }, []);
-  var keys = Object.keys(size);
+  var keys = Object.keys(size || {});
   return typeof size === 'string' ? size : (_size$psuedoBreakpoin = size[psuedoBreakpoint]) != null ? _size$psuedoBreakpoin : /* fallback to closest given size */size[keys[keys.length - 1]];
+}
+function getSizeSpace(obj, size) {
+  return obj[size];
 }
 
 /*

@@ -5,4 +5,4 @@ export declare type ForProps<T extends unknown[]> = {
     children: (context: T[number], index: number) => JSX.Element;
     fallback?: JSX.Element | null;
 };
-export default function For<T extends unknown[]>(props: ForProps<T>): any;
+export default function For<T extends unknown[]>(props: ForProps<T>): JSX.Element | null;

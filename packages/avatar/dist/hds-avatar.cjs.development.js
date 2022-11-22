@@ -230,7 +230,7 @@ function HdsAvatarGroup(props) {
     onAddButtonClick = props.onAddButtonClick,
     others = _objectWithoutPropertiesLoose(props, _excluded$1);
   var actualMax = useActualMax(max);
-  var actualSize = useActualSize(size);
+  var actualSize = useActualSize(size) || "md";
   return React.createElement(react.HStack, {
     sx: others,
     spacing: "8px" /* retain spacing */
@@ -238,11 +238,11 @@ function HdsAvatarGroup(props) {
     variant: "hds",
     max: actualMax,
     size: size,
-    spacing: {
+    spacing: getSizeSpace({
       xs: "-4px",
       sm: "-8px",
       md: "-12px"
-    }[actualSize],
+    }, actualSize),
     "aria-label": "Group of users"
   }, React.Children.map(children, function (child, zIndex) {
     if (!React.isValidElement(child)) return null;
@@ -285,8 +285,11 @@ function useActualMax(max, fallback) {
   var breakpoint = react.useBreakpoint({
     fallback: fallback
   });
-  var breakpoints = typeof max === "number" ? [] : Object.keys(max);
-  return typeof max === "number" ? max : breakpoint in max ? max[breakpoint] : breakpoints.length ? max[findClosestBreakpoint(breakpoints, breakpoint)] : fallback;
+  var breakpoints = typeof max === "number" ? [] : Object.keys(max || {});
+  return typeof max === "number" ? max : breakpoint in (max || {}) ? max[breakpoint] : breakpoints.length ? max[findClosestBreakpoint(breakpoints, breakpoint)] : fallback;
+}
+function getSizeSpace(obj, size) {
+  return obj[size];
 }
 
 var _excluded$2 = ["src", "name", "size", "fallback", "children", "supportText", "online", "onlineIndicator"];
@@ -338,7 +341,7 @@ function AvatarProfile(props) {
     }, props),
     size = _Object$assign.size,
     others = _objectWithoutPropertiesLoose(_Object$assign, _excluded$3);
-  var actualSize = useActualSize(size);
+  var actualSize = useActualSize(size) || "md";
   var psuedoSize = {
     sm: "3xl",
     md: "4xl",
