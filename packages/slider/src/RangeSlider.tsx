@@ -10,7 +10,7 @@ import * as React from "react";
 import type { SliderProps } from "./Slider";
 import invariant from "./utils";
 
-type RangeSliderValue = [min: number, max: number];
+type RangeSliderValue = [number, number];
 
 type InheritedSliderProps = Omit<SliderProps, "onChange" | "defaultValue">;
 

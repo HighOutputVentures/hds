@@ -20,7 +20,7 @@ jest.mock("./RangeSlider", () => {
             const newValue = e.target.value
               .split(",")
               .filter((s) => s !== ",")
-              .map((n) => parseInt(n)) as [min: number, max: number];
+              .map((n) => parseInt(n)) as [number, number];
 
             setValue(newValue);
             onChange && onChange(newValue);
