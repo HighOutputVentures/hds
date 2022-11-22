@@ -63,7 +63,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "220c468183d0032ba2f8eb5b26d89cf5712292c0",
+  "gitHead": "ebebf30753116fe66775510d6b617bc8230916b3",
   "dependencies": {
     "@chakra-ui/icons": "^2.0.11",
     "@chakra-ui/react": "^2.3.7",

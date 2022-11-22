@@ -47,5 +47,6 @@
       "path": "dist/hds-utilities.esm.js",
       "limit": "10 KB"
     }
-  ]
+  ],
+  "gitHead": "ebebf30753116fe66775510d6b617bc8230916b3"
 }

@@ -50,5 +50,6 @@
   ],
   "jest": {
     "verbose": true
-  }
+  },
+  "gitHead": "ebebf30753116fe66775510d6b617bc8230916b3"
 }
