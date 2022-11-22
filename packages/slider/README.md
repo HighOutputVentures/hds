@@ -13,18 +13,25 @@ npm i @highoutput/hds-range-slider
 ### Usage
 
 ```typescript
-import { RangeSlider, withRangeSlider } from "@highoutput/hds-range-slider";
+import { Slider, RangeSlider, withSlider } from "@highoutput/hds-slider";
 import { ThemeProvider, extendTheme } from "@highoutput/hds";
 
 export default function Example() {
   return (
-    <ThemeProvider theme={extendTheme(withRangeSlider())}>
+    <ThemeProvider theme={extendTheme(withSlider())}>
+      <Slider
+        defaultValue={25}
+        onChange={function noop(value) {
+          console.log(value);
+        }}
+      />
+
       <RangeSlider
-        size="md"
-        value={[25, 50]}
-        onChange={function noop([_0, _1]) {
-          console.log(_0);
-          console.log(_1);
+        mt={4}
+        default={[25, 50]}
+        onChange={function noop([value_0, value_1]) {
+          console.log(value_0);
+          console.log(value_1);
         }}
       />
     </ThemeProvider>
