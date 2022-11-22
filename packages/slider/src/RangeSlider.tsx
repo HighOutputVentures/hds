@@ -7,7 +7,7 @@ import {
   useMultiStyleConfig,
 } from "@chakra-ui/react";
 import * as React from "react";
-import { SliderProps } from "./Slider";
+import type { SliderProps } from "./Slider";
 import invariant from "./utils";
 
 type RangeSliderValue = [min: number, max: number];
@@ -75,16 +75,9 @@ export default React.forwardRef<HTMLDivElement, RangeSliderProps>(function HdsRa
   );
 });
 
-// prettier-ignore
 const defaultProps: Pick<
   RangeSliderProps,
-  | "min"
-  | "max"
-  | "step"
-  | "defaultValue"
-  | "labeled"
-  | "labelVariant"
-  | "onChange"
+  "min" | "max" | "step" | "defaultValue" | "labeled" | "labelVariant" | "onChange"
 > = {
   min: 0,
   max: 100,
@@ -92,5 +85,5 @@ const defaultProps: Pick<
   defaultValue: [0, 100],
   labeled: true,
   labelVariant: "static",
-  onChange(){}
+  onChange() {},
 };

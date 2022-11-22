@@ -60,16 +60,9 @@ export default React.forwardRef<HTMLDivElement, SliderProps>(function HdsSlider(
   );
 });
 
-// prettier-ignore
 const defaultProps: Pick<
   SliderProps,
-  | "min"
-  | "max"
-  | "step"
-  | "defaultValue"
-  | "labeled"
-  | "labelVariant"
-  | "onChange"
+  "min" | "max" | "step" | "defaultValue" | "labeled" | "labelVariant" | "onChange"
 > = {
   min: 0,
   max: 100,
@@ -77,5 +70,5 @@ const defaultProps: Pick<
   defaultValue: 0,
   labeled: true,
   labelVariant: "static",
-  onChange(){}
+  onChange() {},
 };
