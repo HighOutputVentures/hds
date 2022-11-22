@@ -1,7 +1,7 @@
 import { useBreakpoint } from "@chakra-ui/react";
 import { findClosestBreakpoint } from "./utils";
 
-type ResponsiveSize = string | Partial<Record<string, string>>;
+type ResponsiveSize = string | Record<string, string>;
 
 export function useActualSize<T extends ResponsiveSize>(size: T, fallback = "md") {
   const breakpoint = useBreakpoint({ fallback });
@@ -10,7 +10,8 @@ export function useActualSize<T extends ResponsiveSize>(size: T, fallback = "md"
 
   return typeof size === "string"
     ? size
-    : breakpoint in size
+    : /* @ts-ignore "Bug in type assertions" */
+    breakpoint in size
     ? size[breakpoint]
     : keys.length
     ? size[findClosestBreakpoint(keys, breakpoint)]
