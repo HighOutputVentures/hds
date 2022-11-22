@@ -62,7 +62,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "ebebf30753116fe66775510d6b617bc8230916b3",
+  "gitHead": "2cc842169e828ff56ef57e039534fb0414854443",
   "dependencies": {
     "@highoutput/hds": "^0.1.39",
     "@highoutput/hds-forms": "^0.1.14",

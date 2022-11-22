@@ -33,7 +33,7 @@
     "printWidth": 100,
     "trailingComma": "all"
   },
-  "name": "@highouput/hds-slider",
+  "name": "@highoutput/hds-slider",
   "author": "calvo-jp",
   "module": "dist/hds-slider.esm.js",
   "size-limit": [
@@ -52,5 +52,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "ebebf30753116fe66775510d6b617bc8230916b3"
+  "gitHead": "2cc842169e828ff56ef57e039534fb0414854443"
 }

@@ -61,5 +61,5 @@
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
     }
   },
-  "gitHead": "ebebf30753116fe66775510d6b617bc8230916b3"
+  "gitHead": "2cc842169e828ff56ef57e039534fb0414854443"
 }
