@@ -1,11 +1,11 @@
-import withRangeSlider from "./withRangeSlider";
+import withSlider from "./withSlider";
 
 describe("withRangeSlider", () => {
   it("Should return theme for 'RangeSlider'", () => {
-    expect(withRangeSlider()).toEqual(
+    expect(withSlider()).toEqual(
       expect.objectContaining({
         components: {
-          RangeSlider: expect.any(Object),
+          Slider: expect.any(Object),
         },
       }),
     );
