@@ -1,5 +1,5 @@
 {
-  "version": "0.1.29",
+  "version": "0.1.32",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/contact-us/src/index.d.ts",
@@ -69,10 +69,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "220c468183d0032ba2f8eb5b26d89cf5712292c0",
+  "gitHead": "2cc842169e828ff56ef57e039534fb0414854443",
   "dependencies": {
-    "@highoutput/hds": "^0.1.37",
-    "@highoutput/hds-forms": "^0.1.12",
+    "@highoutput/hds": "^0.1.40",
+    "@highoutput/hds-forms": "^0.1.15",
     "@highoutput/hds-icons": "^0.1.12"
   }
 }

@@ -3,4 +3,4 @@ export declare type ShowProps = {
     when?: boolean;
     fallback?: JSX.Element | null;
 };
-export default function Show(props: React.PropsWithChildren<ShowProps>): any;
+export default function Show(props: React.PropsWithChildren<ShowProps>): JSX.Element | null;

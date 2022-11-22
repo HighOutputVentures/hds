@@ -81,7 +81,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckProps>(
 
     const styles = useMultiStyleConfig('Checkbox', { variant, size });
 
-    var classHover = checkboxHoverStyle(variant);
+    var classHover = checkboxHoverStyle(variant || 'primary.outlined');
 
     const checkboxIcon = () => {
       if (

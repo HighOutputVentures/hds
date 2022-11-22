@@ -1,5 +1,5 @@
 {
-  "version": "0.1.3",
+  "version": "0.1.6",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -47,5 +47,6 @@
       "path": "dist/hds-utilities.esm.js",
       "limit": "10 KB"
     }
-  ]
+  ],
+  "gitHead": "2cc842169e828ff56ef57e039534fb0414854443"
 }

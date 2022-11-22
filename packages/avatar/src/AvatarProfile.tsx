@@ -22,8 +22,15 @@ export type AvatarProfileProps =
 export default function AvatarProfile(props: AvatarProfileProps) {
   const { size, ...others } = Object.assign({ size: "md" }, props);
 
-  const actualSize = useActualSize(size);
-  const psuedoSize = { sm: "3xl", md: "4xl", lg: "5xl" } as const;
+  const actualSize = useActualSize(size) || "md";
+  const psuedoSize = { sm: "3xl", md: "4xl", lg: "5xl" } as any;
 
-  return <Avatar size={psuedoSize[actualSize]} {...others} __elevated __bordered />;
+  return (
+    <Avatar
+      size={psuedoSize[actualSize as keyof typeof psuedoSize]}
+      {...others}
+      __elevated
+      __bordered
+    />
+  );
 }

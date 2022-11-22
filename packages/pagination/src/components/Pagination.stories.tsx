@@ -57,19 +57,4 @@ Default.args = {
   onPageChange: noop,
   onSizeChange: noop,
   total: 75,
-  partProps: {
-    container: {
-      fontSize: 'sm',
-    },
-    controls: {
-      rounded: 'full',
-    },
-    controlIcons: {
-      fontSize: 'xl',
-    },
-    dropdown: {
-      border: '1px solid',
-      borderColor: 'gray.200',
-    },
-  },
 };

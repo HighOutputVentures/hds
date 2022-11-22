@@ -1,5 +1,5 @@
 {
-  "version": "0.1.37",
+  "version": "0.1.40",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -63,7 +63,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "220c468183d0032ba2f8eb5b26d89cf5712292c0",
+  "gitHead": "2cc842169e828ff56ef57e039534fb0414854443",
   "dependencies": {
     "@chakra-ui/icons": "^2.0.11",
     "@chakra-ui/react": "^2.3.7",
