@@ -1,22 +1,14 @@
 import {
-  ButtonProps,
   Flex,
-  FlexProps,
   HStack,
   IconButton,
-  IconProps,
   Select,
-  SelectProps,
-  StackProps,
   Text,
-  TextProps,
   ThemingProps,
   useMultiStyleConfig,
 } from '@chakra-ui/react';
-import React, { FC, useCallback, useId } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@highoutput/hds-icons';
-
-type WithoutChildren<T> = Omit<T, 'children'>;
+import React, { FC, useCallback } from 'react';
 
 export interface PaginationProps extends ThemingProps {
   page: number;
@@ -27,23 +19,7 @@ export interface PaginationProps extends ThemingProps {
   options: {
     sizes: number[];
   };
-  /**
-   *
-   * _Not yet implemented_
-   *
-   */
   loading?: boolean;
-  partProps?: Partial<{
-    container?: WithoutChildren<FlexProps>;
-    dropdown?: WithoutChildren<SelectProps>;
-    dropdownLabel?: WithoutChildren<TextProps>;
-    dropdownContainer?: WithoutChildren<StackProps>;
-    caption?: WithoutChildren<TextProps>;
-    captionAndControlsContainer?: WithoutChildren<StackProps>;
-    controls?: WithoutChildren<ButtonProps>;
-    controlIcons?: WithoutChildren<IconProps>;
-    controlsContainer?: WithoutChildren<StackProps>;
-  }>;
 }
 
 const Pagination: FC<PaginationProps> = ({
@@ -53,11 +29,9 @@ const Pagination: FC<PaginationProps> = ({
   onPageChange,
   onSizeChange,
   options,
-  partProps,
   variant,
 }) => {
-  const styles = useMultiStyleConfig('Pagination', { variant });
-  const id = useId();
+  const styles = useMultiStyleConfig('Pagination', { size, variant });
 
   const hasPrev = page > 1;
   const hasNext = page * size < total;
@@ -91,81 +65,53 @@ const Pagination: FC<PaginationProps> = ({
 
   return (
     <Flex
-      id={id}
       alignItems="center"
       justifyContent="space-between"
       sx={styles.container}
-      {...partProps?.container}
     >
-      <HStack spacing={2} {...partProps?.dropdownContainer}>
-        <Text
-          as="span"
-          whiteSpace="nowrap"
-          sx={styles.dropdownLabel}
-          {...partProps?.dropdownLabel}
-        >
+      <HStack spacing={2}>
+        <Text as="span" whiteSpace="nowrap" sx={styles.dropdownLabel}>
           Show rows per page
         </Text>
 
         <Select
-          data-testid={`${id}-pagination.dropdown`}
+          aria-label="Change page size"
           onChange={handleSizeChange}
           value={size}
           sx={styles.dropdown}
-          {...partProps?.dropdown}
         >
           {options.sizes.map((size, index) => (
-            <option
-              value={size}
-              key={id + size + index}
-              data-testid={`${id}-${size}-${index}`}
-            >
+            <option key={`${size}${index}`} value={size}>
               {size}
             </option>
           ))}
         </Select>
       </HStack>
 
-      <HStack spacing={4} {...partProps?.captionAndControlsContainer}>
-        <Text as="span" sx={styles.caption} {...partProps?.caption}>
+      <HStack spacing={4}>
+        <Text as="span" sx={styles.caption}>
           {getPageInfo()}
         </Text>
 
-        <HStack {...partProps?.controlsContainer}>
+        <HStack>
           <IconButton
-            aria-label=""
-            data-testid={`${id}-pagination.controls.prev`}
-            icon={
-              <ChevronLeftIcon
-                color="white"
-                sx={styles.controlIcons}
-                {...partProps?.controlIcons}
-              />
-            }
+            aria-label="Go to previous page"
+            icon={<ChevronLeftIcon color="white" sx={styles.controlIcons} />}
             onClick={handlePageChange('decrement')}
             paddingTop="10px"
             paddingLeft="12px"
             disabled={!hasPrev}
             sx={styles.iconButton}
-            {...partProps?.controls}
           />
 
           <IconButton
-            aria-label=""
-            data-testid={`${id}-pagination.controls.next`}
-            icon={
-              <ChevronRightIcon
-                color="white"
-                sx={styles.controlIcons}
-                {...partProps?.controlIcons}
-              />
-            }
+            aria-label="Go to next page"
+            icon={<ChevronRightIcon color="white" sx={styles.controlIcons} />}
             onClick={handlePageChange('increment')}
             disabled={!hasNext}
             paddingTop="10px"
             paddingLeft="12px"
             sx={styles.iconButton}
-            {...partProps?.controls}
           />
         </HStack>
       </HStack>
