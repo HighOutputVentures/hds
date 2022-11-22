@@ -1,6 +1,6 @@
 import { useMultiStyleConfig, Flex, HStack, Text, Select, IconButton } from '@chakra-ui/react';
-import React, { useId, useCallback } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@highoutput/hds-icons';
+import React, { useCallback } from 'react';
 
 var Pagination = function Pagination(_ref) {
   var page = _ref.page,
@@ -9,12 +9,11 @@ var Pagination = function Pagination(_ref) {
     onPageChange = _ref.onPageChange,
     onSizeChange = _ref.onSizeChange,
     options = _ref.options,
-    partProps = _ref.partProps,
     variant = _ref.variant;
   var styles = useMultiStyleConfig('Pagination', {
+    size: size,
     variant: variant
   });
-  var id = useId();
   var hasPrev = page > 1;
   var hasNext = page * size < total;
   var handleSizeChange = function handleSizeChange(e) {
@@ -39,58 +38,54 @@ var Pagination = function Pagination(_ref) {
     pageInfo += total;
     return pageInfo;
   }, [indexStart, indexStop, total, remainder]);
-  return React.createElement(Flex, Object.assign({
-    id: id,
+  return React.createElement(Flex, {
     alignItems: "center",
     justifyContent: "space-between",
     sx: styles.container
-  }, partProps == null ? void 0 : partProps.container), React.createElement(HStack, Object.assign({
+  }, React.createElement(HStack, {
     spacing: 2
-  }, partProps == null ? void 0 : partProps.dropdownContainer), React.createElement(Text, Object.assign({
+  }, React.createElement(Text, {
     as: "span",
     whiteSpace: "nowrap",
     sx: styles.dropdownLabel
-  }, partProps == null ? void 0 : partProps.dropdownLabel), "Show rows per page"), React.createElement(Select, Object.assign({
-    "data-testid": id + "-pagination.dropdown",
+  }, "Show rows per page"), React.createElement(Select, {
+    "aria-label": "Change page size",
     onChange: handleSizeChange,
     value: size,
     sx: styles.dropdown
-  }, partProps == null ? void 0 : partProps.dropdown), options.sizes.map(function (size, index) {
+  }, options.sizes.map(function (size, index) {
     return React.createElement("option", {
-      value: size,
-      key: id + size + index,
-      "data-testid": id + "-" + size + "-" + index
+      key: "" + size + index,
+      value: size
     }, size);
-  }))), React.createElement(HStack, Object.assign({
+  }))), React.createElement(HStack, {
     spacing: 4
-  }, partProps == null ? void 0 : partProps.captionAndControlsContainer), React.createElement(Text, Object.assign({
+  }, React.createElement(Text, {
     as: "span",
     sx: styles.caption
-  }, partProps == null ? void 0 : partProps.caption), getPageInfo()), React.createElement(HStack, Object.assign({}, partProps == null ? void 0 : partProps.controlsContainer), React.createElement(IconButton, Object.assign({
-    "aria-label": "",
-    "data-testid": id + "-pagination.controls.prev",
-    icon: React.createElement(ChevronLeftIcon, Object.assign({
+  }, getPageInfo()), React.createElement(HStack, null, React.createElement(IconButton, {
+    "aria-label": "Go to previous page",
+    icon: React.createElement(ChevronLeftIcon, {
       color: "white",
       sx: styles.controlIcons
-    }, partProps == null ? void 0 : partProps.controlIcons)),
+    }),
     onClick: handlePageChange('decrement'),
     paddingTop: "10px",
     paddingLeft: "12px",
     disabled: !hasPrev,
     sx: styles.iconButton
-  }, partProps == null ? void 0 : partProps.controls)), React.createElement(IconButton, Object.assign({
-    "aria-label": "",
-    "data-testid": id + "-pagination.controls.next",
-    icon: React.createElement(ChevronRightIcon, Object.assign({
+  }), React.createElement(IconButton, {
+    "aria-label": "Go to next page",
+    icon: React.createElement(ChevronRightIcon, {
       color: "white",
       sx: styles.controlIcons
-    }, partProps == null ? void 0 : partProps.controlIcons)),
+    }),
     onClick: handlePageChange('increment'),
     disabled: !hasNext,
     paddingTop: "10px",
     paddingLeft: "12px",
     sx: styles.iconButton
-  }, partProps == null ? void 0 : partProps.controls)))));
+  }))));
 };
 
 export { Pagination };
