@@ -1,16 +1,16 @@
 import FormContainer, {
-  FormContainerPartProps,
+  // FormContainerPartProps,
   FormContainerProps,
 } from './FormContainer/FormContainer';
 import InputField, {
-  InputFieldPartProps,
+  // InputFieldPartProps,
   InputFieldProps,
 } from './InputField/InputField';
 import PasswordInputField, {
   PasswordInputFieldProps,
 } from './PasswordInputField/PasswordInputField';
 import PinInputField, {
-  PinInputFieldPartProps,
+  // PinInputFieldPartProps,
   PinInputFieldProps,
 } from './PinInputField/PinInputField';
 import SelectField, { SelectFieldProps } from './SelectField/SelectField';
@@ -21,14 +21,14 @@ import TextAreaField, {
 export {
   FormContainer,
   FormContainerProps,
-  FormContainerPartProps,
+  // FormContainerPartProps,
   InputField,
   InputFieldProps,
-  InputFieldPartProps,
+  // InputFieldPartProps,
   PasswordInputField,
   PasswordInputFieldProps,
   PinInputField,
-  PinInputFieldPartProps,
+  // PinInputFieldPartProps,
   PinInputFieldProps,
   SelectField,
   SelectFieldProps,

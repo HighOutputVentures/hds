@@ -1,29 +1,29 @@
 import {
   CSSObject,
   Input,
-  InputElementProps,
+  // InputElementProps,
   InputGroup,
-  InputGroupProps,
+  // InputGroupProps,
   InputLeftElement,
-  InputProps,
+  // InputProps,
   InputRightElement,
   ThemeTypings,
   useMultiStyleConfig,
 } from '@chakra-ui/react';
 import React, { forwardRef, ReactNode, useId } from 'react';
 import FormContainer, {
-  FormContainerPartProps,
+  // FormContainerPartProps,
   FormContainerProps,
 } from '../FormContainer/FormContainer';
 
-type WithoutChildren<T> = Omit<T, 'children'>;
+// type WithoutChildren<T> = Omit<T, 'children'>;
 
-export interface InputFieldPartProps extends FormContainerPartProps {
-  input?: WithoutChildren<InputProps>;
-  inputGroup?: WithoutChildren<InputGroupProps>;
-  inputLeftElement?: WithoutChildren<InputElementProps>;
-  inputRightElement?: WithoutChildren<InputElementProps>;
-}
+// export interface InputFieldPartProps extends FormContainerPartProps {
+//   input?: WithoutChildren<InputProps>;
+//   inputGroup?: WithoutChildren<InputGroupProps>;
+//   inputLeftElement?: WithoutChildren<InputElementProps>;
+//   inputRightElement?: WithoutChildren<InputElementProps>;
+// }
 export interface InputFieldProps extends Omit<FormContainerProps, 'partProps'> {
   size?: ThemeTypings['sizes'];
   type?: string;
@@ -40,7 +40,7 @@ export interface InputFieldProps extends Omit<FormContainerProps, 'partProps'> {
   _hover?: CSSObject;
   onPressEnter?(): void;
   inputValue?: string | undefined;
-  partProps?: Partial<InputFieldPartProps>;
+  // partProps?: Partial<InputFieldPartProps>;
 }
 
 const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
@@ -60,7 +60,6 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
       disabled,
       readOnly,
       defaultValue,
-      partProps,
       variant = 'outline',
       onPressEnter,
       inputValue,
@@ -72,13 +71,11 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
       <FormContainer {...props}>
         <InputGroup
           sx={styles.formInputGroup}
-          {...partProps?.inputGroup}
           size={size}
           data-testid={`${uid}-input-field-group`}
         >
           {leftIcon && (
             <InputLeftElement
-              {...partProps?.inputLeftElement}
               data-testid={`${uid}-input-field-left-element`}
             >
               {leftIcon}
@@ -86,7 +83,7 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
           )}
           <Input
             sx={styles.formInput}
-            {...partProps?.input}
+            // {...partProps?.input}
             errorBorderColor="red.500"
             autoFocus={autoFocus}
             ref={ref}
@@ -112,7 +109,7 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
           />
           {rightIcon && (
             <InputRightElement
-              {...partProps?.inputRightElement}
+              // {...partProps?.inputRightElement}
               data-testid={`${uid}-input-field-right-element`}
             >
               {rightIcon}
