@@ -5,7 +5,6 @@
     "importHelpers": true,
     "declaration": true,
     "sourceMap": true,
-    "baseUrl": ".",
     "strict": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
