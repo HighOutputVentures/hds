@@ -39,7 +39,7 @@ export default React.forwardRef<HTMLDivElement, RangeSliderProps>(function HdsRa
       min={min}
       max={max}
       step={step}
-      aria-label={["Min value", "Max Value"]}
+      aria-label={["Min value", "Max value"]}
       orientation="horizontal"
       defaultValue={defaultValue}
       onChange={(newValue) => {
