@@ -7,6 +7,15 @@ export const Checkbox = {
       _focus: { boxShadow: '0px 0px 0px 4px #F4EBFF' },
 
       bg: 'alpha.white.500',
+      _disabled: {
+        borderColor: 'neutrals.200',
+        bg: 'neutrals.100',
+        _checked: {
+          borderColor: 'neutrals.200',
+          bg: 'neutrals.100',
+          color: 'neutrals.200',
+        },
+      },
     },
   },
   sizes: {
