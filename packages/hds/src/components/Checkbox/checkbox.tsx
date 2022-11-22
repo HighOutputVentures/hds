@@ -40,12 +40,12 @@ export type CheckProps = (CheckTypeProps | RadioTypeProps) &
     helperMsg?: string;
     label: string | JSX.Element;
     onCheck?: (value: boolean) => void;
-    variant?: string;
+    variant?: 'primary.outlined' | 'primary.solid';
     disabled?: boolean;
     __testId?: string;
   };
 
-const checkboxHoverStyle = (variant: string) => {
+const checkboxHoverStyle = (variant: 'primary.outlined' | 'primary.solid') => {
   return {
     _hover: {
       "span[class*='checkbox__control']:not([data-disabled])": {
