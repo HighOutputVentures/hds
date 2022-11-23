@@ -16,7 +16,8 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
-    "allowJs": true
+    "allowJs": true,
+    "composite": true
   },
   "include": ["packages"],
   "exclude": ["node_modules"]
