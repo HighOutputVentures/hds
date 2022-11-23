@@ -2,7 +2,7 @@
   "version": "0.1.14",
   "license": "MIT",
   "main": "dist/index.js",
-  "typings": "dist/pagination/src/index.d.ts",
+  "typings": "dist/index.d.ts",
   "files": [
     "dist",
     "src"
@@ -15,7 +15,6 @@
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "generate:types": "chakra-cli tokens ./src/theme/index.ts"
