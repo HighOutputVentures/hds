@@ -11,7 +11,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
   ...props
 }) => {
   return (
-    <ChakraProvider theme={extendTheme(theme)} {...props}>
+    <ChakraProvider theme={extendTheme(theme ?? {})} {...props}>
       <Fonts />
       {children}
     </ChakraProvider>
