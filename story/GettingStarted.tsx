@@ -231,6 +231,46 @@ export default Form;
               </Link>
             </Text>
           </ListItem>
+          <ListItem>
+            <Text size="paragraph-md-default">
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-tag"
+                isExternal
+              >
+                @highoutput/hds-tag
+              </Link>
+            </Text>
+          </ListItem>
+          <ListItem>
+            <Text size="paragraph-md-default">
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-switch"
+                isExternal
+              >
+                @highoutput/hds-switch
+              </Link>
+            </Text>
+          </ListItem>
+          <ListItem>
+            <Text size="paragraph-md-default">
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-avatar"
+                isExternal
+              >
+                @highoutput/hds-avatar
+              </Link>
+            </Text>
+          </ListItem>
+          <ListItem>
+            <Text size="paragraph-md-default">
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-slider"
+                isExternal
+              >
+                @highoutput/hds-slider
+              </Link>
+            </Text>
+          </ListItem>
         </UnorderedList>
       </Box>
     </ThemeProvider>
