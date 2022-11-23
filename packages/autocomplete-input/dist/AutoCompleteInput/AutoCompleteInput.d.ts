@@ -1,16 +1,12 @@
 /// <reference types="react" />
 import { BoxProps } from '@chakra-ui/react';
-import { FormContainerPartProps, FormContainerProps } from '@highoutput/hds-forms';
-import { ChakraStylesConfig, GroupBase } from 'chakra-react-select';
+import { FormContainerProps } from '@highoutput/hds-forms';
 export interface Item {
     value: string | number;
     label: string;
 }
 export interface OptionItem extends Item {
     avatar?: string;
-}
-export interface AutoCompleteInputFieldPartProps extends FormContainerPartProps {
-    reactChakraStyle?: ChakraStylesConfig<Item, boolean, GroupBase<Item>> | undefined;
 }
 export interface AutoCompleteInputFieldProps extends Omit<FormContainerProps, 'partProps'> {
     options: OptionItem[];
@@ -23,7 +19,6 @@ export interface AutoCompleteInputFieldProps extends Omit<FormContainerProps, 'p
     autoFocus?: boolean;
     showDropdownIndicator?: boolean;
     placeholder?: string;
-    partProps?: Partial<AutoCompleteInputFieldPartProps>;
     value?: string | string[] | number | number[];
     onChangeValue: (...event: any[]) => void;
 }

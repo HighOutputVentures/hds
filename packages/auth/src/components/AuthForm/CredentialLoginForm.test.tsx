@@ -8,7 +8,8 @@ describe('Login Form Email-based Component', () => {
     render(<CredentialLoginForm />);
   });
   it('should display error message on email', async () => {
-    const emailInput = screen.getByRole('input', { name: 'email-input' });
+    // const emailInput = screen.getByRole('input', { name: 'email-input' });
+    const emailInput = screen.getByTestId(':r0:-input-field-input');
     const submitBtn = screen.getByRole('button', { name: 'Login' });
     fireEvent.change(emailInput, { target: { value: 'hello@g' } });
     fireEvent.click(submitBtn);
@@ -19,7 +20,8 @@ describe('Login Form Email-based Component', () => {
   });
 
   it('should display error message on password', async () => {
-    const passwordInput = screen.getByRole('input', { name: 'password-input' });
+    // const passwordInput = screen.getByRole('input', { name: 'password-input' });
+    const passwordInput = screen.getByPlaceholderText(/Input your password/i);
     const submitBtn = screen.getByRole('button', { name: 'Login' });
     fireEvent.change(passwordInput, { target: { value: null } });
     fireEvent.click(submitBtn);
@@ -60,7 +62,8 @@ describe('Login form Username-based component', () => {
     );
   });
   it('should display error message on name', async () => {
-    const nameInput = screen.getByRole('input', { name: 'name-input' });
+    // const nameInput = screen.getByRole('input', { name: 'name-input' });
+    const nameInput = screen.getByTestId(':ro:-input-field-input');
     const submitBtn = screen.getByRole('button', { name: 'Login' });
     fireEvent.change(nameInput, { target: { value: null } });
     fireEvent.click(submitBtn);

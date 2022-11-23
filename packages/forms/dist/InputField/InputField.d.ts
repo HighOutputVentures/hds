@@ -1,13 +1,6 @@
-import { CSSObject, InputElementProps, InputGroupProps, InputProps, ThemeTypings } from '@chakra-ui/react';
+import { CSSObject, ThemeTypings } from '@chakra-ui/react';
 import React, { ReactNode } from 'react';
-import { FormContainerPartProps, FormContainerProps } from '../FormContainer/FormContainer';
-declare type WithoutChildren<T> = Omit<T, 'children'>;
-export interface InputFieldPartProps extends FormContainerPartProps {
-    input?: WithoutChildren<InputProps>;
-    inputGroup?: WithoutChildren<InputGroupProps>;
-    inputLeftElement?: WithoutChildren<InputElementProps>;
-    inputRightElement?: WithoutChildren<InputElementProps>;
-}
+import { FormContainerProps } from '../FormContainer/FormContainer';
 export interface InputFieldProps extends Omit<FormContainerProps, 'partProps'> {
     size?: ThemeTypings['sizes'];
     type?: string;
@@ -24,7 +17,6 @@ export interface InputFieldProps extends Omit<FormContainerProps, 'partProps'> {
     _hover?: CSSObject;
     onPressEnter?(): void;
     inputValue?: string | undefined;
-    partProps?: Partial<InputFieldPartProps>;
 }
-declare const InputField: React.ForwardRefExoticComponent<Pick<InputFieldProps, "children" | "label" | "pattern" | "autoComplete" | "autoFocus" | "disabled" | "max" | "maxLength" | "min" | "minLength" | "name" | "placeholder" | "readOnly" | "required" | "size" | "type" | "onChange" | "defaultValue" | "id" | "onBlur" | "_hover" | "colorScheme" | "variant" | "orientation" | "styleConfig" | "partProps" | "labelColor" | "errorMsg" | "helperMsg" | "leftIcon" | "rightIcon" | "onPressEnter" | "inputValue"> & React.RefAttributes<HTMLInputElement>>;
+declare const InputField: React.ForwardRefExoticComponent<Pick<InputFieldProps, "onChange" | "onBlur" | "name" | "min" | "max" | "maxLength" | "minLength" | "pattern" | "required" | "disabled" | "id" | "label" | "labelColor" | "errorMsg" | "helperMsg" | "children" | "variant" | "size" | "colorScheme" | "orientation" | "styleConfig" | "_hover" | "type" | "autoFocus" | "placeholder" | "leftIcon" | "rightIcon" | "autoComplete" | "readOnly" | "defaultValue" | "onPressEnter" | "inputValue"> & React.RefAttributes<HTMLInputElement>>;
 export default InputField;

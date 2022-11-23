@@ -1,10 +1,10 @@
 import AutoCompleteInput, {
-  AutoCompleteInputFieldPartProps,
+  // AutoCompleteInputFieldPartProps,
   AutoCompleteInputFieldProps,
 } from './AutoCompleteInput/AutoCompleteInput';
 
 export {
   AutoCompleteInput,
   AutoCompleteInputFieldProps,
-  AutoCompleteInputFieldPartProps,
+  // AutoCompleteInputFieldPartProps,
 };

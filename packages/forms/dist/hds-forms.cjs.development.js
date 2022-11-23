@@ -18,35 +18,32 @@ var FormContainer = function FormContainer(_ref) {
     helperMsg = _ref.helperMsg,
     children = _ref.children,
     disabled = _ref.disabled,
-    partProps = _ref.partProps,
     variant = _ref.variant;
   var styles = react.useMultiStyleConfig('Form', {
     variant: variant
   });
   var uid = React.useId();
-  return React__default.createElement(react.FormControl, Object.assign({
+  return React__default.createElement(react.FormControl, {
     id: id,
     isInvalid: Boolean(errorMsg),
     isReadOnly: disabled,
     "data-testid": uid + "-form-container-form-control",
     sx: styles.formControl,
     "aria-label": "Form Group"
-  }, partProps == null ? void 0 : partProps.formControl), label && React__default.createElement(react.FormLabel, Object.assign({
+  }, label && React__default.createElement(react.FormLabel, Object.assign({
     borderRadius: "4px"
   }, labelColor && {
     color: labelColor
   }, {
     "data-testid": uid + "-form-container-label",
     sx: styles.formLabel
-  }, partProps == null ? void 0 : partProps.formLabel), label), children, React__default.createElement(react.FormErrorMessage, Object.assign({
-    sx: styles.formErrorMessage
-  }, partProps == null ? void 0 : partProps.formErrorMessage, {
+  }), label), children, React__default.createElement(react.FormErrorMessage, {
+    sx: styles.formErrorMessage,
     "data-testid": uid + "-form-container-error"
-  }), errorMsg), helperMsg && React__default.createElement(react.FormHelperText, Object.assign({
-    sx: styles.formHelperText
-  }, partProps == null ? void 0 : partProps.formErrorMessage, {
+  }, errorMsg), helperMsg && React__default.createElement(react.FormHelperText, {
+    sx: styles.formHelperText,
     "data-testid": uid + "-form-container-helper"
-  }), helperMsg));
+  }, helperMsg));
 };
 
 var InputField = /*#__PURE__*/React.forwardRef(function (props, ref) {
@@ -66,7 +63,6 @@ var InputField = /*#__PURE__*/React.forwardRef(function (props, ref) {
     disabled = props.disabled,
     readOnly = props.readOnly,
     defaultValue = props.defaultValue,
-    partProps = props.partProps,
     _props$variant = props.variant,
     variant = _props$variant === void 0 ? 'outline' : _props$variant,
     onPressEnter = props.onPressEnter,
@@ -76,16 +72,15 @@ var InputField = /*#__PURE__*/React.forwardRef(function (props, ref) {
     size: size
   });
   var uid = React.useId();
-  return React__default.createElement(FormContainer, Object.assign({}, props), React__default.createElement(react.InputGroup, Object.assign({
-    sx: styles.formInputGroup
-  }, partProps == null ? void 0 : partProps.inputGroup, {
+  return React__default.createElement(FormContainer, Object.assign({}, props), React__default.createElement(react.InputGroup, {
+    sx: styles.formInputGroup,
     size: size,
     "data-testid": uid + "-input-field-group"
-  }), leftIcon && React__default.createElement(react.InputLeftElement, Object.assign({}, partProps == null ? void 0 : partProps.inputLeftElement, {
+  }, leftIcon && React__default.createElement(react.InputLeftElement, {
     "data-testid": uid + "-input-field-left-element"
-  }), leftIcon), React__default.createElement(react.Input, Object.assign({
-    sx: styles.formInput
-  }, partProps == null ? void 0 : partProps.input, {
+  }, leftIcon), React__default.createElement(react.Input, {
+    sx: styles.formInput,
+    // {...partProps?.input}
     errorBorderColor: "red.500",
     autoFocus: autoFocus,
     ref: ref,
@@ -108,14 +103,15 @@ var InputField = /*#__PURE__*/React.forwardRef(function (props, ref) {
     value: inputValue ? inputValue.trim() : undefined,
     role: "input",
     "data-testid": uid + "-input-field-input"
-  })), rightIcon && React__default.createElement(react.InputRightElement, Object.assign({}, partProps == null ? void 0 : partProps.inputRightElement, {
+  }), rightIcon && React__default.createElement(react.InputRightElement
+  // {...partProps?.inputRightElement}
+  , {
     "data-testid": uid + "-input-field-right-element"
-  }), rightIcon)));
+  }, rightIcon)));
 });
 
 var PasswordInputField = /*#__PURE__*/React.forwardRef(function (props, _) {
-  var partProps = props.partProps,
-    placeholder = props.placeholder,
+  var placeholder = props.placeholder,
     onBlur = props.onBlur,
     errorMsg = props.errorMsg,
     onChange = props.onChange,
@@ -131,24 +127,22 @@ var PasswordInputField = /*#__PURE__*/React.forwardRef(function (props, _) {
   return React__default.createElement(InputField, {
     placeholder: placeholder,
     id: "Password-input",
-    partProps: partProps,
     type: showPassword ? 'text' : 'password',
     errorMsg: errorMsg,
     onBlur: onBlur,
     onChange: onChange,
     onPressEnter: onPressEnter,
-    rightIcon: React__default.createElement(react.Button, Object.assign({
+    rightIcon: React__default.createElement(react.Button, {
       background: 'none',
       _hover: {
         background: 'none'
       },
       _active: {
         background: 'none'
-      }
-    }, partProps == null ? void 0 : partProps.button, {
+      },
       "aria-label": 'show-hide-btn',
       onClick: onClickRightIcon
-    }), showPassword ? React__default.createElement(icons.ViewIcon, null) : React__default.createElement(icons.ViewOffIcon, null))
+    }, showPassword ? React__default.createElement(icons.ViewIcon, null) : React__default.createElement(icons.ViewOffIcon, null))
   });
 });
 PasswordInputField.displayName = 'PasswordInputField';
@@ -160,7 +154,6 @@ var PinInputField = /*#__PURE__*/React.forwardRef(function (props, _) {
     size = props.size,
     _props$variant = props.variant,
     variant = _props$variant === void 0 ? 'outline' : _props$variant,
-    partProps = props.partProps,
     name = props.name,
     _props$type = props.type,
     type = _props$type === void 0 ? 'alphanumeric' : _props$type,
@@ -213,15 +206,14 @@ var PinInputField = /*#__PURE__*/React.forwardRef(function (props, _) {
       display: "flex",
       alignItems: "center",
       pb: "10px"
-    }, "-"), React__default.createElement(react.PinInputField, Object.assign({
+    }, "-"), React__default.createElement(react.PinInputField, {
       fontWeight: "semibold",
       w: "12",
       h: "12",
       key: idx,
-      sx: styles
-    }, partProps == null ? void 0 : partProps.pin, {
+      sx: styles,
       "data-testid": uid + "-pininput-pin-" + idx
-    })));
+    }));
   }))));
 });
 PinInputField.displayName = 'PinInputField';

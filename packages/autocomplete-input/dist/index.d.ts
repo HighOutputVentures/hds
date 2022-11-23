@@ -1,2 +1,2 @@
-import AutoCompleteInput, { AutoCompleteInputFieldPartProps, AutoCompleteInputFieldProps } from './AutoCompleteInput/AutoCompleteInput';
-export { AutoCompleteInput, AutoCompleteInputFieldProps, AutoCompleteInputFieldPartProps, };
+import AutoCompleteInput, { AutoCompleteInputFieldProps } from './AutoCompleteInput/AutoCompleteInput';
+export { AutoCompleteInput, AutoCompleteInputFieldProps, };

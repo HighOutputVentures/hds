@@ -145,14 +145,12 @@ var getStyles = function getStyles(_ref) {
 
 var _excluded = ["children", "data"];
 var AutoCompleteInput = function AutoCompleteInput(props) {
-  var _partProps$reactChakr;
   var value = props.value,
     options = props.options,
     darkMode = props.darkMode,
     placement = props.placement,
     showDropdownIndicator = props.showDropdownIndicator,
     errorMsg = props.errorMsg,
-    partProps = props.partProps,
     autoFocus = props.autoFocus,
     disabled = props.disabled,
     onChangeValue = props.onChangeValue,
@@ -167,7 +165,7 @@ var AutoCompleteInput = function AutoCompleteInput(props) {
   });
   return React.createElement(FormContainer, Object.assign({}, props), React.createElement(Select, {
     options: options,
-    chakraStyles: (_partProps$reactChakr = partProps == null ? void 0 : partProps.reactChakraStyle) != null ? _partProps$reactChakr : styles,
+    chakraStyles: styles,
     placeholder: placeholder,
     menuPlacement: placement != null ? placement : 'auto',
     isMulti: multiple,

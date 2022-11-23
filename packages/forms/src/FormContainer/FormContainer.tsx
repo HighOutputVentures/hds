@@ -1,26 +1,26 @@
 import {
   FormControl,
-  FormControlProps,
+  // FormControlProps,
   FormErrorMessage,
-  FormErrorMessageProps,
+  // FormErrorMessageProps,
   FormHelperText,
   FormLabel,
-  FormLabelProps,
-  HelpTextProps,
+  // FormLabelProps,
+  // HelpTextProps,
   ThemingProps,
   useMultiStyleConfig,
 } from '@chakra-ui/react';
 import React, { FC, ReactNode, useId } from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 
-type WithoutChildren<T> = Omit<T, 'children'>;
+// type WithoutChildren<T> = Omit<T, 'children'>;
 
-export interface FormContainerPartProps {
-  formControl?: WithoutChildren<FormControlProps>;
-  formLabel?: WithoutChildren<FormLabelProps>;
-  formErrorMessage?: WithoutChildren<FormErrorMessageProps>;
-  formHelperText?: WithoutChildren<HelpTextProps>;
-}
+// export interface FormContainerPartProps {
+//   formControl?: WithoutChildren<FormControlProps>;
+//   formLabel?: WithoutChildren<FormLabelProps>;
+//   formErrorMessage?: WithoutChildren<FormErrorMessageProps>;
+//   formHelperText?: WithoutChildren<HelpTextProps>;
+// }
 export interface FormContainerProps
   extends Partial<UseFormRegisterReturn>,
     ThemingProps {
@@ -31,7 +31,7 @@ export interface FormContainerProps
   helperMsg?: string;
   disabled?: boolean;
   children?: ReactNode;
-  partProps?: Partial<FormContainerPartProps>;
+  // partProps?: Partial<FormContainerPartProps>;
 }
 
 const FormContainer: FC<FormContainerProps> = ({
@@ -42,7 +42,6 @@ const FormContainer: FC<FormContainerProps> = ({
   helperMsg,
   children,
   disabled,
-  partProps,
   variant,
 }) => {
   const styles = useMultiStyleConfig('Form', { variant });
@@ -56,7 +55,6 @@ const FormContainer: FC<FormContainerProps> = ({
       data-testid={`${uid}-form-container-form-control`}
       sx={styles.formControl}
       aria-label="Form Group"
-      {...partProps?.formControl}
     >
       {label && (
         <FormLabel
@@ -64,7 +62,6 @@ const FormContainer: FC<FormContainerProps> = ({
           {...(labelColor && { color: labelColor })}
           data-testid={`${uid}-form-container-label`}
           sx={styles.formLabel}
-          {...partProps?.formLabel}
         >
           {label}
         </FormLabel>
@@ -72,7 +69,6 @@ const FormContainer: FC<FormContainerProps> = ({
       {children}
       <FormErrorMessage
         sx={styles.formErrorMessage}
-        {...partProps?.formErrorMessage}
         data-testid={`${uid}-form-container-error`}
       >
         {errorMsg}
@@ -80,7 +76,6 @@ const FormContainer: FC<FormContainerProps> = ({
       {helperMsg && (
         <FormHelperText
           sx={styles.formHelperText}
-          {...partProps?.formErrorMessage}
           data-testid={`${uid}-form-container-helper`}
         >
           {helperMsg}

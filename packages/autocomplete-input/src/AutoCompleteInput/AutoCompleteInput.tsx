@@ -2,13 +2,10 @@ import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 import { Avatar, BoxProps, HStack, Icon } from '@chakra-ui/react';
 import {
   FormContainer,
-  FormContainerPartProps,
   FormContainerProps,
 } from '@highoutput/hds-forms';
 import {
   chakraComponents,
-  ChakraStylesConfig,
-  GroupBase,
   MultiValue,
   Select,
   SingleValue,
@@ -26,12 +23,12 @@ export interface OptionItem extends Item {
   avatar?: string;
 }
 
-export interface AutoCompleteInputFieldPartProps
-  extends FormContainerPartProps {
-  reactChakraStyle?:
-    | ChakraStylesConfig<Item, boolean, GroupBase<Item>>
-    | undefined;
-}
+// export interface AutoCompleteInputFieldPartProps
+//   extends FormContainerPartProps {
+//   reactChakraStyle?:
+//     | ChakraStylesConfig<Item, boolean, GroupBase<Item>>
+//     | undefined;
+// }
 
 export interface AutoCompleteInputFieldProps
   extends Omit<FormContainerProps, 'partProps'> {
@@ -45,7 +42,7 @@ export interface AutoCompleteInputFieldProps
   autoFocus?: boolean;
   showDropdownIndicator?: boolean;
   placeholder?: string;
-  partProps?: Partial<AutoCompleteInputFieldPartProps>;
+  // partProps?: Partial<AutoCompleteInputFieldPartProps>;
   value?: string | string[] | number | number[];
   onChangeValue: (...event: any[]) => void;
 }
@@ -58,7 +55,6 @@ const AutoCompleteInput = (props: AutoCompleteInputFieldProps) => {
     placement,
     showDropdownIndicator,
     errorMsg,
-    partProps,
     autoFocus,
     disabled,
     onChangeValue,
@@ -79,7 +75,7 @@ const AutoCompleteInput = (props: AutoCompleteInputFieldProps) => {
     <FormContainer {...props}>
       <Select
         options={options}
-        chakraStyles={partProps?.reactChakraStyle ?? styles}
+        chakraStyles={styles}
         placeholder={placeholder}
         menuPlacement={placement ?? 'auto'}
         isMulti={multiple}
