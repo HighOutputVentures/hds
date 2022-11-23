@@ -13,10 +13,11 @@ export interface InputFieldProps extends Omit<FormContainerProps, 'partProps'> {
     disabled?: boolean;
     readOnly?: boolean;
     defaultValue?: string;
+    __testId?: string;
     variant?: string;
     _hover?: CSSObject;
     onPressEnter?(): void;
     inputValue?: string | undefined;
 }
-declare const InputField: React.ForwardRefExoticComponent<Pick<InputFieldProps, "onChange" | "onBlur" | "name" | "min" | "max" | "maxLength" | "minLength" | "pattern" | "required" | "disabled" | "id" | "label" | "labelColor" | "errorMsg" | "helperMsg" | "children" | "variant" | "size" | "colorScheme" | "orientation" | "styleConfig" | "_hover" | "type" | "autoFocus" | "placeholder" | "leftIcon" | "rightIcon" | "autoComplete" | "readOnly" | "defaultValue" | "onPressEnter" | "inputValue"> & React.RefAttributes<HTMLInputElement>>;
+declare const InputField: React.ForwardRefExoticComponent<Pick<InputFieldProps, "onChange" | "onBlur" | "name" | "min" | "max" | "maxLength" | "minLength" | "pattern" | "required" | "disabled" | "id" | "label" | "labelColor" | "errorMsg" | "helperMsg" | "children" | "variant" | "size" | "colorScheme" | "orientation" | "styleConfig" | "_hover" | "type" | "autoFocus" | "placeholder" | "leftIcon" | "rightIcon" | "autoComplete" | "readOnly" | "defaultValue" | "__testId" | "onPressEnter" | "inputValue"> & React.RefAttributes<HTMLInputElement>>;
 export default InputField;

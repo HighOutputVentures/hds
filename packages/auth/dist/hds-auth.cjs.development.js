@@ -616,25 +616,13 @@ var CredentialLoginForm = function CredentialLoginForm(props) {
     label: (nameLabel == null ? void 0 : nameLabel.charAt(0).toUpperCase()) + (nameLabel == null ? void 0 : nameLabel.slice(1)),
     placeholder: "Input your " + (nameLabel == null ? void 0 : nameLabel.toLowerCase()),
     errorMsg: (_formState$errors$nam = formState.errors.name) == null ? void 0 : _formState$errors$nam.message,
-    disabled: formState.isSubmitting,
-    partProps: {
-      input: {
-        'aria-label': 'name-input',
-        role: 'input'
-      }
-    }
+    disabled: formState.isSubmitting
   })) : React__default.createElement(hdsForms.InputField, Object.assign({}, register('email'), {
     id: 'email',
     label: "Email",
     placeholder: "Input your email",
     errorMsg: (_formState$errors$ema = formState.errors.email) == null ? void 0 : _formState$errors$ema.message,
-    disabled: formState.isSubmitting,
-    partProps: {
-      input: {
-        'aria-label': 'email-input',
-        role: 'input'
-      }
-    }
+    disabled: formState.isSubmitting
   })), React__default.createElement(hdsForms.InputField, Object.assign({}, register('password'), {
     id: "password",
     label: "Password",
@@ -657,13 +645,7 @@ var CredentialLoginForm = function CredentialLoginForm(props) {
           return !prev;
         });
       }
-    }, showPassword ? React__default.createElement(icons.ViewIcon, null) : React__default.createElement(icons.ViewOffIcon, null)),
-    partProps: {
-      input: {
-        'aria-label': 'password-input',
-        role: 'input'
-      }
-    }
+    }, showPassword ? React__default.createElement(icons.ViewIcon, null) : React__default.createElement(icons.ViewOffIcon, null))
   }))), React__default.createElement(react.Button, {
     w: "full",
     variant: "primary",
@@ -832,13 +814,7 @@ var OTPVerificationForm = function OTPVerificationForm(props) {
   }, register('emailAddress'), {
     errorMsg: (_errors$emailAddress = errors.emailAddress) == null ? void 0 : _errors$emailAddress.message,
     disabled: isSubmitting,
-    placeholder: 'Enter your email address',
-    partProps: {
-      input: {
-        'aria-label': 'email-input',
-        role: 'input'
-      }
-    }
+    placeholder: 'Enter your email address'
   })), React__default.createElement(react.Button, {
     variant: 'primary',
     type: "submit",

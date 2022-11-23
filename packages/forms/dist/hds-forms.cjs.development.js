@@ -51,6 +51,7 @@ var InputField = /*#__PURE__*/React.forwardRef(function (props, ref) {
     type = _props$type === void 0 ? 'text' : _props$type,
     _props$size = props.size,
     size = _props$size === void 0 ? 'md' : _props$size,
+    __testId = props.__testId,
     maxLength = props.maxLength,
     autoFocus = props.autoFocus,
     placeholder = props.placeholder,
@@ -102,7 +103,7 @@ var InputField = /*#__PURE__*/React.forwardRef(function (props, ref) {
     },
     value: inputValue ? inputValue.trim() : undefined,
     role: "input",
-    "data-testid": uid + "-input-field-input"
+    "data-testid": __testId != null ? __testId : uid + "-input-field-input"
   }), rightIcon && React__default.createElement(react.InputRightElement
   // {...partProps?.inputRightElement}
   , {
