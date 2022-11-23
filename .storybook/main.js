@@ -12,8 +12,9 @@ module.exports = {
     "@storybook/addon-a11y",
     "@storybook/addon-docs",
     "@storybook/mdx2-csf",
+    "@locofy/storybook-addon",
   ],
-
+  staticDirs: ["../assets"],
   features: {
     previewMdx2: true, // 👈 MDX 2 enabled here
     postcss: true,

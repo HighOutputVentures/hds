@@ -1,0 +1,55 @@
+{
+  "version": "0.1.5",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "format": "prettier --write ."
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "name": "@highoutput/hds-tag",
+  "author": "calvo-jp",
+  "module": "dist/hds-tag.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/hds-tag.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/hds-tag.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "jest": {
+    "verbose": true
+  },
+  "gitHead": "2cc842169e828ff56ef57e039534fb0414854443"
+}

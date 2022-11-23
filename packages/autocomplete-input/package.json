@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.16",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -48,9 +48,12 @@
       "limit": "10 KB"
     }
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
-    "@highoutput/hds": "^0.1.27",
-    "@highoutput/hds-forms": "^0.1.1",
+    "@highoutput/hds-forms": "^0.1.15",
     "chakra-react-select": "4.4.0"
-  }
+  },
+  "gitHead": "2cc842169e828ff56ef57e039534fb0414854443"
 }

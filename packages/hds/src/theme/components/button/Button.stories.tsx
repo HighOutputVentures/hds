@@ -18,7 +18,7 @@ import SocialButton from '../../../components/Button/SocialButton';
 import ThemeProvider from '../../../components/ThemeProvider';
 
 export default {
-  title: 'System Design/Button System',
+  title: 'Components/Button System',
   component: Text,
 } as ComponentMeta<typeof Text>;
 interface ButtonRowProps {
@@ -53,12 +53,12 @@ const Template: ComponentStory<typeof Text> = () => (
         <Thead>
           <Tr>
             <Th>
-              <Text size="heading-web-6">
+              <Text size="header-5">
                 <Text size="paragraph-md-bold">Component Type</Text>
               </Text>
             </Th>
             <Th>
-              <Text size="heading-web-5">
+              <Text size="header-5">
                 <Text size="paragraph-md-bold">Variant Type</Text>
               </Text>
             </Th>
@@ -101,17 +101,17 @@ const Template: ComponentStory<typeof Text> = () => (
             button={<Button variant={'ghost-error'}>Ghost Error</Button>}
           />
           <ButtonRow
-            type="CloseButton"
+            type="IconButton"
             variant="solid-close-btn"
             button={<CloseButton variant={'solid-close-btn'} />}
           />
           <ButtonRow
-            type="CloseButton"
+            type="IconButton"
             variant="outline-close-btn"
             button={<CloseButton variant={'outline-close-btn'} />}
           />
           <ButtonRow
-            type="CloseButton"
+            type="IconButton"
             variant="ghost-close-btn"
             button={<CloseButton variant={'ghost-close-btn'} />}
           />

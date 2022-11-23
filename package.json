@@ -8,24 +8,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=c97132e80915",
-    "test:hds": "npx nx test @highoutput/hds",
-    "build:hds": "npx nx build @highoutput/hds",
-    "test:spinner": "npx nx test @highoutput/hds-spinner",
-    "build:spinner": "npx nx build @highoutput/hds-spinner",
-    "test:icons": "npx nx test @highoutput/hds-icons",
-    "build:icons": "npx nx build @highoutput/hds-icons",
-    "test:array-field": "npx nx test @highoutput/hds-array-field",
-    "build:array-field": "npx nx build @highoutput/hds-array-field",
-    "test:auto-form": "npx nx test @highoutput/hds-auto-form",
-    "build:auto-form": "npx nx build @highoutput/hds-auto-form",
-    "test:contact-us": "npx nx test @highoutput/hds-contact-us",
-    "build:contact-us": "npx nx build @highoutput/hds-contact-us",
-    "test:auth": "npx nx test @highoutput/hds-auth",
-    "build:auth": "npx nx build @highoutput/hds-auth",
-    "test:forms": "npx nx test @highoutput/hds-forms",
-    "build:forms": "npx nx build @highoutput/hds-forms",
-    "test:autocomplete-input": "npx nx test @highoutput/hds-autocomplete-input",
-    "build:autocomplete-input": "npx nx build @highoutput/hds-autocomplete-input"
+    "test": "npx lerna run test",
+    "build": "npx lerna run build"
   },
   "devDependencies": {
     "@babel/core": "7.20.2",
@@ -33,6 +17,7 @@
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
     "@chakra-ui/cli": "2.1.8",
+    "@locofy/storybook-addon": "^0.2.64",
     "@mdx-js/mdx": "2.1.5",
     "@mdx-js/react": "2.1.5",
     "@nrwl/nx-cloud": "latest",
@@ -63,7 +48,8 @@
     "nx": "14.8.4",
     "tsdx": "0.14.1",
     "tslib": "2.4.0",
-    "typescript": "4.8.4"
+    "typescript": "4.8.4",
+    "vercel": "^28.5.6"
   },
   "dependencies": {
     "@chakra-ui/icons": "2.0.11",

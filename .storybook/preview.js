@@ -15,6 +15,7 @@ export const parameters = {
         "Provider and Hooks",
         "Layouts",
         "Components",
+        "Utilities",
         "Releases",
       ],
     },

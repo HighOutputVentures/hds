@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom';
-import { buttonSizes, buttonVariants } from './button';
+import { buttonSizes } from './sizes';
+import { buttonVariants } from './variants';
 
 type VariantTypes =
   | 'solid-primary'
@@ -11,6 +12,7 @@ type VariantTypes =
   | 'solid-close-btn'
   | 'outline-close-btn'
   | 'ghost-close-btn';
+
 type ButtonSizeTypes =
   | 'sm'
   | 'md'
@@ -38,8 +40,6 @@ describe('Test button variants values', () => {
 
     boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
     _hover: {
-      bg: 'brand.primary.900',
-      boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F4EBFF',
       _disabled: {
         bg: 'brand.primary.500',
         border: 'none',
@@ -64,7 +64,6 @@ describe('Test button variants values', () => {
     borderRadius: '4px',
     _hover: {
       bg: '#FFFFFF',
-      boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7',
       _disabled: {
         bg: '#FFFFFF',
         border: '1px solid #D1D1D1',
@@ -91,7 +90,6 @@ describe('Test button variants values', () => {
     borderRadius: '4px',
     _hover: {
       bg: '#E3E3FC',
-      boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F4EBFF',
       _disabled: {
         bg: '#E3E3FC',
         border: '1px solid #E3E3FC',
@@ -118,7 +116,6 @@ describe('Test button variants values', () => {
     _hover: {
       bg: 'interface.error.700',
       border: '1px solid #DC180C',
-      boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #FEE4E2',
       _disabled: {
         bg: '#FCEAE8',
         border: '1px solid #FCEAE8',
@@ -145,7 +142,6 @@ describe('Test button variants values', () => {
     _hover: {
       bg: 'white',
       border: '1px solid #DC180C',
-      boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #FEE4E2',
       _disabled: {
         bg: '#FFFFFF',
         border: '1px solid #FCD2CF',
@@ -172,7 +168,6 @@ describe('Test button variants values', () => {
     _hover: {
       bg: 'interface.error.500',
       border: '1px solid #FCEAE8',
-      boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #FEE4E2',
       _disabled: {
         bg: 'rgba(252, 234, 232, 0.5)',
         border: '1px solid rgba(252, 234, 232, 0.5)',

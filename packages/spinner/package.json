@@ -1,5 +1,5 @@
 {
-  "version": "0.1.4",
+  "version": "0.1.9",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -48,6 +48,9 @@
       "limit": "10 KB"
     }
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@size-limit/preset-small-lib": "7.0.8",
     "size-limit": "7.0.8"
@@ -58,5 +61,5 @@
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
     }
   },
-  "gitHead": "e085a4a0b8f0b617a113a065319faaf9fb2cee58"
+  "gitHead": "2cc842169e828ff56ef57e039534fb0414854443"
 }

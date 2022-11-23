@@ -8,7 +8,7 @@ import ThemeProvider from "../../packages/hds/src/components/ThemeProvider";
 const HDSCore = () => {
   return (
     <ThemeProvider>
-      <Text size="heading-web-3" mb={5}>
+      <Text size="header-3" mb={5}>
         HDS Contribution - Core
       </Text>
 
@@ -42,7 +42,7 @@ const HDSCore = () => {
 `}
       </SyntaxHighlighter>
 
-      <Text size="heading-web-5" mt={5} mb={5}>
+      <Text size="header-5" mt={5} mb={5}>
         Component Guide
       </Text>
 
@@ -82,7 +82,7 @@ export {
 `}
       </SyntaxHighlighter>
 
-      <Text size="heading-web-5" mt={5} mb={5}>
+      <Text size="header-5" mt={5} mb={5}>
         Hook Guide
       </Text>
 
@@ -119,7 +119,7 @@ export { useSampleHook }
 `}
       </SyntaxHighlighter>
 
-      <Text size="heading-web-5" mt={5} mb={5}>
+      <Text size="header-5" mt={5} mb={5}>
         Utility Guide
       </Text>
 
@@ -130,7 +130,7 @@ export { useSampleHook }
         ame as hook if needed only.
       </Text>
 
-      <Text size="heading-web-5" mt={5} mb={5}>
+      <Text size="header-5" mt={5} mb={5}>
         Theme Guide
       </Text>
 
@@ -248,7 +248,7 @@ export const colors = {
         </Link>
       </Text>
 
-      <Text size="heading-web-5" mb={5}>
+      <Text size="header-5" mb={5}>
         How to run library
       </Text>
 

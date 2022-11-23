@@ -1,4 +1,4 @@
-import { sizeText } from './text/text';
+import Text from './text/text';
 
 export const Form = {
   parts: [
@@ -55,7 +55,7 @@ export const Form = {
     },
   },
   sizes: {
-    formLabel: sizeText,
+    formLabel: Text.sizes,
   },
   variants: {
     outline: {

@@ -1,5 +1,5 @@
 {
-  "version": "0.1.10",
+  "version": "0.1.12",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -52,11 +52,17 @@
     "@size-limit/preset-small-lib": "7.0.8",
     "size-limit": "7.0.8"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "jest": {
     "moduleNameMapper": {
       "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
     }
   },
-  "gitHead": "220c468183d0032ba2f8eb5b26d89cf5712292c0"
+  "gitHead": "220c468183d0032ba2f8eb5b26d89cf5712292c0",
+  "dependencies": {
+    "@chakra-ui/react": "^2.3.7"
+  }
 }

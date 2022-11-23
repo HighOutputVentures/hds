@@ -38,7 +38,6 @@ const Template: ComponentStory<typeof Pagination> = (props) => {
         loading={args.loading}
         onPageChange={handlePageChange}
         onSizeChange={handleSizeChange}
-        partProps={args.styles}
       />
     </ThemeProvider>
   );
@@ -58,19 +57,4 @@ Default.args = {
   onPageChange: noop,
   onSizeChange: noop,
   total: 75,
-  partProps: {
-    container: {
-      fontSize: 'sm',
-    },
-    controls: {
-      rounded: 'full',
-    },
-    controlIcons: {
-      fontSize: 'xl',
-    },
-    dropdown: {
-      border: '1px solid',
-      borderColor: 'gray.200',
-    },
-  },
 };

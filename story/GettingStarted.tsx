@@ -4,7 +4,7 @@ import {
   Code,
   Link,
   ListItem,
-  OrderedList,
+  UnorderedList,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -21,7 +21,7 @@ const GettingStarted = () => {
       <Box>
         <Stack direction="row" mb={5}>
           <HovIcon />
-          <Text pos="relative" top={-1} size="heading-web-3">
+          <Text pos="relative" top={-1} size="header-3">
             HOV Design System
           </Text>
         </Stack>
@@ -33,7 +33,7 @@ const GettingStarted = () => {
           Storybook will be used for documentation and testing.
         </Text>
 
-        <OrderedList mb={5}>
+        <UnorderedList mb={5}>
           <ListItem>
             <Text size="paragraph-md-default">
               Reusable block of components
@@ -45,7 +45,7 @@ const GettingStarted = () => {
           <ListItem>
             <Text size="paragraph-md-default">Easy to implement</Text>
           </ListItem>
-        </OrderedList>
+        </UnorderedList>
 
         <Text size="paragraph-md-default" marginBottom={2}>
           To install package, run command:
@@ -101,11 +101,11 @@ export default Form;
 `}
         </SyntaxHighlighter>
 
-        <Text mt={5} mb={5} size="heading-web-4">
+        <Text mt={5} mb={5} size="header-4">
           Check out for more information
         </Text>
 
-        <OrderedList mb={5}>
+        <UnorderedList mb={5}>
           <ListItem>
             <Text size="paragraph-md-default">
               <Link
@@ -124,13 +124,13 @@ export default Form;
               </Link>
             </Text>
           </ListItem>
-        </OrderedList>
+        </UnorderedList>
 
-        <Text mb={5} size="heading-web-4">
+        <Text mb={5} size="header-4">
           Other Packages
         </Text>
 
-        <OrderedList mb={5}>
+        <UnorderedList mb={5}>
           <ListItem>
             <Text size="paragraph-md-default">
               <Link
@@ -201,7 +201,77 @@ export default Form;
               </Link>
             </Text>
           </ListItem>
-        </OrderedList>
+          <ListItem>
+            <Text size="paragraph-md-default">
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-forms"
+                isExternal
+              >
+                @highoutput/hds-forms
+              </Link>
+            </Text>
+          </ListItem>
+          <ListItem>
+            <Text size="paragraph-md-default">
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-autocomplete-input"
+                isExternal
+              >
+                @highoutput/hds-autocomplete-input
+              </Link>
+            </Text>
+          </ListItem>
+          <ListItem>
+            <Text size="paragraph-md-default">
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-utilities"
+                isExternal
+              >
+                @highoutput/hds-utilities
+              </Link>
+            </Text>
+          </ListItem>
+          <ListItem>
+            <Text size="paragraph-md-default">
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-tag"
+                isExternal
+              >
+                @highoutput/hds-tag
+              </Link>
+            </Text>
+          </ListItem>
+          <ListItem>
+            <Text size="paragraph-md-default">
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-switch"
+                isExternal
+              >
+                @highoutput/hds-switch
+              </Link>
+            </Text>
+          </ListItem>
+          <ListItem>
+            <Text size="paragraph-md-default">
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-avatar"
+                isExternal
+              >
+                @highoutput/hds-avatar
+              </Link>
+            </Text>
+          </ListItem>
+          <ListItem>
+            <Text size="paragraph-md-default">
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-slider"
+                isExternal
+              >
+                @highoutput/hds-slider
+              </Link>
+            </Text>
+          </ListItem>
+        </UnorderedList>
       </Box>
     </ThemeProvider>
   );

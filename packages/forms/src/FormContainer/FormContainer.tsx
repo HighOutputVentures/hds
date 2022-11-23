@@ -55,6 +55,7 @@ const FormContainer: FC<FormContainerProps> = ({
       isReadOnly={disabled}
       data-testid={`${uid}-form-container-form-control`}
       sx={styles.formControl}
+      aria-label="Form Group"
       {...partProps?.formControl}
     >
       {label && (
