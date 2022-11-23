@@ -1,6 +1,9 @@
 module.exports = {
-  rollup(config, options) {
-    config.external = (id) => false;
+  rollup(config) {
+    if (config.output.format === 'umd') {
+      delete config.external;
+    }
+
     return config;
   },
 };
