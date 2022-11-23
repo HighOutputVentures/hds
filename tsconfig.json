@@ -19,6 +19,6 @@
     "allowJs": true,
     "composite": true
   },
-  "include": ["packages"],
+  "include": ["packages/**/src", "packages/**/package.json"],
   "exclude": ["node_modules"]
 }
