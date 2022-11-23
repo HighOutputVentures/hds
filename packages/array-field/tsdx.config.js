@@ -1,7 +1,6 @@
 module.exports = {
   rollup(config, options) {
-    config.plugins = [...config.plugins];
-
+    config.external = (id) => false;
     return config;
   },
 };
