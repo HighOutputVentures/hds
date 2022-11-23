@@ -65,12 +65,12 @@ const OTPVerificationForm = (props: OTPVerificationProps) => {
             errorMsg={errors.emailAddress?.message}
             disabled={isSubmitting}
             placeholder={'Enter your email address'}
-            partProps={{
-              input: {
-                'aria-label': 'email-input',
-                role: 'input',
-              },
-            }}
+            // partProps={{
+            //   input: {
+            //     'aria-label': 'email-input',
+            //     role: 'input',
+            //   },
+            // }}
           />
 
           <Button

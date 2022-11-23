@@ -96,12 +96,12 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
             placeholder={`Input your ${nameLabel?.toLowerCase()}`}
             errorMsg={formState.errors.name?.message}
             disabled={formState.isSubmitting}
-            partProps={{
-              input: {
-                'aria-label': 'name-input',
-                role: 'input',
-              },
-            }}
+            // partProps={{
+            //   input: {
+            //     'aria-label': 'name-input',
+            //     role: 'input',
+            //   },
+            // }}
           />
         ) : (
           <InputField
@@ -111,9 +111,9 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
             placeholder="Input your email"
             errorMsg={formState.errors.email?.message}
             disabled={formState.isSubmitting}
-            partProps={{
-              input: { 'aria-label': 'email-input', role: 'input' },
-            }}
+            // partProps={{
+            //   input: { 'aria-label': 'email-input', role: 'input' },
+            // }}
           />
         )}
 
@@ -137,12 +137,12 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
               {showPassword ? <ViewIcon /> : <ViewOffIcon />}
             </Button>
           }
-          partProps={{
-            input: {
-              'aria-label': 'password-input',
-              role: 'input',
-            },
-          }}
+          // partProps={{
+          //   input: {
+          //     'aria-label': 'password-input',
+          //     role: 'input',
+          //   },
+          // }}
         />
       </Stack>
       <Button
