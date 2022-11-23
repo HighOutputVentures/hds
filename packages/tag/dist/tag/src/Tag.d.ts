@@ -31,59 +31,59 @@ declare type BaseProps = {
 };
 export declare type TagProps = SystemStyleObject & BaseProps & Badgeable & Closable & Checkable;
 declare const _default: React.ForwardRefExoticComponent<(import("@chakra-ui/styled-system").CSSWithMultiValues & BaseProps & {
-    badge?: false;
+    badge?: false | undefined;
 } & {
-    closable?: false;
+    closable?: false | undefined;
 } & {
-    checkbox?: false;
+    checkbox?: false | undefined;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & BaseProps & {
-    badge?: false;
+    badge?: false | undefined;
 } & {
-    closable?: false;
+    closable?: false | undefined;
 } & {
     checkbox: true;
-    checked?: boolean;
+    checked?: boolean | undefined;
     onCheck(value: boolean): void;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & BaseProps & {
-    badge?: false;
+    badge?: false | undefined;
 } & {
     closable: true;
     onClose(): void;
 } & {
-    checkbox?: false;
+    checkbox?: false | undefined;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & BaseProps & {
-    badge?: false;
+    badge?: false | undefined;
 } & {
     closable: true;
     onClose(): void;
 } & {
     checkbox: true;
-    checked?: boolean;
-    onCheck(value: boolean): void;
-} & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & BaseProps & {
-    badge: true;
-    badgeCount: number;
-} & {
-    closable?: false;
-} & {
-    checkbox?: false;
-} & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & BaseProps & {
-    badge: true;
-    badgeCount: number;
-} & {
-    closable?: false;
-} & {
-    checkbox: true;
-    checked?: boolean;
+    checked?: boolean | undefined;
     onCheck(value: boolean): void;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & BaseProps & {
     badge: true;
     badgeCount: number;
 } & {
+    closable?: false | undefined;
+} & {
+    checkbox?: false | undefined;
+} & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & BaseProps & {
+    badge: true;
+    badgeCount: number;
+} & {
+    closable?: false | undefined;
+} & {
+    checkbox: true;
+    checked?: boolean | undefined;
+    onCheck(value: boolean): void;
+} & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & BaseProps & {
+    badge: true;
+    badgeCount: number;
+} & {
     closable: true;
     onClose(): void;
 } & {
-    checkbox?: false;
+    checkbox?: false | undefined;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & BaseProps & {
     badge: true;
     badgeCount: number;
@@ -92,62 +92,54 @@ declare const _default: React.ForwardRefExoticComponent<(import("@chakra-ui/styl
     onClose(): void;
 } & {
     checkbox: true;
-    checked?: boolean;
+    checked?: boolean | undefined;
     onCheck(value: boolean): void;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursivePseudo<import("@chakra-ui/styled-system").CSSWithMultiValues> & BaseProps & {
-    badge?: false;
+    badge?: false | undefined;
 } & {
-    closable?: false;
+    closable?: false | undefined;
 } & {
-    checkbox?: false;
+    checkbox?: false | undefined;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursivePseudo<import("@chakra-ui/styled-system").CSSWithMultiValues> & BaseProps & {
-    badge?: false;
+    badge?: false | undefined;
 } & {
-    closable?: false;
+    closable?: false | undefined;
 } & {
     checkbox: true;
-    checked?: boolean;
+    checked?: boolean | undefined;
     onCheck(value: boolean): void;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursivePseudo<import("@chakra-ui/styled-system").CSSWithMultiValues> & BaseProps & {
-    badge?: false;
+    badge?: false | undefined;
 } & {
     closable: true;
     onClose(): void;
 } & {
-    checkbox?: false;
+    checkbox?: false | undefined;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursivePseudo<import("@chakra-ui/styled-system").CSSWithMultiValues> & BaseProps & {
-    badge?: false;
+    badge?: false | undefined;
 } & {
     closable: true;
     onClose(): void;
 } & {
     checkbox: true;
-    checked?: boolean;
+    checked?: boolean | undefined;
     onCheck(value: boolean): void;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursivePseudo<import("@chakra-ui/styled-system").CSSWithMultiValues> & BaseProps & {
     badge: true;
     badgeCount: number;
 } & {
-    closable?: false;
+    closable?: false | undefined;
 } & {
-    checkbox?: false;
+    checkbox?: false | undefined;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursivePseudo<import("@chakra-ui/styled-system").CSSWithMultiValues> & BaseProps & {
     badge: true;
     badgeCount: number;
 } & {
-    closable?: false;
+    closable?: false | undefined;
 } & {
     checkbox: true;
-    checked?: boolean;
+    checked?: boolean | undefined;
     onCheck(value: boolean): void;
-} & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursivePseudo<import("@chakra-ui/styled-system").CSSWithMultiValues> & BaseProps & {
-    badge: true;
-    badgeCount: number;
-} & {
-    closable: true;
-    onClose(): void;
-} & {
-    checkbox?: false;
 } & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursivePseudo<import("@chakra-ui/styled-system").CSSWithMultiValues> & BaseProps & {
     badge: true;
     badgeCount: number;
@@ -155,63 +147,71 @@ declare const _default: React.ForwardRefExoticComponent<(import("@chakra-ui/styl
     closable: true;
     onClose(): void;
 } & {
+    checkbox?: false | undefined;
+} & React.RefAttributes<HTMLDivElement>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursivePseudo<import("@chakra-ui/styled-system").CSSWithMultiValues> & BaseProps & {
+    badge: true;
+    badgeCount: number;
+} & {
+    closable: true;
+    onClose(): void;
+} & {
     checkbox: true;
-    checked?: boolean;
+    checked?: boolean | undefined;
     onCheck(value: boolean): void;
 } & React.RefAttributes<HTMLDivElement>) | (Pick<import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursiveCSSSelector<import("@chakra-ui/styled-system").CSSWithMultiValues> & BaseProps & {
-    badge?: false;
+    badge?: false | undefined;
 } & {
-    closable?: false;
+    closable?: false | undefined;
 } & {
-    checkbox?: false;
+    checkbox?: false | undefined;
 }, React.Key> & React.RefAttributes<HTMLDivElement>) | (Pick<import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursiveCSSSelector<import("@chakra-ui/styled-system").CSSWithMultiValues> & BaseProps & {
-    badge?: false;
+    badge?: false | undefined;
 } & {
-    closable?: false;
+    closable?: false | undefined;
 } & {
     checkbox: true;
-    checked?: boolean;
+    checked?: boolean | undefined;
     onCheck(value: boolean): void;
 }, React.Key> & React.RefAttributes<HTMLDivElement>) | (Pick<import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursiveCSSSelector<import("@chakra-ui/styled-system").CSSWithMultiValues> & BaseProps & {
-    badge?: false;
+    badge?: false | undefined;
 } & {
     closable: true;
     onClose(): void;
 } & {
-    checkbox?: false;
+    checkbox?: false | undefined;
 }, React.Key> & React.RefAttributes<HTMLDivElement>) | (Pick<import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursiveCSSSelector<import("@chakra-ui/styled-system").CSSWithMultiValues> & BaseProps & {
-    badge?: false;
+    badge?: false | undefined;
 } & {
     closable: true;
     onClose(): void;
 } & {
     checkbox: true;
-    checked?: boolean;
-    onCheck(value: boolean): void;
-}, React.Key> & React.RefAttributes<HTMLDivElement>) | (Pick<import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursiveCSSSelector<import("@chakra-ui/styled-system").CSSWithMultiValues> & BaseProps & {
-    badge: true;
-    badgeCount: number;
-} & {
-    closable?: false;
-} & {
-    checkbox?: false;
-}, React.Key> & React.RefAttributes<HTMLDivElement>) | (Pick<import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursiveCSSSelector<import("@chakra-ui/styled-system").CSSWithMultiValues> & BaseProps & {
-    badge: true;
-    badgeCount: number;
-} & {
-    closable?: false;
-} & {
-    checkbox: true;
-    checked?: boolean;
+    checked?: boolean | undefined;
     onCheck(value: boolean): void;
 }, React.Key> & React.RefAttributes<HTMLDivElement>) | (Pick<import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursiveCSSSelector<import("@chakra-ui/styled-system").CSSWithMultiValues> & BaseProps & {
     badge: true;
     badgeCount: number;
 } & {
+    closable?: false | undefined;
+} & {
+    checkbox?: false | undefined;
+}, React.Key> & React.RefAttributes<HTMLDivElement>) | (Pick<import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursiveCSSSelector<import("@chakra-ui/styled-system").CSSWithMultiValues> & BaseProps & {
+    badge: true;
+    badgeCount: number;
+} & {
+    closable?: false | undefined;
+} & {
+    checkbox: true;
+    checked?: boolean | undefined;
+    onCheck(value: boolean): void;
+}, React.Key> & React.RefAttributes<HTMLDivElement>) | (Pick<import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursiveCSSSelector<import("@chakra-ui/styled-system").CSSWithMultiValues> & BaseProps & {
+    badge: true;
+    badgeCount: number;
+} & {
     closable: true;
     onClose(): void;
 } & {
-    checkbox?: false;
+    checkbox?: false | undefined;
 }, React.Key> & React.RefAttributes<HTMLDivElement>) | (Pick<import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursiveCSSSelector<import("@chakra-ui/styled-system").CSSWithMultiValues> & BaseProps & {
     badge: true;
     badgeCount: number;
@@ -220,7 +220,7 @@ declare const _default: React.ForwardRefExoticComponent<(import("@chakra-ui/styl
     onClose(): void;
 } & {
     checkbox: true;
-    checked?: boolean;
+    checked?: boolean | undefined;
     onCheck(value: boolean): void;
 }, React.Key> & React.RefAttributes<HTMLDivElement>)>;
 export default _default;

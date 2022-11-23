@@ -1,5 +1,5 @@
 import { Button as Button$2, Icon, IconButton, extendTheme as extendTheme$1, ChakraProvider } from '@chakra-ui/react';
-export { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Alert, AlertDescription, AlertDialog, AlertDialogBody, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogOverlay, AlertIcon, AlertTitle, AspectRatio, Avatar, AvatarBadge, AvatarGroup, Badge, Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, ButtonGroup, ButtonSpinner, Center, Checkbox, CheckboxGroup, Circle, CircularProgress, CircularProgressLabel, Collapse, Container, Divider, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Fade, Flex, FormControl, FormErrorIcon, FormErrorMessage, FormHelperText, FormLabel, GlobalStyle, Grid, GridItem, HStack, Heading, Hide, Icon, IconButton, Image, Img, Input, InputAddon, InputGroup, InputLeftAddon, InputLeftElement, InputRightAddon, InputRightElement, Kbd, LightMode, Link, LinkBox, LinkOverlay, List, ListIcon, ListItem, Menu, MenuButton, MenuDivider, MenuGroup, MenuItem, MenuItemOption, MenuList, MenuOptionGroup, Modal, ModalBody, ModalCloseButton, ModalContent, ModalContextProvider, ModalFocusScope, ModalFooter, ModalHeader, ModalOverlay, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, OrderedList, PinInputField as Pin, PinInput, Popover, PopoverAnchor, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Portal, Progress, ProgressLabel, Radio, RadioGroup, ScaleFade, Select, Show, SimpleGrid, Skeleton, SkeletonCircle, SkeletonText, Slide, SlideFade, Slider, SliderFilledTrack, SliderMark, SliderThumb, SliderTrack, Spacer, Spinner, Square, Stack, Stat, StatArrow, StatGroup, StatHelpText, StatLabel, StatNumber, Switch, Tab, TabList, TabPanel, TabPanels, Table, TableCaption, TableContainer, Tabs, Tag, TagCloseButton, TagLabel, TagLeftIcon, TagRightIcon, Tbody, Td, Text, Textarea, Tfoot, Th, Thead, Tooltip, Tr, UnorderedList, VStack, Wrap, WrapItem, chakra, createStandaloneToast, forwardRef, keyframes, shouldShowFallbackImage, useBoolean, useBreakpoint, useBreakpointValue, useButtonGroup, useCheckbox, useCheckboxGroup, useClipboard, useColorModeValue, useConst, useDisclosure, useImage, useInputGroupStyles, useMediaQuery, useMenuButton, useModal, useMultiStyleConfig, useOutsideClick, usePrefersReducedMotion, useRadio, useRadioGroup, useSlider, useStyleConfig, useTheme, useToast } from '@chakra-ui/react';
+export { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Alert, AlertDescription, AlertDialog, AlertDialogBody, AlertDialogCloseButton, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogOverlay, AlertIcon, AlertTitle, AspectRatio, Avatar, AvatarBadge, AvatarGroup, Badge, Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, ButtonGroup, ButtonSpinner, Center, Checkbox, CheckboxGroup, CheckboxIcon, Circle, CircularProgress, CircularProgressLabel, Collapse, Container, Divider, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Fade, Flex, FormControl, FormErrorIcon, FormErrorMessage, FormHelperText, FormLabel, GlobalStyle, Grid, GridItem, HStack, Heading, Hide, Icon, IconButton, Image, Img, Input, InputAddon, InputGroup, InputLeftAddon, InputLeftElement, InputRightAddon, InputRightElement, Kbd, LightMode, Link, LinkBox, LinkOverlay, List, ListIcon, ListItem, Menu, MenuButton, MenuDivider, MenuGroup, MenuItem, MenuItemOption, MenuList, MenuOptionGroup, Modal, ModalBody, ModalCloseButton, ModalContent, ModalContextProvider, ModalFocusScope, ModalFooter, ModalHeader, ModalOverlay, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, OrderedList, PinInput, PinInputField, Popover, PopoverAnchor, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Portal, Progress, ProgressLabel, Radio, RadioGroup, RangeSlider, RangeSliderFilledTrack, RangeSliderMark, RangeSliderProvider, RangeSliderThumb, RangeSliderTrack, ScaleFade, Select, Show, SimpleGrid, Skeleton, SkeletonCircle, SkeletonText, Slide, SlideFade, Slider, SliderFilledTrack, SliderMark, SliderThumb, SliderTrack, Spacer, Spinner, Square, Stack, Stat, StatArrow, StatGroup, StatHelpText, StatLabel, StatNumber, Switch, Tab, TabList, TabPanel, TabPanels, Table, TableCaption, TableContainer, Tabs, Tag, TagCloseButton, TagLabel, TagLeftIcon, TagRightIcon, Tbody, Td, Text, Textarea, Tfoot, Th, Thead, Tooltip, Tr, UnorderedList, VStack, Wrap, WrapItem, createStandaloneToast, forwardRef, chakra as hds, keyframes, shouldShowFallbackImage, useBoolean, useBreakpoint, useBreakpointValue, useButtonGroup, useCheckbox, useCheckboxGroup, useClipboard, useColorModeValue, useConst, useDisclosure, useImage, useInputGroupStyles, useMediaQuery, useMenuButton, useModal, useMultiStyleConfig, useOutsideClick, usePrefersReducedMotion, useRadio, useRadioGroup, useSlider, useStyleConfig, useTheme, useToast } from '@chakra-ui/react';
 import React, { useId } from 'react';
 import { CloseIcon } from '@chakra-ui/icons';
 import { TwitterIcon, GoogleIcon, FigmaIcon, FacebookIcon, DribbleIcon, AppleIcon } from '@highoutput/hds-icons';
@@ -755,51 +755,71 @@ var Button$1 = {
 var Checkbox = {
   baseStyle: {
     control: {
+      borderColor: 'neutrals.300',
       borderRadius: 'base',
-      padding: '6px'
+      padding: '6px',
+      _focus: {
+        boxShadow: '0px 0px 0px 4px #F4EBFF'
+      },
+      bg: 'alpha.white.500',
+      _disabled: {
+        borderColor: 'neutrals.200',
+        bg: 'neutrals.100',
+        _checked: {
+          borderColor: 'neutrals.200',
+          bg: 'neutrals.100',
+          color: 'neutrals.200'
+        }
+      }
+    }
+  },
+  sizes: {
+    sm: {
+      control: {
+        w: '16px',
+        h: '16px'
+      }
+    },
+    md: {
+      control: {
+        w: '20px',
+        h: '20px'
+      }
+    },
+    lg: {
+      control: {
+        w: '24px',
+        h: '24px'
+      }
     }
   },
   variants: {
-    primary: {
+    'primary.outlined': {
       control: {
-        borderColor: 'gray.200',
         pointerEvents: 'none',
-        _focus: {
-          shadow: 'none'
-        },
         _checked: {
-          bg: 'brand.primary.700',
+          bg: 'brand.primary.500',
           color: 'brand.primary.700',
           borderColor: 'brand.primary.700',
-          _hover: {
-            bg: 'brand.primary.700',
-            color: 'brand.primary.700',
-            borderColor: 'brand.primary.700'
-          }
+          border: '1px solid'
         }
       }
     },
-    orange: {
+    'primary.solid': {
       control: {
-        borderColor: 'gray.200',
-        _focus: {
-          shadow: 'none'
-        },
+        pointerEvents: 'none',
         _checked: {
-          bg: 'orange.500',
-          color: 'white',
-          borderColor: 'orange.500',
-          _hover: {
-            bg: 'orange.500',
-            color: 'white',
-            borderColor: 'orange.500'
-          }
+          bg: 'brand.primary.700',
+          color: 'alpha.white.500',
+          borderColor: 'brand.primary.700',
+          border: '1px solid'
         }
       }
     }
   },
   defaultProps: {
-    variant: 'primary'
+    variant: 'primary.outlined',
+    size: 'sm'
   }
 };
 

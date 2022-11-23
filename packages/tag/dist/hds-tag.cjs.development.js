@@ -89,11 +89,11 @@ var Tag = /*#__PURE__*/React.forwardRef(function HdsTag(p, ref) {
     'onClose', 'checked', 'onCheck', 'badgeCount'), styles.container),
     "data-testid": __testId
   }, !!props.checkbox /* <!-- Checkbox --> */ && React.createElement(React.Fragment, null, space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '5px',
       md: '4px',
       lg: '5px'
-    }[size]
+    }, size)
   }), React.createElement(Checkbox, {
     size: size,
     variant: variant,
@@ -103,106 +103,106 @@ var Tag = /*#__PURE__*/React.forwardRef(function HdsTag(p, ref) {
       props.onCheck(target.checked);
     }
   }), space(![props.avatar, props.icon].some(Boolean), {
-    width: {
+    width: getSizeSpace({
       sm: '4px',
       md: '5px',
       lg: '6px'
-    }[size]
+    }, size)
   })), !!props.icon /* <!-- Icon  --> */ && React.createElement(React.Fragment, null, space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '4px',
       md: '5px',
       lg: '6px'
-    }[size]
+    }, size)
   }), React.createElement(react.TagLeftIcon, {
     as: props.icon,
     role: "img",
     "aria-label": "Tag Icon",
     sx: styles.icon
   }), space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '4px',
       md: '5px',
       lg: '6px'
-    }[size]
+    }, size)
   })), !!props.avatar /* <!-- Avatar --> */ && React.createElement(React.Fragment, null, space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '4px',
       md: '5px',
       lg: '6px'
-    }[size]
+    }, size)
   }), React.createElement(react.Avatar, {
     src: props.avatar,
     role: "img",
     "aria-label": "Tag Avatar",
     sx: styles.avatar
   }), space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '4px',
       md: '5px',
       lg: '6px'
-    }[size]
+    }, size)
   })), !!props.indicator /* <!-- Indicator --> */ && React.createElement(React.Fragment, null, space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '7px',
       md: '8px',
       lg: '10px'
-    }[size]
+    }, size)
   }), React.createElement(react.Box, {
     role: "presentation",
     "aria-label": "Green Dot",
     sx: styles.indicator
   }), space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '5px',
       md: '6px',
       lg: '7px'
-    }[size]
+    }, size)
   })), !!label /* <!-- Label --> */ && React.createElement(React.Fragment, null, space(![props.icon, props.avatar, props.indicator, props.checkbox].some(Boolean), {
-    width: {
+    width: getSizeSpace({
       sm: '8px',
       md: '9px',
       lg: '10px'
-    }[size]
+    }, size)
   }), React.createElement(react.TagLabel, {
     role: "contentinfo",
     __css: styles.label
   }, label), space(![props.closable, props.badge].some(Boolean), {
-    width: {
+    width: getSizeSpace({
       sm: '8px',
       md: '9px',
       lg: '10px'
-    }[size]
+    }, size)
   })), !!props.closable /* <!-- Close Button --> */ && React.createElement(React.Fragment, null, space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '5px',
       md: '5px',
       lg: '6px'
-    }[size]
+    }, size)
   }), React.createElement(react.TagCloseButton, {
     role: "button",
     "aria-label": "Close Tag",
     onClick: props.onClose
   }), space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '7px',
       md: '6px',
       lg: '7px'
-    }[size]
+    }, size)
   })), !!props.badge /* <!-- Badge --> */ && React.createElement(React.Fragment, null, space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '8px',
       md: '10px',
       lg: '12px'
-    }[size]
+    }, size)
   }), React.createElement(react.Text, {
     sx: styles.badge
   }, props.badgeCount), space(true, {
-    width: {
+    width: getSizeSpace({
       sm: '8px',
       md: '8px',
       lg: '10px'
-    }[size]
+    }, size)
   })));
 });
 function useActualSize(size) {
@@ -211,8 +211,11 @@ function useActualSize(size) {
   var psuedoBreakpoint = React.useMemo(function () {
     return 'sm|md|lg'.split(/\|/g).includes(actualBreakpoint) ? actualBreakpoint : ['base'].includes(actualBreakpoint) ? 'sm' : 'lg';
   }, []);
-  var keys = Object.keys(size);
+  var keys = Object.keys(size || {});
   return typeof size === 'string' ? size : (_size$psuedoBreakpoin = size[psuedoBreakpoint]) != null ? _size$psuedoBreakpoin : /* fallback to closest given size */size[keys[keys.length - 1]];
+}
+function getSizeSpace(obj, size) {
+  return obj[size];
 }
 
 /*
