@@ -7,13 +7,13 @@ We aim to build a library of custom ReactJS components that implements our uniqu
 To install the package, use:
 
 ```bash
-npm i @highoutput/tag
+npm i @highoutput/hds-tag
 ```
 
 ### Usage
 
 ```typescript
-import { Tag, withTag } from '@highoutput/tag';
+import { Tag, withTag } from '@highoutput/hds-tag';
 import { ThemeProvider, extendTheme } from '@highoutput/hds';
 import { useCallback } from 'react';
 
