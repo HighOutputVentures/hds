@@ -36,6 +36,7 @@ export interface InputFieldProps extends Omit<FormContainerProps, 'partProps'> {
   disabled?: boolean;
   readOnly?: boolean;
   defaultValue?: string;
+  __testId?: string;
   variant?: string;
   _hover?: CSSObject;
   onPressEnter?(): void;
@@ -48,6 +49,7 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
     const {
       type = 'text',
       size = 'md',
+      __testId,
       maxLength,
       autoFocus,
       placeholder,
@@ -75,9 +77,7 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
           data-testid={`${uid}-input-field-group`}
         >
           {leftIcon && (
-            <InputLeftElement
-              data-testid={`${uid}-input-field-left-element`}
-            >
+            <InputLeftElement data-testid={`${uid}-input-field-left-element`}>
               {leftIcon}
             </InputLeftElement>
           )}
@@ -105,7 +105,7 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
             }}
             value={inputValue ? inputValue.trim() : undefined}
             role="input"
-            data-testid={`${uid}-input-field-input`}
+            data-testid={__testId ?? `${uid}-input-field-input`}
           />
           {rightIcon && (
             <InputRightElement
