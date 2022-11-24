@@ -1,5 +1,4 @@
 /// <reference types="react" />
-import { BoxProps } from '@chakra-ui/react';
 import { FormContainerProps } from '@highoutput/hds-forms';
 export interface Item {
     value: string | number;
@@ -11,7 +10,6 @@ export interface OptionItem extends Item {
 export interface AutoCompleteInputFieldProps extends Omit<FormContainerProps, 'partProps'> {
     options: OptionItem[];
     loading?: boolean;
-    fieldLabelProps?: Omit<BoxProps, 'children'>;
     required?: boolean;
     placement?: 'auto' | 'top' | 'bottom';
     multiple?: boolean;

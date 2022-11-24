@@ -1,9 +1,6 @@
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
-import { Avatar, BoxProps, HStack, Icon } from '@chakra-ui/react';
-import {
-  FormContainer,
-  FormContainerProps,
-} from '@highoutput/hds-forms';
+import { Avatar, HStack, Icon } from '@chakra-ui/react';
+import { FormContainer, FormContainerProps } from '@highoutput/hds-forms';
 import {
   chakraComponents,
   MultiValue,
@@ -34,7 +31,7 @@ export interface AutoCompleteInputFieldProps
   extends Omit<FormContainerProps, 'partProps'> {
   options: OptionItem[];
   loading?: boolean;
-  fieldLabelProps?: Omit<BoxProps, 'children'>;
+  // fieldLabelProps?: Omit<BoxProps, 'children'>;
   required?: boolean;
   placement?: 'auto' | 'top' | 'bottom';
   multiple?: boolean;
@@ -68,7 +65,7 @@ const AutoCompleteInput = (props: AutoCompleteInputFieldProps) => {
   const styles = getStyles({
     error: Boolean(errorMsg),
     multiple,
-    darkMode: darkMode,
+    darkMode,
   });
 
   return (
