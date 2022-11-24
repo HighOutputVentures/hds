@@ -1,5 +1,4 @@
 import {
-  CSSObject,
   Input,
   InputGroup,
   InputLeftElement,
@@ -34,7 +33,6 @@ export interface InputFieldProps extends Omit<FormContainerProps, 'partProps'> {
   defaultValue?: string;
   __testId?: string;
   variant?: string;
-  _hover?: CSSObject;
   onPressEnter?(): void;
   inputValue?: string | undefined;
   // partProps?: Partial<InputFieldPartProps>;
