@@ -10,7 +10,7 @@ export default function CircleIcon(props: React.ComponentProps<"svg">) {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <circle cx="4" cy="4" r="4" fill="#8A68EF" />
+      <circle cx="4" cy="4" r="4" fill="currentColor" />
     </svg>
   );
 }
