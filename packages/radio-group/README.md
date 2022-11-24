@@ -13,8 +13,10 @@ npm i @highoutput/hds-radio-group
 ### Usage
 
 ```tsx
-import { RadioGroup, RadioGroupItem, withRadioGroup } from "@highoutput/hds-radio-group";
-import { ThemeProvider, extendTheme, Text } from "@highoutput/hds";
+import * as React from "react";
+import { RadioGroup } from "@highoutput/hds-radio-group";
+import { ThemeProvider, HStack, Box, Text } from "@highoutput/hds";
+import DollarIcon from "./DollarIcon";
 
 const users = [
   { id: 1, name: "Mary", salary: 1500 },
@@ -23,15 +25,34 @@ const users = [
 ];
 
 export default function Example() {
+  const [value, setValue] = React.useState<typeof users>([]);
+
   return (
     <ThemeProvider theme={extendTheme(withRadioGroup())}>
-      <RadioGroup items={users} onChange={function noop(/* users */) {}}>
-        {({ id, name, salary }) => {
+      <RadioGroup
+        size="lg"
+        variant="dot"
+        items={users}
+        value={value}
+        onChange={setValue}
+        compareFn={(user) => user.id}
+      >
+        {({ item, index, getProps }) => {
+          const { container, icon, radio } = getProps(/* { disabled: true } */);
+
           return (
-            <RadioGroupItem key={id}>
-              <Text>{name}</Text>
-              <Text>{salary}</Text>
-            </RadioGroupItem>
+            <HStack key={id} spacing={4} {...container}>
+              <Box {...icon}>
+                <Icon as={DollarIcon} />
+              </Box>
+
+              <Box flexGrow={1}>
+                <Text>{name}</Text>
+                <Text>{salary}</Text>
+              </Box>
+
+              <Box {...radio} />
+            </HStack>
           );
         }}
       </RadioGroup>
