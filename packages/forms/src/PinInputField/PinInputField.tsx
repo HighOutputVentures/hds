@@ -10,7 +10,6 @@ import {
 import React, { forwardRef, useId, useMemo } from 'react';
 import { ChangeHandler } from 'react-hook-form';
 import FormContainer, {
-  // FormContainerPartProps,
   FormContainerProps,
 } from '../FormContainer/FormContainer';
 
@@ -27,8 +26,6 @@ export interface PinInputFieldProps
   numberOfFields?: number;
   onChange: ChangeHandler;
   errorMsg?: string | undefined;
-
-  // partProps?: Partial<PinInputFieldPartProps>;
 }
 
 const PinInputField = forwardRef<HTMLInputElement, PinInputFieldProps>(

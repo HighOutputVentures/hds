@@ -1,18 +1,14 @@
 import {
   CSSObject,
   Input,
-  // InputElementProps,
   InputGroup,
-  // InputGroupProps,
   InputLeftElement,
-  // InputProps,
   InputRightElement,
   ThemeTypings,
   useMultiStyleConfig,
 } from '@chakra-ui/react';
 import React, { forwardRef, ReactNode, useId } from 'react';
 import FormContainer, {
-  // FormContainerPartProps,
   FormContainerProps,
 } from '../FormContainer/FormContainer';
 
