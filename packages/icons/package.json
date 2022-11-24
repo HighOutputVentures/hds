@@ -50,7 +50,9 @@
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "7.0.8",
-    "size-limit": "7.0.8"
+    "size-limit": "7.0.8",
+    "@types/react": "18.0.21",
+    "@types/react-dom": "18.0.6"
   },
   "publishConfig": {
     "access": "public"
@@ -63,6 +65,9 @@
   },
   "gitHead": "220c468183d0032ba2f8eb5b26d89cf5712292c0",
   "dependencies": {
-    "@chakra-ui/react": "^2.3.7"
+    "@chakra-ui/react": "^2.3.7",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "@chakra-ui/icons": "2.0.11"
   }
 }
