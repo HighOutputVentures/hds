@@ -4,11 +4,15 @@ import CheckIcon from "./CheckIcon";
 import CircleIcon from "./CircleIcon";
 import { omit } from "./utils";
 
+type GetPropsArgs = {
+  disabled?: boolean;
+};
+
 type RenderChildrenContext<T> = {
   item: T;
   index: number;
   selected: boolean;
-  getProps(args?: { disabled?: boolean }): {
+  getProps(args?: GetPropsArgs): {
     icon: Record<string, any>;
     checkbox: Record<string, any>;
     container: Record<string, any>;
@@ -25,22 +29,20 @@ type CheckboxGroupBaseProps<T extends unknown[]> = {
   items: T;
   children(context: RenderChildrenContext<T[number]>): React.ReactNode;
   compareFn?: (item: T[number]) => unknown;
-};
+} & (
+  | {
+      multiple: true;
+      value: T[number][];
+      onChange(value: T[number][]): void;
+    }
+  | {
+      multiple?: false;
+      value: T[number];
+      onChange(value: T[number]): void;
+    }
+);
 
-export type CheckboxGroupProps<T extends unknown[]> = SystemStyleObject &
-  CheckboxGroupBaseProps<T> &
-  (
-    | {
-        value: T[number][];
-        onChange(value: T[number][]): void;
-        multiple: true;
-      }
-    | {
-        value: T[number];
-        onChange(value: T[number]): void;
-        multiple?: false;
-      }
-  );
+export type CheckboxGroupProps<T extends unknown[]> = SystemStyleObject & CheckboxGroupBaseProps<T>;
 
 export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupProps<T>) {
   const {
@@ -48,9 +50,7 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
     size = "md",
     items,
     children,
-    compareFn = function (item) {
-      return item;
-    },
+    compareFn = (o) => o,
     ...others
   } = props;
 
