@@ -208,7 +208,7 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
 
                       // radio
                       "& .CheckboxGroup__Checkbox": {
-                        border: "1px solid #4A3880",
+                        border: variant === "circle" ? "1px solid #4A3880" : "1px solid #8A68EF",
                         bgColor: variant === "circle" ? "#4A3880" : "#EDE8FC",
                       },
                     },
