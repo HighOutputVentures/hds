@@ -1,13 +1,13 @@
 import { Badge, Box, Heading, HStack, Icon, Image, Text, VStack } from "@chakra-ui/react";
 import { ComponentStory, Meta } from "@storybook/react";
 import * as React from "react";
+import CheckboxGroup from "./CheckboxGroup";
 import CogIcon from "./examples/CogIcon";
-import RadioGroup from "./RadioGroup";
 // @ts-ignore
-import { ThemeProvider } from "../../hds/src";
+import { ThemeProvider } from "@highoutput/hds/src";
 
 export default {
-  title: "Components/RadioGroup",
+  title: "Components/CheckboxGroup",
   argTypes: {
     disabled: {
       name: "disabled",
@@ -37,7 +37,7 @@ const Template: ComponentStory<any> = ({ size, disabled }) => {
   return (
     <ThemeProvider>
       <VStack align="stretch" spacing={8} maxWidth="400px">
-        <RadioGroup
+        <CheckboxGroup
           size={size}
           value={[items[0]]}
           items={items}
@@ -95,9 +95,9 @@ const Template: ComponentStory<any> = ({ size, disabled }) => {
               </HStack>
             );
           }}
-        </RadioGroup>
+        </CheckboxGroup>
 
-        <RadioGroup
+        <CheckboxGroup
           size={size}
           value={[items[0]]}
           items={items}
@@ -150,9 +150,9 @@ const Template: ComponentStory<any> = ({ size, disabled }) => {
               </HStack>
             );
           }}
-        </RadioGroup>
+        </CheckboxGroup>
 
-        <RadioGroup
+        <CheckboxGroup
           size={size}
           value={[items[0]]}
           items={items}
@@ -221,9 +221,9 @@ const Template: ComponentStory<any> = ({ size, disabled }) => {
               </HStack>
             );
           }}
-        </RadioGroup>
+        </CheckboxGroup>
 
-        <RadioGroup
+        <CheckboxGroup
           size={size}
           value={[items[0]]}
           items={items}
@@ -312,7 +312,7 @@ const Template: ComponentStory<any> = ({ size, disabled }) => {
               </Box>
             );
           }}
-        </RadioGroup>
+        </CheckboxGroup>
       </VStack>
     </ThemeProvider>
   );

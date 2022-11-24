@@ -15,20 +15,20 @@ type RenderChildrenContext<T> = {
   };
 };
 
-type RadioGroupSize = "sm" | "md";
+type CheckboxGroupSize = "sm" | "md";
 
-type RadioGroupVariant = "circle" | "square" | "dot";
+type CheckboxGroupVariant = "circle" | "square" | "dot";
 
-type RadioGroupBaseProps<T extends unknown[]> = {
-  size?: RadioGroupSize;
-  variant?: RadioGroupVariant;
+type CheckboxGroupBaseProps<T extends unknown[]> = {
+  size?: CheckboxGroupSize;
+  variant?: CheckboxGroupVariant;
   items: T;
   children(context: RenderChildrenContext<T[number]>): React.ReactNode;
   compareFn?: (item: T[number]) => unknown;
 };
 
-export type RadioGroupProps<T extends unknown[]> = SystemStyleObject &
-  RadioGroupBaseProps<T> &
+export type CheckboxGroupProps<T extends unknown[]> = SystemStyleObject &
+  CheckboxGroupBaseProps<T> &
   (
     | {
         value: T[number][];
@@ -42,7 +42,7 @@ export type RadioGroupProps<T extends unknown[]> = SystemStyleObject &
       }
   );
 
-export default function RadioGroup<T extends unknown[]>(props: RadioGroupProps<T>) {
+export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupProps<T>) {
   const {
     variant = "circle",
     size = "md",
@@ -54,8 +54,8 @@ export default function RadioGroup<T extends unknown[]>(props: RadioGroupProps<T
     ...others
   } = props;
 
-  const getRadioIcon = React.useCallback(
-    function getRadioIconBaseOnVariant({ disabled }: { disabled?: boolean }) {
+  const getCheckboxIcon = React.useCallback(
+    function getCheckboxIconBaseOnVariant({ disabled }: { disabled?: boolean }) {
       if (variant === "dot") {
         return (
           <Icon
@@ -114,7 +114,7 @@ export default function RadioGroup<T extends unknown[]>(props: RadioGroupProps<T
                   ...(selected && {
                     border: "1px solid #8A68EF",
                     bgColor: variant === "circle" ? "#8A68EF" : "#EDE8FC",
-                    children: getRadioIcon({ disabled }),
+                    children: getCheckboxIcon({ disabled }),
                   }),
                 }),
                 ...(disabled && {
@@ -125,14 +125,14 @@ export default function RadioGroup<T extends unknown[]>(props: RadioGroupProps<T
                   ...(selected && {
                     border: "1px solid #D6D6D6",
                     bgColor: variant === "circle" ? "#D6D6D6" : "#FCFCFC",
-                    children: getRadioIcon({ disabled }),
+                    children: getCheckboxIcon({ disabled }),
                   }),
                 }),
                 // common
                 tabIndex: -1,
                 flexGrow: 0,
                 flexShrink: 0,
-                className: "RadioGroup__Radio",
+                className: "CheckboxGroup__Checkbox",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -146,7 +146,7 @@ export default function RadioGroup<T extends unknown[]>(props: RadioGroupProps<T
                 ].join(),
               },
               icon: {
-                className: "RadioGroup__Icon",
+                className: "CheckboxGroup__Icon",
                 ...(disabled && {
                   color: "#D0D5DD",
                   bgColor: "#F2F4F7",
@@ -183,7 +183,7 @@ export default function RadioGroup<T extends unknown[]>(props: RadioGroupProps<T
                       border: "1px solid #D6BBFB",
 
                       // radio
-                      "& .RadioGroup__Radio": {
+                      "& .CheckboxGroup__Checkbox": {
                         border: "1px solid #8A68EF",
                         bgColor: "#EDE8FC",
                       },
@@ -193,7 +193,7 @@ export default function RadioGroup<T extends unknown[]>(props: RadioGroupProps<T
                       boxShadow: "0px 0px 0px 4px #E3E3FC",
 
                       // radio
-                      "& .RadioGroup__Radio": {
+                      "& .CheckboxGroup__Checkbox": {
                         border: "1px solid #EDE8FC",
                         bgColor: "#FFFFFF",
                         boxShadow: "0px 0px 0px 4px #F4EBFF",
@@ -207,7 +207,7 @@ export default function RadioGroup<T extends unknown[]>(props: RadioGroupProps<T
                       border: "1px solid #8A68EF",
 
                       // radio
-                      "& .RadioGroup__Radio": {
+                      "& .CheckboxGroup__Checkbox": {
                         border: "1px solid #4A3880",
                         bgColor: variant === "circle" ? "#4A3880" : "#EDE8FC",
                       },
@@ -217,7 +217,7 @@ export default function RadioGroup<T extends unknown[]>(props: RadioGroupProps<T
                       boxShadow: "0px 0px 0px 4px #E3E3FC",
 
                       // radio
-                      "& .RadioGroup__Radio": {
+                      "& .CheckboxGroup__Checkbox": {
                         border: "1px solid #8A68EF",
                         bgColor: variant === "circle" ? "#8A68EF" : "#EDE8FC",
                         boxShadow: "0px 0px 0px 4px #F4EBFF",

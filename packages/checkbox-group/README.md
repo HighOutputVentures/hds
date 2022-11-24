@@ -14,7 +14,7 @@ npm i @highoutput/hds-radio-group
 
 ```tsx
 import * as React from "react";
-import { RadioGroup } from "@highoutput/hds-radio-group";
+import { CheckboxGroup } from "@highoutput/hds-checkbox-group";
 import { ThemeProvider, HStack, Box, Text } from "@highoutput/hds";
 import DollarIcon from "./DollarIcon";
 
@@ -28,8 +28,8 @@ export default function Example() {
   const [value, setValue] = React.useState<typeof users>([]);
 
   return (
-    <ThemeProvider theme={extendTheme(withRadioGroup())}>
-      <RadioGroup
+    <ThemeProvider theme={extendTheme(withCheckboxGroup())}>
+      <CheckboxGroup
         size="lg"
         variant="dot"
         items={users}
@@ -55,7 +55,7 @@ export default function Example() {
             </HStack>
           );
         }}
-      </RadioGroup>
+      </CheckboxGroup>
     </ThemeProvider>
   );
 }

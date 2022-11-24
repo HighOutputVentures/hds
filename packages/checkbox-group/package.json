@@ -33,16 +33,16 @@
     "printWidth": 100,
     "trailingComma": "all"
   },
-  "name": "@highoutput/hds-radio-group",
+  "name": "@highoutput/hds-checkbox-group",
   "author": "calvo-jp",
-  "module": "dist/hds-radio-group.esm.js",
+  "module": "dist/hds-checkbox-group.esm.js",
   "size-limit": [
     {
-      "path": "dist/hds-radio-group.cjs.production.min.js",
+      "path": "dist/hds-checkbox-group.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/hds-radio-group.esm.js",
+      "path": "dist/hds-checkbox-group.esm.js",
       "limit": "10 KB"
     }
   ]
