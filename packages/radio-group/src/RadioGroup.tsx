@@ -1,7 +1,8 @@
-import { Box, Icon } from "@chakra-ui/react";
+import { Box, Icon, SystemStyleObject } from "@chakra-ui/react";
 import * as React from "react";
 import CheckIcon from "./CheckIcon";
 import CircleIcon from "./CircleIcon";
+import { omit } from "./utils";
 
 type RenderChildrenContext<T> = {
   item: T;
@@ -26,7 +27,8 @@ type RadioGroupBaseProps<T extends unknown[]> = {
   compareFn?: (item: T[number]) => unknown;
 };
 
-export type RadioGroupProps<T extends unknown[]> = RadioGroupBaseProps<T> &
+export type RadioGroupProps<T extends unknown[]> = SystemStyleObject &
+  RadioGroupBaseProps<T> &
   (
     | {
         value: T[number][];
@@ -52,33 +54,36 @@ export default function RadioGroup<T extends unknown[]>(props: RadioGroupProps<T
     ...others
   } = props;
 
-  const getRadioIcon = ({ disabled }: { disabled?: boolean }) => {
-    if (variant === "dot") {
+  const getRadioIcon = React.useCallback(
+    function getRadioIconBaseOnVariant({ disabled }: { disabled?: boolean }) {
+      if (variant === "dot") {
+        return (
+          <Icon
+            as={CircleIcon}
+            width={{ sm: "6px", md: "8px" }[size]}
+            height={{ sm: "6px", md: "8px" }[size]}
+            color="#8A68EF"
+            {...(disabled && {
+              color: "#F0F0F0",
+            })}
+          />
+        );
+      }
+
       return (
         <Icon
-          as={CircleIcon}
-          width={{ sm: "6px", md: "8px" }[size]}
-          height={{ sm: "6px", md: "8px" }[size]}
-          color="#8A68EF"
+          as={CheckIcon}
+          width={{ sm: "8px", md: "10px" }[size]}
+          height={{ sm: "8px", md: "10px" }[size]}
+          color={variant === "square" ? "#8A68EF" : "#FFFFFF"}
           {...(disabled && {
-            color: "#F0F0F0",
+            color: variant === "square" ? "#F0F0F0" : "#FFFFFF",
           })}
         />
       );
-    }
-
-    return (
-      <Icon
-        as={CheckIcon}
-        width={{ sm: "8px", md: "10px" }[size]}
-        height={{ sm: "8px", md: "10px" }[size]}
-        color={variant === "square" ? "#8A68EF" : "#FFFFFF"}
-        {...(disabled && {
-          color: variant === "square" ? "#F0F0F0" : "#FFFFFF",
-        })}
-      />
-    );
-  };
+    },
+    [variant],
+  );
 
   return (
     <Box
@@ -86,6 +91,7 @@ export default function RadioGroup<T extends unknown[]>(props: RadioGroupProps<T
         display: "flex",
         flexDirection: "column",
         gap: 4,
+        ...omit(others, "onChange", "value", "multiple"),
       }}
     >
       {items.map((item, index) => {
