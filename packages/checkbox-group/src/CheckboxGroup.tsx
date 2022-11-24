@@ -131,6 +131,8 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
                   }),
                 }),
                 // common
+                role: "checkbox",
+                "aria-role": "Select Item",
                 tabIndex: -1,
                 flexGrow: 0,
                 flexShrink: 0,
