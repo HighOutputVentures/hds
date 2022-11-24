@@ -95,6 +95,7 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
       }}
       role="group"
       aria-label="Checkbox Group"
+      aria-multiselectable={props.multiple}
     >
       {items.map((item, index) => {
         const selected = !others.multiple
@@ -131,8 +132,6 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
                   }),
                 }),
                 // common
-                role: "checkbox",
-                "aria-role": "Select Item",
                 tabIndex: -1,
                 flexGrow: 0,
                 flexShrink: 0,
@@ -177,6 +176,8 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
                   "border-color 300ms ease-in-out",
                   "background-color 300ms ease-in-out",
                 ].join(),
+                role: "img",
+                "aria-role": "Checkbox Icon",
               },
               container: {
                 ...(!disabled && {
@@ -249,7 +250,7 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
                   ? function () {}
                   : function (..._args: unknown[]) {
                       if (!others.multiple) {
-                        /* @ts-expect-error "For weird reason type guards doesn't seem to be working here 😖" */
+                        /* @ts-expect-error "Type guards doesn't seem to be working here 😖" */
                         if (!selected) others.onChange(item);
                       } else {
                         selected && others.onChange([...others.value, item]);
@@ -261,6 +262,13 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
                           );
                       }
                     },
+
+                /* Accessibility 👌 */
+                role: "checkbox",
+                "aria-role": "Select item " + (index + 1),
+                "aria-rowindex": index,
+                "aria-selected": selected,
+                "aria-disabled": disabled,
               },
             };
           },
