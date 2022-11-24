@@ -249,7 +249,7 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
                   ? function () {}
                   : function (..._args: unknown[]) {
                       if (!others.multiple) {
-                        // @ts-expect-error
+                        /* @ts-expect-error "For weird reason type guards doesn't seem to be working here 😖" */
                         if (!selected) others.onChange(item);
                       } else {
                         selected && others.onChange([...others.value, item]);
