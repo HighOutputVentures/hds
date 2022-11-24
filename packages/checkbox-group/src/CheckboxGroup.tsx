@@ -10,7 +10,7 @@ type RenderChildrenContext<T> = {
   selected: boolean;
   getProps(args?: { disabled?: boolean }): {
     icon: Record<string, any>;
-    radio: Record<string, any>;
+    checkbox: Record<string, any>;
     container: Record<string, any>;
   };
 };
@@ -93,6 +93,8 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
         gap: 4,
         ...omit(others, "onChange", "value", "multiple"),
       }}
+      role="group"
+      aria-label="Checkbox Group"
     >
       {items.map((item, index) => {
         const selected = !others.multiple
@@ -105,7 +107,7 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
           selected,
           getProps({ disabled }) {
             return {
-              radio: {
+              checkbox: {
                 ...(!disabled && {
                   ...(!selected && {
                     border: "1px solid #D6D6D6",

@@ -46,7 +46,7 @@ const Template: ComponentStory<any> = ({ size, disabled }) => {
           multiple
         >
           {({ item, getProps, selected }) => {
-            const { container, radio, icon } = getProps({ disabled });
+            const { container, checkbox, icon } = getProps({ disabled });
 
             const shouldAddIndigoStyle = selected && !disabled;
 
@@ -91,7 +91,7 @@ const Template: ComponentStory<any> = ({ size, disabled }) => {
                   </Text>
                 </Box>
 
-                <Box {...radio} alignSelf="start" />
+                <Box {...checkbox} alignSelf="start" />
               </HStack>
             );
           }}
@@ -107,12 +107,12 @@ const Template: ComponentStory<any> = ({ size, disabled }) => {
           variant="square"
         >
           {({ item, getProps, selected }) => {
-            const { container, radio } = getProps({ disabled });
+            const { container, checkbox } = getProps({ disabled });
             const shouldAddIndigoStyle = selected && !disabled;
 
             return (
               <HStack spacing={4} key={item.id} {...container}>
-                <Box {...radio} alignSelf="start" />
+                <Box {...checkbox} alignSelf="start" />
 
                 <Box flexGrow={1}>
                   <Text
@@ -162,7 +162,7 @@ const Template: ComponentStory<any> = ({ size, disabled }) => {
           variant="dot"
         >
           {({ item, getProps, selected }) => {
-            const { container, radio } = getProps({ disabled });
+            const { container, checkbox } = getProps({ disabled });
 
             const shouldAddIndigoStyle = selected && !disabled;
 
@@ -217,7 +217,7 @@ const Template: ComponentStory<any> = ({ size, disabled }) => {
                   </HStack>
                 </Box>
 
-                <Box {...radio} />
+                <Box {...checkbox} />
               </HStack>
             );
           }}
@@ -233,7 +233,7 @@ const Template: ComponentStory<any> = ({ size, disabled }) => {
           variant="circle"
         >
           {({ item, getProps, selected }) => {
-            const { container, radio, icon } = getProps({ disabled });
+            const { container, checkbox, icon } = getProps({ disabled });
 
             return (
               <Box key={item.id} {...container} padding={0}>
@@ -253,7 +253,7 @@ const Template: ComponentStory<any> = ({ size, disabled }) => {
                     Basic plan
                   </Text>
 
-                  <Box {...radio} />
+                  <Box {...checkbox} />
                 </HStack>
 
                 <Box
