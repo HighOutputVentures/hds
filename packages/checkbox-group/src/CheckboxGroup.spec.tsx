@@ -1,8 +1,4 @@
-import { Box } from "@chakra-ui/react";
 import "@testing-library/jest-dom";
-import { render } from "@testing-library/react";
-import * as React from "react";
-import CheckboxGroup from "./CheckboxGroup";
 
 const items = [
   { id: 1, name: "Mary" },
@@ -13,13 +9,10 @@ const items = [
 ];
 
 describe("CheckboxGroup", () => {
-  it("Should render children", () => {
-    render(
-      <CheckboxGroup items={items} value={items[0]} onChange={() => {}} compareFn={({ id }) => id}>
-        {({ item }) => {
-          return <Box key={item.id}>{item.name}</Box>;
-        }}
-      </CheckboxGroup>,
-    );
-  });
+  it.todo("Should render children properly");
+  it.todo("Should handle (de)selecting items");
+  it.todo("Should be able to pass default value");
+  it.todo("Should be able to disable item");
+  it.todo("Should be able to toggle multiple");
+  it.todo("Should call onChange when selected items change");
 });
