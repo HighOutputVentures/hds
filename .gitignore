@@ -3,3 +3,4 @@ storybook-static/
 .vercel
 tsconfig.tsbuildinfo
 .env
+.locofy
