@@ -1,4 +1,4 @@
-import { Box, HStack, Icon, Image, Text, VStack } from "@chakra-ui/react";
+import { Badge, Box, Heading, HStack, Icon, Image, Text, VStack } from "@chakra-ui/react";
 import { ComponentStory, Meta } from "@storybook/react";
 import * as React from "react";
 import CogIcon from "./examples/CogIcon";
@@ -219,6 +219,97 @@ const Template: ComponentStory<any> = ({ size, disabled }) => {
 
                 <Box {...radio} />
               </HStack>
+            );
+          }}
+        </RadioGroup>
+
+        <RadioGroup
+          size={size}
+          value={[items[0]]}
+          items={items}
+          compareFn={({ id }) => id}
+          onChange={() => {}}
+          multiple
+          variant="circle"
+        >
+          {({ item, getProps, selected }) => {
+            const { container, radio, icon } = getProps({ disabled });
+
+            return (
+              <Box key={item.id} {...container} padding={0}>
+                <HStack spacing={3} align="center" p="12px" pr="22px">
+                  <Box {...icon}>
+                    <Icon as={CogIcon} />
+                  </Box>
+
+                  <Text
+                    flexGrow={1}
+                    fontSize="14px"
+                    lineHeight="14px"
+                    letterSpacing="0.02em"
+                    color="#4A3880"
+                    fontWeight="medium"
+                  >
+                    Basic plan
+                  </Text>
+
+                  <Box {...radio} />
+                </HStack>
+
+                <Box
+                  p="12px"
+                  borderTop="1px solid"
+                  borderColor="#EAECF0"
+                  {...(selected &&
+                    !disabled && {
+                      borderColor: "#8A68EF",
+                    })}
+                >
+                  <Badge
+                    bgColor="#ECFDF3"
+                    color="#027A48"
+                    padding="2px, 10px, 2px, 10px"
+                    rounded="16px"
+                    textTransform="unset"
+                    fontSize="14px"
+                    lineHeight="14px"
+                    letterSpacing="0.02em"
+                    fontWeight="400"
+                    {...(disabled && {
+                      color: "#344054",
+                      bgColor: "#F2F4F7",
+                    })}
+                  >
+                    Limited time only
+                  </Badge>
+
+                  <Box mt="18px">
+                    <HStack>
+                      <Heading fontSize="32px" lineHeight="32px" color="#0F0F0F">
+                        $10
+                      </Heading>
+                      <Text
+                        color="#7A7A7A"
+                        fontSize="14px"
+                        lineHeight="14px"
+                        letterSpacing="0.02em"
+                      >
+                        per month
+                      </Text>
+                    </HStack>
+
+                    <Text
+                      mt="9px"
+                      color="#525252"
+                      fontSize="14px"
+                      lineHeight="14px"
+                      letterSpacing="0.02em"
+                    >
+                      Includes up to 10 users, 20GB indiviual data and access to all features.
+                    </Text>
+                  </Box>
+                </Box>
+              </Box>
             );
           }}
         </RadioGroup>
