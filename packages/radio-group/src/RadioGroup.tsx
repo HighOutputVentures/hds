@@ -52,6 +52,34 @@ export default function RadioGroup<T extends unknown[]>(props: RadioGroupProps<T
     ...others
   } = props;
 
+  const getRadioIcon = ({ disabled }: { disabled?: boolean }) => {
+    if (variant === "dot") {
+      return (
+        <Icon
+          as={CircleIcon}
+          width={{ sm: "6px", md: "8px" }[size]}
+          height={{ sm: "6px", md: "8px" }[size]}
+          color="#8A68EF"
+          {...(disabled && {
+            color: "#F0F0F0",
+          })}
+        />
+      );
+    }
+
+    return (
+      <Icon
+        as={CheckIcon}
+        width={{ sm: "8px", md: "10px" }[size]}
+        height={{ sm: "8px", md: "10px" }[size]}
+        color={variant === "square" ? "#8A68EF" : "#FFFFFF"}
+        {...(disabled && {
+          color: variant === "square" ? "#F0F0F0" : "#FFFFFF",
+        })}
+      />
+    );
+  };
+
   return (
     <Box
       sx={{
@@ -80,21 +108,7 @@ export default function RadioGroup<T extends unknown[]>(props: RadioGroupProps<T
                   ...(selected && {
                     border: "1px solid #8A68EF",
                     bgColor: variant === "circle" ? "#8A68EF" : "#EDE8FC",
-                    children:
-                      variant === "dot" ? (
-                        <Icon
-                          as={CircleIcon}
-                          width={{ sm: "6px", md: "8px" }[size]}
-                          height={{ sm: "6px", md: "8px" }[size]}
-                        />
-                      ) : (
-                        <Icon
-                          as={CheckIcon}
-                          width={{ sm: "8px", md: "10px" }[size]}
-                          height={{ sm: "8px", md: "10px" }[size]}
-                          color={variant === "square" ? "#8A68EF" : "#FFFFFF"}
-                        />
-                      ),
+                    children: getRadioIcon({ disabled }),
                   }),
                 }),
                 ...(disabled && {
@@ -104,12 +118,14 @@ export default function RadioGroup<T extends unknown[]>(props: RadioGroupProps<T
                   }),
                   ...(selected && {
                     border: "1px solid #D6D6D6",
-                    bgColor: "#D6D6D6",
-                    children: <Icon as={CheckIcon} w="10px" h="10px" />,
+                    bgColor: variant === "circle" ? "#D6D6D6" : "#FCFCFC",
+                    children: getRadioIcon({ disabled }),
                   }),
                 }),
                 // common
                 tabIndex: -1,
+                flexGrow: 0,
+                flexShrink: 0,
                 className: "RadioGroup__Radio",
                 display: "flex",
                 justifyContent: "center",
@@ -135,6 +151,8 @@ export default function RadioGroup<T extends unknown[]>(props: RadioGroupProps<T
                   bgColor: "#EDE8FC",
                   borderColor: "#F9F5FF",
                 }),
+                flexGrow: 0,
+                flexShrink: 0,
                 width: size === "sm" ? "32px" : "40px",
                 height: size === "sm" ? "32px" : "40px",
                 borderWidth: size === "sm" ? "4px" : "6px",
