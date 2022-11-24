@@ -9,5 +9,5 @@ declare type AvatarLabelBaseProps = {
     supportText?: string;
 };
 export declare type AvatarLabelProps = SystemStyleObject & FreeSize<AvatarBaseProps> & AvatarLabelBaseProps & Badgeable & Clickable;
-export default function AvatarLabel(props: PropsWithChildren<AvatarLabelProps>): JSX.Element | null;
+export default function AvatarLabel(props: PropsWithChildren<AvatarLabelProps>): JSX.Element;
 export {};

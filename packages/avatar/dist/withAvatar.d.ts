@@ -11,14 +11,14 @@ export default function withAvatar(): {
             keys: string[];
         }>;
         Tooltip: {
-            baseStyle?: import("@chakra-ui/styled-system").CSSWithMultiValues | (import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursivePseudo<import("@chakra-ui/styled-system").CSSWithMultiValues>) | (import("@chakra-ui/styled-system").CSSWithMultiValues & import("@chakra-ui/styled-system").RecursiveCSSSelector<import("@chakra-ui/styled-system").CSSWithMultiValues>) | import("@chakra-ui/styled-system").SystemStyleFunction | undefined;
+            baseStyle?: import("@chakra-ui/styled-system").SystemStyleInterpolation;
             sizes?: {
                 [key: string]: import("@chakra-ui/styled-system").SystemStyleInterpolation;
-            } | undefined;
+            };
             variants?: {
                 "hds-avatar": (context: import("@chakra-ui/styled-system").StyleFunctionProps) => {
-                    [x: string]: string | undefined;
-                    marginBottom: string | undefined;
+                    [x: string]: string;
+                    marginBottom: string;
                     fontFamily: string;
                     fontSize: string;
                     lineHeight: string;
@@ -29,12 +29,12 @@ export default function withAvatar(): {
                     paddingY: string;
                     paddingX: string;
                 };
-            } | undefined;
+            };
             defaultProps?: {
-                size?: string | number | undefined;
-                variant?: "hds-avatar" | undefined;
-                colorScheme?: string | undefined;
-            } | undefined;
+                size?: string | number;
+                variant?: "hds-avatar";
+                colorScheme?: string;
+            };
         };
     };
 };

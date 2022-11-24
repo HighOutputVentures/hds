@@ -17,19 +17,19 @@ export declare type CheckProps = (CheckTypeProps | RadioTypeProps) & Pick<Checkb
     __testId?: string;
 };
 declare const Checkbox: React.ForwardRefExoticComponent<(CheckTypeProps & Pick<CheckboxProps, "size" | "defaultValue" | "defaultChecked" | "isChecked" | "onChange" | "onFocus" | "isFocusable" | "value" | "isInvalid" | "aria-label"> & {
-    helperMsg?: string | undefined;
+    helperMsg?: string;
     label: string | JSX.Element;
-    onCheck?: ((value: boolean) => void) | undefined;
-    variant?: "primary.outlined" | "primary.solid" | undefined;
-    disabled?: boolean | undefined;
-    __testId?: string | undefined;
+    onCheck?: (value: boolean) => void;
+    variant?: 'primary.outlined' | 'primary.solid';
+    disabled?: boolean;
+    __testId?: string;
 } & React.RefAttributes<HTMLInputElement>) | (RadioTypeProps & Pick<CheckboxProps, "size" | "defaultValue" | "defaultChecked" | "isChecked" | "onChange" | "onFocus" | "isFocusable" | "value" | "isInvalid" | "aria-label"> & {
-    helperMsg?: string | undefined;
+    helperMsg?: string;
     label: string | JSX.Element;
-    onCheck?: ((value: boolean) => void) | undefined;
-    variant?: "primary.outlined" | "primary.solid" | undefined;
-    disabled?: boolean | undefined;
-    __testId?: string | undefined;
+    onCheck?: (value: boolean) => void;
+    variant?: 'primary.outlined' | 'primary.solid';
+    disabled?: boolean;
+    __testId?: string;
 } & React.RefAttributes<HTMLInputElement>)>;
 export default Checkbox;
 export declare const CircleIcon: (props: Omit<IconProps, 'children' | 'css'>) => JSX.Element;

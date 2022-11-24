@@ -1,5 +1,4 @@
 /// <reference types="mdx" />
-/// <reference types="react" />
 import IconsMDX from './Icons.mdx';
 declare const _default: {
     title: string;
@@ -10,6 +9,6 @@ declare const _default: {
     };
 };
 export default _default;
-export declare const Arrows: () => JSX.Element;
-export declare const Company: () => JSX.Element;
-export declare const Social: () => JSX.Element;
+export declare const Arrows: any;
+export declare const Company: any;
+export declare const Social: any;
