@@ -41,14 +41,14 @@ export default function Example() {
           const { container, icon, radio } = getProps(/* { disabled: true } */);
 
           return (
-            <HStack key={id} spacing={4} {...container}>
+            <HStack key={item.id} spacing={4} {...container}>
               <Box {...icon}>
                 <Icon as={DollarIcon} />
               </Box>
 
               <Box flexGrow={1}>
-                <Text>{name}</Text>
-                <Text>{salary}</Text>
+                <Text>{item.name}</Text>
+                <Text>{item.salary}</Text>
               </Box>
 
               <Box {...radio} />
