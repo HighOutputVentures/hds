@@ -1,10 +1,6 @@
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import {
   Button,
-  // ButtonProps,
-  // InputElementProps,
-  // InputGroupProps,
-  // InputProps,
 } from '@chakra-ui/react';
 import React, { forwardRef } from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';

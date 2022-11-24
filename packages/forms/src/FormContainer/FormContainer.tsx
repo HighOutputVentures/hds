@@ -1,12 +1,8 @@
 import {
   FormControl,
-  // FormControlProps,
   FormErrorMessage,
-  // FormErrorMessageProps,
   FormHelperText,
   FormLabel,
-  // FormLabelProps,
-  // HelpTextProps,
   ThemingProps,
   useMultiStyleConfig,
 } from '@chakra-ui/react';
@@ -26,7 +22,7 @@ export interface FormContainerProps
     ThemingProps {
   id?: string;
   label?: string;
-  labelColor?: string;
+  // labelColor?: string;
   errorMsg?: string;
   helperMsg?: string;
   disabled?: boolean;
@@ -37,7 +33,6 @@ export interface FormContainerProps
 const FormContainer: FC<FormContainerProps> = ({
   id,
   label,
-  labelColor,
   errorMsg,
   helperMsg,
   children,
@@ -59,7 +54,6 @@ const FormContainer: FC<FormContainerProps> = ({
       {label && (
         <FormLabel
           borderRadius="4px"
-          {...(labelColor && { color: labelColor })}
           data-testid={`${uid}-form-container-label`}
           sx={styles.formLabel}
         >
