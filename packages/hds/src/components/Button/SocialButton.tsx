@@ -6,6 +6,7 @@ import {
   FigmaIcon,
   GoogleIcon,
   TwitterIcon,
+  // @ts-ignore
 } from '@highoutput/hds-icons';
 import React from 'react';
 

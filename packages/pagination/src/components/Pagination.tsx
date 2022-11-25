@@ -7,6 +7,7 @@ import {
   ThemingProps,
   useMultiStyleConfig,
 } from '@chakra-ui/react';
+// @ts-ignore
 import { ChevronLeftIcon, ChevronRightIcon } from '@highoutput/hds-icons';
 import React, { FC, useCallback } from 'react';
 
