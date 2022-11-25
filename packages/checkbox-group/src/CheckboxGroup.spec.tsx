@@ -54,6 +54,7 @@ describe("CheckboxGroup", () => {
       </CheckboxGroup>,
     );
 
+    // deselect
     fireEvent.click(getAllByRole("checkbox", { name: /select item \d/i })[0]);
 
     await waitFor(() => {
@@ -62,12 +63,13 @@ describe("CheckboxGroup", () => {
 
     // value will not actually change
     // since CheckboxGroup is controlled
+    // so current value here is items[1]
 
-    // fireEvent.click(getAllByRole("checkbox", { name: /select item \d/i })[1]);
+    fireEvent.click(getAllByRole("checkbox", { name: /select item \d/i })[1]);
 
-    // await waitFor(() => {
-    //   expect(handleChange).toHaveBeenCalledWith(expect.arrayContaining([items[1]]));
-    // });
+    await waitFor(() => {
+      expect(handleChange).toHaveBeenCalledWith(expect.arrayContaining([items[1]]));
+    });
   });
 
   it("Should be able to pass default value", () => {
