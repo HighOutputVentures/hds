@@ -1,8 +1,8 @@
-import { CSSObject, ThemeTypings } from '@chakra-ui/react';
+import { InputGroupProps } from '@chakra-ui/react';
 import React, { ReactNode } from 'react';
 import { FormContainerProps } from '../FormContainer/FormContainer';
 export interface InputFieldProps extends Omit<FormContainerProps, 'partProps'> {
-    size?: ThemeTypings['sizes'];
+    size?: InputGroupProps['size'];
     type?: string;
     maxLength?: number;
     autoFocus?: boolean;
@@ -15,9 +15,8 @@ export interface InputFieldProps extends Omit<FormContainerProps, 'partProps'> {
     defaultValue?: string;
     __testId?: string;
     variant?: string;
-    _hover?: CSSObject;
     onPressEnter?(): void;
     inputValue?: string | undefined;
 }
-declare const InputField: React.ForwardRefExoticComponent<Pick<InputFieldProps, "onChange" | "onBlur" | "name" | "min" | "max" | "maxLength" | "minLength" | "pattern" | "required" | "disabled" | "id" | "label" | "labelColor" | "errorMsg" | "helperMsg" | "children" | "variant" | "size" | "colorScheme" | "orientation" | "styleConfig" | "_hover" | "type" | "autoFocus" | "placeholder" | "leftIcon" | "rightIcon" | "autoComplete" | "readOnly" | "defaultValue" | "__testId" | "onPressEnter" | "inputValue"> & React.RefAttributes<HTMLInputElement>>;
+declare const InputField: React.ForwardRefExoticComponent<Pick<InputFieldProps, "onChange" | "onBlur" | "name" | "min" | "max" | "maxLength" | "minLength" | "pattern" | "required" | "disabled" | "id" | "label" | "errorMsg" | "helperMsg" | "children" | "variant" | "size" | "colorScheme" | "orientation" | "styleConfig" | "defaultValue" | "placeholder" | "type" | "autoFocus" | "leftIcon" | "rightIcon" | "autoComplete" | "readOnly" | "__testId" | "onPressEnter" | "inputValue"> & React.RefAttributes<HTMLInputElement>>;
 export default InputField;

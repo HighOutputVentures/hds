@@ -4,7 +4,6 @@ import { UseFormRegisterReturn } from 'react-hook-form';
 export interface FormContainerProps extends Partial<UseFormRegisterReturn>, ThemingProps {
     id?: string;
     label?: string;
-    labelColor?: string;
     errorMsg?: string;
     helperMsg?: string;
     disabled?: boolean;

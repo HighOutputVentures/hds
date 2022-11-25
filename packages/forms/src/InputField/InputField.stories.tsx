@@ -6,6 +6,18 @@ import InputField from './InputField';
 export default {
   title: 'Components/Form Fields/Input Field',
   component: InputField,
+  argTypes: {
+    size: {
+      name: 'size',
+      type: {
+        name: 'string',
+        required: false,
+      },
+      defaultValue: 'md',
+      control: 'select',
+      options: ['sm', 'md', 'lg', 'xl'],
+    },
+  },
 } as ComponentMeta<typeof InputField>;
 
 const Template: ComponentStory<typeof InputField> = (args) => (

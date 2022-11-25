@@ -1,0 +1,49 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "trailingComma": "all"
+  },
+  "name": "@highoutput/hds-checkbox-group",
+  "author": "calvo-jp",
+  "module": "dist/hds-checkbox-group.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/hds-checkbox-group.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/hds-checkbox-group.esm.js",
+      "limit": "10 KB"
+    }
+  ]
+}
