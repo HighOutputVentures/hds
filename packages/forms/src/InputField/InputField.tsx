@@ -1,9 +1,9 @@
 import {
   Input,
   InputGroup,
+  InputGroupProps,
   InputLeftElement,
   InputRightElement,
-  ThemeTypings,
   useMultiStyleConfig,
 } from '@chakra-ui/react';
 import React, { forwardRef, ReactNode, useId } from 'react';
@@ -20,7 +20,7 @@ import FormContainer, {
 //   inputRightElement?: WithoutChildren<InputElementProps>;
 // }
 export interface InputFieldProps extends Omit<FormContainerProps, 'partProps'> {
-  size?: ThemeTypings['sizes'];
+  size?: InputGroupProps['size'];
   type?: string;
   maxLength?: number;
   autoFocus?: boolean;
