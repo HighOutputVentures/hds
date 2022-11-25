@@ -535,26 +535,20 @@ var ContactForm = function ContactForm(props) {
     "data-testid": "box.contactform.form"
   }, /*#__PURE__*/React__default.createElement(react.Stack, {
     spacing: 4
-  }, /*#__PURE__*/React__default.createElement(hdsForms.InputField
-  // {...partProps?.input}
-  , Object.assign({}, register('details.name'), {
+  }, /*#__PURE__*/React__default.createElement(hdsForms.InputField, Object.assign({}, register('details.name'), {
     id: "name",
     label: "Name",
     placeholder: "Input your name",
     errorMsg: (_errors$details = errors.details) == null ? void 0 : (_errors$details$name = _errors$details.name) == null ? void 0 : _errors$details$name.message,
     disabled: isSubmitting
-  })), /*#__PURE__*/React__default.createElement(hdsForms.InputField
-  // {...partProps?.input}
-  , Object.assign({}, register('emailAddress'), {
+  })), /*#__PURE__*/React__default.createElement(hdsForms.InputField, Object.assign({}, register('emailAddress'), {
     id: "emailAddress",
     label: "Email",
     placeholder: "Input your email address",
     errorMsg: (_errors$emailAddress = errors.emailAddress) == null ? void 0 : _errors$emailAddress.message,
     disabled: isSubmitting,
     "data-testid": "input.contactform.email"
-  })), /*#__PURE__*/React__default.createElement(hdsForms.TextAreaField
-  // {...partProps?.textarea}
-  , Object.assign({}, register('message'), {
+  })), /*#__PURE__*/React__default.createElement(hdsForms.TextAreaField, Object.assign({}, register('message'), {
     id: "message",
     label: "Desciption of concern",
     placeholder: "Enter description",
@@ -565,7 +559,6 @@ var ContactForm = function ContactForm(props) {
     w: "full",
     variant: "primary",
     isLoading: isSubmitting || isLoading,
-    // {...partProps?.button}
     type: "submit",
     "data-testid": "button.contactform.submit"
   }, "Send"), hasError && /*#__PURE__*/React__default.createElement(react.Alert, {

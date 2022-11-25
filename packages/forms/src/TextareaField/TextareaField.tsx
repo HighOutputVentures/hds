@@ -14,7 +14,7 @@ import FormContainer, {
 
 export interface TextAreaFieldProps
   extends FormContainerProps,
-    Omit<TextareaProps, 'onBlur' | 'id' | 'onChange' | 'size'> {
+    Omit<TextareaProps, 'onBlur' | 'id' | 'onChange' | 'size' | 'labelColor'> {
   type?: string;
   autoFocus?: boolean;
   placeholder: string;

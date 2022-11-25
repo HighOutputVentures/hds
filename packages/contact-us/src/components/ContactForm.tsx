@@ -17,16 +17,9 @@ import {
   withContactFormSchemaValues,
 } from './validation';
 
-// type WithoutChildren<T> = Omit<T, 'children'>;
-
 export interface ContactFormProps {
   onSubmit?(values: ContactFormInputProps): void;
   url?: string;
-  // partProps?: Partial<{
-  //   input?: WithoutChildren<InputFieldProps>;
-  //   textarea?: WithoutChildren<TextAreaFieldProps>;
-  //   button?: WithoutChildren<ButtonProps>;
-  // }>;
 }
 
 const ContactForm: FC<ContactFormProps> = (props) => {
@@ -72,7 +65,6 @@ const ContactForm: FC<ContactFormProps> = (props) => {
       >
         <Stack spacing={4}>
           <InputField
-            // {...partProps?.input}
             {...register('details.name')}
             id="name"
             label="Name"
@@ -81,7 +73,6 @@ const ContactForm: FC<ContactFormProps> = (props) => {
             disabled={isSubmitting}
           />
           <InputField
-            // {...partProps?.input}
             {...register('emailAddress')}
             id="emailAddress"
             label="Email"
@@ -91,7 +82,6 @@ const ContactForm: FC<ContactFormProps> = (props) => {
             data-testid="input.contactform.email"
           />
           <TextAreaField
-            // {...partProps?.textarea}
             {...register('message')}
             id="message"
             label="Desciption of concern"
@@ -104,7 +94,6 @@ const ContactForm: FC<ContactFormProps> = (props) => {
             w="full"
             variant="primary"
             isLoading={isSubmitting || isLoading}
-            // {...partProps?.button}
             type="submit"
             data-testid="button.contactform.submit"
           >

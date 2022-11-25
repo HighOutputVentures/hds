@@ -7,5 +7,5 @@ export interface PinInputFieldProps extends Omit<FormContainerProps, 'onChange' 
     onChange: ChangeHandler;
     errorMsg?: string | undefined;
 }
-declare const PinInputField: React.ForwardRefExoticComponent<Pick<PinInputFieldProps, "onChange" | "size" | "variant" | "onBlur" | "name" | "min" | "max" | "maxLength" | "minLength" | "pattern" | "required" | "disabled" | "id" | "label" | "labelColor" | "errorMsg" | "helperMsg" | "children" | "colorScheme" | "orientation" | "styleConfig" | "autoFocus" | "value" | "defaultValue" | "onComplete" | "placeholder" | "manageFocus" | "otp" | "isDisabled" | "isInvalid" | "type" | "mask" | "focusBorderColor" | "errorBorderColor" | "numberOfFields"> & React.RefAttributes<HTMLInputElement>>;
+declare const PinInputField: React.ForwardRefExoticComponent<Pick<PinInputFieldProps, "onChange" | "size" | "variant" | "onBlur" | "name" | "min" | "max" | "maxLength" | "minLength" | "pattern" | "required" | "disabled" | "id" | "label" | "errorMsg" | "helperMsg" | "children" | "colorScheme" | "orientation" | "styleConfig" | "autoFocus" | "value" | "defaultValue" | "onComplete" | "placeholder" | "manageFocus" | "otp" | "isDisabled" | "isInvalid" | "type" | "mask" | "focusBorderColor" | "errorBorderColor" | "numberOfFields"> & React.RefAttributes<HTMLInputElement>>;
 export default PinInputField;
