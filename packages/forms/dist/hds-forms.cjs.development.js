@@ -229,7 +229,7 @@ var SelectField = /*#__PURE__*/React.forwardRef(function (props, ref) {
     variant: variant
   });
   var uid = React.useId();
-  return React__default.createElement(FormContainer, Object.assign({}, props), React__default.createElement(react.Select, Object.assign({}, props, {
+  return React__default.createElement(FormContainer, Object.assign({}, props), React__default.createElement(react.Select, {
     ref: ref,
     name: name,
     onChange: onChange,
@@ -239,7 +239,7 @@ var SelectField = /*#__PURE__*/React.forwardRef(function (props, ref) {
     defaultValue: defaultValue,
     disabled: disabled,
     "data-testid": uid + "-select-field-select"
-  }), options.map(function (_ref) {
+  }, options.map(function (_ref) {
     var value = _ref.value,
       label = _ref.label;
     return React__default.createElement("option", {
