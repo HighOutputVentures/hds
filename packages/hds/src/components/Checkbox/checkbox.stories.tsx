@@ -88,93 +88,81 @@ const Template: ComponentStory<typeof Checkbox> = (args) => {
     <ThemeProvider>
       <HStack spacing="20px">
         <VStack>
-          <Checkbox {...args} />
-          <Checkbox {...args} disabled />
-          <Checkbox {...args} isChecked />
-          <Checkbox {...args} isChecked />
-          <Checkbox {...args} isChecked disabled />
-          <br />
-          <Checkbox {...args} type="checkboxType" checkbox_icon="minusIcon" />
-          <Checkbox
-            {...args}
-            type="checkboxType"
-            checkbox_icon="minusIcon"
-            disabled
-          />
-          <Checkbox
-            {...args}
-            type="checkboxType"
-            checkbox_icon="minusIcon"
-            isChecked
-          />
-          <Checkbox
-            {...args}
-            type="checkboxType"
-            checkbox_icon="minusIcon"
-            isChecked
-          />
-          <Checkbox
-            {...args}
-            type="checkboxType"
-            checkbox_icon="minusIcon"
-            isChecked
-            disabled
-          />
+          <VStack mb="20px">
+            <Checkbox {...args} />
+            <Checkbox {...args} disabled />
+            <Checkbox {...args} isChecked />
+            <Checkbox {...args} isChecked disabled />
+          </VStack>
+          <VStack>
+            <Checkbox {...args} type="checkboxType" checkbox_icon="minusIcon" />
+            <Checkbox
+              {...args}
+              type="checkboxType"
+              checkbox_icon="minusIcon"
+              disabled
+            />
+            <Checkbox
+              {...args}
+              type="checkboxType"
+              checkbox_icon="minusIcon"
+              isChecked
+            />
+            <Checkbox
+              {...args}
+              type="checkboxType"
+              checkbox_icon="minusIcon"
+              isChecked
+              disabled
+            />
+          </VStack>
         </VStack>
         <VStack>
-          <Checkbox {...args} type="radioType" radio_icon="circleIcon" />
-          <Checkbox
-            {...args}
-            type="radioType"
-            radio_icon="circleIcon"
-            disabled
-          />
-          <Checkbox
-            {...args}
-            type="radioType"
-            radio_icon="circleIcon"
-            isChecked
-          />
-          <Checkbox
-            {...args}
-            type="radioType"
-            radio_icon="circleIcon"
-            isChecked
-          />
-          <Checkbox
-            {...args}
-            type="radioType"
-            radio_icon="circleIcon"
-            isChecked
-            disabled
-          />
-          <br />
-          <Checkbox {...args} type="radioType" radio_icon="checkIcon" />
-          <Checkbox
-            {...args}
-            type="radioType"
-            radio_icon="checkIcon"
-            disabled
-          />
-          <Checkbox
-            {...args}
-            type="radioType"
-            radio_icon="checkIcon"
-            isChecked
-          />
-          <Checkbox
-            {...args}
-            type="radioType"
-            radio_icon="checkIcon"
-            isChecked
-          />
-          <Checkbox
-            {...args}
-            type="radioType"
-            radio_icon="checkIcon"
-            isChecked
-            disabled
-          />
+          <VStack mb="20px">
+            <Checkbox {...args} type="radioType" radio_icon="circleIcon" />
+            <Checkbox
+              {...args}
+              type="radioType"
+              radio_icon="circleIcon"
+              disabled
+            />
+            <Checkbox
+              {...args}
+              type="radioType"
+              radio_icon="circleIcon"
+              isChecked
+            />
+            <Checkbox
+              {...args}
+              type="radioType"
+              radio_icon="circleIcon"
+              isChecked
+              disabled
+            />
+          </VStack>
+
+          <VStack>
+            <Checkbox {...args} type="radioType" radio_icon="checkIcon" />
+            <Checkbox
+              {...args}
+              type="radioType"
+              radio_icon="checkIcon"
+              disabled
+            />
+            <Checkbox
+              {...args}
+              type="radioType"
+              radio_icon="checkIcon"
+              isChecked
+            />
+            <Checkbox
+              {...args}
+              type="radioType"
+              radio_icon="checkIcon"
+              isChecked
+              disabled
+            />
+          </VStack>
         </VStack>
       </HStack>
     </ThemeProvider>
