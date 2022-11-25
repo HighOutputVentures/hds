@@ -38,6 +38,7 @@ const getInputType = (
         key={key}
         id={key}
         label={label}
+        labelColor=""
         placeholder={placeholder}
         errorMsg={error}
         disabled={isSubmitting}
