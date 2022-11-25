@@ -1,7 +1,7 @@
 import { Box, extendTheme } from "@chakra-ui/react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
-import { theme, ThemeProvider } from "../../hds";
+import { theme, ThemeProvider } from "@highoutput/hds";
 import Switch from "./Switch";
 import withSwitch from "./withSwitch";
 
