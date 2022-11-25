@@ -33,6 +33,7 @@ const getInputType = (
 
   const input_type = {
     textarea: (
+      // @ts-ignore "Bug"
       <TextAreaField
         {...register(key)}
         key={key}
