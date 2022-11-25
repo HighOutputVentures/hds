@@ -26,7 +26,9 @@ var getInputType = function getInputType(input, type, form) {
     errors = formState.errors;
   var error = (_errors = errors["" + key]) == null ? void 0 : _errors.message;
   var input_type = {
-    textarea: React.createElement(hdsForms.TextAreaField, Object.assign({}, register(key), {
+    textarea:
+    // @ts-ignore "Bug"
+    React.createElement(hdsForms.TextAreaField, Object.assign({}, register(key), {
       key: key,
       id: key,
       label: label,
