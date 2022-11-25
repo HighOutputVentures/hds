@@ -105,7 +105,7 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
         return children({
           item,
           index,
-          selected,
+          selected: selected || false,
           getProps({ disabled } = {}) {
             return {
               checkbox: {
@@ -250,7 +250,6 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
                   ? function () {}
                   : function (..._args: unknown[]) {
                       if (!others.multiple) {
-                        /* @ts-expect-error "Type guards doesn't seem to be working here 😖" */
                         others.onChange(!selected ? item : null);
                       } else {
                         !selected && others.onChange([...others.value, item]);

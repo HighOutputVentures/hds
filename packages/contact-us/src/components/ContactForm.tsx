@@ -6,6 +6,7 @@ import {
   Button,
   Stack,
 } from '@chakra-ui/react';
+// @ts-ignore
 import { InputField, TextAreaField } from '@highoutput/hds-forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { FC } from 'react';

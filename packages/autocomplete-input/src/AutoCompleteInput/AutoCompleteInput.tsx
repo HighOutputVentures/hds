@@ -1,5 +1,6 @@
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 import { Avatar, HStack, Icon } from '@chakra-ui/react';
+// @ts-ignore
 import { FormContainer, FormContainerProps } from '@highoutput/hds-forms';
 import {
   chakraComponents,

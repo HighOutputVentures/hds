@@ -1,4 +1,5 @@
 import { Box, Button, Heading, Text } from '@chakra-ui/react';
+// @ts-ignore
 import { PinInputField } from '@highoutput/hds-forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { ReactNode } from 'react';
