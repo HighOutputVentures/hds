@@ -37,7 +37,7 @@ type CheckboxGroupBaseProps<T extends unknown[]> = {
     }
   | {
       multiple?: false;
-      value: T[number];
+      value?: T[number];
       onChange(value: T[number]): void;
     }
 );
@@ -99,14 +99,14 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
     >
       {items.map((item, index) => {
         const selected = !others.multiple
-          ? compareFn(others.value) === compareFn(item)
+          ? others.value && compareFn(others.value) === compareFn(item)
           : others.value.some((i) => compareFn(item) === compareFn(i));
 
         return children({
           item,
           index,
           selected,
-          getProps({ disabled }) {
+          getProps({ disabled } = {}) {
             return {
               checkbox: {
                 ...(!disabled && {
@@ -251,13 +251,13 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
                   : function (..._args: unknown[]) {
                       if (!others.multiple) {
                         /* @ts-expect-error "Type guards doesn't seem to be working here 😖" */
-                        if (!selected) others.onChange(item);
+                        others.onChange(!selected ? item : null);
                       } else {
-                        selected && others.onChange([...others.value, item]);
-                        !selected &&
+                        !selected && others.onChange([...others.value, item]);
+                        selected &&
                           others.onChange(
-                            others.value.filter((item) => {
-                              return compareFn(item) !== compareFn(items);
+                            others.value.filter((i) => {
+                              return compareFn(item) !== compareFn(i);
                             }),
                           );
                       }
@@ -265,9 +265,9 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
 
                 /* Accessibility 👌 */
                 role: "checkbox",
-                "aria-role": "Select item " + (index + 1),
+                "aria-label": "Select item " + (index + 1),
                 "aria-rowindex": index,
-                "aria-selected": selected,
+                "aria-checked": selected,
                 "aria-disabled": disabled,
               },
             };
