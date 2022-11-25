@@ -27,7 +27,7 @@ declare type CheckboxGroupBaseProps<T extends unknown[]> = {
     onChange(value: T[number][]): void;
 } | {
     multiple?: false;
-    value: T[number];
+    value?: T[number];
     onChange(value: T[number]): void;
 });
 export declare type CheckboxGroupProps<T extends unknown[]> = SystemStyleObject & CheckboxGroupBaseProps<T>;

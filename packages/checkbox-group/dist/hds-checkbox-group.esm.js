@@ -126,17 +126,19 @@ function CheckboxGroup(props) {
       gap: 4
     }, omit(others, "onChange", "value", "multiple")),
     role: "group",
-    "aria-label": "Checkbox Group"
+    "aria-label": "Checkbox Group",
+    "aria-multiselectable": props.multiple
   }, items.map(function (item, index) {
-    var selected = !others.multiple ? compareFn(others.value) === compareFn(item) : others.value.some(function (i) {
+    var selected = !others.multiple ? others.value && compareFn(others.value) === compareFn(item) : others.value.some(function (i) {
       return compareFn(item) === compareFn(i);
     });
     return children({
       item: item,
       index: index,
       selected: selected,
-      getProps: function getProps(_ref2) {
-        var disabled = _ref2.disabled;
+      getProps: function getProps(_temp) {
+        var _ref2 = _temp === void 0 ? {} : _temp,
+          disabled = _ref2.disabled;
         return {
           checkbox: _extends({}, !disabled && _extends({}, !selected && {
             border: "1px solid #D6D6D6",
@@ -158,8 +160,6 @@ function CheckboxGroup(props) {
             })
           }), {
             // common
-            role: "checkbox",
-            "aria-role": "Select Item",
             tabIndex: -1,
             flexGrow: 0,
             flexShrink: 0,
@@ -193,7 +193,9 @@ function CheckboxGroup(props) {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            transition: ["color 300ms ease-in-out", "box-shadow 300ms ease-in-out", "border-color 300ms ease-in-out", "background-color 300ms ease-in-out"].join()
+            transition: ["color 300ms ease-in-out", "box-shadow 300ms ease-in-out", "border-color 300ms ease-in-out", "background-color 300ms ease-in-out"].join(),
+            role: "img",
+            "aria-role": "Checkbox Icon"
           }),
           container: _extends({}, !disabled && _extends({}, !selected && {
             border: "1px solid #EAECF0",
@@ -251,15 +253,21 @@ function CheckboxGroup(props) {
             transition: ["background-color 300ms ease-in-out", "box-shadow 300ms ease-in-out", "border-color 300ms ease-in-out"].join(),
             onClick: disabled ? function () {} : function () {
               if (!others.multiple) {
-                /* @ts-expect-error "For weird reason type guards doesn't seem to be working here 😖" */
-                if (!selected) others.onChange(item);
+                /* @ts-expect-error "Type guards doesn't seem to be working here 😖" */
+                others.onChange(!selected ? item : null);
               } else {
-                selected && others.onChange([].concat(others.value, [item]));
-                !selected && others.onChange(others.value.filter(function (item) {
-                  return compareFn(item) !== compareFn(items);
+                !selected && others.onChange([].concat(others.value, [item]));
+                selected && others.onChange(others.value.filter(function (i) {
+                  return compareFn(item) !== compareFn(i);
                 }));
               }
-            }
+            },
+            /* Accessibility 👌 */
+            role: "checkbox",
+            "aria-label": "Select item " + (index + 1),
+            "aria-rowindex": index,
+            "aria-checked": selected,
+            "aria-disabled": disabled
           })
         };
       }
