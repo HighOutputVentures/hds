@@ -1,18 +1,13 @@
 import {
-  CSSObject,
   Input,
-  // InputElementProps,
   InputGroup,
-  // InputGroupProps,
   InputLeftElement,
-  // InputProps,
   InputRightElement,
   ThemeTypings,
   useMultiStyleConfig,
 } from '@chakra-ui/react';
 import React, { forwardRef, ReactNode, useId } from 'react';
 import FormContainer, {
-  // FormContainerPartProps,
   FormContainerProps,
 } from '../FormContainer/FormContainer';
 
@@ -38,7 +33,6 @@ export interface InputFieldProps extends Omit<FormContainerProps, 'partProps'> {
   defaultValue?: string;
   __testId?: string;
   variant?: string;
-  _hover?: CSSObject;
   onPressEnter?(): void;
   inputValue?: string | undefined;
   // partProps?: Partial<InputFieldPartProps>;
