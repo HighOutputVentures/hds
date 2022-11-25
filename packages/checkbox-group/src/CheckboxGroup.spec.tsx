@@ -15,7 +15,7 @@ const items = [
 describe("CheckboxGroup", () => {
   it("Should render children properly", () => {
     const { queryAllByRole } = render(
-      <CheckboxGroup items={items} value={items[0]} onChange={jest.fn()}>
+      <CheckboxGroup items={items} value={items[0]} onChange={jest.fn()} compareFn={({ id }) => id}>
         {({ item, getProps }) => {
           const { container } = getProps();
 
@@ -72,7 +72,13 @@ describe("CheckboxGroup", () => {
 
   it("Should be able to pass default value", () => {
     const { queryAllByRole } = render(
-      <CheckboxGroup items={items} value={[items[0], items[1]]} onChange={jest.fn()} multiple>
+      <CheckboxGroup
+        items={items}
+        value={[items[0], items[1]]}
+        onChange={jest.fn()}
+        multiple
+        compareFn={({ id }) => id}
+      >
         {({ item, getProps }) => {
           const { container } = getProps();
 
@@ -90,7 +96,13 @@ describe("CheckboxGroup", () => {
 
   it("Should be able to disable item", () => {
     const { getAllByRole } = render(
-      <CheckboxGroup items={items} value={[items[0], items[1]]} onChange={jest.fn()} multiple>
+      <CheckboxGroup
+        items={items}
+        value={[items[0], items[1]]}
+        onChange={jest.fn()}
+        multiple
+        compareFn={({ id }) => id}
+      >
         {({ item, index, getProps }) => {
           const { container } = getProps({ disabled: [0, 1].includes(index) });
 
@@ -109,13 +121,35 @@ describe("CheckboxGroup", () => {
     expect(checkboxes[1]).toHaveAttribute("aria-disabled", "true");
   });
 
-  it.todo("Should be able to toggle multiple");
+  it("Should be able to toggle multiple", async () => {
+    const afterware = jest.fn();
+
+    const { getAllByRole } = render(<ActualComponentTest afterware={afterware} />);
+
+    const checkboxes = getAllByRole("checkbox", { name: /select item \d/i });
+
+    fireEvent.click(checkboxes[0]);
+    fireEvent.click(checkboxes[1]);
+    fireEvent.click(checkboxes[3]);
+
+    await waitFor(() => {
+      expect(afterware).toHaveBeenLastCalledWith(
+        expect.arrayContaining([items[0], items[1], items[3]]),
+      );
+    });
+  });
 
   it("Should call onChange when selected items change", async () => {
     const handleChange = jest.fn();
 
     const { getAllByRole } = render(
-      <CheckboxGroup items={items} value={[items[0], items[1]]} onChange={handleChange} multiple>
+      <CheckboxGroup
+        items={items}
+        value={[items[0], items[1]]}
+        onChange={handleChange}
+        multiple
+        compareFn={({ id }) => id}
+      >
         {({ item, getProps }) => {
           const { container } = getProps();
 
@@ -135,3 +169,32 @@ describe("CheckboxGroup", () => {
     });
   });
 });
+
+function ActualComponentTest({ afterware }: { afterware: Function }) {
+  const [value, setValue] = React.useState<typeof items>([]);
+
+  React.useEffect(() => {
+    afterware(value);
+  }, [value]);
+
+  return (
+    <CheckboxGroup
+      items={items}
+      value={value}
+      onChange={setValue}
+      multiple
+      compareFn={({ id }) => id}
+    >
+      {({ item, getProps }) => {
+        const { container, checkbox } = getProps();
+
+        return (
+          <Box key={item.id} {...container}>
+            <Box>{item.name}</Box>
+            <Box {...checkbox} />
+          </Box>
+        );
+      }}
+    </CheckboxGroup>
+  );
+}
