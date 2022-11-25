@@ -33,6 +33,11 @@ const ReleaseDetails = () => {
           </Text>
         </ListItem>
         <ListItem>
+          <Text size="paragraph-md-default">
+            added package @highoutput/hds-checkbox-group
+          </Text>
+        </ListItem>
+        <ListItem>
           <Text size="paragraph-md-default">added new checkbox component</Text>
         </ListItem>
       </UnorderedList>

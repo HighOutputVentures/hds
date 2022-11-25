@@ -271,6 +271,16 @@ export default Form;
               </Link>
             </Text>
           </ListItem>
+          <ListItem>
+            <Text size="paragraph-md-default">
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-checkbox-group"
+                isExternal
+              >
+                @highoutput/hds-checkbox-group
+              </Link>
+            </Text>
+          </ListItem>
         </UnorderedList>
       </Box>
     </ThemeProvider>
