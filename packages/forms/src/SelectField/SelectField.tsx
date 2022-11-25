@@ -1,6 +1,6 @@
 import {
   Select,
-  SelectFieldProps as SelectFieldChakraProps,
+  // SelectFieldProps as SelectFieldChakraProps,
   useMultiStyleConfig,
 } from '@chakra-ui/react';
 import React, { forwardRef, useId } from 'react';
@@ -8,9 +8,7 @@ import FormContainer, {
   FormContainerProps,
 } from '../FormContainer/FormContainer';
 
-export interface SelectFieldProps
-  extends FormContainerProps,
-    Omit<SelectFieldChakraProps, 'onBlur' | 'id' | 'onChange'> {
+export interface SelectFieldProps extends FormContainerProps {
   options: Array<{ label: string; value: string }>;
   placeholder?: string;
   defaultValue?: string | number;
@@ -35,7 +33,6 @@ const SelectField = forwardRef<HTMLSelectElement, SelectFieldProps>(
     return (
       <FormContainer {...props}>
         <Select
-          {...props}
           ref={ref}
           name={name}
           onChange={onChange}
