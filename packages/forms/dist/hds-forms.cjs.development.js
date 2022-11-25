@@ -13,7 +13,6 @@ var omit = _interopDefault(require('lodash/omit'));
 var FormContainer = function FormContainer(_ref) {
   var id = _ref.id,
     label = _ref.label,
-    labelColor = _ref.labelColor,
     errorMsg = _ref.errorMsg,
     helperMsg = _ref.helperMsg,
     children = _ref.children,
@@ -30,14 +29,11 @@ var FormContainer = function FormContainer(_ref) {
     "data-testid": uid + "-form-container-form-control",
     sx: styles.formControl,
     "aria-label": "Form Group"
-  }, label && React__default.createElement(react.FormLabel, Object.assign({
-    borderRadius: "4px"
-  }, labelColor && {
-    color: labelColor
-  }, {
+  }, label && React__default.createElement(react.FormLabel, {
+    borderRadius: "4px",
     "data-testid": uid + "-form-container-label",
     sx: styles.formLabel
-  }), label), children, React__default.createElement(react.FormErrorMessage, {
+  }, label), children, React__default.createElement(react.FormErrorMessage, {
     sx: styles.formErrorMessage,
     "data-testid": uid + "-form-container-error"
   }, errorMsg), helperMsg && React__default.createElement(react.FormHelperText, {
