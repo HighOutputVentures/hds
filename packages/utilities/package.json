@@ -30,10 +30,11 @@
     }
   },
   "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
+    "printWidth": 100,
+    "trailingComma": "all"
+  },
+  "jest": {
+    "verbose": true
   },
   "name": "@highoutput/hds-utilities",
   "author": "John Christopher Go",

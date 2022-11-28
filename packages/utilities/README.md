@@ -12,19 +12,22 @@ npm i @highoutput/hds-utilities
 
 ### Usage
 
-```ts
-///For.tsx
-import For from './src';
+```tsx
+import For from "./src";
 
 const each = [
-  { id: 1, name: 'Mary' },
-  { id: 2, name: 'John' },
-  { id: 3, name: 'Will' },
-  { id: 4, name: 'Susan' },
-  { id: 5, name: 'Karen' },
+  { id: 1, name: "Mary" },
+  { id: 2, name: "John" },
+  { id: 3, name: "Will" },
+  { id: 4, name: "Susan" },
+  { id: 5, name: "Karen" },
 ];
 
 export default function Component() {
-  return <For each={each}>{(user) => <div>{user.name}</div>}</For>;
+  return (
+    <For each={each} getKey={({ id }) => id}>
+      {({ name }) => <div>{name}</div>}
+    </For>
+  );
 }
 ```
