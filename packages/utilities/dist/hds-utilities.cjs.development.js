@@ -4,6 +4,48 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var React = require('react');
 
+function arrayChunk(array, size) {
+  var chunks = [];
+  var copy = [].concat(array);
+  var len = copy.length;
+  var max = Math.ceil(len / size);
+  var idx = 0;
+  for (; idx < max; idx++) {
+    chunks.push(copy.splice(0, size));
+  }
+  return chunks;
+}
+
+function arrayRandom(choices) {
+  return choices[Math.floor(Math.random() * choices.length)];
+}
+
+/**
+ *
+ * @example
+ * arrayUnique([1, 2, 3, 4, 5, 1, 2, 3, 4]) // [1, 2, 3, 4, 5]
+ * arrayUnique([
+ *  {key: 1},
+ *  {key: 2},
+ *  {key: 3},
+ *  {key: 1},
+ *  {key: 2},
+ * ], (item) => item.key) // [{key: 1}, {key: 2}, {key: 3}]
+ *
+ */
+function arrayUnique(array, callback) {
+  if (callback === void 0) {
+    callback = function callback(item) {
+      return item;
+    };
+  }
+  var copy = [].concat(array);
+  var mapped = copy.map(callback);
+  return copy.filter(function (item, index) {
+    return mapped.indexOf(callback(item)) === index;
+  });
+}
+
 function For(props) {
   var _Object$assign = Object.assign(defaultProps, props),
     each = _Object$assign.each,
@@ -106,6 +148,9 @@ function Show(props) {
 
 exports.For = For;
 exports.Show = Show;
+exports.arrayChunk = arrayChunk;
+exports.arrayRandom = arrayRandom;
+exports.arrayUnique = arrayUnique;
 exports.merge = merge;
 exports.omit = omit;
 exports.pick = pick;
