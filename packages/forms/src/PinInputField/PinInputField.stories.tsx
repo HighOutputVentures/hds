@@ -6,6 +6,18 @@ import PinInputField from './PinInputField';
 export default {
   title: 'Components/Form Fields/Pin Input Field',
   component: PinInputField,
+  argTypes: {
+    variant: {
+      name: 'variant',
+      type: {
+        name: 'string',
+        required: false,
+      },
+      defaultValue: 'outline',
+      control: 'select',
+      options: ['outline', 'flushed', 'filled', 'unstyled'],
+    },
+  },
 } as ComponentMeta<typeof PinInputField>;
 
 const Template: ComponentStory<typeof PinInputField> = (args) => (
