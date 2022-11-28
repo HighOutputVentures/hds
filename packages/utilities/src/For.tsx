@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Fragment } from 'react';
+import * as React from "react";
+import { Fragment } from "react";
 
 export type ForProps<T extends unknown[]> = {
   each: T;
@@ -9,10 +9,7 @@ export type ForProps<T extends unknown[]> = {
 };
 
 export default function For<T extends unknown[]>(props: ForProps<T>) {
-  const { each, fallback, children, getKey } = Object.assign(
-    defaultProps,
-    props
-  );
+  const { each, fallback, children, getKey } = Object.assign(defaultProps, props);
 
   if (!each.length) return fallback;
 

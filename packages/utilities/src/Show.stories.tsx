@@ -1,15 +1,15 @@
-import { Box, Button, Text } from '@chakra-ui/react';
-import { useArgs } from '@storybook/addons';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import React from 'react';
-import Show from './Show';
+import { Box, Button, Text } from "@chakra-ui/react";
+import { useArgs } from "@storybook/addons";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import React from "react";
+import Show from "./Show";
 
 export default {
-  title: 'Utilities/Show',
+  title: "Utilities/Show",
   component: Show,
 } as ComponentMeta<typeof Show>;
 
-const Template: ComponentStory<typeof Show> = defaultArgs => {
+const Template: ComponentStory<typeof Show> = (defaultArgs) => {
   const [args, setArgs] = useArgs();
 
   const toggle = () => {
