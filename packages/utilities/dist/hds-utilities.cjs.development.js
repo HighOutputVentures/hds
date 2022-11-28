@@ -46,6 +46,20 @@ function arrayUnique(array, callback) {
   });
 }
 
+function capitalize(subject, config) {
+  if (config === void 0) {
+    config = {};
+  }
+  if (!config.delimiter) config.delimiter = ". ";
+  if (config.trim) subject = subject.trim().replace(/\s{2,}/g, " ");
+  if (config.lower) subject = subject.toLowerCase();
+  if (subject.length <= 0) return subject;
+  return subject.split(config.delimiter).map(function (value) {
+    var _value$at;
+    return (_value$at = value.at(0)) == null ? void 0 : _value$at.toUpperCase().concat(value.substring(1));
+  }).join(config.delimiter);
+}
+
 function For(props) {
   var _Object$assign = Object.assign(defaultProps, props),
     each = _Object$assign.each,
@@ -151,6 +165,7 @@ exports.Show = Show;
 exports.arrayChunk = arrayChunk;
 exports.arrayRandom = arrayRandom;
 exports.arrayUnique = arrayUnique;
+exports.capitalize = capitalize;
 exports.merge = merge;
 exports.omit = omit;
 exports.pick = pick;

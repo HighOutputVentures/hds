@@ -1,6 +1,7 @@
 export { default as arrayChunk } from "./arrayChunk";
 export { default as arrayRandom } from "./arrayRandom";
 export { default as arrayUnique } from "./arrayUnique";
+export { default as capitalize } from "./capitalize";
 export { default as For, ForProps } from "./For";
 export { default as merge } from "./merge";
 export { default as omit } from "./omit";
