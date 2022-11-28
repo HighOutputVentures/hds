@@ -1,7 +1,4 @@
-import {
-  Select,
-  useMultiStyleConfig,
-} from '@chakra-ui/react';
+import { Select, SelectProps, useMultiStyleConfig } from '@chakra-ui/react';
 import React, { forwardRef, useId } from 'react';
 import FormContainer, {
   FormContainerProps,
@@ -11,7 +8,7 @@ export interface SelectFieldProps extends FormContainerProps {
   options: Array<{ label: string; value: string }>;
   placeholder?: string;
   defaultValue?: string | number;
-  variant?: string;
+  variant?: SelectProps['variant'];
 }
 
 const SelectField = forwardRef<HTMLSelectElement, SelectFieldProps>(
