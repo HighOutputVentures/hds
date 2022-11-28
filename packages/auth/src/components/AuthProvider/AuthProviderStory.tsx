@@ -6,11 +6,6 @@ import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 export default function AuthProviderStory() {
   return (
     <Box
-      px={{
-        base: 4,
-        md: 8,
-        lg: 12,
-      }}
       sx={{
         '& p': {
           color: 'neutrals.800',
