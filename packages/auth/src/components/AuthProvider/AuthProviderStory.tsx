@@ -1,7 +1,12 @@
-import { Box, CodeProps, Heading, Text } from '@chakra-ui/react';
+import { Box, BoxProps, Flex, Heading, Icon, Text } from '@chakra-ui/react';
 import * as React from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
+import bash from 'react-syntax-highlighter/dist/esm/languages/hljs/bash';
+import ts from 'react-syntax-highlighter/dist/esm/languages/hljs/typescript';
+import { atomOneLight as colorScheme } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
+SyntaxHighlighter.registerLanguage('typescript', ts);
+SyntaxHighlighter.registerLanguage('bash', bash);
 
 export default function AuthProviderStory() {
   return (
@@ -22,12 +27,14 @@ export default function AuthProviderStory() {
           <strong>@highoutput/email-auth</strong>
         </Text>
         <Text mt={2}>To install the package, run&nbsp;command:</Text>
-        <Snippet snippet={`npm i @highoutput/hds-auth`} language="sh" mt={4} />
+        <Snippet mt={4} language="bash">
+          npm i @highoutput/hds-auth
+        </Snippet>
       </Box>
 
       <Box mt={10}>
         <Heading>Usage</Heading>
-        <Snippet mt={4} snippet={snippet1} />
+        <Snippet mt={4}>{snippet1}</Snippet>
       </Box>
 
       <Box mt={10}>
@@ -36,11 +43,11 @@ export default function AuthProviderStory() {
           <strong>useAuthState.session</strong>
         </Text>
 
-        <Snippet mt={4} snippet={snippet2} />
+        <Snippet mt={4}>{snippet2}</Snippet>
 
         <Box mt={6}>
           <Text>💡 What is this&nbsp;snippet?</Text>
-          <Snippet mt={4} snippet={snippet3} />
+          <Snippet mt={4}>{snippet3}</Snippet>
           <Text mt={3}>
             One use for this is if you want to sync browser tabs. Whenever the{' '}
             <strong>session.status</strong> changes to{' '}
@@ -57,7 +64,7 @@ export default function AuthProviderStory() {
           <strong>useAuthState.session</strong>
         </Text>
 
-        <Snippet mt={4} snippet={snippet4} />
+        <Snippet mt={4}>{snippet4}</Snippet>
       </Box>
 
       <Box mt={10}>
@@ -65,46 +72,81 @@ export default function AuthProviderStory() {
           Using <strong>useAuthState.token</strong>
         </Text>
 
-        <Snippet mt={4} snippet={snippet5} />
+        <Snippet mt={4}>{snippet5}</Snippet>
       </Box>
 
       <Box mt={10}>
-        <Text>
+        <Heading size="header-5">
           Usage with <strong>Next.js</strong>&nbsp;middleware
-        </Text>
-        <Text mt={2}>Example scenario:</Text>
-        <Text mt={2}>
-          You want a user to be redirected to login page when they access a
-          protected route and you also want them to be redirected to
-          <strong>/dashboard</strong> when they access a public route like
-          <strong>/login</strong> or <strong>/signup</strong>. Ideally, we do a
-          redirect before the page is even sent to the browser hence do it on
-          server&rsquo;s side. What we can do is to check if token is in the
-          cookie by taking advantage of Next.js' middleware&nbsp;like&nbsp;so
-        </Text>
+        </Heading>
+        <Box
+          mt={8}
+          bgColor="#fff7ed"
+          padding={4}
+          rounded="md"
+          maxWidth="600px"
+          width="full"
+        >
+          <Flex
+            bgGradient="linear(to-r, #fde68a, #fdba74)"
+            width="fit-content"
+            rounded="full"
+            padding={3}
+          >
+            <Icon as={LightBulbIcon} width={8} height={8} stroke="#a16207" />
+          </Flex>
+          <Text mt={4} fontSize="sm">
+            You want a user to be redirected to login page when they access a
+            protected route and you also want them to be redirected to&nbsp;
+            <strong>/dashboard</strong> when they access a public route
+            like&nbsp;
+            <strong>/login</strong> or <strong>/signup</strong>. Ideally, we do
+            a redirect before the page is even sent to the browser hence do it
+            on server&rsquo;s side. What we can do is to check if token is in
+            the cookie by taking advantage of Next.js'
+            middleware&nbsp;like&nbsp;so
+          </Text>
+        </Box>
 
-        <Snippet mt={4} snippet={snippet6} />
+        <Snippet mt={4}>{snippet6}</Snippet>
       </Box>
     </Box>
   );
 }
 
+function LightBulbIcon(props: React.ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      {...props}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"
+      />
+    </svg>
+  );
+}
+
 function Snippet({
-  snippet,
-  language = 'typescriptreact',
+  language = 'typescript',
+  children,
   ...props
-}: { snippet: string; language?: string } & Omit<CodeProps, 'children'>) {
+}: BoxProps & { language?: string }) {
   return (
     <Box
       as={SyntaxHighlighter}
-      style={docco}
+      style={colorScheme}
       language={language}
-      width="full"
-      maxWidth="800px"
       padding="24px!important"
       {...props}
     >
-      {snippet}
+      {children}
     </Box>
   );
 }
@@ -242,7 +284,7 @@ export default function Dashboard() {
   );
 }`;
 
-const snippet6 = `// src/_middleware.ts
+const snippet6 = `// src/middleware.ts
 import { constants } from '@highoutput/hds';
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
@@ -263,9 +305,9 @@ export function middleware(req: NextRequest) {
 }
 
 function isPublic(pathname: string) {
-  return /^\/(login|verify)/gi.test(pathname);
+  return /^\\/(login|verify)/gi.test(pathname);
 }
 
 function isProtected(pathname: string) {
-  return /^\/(dashboard|settings|me)/gi.test(pathname);
+  return /^\\/(dashboard|settings|me)/gi.test(pathname);
 }`;
