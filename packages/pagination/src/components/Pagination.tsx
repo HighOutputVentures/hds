@@ -7,9 +7,9 @@ import {
   ThemingProps,
   useMultiStyleConfig,
 } from '@chakra-ui/react';
-// @ts-ignore
-import { ChevronLeftIcon, ChevronRightIcon } from '@highoutput/hds-icons';
 import React, { FC, useCallback } from 'react';
+import ChevronLeftIcon from './ChevronLeftIcon';
+import ChevronRightIcon from './ChevronRightIcon';
 
 export interface PaginationProps extends ThemingProps {
   page: number;
