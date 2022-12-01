@@ -13,7 +13,7 @@ import {
   ButtonVariantsTypes,
   CloseButtonVariantTypes,
 } from './theme/components/button/variants';
-import { extendTheme } from './utils/theme.utils';
+import extendTheme from './utils/extendTheme';
 
 export {
   Accordion,
