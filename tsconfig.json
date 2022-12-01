@@ -17,7 +17,11 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "allowJs": true,
-    "composite": true
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./packages/*"]
+    }
   },
   "include": ["packages/**/src", "packages/**/package.json"],
   "exclude": ["node_modules"]
