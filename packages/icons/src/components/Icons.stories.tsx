@@ -2,18 +2,32 @@ import { Grid, GridItem, Text } from '@chakra-ui/react';
 import React from 'react';
 
 import ThemeProvider from '../../../hds/src/components/ThemeProvider';
-import IconsMDX from './Icons.mdx';
 import ChevronLeftIcon from './ChevronLeftIcon';
 import ChevronRightIcon from './ChevronRightIcon';
 import HovIcon from './HovIcon';
+import IconsMDX from './Icons.mdx';
 
 import {
   AppleIcon,
+  BoxIcon,
+  CheckIcon,
   DribbleIcon,
+  ExitIcon,
   FacebookIcon,
   FigmaIcon,
   GoogleIcon,
+  HelpIcon,
+  HomeIcon,
+  LayersTwoIcon,
+  MessageSmileIcon,
+  SearchIcon,
+  SettingIcon,
+  ThreeDots,
   TwitterIcon,
+  UserIcon,
+  UserPlusIcon,
+  UsersIcon,
+  ZapIcon,
 } from '../index';
 
 export default {
@@ -83,6 +97,76 @@ const SocialTemplate = () => (
   </ThemeProvider>
 );
 
+const RandomTemplate = () => (
+  <ThemeProvider>
+    <Grid templateColumns="repeat(5, 1fr)" gap={4}>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <BoxIcon />
+        <Text>{'BoxIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <CheckIcon />
+        <Text>{'CheckIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <ExitIcon />
+        <Text>{'ExitIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <HelpIcon />
+        <Text>{'HelpIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <HomeIcon />
+        <Text>{'HomeIcon'}</Text>
+      </GridItem>
+
+      <GridItem w="100%" h="80px" textAlign="center">
+        <LayersTwoIcon />
+        <Text>{'LayersTwoIcon'}</Text>
+      </GridItem>
+
+      <GridItem w="100%" h="80px" textAlign="center">
+        <MessageSmileIcon />
+        <Text>{'MessageSmileIcon'}</Text>
+      </GridItem>
+
+      <GridItem w="100%" h="80px" textAlign="center">
+        <SearchIcon />
+        <Text>{'SearchIcon'}</Text>
+      </GridItem>
+
+      <GridItem w="100%" h="80px" textAlign="center">
+        <SettingIcon />
+        <Text>{'SettingIcon'}</Text>
+      </GridItem>
+
+      <GridItem w="100%" h="80px" textAlign="center">
+        <ThreeDots />
+        <Text>{'ThreeDots'}</Text>
+      </GridItem>
+
+      <GridItem w="100%" h="80px" textAlign="center">
+        <UserIcon />
+        <Text>{'UserIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <UserPlusIcon />
+        <Text>{'UserPlusIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <UsersIcon />
+        <Text>{'UsersIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <ZapIcon />
+        <Text>{'ZapIcon'}</Text>
+      </GridItem>
+    </Grid>
+  </ThemeProvider>
+);
+
 export const Arrows = ArrowsTemplate.bind({});
 export const Company = CompanyTemplate.bind({});
 export const Social = SocialTemplate.bind({});
+export const Random = RandomTemplate.bind({});
