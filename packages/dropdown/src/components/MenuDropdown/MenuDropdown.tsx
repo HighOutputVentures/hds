@@ -20,7 +20,6 @@ import ThreeDots from '../Icon/ThreeDots';
 
 export interface MenuDropdownFieldProps {
   menuButton?: Omit<MenuButtonProps, 'css' | 'style'>;
-  darkMode?: boolean;
   indicator?: boolean;
   menuHeader: {
     profileUrl: string;
