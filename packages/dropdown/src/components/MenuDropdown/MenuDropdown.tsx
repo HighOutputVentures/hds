@@ -9,7 +9,6 @@ import {
   Icon,
   Menu,
   MenuButton,
-  MenuButtonProps,
   MenuItemProps,
   MenuList,
   Text,
@@ -19,14 +18,13 @@ import React from 'react';
 import ThreeDots from '../Icon/ThreeDots';
 
 export interface MenuDropdownFieldProps {
-  menuButton?: Omit<MenuButtonProps, 'css' | 'style'>;
   indicator?: boolean;
   menuHeader: {
     profileUrl: string;
     userName: string;
     emailAddress: string;
   };
-  menuItems: Omit<MenuItemProps[], 'css' | 'style'>;
+  menuItems: Omit<MenuItemProps[], 'css' | 'style' | 'fontSize' | 'color'>;
 }
 
 export interface IKebabMenu extends MenuDropdownFieldProps {
@@ -114,6 +112,8 @@ const MenuDropdown = (props: IMenuDropdownFieldProps) => {
             marginTop="52px"
             data-testid="menu-list"
             py={'0px'}
+            fontSize={'14px'}
+            color="neutrals.900"
           >
             <HStack p={'16px 12px'}>
               <Avatar src={menuHeader.profileUrl} width="40px" height="40px">
