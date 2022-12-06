@@ -2,7 +2,7 @@ import { Icon, IconProps } from '@chakra-ui/react';
 import React, { FC } from 'react';
 
 const ThreeDots: FC<Omit<IconProps, 'children' | 'css'>> = (props) => (
-  <Icon width="20" height="20" viewBox="0 0 20 20" fill="none" {...props}>
+  <Icon width="20px" height="20px" viewBox="0 0 20 20" fill="none" {...props}>
     <path
       d="M10.0001 10.8334C10.4603 10.8334 10.8334 10.4603 10.8334 10C10.8334 9.5398 10.4603 9.16671 10.0001 9.16671C9.53984 9.16671 9.16675 9.5398 9.16675 10C9.16675 10.4603 9.53984 10.8334 10.0001 10.8334Z"
       stroke="#344054"
