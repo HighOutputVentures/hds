@@ -1,8 +1,7 @@
 import { useArgs } from '@storybook/client-api';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
-
-import ThemeProvider from '../../../hds/src/components/ThemeProvider';
+import ThemeProvider from '~/hds/src/components/ThemeProvider';
 import Pagination from './Pagination';
 import PaginationMDX from './Pagination.mdx';
 

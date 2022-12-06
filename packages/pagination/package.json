@@ -1,5 +1,5 @@
 {
-  "version": "0.1.17",
+  "version": "0.1.18",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -53,16 +53,10 @@
     "size-limit": "7.0.8"
   },
   "jest": {
-    "moduleNameMapper": {
-      "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
-      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
-    }
+    "verbose": true
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "2cc842169e828ff56ef57e039534fb0414854443",
-  "dependencies": {
-    "@highoutput/hds-icons": "^0.1.14"
-  }
+  "gitHead": "2cc842169e828ff56ef57e039534fb0414854443"
 }

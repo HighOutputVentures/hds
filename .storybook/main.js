@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   core: {
     builder: "webpack5",
@@ -33,6 +35,7 @@ module.exports = {
           ...config.resolve.alias,
           "@emotion/core": "@emotion/react",
           "emotion-theming": "@emotion/react",
+          "~": path.resolve(__dirname, "../packages"),
         },
       },
     };
