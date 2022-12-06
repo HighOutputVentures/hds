@@ -21,7 +21,6 @@ import UserIcon from '../Icon/UserIcon';
 import UserPlusIcon from '../Icon/UserPlusIcon';
 import UsersIcon from '../Icon/UsersIcon';
 import ZapIcon from '../Icon/ZapIcon';
-
 import MenuDropdown from './MenuDropdown';
 const avatar = require('../../../../../assets/avatar.png');
 export default {
@@ -37,7 +36,6 @@ const Template: ComponentStory<typeof MenuDropdown> = () => {
       <MenuItem icon={<SettingIcon />} command="⌘S">
         Settings
       </MenuItem>
-
       <MenuItem icon={<ZapIcon />} command="?">
         Keyboard shortcuts
       </MenuItem>
@@ -47,11 +45,9 @@ const Template: ComponentStory<typeof MenuDropdown> = () => {
       <MenuItem icon={<HomeIcon />} command="⌘K->C">
         Company profile
       </MenuItem>
-
       <MenuItem icon={<UsersIcon />} command="⌘K->T">
         Team
       </MenuItem>
-
       <MenuItem icon={<UserPlusIcon />} command="⌘K->T">
         Invite colleagues
       </MenuItem>
@@ -72,14 +68,16 @@ const Template: ComponentStory<typeof MenuDropdown> = () => {
       </MenuItem>
     </MenuGroup>,
     <Divider />,
-    <MenuItem
-      icon={<ExitIcon />}
-      command="⌥⇧Q"
-      fontSize={'14px'}
-      color="neutrals.900"
-    >
-      Log out
-    </MenuItem>,
+    <MenuGroup>
+      <MenuItem
+        icon={<ExitIcon />}
+        command="⌥⇧Q"
+        fontSize={'14px'}
+        color="neutrals.900"
+      >
+        Log out
+      </MenuItem>
+    </MenuGroup>,
   ];
   return (
     <ThemeProvider>

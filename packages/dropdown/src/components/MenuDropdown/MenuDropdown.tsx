@@ -24,7 +24,7 @@ export interface MenuDropdownFieldProps {
     userName: string;
     emailAddress: string;
   };
-  menuItems: Omit<MenuItemProps[], 'css' | 'style' | 'fontSize' | 'color'>;
+  menuItems: Omit<MenuItemProps[], 'css' | 'style'>;
 }
 
 export interface IKebabMenu extends MenuDropdownFieldProps {
