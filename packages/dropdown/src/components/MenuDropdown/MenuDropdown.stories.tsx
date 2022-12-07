@@ -1,6 +1,7 @@
 import {
   Divider,
   Flex,
+  Menu,
   MenuGroup,
   MenuItem,
   Text,
@@ -31,57 +32,59 @@ export default {
   component: MenuDropdown,
 } as ComponentMeta<typeof MenuDropdown>;
 const Template: ComponentStory<typeof MenuDropdown> = () => {
-  const menuItems = [
-    <MenuGroup>
-      <MenuItem icon={<UserIcon />} command="⌘K->P">
-        View Profile
-      </MenuItem>
-      <MenuItem icon={<SettingIcon />} command="⌘S">
-        Settings
-      </MenuItem>
-      <MenuItem icon={<ZapIcon />} command="?">
-        Keyboard shortcuts
-      </MenuItem>
-    </MenuGroup>,
-    <Divider />,
-    <MenuGroup>
-      <MenuItem icon={<HomeIcon />} command="⌘K->C">
-        Company profile
-      </MenuItem>
-      <MenuItem icon={<UsersIcon />} command="⌘K->T">
-        Team
-      </MenuItem>
-      <MenuItem icon={<UserPlusIcon />} command="⌘K->T">
-        Invite colleagues
-      </MenuItem>
-    </MenuGroup>,
-    <Divider />,
-    <MenuGroup>
-      <MenuItem icon={<LayersTwoIcon />} command="⌘K->C">
-        Changelog
-      </MenuItem>
-      <MenuItem icon={<MessageSmileIcon />} command="⌘K->S">
-        Slack Community
-      </MenuItem>
-      <MenuItem icon={<HelpIcon />} command="⌘/">
-        Support
-      </MenuItem>
-      <MenuItem icon={<BoxIcon />} command="⌘A">
-        API
-      </MenuItem>
-    </MenuGroup>,
-    <Divider />,
-    <MenuGroup>
-      <MenuItem
-        icon={<ExitIcon />}
-        command="⌥⇧Q"
-        fontSize={'14px'}
-        color="neutrals.900"
-      >
-        Log out
-      </MenuItem>
-    </MenuGroup>,
-  ];
+  const menuItems = (
+    <Menu>
+      <MenuGroup>
+        <MenuItem icon={<UserIcon />} command="⌘K->P">
+          View Profile
+        </MenuItem>
+        <MenuItem icon={<SettingIcon />} command="⌘S">
+          Settings
+        </MenuItem>
+        <MenuItem icon={<ZapIcon />} command="?">
+          Keyboard shortcuts
+        </MenuItem>
+      </MenuGroup>
+      <Divider />
+      <MenuGroup>
+        <MenuItem icon={<HomeIcon />} command="⌘K->C">
+          Company profile
+        </MenuItem>
+        <MenuItem icon={<UsersIcon />} command="⌘K->T">
+          Team
+        </MenuItem>
+        <MenuItem icon={<UserPlusIcon />} command="⌘K->T">
+          Invite colleagues
+        </MenuItem>
+      </MenuGroup>
+      <Divider />
+      <MenuGroup>
+        <MenuItem icon={<LayersTwoIcon />} command="⌘K->C">
+          Changelog
+        </MenuItem>
+        <MenuItem icon={<MessageSmileIcon />} command="⌘K->S">
+          Slack Community
+        </MenuItem>
+        <MenuItem icon={<HelpIcon />} command="⌘/">
+          Support
+        </MenuItem>
+        <MenuItem icon={<BoxIcon />} command="⌘A">
+          API
+        </MenuItem>
+      </MenuGroup>
+      <Divider />
+      <MenuGroup>
+        <MenuItem
+          icon={<ExitIcon />}
+          command="⌥⇧Q"
+          fontSize={'14px'}
+          color="neutrals.900"
+        >
+          Log out
+        </MenuItem>
+      </MenuGroup>
+    </Menu>
+  );
   return (
     <ThemeProvider>
       <Flex

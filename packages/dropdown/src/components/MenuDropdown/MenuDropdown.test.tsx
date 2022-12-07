@@ -3,7 +3,7 @@ import React from 'react';
 import MenuDropdown from './MenuDropdown';
 
 import { RepeatIcon } from '@chakra-ui/icons';
-import { MenuItem } from '@chakra-ui/react';
+import { Menu, MenuItem } from '@chakra-ui/react';
 import ThemeProvider from '@highoutput/hds/src/components/ThemeProvider';
 
 describe('Menu Dropdown Kebab Type Component', () => {
@@ -16,16 +16,18 @@ describe('Menu Dropdown Kebab Type Component', () => {
             emailAddress: 'olivia@untitledui.com',
             userName: 'Olivia Rhye',
           }}
-          menuItems={[
-            <MenuItem
-              icon={<RepeatIcon />}
-              command="⌘⇧N"
-              fontSize={'14px'}
-              color="neutrals.900"
-            >
-              Open Closed Tab
-            </MenuItem>,
-          ]}
+          menuItems={
+            <Menu>
+              <MenuItem
+                icon={<RepeatIcon />}
+                command="⌘⇧N"
+                fontSize={'14px'}
+                color="neutrals.900"
+              >
+                Open Closed Tab
+              </MenuItem>
+            </Menu>
+          }
           menuType="kebab"
         />
       </ThemeProvider>
@@ -48,16 +50,18 @@ describe('Menu Dropdown Button Type Component', () => {
             emailAddress: 'olivia@untitledui.com',
             userName: 'Olivia Rhye',
           }}
-          menuItems={[
-            <MenuItem
-              icon={<RepeatIcon />}
-              command="⌘⇧N"
-              fontSize={'14px'}
-              color="neutrals.900"
-            >
-              Open Closed Tab
-            </MenuItem>,
-          ]}
+          menuItems={
+            <Menu>
+              <MenuItem
+                icon={<RepeatIcon />}
+                command="⌘⇧N"
+                fontSize={'14px'}
+                color="neutrals.900"
+              >
+                Open Closed Tab
+              </MenuItem>
+            </Menu>
+          }
           menuType="button"
           menuButtonText="Account"
         />
@@ -81,16 +85,18 @@ describe('Menu Dropdown Profile Type Component', () => {
             emailAddress: 'olivia@untitledui.com',
             userName: 'Olivia Rhye',
           }}
-          menuItems={[
-            <MenuItem
-              icon={<RepeatIcon />}
-              command="⌘⇧N"
-              fontSize={'14px'}
-              color="neutrals.900"
-            >
-              Open Closed Tab
-            </MenuItem>,
-          ]}
+          menuItems={
+            <Menu>
+              <MenuItem
+                icon={<RepeatIcon />}
+                command="⌘⇧N"
+                fontSize={'14px'}
+                color="neutrals.900"
+              >
+                Open Closed Tab
+              </MenuItem>
+            </Menu>
+          }
           menuType="profile"
           profileUrl=""
         />
