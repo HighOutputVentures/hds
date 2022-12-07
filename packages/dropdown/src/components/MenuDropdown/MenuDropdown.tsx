@@ -25,7 +25,7 @@ export interface MenuDropdownFieldProps {
     userName: string;
     emailAddress: string;
   };
-  menuItems: Omit<MenuItemProps[], 'css' | 'style'>;
+  menuItems: Omit<MenuItemProps, 'css' | 'style'>;
 }
 
 export interface IKebabMenu extends MenuDropdownFieldProps {
@@ -88,6 +88,7 @@ const MenuDropdown = (props: IMenuDropdownFieldProps) => {
                 as={ThreeDots}
                 width="20px"
                 height="20px"
+                _active={{ background: 'transparent' }}
                 color={isOpen ? ' #344054' : '#98A2B3'}
               />
             ) : menuType === 'profile' ? (
@@ -131,10 +132,11 @@ const MenuDropdown = (props: IMenuDropdownFieldProps) => {
               </Box>
             </HStack>
             <Divider orientation="horizontal" />
-
-            {menuItems?.map((items, _) => {
-              return <>{items}</>;
-            })}
+            <Menu>
+              {() => {
+                return <>{menuItems}</>;
+              }}
+            </Menu>
           </MenuList>
         </>
       )}
