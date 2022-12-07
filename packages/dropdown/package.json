@@ -35,20 +35,21 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "dropdown",
+  "name": "@highoutput/hds-dropdown",
   "author": "jadekenneth.github.io",
   "module": "dist/dropdown.esm.js",
   "size-limit": [
     {
-      "path": "dist/dropdown.cjs.production.min.js",
+      "path": "dist/highoutput/hds-dropdown.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/dropdown.esm.js",
+      "path": "dist/highoutput/hds-dropdown.esm.js",
       "limit": "10 KB"
     }
   ],
   "dependencies": {
     "@highoutput/hds-icons": "^0.1.14"
-  }
+  },
+  "gitHead": "afaba7738378dde0e95931c54c07f09c27286376"
 }
