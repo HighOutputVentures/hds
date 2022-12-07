@@ -9,7 +9,7 @@ import {
   SingleValue,
 } from 'chakra-react-select';
 import React, { useId } from 'react';
-
+// @ts-ignore
 import { CheckIcon } from '@highoutput/hds-icons';
 import getStyles from './styles';
 export interface Item {
