@@ -1,5 +1,14 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { Box, BoxProps, Code, Link, ListItem, Stack, Text, UnorderedList } from "@chakra-ui/react";
+import {
+  Box,
+  BoxProps,
+  Code,
+  Link,
+  ListItem,
+  Stack,
+  Text,
+  UnorderedList,
+} from "@chakra-ui/react";
 import React from "react";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import ts from "react-syntax-highlighter/dist/esm/languages/hljs/typescript";
@@ -21,14 +30,17 @@ const GettingStarted = () => {
         </Stack>
 
         <Text size="paragraph-md-default" mb={5}>
-          <strong>@highoutput/hds</strong> we aim to build a library of custom ReactJS components
-          that implements our unique UI design conventions (HDS). Our components will be based
-          primarily on Chakra UI. React Storybook will be used for documentation and testing.
+          <strong>@highoutput/hds</strong> we aim to build a library of custom
+          ReactJS components that implements our unique UI design conventions
+          (HDS). Our components will be based primarily on Chakra UI. React
+          Storybook will be used for documentation and testing.
         </Text>
 
         <UnorderedList mb={5}>
           <ListItem>
-            <Text size="paragraph-md-default">Reusable block of components</Text>
+            <Text size="paragraph-md-default">
+              Reusable block of components
+            </Text>
           </ListItem>
           <ListItem>
             <Text size="paragraph-md-default">HDS integrated styling</Text>
@@ -44,7 +56,8 @@ const GettingStarted = () => {
         <Code mb={5} colorScheme="yellow" children="npm i @highoutput/hds" />
 
         <Text size="paragraph-md-default" mb={5}>
-          In your main app file import theme provider and make it a parent of all components.
+          In your main app file import theme provider and make it a parent of
+          all components.
         </Text>
 
         <Snippet>{snippet1}</Snippet>
@@ -66,7 +79,8 @@ const GettingStarted = () => {
                 href="https://hds-highoutput.vercel.app/?path=/story/getting-started--page"
                 isExternal
               >
-                Storybook Documentation and Preview <ExternalLinkIcon mx="2px" />
+                Storybook Documentation and Preview{" "}
+                <ExternalLinkIcon mx="2px" />
               </Link>
             </Text>
           </ListItem>
@@ -86,56 +100,80 @@ const GettingStarted = () => {
         <UnorderedList mb={5}>
           <ListItem>
             <Text size="paragraph-md-default">
-              <Link href="https://www.npmjs.com/package/@highoutput/hds-icons" isExternal>
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-icons"
+                isExternal
+              >
                 @highoutput/hds-icons
               </Link>
             </Text>
           </ListItem>
           <ListItem>
             <Text size="paragraph-md-default">
-              <Link href="https://www.npmjs.com/package/@highoutput/hds-auth" isExternal>
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-auth"
+                isExternal
+              >
                 @highoutput/hds-auth
               </Link>
             </Text>
           </ListItem>
           <ListItem>
             <Text size="paragraph-md-default">
-              <Link href="https://www.npmjs.com/package/@highoutput/hds-spinner" isExternal>
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-spinner"
+                isExternal
+              >
                 @highoutput/hds-spinner
               </Link>
             </Text>
           </ListItem>
           <ListItem>
             <Text size="paragraph-md-default">
-              <Link href="https://www.npmjs.com/package/@highoutput/hds-pagination" isExternal>
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-pagination"
+                isExternal
+              >
                 @highoutput/hds-pagination
               </Link>
             </Text>
           </ListItem>
           <ListItem>
             <Text size="paragraph-md-default">
-              <Link href="https://www.npmjs.com/package/@highoutput/hds-array-field" isExternal>
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-array-field"
+                isExternal
+              >
                 @highoutput/hds-array-field
               </Link>
             </Text>
           </ListItem>
           <ListItem>
             <Text size="paragraph-md-default">
-              <Link href="https://www.npmjs.com/package/@highoutput/hds-auto-form" isExternal>
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-auto-form"
+                isExternal
+              >
                 @highoutput/hds-auto-form
               </Link>
             </Text>
           </ListItem>
           <ListItem>
             <Text size="paragraph-md-default">
-              <Link href="https://www.npmjs.com/package/@highoutput/hds-contact-us" isExternal>
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-contact-us"
+                isExternal
+              >
                 @highoutput/hds-contact-us
               </Link>
             </Text>
           </ListItem>
           <ListItem>
             <Text size="paragraph-md-default">
-              <Link href="https://www.npmjs.com/package/@highoutput/hds-forms" isExternal>
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-forms"
+                isExternal
+              >
                 @highoutput/hds-forms
               </Link>
             </Text>
@@ -152,43 +190,71 @@ const GettingStarted = () => {
           </ListItem>
           <ListItem>
             <Text size="paragraph-md-default">
-              <Link href="https://www.npmjs.com/package/@highoutput/hds-utilities" isExternal>
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-utilities"
+                isExternal
+              >
                 @highoutput/hds-utilities
               </Link>
             </Text>
           </ListItem>
           <ListItem>
             <Text size="paragraph-md-default">
-              <Link href="https://www.npmjs.com/package/@highoutput/hds-tag" isExternal>
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-tag"
+                isExternal
+              >
                 @highoutput/hds-tag
               </Link>
             </Text>
           </ListItem>
           <ListItem>
             <Text size="paragraph-md-default">
-              <Link href="https://www.npmjs.com/package/@highoutput/hds-switch" isExternal>
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-switch"
+                isExternal
+              >
                 @highoutput/hds-switch
               </Link>
             </Text>
           </ListItem>
           <ListItem>
             <Text size="paragraph-md-default">
-              <Link href="https://www.npmjs.com/package/@highoutput/hds-avatar" isExternal>
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-avatar"
+                isExternal
+              >
                 @highoutput/hds-avatar
               </Link>
             </Text>
           </ListItem>
           <ListItem>
             <Text size="paragraph-md-default">
-              <Link href="https://www.npmjs.com/package/@highoutput/hds-slider" isExternal>
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-slider"
+                isExternal
+              >
                 @highoutput/hds-slider
               </Link>
             </Text>
           </ListItem>
           <ListItem>
             <Text size="paragraph-md-default">
-              <Link href="https://www.npmjs.com/package/@highoutput/hds-checkbox-group" isExternal>
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-checkbox-group"
+                isExternal
+              >
                 @highoutput/hds-checkbox-group
+              </Link>
+            </Text>
+          </ListItem>
+          <ListItem>
+            <Text size="paragraph-md-default">
+              <Link
+                href="https://www.npmjs.com/package/@highoutput/hds-dropdown"
+                isExternal
+              >
+                @highoutput/hds-dropdown
               </Link>
             </Text>
           </ListItem>
