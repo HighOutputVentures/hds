@@ -22,7 +22,7 @@ const Template: ComponentStory<typeof Tooltip> = (props) => {
         align={'center'}
         height={'400px'}
       >
-        <Tooltip {...props} label="This is a tooltip" isOpen={true}>
+        <Tooltip {...props} isOpen={true}>
           <Icon />
         </Tooltip>
       </Flex>
@@ -34,4 +34,7 @@ export const Default = Template.bind({});
 
 Default.args = {
   ...Default.args,
+  label: 'This is a tooltip',
+  arrow: true,
+  theme: 'dark',
 };
