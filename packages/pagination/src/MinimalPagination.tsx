@@ -125,6 +125,8 @@ export default function MinimalPagination(props: MinimalPaginationProps & System
                       n && onPageChange?.(n);
                     }}
                     sx={styles.pageControl?.({ isActive: n === page })}
+                    role="button"
+                    aria-label={`Go to page ${n}`}
                   >
                     {n ?? "..."}
                   </Button>
