@@ -118,6 +118,7 @@ export default function MinimalPagination(props: MinimalPaginationProps & System
               {pageControls.map((n) => {
                 return (
                   <Button
+                    key={n}
                     variant="unstyled"
                     disabled={!n}
                     onClick={() => {

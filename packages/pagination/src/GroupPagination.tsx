@@ -60,13 +60,14 @@ export default function GroupPagination(props: GroupPaginationProps & SystemStyl
         {pageControls.map((n) => {
           return (
             <Button
-              aria-selected={n === page}
+              key={n}
               variant="unstyled"
               disabled={!n}
               onClick={() => {
                 n && onPageChange?.(n);
               }}
               _disabled={{}}
+              aria-selected={n === page}
             >
               {n ?? "..."}
             </Button>
