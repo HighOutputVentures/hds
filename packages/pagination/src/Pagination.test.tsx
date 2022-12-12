@@ -3,6 +3,9 @@ import { fireEvent, render } from "@testing-library/react";
 import * as React from "react";
 import Pagination from "./Pagination";
 
+// Heads up! we're only gonna test "minimal" variant
+// since "group" variant's API is just a copy of "minimal"
+// but "minimal" is a bit complex
 describe("Pagination", () => {
   const renderPagination = (
     props: Partial<{
