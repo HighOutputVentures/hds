@@ -3,7 +3,6 @@ import * as React from "react";
 import { useOtherPaginationInfo, useStyles } from "./hooks";
 import ArrowLeftIcon from "./icons/ArrowLeft";
 import ArrowRightIcon from "./icons/ArrowRight";
-import { PaginationBaseProps } from "./types";
 
 type MinimalPaginationBaseProps = {
   /** toggle legend. eg `Page 1 of 10` */
@@ -22,7 +21,12 @@ type MinimalPaginationBaseProps = {
   hasButtonOutline?: boolean;
 };
 
-export type MinimalPaginationProps = PaginationBaseProps & MinimalPaginationBaseProps;
+export type MinimalPaginationProps = {
+  page: number;
+  pageSize: number;
+  total: number;
+  onPageChange: (newPage: number) => void;
+} & MinimalPaginationBaseProps;
 
 const defaultProps: Required<MinimalPaginationBaseProps> = {
   hasLegend: false,

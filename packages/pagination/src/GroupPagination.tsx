@@ -1,27 +1,31 @@
-import { Box, BoxProps, Button, ButtonGroup, Icon } from "@chakra-ui/react";
+import { Box, Button, ButtonGroup, Icon, SystemStyleObject } from "@chakra-ui/react";
 import * as React from "react";
 import { useOtherPaginationInfo, useStyles } from "./hooks";
 import ArrowLeftIcon from "./icons/ArrowLeft";
 import ArrowRightIcon from "./icons/ArrowRight";
-import { PaginationBaseProps } from "./types";
 
 type GroupPaginationBaseProps = {
   maxPageControls?: 4 | 6;
 };
 
-export type GroupPaginationProps = PaginationBaseProps & GroupPaginationBaseProps;
+export type GroupPaginationProps = {
+  page: number;
+  pageSize: number;
+  total: number;
+  onPageChange: (newPage: number) => void;
+} & GroupPaginationBaseProps;
 
 const defaultProps: Required<GroupPaginationBaseProps> = {
   maxPageControls: 6,
 };
 
-export default function GroupPagination(props: GroupPaginationProps & BoxProps) {
+export default function GroupPagination(props: GroupPaginationProps & SystemStyleObject) {
   const styles = useStyles("group");
 
-  const { page, pageSize, total, onPageChange, maxPageControls, ...others } = {
-    ...defaultProps,
-    ...props,
-  };
+  const { page, pageSize, total, onPageChange, maxPageControls, ...others } = Object.assign(
+    defaultProps,
+    props,
+  );
 
   const { hasNext, hasPrevious, pageControls } = useOtherPaginationInfo({
     page,
@@ -39,7 +43,7 @@ export default function GroupPagination(props: GroupPaginationProps & BoxProps) 
   };
 
   return (
-    <Box {...others}>
+    <Box sx={others}>
       <ButtonGroup variant="unstyled" spacing={0} sx={styles.group}>
         <Button
           variant="unstyled"

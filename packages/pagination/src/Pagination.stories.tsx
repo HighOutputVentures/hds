@@ -107,6 +107,7 @@ const Template: ComponentStory<typeof Pagination> = () => {
   return (
     <ChakraProvider>
       <Pagination
+        variant="minimal"
         page={args.page}
         pageSize={args.pageSize}
         total={args.total}
@@ -117,7 +118,7 @@ const Template: ComponentStory<typeof Pagination> = () => {
         hasButtonOutline={args.hasButtonOutline}
         hasPageControls={args.hasPageControls}
         maxPageControls={args.maxPageControls}
-        onPageChange={(page) => setArgs({ ...args, page })}
+        onPageChange={(page: number) => setArgs({ ...args, page })}
       />
 
       <Pagination
@@ -127,7 +128,7 @@ const Template: ComponentStory<typeof Pagination> = () => {
         pageSize={args.pageSize}
         total={args.total}
         maxPageControls={args.maxPageControls}
-        onPageChange={(page) => setArgs({ ...args, page })}
+        onPageChange={(page: number) => setArgs({ ...args, page })}
       />
     </ChakraProvider>
   );

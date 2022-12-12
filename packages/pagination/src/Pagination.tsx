@@ -1,18 +1,17 @@
-import { BoxProps } from "@chakra-ui/react";
+import { SystemStyleObject } from "@chakra-ui/react";
 import * as React from "react";
 import GroupPagination, { GroupPaginationProps } from "./GroupPagination";
 import MinimalPagination, { MinimalPaginationProps } from "./MinimalPagination";
-import omit from "./utils";
 
 export type PaginationProps =
-  | ({ variant?: "minimal" } & MinimalPaginationProps)
+  | ({ variant: "minimal" } & MinimalPaginationProps)
   | ({ variant: "group" } & GroupPaginationProps);
 
-export default function Pagination(props: PaginationProps & BoxProps) {
+export default function Pagination(props: PaginationProps & SystemStyleObject) {
   switch (props.variant) {
     case "group":
-      return <GroupPagination {...omit(props, "variant")} />;
+      return <GroupPagination {...props} />;
     default:
-      return <MinimalPagination {...omit(props, "variant")} />;
+      return <MinimalPagination {...props} />;
   }
 }

@@ -2,10 +2,16 @@ import "@testing-library/jest-dom";
 import { fireEvent, render } from "@testing-library/react";
 import * as React from "react";
 import Pagination from "./Pagination";
-import { PaginationBaseProps } from "./types";
 
 describe("Pagination", () => {
-  const renderPagination = (props: Partial<PaginationBaseProps> = {}) => {
+  const renderPagination = (
+    props: Partial<{
+      page: number;
+      pageSize: number;
+      total: number;
+      onPageChange: (newPage: number) => void;
+    }> = {},
+  ) => {
     return render(
       <Pagination
         variant="minimal"
@@ -18,7 +24,11 @@ describe("Pagination", () => {
     );
   };
 
-  it.todo("Should be able to display legend");
+  it("Should be able to display legend", () => {
+    const { queryByText } = renderPagination();
+    expect(queryByText(`Page 1 of 20`)).toBeDefined();
+  });
+
   it.todo("Should be able to show page controls");
 
   it("Should be able to go to next page", () => {
