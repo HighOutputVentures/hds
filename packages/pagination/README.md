@@ -12,32 +12,30 @@ npm i @highoutput/hds-pagination
 
 ### Usage
 
-
-```jsx
-import { Pagination } from '@highoutput/hds-pagination';
+```tsx
+import { Pagination } from "@highoutput/hds-pagination";
+import * as React from "react";
 
 export const SamplePage = () => {
+  const [page, setPage] = React.useState(1);
 
   return (
     <>
-       <Pagination
-          onPageChange={() => {}}
-          onSizeChange={function noRefCheck() {}}
-          options={{
-            sizes: [
-              5,
-              10,
-              25,
-              50
-            ]
-          }}
-          page={1}
-          size={5}
-          total={75}
-        />
+      {/* More codes... */}
+
+      <Pagination
+        variant="minimal"
+        page={1}
+        pageSize={5}
+        total={100}
+        onPageChange={setPage}
+        hasLegend={false}
+        hasPageControls
+        maxPageControls={4}
+      />
+
+      {/* More codes... */}
     </>
   );
 };
 ```
-
-
