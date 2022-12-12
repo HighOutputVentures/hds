@@ -9,7 +9,7 @@ type MinimalPaginationBaseProps = {
   hasLegend?: boolean;
   /** whether to place legend between left and right button or separate on the left */
   isLegendCentered?: boolean;
-  /** toggle page controls. should still be hidden if `hasLegend` is set to `true` */
+  /** toggle page controls. should still be hidden if `hasLegend` is set to `true` 🥸 */
   hasPageControls?: boolean;
   /** control how many page controls appear */
   maxPageControls?: 4 | 6;
@@ -17,7 +17,7 @@ type MinimalPaginationBaseProps = {
   hasButtonIcon?: boolean;
   /** toggle arrow label */
   hasButtonLabel?: boolean;
-  /** changes unstyled button to outline */
+  /** changes unstyled button to outline 🤠 */
   hasButtonOutline?: boolean;
 };
 
