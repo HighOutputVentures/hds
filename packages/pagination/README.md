@@ -26,7 +26,7 @@ export const SamplePage = () => {
       <Pagination
         variant="minimal"
         page={1}
-        size={5}
+        pageSize={5}
         total={100}
         onPageChange={setPage}
         hasLegend={false}
