@@ -29,7 +29,14 @@ describe("Pagination", () => {
     expect(queryByText(`Page 1 of 20`)).toBeDefined();
   });
 
-  it.todo("Should be able to show page controls");
+  it("Should be able to show page controls", () => {
+    const { queryByRole, queryAllByRole } = renderPagination();
+    expect(queryByRole("button", { name: /Go to previous page/ })).toBeDefined();
+    expect(queryByRole("button", { name: /Go to next page/ })).toBeDefined();
+    // This is the "..." 🦄
+    expect(queryByRole("button", { name: /Go to page \.{3}/ })).toBeDefined();
+    expect(queryAllByRole("button", { name: /Go to page \d+/ })).toHaveLength(6);
+  });
 
   it("Should be able to go to next page", () => {
     const onPageChange = jest.fn();
