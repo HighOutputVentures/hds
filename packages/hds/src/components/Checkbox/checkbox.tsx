@@ -1,16 +1,16 @@
-import React, { useId } from 'react';
+import { MinusIcon } from '@chakra-ui/icons';
 import {
+  Box,
   Checkbox as ChakraCheckbox,
-  VStack,
-  Text,
-  CheckboxProps,
   CheckboxIcon,
+  CheckboxProps,
   Icon,
   IconProps,
-  Box,
+  Text,
   useMultiStyleConfig,
+  VStack,
 } from '@chakra-ui/react';
-import { MinusIcon } from '@chakra-ui/icons';
+import React, { useId } from 'react';
 import { omit } from './utils';
 
 export type CheckTypeProps = {
@@ -94,7 +94,14 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckProps>(
     };
 
     const radioIcon = () => {
-      const iconSize = size === 'md' ? 'xs' : size === 'lg' ? 'md' : '8px';
+      const iconSize =
+        size === 'md'
+          ? 'xs'
+          : size === 'lg'
+          ? 'md'
+          : size === 'xl'
+          ? '16px'
+          : '8px';
       if (props.type === 'radioType' && props.radio_icon === 'checkIcon') {
         return <Icon as={CheckboxIcon} fontSize={iconSize} />;
       }
