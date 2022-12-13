@@ -37,6 +37,12 @@ export const Checkbox = {
         h: '24px',
       },
     },
+    xl: {
+      control: {
+        w: '32px',
+        h: '32px',
+      },
+    },
   },
   variants: {
     'primary.outlined': {

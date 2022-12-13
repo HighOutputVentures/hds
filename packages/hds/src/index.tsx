@@ -3,6 +3,12 @@ import CloseButton, { CloseButtonProps } from './components/Button/CloseButton';
 import SocialButton, {
   SocialButtonProps,
 } from './components/Button/SocialButton';
+import Checkbox, {
+  CheckProps,
+  CheckTypeProps,
+  CircleIcon,
+  RadioTypeProps,
+} from './components/Checkbox/checkbox';
 import ThemeProvider, { ThemeProviderProps } from './components/ThemeProvider';
 import theme from './theme';
 import {
@@ -14,7 +20,6 @@ import {
   CloseButtonVariantTypes,
 } from './theme/components/button/variants';
 import { extendTheme } from './utils/theme.utils';
-
 export {
   Accordion,
   AccordionButton,
@@ -68,7 +73,6 @@ export {
   Center,
   CenterProps,
   chakra as hds,
-  Checkbox,
   CheckboxGroup,
   CheckboxGroupContext,
   CheckboxGroupProps,
@@ -389,6 +393,11 @@ export {
   SocialButtonProps,
   CloseButton,
   CloseButtonProps,
+  Checkbox,
+  CheckProps,
+  CheckTypeProps,
+  CircleIcon,
+  RadioTypeProps,
   theme,
   extendTheme,
 };
