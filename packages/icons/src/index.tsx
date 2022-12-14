@@ -19,11 +19,13 @@ import HomeIcon from './components/HomeIcon';
 import HovIcon from './components/HovIcon';
 import LayersTwoIcon from './components/LayersTwoIcon';
 import MessageSmileIcon from './components/MessageSmileIcon';
+import PrimaryIcon from './components/PrimaryIcon';
 import SearchIcon from './components/SearchIcon';
 import SettingIcon from './components/SettingIcon';
 import SuccessCircleIcon from './components/SuccessCircleIcon';
 import ThreeDots from './components/ThreeDots';
 import TwitterIcon from './components/TwitterIcon';
+import UploadIcon from './components/UploadIcon';
 import UserIcon from './components/UserIcon';
 import UserPlusIcon from './components/UserPlusIcon';
 import UsersIcon from './components/UsersIcon';
@@ -61,4 +63,6 @@ export {
   ErrorFolderIcon,
   CheckCircleGreenIcon,
   BoxCircularBGIcon,
+  UploadIcon,
+  PrimaryIcon,
 };

@@ -23,6 +23,7 @@ import {
   HomeIcon,
   LayersTwoIcon,
   MessageSmileIcon,
+  PrimaryIcon,
   SearchIcon,
   SettingIcon,
   SuccessCircleIcon,
@@ -35,6 +36,7 @@ import {
   WarningIcon,
   ZapIcon,
 } from '../index';
+import UploadIcon from './UploadIcon';
 
 export default {
   title: 'Components/Icons',
@@ -168,13 +170,18 @@ const RandomTemplate = () => (
         <ZapIcon />
         <Text>{'ZapIcon'}</Text>
       </GridItem>
-      <GridItem w="100%" h="80px" textAlign="center">
-        <BoxCircularBGIcon />
-        <Text>{'BoxCircularBGIcon'}</Text>
-      </GridItem>
+
       <GridItem w="100%" h="80px" textAlign="center">
         <CheckCircleGreenIcon />
         <Text>{'CheckCircleGreenIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <WarningIcon />
+        <Text>{'WarningFolderIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <BoxCircularBGIcon />
+        <Text>{'BoxCircularBGIcon'}</Text>
       </GridItem>
       <GridItem w="100%" h="80px" textAlign="center">
         <ErrorFolderIcon />
@@ -185,12 +192,16 @@ const RandomTemplate = () => (
         <Text>{'WarningFolderIcon'}</Text>
       </GridItem>
       <GridItem w="100%" h="80px" textAlign="center">
-        <WarningIcon />
-        <Text>{'WarningFolderIcon'}</Text>
-      </GridItem>
-      <GridItem w="100%" h="80px" textAlign="center">
         <SuccessCircleIcon />
         <Text>{'SuccessCircleIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <UploadIcon />
+        <Text>{'UploadIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <PrimaryIcon />
+        <Text>{'PrimaryIcon'}</Text>
       </GridItem>
     </Grid>
   </ThemeProvider>
