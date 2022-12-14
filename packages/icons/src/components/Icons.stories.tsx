@@ -9,9 +9,12 @@ import IconsMDX from './Icons.mdx';
 
 import {
   AppleIcon,
+  BoxCircularBGIcon,
   BoxIcon,
+  CheckCircleGreenIcon,
   CheckIcon,
   DribbleIcon,
+  ErrorFolderIcon,
   ExitIcon,
   FacebookIcon,
   FigmaIcon,
@@ -20,15 +23,20 @@ import {
   HomeIcon,
   LayersTwoIcon,
   MessageSmileIcon,
+  PrimaryIcon,
   SearchIcon,
   SettingIcon,
+  SuccessCircleIcon,
   ThreeDots,
   TwitterIcon,
   UserIcon,
   UserPlusIcon,
   UsersIcon,
+  WarningFolderIcon,
+  WarningIcon,
   ZapIcon,
 } from '../index';
+import UploadIcon from './UploadIcon';
 
 export default {
   title: 'Components/Icons',
@@ -161,6 +169,39 @@ const RandomTemplate = () => (
       <GridItem w="100%" h="80px" textAlign="center">
         <ZapIcon />
         <Text>{'ZapIcon'}</Text>
+      </GridItem>
+
+      <GridItem w="100%" h="80px" textAlign="center">
+        <CheckCircleGreenIcon />
+        <Text>{'CheckCircleGreenIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <WarningIcon />
+        <Text>{'WarningFolderIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <BoxCircularBGIcon />
+        <Text>{'BoxCircularBGIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <ErrorFolderIcon />
+        <Text>{'ErrorFolderIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <WarningFolderIcon />
+        <Text>{'WarningFolderIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <SuccessCircleIcon />
+        <Text>{'SuccessCircleIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <UploadIcon />
+        <Text>{'UploadIcon'}</Text>
+      </GridItem>
+      <GridItem w="100%" h="80px" textAlign="center">
+        <PrimaryIcon />
+        <Text>{'PrimaryIcon'}</Text>
       </GridItem>
     </Grid>
   </ThemeProvider>

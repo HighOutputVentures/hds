@@ -10,7 +10,7 @@ import {
   useMultiStyleConfig,
   VStack,
 } from '@chakra-ui/react';
-import React, { useId } from 'react';
+import React, { ReactNode, useId } from 'react';
 import { omit } from './utils';
 
 export type CheckTypeProps = {
@@ -38,7 +38,7 @@ export type CheckProps = (CheckTypeProps | RadioTypeProps) &
     | 'size'
   > & {
     helperMsg?: string;
-    label: string | JSX.Element;
+    label?: string | ReactNode;
     onCheck?: (value: boolean) => void;
     variant?: 'primary.outlined' | 'primary.solid';
     disabled?: boolean;
