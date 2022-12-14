@@ -158,13 +158,13 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckProps>(
             icon={radioIcon()}
             {...omit(others, 'onCheck', 'helperMsg', '__testId')}
           >
-            {typeof props.label === 'string' ? (
+            {props.label && typeof props.label === 'string' ? (
               <CheckboxLabel
                 checkboxLabel={props.label}
                 helperMsg={props.helperMsg}
               />
             ) : (
-              <Box>{props.label}</Box>
+              props.label && <Box>{props.label}</Box>
             )}
           </ChakraCheckbox>
         )}
