@@ -35,16 +35,16 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "alerts",
+  "name": "@highoutput/hds-alerts",
   "author": "jadekenneth.github.io",
-  "module": "dist/alerts.esm.js",
+  "module": "dist/@highoutput/hds-alerts.esm.js",
   "size-limit": [
     {
-      "path": "dist/alerts.cjs.production.min.js",
+      "path": "dist/@highoutput/hds-alerts.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/alerts.esm.js",
+      "path": "dist/@highoutput/hds-alerts.esm.js",
       "limit": "10 KB"
     }
   ],
