@@ -1,11 +1,15 @@
 import { IconProps } from '@chakra-ui/react';
 
 import AppleIcon from './components/AppleIcon';
+import BoxCircularBGIcon from './components/BoxCircularBGIcon';
 import BoxIcon from './components/BoxIcon';
+import CheckCircleGreenIcon from './components/CheckCircleGreenIcon';
+
 import CheckIcon from './components/CheckIcon';
 import ChevronLeftIcon from './components/ChevronLeftIcon';
 import ChevronRightIcon from './components/ChevronRightIcon';
 import DribbleIcon from './components/DribbleIcon';
+import ErrorFolderIcon from './components/ErrorFolderIcon';
 import ExitIcon from './components/ExitIcon';
 import FacebookIcon from './components/FacebookIcon';
 import FigmaIcon from './components/FigmaIcon';
@@ -17,13 +21,15 @@ import LayersTwoIcon from './components/LayersTwoIcon';
 import MessageSmileIcon from './components/MessageSmileIcon';
 import SearchIcon from './components/SearchIcon';
 import SettingIcon from './components/SettingIcon';
+import SuccessCircleIcon from './components/SuccessCircleIcon';
 import ThreeDots from './components/ThreeDots';
 import TwitterIcon from './components/TwitterIcon';
 import UserIcon from './components/UserIcon';
 import UserPlusIcon from './components/UserPlusIcon';
 import UsersIcon from './components/UsersIcon';
+import WarningFolderIcon from './components/WarningFolderIcon';
+import WarningIcon from './components/WarningIcon';
 import ZapIcon from './components/ZapIcon';
-
 export {
   HovIcon,
   ChevronRightIcon,
@@ -49,4 +55,10 @@ export {
   HomeIcon,
   HelpIcon,
   ExitIcon,
+  SuccessCircleIcon,
+  WarningIcon,
+  WarningFolderIcon,
+  ErrorFolderIcon,
+  CheckCircleGreenIcon,
+  BoxCircularBGIcon,
 };

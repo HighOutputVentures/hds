@@ -2,7 +2,7 @@ import { Icon, IconProps } from '@chakra-ui/react';
 import React, { FC } from 'react';
 
 const BoxCircularBGIcon: FC<Omit<IconProps, 'children' | 'css'>> = (props) => (
-  <Icon width="20px" height="20px" viewBox="0 0 20 20" fill="none" {...props}>
+  <Icon width="46px" height="46px" viewBox="0 0 46 46" fill="none" {...props}>
     <rect x="3" y="3" width="40" height="40" rx="20" fill="#F0F0F0" />
     <g clip-path="url(#clip0_1135_2054)">
       <path
