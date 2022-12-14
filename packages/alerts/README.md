@@ -20,8 +20,8 @@ export const AlertSamplePage = () => {
     <Alert
       supportingDetail="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam."
       status="default"
-      alertLinks={['google.com', 'twitter.com']}
-      alertLabel={['Learn More', 'View Changes']}
+      alertLabel={{ label1: 'Dismiss', label2: 'Changelog' }}
+      alertLinks={{ link1: '#', link2: '#' }}
       title="We’ve just released a new feature"
     />
   );
@@ -34,8 +34,8 @@ export const NotificationSamplePage = () => {
       avatar={Avatar}
       createdAt={'2 mins ago'}
       supportingDetail="I’ve finished adding my notes. Happy for us to review whenever you’re ready!"
-      alertLinks={['#', '#']}
-      alertLabel={['Dismiss', 'Changelog']}
+      alertLabel={{ label1: 'Dismiss', label2: 'Changelog' }}
+      alertLinks={{ link1: '#', link2: '#' }}
       title="Katherine Moss"
       isOpen={true}
     />
