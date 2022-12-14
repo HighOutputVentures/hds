@@ -9,8 +9,8 @@ describe('Alert Component', () => {
     render(
       <ThemeProvider>
         <Alert
-          alertLabel={['Learn more', 'View Changes']}
-          alertLinks={['#', '#']}
+          alertLabel={{ label1: 'Learn More', label2: 'View Changes' }}
+          alertLinks={{ link1: '#', link2: '#' }}
           status="default"
           supportingDetail="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam."
           title="We’ve just released a new feature"

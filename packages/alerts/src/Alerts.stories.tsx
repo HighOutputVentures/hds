@@ -37,8 +37,15 @@ Default.args = {
   supportingDetail:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.',
   status: 'default',
-  alertLinks: ['google.com', 'twitter.com'],
-  alertLabel: ['Learn More', 'View Changes'],
+
+  alertLabel: {
+    label1: 'Learn More',
+    label2: 'View Changes',
+  },
+  alertLinks: {
+    link1: '#',
+    link2: '#',
+  },
   title: 'We’ve just released a new feature',
 };
 Info.args = {
@@ -46,8 +53,14 @@ Info.args = {
   supportingDetail:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.',
   status: 'info',
-  alertLinks: ['google.com', 'twitter.com'],
-  alertLabel: ['Learn More', 'View Changes'],
+  alertLabel: {
+    label1: 'Learn More',
+    label2: 'View Changes',
+  },
+  alertLinks: {
+    link1: '#',
+    link2: '#',
+  },
   title: 'We’ve just released a new feature',
 };
 Error.args = {
@@ -55,8 +68,14 @@ Error.args = {
   supportingDetail:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.',
   status: 'error',
-  alertLinks: ['google.com', 'twitter.com'],
-  alertLabel: ['Learn More', 'View Changes'],
+  alertLabel: {
+    label1: 'Learn More',
+    label2: 'View Changes',
+  },
+  alertLinks: {
+    link1: '#',
+    link2: '#',
+  },
   title: 'There was a problem with that action',
 };
 Warning.args = {
@@ -64,8 +83,14 @@ Warning.args = {
   supportingDetail:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.',
   status: 'warning',
-  alertLinks: ['google.com', 'twitter.com'],
-  alertLabel: ['Learn More', 'View Changes'],
+  alertLabel: {
+    label1: 'Learn More',
+    label2: 'View Changes',
+  },
+  alertLinks: {
+    link1: '#',
+    link2: '#',
+  },
   title: 'Just to let you know this might be a problem',
 };
 Success.args = {
@@ -73,7 +98,13 @@ Success.args = {
   supportingDetail:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.',
   status: 'success',
-  alertLinks: ['google.com', 'twitter.com'],
-  alertLabel: ['Learn More', 'View Changes'],
+  alertLabel: {
+    label1: 'Learn More',
+    label2: 'View Changes',
+  },
+  alertLinks: {
+    link1: '#',
+    link2: '#',
+  },
   title: ' Successfully updated profile',
 };

@@ -16,8 +16,14 @@ import React from 'react';
 export interface MainNotificationsProps {
   title: string;
   supportingDetail: string;
-  alertLabel: [label1: string, label2?: string];
-  alertLinks: [link1: string | VoidFunction, link2?: string | VoidFunction];
+  alertLabel: {
+    label1: string;
+    label2?: string;
+  };
+  alertLinks: {
+    link1: string | VoidFunction;
+    link2?: string | VoidFunction;
+  };
   isOpen?: boolean;
   onClose?: () => void;
 }
@@ -122,7 +128,7 @@ const Notification = (props: NotificationsProps) => {
           <Stack w="full" height="36px" spacing="8px" mb="16px">
             <Progress
               colorScheme={'purple'}
-              value={parseInt(progressValue)}
+              value={progressValue ? parseInt(progressValue) : undefined}
               height={'8px'}
               borderRadius="4px"
             />
@@ -160,14 +166,14 @@ const Notification = (props: NotificationsProps) => {
             lineHeight="24px"
             fontWeight={500}
             cursor="pointer"
-            href={`${alertLinks[0]}`}
+            href={`${alertLinks.link1}`}
             target={'_blank'}
           >
-            {alertLabel[0]}
+            {alertLabel.label1}
           </Text>
           <Text
             as="a"
-            href={`${alertLinks[1]}`}
+            href={`${alertLinks.link2}`}
             target={'_blank'}
             cursor="pointer"
           >
@@ -179,7 +185,7 @@ const Notification = (props: NotificationsProps) => {
               fontWeight={500}
               mr={'10px'}
             >
-              {alertLabel[1]}
+              {alertLabel.label2}
             </Text>
           </Text>
         </HStack>
