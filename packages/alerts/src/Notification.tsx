@@ -11,6 +11,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
+// @ts-ignore
 import { UploadIcon } from '@highoutput/hds-icons';
 import React from 'react';
 export interface MainNotificationsProps {

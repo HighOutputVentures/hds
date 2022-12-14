@@ -1,5 +1,6 @@
 import { ArrowForwardIcon, InfoOutlineIcon } from '@chakra-ui/icons';
 import { CloseButton, Flex, HStack, Icon, Text } from '@chakra-ui/react';
+// @ts-ignore
 import { CheckCircleGreenIcon, WarningIcon } from '@highoutput/hds-icons';
 import React from 'react';
 
