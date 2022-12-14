@@ -1,16 +1,16 @@
-import React, { useId } from 'react';
+import { MinusIcon } from '@chakra-ui/icons';
 import {
+  Box,
   Checkbox as ChakraCheckbox,
-  VStack,
-  Text,
-  CheckboxProps,
   CheckboxIcon,
+  CheckboxProps,
   Icon,
   IconProps,
-  Box,
+  Text,
   useMultiStyleConfig,
+  VStack,
 } from '@chakra-ui/react';
-import { MinusIcon } from '@chakra-ui/icons';
+import React, { ReactNode, useId } from 'react';
 import { omit } from './utils';
 
 export type CheckTypeProps = {
@@ -38,7 +38,7 @@ export type CheckProps = (CheckTypeProps | RadioTypeProps) &
     | 'size'
   > & {
     helperMsg?: string;
-    label: string | JSX.Element;
+    label?: string | ReactNode;
     onCheck?: (value: boolean) => void;
     variant?: 'primary.outlined' | 'primary.solid';
     disabled?: boolean;
