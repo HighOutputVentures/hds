@@ -1,5 +1,5 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { HStack, VStack } from '@chakra-ui/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
 import { ThemeProvider } from '../..';
@@ -25,10 +25,10 @@ export default {
         name: 'string',
         required: false,
       },
-      description: `"sm", "md", "lg"`,
+      description: `"sm", "md", "lg", "xl"`,
       defaultValue: 'sm',
       control: 'radio',
-      options: ['sm', 'md', 'lg'],
+      options: ['sm', 'md', 'lg', 'xl'],
     },
     type: {
       name: 'checkbox type',
