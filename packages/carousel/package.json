@@ -19,7 +19,8 @@
     "size": "size-limit",
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "copy-css": "node scripts/copyCarouselStyles.mjs"
   },
   "peerDependencies": {
     "react": ">=16"
