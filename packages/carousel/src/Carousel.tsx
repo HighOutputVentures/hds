@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import * as React from "react";
 import { Carousel as ReactResponsiveCarousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import CarouselStyle from "./CarouselStyle";
 import ChevronLeftIcon from "./ChevronLeftIcon";
 import ChevronRightIcon from "./ChevronRightIcon";
 
@@ -53,6 +53,7 @@ export default function Carousel<T extends unknown[]>({
         ".control-dots": styles.dots,
       }}
     >
+      <CarouselStyle />
       <ReactResponsiveCarousel
         width="100%"
         autoPlay={autoPlay}
