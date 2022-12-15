@@ -50,6 +50,6 @@
     "verbose": true
   },
   "dependencies": {
-    "react-textarea-autosize": "8.3.4"
+    "react-responsive-carousel": "^3.2.23"
   }
 }
