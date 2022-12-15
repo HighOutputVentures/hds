@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import * as React from "react";
 import { Carousel as ReactResponsiveCarousel } from "react-responsive-carousel";
-import CarouselStyle from "./CarouselStyle";
+import CarouselStyle from "./CarouselStyle.generated";
 import ChevronLeftIcon from "./ChevronLeftIcon";
 import ChevronRightIcon from "./ChevronRightIcon";
 

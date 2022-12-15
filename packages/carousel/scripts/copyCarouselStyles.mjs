@@ -17,7 +17,7 @@ async function copyCarouselStyles() {
   const fullPath = path.resolve(dirname, "../..", location);
 
   const styles = await fs.readFile(fullPath, { encoding: "utf-8" });
-  const target = path.resolve(dirname, "src/CarouselStyle.tsx");
+  const target = path.resolve(dirname, "src/CarouselStyle.generated.tsx");
 
   await fs.writeFile(target, template.replace(/css/, styles), { encoding: "utf-8" });
 }
