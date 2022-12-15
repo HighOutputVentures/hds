@@ -13,12 +13,12 @@ const Template: ComponentStory<typeof Table> = () => {
   return (
     <ChakraProvider>
       <Table
-        data={items}
+        items={items}
         columns={[
           {
             label: "Name",
-            getData(item) {
-              return item;
+            getData({ name, username, avatar }) {
+              return { name, username, avatar };
             },
             renderRow(item) {
               return (
@@ -32,12 +32,11 @@ const Template: ComponentStory<typeof Table> = () => {
                 </Flex>
               );
             },
-            checkbox: {
-              enabled: true,
-              onToggle() {},
-            },
+            onCheck() {},
           },
         ]}
+        defaultSort="asc"
+        onCheckAll={(/* { items, isChecked } */) => {}}
       />
     </ChakraProvider>
   );

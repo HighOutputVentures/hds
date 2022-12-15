@@ -1,108 +1,132 @@
-import { chakra } from "@chakra-ui/react";
+import { chakra, Flex, Icon, Tooltip } from "@chakra-ui/react";
 import * as React from "react";
 
 type UnknownArray = unknown[];
-
 type ArrayItem<T extends UnknownArray> = T[number];
 
-type CheckboxPlugin =
-  | { enabled?: false }
-  | {
-      enabled: true;
-      onToggle(context: { isChecked: boolean }): void;
-    };
+type SortDirection = "asc" | "desc";
 
-type TooltipPlugin =
-  | { enabled?: false }
-  | {
-      enabled: true;
-      label: string;
-    };
+type SortContext<T extends UnknownArray> = {
+  items: T;
+  direction: SortDirection;
+};
 
-type ClickPlugin =
-  | { enabled?: false }
-  | {
-      enabled: true;
-      onClick(): void;
-    };
+type CheckContext<T> = {
+  item: T;
+  isChecked: boolean;
+};
 
-type SortPlugin =
-  | { enabled?: false }
-  | {
-      enabled: true;
-      onSort(context: { direction: "Ascending" | "Descending" }): void;
-    };
-
-type Functionable<ReturnValue, Args> = ReturnValue | ((args: Args) => ReturnValue);
+type ClickContext<T> = {
+  item: T;
+};
 
 type Column<T extends UnknownArray, D> = {
   label: string;
+  tooltip?: string;
   getData: (item: ArrayItem<T>) => D;
-  renderRow?: (data: D) => any;
-  checkbox?: Functionable<CheckboxPlugin, T[number]>;
-  tooltip?: Functionable<TooltipPlugin, T[number]>;
-  click?: Functionable<ClickPlugin, T[number]>;
-  sort?: Functionable<SortPlugin, T[number]>;
+  renderRow?: (context: D) => any;
+  onSort?(context: SortContext<T>): void;
+  onClick?(context: ClickContext<ArrayItem<T>>): void;
+  onCheck?(context: CheckContext<ArrayItem<T>>): void;
+  defaultChecked?: boolean;
+};
+
+type CheckAllContext<T extends UnknownArray> = {
+  items: T;
+  isChecked: boolean;
 };
 
 export type TableProps<T extends UnknownArray, D> = {
-  data: T;
+  items: T;
   columns: Column<T, D>[];
-  onToggleAll?: (context: { isChecked?: boolean; items: T }) => void;
+  onCheckAll?(context: CheckAllContext<T>): void;
+  defaultSort?: SortDirection;
 };
 
 export default function Table<T extends UnknownArray, D extends any = unknown>(
   props: TableProps<T, D>,
 ) {
-  const { data, columns, onToggleAll } = props;
+  const { items, columns, defaultSort = "asc", onCheckAll } = props;
 
-  const hasCheckedAll = React.useState(false);
-  const hasMasterCheckbox = React.useMemo(
-    () =>
-      columns.some(({ checkbox }) =>
-        !checkbox
-          ? false
-          : typeof checkbox === "function"
-          ? checkbox({}).enabled
-          : checkbox.enabled,
-      ),
-    [columns],
-  );
+  const [prevSort, setPrevSort] = React.useState(defaultSort);
+  const nextSort = React.useMemo(() => {
+    return prevSort === "asc" ? "desc" : "asc";
+  }, [prevSort]);
 
   return (
     <chakra.table>
       <chakra.thead>
         <tr>
-          {hasMasterCheckbox && (
-            <Checkbox
-              onChange={(e) => {
-                onToggleAll?.({
-                  items: data,
-                  isChecked: e.target.checked,
-                });
-              }}
-            />
-          )}
+          {columns.map(({ label, tooltip, onSort }) => {
+            return (
+              <chakra.th>
+                {onCheckAll && (
+                  <Checkbox
+                    onChange={(e) => {
+                      const isChecked = e.target.checked;
+                      onCheckAll?.({ isChecked, items });
+                    }}
+                  />
+                )}
 
-          {columns.map(({ label }) => {
-            return <chakra.th>{label}</chakra.th>;
+                {label}
+
+                {onSort && (
+                  <chakra.button
+                    role="button"
+                    aria-label={{ asc: "Sort ascending", desc: "Sort descending" }[nextSort]}
+                    onClick={() => {
+                      setPrevSort(nextSort);
+                      onSort?.({
+                        items,
+                        direction: nextSort,
+                      });
+                    }}
+                  >
+                    <Icon />
+                  </chakra.button>
+                )}
+
+                {tooltip && (
+                  <Tooltip label={tooltip}>
+                    <Icon />
+                  </Tooltip>
+                )}
+              </chakra.th>
+            );
           })}
         </tr>
       </chakra.thead>
 
       <chakra.tbody>
-        {data.map((item, idx_0) => {
+        {items.map((item) => {
           return (
-            <chakra.tr key={idx_0}>
-              {columns.map(
-                ({ getData, tooltip, checkbox, click, sort, renderRow = (o) => o }, idx_1) => {
-                  return (
-                    <chakra.td key={`${idx_0}${idx_1}`}>
-                      <React.Fragment>{renderRow(getData(item))}</React.Fragment>
-                    </chakra.td>
-                  );
-                },
-              )}
+            <chakra.tr key={React.useId()}>
+              {columns.map(({ getData, onSort, onCheck, onClick, ...others }) => {
+                const renderRow = others.renderRow ?? ((obj) => obj);
+
+                return (
+                  <chakra.td
+                    key={React.useId()}
+                    onClick={() => {
+                      onClick?.({ item });
+                    }}
+                  >
+                    <Flex>
+                      {onCheck && (
+                        <Checkbox
+                          onChange={(e) => {
+                            const isChecked = e.target.checked;
+                            onCheck({ isChecked, item });
+                          }}
+                        />
+                      )}
+
+                      {renderRow(getData(item))}
+                    </Flex>
+                  </chakra.td>
+                );
+              })}
             </chakra.tr>
           );
         })}
