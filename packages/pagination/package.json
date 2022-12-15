@@ -16,8 +16,7 @@
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
     "size": "size-limit",
-    "analyze": "size-limit --why",
-    "generate:types": "chakra-cli tokens ./src/theme/index.ts"
+    "analyze": "size-limit --why"
   },
   "peerDependencies": {
     "react": ">=16"
