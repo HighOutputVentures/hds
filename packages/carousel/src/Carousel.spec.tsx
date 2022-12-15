@@ -10,7 +10,7 @@ jest.mock("react-responsive-carousel/lib/styles/carousel.min.css", () => {
 describe("Carousel", () => {
   afterEach(cleanup);
   beforeEach(() => {
-    const { debug } = render(
+    render(
       <Carousel
         items={[
           "https://example-img-01.png",
@@ -26,8 +26,6 @@ describe("Carousel", () => {
         {(src) => <img src={src} alt="" />}
       </Carousel>,
     );
-
-    debug();
   });
 
   it("Should render next and previous button", () => {
