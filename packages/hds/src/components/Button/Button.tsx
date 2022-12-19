@@ -8,7 +8,7 @@ export interface ButtonProps {
   children: ReactNode;
   variant?: ButtonVariantsTypes;
   size?: ButtonSizeTypes;
-  onClicked?: () => void;
+  onClick?: () => void;
   disabled?: boolean;
 }
 

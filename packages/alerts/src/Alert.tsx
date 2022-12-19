@@ -1,5 +1,13 @@
 import { ArrowForwardIcon, InfoOutlineIcon } from '@chakra-ui/icons';
-import { CloseButton, Flex, HStack, Icon, Text } from '@chakra-ui/react';
+import {
+  Box,
+  CloseButton,
+  Flex,
+  HStack,
+  Icon,
+  ScaleFade,
+  Text,
+} from '@chakra-ui/react';
 // @ts-ignore
 import { CheckCircleGreenIcon, WarningIcon } from '@highoutput/hds-icons';
 import React from 'react';
@@ -7,24 +15,30 @@ import React from 'react';
 export interface AlertsProps {
   status: 'info' | 'warning' | 'success' | 'error' | 'default';
   title: string;
-  supportingDetail: string;
-  alertLabel: {
+  supportingDetail?: string;
+  alertLabel?: {
     label1: string;
     label2?: string;
   };
-  alertLinks: {
+  alertLinks?: {
     link1: string | VoidFunction;
     link2?: string | VoidFunction;
   };
   isOpen?: boolean;
   onClose?: () => void;
+  height?: string;
+  width?: string;
+  scaleFadeEffect?: boolean;
 }
 const Alert = (props: AlertsProps) => {
   const {
     status,
     supportingDetail,
     title,
+    scaleFadeEffect = false,
     isOpen,
+    height,
+    width,
     onClose,
     alertLabel,
     alertLinks,
@@ -87,37 +101,39 @@ const Alert = (props: AlertsProps) => {
       : status === 'info'
       ? '#C3B8E6'
       : 'neutrals.600';
-  if (!isOpen) return null;
-  return (
-    <>
-      <Flex
-        padding={'16px'}
-        align="start"
-        bg={BGColor}
-        borderWidth="1px"
-        borderColor={`${BoxBorderColor}`}
-        direction={['column', 'row']}
-        maxW="1216px"
-        position={'relative'}
-        gap={'13.67px'}
-        borderRadius={'8px'}
-        data-testid="alert-box"
-      >
-        <Icon
-          as={AlertIcon}
-          position="relative"
-          top={'3px'}
+  const AlertComponent = () => (
+    <Flex
+      padding={'16px'}
+      align="start"
+      bg={BGColor}
+      borderWidth="1px"
+      borderColor={`${BoxBorderColor}`}
+      direction={['column', 'row']}
+      maxW="1216px"
+      w={width}
+      h={height}
+      position={'relative'}
+      gap={'13.67px'}
+      borderRadius={'8px'}
+      data-testid="alert-box"
+    >
+      <Icon
+        as={AlertIcon}
+        position="relative"
+        top={'3px'}
+        color={AlertTitleColor}
+      />
+      <Flex direction={'column'} align="start">
+        <Text
           color={AlertTitleColor}
-        />
-        <Flex direction="column">
-          <Text
-            color={AlertTitleColor}
-            fontSize={'14px'}
-            mb="4px"
-            lineHeight="20px"
-          >
-            {title}
-          </Text>
+          fontWeight={500}
+          fontSize={'14px'}
+          mb={supportingDetail ? '4px' : '0px'}
+          lineHeight="20px"
+        >
+          {title}
+        </Text>
+        {supportingDetail && (
           <Text
             color={AlertDescColor}
             fontSize={'14px'}
@@ -126,6 +142,8 @@ const Alert = (props: AlertsProps) => {
           >
             {supportingDetail}
           </Text>
+        )}
+        {alertLabel && alertLinks && (
           <HStack spacing="12px">
             <Text
               as="a"
@@ -134,14 +152,14 @@ const Alert = (props: AlertsProps) => {
               lineHeight="24px"
               fontWeight={500}
               cursor="pointer"
-              href={`${alertLinks.link1}`}
+              href={`${alertLinks?.link1}`}
               target={'_blank'}
             >
-              {alertLabel.label1}
+              {alertLabel?.label1}
             </Text>
             <Text
               as="a"
-              href={`${alertLinks.link2}`}
+              href={`${alertLinks?.link2}`}
               target={'_blank'}
               cursor="pointer"
             >
@@ -153,7 +171,7 @@ const Alert = (props: AlertsProps) => {
                 fontWeight={500}
                 mr={'12px'}
               >
-                {alertLabel.label2}
+                {alertLabel?.label2}
               </Text>
 
               <Icon
@@ -164,17 +182,28 @@ const Alert = (props: AlertsProps) => {
               />
             </Text>
           </HStack>
-        </Flex>
-        <CloseButton
-          position="absolute"
-          right={'5px'}
-          top={'5px'}
-          color={CloseBtnColor}
-          _hover={{ background: 'none' }}
-          onClick={onClose}
-        />
+        )}
       </Flex>
-    </>
+      <Box width={'20px'} height={'20px'}></Box>
+      <CloseButton
+        position="absolute"
+        right={'15px'}
+        top={'15px'}
+        color={CloseBtnColor}
+        _hover={{ background: 'none' }}
+        onClick={onClose}
+        width={'20px'}
+        height={'20px'}
+      />
+    </Flex>
+  );
+  if (!isOpen) return null;
+  return scaleFadeEffect ? (
+    <ScaleFade initialScale={0.9} in={isOpen}>
+      <AlertComponent />
+    </ScaleFade>
+  ) : (
+    <AlertComponent />
   );
 };
 

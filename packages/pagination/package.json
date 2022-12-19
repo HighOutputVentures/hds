@@ -1,5 +1,5 @@
 {
-  "version": "0.1.19",
+  "version": "0.1.21",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -16,8 +16,7 @@
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
     "size": "size-limit",
-    "analyze": "size-limit --why",
-    "generate:types": "chakra-cli tokens ./src/theme/index.ts"
+    "analyze": "size-limit --why"
   },
   "peerDependencies": {
     "react": ">=16"

@@ -18,6 +18,86 @@ import { HovIcon } from "../packages/icons/src/index";
 
 SyntaxHighlighter.registerLanguage("typescript", ts);
 
+const packageList = [
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-icons",
+    packageName: "@highoutput/hds-icons",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-auth",
+    packageName: " @highoutput/hds-auth",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-spinner",
+    packageName: " @highoutput/hds-spinner",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-pagination",
+    packageName: " @highoutput/hds-pagination",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-array-field",
+    packageName: " @highoutput/hds-array-field",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-auto-form",
+    packageName: " @highoutput/hds-hds-auto-form",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-contact-us",
+    packageName: " @highoutput/hds-hds-contact-us",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-forms",
+    packageName: " @highoutput/hds-hds-forms",
+  },
+  {
+    packageLink:
+      "https://www.npmjs.com/package/@highoutput/hds-autocomplete-inputs",
+    packageName: " @highoutput/hds-autocomplete-input",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-utilities",
+    packageName: " @highoutput/hds-utilities",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-tag",
+    packageName: " @highoutput/hds-tag",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-switch",
+    packageName: " @highoutput/hds-switch",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-avatar",
+    packageName: " @highoutput/hds-avatar",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-slider",
+    packageName: " @highoutput/hds-slider",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-checkbox-group",
+    packageName: " @highoutput/hds-checkbox-group",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-dropdown",
+    packageName: " @highoutput/hds-dropdown",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-tooltip",
+    packageName: " @highoutput/hds-tooltip",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-alerts",
+    packageName: " @highoutput/hds-alerts",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-carousel",
+    packageName: " @highoutput/hds-carousel",
+  },
+];
+
 const GettingStarted = () => {
   return (
     <ThemeProvider>
@@ -98,166 +178,15 @@ const GettingStarted = () => {
         </Text>
 
         <UnorderedList mb={5}>
-          <ListItem>
-            <Text size="paragraph-md-default">
-              <Link
-                href="https://www.npmjs.com/package/@highoutput/hds-icons"
-                isExternal
-              >
-                @highoutput/hds-icons
-              </Link>
-            </Text>
-          </ListItem>
-          <ListItem>
-            <Text size="paragraph-md-default">
-              <Link
-                href="https://www.npmjs.com/package/@highoutput/hds-auth"
-                isExternal
-              >
-                @highoutput/hds-auth
-              </Link>
-            </Text>
-          </ListItem>
-          <ListItem>
-            <Text size="paragraph-md-default">
-              <Link
-                href="https://www.npmjs.com/package/@highoutput/hds-spinner"
-                isExternal
-              >
-                @highoutput/hds-spinner
-              </Link>
-            </Text>
-          </ListItem>
-          <ListItem>
-            <Text size="paragraph-md-default">
-              <Link
-                href="https://www.npmjs.com/package/@highoutput/hds-pagination"
-                isExternal
-              >
-                @highoutput/hds-pagination
-              </Link>
-            </Text>
-          </ListItem>
-          <ListItem>
-            <Text size="paragraph-md-default">
-              <Link
-                href="https://www.npmjs.com/package/@highoutput/hds-array-field"
-                isExternal
-              >
-                @highoutput/hds-array-field
-              </Link>
-            </Text>
-          </ListItem>
-          <ListItem>
-            <Text size="paragraph-md-default">
-              <Link
-                href="https://www.npmjs.com/package/@highoutput/hds-auto-form"
-                isExternal
-              >
-                @highoutput/hds-auto-form
-              </Link>
-            </Text>
-          </ListItem>
-          <ListItem>
-            <Text size="paragraph-md-default">
-              <Link
-                href="https://www.npmjs.com/package/@highoutput/hds-contact-us"
-                isExternal
-              >
-                @highoutput/hds-contact-us
-              </Link>
-            </Text>
-          </ListItem>
-          <ListItem>
-            <Text size="paragraph-md-default">
-              <Link
-                href="https://www.npmjs.com/package/@highoutput/hds-forms"
-                isExternal
-              >
-                @highoutput/hds-forms
-              </Link>
-            </Text>
-          </ListItem>
-          <ListItem>
-            <Text size="paragraph-md-default">
-              <Link
-                href="https://www.npmjs.com/package/@highoutput/hds-autocomplete-input"
-                isExternal
-              >
-                @highoutput/hds-autocomplete-input
-              </Link>
-            </Text>
-          </ListItem>
-          <ListItem>
-            <Text size="paragraph-md-default">
-              <Link
-                href="https://www.npmjs.com/package/@highoutput/hds-utilities"
-                isExternal
-              >
-                @highoutput/hds-utilities
-              </Link>
-            </Text>
-          </ListItem>
-          <ListItem>
-            <Text size="paragraph-md-default">
-              <Link
-                href="https://www.npmjs.com/package/@highoutput/hds-tag"
-                isExternal
-              >
-                @highoutput/hds-tag
-              </Link>
-            </Text>
-          </ListItem>
-          <ListItem>
-            <Text size="paragraph-md-default">
-              <Link
-                href="https://www.npmjs.com/package/@highoutput/hds-switch"
-                isExternal
-              >
-                @highoutput/hds-switch
-              </Link>
-            </Text>
-          </ListItem>
-          <ListItem>
-            <Text size="paragraph-md-default">
-              <Link
-                href="https://www.npmjs.com/package/@highoutput/hds-avatar"
-                isExternal
-              >
-                @highoutput/hds-avatar
-              </Link>
-            </Text>
-          </ListItem>
-          <ListItem>
-            <Text size="paragraph-md-default">
-              <Link
-                href="https://www.npmjs.com/package/@highoutput/hds-slider"
-                isExternal
-              >
-                @highoutput/hds-slider
-              </Link>
-            </Text>
-          </ListItem>
-          <ListItem>
-            <Text size="paragraph-md-default">
-              <Link
-                href="https://www.npmjs.com/package/@highoutput/hds-checkbox-group"
-                isExternal
-              >
-                @highoutput/hds-checkbox-group
-              </Link>
-            </Text>
-          </ListItem>
-          <ListItem>
-            <Text size="paragraph-md-default">
-              <Link
-                href="https://www.npmjs.com/package/@highoutput/hds-dropdown"
-                isExternal
-              >
-                @highoutput/hds-dropdown
-              </Link>
-            </Text>
-          </ListItem>
+          {packageList.map((p) => (
+            <ListItem key={p.packageName}>
+              <Text size="paragraph-md-default">
+                <Link href={p.packageLink} isExternal>
+                  {p.packageName}
+                </Link>
+              </Text>
+            </ListItem>
+          ))}
         </UnorderedList>
       </Box>
     </ThemeProvider>

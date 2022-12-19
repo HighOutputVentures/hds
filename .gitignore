@@ -4,3 +4,4 @@ storybook-static/
 tsconfig.tsbuildinfo
 .env
 .locofy
+dist
