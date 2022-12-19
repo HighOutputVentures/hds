@@ -26,8 +26,7 @@ type ArrayItem<T extends UnknownArray> = T[number];
 
 type SortDirection = "asc" | "desc";
 
-type SortContext<T extends UnknownArray> = {
-  items: T;
+type SortContext = {
   direction: SortDirection;
 };
 
@@ -45,7 +44,7 @@ type Column<T extends UnknownArray> = {
   width?: string;
   tooltip?: React.ReactNode;
   renderRow?: (item: T[number]) => any;
-  onSort?(context: SortContext<T>): void;
+  onSort?(context: SortContext): void;
   onClick?(context: ClickContext<ArrayItem<T>>): void;
   onCheck?(context: CheckContext<ArrayItem<T>>): void;
   onCheckAll?(context: CheckAllContext<T>): void;
@@ -54,7 +53,7 @@ type Column<T extends UnknownArray> = {
 };
 
 type CheckAllContext<T extends UnknownArray> = {
-  items: T;
+  selected: ArrayItem<T>[];
   isChecked: boolean;
 };
 
@@ -78,14 +77,14 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
    
    */
   const getCheckStatus = React.useCallback(() => {
-    return items.map((item) => {
-      return columns
-        .filter(({ onCheck }) => !!onCheck)
-        .map(({ defaultChecked = false }) => {
+    return columns
+      .filter(({ onCheck }) => !!onCheck)
+      .map(({ defaultChecked = false }) => {
+        return items.map((item) => {
           const fn = typeof defaultChecked === "boolean" ? () => defaultChecked : defaultChecked;
           return fn(item);
         });
-    });
+      });
   }, [items, columns]);
 
   const [checkedItems, setCheckedItems] = React.useState(getCheckStatus);
@@ -163,70 +162,51 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
         >
           <Thead>
             <Tr>
-              {columns.map(({ label, tooltip, width, onSort, onCheck, onCheckAll }) => {
-                return (
-                  <Th width={width}>
-                    <Flex alignItems="center">
-                      {!!onCheck && (
-                        <Checkbox
-                          marginRight="12px"
-                          isChecked={checkedItems.flat().every((o) => !!o)}
-                          onChange={(e) => {
-                            const isChecked = e.target.checked;
-                            onCheckAll?.({ isChecked, items });
-                            setCheckedItems((i) => {
-                              return i.map((j) => {
-                                return j.map(() => {
-                                  return isChecked;
+              {columns.map(
+                (
+                  { label, tooltip, width, onSort, onCheck, onCheckAll, defaultSort = "desc" },
+                  index,
+                ) => {
+                  return (
+                    <Th width={width}>
+                      <Flex alignItems="center">
+                        {!!onCheck && (
+                          <Checkbox
+                            marginRight="12px"
+                            isChecked={checkedItems[index].every((o) => !!o)}
+                            onChange={(e) => {
+                              const isChecked = e.target.checked;
+
+                              const selected = checkedItems[index].reduce<ArrayItem<T>[]>(
+                                (arr, bool, index_1) => {
+                                  /*
+                                   * false will still be set to true,
+                                   * so we need to reverse the logic
+                                   */
+                                  return !bool ? [...arr, items[index_1]] : arr;
+                                },
+                                [],
+                              );
+
+                              onCheckAll?.({ isChecked, selected });
+                              setCheckedItems((i) => {
+                                return i.map((j) => {
+                                  return j.map(() => {
+                                    return isChecked;
+                                  });
                                 });
                               });
-                            });
-                          }}
-                        />
-                      )}
-
-                      {label}
-
-                      {onSort && (
-                        <chakra.button
-                          role="button"
-                          aria-label="Sort"
-                          display="flex"
-                          onClick={() => {}}
-                        >
-                          <Icon
-                            as={ArrowDownIcon}
-                            color="#667085"
-                            width="16px"
-                            height="16px"
-                            marginLeft="4px"
+                            }}
                           />
-                        </chakra.button>
-                      )}
-
-                      {tooltip && (
-                        <Popover>
-                          <PopoverTrigger>
-                            <chakra.button marginLeft="4px" display="flex">
-                              <Icon
-                                as={HelpCircleIcon}
-                                color="#A3A3A3"
-                                width="16px"
-                                height="16px"
-                              />
-                            </chakra.button>
-                          </PopoverTrigger>
-
-                          <PopoverContent w="fit-content">
-                            <PopoverArrow />
-                            <PopoverBody>{tooltip}</PopoverBody>
-                          </PopoverContent>
-                        </Popover>
-                      )}
-                    </Flex>
-                  </Th>
-                );
-              })}
+                        )}
+                        {label}
+                        {onSort && <SortButton value={defaultSort} onSort={onSort} />}
+                        {tooltip && <Tooltip>{tooltip}</Tooltip>}
+                      </Flex>
+                    </Th>
+                  );
+                },
+              )}
             </Tr>
           </Thead>
 
@@ -248,14 +228,14 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                           <Flex alignItems="center" gap="12px">
                             {onCheck && (
                               <Checkbox
-                                isChecked={checkedItems[index_0][index_1]}
+                                isChecked={checkedItems[index_1][index_0]}
                                 onChange={(e) => {
                                   const isChecked = e.target.checked;
                                   onCheck({ isChecked, item });
                                   setCheckedItems((i) => {
-                                    return i.map((j, n_0) => {
-                                      return n_0 === index_0
-                                        ? j.map((k, n_1) => (n_1 === index_1 ? isChecked : k))
+                                    return i.map((j, idx_0) => {
+                                      return idx_0 === index_1
+                                        ? j.map((k, idx_1) => (idx_1 === index_0 ? isChecked : k))
                                         : j;
                                     });
                                   });
@@ -282,5 +262,52 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
         </Box>
       )}
     </Box>
+  );
+}
+
+function Tooltip({ children }: React.PropsWithChildren<{}>) {
+  return (
+    <Popover>
+      <PopoverTrigger>
+        <chakra.button marginLeft="4px" display="flex">
+          <Icon as={HelpCircleIcon} color="#A3A3A3" width="16px" height="16px" />
+        </chakra.button>
+      </PopoverTrigger>
+
+      <PopoverContent w="fit-content">
+        <PopoverArrow />
+        <PopoverBody>{children}</PopoverBody>
+      </PopoverContent>
+    </Popover>
+  );
+}
+
+function SortButton({
+  value,
+  onSort,
+}: {
+  /** default value */
+  value: SortDirection;
+  onSort(ctx: SortContext): void;
+}) {
+  const [currentSort, setCurrentSort] = React.useState(value);
+  // next sort value
+  const direction = currentSort === "asc" ? "desc" : "asc";
+
+  return (
+    <chakra.button
+      role="button"
+      aria-label={`Sort ${direction}`}
+      display="flex"
+      marginLeft="4px"
+      transition="transform 300ms ease-in-out"
+      transform={currentSort === "asc" ? "rotate(180deg)" : undefined}
+      onClick={() => {
+        setCurrentSort(direction);
+        onSort({ direction });
+      }}
+    >
+      <Icon as={ArrowDownIcon} color="#667085" width="16px" height="16px" />
+    </chakra.button>
   );
 }
