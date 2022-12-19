@@ -2,6 +2,7 @@ import {
   As,
   Avatar,
   AvatarBadge,
+  Box,
   CloseButton,
   Flex,
   HStack,
@@ -17,11 +18,11 @@ import React from 'react';
 export interface MainNotificationsProps {
   title: string;
   supportingDetail: string;
-  alertLabel: {
+  alertLabel?: {
     label1: string;
     label2?: string;
   };
-  alertLinks: {
+  alertLinks?: {
     link1: string | VoidFunction;
     link2?: string | VoidFunction;
   };
@@ -159,45 +160,50 @@ const Notification = (props: NotificationsProps) => {
           />
         )}
 
-        <HStack spacing="12px">
-          <Text
-            as="a"
-            color="neutrals.600"
-            fontSize={'18px'}
-            lineHeight="24px"
-            fontWeight={500}
-            cursor="pointer"
-            href={`${alertLinks.link1}`}
-            target={'_blank'}
-          >
-            {alertLabel.label1}
-          </Text>
-          <Text
-            as="a"
-            href={`${alertLinks.link2}`}
-            target={'_blank'}
-            cursor="pointer"
-          >
+        {alertLinks && alertLabel && (
+          <HStack spacing="12px">
             <Text
-              as="span"
-              color={'#8A68EF'}
+              as="a"
+              color="neutrals.600"
               fontSize={'18px'}
               lineHeight="24px"
               fontWeight={500}
-              mr={'10px'}
+              cursor="pointer"
+              href={`${alertLinks.link1}`}
+              target={'_blank'}
             >
-              {alertLabel.label2}
+              {alertLabel.label1}
             </Text>
-          </Text>
-        </HStack>
+            <Text
+              as="a"
+              href={`${alertLinks.link2}`}
+              target={'_blank'}
+              cursor="pointer"
+            >
+              <Text
+                as="span"
+                color={'#8A68EF'}
+                fontSize={'18px'}
+                lineHeight="24px"
+                fontWeight={500}
+                mr={'10px'}
+              >
+                {alertLabel.label2}
+              </Text>
+            </Text>
+          </HStack>
+        )}
       </Flex>
+      <Box width={'20px'} height={'20px'}></Box>
       <CloseButton
         position="absolute"
-        right={'5px'}
-        top={'2px'}
+        right={'15px'}
+        top={'15px'}
         color={'neutrals.600'}
         _hover={{ background: 'none' }}
         onClick={onClose}
+        width={'20px'}
+        height={'20px'}
       />
     </Flex>
   );

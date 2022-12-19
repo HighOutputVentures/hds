@@ -7,13 +7,13 @@ We aim to build a library of custom ReactJS components that implements our uniqu
 To install package, use:
 
 ```bash
-npm i @highoutput/hds-tooltip
+npm i @highoutput/hds-alerts
 ```
 
 ### Usage
 
 ```jsx
-import { Tooltip, Notification } from '@highoutput/hds-alerts';
+import { Alert, Notification } from '@highoutput/hds-alerts';
 
 export const AlertSamplePage = () => {
   return (
