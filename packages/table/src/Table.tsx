@@ -168,10 +168,11 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                   index,
                 ) => {
                   return (
-                    <Th width={width}>
+                    <Th key={React.useId()} width={width}>
                       <Flex alignItems="center">
                         {!!onCheck && (
                           <Checkbox
+                            aria-label="Select all"
                             marginRight="12px"
                             isChecked={checkedItems[index].every((o) => !!o)}
                             onChange={(e) => {
@@ -216,7 +217,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                 <Tr key={React.useId()}>
                   {columns.map(
                     ({ onSort, onCheck, onClick, defaultChecked, ...others }, index_1) => {
-                      const renderRow = others.renderRow ?? ((obj) => obj);
+                      const renderRow = others.renderRow ?? ((obj) => String(obj));
 
                       return (
                         <Td
@@ -228,6 +229,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                           <Flex alignItems="center" gap="12px">
                             {onCheck && (
                               <Checkbox
+                                aria-label="Select item"
                                 isChecked={checkedItems[index_1][index_0]}
                                 onChange={(e) => {
                                   const isChecked = e.target.checked;
@@ -269,7 +271,7 @@ function Tooltip({ children }: React.PropsWithChildren<{}>) {
   return (
     <Popover>
       <PopoverTrigger>
-        <chakra.button marginLeft="4px" display="flex">
+        <chakra.button marginLeft="4px" display="flex" aria-label="Hint">
           <Icon as={HelpCircleIcon} color="#A3A3A3" width="16px" height="16px" />
         </chakra.button>
       </PopoverTrigger>
