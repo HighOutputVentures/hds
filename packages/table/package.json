@@ -48,5 +48,10 @@
       "path": "dist/hds-table.esm.js",
       "limit": "10 KB"
     }
-  ]
+  ],
+  "dependencies": {
+    "@highoutput/hds": "^0.1.48",
+    "@highoutput/hds-icons": "^0.1.16",
+    "@highoutput/hds-pagination": "^0.1.21"
+  }
 }

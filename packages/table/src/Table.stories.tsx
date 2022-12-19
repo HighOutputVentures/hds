@@ -2,10 +2,10 @@
 
 import { Avatar, Badge, Box, chakra, Flex, Heading, HStack, Icon, Text } from "@chakra-ui/react";
 import { faker } from "@faker-js/faker";
+import { ThemeProvider } from "@highoutput/hds";
+import { Pagination } from "@highoutput/hds-pagination";
 import { ComponentStory, Meta } from "@storybook/react";
 import * as React from "react";
-import { ThemeProvider } from "../../hds";
-import { Pagination } from "../../pagination";
 import DotsVerticalIcon from "./icons/DotsVerticalIcon";
 import PencilIcon from "./icons/PencilIcon";
 import TrashIcon from "./icons/TrashIcon";
