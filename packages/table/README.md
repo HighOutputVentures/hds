@@ -19,49 +19,39 @@ import * as React from "react";
 
 export default function Example() {
   return (
-    <ThemeProvider theme={extendTheme(withTable())}>
+    <ThemeProvider>
       <Table
         data={arrayOfItemsFromDb}
         columns={[
           {
-            label: "Profile",
-            colSpan: 1,
-            getData(item) {},
-            // (optional) renders the row data
-            // defaults to whatever getData returns
-            renderRow(data /* returned from "getData" */, context) {},
-            tooltip(item) {
-              return {
-                enable: true,
-                label: "",
-              };
+            label: "Name",
+            renderRow({ name }) {
+              return (
+                <Box>
+                  <Text>{name}</Text>
+                </Box>
+              );
             },
-            click(item) {
-              return {
-                enable: true,
-                action() {},
-              };
+            onSort({ direction }) {
+              // sort handler
             },
-            sort(item) {
-              return {
-                enable: true,
-                action({ direction /* "asc" | "desc" */ }) {},
-              };
+            onClick() {
+              // click handler
             },
-            checkbox(item) {
-              return {
-                enable: true,
-                action({ isSelected }) {},
-              };
+            tooltip: "Some hint",
+            onCheck({ isChecked, item }) {
+              // check handler
+            },
+            // could also be a boolean
+            defaultChecked(data) {
+              // conditional default check
+              return data.isActive;
+            },
+            onCheckAll({ isChecked, items }) {
+              // check all handler
             },
           },
         ]}
-        fallback={
-          <Box>
-            <Text>No records found</Text>
-            <Button>Refresh</Button>
-          </Box>
-        }
       />
     </ThemeProvider>
   );
