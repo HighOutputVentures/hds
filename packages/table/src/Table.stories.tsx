@@ -49,9 +49,6 @@ const Template: ComponentStory<typeof Table> = () => {
             page={1}
             pageSize={10}
             onPageChange={function noop() {}}
-            hasPageControls={false}
-            hasLegend
-            isLegendCentered
           />
         }
         items={items}
@@ -73,7 +70,7 @@ const Template: ComponentStory<typeof Table> = () => {
               );
             },
             onCheck(/* { isChecked, item } */) {},
-            onCheckAll(/* { isChecked, items } */) {},
+            onCheckAll(/* { isChecked, selected } */) {},
             defaultChecked(item) {
               return [items[0].id, items[2].id].includes(item.id);
             },
@@ -102,8 +99,7 @@ const Template: ComponentStory<typeof Table> = () => {
                 </Badge>
               );
             },
-            onSort() {},
-            defaultSort: "asc",
+            onSort(/* { direction } */) {},
           },
           {
             label: "Role",
@@ -117,7 +113,7 @@ const Template: ComponentStory<typeof Table> = () => {
             label: "Email address",
             width: "225px",
             renderRow({ email }) {
-              return email;
+              return email.toLowerCase().replace(/[_.]/g, "");
             },
           },
           {
