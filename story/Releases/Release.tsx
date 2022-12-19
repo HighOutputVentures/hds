@@ -6,10 +6,13 @@ import ReleaseDetailsV1 from "./Release-11-11-22";
 import ReleaseDetailsV2 from "./Release-11-16-22";
 import ReleaseDetailsV3 from "./Release-11-22-22";
 import ReleaseDetailsV4 from "./Release-12-07-22";
+import ReleaseDetailsV5 from "./Release-12-16-22";
 
 const Release = () => {
   return (
     <ThemeProvider>
+      <ReleaseDetailsV5 />
+      <Box mt={12}></Box>
       <ReleaseDetailsV4 />
       <Box mt={12}></Box>
       <ReleaseDetailsV3 />
