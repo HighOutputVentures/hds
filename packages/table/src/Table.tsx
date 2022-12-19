@@ -9,6 +9,7 @@ import {
   PopoverBody,
   PopoverContent,
   PopoverTrigger,
+  SystemStyleObject,
   Table,
   TableContainer,
   Tbody,
@@ -62,10 +63,14 @@ export type TableProps<T extends UnknownArray> = {
   columns: Column<T>[];
   renderHeader?: React.ReactNode;
   renderFooter?: React.ReactNode;
-};
+} & Omit<
+  SystemStyleObject,
+  /* ensure base types won't be overrident */
+  "columns" | "items" | "renderHeader" | "renderFooter"
+>;
 
 export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
-  const { items, columns, renderHeader, renderFooter } = props;
+  const { items, columns, renderHeader, renderFooter, ...styles } = props;
 
   /*
 
@@ -92,6 +97,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
   return (
     <Box
       sx={{
+        ...styles,
         border: "1px solid #EAECF0",
         rounded: "md",
       }}
