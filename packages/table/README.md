@@ -14,6 +14,7 @@ npm i @highoutput/hds-table
 
 ```tsx
 import { Table, withTable } from "@highoutput/hds-table";
+import { Pagination } from "@highoutput/hds-pagination";
 import { ThemeProvider, extendTheme, Box, Text, Button } from "@highoutput/hds";
 import * as React from "react";
 
@@ -52,6 +53,20 @@ export default function Example() {
             },
           },
         ]}
+        renderHeader={
+          <Box>
+            <Text>Users</Text>
+          </Box>
+        }
+        renderFooter={
+          <Pagination
+            variant="minimal"
+            page={1}
+            pageSize={10}
+            total={100}
+            onPageChange={function noop() {}}
+          />
+        }
       />
     </ThemeProvider>
   );

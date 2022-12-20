@@ -3,7 +3,6 @@
 import { Avatar, Badge, Box, chakra, Flex, Heading, HStack, Icon, Text } from "@chakra-ui/react";
 import { faker } from "@faker-js/faker";
 import { ThemeProvider } from "@highoutput/hds";
-import { Pagination } from "@highoutput/hds-pagination";
 import { ComponentStory, Meta } from "@storybook/react";
 import * as React from "react";
 import DotsVerticalIcon from "./icons/DotsVerticalIcon";
@@ -64,15 +63,6 @@ Default.args = {
         <Icon as={DotsVerticalIcon} w="20px" h="20px" color="#A3A3A3" />
       </chakra.button>
     </Flex>
-  ),
-  renderFooter: (
-    <Pagination
-      variant="minimal"
-      total={100}
-      page={1}
-      pageSize={10}
-      onPageChange={function noop() {}}
-    />
   ),
   columns: [
     {
