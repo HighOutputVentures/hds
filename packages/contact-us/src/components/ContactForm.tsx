@@ -1,11 +1,11 @@
+import { Button } from '@chakra-ui/react';
 import {
   Alert,
   AlertDescription,
   AlertIcon,
   Box,
-  Button,
   Stack,
-} from '@chakra-ui/react';
+} from '@highoutput/hds';
 import { InputField, TextAreaField } from '@highoutput/hds-forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { FC } from 'react';
