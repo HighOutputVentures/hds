@@ -70,6 +70,14 @@ export {
   ButtonGroupProps,
   ButtonOptions,
   ButtonSpinner,
+  Card,
+  CardBody,
+  CardBodyProps,
+  CardFooter,
+  CardFooterProps,
+  CardHeader,
+  CardHeaderProps,
+  CardProps,
   Center,
   CenterProps,
   chakra as hds,
@@ -347,6 +355,7 @@ export {
   useBreakpoint,
   useBreakpointValue,
   useButtonGroup,
+  useCardStyles,
   useCheckbox,
   useCheckboxGroup,
   useClipboard,
@@ -379,6 +388,7 @@ export {
   WrapItemProps,
   WrapProps,
 } from '@chakra-ui/react';
+export { Global, GlobalProps } from '@emotion/react';
 export { isValidMotionProp, motion } from 'framer-motion';
 export {
   Button,
