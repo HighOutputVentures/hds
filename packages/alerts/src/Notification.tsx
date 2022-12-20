@@ -1,9 +1,8 @@
+import { As, CloseButton } from '@chakra-ui/react';
 import {
-  As,
   Avatar,
   AvatarBadge,
   Box,
-  CloseButton,
   Flex,
   HStack,
   Icon,
@@ -11,8 +10,7 @@ import {
   Progress,
   Stack,
   Text,
-} from '@chakra-ui/react';
-// @ts-ignore
+} from '@highoutput/hds';
 import { UploadIcon } from '@highoutput/hds-icons';
 import React from 'react';
 export interface MainNotificationsProps {
