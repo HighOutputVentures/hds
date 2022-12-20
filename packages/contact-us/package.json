@@ -1,8 +1,8 @@
 {
-  "version": "0.1.40",
+  "version": "0.1.42",
   "license": "MIT",
   "main": "dist/index.js",
-  "typings": "dist/contact-us/src/index.d.ts",
+  "typings": "dist/index.d.ts",
   "files": [
     "dist",
     "src"
@@ -69,10 +69,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "2cc842169e828ff56ef57e039534fb0414854443",
-  "dependencies": {
-    "@highoutput/hds": "^0.1.48",
-    "@highoutput/hds-forms": "^0.1.23",
-    "@highoutput/hds-icons": "^0.1.16"
-  }
+  "gitHead": "2cc842169e828ff56ef57e039534fb0414854443"
 }
