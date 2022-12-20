@@ -388,6 +388,7 @@ export {
   WrapItemProps,
   WrapProps,
 } from '@chakra-ui/react';
+export { Global, GlobalProps } from '@emotion/react';
 export { isValidMotionProp, motion } from 'framer-motion';
 export {
   Button,
