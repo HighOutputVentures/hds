@@ -1,4 +1,4 @@
-import { Box, Flex, Icon } from '@chakra-ui/react';
+import { Box, Flex, Heading, Icon } from '@chakra-ui/react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ThemeProvider } from '../../../hds';
@@ -159,14 +159,17 @@ const StoryTemplate: ComponentStory<any> = (args) => {
 
   return (
     <ThemeProvider>
-      <Flex flexDirection="column" gap={24}>
+      <Flex flexDirection="column" gap={20}>
         <Box>
+          <Title>Arrow Icons</Title>
           <ArrowsTemplate width={width} height={height} color={color} />
         </Box>
         <Box>
+          <Title>Company Icons</Title>
           <CompanyTemplate width={width} height={height} />
         </Box>
         <Box>
+          <Title>Social Icons</Title>
           <SocialTemplate
             width={width}
             height={height}
@@ -174,15 +177,42 @@ const StoryTemplate: ComponentStory<any> = (args) => {
           />
         </Box>
         <Box>
+          <Title>Random Icons</Title>
           <RandomTemplate width={width} height={height} color={color} />
         </Box>
         <Box>
+          <Title>Colored Icons</Title>
           <ColoredIcons width={width} height={height} />
         </Box>
       </Flex>
     </ThemeProvider>
   );
 };
+
+function Title({ children }: React.PropsWithChildren<{}>) {
+  return (
+    <Flex mb={14} px={6} alignItems="center" gap={2}>
+      <Flex
+        alignItems="center"
+        justifyContent="center"
+        border="2px solid"
+        borderColor="neutrals.300"
+        rounded="full"
+        padding="2px"
+      >
+        <Box height="6px" width="6px" bgColor="neutrals.300" rounded="full" />
+      </Flex>
+
+      <Heading
+        fontSize="24px"
+        fontFamily="'Inter', sans-serif"
+        color="neutrals.800"
+      >
+        {children}
+      </Heading>
+    </Flex>
+  );
+}
 
 export const Default = StoryTemplate.bind({});
 Default.args = {};
