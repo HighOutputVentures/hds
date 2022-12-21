@@ -1,18 +1,17 @@
-import { Icon } from '@chakra-ui/react';
+import { Icon, IconProps } from '@chakra-ui/react';
 import React, { FC } from 'react';
-export interface FigmaIconProps {
+
+type BaseStyle = Omit<IconProps, 'isDisabled'>;
+
+export interface FigmaIconProps extends BaseStyle {
   isDisabled?: boolean;
 }
+
 const FigmaIcon: FC<FigmaIconProps> = (props) => {
-  const { isDisabled } = props;
+  const { isDisabled, ...others } = props;
+
   return (
-    <Icon
-      width="24px"
-      height="24px"
-      verticalAlign={'center'}
-      viewBox="0 0 24 24"
-      fill="none"
-    >
+    <Icon width={4} height={4} viewBox="0 0 24 24" fill="none" {...others}>
       <path
         d="M8.00006 24.0001C10.2081 24.0001 12.0001 22.208 12.0001 20V16H8.00006C5.79205 16 4 17.792 4 20C4 22.208 5.79205 24.0001 8.00006 24.0001Z"
         fill={isDisabled ? '#98A2B3' : '#0ACF83'}

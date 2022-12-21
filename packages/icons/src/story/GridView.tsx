@@ -1,4 +1,4 @@
-import { Grid, GridItem, Text } from '@chakra-ui/react';
+import { Grid, GridItem, IconProps, Text } from '@chakra-ui/react';
 import * as React from 'react';
 import { ThemeProvider } from '../../../hds/dist';
 
@@ -6,7 +6,9 @@ type GridViewProps = {
   data: Record<string, any>;
 };
 
-export default function GridView({ data }: GridViewProps) {
+export default function GridView(props: GridViewProps & IconProps) {
+  const { data, ...others } = props;
+
   return (
     <ThemeProvider>
       <Grid templateColumns="repeat(5, 1fr)" gridAutoRows="60px" gap={8}>
@@ -19,7 +21,7 @@ export default function GridView({ data }: GridViewProps) {
               alignItems="center"
               gap={2}
             >
-              <Component />
+              <Component {...others} />
 
               <Text fontSize="xs" color="neutrals.700">
                 {label}
