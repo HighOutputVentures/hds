@@ -56,50 +56,56 @@ const ArrowsTemplate = () => (
   />
 );
 
-const CompanyTemplate = () => <GridView data={{ HovIcon }} />;
+const CompanyTemplate = () => {
+  return <GridView data={{ HovIcon }} />;
+};
 
-const SocialTemplate = () => (
-  <GridView
-    data={{
-      AppleIcon,
-      DribbleIcon,
-      FacebookIcon,
-      FigmaIcon,
-      GoogleIcon,
-      TwitterIcon,
-    }}
-  />
-);
+const SocialTemplate = () => {
+  return (
+    <GridView
+      data={{
+        AppleIcon,
+        DribbleIcon,
+        FacebookIcon,
+        FigmaIcon,
+        GoogleIcon,
+        TwitterIcon,
+      }}
+    />
+  );
+};
 
-const RandomTemplate = () => (
-  <GridView
-    data={{
-      BoxIcon,
-      CheckIcon,
-      ExitIcon,
-      HelpIcon,
-      HomeIcon,
-      LayersTwoIcon,
-      MessageSmileIcon,
-      SearchIcon,
-      SettingIcon,
-      ThreeDots,
-      UserIcon,
-      UserPlusIcon,
-      UsersIcon,
-      ZapIcon,
-      TrashIcon,
-      WarningIcon,
-      CheckCircleIcon,
-      WarningFolderIcon,
-      BoxCircularBGIcon,
-      ErrorFolderIcon,
-      SuccessCircleIcon,
-      UploadIcon,
-      PrimaryIcon,
-    }}
-  />
-);
+const RandomTemplate = () => {
+  return (
+    <GridView
+      data={{
+        BoxIcon,
+        CheckIcon,
+        ExitIcon,
+        HelpIcon,
+        HomeIcon,
+        LayersTwoIcon,
+        MessageSmileIcon,
+        SearchIcon,
+        SettingIcon,
+        ThreeDots,
+        UserIcon,
+        UserPlusIcon,
+        UsersIcon,
+        ZapIcon,
+        TrashIcon,
+        WarningIcon,
+        CheckCircleIcon,
+        WarningFolderIcon,
+        BoxCircularBGIcon,
+        ErrorFolderIcon,
+        SuccessCircleIcon,
+        UploadIcon,
+        PrimaryIcon,
+      }}
+    />
+  );
+};
 
 export const Arrows = ArrowsTemplate.bind({});
 export const Company = CompanyTemplate.bind({});
