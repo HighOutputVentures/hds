@@ -1,4 +1,7 @@
+import { Box, Flex, Icon } from '@chakra-ui/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
+import { ThemeProvider } from '../../../hds';
 import BoxCircularBGIcon from '../components/BoxCircularBGIcon';
 import BoxIcon from '../components/BoxIcon';
 import CheckCircleIcon from '../components/CheckCircleIcon';
@@ -35,34 +38,63 @@ import WarningFolderIcon from '../components/WarningFolderIcon';
 import WarningIcon from '../components/WarningIcon';
 import ZapIcon from '../components/ZapIcon';
 import GridView from './GridView';
-import IconsMDX from './Icons.mdx';
 import { sortObject } from './utils';
 
-export default {
+const meta: ComponentMeta<typeof Icon> = {
   title: 'Components/Icons',
-  parameters: {
-    docs: {
-      page: IconsMDX,
+  component: Icon,
+  argTypes: {
+    width: {
+      name: 'width',
+      type: 'number',
+      defaultValue: 6,
+      control: 'number',
+      description: '1 = 4px',
+    },
+    height: {
+      name: 'height',
+      type: 'number',
+      defaultValue: 6,
+      control: 'number',
+      description: '1 = 4px',
+    },
+    color: {
+      name: 'color',
+      type: 'string',
+      control: 'color',
+      description: 'Only applies to arrows and random icons',
+    },
+    isDisabled: {
+      name: 'isDisabled',
+      type: 'boolean',
+      control: 'boolean',
+      defaultValue: false,
+      description: 'Only applies to company icons',
     },
   },
 };
 
-const ArrowsTemplate = () => (
-  <GridView
-    data={sortObject({
-      ChevronLeftIcon,
-      ChevronRightIcon,
-      ChevronDownIcon,
-      ChevronUpIcon,
-    })}
-  />
-);
+export default meta;
 
-const CompanyTemplate = () => {
-  return <GridView data={sortObject({ HovIcon })} />;
+const ArrowsTemplate = (args: any) => {
+  return (
+    <GridView
+      data={sortObject({
+        ChevronLeftIcon,
+        ChevronRightIcon,
+        ChevronDownIcon,
+        ChevronUpIcon,
+      })}
+      {...args}
+    />
+  );
 };
 
-const SocialTemplate = () => {
+const CompanyTemplate = (args: any) => {
+  return <GridView data={sortObject({ HovIcon })} {...args} />;
+};
+
+const SocialTemplate = (args: any) => {
   return (
     <GridView
       data={sortObject({
@@ -73,52 +105,84 @@ const SocialTemplate = () => {
         GoogleIcon,
         TwitterIcon,
       })}
+      {...args}
     />
   );
 };
 
-const RandomTemplate = () => {
-  const monochrome = sortObject({
-    BoxIcon,
-    CheckIcon,
-    ExitIcon,
-    HelpIcon,
-    HomeIcon,
-    InfoCircleIcon,
-    LayersTwoIcon,
-    MessageSmileIcon,
-    SearchIcon,
-    SettingIcon,
-    ThreeDots,
-    UserIcon,
-    UserPlusIcon,
-    UsersIcon,
-    ZapIcon,
-    TrashIcon,
-    WarningIcon,
-    CheckCircleIcon,
-  });
-
-  const colored = sortObject({
-    WarningFolderIcon,
-    BoxCircularBGIcon,
-    ErrorFolderIcon,
-    SuccessCircleIcon,
-    UploadIcon,
-    PrimaryIcon,
-  });
-
+const RandomTemplate = (args: any) => {
   return (
     <GridView
-      data={{
-        ...monochrome,
-        ...colored,
-      }}
+      data={sortObject({
+        BoxIcon,
+        CheckIcon,
+        ExitIcon,
+        HelpIcon,
+        HomeIcon,
+        InfoCircleIcon,
+        LayersTwoIcon,
+        MessageSmileIcon,
+        SearchIcon,
+        SettingIcon,
+        ThreeDots,
+        UserIcon,
+        UserPlusIcon,
+        UsersIcon,
+        ZapIcon,
+        TrashIcon,
+        WarningIcon,
+        CheckCircleIcon,
+      })}
+      {...args}
     />
   );
 };
 
-export const Arrows = ArrowsTemplate.bind({});
-export const Company = CompanyTemplate.bind({});
-export const Social = SocialTemplate.bind({});
-export const Random = RandomTemplate.bind({});
+const ColoredIcons = (args: any) => {
+  return (
+    <GridView
+      data={sortObject({
+        WarningFolderIcon,
+        BoxCircularBGIcon,
+        ErrorFolderIcon,
+        SuccessCircleIcon,
+        UploadIcon,
+        PrimaryIcon,
+      })}
+      {...args}
+    />
+  );
+};
+
+const StoryTemplate: ComponentStory<any> = (args) => {
+  const { width, height, color, isDisabled } = args;
+
+  return (
+    <ThemeProvider>
+      <Flex flexDirection="column" gap={24}>
+        <Box>
+          <ArrowsTemplate width={width} height={height} color={color} />
+        </Box>
+        <Box>
+          <CompanyTemplate width={width} height={height} />
+        </Box>
+        <Box>
+          <SocialTemplate
+            width={width}
+            height={height}
+            isDisabled={isDisabled}
+          />
+        </Box>
+        <Box>
+          <RandomTemplate width={width} height={height} color={color} />
+        </Box>
+        <Box>
+          <ColoredIcons width={width} height={height} />
+        </Box>
+      </Flex>
+    </ThemeProvider>
+  );
+};
+
+export const Default = StoryTemplate.bind({});
+Default.args = {};
