@@ -12,7 +12,7 @@ npm i @highoutput/hds-tooltip
 
 ### Usage
 
-```jsx
+```tsx
 import { Tooltip } from '@highoutput/hds-tooltip';
 
 export const SamplePage = ({ children }) => {

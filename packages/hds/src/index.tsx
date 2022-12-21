@@ -1,8 +1,6 @@
 import Button, { ButtonProps } from './components/Button/Button';
 import CloseButton, { CloseButtonProps } from './components/Button/CloseButton';
-import SocialButton, {
-  SocialButtonProps,
-} from './components/Button/SocialButton';
+import SocialButton, { SocialButtonProps } from './components/Button/SocialButton';
 import Checkbox, {
   CheckProps,
   CheckTypeProps,
@@ -11,15 +9,10 @@ import Checkbox, {
 } from './components/Checkbox/checkbox';
 import ThemeProvider, { ThemeProviderProps } from './components/ThemeProvider';
 import theme from './theme';
-import {
-  ButtonSizeTypes,
-  CloseButtonSizeTypes,
-} from './theme/components/button/sizes';
-import {
-  ButtonVariantsTypes,
-  CloseButtonVariantTypes,
-} from './theme/components/button/variants';
+import { ButtonSizeTypes, CloseButtonSizeTypes } from './theme/components/button/sizes';
+import { ButtonVariantsTypes, CloseButtonVariantTypes } from './theme/components/button/variants';
 import { extendTheme } from './utils/theme.utils';
+
 export {
   Accordion,
   AccordionButton,
@@ -95,6 +88,8 @@ export {
   CircularProgressProps,
   Collapse,
   CollapseProps,
+  ColorModeScript,
+  ColorModeScriptProps,
   ComponentStyleConfig,
   Container,
   ContainerProps,
@@ -199,6 +194,7 @@ export {
   ModalOverlay,
   ModalOverlayProps,
   ModalProps,
+  MultiStyleConfig,
   NumberDecrementStepper,
   NumberDecrementStepperProps,
   NumberIncrementStepper,
@@ -353,6 +349,7 @@ export {
   UnorderedList,
   useBoolean,
   useBreakpoint,
+  UseBreakpointOptions,
   useBreakpointValue,
   useButtonGroup,
   useCardStyles,
@@ -382,6 +379,9 @@ export {
   useTheme,
   useToast,
   UseToastOptions,
+  VisuallyHidden,
+  VisuallyHiddenInput,
+  visuallyHiddenStyle,
   VStack,
   Wrap,
   WrapItem,

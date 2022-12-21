@@ -15,6 +15,7 @@ module.exports = {
     "@storybook/addon-docs",
     "@storybook/mdx2-csf",
     "@locofy/storybook-addon",
+    "storybook-color-picker",
   ],
   staticDirs: ["../assets"],
   features: {

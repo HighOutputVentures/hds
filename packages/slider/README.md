@@ -12,7 +12,7 @@ npm i @highoutput/hds-range-slider
 
 ### Usage
 
-```typescript
+```tsx
 import { Slider, RangeSlider, withSlider } from "@highoutput/hds-slider";
 import { ThemeProvider, extendTheme } from "@highoutput/hds";
 

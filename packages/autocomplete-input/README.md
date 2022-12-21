@@ -12,7 +12,7 @@ npm i @highoutput/hds-autocomplete-input
 
 ### Usage
 
-```ts
+```tsx
 import * as React from 'react';
 import { AutoCompleteInput } from './src';
 

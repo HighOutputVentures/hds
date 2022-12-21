@@ -12,7 +12,7 @@ npm i @highoutput/hds-forms
 
 ### Usage
 
-```ts
+```tsx
 // feedback-form.tsx
 import { chakra } from '@chakra-ui/react';
 import { yupResolver } from '@hookform/resolvers/yup';

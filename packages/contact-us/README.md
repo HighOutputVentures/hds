@@ -4,7 +4,7 @@ We aim to build a library of custom ReactJS components that implements our uniqu
 
 ## Commands
 
-### To install package, use:
+### To install package, use
 
 **NPM**
 
@@ -18,7 +18,7 @@ npm i @highoutput/hds-contact-us
 yarn add @highoutput/hds-contact-us
 ```
 
-### Install the required dependency:
+### Install the required dependency
 
 **NPM**
 
@@ -34,7 +34,7 @@ yarn add @highoutput/hds @highoutput/hds-forms
 
 ### Usage
 
-```jsx
+```tsx
 import { ContactPage } from '@highoutput/hds-contact-us';
 
 export const SamplePage = () => {
