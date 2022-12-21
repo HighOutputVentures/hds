@@ -1,8 +1,5 @@
 import {
   As,
-  Avatar,
-  AvatarBadge,
-  Box,
   CloseButton,
   Flex,
   HStack,
@@ -12,7 +9,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-// @ts-ignore
+import { Box, Avatar, AvatarBadge } from '@highoutput/hds';
 import { UploadIcon } from '@highoutput/hds-icons';
 import React from 'react';
 export interface MainNotificationsProps {
