@@ -36,6 +36,7 @@ import WarningIcon from '../components/WarningIcon';
 import ZapIcon from '../components/ZapIcon';
 import GridView from './GridView';
 import IconsMDX from './Icons.mdx';
+import { sortObject } from './utils';
 
 export default {
   title: 'Components/Icons',
@@ -48,62 +49,70 @@ export default {
 
 const ArrowsTemplate = () => (
   <GridView
-    data={{
+    data={sortObject({
       ChevronLeftIcon,
       ChevronRightIcon,
       ChevronDownIcon,
       ChevronUpIcon,
-    }}
+    })}
   />
 );
 
 const CompanyTemplate = () => {
-  return <GridView data={{ HovIcon }} />;
+  return <GridView data={sortObject({ HovIcon })} />;
 };
 
 const SocialTemplate = () => {
   return (
     <GridView
-      data={{
-        AppleIcon,
+      data={sortObject({
         DribbleIcon,
+        AppleIcon,
         FacebookIcon,
         FigmaIcon,
         GoogleIcon,
         TwitterIcon,
-      }}
+      })}
     />
   );
 };
 
 const RandomTemplate = () => {
+  const monochrome = sortObject({
+    BoxIcon,
+    CheckIcon,
+    ExitIcon,
+    HelpIcon,
+    HomeIcon,
+    InfoCircleIcon,
+    LayersTwoIcon,
+    MessageSmileIcon,
+    SearchIcon,
+    SettingIcon,
+    ThreeDots,
+    UserIcon,
+    UserPlusIcon,
+    UsersIcon,
+    ZapIcon,
+    TrashIcon,
+    WarningIcon,
+    CheckCircleIcon,
+  });
+
+  const colored = sortObject({
+    WarningFolderIcon,
+    BoxCircularBGIcon,
+    ErrorFolderIcon,
+    SuccessCircleIcon,
+    UploadIcon,
+    PrimaryIcon,
+  });
+
   return (
     <GridView
       data={{
-        BoxIcon,
-        CheckIcon,
-        ExitIcon,
-        HelpIcon,
-        HomeIcon,
-        InfoCircleIcon,
-        LayersTwoIcon,
-        MessageSmileIcon,
-        SearchIcon,
-        SettingIcon,
-        ThreeDots,
-        UserIcon,
-        UserPlusIcon,
-        UsersIcon,
-        ZapIcon,
-        TrashIcon,
-        WarningIcon,
-        CheckCircleIcon,
-        WarningFolderIcon,
-        BoxCircularBGIcon,
-        ErrorFolderIcon,
-        SuccessCircleIcon,
-        UploadIcon,
-        PrimaryIcon,
+        ...monochrome,
+        ...colored,
       }}
     />
   );
