@@ -1,5 +1,5 @@
 {
-  "version": "0.1.45",
+  "version": "0.1.46",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -64,8 +64,8 @@
   },
   "gitHead": "2cc842169e828ff56ef57e039534fb0414854443",
   "dependencies": {
-    "@highoutput/hds": "^0.1.50",
-    "@highoutput/hds-forms": "^0.1.25",
+    "@highoutput/hds": "^0.1.51",
+    "@highoutput/hds-forms": "^0.1.26",
     "@hookform/resolvers": "^2.9.10",
     "js-cookie": "^3.0.1",
     "yup": "^0.32.11"

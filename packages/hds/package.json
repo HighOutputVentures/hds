@@ -1,5 +1,5 @@
 {
-  "version": "0.1.50",
+  "version": "0.1.51",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -70,7 +70,7 @@
     "@chakra-ui/styled-system": "^2.3.4",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@highoutput/hds-icons": "^0.1.16",
+    "@highoutput/hds-icons": "^0.1.18",
     "framer-motion": "^7.10.2",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",

@@ -1,5 +1,5 @@
 {
-  "version": "0.1.25",
+  "version": "0.1.26",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -57,7 +57,7 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^2.3.7",
-    "@highoutput/hds": "^0.1.50",
+    "@highoutput/hds": "^0.1.51",
     "@hookform/resolvers": "2.9.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
