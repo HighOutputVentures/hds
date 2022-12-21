@@ -1,17 +1,12 @@
 import * as React from 'react';
-import AppleIcon from '../components/AppleIcon';
 import BoxCircularBGIcon from '../components/BoxCircularBGIcon';
 import BoxIcon from '../components/BoxIcon';
-import CheckCircleGreenIcon from '../components/CheckCircleGreenIcon';
+import CheckCircleIcon from '../components/CheckCircleIcon';
 import CheckIcon from '../components/CheckIcon';
 import ChevronLeftIcon from '../components/ChevronLeftIcon';
 import ChevronRightIcon from '../components/ChevronRightIcon';
-import DribbleIcon from '../components/DribbleIcon';
 import ErrorFolderIcon from '../components/ErrorFolderIcon';
 import ExitIcon from '../components/ExitIcon';
-import FacebookIcon from '../components/FacebookIcon';
-import FigmaIcon from '../components/FigmaIcon';
-import GoogleIcon from '../components/GoogleIcon';
 import HelpIcon from '../components/HelpIcon';
 import HomeIcon from '../components/HomeIcon';
 import HovIcon from '../components/HovIcon';
@@ -20,14 +15,21 @@ import MessageSmileIcon from '../components/MessageSmileIcon';
 import PrimaryIcon from '../components/PrimaryIcon';
 import SearchIcon from '../components/SearchIcon';
 import SettingIcon from '../components/SettingIcon';
+import AppleIcon from '../components/social/AppleIcon';
+import DribbleIcon from '../components/social/DribbleIcon';
+import FacebookIcon from '../components/social/FacebookIcon';
+import FigmaIcon from '../components/social/FigmaIcon';
+import GoogleIcon from '../components/social/GoogleIcon';
+import TwitterIcon from '../components/social/TwitterIcon';
 import SuccessCircleIcon from '../components/SuccessCircleIcon';
 import ThreeDots from '../components/ThreeDots';
-import TwitterIcon from '../components/TwitterIcon';
+import TrashIcon from '../components/TrashIcon';
 import UploadIcon from '../components/UploadIcon';
 import UserIcon from '../components/UserIcon';
 import UserPlusIcon from '../components/UserPlusIcon';
 import UsersIcon from '../components/UsersIcon';
 import WarningFolderIcon from '../components/WarningFolderIcon';
+import WarningIcon from '../components/WarningIcon';
 import ZapIcon from '../components/ZapIcon';
 import GridView from './GridView';
 import IconsMDX from './Icons.mdx';
@@ -82,7 +84,9 @@ const RandomTemplate = () => (
       UserPlusIcon,
       UsersIcon,
       ZapIcon,
-      CheckCircleGreenIcon,
+      TrashIcon,
+      WarningIcon,
+      CheckCircleIcon,
       WarningFolderIcon,
       BoxCircularBGIcon,
       ErrorFolderIcon,

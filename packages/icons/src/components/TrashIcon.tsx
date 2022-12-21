@@ -1,10 +1,11 @@
-import * as React from "react";
+import { Icon, IconProps } from '@chakra-ui/react';
+import * as React from 'react';
 
-export default function TrashIcon(props: React.ComponentProps<"svg">) {
+const TrashIcon: React.FC<IconProps> = (props) => {
   return (
-    <svg
-      width="20"
-      height="20"
+    <Icon
+      width={4}
+      height={4}
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -17,6 +18,8 @@ export default function TrashIcon(props: React.ComponentProps<"svg">) {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-    </svg>
+    </Icon>
   );
-}
+};
+
+export default TrashIcon;

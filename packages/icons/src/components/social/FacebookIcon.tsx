@@ -1,12 +1,12 @@
 import { Icon } from '@chakra-ui/icons';
-import React from 'react';
+import React, { FC } from 'react';
 
 export interface FacebookIconProps {
   isDisabled?: boolean;
   variant?: 'outline' | 'solid';
 }
 
-const FacebookIcon = (props: FacebookIconProps) => {
+const FacebookIcon: FC<FacebookIconProps> = (props) => {
   const { isDisabled, variant = 'outline' } = props;
 
   return (

@@ -1,10 +1,11 @@
-import * as React from "react";
+import { Icon, IconProps } from '@chakra-ui/react';
+import * as React from 'react';
 
-export default function ArrowDownIcon(props: React.ComponentProps<"svg">) {
+const ArrowDownIcon: React.FC<IconProps> = (props) => {
   return (
-    <svg
-      width="16"
-      height="16"
+    <Icon
+      width={4}
+      height={4}
       viewBox="0 0 16 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -17,6 +18,8 @@ export default function ArrowDownIcon(props: React.ComponentProps<"svg">) {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-    </svg>
+    </Icon>
   );
-}
+};
+
+export default ArrowDownIcon;

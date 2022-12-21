@@ -1,77 +1,36 @@
-import { IconProps } from '@chakra-ui/react';
-import AppleIcon from './components/AppleIcon';
-import ArrowDownIcon from './components/ArrowDownIcon';
-import BoxCircularBGIcon from './components/BoxCircularBGIcon';
-import BoxIcon from './components/BoxIcon';
-import CheckCircleGreenIcon from './components/CheckCircleGreenIcon';
-import CheckIcon from './components/CheckIcon';
-import ChevronLeftIcon from './components/ChevronLeftIcon';
-import ChevronRightIcon from './components/ChevronRightIcon';
-import DotsVerticalIcon from './components/DotsVerticalIcon';
-import DribbleIcon from './components/DribbleIcon';
-import ErrorFolderIcon from './components/ErrorFolderIcon';
-import ExitIcon from './components/ExitIcon';
-import FacebookIcon from './components/FacebookIcon';
-import FigmaIcon from './components/FigmaIcon';
-import GoogleIcon from './components/GoogleIcon';
-import HelpCircleIcon from './components/HelpCircleIcon';
-import HelpIcon from './components/HelpIcon';
-import HomeIcon from './components/HomeIcon';
-import HovIcon from './components/HovIcon';
-import LayersTwoIcon from './components/LayersTwoIcon';
-import MessageSmileIcon from './components/MessageSmileIcon';
-import PencilIcon from './components/PencilIcon';
-import PrimaryIcon from './components/PrimaryIcon';
-import SearchIcon from './components/SearchIcon';
-import SettingIcon from './components/SettingIcon';
-import SuccessCircleIcon from './components/SuccessCircleIcon';
-import ThreeDots from './components/ThreeDots';
-import TrashIcon from './components/TrashIcon';
-import TwitterIcon from './components/TwitterIcon';
-import UploadIcon from './components/UploadIcon';
-import UserIcon from './components/UserIcon';
-import UserPlusIcon from './components/UserPlusIcon';
-import UsersIcon from './components/UsersIcon';
-import WarningFolderIcon from './components/WarningFolderIcon';
-import WarningIcon from './components/WarningIcon';
-import ZapIcon from './components/ZapIcon';
-
-export {
-  ArrowDownIcon,
-  TrashIcon,
-  PencilIcon,
-  HelpCircleIcon,
-  DotsVerticalIcon,
-  HovIcon,
-  ChevronRightIcon,
-  ChevronLeftIcon,
-  IconProps,
-  AppleIcon,
-  DribbleIcon,
-  FacebookIcon,
-  FigmaIcon,
-  GoogleIcon,
-  TwitterIcon,
-  BoxIcon,
-  ZapIcon,
-  UserPlusIcon,
-  UsersIcon,
-  UserIcon,
-  ThreeDots,
-  SettingIcon,
-  CheckIcon,
-  SearchIcon,
-  MessageSmileIcon,
-  LayersTwoIcon,
-  HomeIcon,
-  HelpIcon,
-  ExitIcon,
-  SuccessCircleIcon,
-  WarningIcon,
-  WarningFolderIcon,
-  ErrorFolderIcon,
-  CheckCircleGreenIcon,
-  BoxCircularBGIcon,
-  UploadIcon,
-  PrimaryIcon,
-};
+export { default as ArrowDownIcon } from './components/ArrowDownIcon';
+export { default as BoxCircularBGIcon } from './components/BoxCircularBGIcon';
+export { default as BoxIcon } from './components/BoxIcon';
+export { default as CheckCircleIcon } from './components/CheckCircleIcon';
+export { default as CheckIcon } from './components/CheckIcon';
+export { default as ChevronLeftIcon } from './components/ChevronLeftIcon';
+export { default as ChevronRightIcon } from './components/ChevronRightIcon';
+export { default as DotsVerticalIcon } from './components/DotsVerticalIcon';
+export { default as ErrorFolderIcon } from './components/ErrorFolderIcon';
+export { default as ExitIcon } from './components/ExitIcon';
+export { default as HelpCircleIcon } from './components/HelpCircleIcon';
+export { default as HelpIcon } from './components/HelpIcon';
+export { default as HomeIcon } from './components/HomeIcon';
+export { default as HovIcon } from './components/HovIcon';
+export { default as LayersTwoIcon } from './components/LayersTwoIcon';
+export { default as MessageSmileIcon } from './components/MessageSmileIcon';
+export { default as PencilIcon } from './components/PencilIcon';
+export { default as PrimaryIcon } from './components/PrimaryIcon';
+export { default as SearchIcon } from './components/SearchIcon';
+export { default as SettingIcon } from './components/SettingIcon';
+export { default as AppleIcon } from './components/social/AppleIcon';
+export { default as DribbleIcon } from './components/social/DribbleIcon';
+export { default as FacebookIcon } from './components/social/FacebookIcon';
+export { default as FigmaIcon } from './components/social/FigmaIcon';
+export { default as GoogleIcon } from './components/social/GoogleIcon';
+export { default as TwitterIcon } from './components/social/TwitterIcon';
+export { default as SuccessCircleIcon } from './components/SuccessCircleIcon';
+export { default as ThreeDots } from './components/ThreeDots';
+export { default as TrashIcon } from './components/TrashIcon';
+export { default as UploadIcon } from './components/UploadIcon';
+export { default as UserIcon } from './components/UserIcon';
+export { default as UserPlusIcon } from './components/UserPlusIcon';
+export { default as UsersIcon } from './components/UsersIcon';
+export { default as WarningFolderIcon } from './components/WarningFolderIcon';
+export { default as WarningIcon } from './components/WarningIcon';
+export { default as ZapIcon } from './components/ZapIcon';
