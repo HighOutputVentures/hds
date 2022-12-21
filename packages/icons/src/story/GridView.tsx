@@ -11,7 +11,12 @@ export default function GridView(props: GridViewProps & IconProps) {
 
   return (
     <ThemeProvider>
-      <Grid templateColumns="repeat(5, 1fr)" gridAutoRows="60px" gap={8}>
+      <Grid
+        templateColumns="repeat(5, 1fr)"
+        gridAutoRows="60px"
+        rowGap={12}
+        columnGap={8}
+      >
         {Object.entries(data).map(([label, Component]) => {
           return (
             <GridItem
@@ -21,8 +26,7 @@ export default function GridView(props: GridViewProps & IconProps) {
               alignItems="center"
               gap={2}
             >
-              <Component {...others} />
-
+              <Component width="24px" height="24px" {...others} />
               <Text fontSize="xs" color="neutrals.700">
                 {label}
               </Text>

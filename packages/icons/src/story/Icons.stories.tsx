@@ -3,8 +3,10 @@ import BoxCircularBGIcon from '../components/BoxCircularBGIcon';
 import BoxIcon from '../components/BoxIcon';
 import CheckCircleIcon from '../components/CheckCircleIcon';
 import CheckIcon from '../components/CheckIcon';
+import ChevronDownIcon from '../components/ChevronDownIcon';
 import ChevronLeftIcon from '../components/ChevronLeftIcon';
 import ChevronRightIcon from '../components/ChevronRightIcon';
+import ChevronUpIcon from '../components/ChevronUpIcon';
 import HovIcon from '../components/company/HovIcon';
 import ErrorFolderIcon from '../components/ErrorFolderIcon';
 import ExitIcon from '../components/ExitIcon';
@@ -48,6 +50,8 @@ const ArrowsTemplate = () => (
     data={{
       ChevronLeftIcon,
       ChevronRightIcon,
+      ChevronDownIcon,
+      ChevronUpIcon,
     }}
   />
 );
