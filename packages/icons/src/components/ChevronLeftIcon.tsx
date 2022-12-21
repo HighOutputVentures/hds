@@ -1,14 +1,21 @@
 import { Icon, IconProps } from '@chakra-ui/react';
 import React, { FC } from 'react';
 
-const ChevronLeftIcon: FC<Omit<IconProps, 'children' | 'css'>> = (props) => (
-  <Icon width="32px" height="32px" viewBox="0 0 32 32" fill="none" {...props}>
+const ChevronLeftIcon: FC<IconProps> = (props) => (
+  <Icon
+    width={4}
+    height={4}
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+    stroke="currentColor"
+    {...props}
+  >
     <path
-      d="M12.5 15L7.5 10L12.5 5"
-      stroke="currentColor"
-      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      d="M15.75 19.5L8.25 12l7.5-7.5"
     />
   </Icon>
 );

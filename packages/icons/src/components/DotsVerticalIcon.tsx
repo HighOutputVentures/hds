@@ -1,8 +1,9 @@
-import * as React from "react";
+import { Icon, IconProps } from '@chakra-ui/react';
+import * as React from 'react';
 
-export default function DotsVerticalIcon(props: React.ComponentProps<"svg">) {
+const DotsVerticalIcon: React.FC<IconProps> = (props) => {
   return (
-    <svg
+    <Icon
       width="20"
       height="20"
       viewBox="0 0 20 20"
@@ -31,6 +32,8 @@ export default function DotsVerticalIcon(props: React.ComponentProps<"svg">) {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-    </svg>
+    </Icon>
   );
-}
+};
+
+export default DotsVerticalIcon;
