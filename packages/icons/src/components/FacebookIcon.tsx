@@ -5,8 +5,10 @@ export interface FacebookIconProps {
   isDisabled?: boolean;
   variant?: 'outline' | 'solid';
 }
+
 const FacebookIcon = (props: FacebookIconProps) => {
-  const { isDisabled, variant } = props;
+  const { isDisabled, variant = 'outline' } = props;
+
   return (
     <Icon
       width="24px"

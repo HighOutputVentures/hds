@@ -4,8 +4,10 @@ export interface DribbleIconProps {
   isDisabled?: boolean;
   variant?: 'outline' | 'solid';
 }
+
 const DribbleIcon: FC<DribbleIconProps> = (props) => {
-  const { isDisabled, variant } = props;
+  const { isDisabled, variant = 'outline' } = props;
+
   return (
     <Icon
       width="24px"

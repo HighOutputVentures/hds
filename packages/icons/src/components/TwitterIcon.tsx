@@ -4,8 +4,10 @@ export interface TwitterIconProps {
   isDisabled?: boolean;
   variant?: 'outline' | 'solid';
 }
+
 const TwitterIcon: FC<TwitterIconProps> = (props) => {
-  const { isDisabled, variant } = props;
+  const { isDisabled, variant = 'outline' } = props;
+
   return (
     <Icon width="24px" verticalAlign={'center'} viewBox="0 0 25 20" fill="none">
       <path
