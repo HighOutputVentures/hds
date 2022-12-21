@@ -12,16 +12,18 @@ npm i @highoutput/hds-icons
 
 ### Usage
 
+```tsx
+import { ThemeProvider, Box } from '@highoutput/hds';
+import { ChevronUpIcon, ChevronDownIcon } from '@highoutput/hds-icons';
 
-
-```typescript
-import { HovIcon } from '@highoutput/hds-icons';
-
-export const SamplePage = () => {
+export default function Component() {
   return (
-    <>
-     <HovIcon />
-    </>
+    <ThemeProvider>
+      <VStack align="start" spacing={4}>
+        <ChevronUpIcon fill="neutrals.600" />
+        <ChevronDownIcon fill="neutrals.600" />
+      </VStack>
+    </ThemeProvider>
   );
-};
+}
 ```
