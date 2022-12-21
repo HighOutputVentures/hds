@@ -12,13 +12,13 @@ npm i @highoutput/hds-spinner
 
 ### Usage
 
-```typescript
+```tsx
 import { LogoSpinner } from '@highoutput/hds-spinner';
 
 export const SamplePage = () => {
   return (
     <>
-     <LogoSpinner duration={3000}>
+      <LogoSpinner duration={3000}>
         <div>Hello, World!</div>
       </LogoSpinner>
     </>

@@ -12,7 +12,7 @@ npm i @highoutput/hds-alerts
 
 ### Usage
 
-```jsx
+```tsx
 import { Alert, Notification } from '@highoutput/hds-alerts';
 
 export const AlertSamplePage = () => {

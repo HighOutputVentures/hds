@@ -12,7 +12,7 @@ npm i @highoutput/hds-switch
 
 ### Usage
 
-```typescript
+```tsx
 import { Switch, withSwitch } from "@highoutput/hds-switch";
 import { ThemeProvider, extendTheme } from "@highoutput/hds";
 

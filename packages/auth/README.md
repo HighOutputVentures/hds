@@ -12,13 +12,13 @@ npm i @highoutput/hds-auth
 
 ### Usage
 
-```jsx
+```tsx
 import { CredentialLoginForm } from '@highoutput/hds-auth';
 
 export const SamplePage = () => {
   return (
     <>
-       <CredentialLoginForm />
+      <CredentialLoginForm />
     </>
   );
 };

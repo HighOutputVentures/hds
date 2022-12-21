@@ -12,27 +12,27 @@ npm i @highoutput/hds-array-field
 
 ### Usage
 
-```jsx
+```tsx
 import { ArrayField } from '@highoutput/hds-array-field';
 
 export const SamplePage = () => {
   return (
     <>
       <ArrayField
-    defaultValues={{
-      input: [
-        {
-          value: ''
-        }
-      ]
-    }}
-    maxValue={10}
-    onAppend={() => {}}
-    onBlur={function noRefCheck() {}}
-    onChange={function noRefCheck() {}}
-    onRemove={function noRefCheck() {}}
-    placeholder="Enter an Input"
-  />
+        defaultValues={{
+          input: [
+            {
+              value: '',
+            },
+          ],
+        }}
+        maxValue={10}
+        onAppend={() => {}}
+        onBlur={function noRefCheck() {}}
+        onChange={function noRefCheck() {}}
+        onRemove={function noRefCheck() {}}
+        placeholder="Enter an Input"
+      />
     </>
   );
 };

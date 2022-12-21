@@ -1,8 +1,9 @@
 # HDS
+
 We aim to build a library of custom ReactJS components that implements our unique UI design conventions (HDS). Our components will be based primarily on Chakra UI. React Storybook will be used for documentation and testing.
 
 - Reusable block of components
-- HDS integrated styling 
+- HDS integrated styling
 - Easy to implement
 
 ## Installation
@@ -11,10 +12,9 @@ We aim to build a library of custom ReactJS components that implements our uniqu
 npm i @highoutput/hds
 ```
 
-
 In your main app file import theme provider and make it a parent of all components.
 
-```typescript
+```tsx
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { ThemeProvider } from '@highoutput/hds';
@@ -43,17 +43,19 @@ const Form = () => {
         onBlur={() => {}}
         onChange={() => {}}
         onPressEnter={() => {}}
-        placeholder="Input your name" />
-    </Box>);
+        placeholder="Input your name"
+      />
+    </Box>
+  );
 };
 
-export default Form
+export default Form;
 ```
 
 ## Check out for more information
+
 - [Storybook Documentation and Preview](https://hds-highoutput.vercel.app/?path=/story/getting-started--page)
 - [Chakra Components](https://chakra-ui.com/docs/components)
-
 
 ## Other Packages
 

@@ -12,7 +12,7 @@ npm i @highoutput/hds-dropdown
 
 ### Usage
 
-```jsx
+```tsx
 import { MenuDropdown, InputDropdown } from '@highoutput/hds-tooltip';
 
 export const InputDropdownSamplePage = () => {

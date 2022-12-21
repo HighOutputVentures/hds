@@ -12,14 +12,11 @@ npm i @highoutput/hds-auto-form
 
 ### Usage
 
-```jsx
+```tsx
 import { AutoForm } from '@highoutput/hds-auto-form';
 
- const autoFormSchema = object().shape({
-  title: string()
-    .required()
-    .label('Title')
-    .required('Title is required'),
+const autoFormSchema = object().shape({
+  title: string().required().label('Title').required('Title is required'),
   description: string()
     .label('Description')
     .meta({ type: 'textarea' })
@@ -29,13 +26,10 @@ import { AutoForm } from '@highoutput/hds-auto-form';
 export const SamplePage = () => {
   return (
     <>
-        <AutoForm
-          onSubmitForm={() => {}}
-          placeholders={[
-            'Enter title',
-            'Enter description'
-          ]}
-          yupSchema={autoFormSchema}
+      <AutoForm
+        onSubmitForm={() => {}}
+        placeholders={['Enter title', 'Enter description']}
+        yupSchema={autoFormSchema}
       />
     </>
   );

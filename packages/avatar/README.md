@@ -12,14 +12,9 @@ npm i @highoutput/hds-avatar
 
 ### Usage
 
-```typescript
-import {
-  Avatar,
-  AvatarGroup,
-  AvatarLabel,
-  withAvatar,
-} from '@highoutput/hds-avatar';
-import { ThemeProvider, extendTheme } from '@highoutput/hds';
+```tsx
+import { Avatar, AvatarGroup, AvatarLabel, withAvatar } from "@highoutput/hds-avatar";
+import { ThemeProvider, extendTheme } from "@highoutput/hds";
 
 export default function Example() {
   return (
