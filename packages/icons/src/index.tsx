@@ -14,6 +14,7 @@ export { default as ExitIcon } from './components/ExitIcon';
 export { default as HelpCircleIcon } from './components/HelpCircleIcon';
 export { default as HelpIcon } from './components/HelpIcon';
 export { default as HomeIcon } from './components/HomeIcon';
+export { default as InfoCircleIcon } from './components/InfoCircleIcon';
 export { default as LayersTwoIcon } from './components/LayersTwoIcon';
 export { default as MessageSmileIcon } from './components/MessageSmileIcon';
 export { default as PencilIcon } from './components/PencilIcon';

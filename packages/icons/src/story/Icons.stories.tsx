@@ -12,6 +12,7 @@ import ErrorFolderIcon from '../components/ErrorFolderIcon';
 import ExitIcon from '../components/ExitIcon';
 import HelpIcon from '../components/HelpIcon';
 import HomeIcon from '../components/HomeIcon';
+import InfoCircleIcon from '../components/InfoCircleIcon';
 import LayersTwoIcon from '../components/LayersTwoIcon';
 import MessageSmileIcon from '../components/MessageSmileIcon';
 import PrimaryIcon from '../components/PrimaryIcon';
@@ -84,6 +85,7 @@ const RandomTemplate = () => {
         ExitIcon,
         HelpIcon,
         HomeIcon,
+        InfoCircleIcon,
         LayersTwoIcon,
         MessageSmileIcon,
         SearchIcon,
