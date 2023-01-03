@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notification Component Snapshot Should match snapshot 1`] = `
+<div
+  className="css-1wr1rkl"
+  data-testid="notification-box"
+>
+  <svg
+    className="chakra-icon chakra-icon css-kw85s7"
+    focusable={false}
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M23.384,21.619,16.855,15.09a9.284,9.284,0,1,0-1.768,1.768l6.529,6.529a1.266,1.266,0,0,0,1.768,0A1.251,1.251,0,0,0,23.384,21.619ZM2.75,9.5a6.75,6.75,0,1,1,6.75,6.75A6.758,6.758,0,0,1,2.75,9.5Z"
+      fill="currentColor"
+    />
+  </svg>
+  <div
+    className="css-1pyc5ii"
+  >
+    <div
+      className="chakra-stack css-ebm925"
+    >
+      <p
+        className="chakra-text css-1xhu8vj"
+      >
+        We’ve just released a new feature
+      </p>
+    </div>
+    <p
+      className="chakra-text css-nkyeo7"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.
+    </p>
+    <div
+      className="chakra-stack css-he6z7n"
+    >
+      <a
+        className="chakra-text css-o9hqjy"
+        href="#"
+        target="_blank"
+      >
+        Learn More
+      </a>
+      <a
+        className="chakra-text css-4g6ai3"
+        href="#"
+        target="_blank"
+      >
+        <span
+          className="chakra-text css-4p6fdr"
+        >
+          View Changes
+        </span>
+      </a>
+    </div>
+  </div>
+  <div
+    className="css-1t9pz9x"
+  />
+  <button
+    aria-label="Close"
+    className="css-12hfj2s"
+    type="button"
+  >
+    <svg
+      aria-hidden={true}
+      className="chakra-icon css-onkibi"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z"
+        fill="currentColor"
+      />
+    </svg>
+  </button>
+</div>
+`;
