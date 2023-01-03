@@ -1,31 +1,36 @@
 import "@testing-library/jest-dom";
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import * as React from "react";
+import renderer from "react-test-renderer";
 import Carousel from "./Carousel";
 
 jest.mock("react-responsive-carousel/lib/styles/carousel.min.css", () => {
   return {};
 });
 
+function Component() {
+  return (
+    <Carousel
+      items={[
+        "https://example-img-01.png",
+        "https://example-img-02.png",
+        "https://example-img-03.png",
+        "https://example-img-04.png",
+        "https://example-img-05.png",
+      ]}
+      loop
+      autoPlay
+      isSwipeable
+    >
+      {(src) => <img src={src} alt="" />}
+    </Carousel>
+  );
+}
+
 describe("Carousel", () => {
   afterEach(cleanup);
   beforeEach(() => {
-    render(
-      <Carousel
-        items={[
-          "https://example-img-01.png",
-          "https://example-img-02.png",
-          "https://example-img-03.png",
-          "https://example-img-04.png",
-          "https://example-img-05.png",
-        ]}
-        loop
-        autoPlay
-        isSwipeable
-      >
-        {(src) => <img src={src} alt="" />}
-      </Carousel>,
-    );
+    render(<Component />);
   });
 
   it("Should render next and previous button", () => {
@@ -71,5 +76,14 @@ describe("Carousel", () => {
       "data-selected",
       "true",
     );
+  });
+
+  describe("Snapshot", () => {
+    it("Should match snapshot", () => {
+      const component = renderer.create(<Component />);
+      const tree = component.toJSON();
+      expect(tree).toMatchSnapshot();
+      component.unmount();
+    });
   });
 });

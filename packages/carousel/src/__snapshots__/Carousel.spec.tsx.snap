@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel Snapshot Should match snapshot 1`] = `
+<div
+  className="css-0"
+>
+  <div
+    className="carousel-root"
+  >
+    <div
+      className="carousel carousel-slider"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <ul
+        className="control-dots"
+      >
+        <button
+          aria-label="Slide 1"
+          className="chakra-button css-4xx2wk"
+          data-selected={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+          type="button"
+        />
+        <button
+          aria-label="Slide 2"
+          className="chakra-button css-4xx2wk"
+          data-selected={false}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+          type="button"
+        />
+        <button
+          aria-label="Slide 3"
+          className="chakra-button css-4xx2wk"
+          data-selected={false}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+          type="button"
+        />
+        <button
+          aria-label="Slide 4"
+          className="chakra-button css-4xx2wk"
+          data-selected={false}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+          type="button"
+        />
+        <button
+          aria-label="Slide 5"
+          className="chakra-button css-4xx2wk"
+          data-selected={false}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+          type="button"
+        />
+      </ul>
+      <button
+        aria-label="previous slide"
+        className="chakra-button css-p7mkev"
+        onClick={[Function]}
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          className="chakra-icon css-13otjrl"
+          fill="none"
+          focusable={false}
+          stroke="currentColor"
+          strokeWidth={1.5}
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15.75 19.5L8.25 12l7.5-7.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+      <div
+        className="slider-wrapper axis-horizontal"
+        style={Object {}}
+      >
+        <ul
+          className="slider animated"
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+          style={
+            Object {
+              "MozTransitionDuration": "350ms",
+              "OTransform": "translate3d(-100%,0,0)",
+              "OTransitionDuration": "350ms",
+              "WebkitTransform": "translate3d(-100%,0,0)",
+              "WebkitTransitionDuration": "350ms",
+              "msTransform": "translate3d(-100%,0,0)",
+              "msTransitionDuration": "350ms",
+              "transform": "translate3d(-100%,0,0)",
+              "transitionDuration": "350ms",
+            }
+          }
+        >
+          <li
+            className="slide"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <img
+              alt=""
+              src="https://example-img-05.png"
+            />
+          </li>
+          <li
+            className="slide selected previous"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <img
+              alt=""
+              src="https://example-img-01.png"
+            />
+          </li>
+          <li
+            className="slide"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <img
+              alt=""
+              src="https://example-img-02.png"
+            />
+          </li>
+          <li
+            className="slide"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <img
+              alt=""
+              src="https://example-img-03.png"
+            />
+          </li>
+          <li
+            className="slide"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <img
+              alt=""
+              src="https://example-img-04.png"
+            />
+          </li>
+          <li
+            className="slide"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <img
+              alt=""
+              src="https://example-img-05.png"
+            />
+          </li>
+          <li
+            className="slide selected previous"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <img
+              alt=""
+              src="https://example-img-01.png"
+            />
+          </li>
+        </ul>
+      </div>
+      <button
+        aria-label="next slide"
+        className="chakra-button css-p7mkev"
+        onClick={[Function]}
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          className="chakra-icon css-13otjrl"
+          fill="none"
+          focusable={false}
+          stroke="currentColor"
+          strokeWidth={1.5}
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8.25 4.5l7.5 7.5-7.5 7.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
