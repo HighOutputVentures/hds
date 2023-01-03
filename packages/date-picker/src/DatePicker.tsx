@@ -294,6 +294,7 @@ export const DatePicker = (props: DatePickerProps) => {
       }
       w={'full'}
       maxWidth={type === 'pre-set ranges' ? '850px' : '328px'}
+      minWidth={type === 'pre-set ranges' ? '850px' : '328px'}
       borderRadius={'8px'}
       bg={'white'}
       data-testid={
