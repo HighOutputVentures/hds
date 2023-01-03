@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import * as React from 'react';
+import renderer from 'react-test-renderer';
 import AUIcon from './examples/AUIcon';
 import Tag from './Tag';
 
@@ -98,6 +99,30 @@ describe('Tag', () => {
 
     await waitFor(() => {
       expect(handleCheck).toHaveBeenCalledWith(expect.any(Boolean));
+    });
+  });
+
+  describe('Snapshot', () => {
+    it('Should match snapshot', () => {
+      const component = renderer.create(
+        <Tag
+          label="Tag Label"
+          indicator
+          icon={AUIcon}
+          avatar="https://i.pravatar.cc/25"
+          checkbox
+          checked
+          badge
+          badgeCount={1_000_000}
+          closable
+          onCheck={function () {}}
+          onClose={function () {}}
+        />,
+      );
+
+      const tree = component.toJSON();
+      expect(tree).toMatchSnapshot();
+      component.unmount();
     });
   });
 });
