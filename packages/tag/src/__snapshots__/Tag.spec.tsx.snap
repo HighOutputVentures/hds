@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag Snapshot Should match snapshot 1`] = `
+<span
+  className="css-1qm7lvz"
+>
+  <div
+    className="css-1w2j5n9"
+  />
+  <label
+    checked={true}
+    className="chakra-checkbox css-1elxtiq"
+    onClick={[Function]}
+  >
+    <input
+      aria-label="Select Item"
+      checked={false}
+      className="chakra-checkbox__input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      style={
+        Object {
+          "border": "0",
+          "clip": "rect(0, 0, 0, 0)",
+          "height": "1px",
+          "margin": "-1px",
+          "overflow": "hidden",
+          "padding": "0",
+          "position": "absolute",
+          "whiteSpace": "nowrap",
+          "width": "1px",
+        }
+      }
+      type="checkbox"
+    />
+    <span
+      aria-hidden={true}
+      className="chakra-checkbox__control css-dnty2r"
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+    />
+  </label>
+  <div
+    className="css-sfr4vn"
+  />
+  <svg
+    aria-label="Tag Icon"
+    className="chakra-icon css-1jxv7ty"
+    fill="none"
+    focusable={false}
+    height="16"
+    role="img"
+    viewBox="0 0 16 16"
+    width="16"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g
+      clipPath="url(#clip0_3307_418389)"
+    >
+      <path
+        d="M16 8C16 12.4183 12.4183 16 8 16C3.58175 16 0 12.4183 0 8C0 8.00187 8 0.00090625 8 0C12.4183 0 16 3.58175 16 8Z"
+        fill="#0052B4"
+      />
+      <path
+        d="M7.97852 8.00026H7.99996C7.99996 7.993 7.99996 7.98605 7.99996 7.97882C7.99283 7.98599 7.98569 7.99313 7.97852 8.00026Z"
+        fill="#F0F0F0"
+      />
+      <path
+        d="M7.99987 4.17442C7.99987 2.76677 7.99987 1.84436 7.99987 0.000518799H7.99853C3.58088 0.00123755 -0.00012207 3.58264 -0.00012207 8.00049H4.17378V5.65011L6.52416 8.00049H7.9785C7.98565 7.99336 7.99278 7.98624 7.9999 7.97908C7.9999 7.44011 7.9999 6.95921 7.9999 6.52483L5.6495 4.17442H7.99987Z"
+        fill="#F0F0F0"
+      />
+      <path
+        d="M4.04745 1.04379C2.79624 1.75626 1.75605 2.79645 1.04358 4.04767V8.00033H3.13055V3.13079V3.13076H8.00011C8.00011 2.47254 8.00011 1.84548 8.00011 1.04379H4.04745Z"
+        fill="#D80027"
+      />
+      <path
+        d="M8.00025 7.01658L5.15797 4.17433H4.17419C4.17419 4.1743 4.17419 4.17433 4.17419 4.17433L8.00022 8.00036H8.00025C8.00025 8.00036 8.00025 7.32208 8.00025 7.01658Z"
+        fill="#D80027"
+      />
+      <path
+        d="M4.82498 9.39096L5.26404 10.309L6.25551 10.0799L5.81151 10.9956L6.60883 11.6278L5.61611 11.8516L5.61889 12.8692L4.82498 12.2326L4.03111 12.8692L4.03389 11.8516L3.04114 11.6278L3.83848 10.9956L3.39442 10.0799L4.38595 10.309L4.82498 9.39096Z"
+        fill="#F0F0F0"
+      />
+      <path
+        d="M11.9781 11.1302L12.1976 11.5893L12.6934 11.4747L12.4713 11.9325L12.87 12.2487L12.3736 12.3606L12.375 12.8694L11.9781 12.551L11.5811 12.8694L11.5825 12.3606L11.0862 12.2487L11.4848 11.9325L11.2628 11.4747L11.7586 11.5893L11.9781 11.1302Z"
+        fill="#F0F0F0"
+      />
+      <path
+        d="M9.93564 6.26096L10.1551 6.72002L10.6509 6.60539L10.4289 7.06324L10.8275 7.37939L10.3312 7.49127L10.3325 8.00008L9.93564 7.68174L9.5387 8.00008L9.54004 7.49127L9.0437 7.37939L9.44236 7.06324L9.22036 6.60539L9.71611 6.72002L9.93564 6.26096Z"
+        fill="#F0F0F0"
+      />
+      <path
+        d="M11.9781 3.47842L12.1976 3.93749L12.6934 3.82289L12.4714 4.28074L12.87 4.59686L12.3736 4.70877L12.375 5.21758L11.9781 4.89924L11.5811 5.21758L11.5825 4.70877L11.0862 4.59686L11.4848 4.28074L11.2628 3.82289L11.7586 3.93749L11.9781 3.47842Z"
+        fill="#F0F0F0"
+      />
+      <path
+        d="M13.7614 5.56519L13.9809 6.02425L14.4767 5.90962L14.2547 6.36747L14.6533 6.68362L14.157 6.79553L14.1583 7.30431L13.7614 6.986L13.3645 7.30431L13.3659 6.79553L12.8695 6.68362L13.2682 6.36747L13.0462 5.90962L13.5419 6.02425L13.7614 5.56519Z"
+        fill="#F0F0F0"
+      />
+      <path
+        d="M12.4861 8.00021L12.6588 8.53165H13.2176L12.7655 8.86012L12.9382 9.39153L12.4861 9.06309L12.034 9.39153L12.2067 8.86012L11.7546 8.53165H12.3134L12.4861 8.00021Z"
+        fill="#F0F0F0"
+      />
+    </g>
+    <defs>
+      <clipPath
+        id="clip0_3307_418389"
+      >
+        <rect
+          fill="white"
+          height="16"
+          width="16"
+        />
+      </clipPath>
+    </defs>
+  </svg>
+  <div
+    className="css-sfr4vn"
+  />
+  <div
+    className="css-sfr4vn"
+  />
+  <span
+    aria-label="Tag Avatar"
+    className="chakra-avatar css-1ruhx4w"
+    role="img"
+  >
+    <svg
+      aria-label=" avatar"
+      className="chakra-avatar__svg css-16ite8i"
+      role="img"
+      viewBox="0 0 128 128"
+    >
+      <path
+        d="M103,102.1388 C93.094,111.92 79.3504,118 64.1638,118 C48.8056,118 34.9294,111.768 25,101.7892 L25,95.2 C25,86.8096 31.981,80 40.6,80 L87.4,80 C96.019,80 103,86.8096 103,95.2 L103,102.1388 Z"
+        fill="currentColor"
+      />
+      <path
+        d="M63.9961647,24 C51.2938136,24 41,34.2938136 41,46.9961647 C41,59.7061864 51.2938136,70 63.9961647,70 C76.6985159,70 87,59.7061864 87,46.9961647 C87,34.2938136 76.6985159,24 63.9961647,24"
+        fill="currentColor"
+      />
+    </svg>
+  </span>
+  <div
+    className="css-sfr4vn"
+  />
+  <div
+    className="css-zgv5qp"
+  />
+  <div
+    aria-label="Green Dot"
+    className="css-0"
+    role="presentation"
+  />
+  <div
+    className="css-xf646l"
+  />
+  <span
+    className="css-zvlevn"
+    role="contentinfo"
+  >
+    Tag Label
+  </span>
+  <div
+    className="css-sfr4vn"
+  />
+  <button
+    aria-label="Close Tag"
+    className="css-sorhh"
+    onClick={[Function]}
+    role="button"
+    type="button"
+  >
+    <svg
+      className="chakra-icon css-1md6f3y"
+      focusable={false}
+      viewBox="0 0 512 512"
+    >
+      <path
+        d="M289.94 256l95-95A24 24 0 00351 127l-95 95-95-95a24 24 0 00-34 34l95 95-95 95a24 24 0 1034 34l95-95 95 95a24 24 0 0034-34z"
+        fill="currentColor"
+      />
+    </svg>
+  </button>
+  <div
+    className="css-xf646l"
+  />
+  <div
+    className="css-fxo5v0"
+  />
+  <p
+    className="chakra-text css-0"
+  >
+    1000000
+  </p>
+  <div
+    className="css-zgv5qp"
+  />
+</span>
+`;
