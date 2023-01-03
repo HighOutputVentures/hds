@@ -116,7 +116,7 @@ const Notification = (props: NotificationsProps) => {
             fontWeight={500}
             fontSize={'14px'}
             lineHeight={' 14px'}
-            letter-spacing={'0.02em '}
+            letterSpacing={'0.02em '}
             color="neutrals.900"
           >
             {title}
