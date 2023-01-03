@@ -1,0 +1,55 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "@highoutput/hds-date-picker",
+  "author": "jadekenneth.github.io",
+  "module": "dist/@highoutput/hds-date-picker.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/@highoutput/hds-date-picker.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/@highoutput/hds-date-picker.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "dependencies": {
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.40"
+  }
+}
