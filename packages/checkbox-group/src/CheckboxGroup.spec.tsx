@@ -2,6 +2,7 @@ import { Box } from "@chakra-ui/react";
 import "@testing-library/jest-dom";
 import { fireEvent, render, waitFor } from "@testing-library/react";
 import * as React from "react";
+import renderer from "react-test-renderer";
 import CheckboxGroup from "./CheckboxGroup";
 
 const items = [
@@ -168,6 +169,15 @@ describe("CheckboxGroup", () => {
 
     await waitFor(() => {
       expect(handleChange).toHaveBeenCalledWith(expect.arrayContaining([items[1]]));
+    });
+  });
+
+  describe("Snapshot", () => {
+    it("Should match snapshot", () => {
+      const component = renderer.create(<ActualComponentTest afterware={function () {}} />);
+      const tree = component.toJSON();
+      expect(tree).toMatchSnapshot();
+      component.unmount();
     });
   });
 });

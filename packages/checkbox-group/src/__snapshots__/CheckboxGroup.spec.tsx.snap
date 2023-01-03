@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckboxGroup Snapshot Should match snapshot 1`] = `
+<div
+  aria-label="Checkbox Group"
+  aria-multiselectable={true}
+  className="css-1kkt86i"
+  role="group"
+>
+  <div
+    aria-checked={false}
+    aria-label="Select item 1"
+    aria-rowindex={0}
+    className="css-bo25ge"
+    onClick={[Function]}
+    role="checkbox"
+    tabIndex={0}
+  >
+    <div
+      className="css-0"
+    >
+      Mary
+    </div>
+    <div
+      className="CheckboxGroup__Checkbox css-dkjtxe"
+      tabIndex={-1}
+    />
+  </div>
+  <div
+    aria-checked={false}
+    aria-label="Select item 2"
+    aria-rowindex={1}
+    className="css-bo25ge"
+    onClick={[Function]}
+    role="checkbox"
+    tabIndex={0}
+  >
+    <div
+      className="css-0"
+    >
+      Will
+    </div>
+    <div
+      className="CheckboxGroup__Checkbox css-dkjtxe"
+      tabIndex={-1}
+    />
+  </div>
+  <div
+    aria-checked={false}
+    aria-label="Select item 3"
+    aria-rowindex={2}
+    className="css-bo25ge"
+    onClick={[Function]}
+    role="checkbox"
+    tabIndex={0}
+  >
+    <div
+      className="css-0"
+    >
+      Jane
+    </div>
+    <div
+      className="CheckboxGroup__Checkbox css-dkjtxe"
+      tabIndex={-1}
+    />
+  </div>
+  <div
+    aria-checked={false}
+    aria-label="Select item 4"
+    aria-rowindex={3}
+    className="css-bo25ge"
+    onClick={[Function]}
+    role="checkbox"
+    tabIndex={0}
+  >
+    <div
+      className="css-0"
+    >
+      Mark
+    </div>
+    <div
+      className="CheckboxGroup__Checkbox css-dkjtxe"
+      tabIndex={-1}
+    />
+  </div>
+  <div
+    aria-checked={false}
+    aria-label="Select item 5"
+    aria-rowindex={4}
+    className="css-bo25ge"
+    onClick={[Function]}
+    role="checkbox"
+    tabIndex={0}
+  >
+    <div
+      className="css-0"
+    >
+      Sean
+    </div>
+    <div
+      className="CheckboxGroup__Checkbox css-dkjtxe"
+      tabIndex={-1}
+    />
+  </div>
+</div>
+`;

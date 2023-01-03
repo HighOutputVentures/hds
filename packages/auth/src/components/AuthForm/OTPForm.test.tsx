@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
+import renderer from 'react-test-renderer';
 import OTPForm from './OTPForm';
 
 describe('One Time Password Login Component', () => {
@@ -19,5 +20,14 @@ describe('One Time Password Login Component', () => {
       /form-container-error/i
     );
     expect(errorFormControl).toHaveLength(1);
+  });
+
+  describe('Snapshot', () => {
+    it('(OTPForm) Should match snapshot', () => {
+      const component = renderer.create(<OTPForm />);
+      const tree = component.toJSON();
+      expect(tree).toMatchSnapshot();
+      component.unmount();
+    });
   });
 });
