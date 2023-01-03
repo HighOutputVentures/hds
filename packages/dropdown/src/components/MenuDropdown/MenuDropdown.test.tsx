@@ -1,10 +1,10 @@
-import { render, screen } from '@testing-library/react';
-import React from 'react';
-import MenuDropdown from './MenuDropdown';
-
 import { RepeatIcon } from '@chakra-ui/icons';
 import { Menu, MenuItem } from '@chakra-ui/react';
-import ThemeProvider from '@highoutput/hds/src/components/ThemeProvider';
+import { ThemeProvider } from '@highoutput/hds';
+import { render, screen } from '@testing-library/react';
+import React from 'react';
+import renderer from 'react-test-renderer';
+import MenuDropdown from './MenuDropdown';
 
 describe('Menu Dropdown Kebab Type Component', () => {
   beforeEach(() => {
@@ -40,6 +40,7 @@ describe('Menu Dropdown Kebab Type Component', () => {
     expect(MenuKebab).toHaveLength(1);
   });
 });
+
 describe('Menu Dropdown Button Type Component', () => {
   beforeEach(() => {
     render(
@@ -75,6 +76,7 @@ describe('Menu Dropdown Button Type Component', () => {
     expect(MenuKebab).toHaveLength(1);
   });
 });
+
 describe('Menu Dropdown Profile Type Component', () => {
   beforeEach(() => {
     render(
@@ -109,4 +111,36 @@ describe('Menu Dropdown Profile Type Component', () => {
 
     expect(MenuKebab).toHaveLength(1);
   });
+});
+
+describe('Snapshot', () => {
+  const component = renderer.create(
+    <ThemeProvider>
+      <MenuDropdown
+        menuHeader={{
+          profileUrl: '',
+          emailAddress: 'olivia@untitledui.com',
+          userName: 'Olivia Rhye',
+        }}
+        menuItems={
+          <Menu>
+            <MenuItem
+              icon={<RepeatIcon />}
+              command="⌘⇧N"
+              fontSize={'14px'}
+              color="neutrals.900"
+            >
+              Open Closed Tab
+            </MenuItem>
+          </Menu>
+        }
+        menuType="profile"
+        profileUrl=""
+      />
+    </ThemeProvider>
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+  component.unmount();
 });
