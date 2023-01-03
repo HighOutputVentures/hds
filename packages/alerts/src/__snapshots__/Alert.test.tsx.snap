@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert Component Snapshot Should match snapshot 1`] = `
+<div
+  className="css-1ac0ctp"
+  data-testid="alert-box"
+>
+  <svg
+    className="chakra-icon chakra-icon css-hnz1ry"
+    focusable={false}
+    viewBox="0 0 24 24"
+  >
+    <g
+      fill="currentColor"
+      stroke="currentColor"
+      strokeLinecap="square"
+      strokeWidth="2"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        fill="none"
+        r="11"
+        stroke="currentColor"
+      />
+      <line
+        fill="none"
+        x1="11.959"
+        x2="11.959"
+        y1="11"
+        y2="17"
+      />
+      <circle
+        cx="11.959"
+        cy="7"
+        r="1"
+        stroke="none"
+      />
+    </g>
+  </svg>
+  <div
+    className="css-ohugnc"
+  >
+    <p
+      className="chakra-text css-88nnmw"
+    >
+      We’ve just released a new feature
+    </p>
+    <p
+      className="chakra-text css-1g8kskj"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.
+    </p>
+    <div
+      className="chakra-stack css-he6z7n"
+    >
+      <a
+        className="chakra-text css-17o29vu"
+        href="#"
+        target="_blank"
+      >
+        Learn More
+      </a>
+      <a
+        className="chakra-text css-4g6ai3"
+        href="#"
+        target="_blank"
+      >
+        <span
+          className="chakra-text css-1ljeq08"
+        >
+          View Changes
+        </span>
+        <svg
+          className="chakra-icon chakra-icon css-14adh8d"
+          focusable={false}
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+            fill="currentColor"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div
+    className="css-1t9pz9x"
+  />
+  <button
+    aria-label="Close"
+    className="css-1vcoxy9"
+    type="button"
+  >
+    <svg
+      aria-hidden={true}
+      className="chakra-icon css-onkibi"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z"
+        fill="currentColor"
+      />
+    </svg>
+  </button>
+</div>
+`;
