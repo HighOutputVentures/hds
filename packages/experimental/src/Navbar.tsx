@@ -17,7 +17,8 @@ export default function Navbar({ children, ...props }: BoxProps) {
       transitionDuration="300ms"
       top={0}
       zIndex={9}
-      sx={{}}
+      role="banner"
+      aria-label="Page header"
       {...props}
     >
       {children}
