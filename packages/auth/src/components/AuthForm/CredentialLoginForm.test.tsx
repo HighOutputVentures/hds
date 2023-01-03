@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
+import renderer from 'react-test-renderer';
 import CredentialLoginForm from './CredentialLoginForm';
 
 describe('Login Form Email-based Component', () => {
@@ -55,6 +56,7 @@ describe('Login Form Email-based Component', () => {
     expect(textSignUpLabel).toBeInTheDocument();
   });
 });
+
 describe('Login form Username-based component', () => {
   beforeEach(() => {
     render(
@@ -69,5 +71,14 @@ describe('Login form Username-based component', () => {
     fireEvent.click(submitBtn);
     const errorText = await screen.findByText(/name is required/i);
     expect(errorText).toBeInTheDocument();
+  });
+});
+
+describe('Snapshot', () => {
+  it('(CredentialLoginForm) Should match snapshot', () => {
+    const component = renderer.create(<CredentialLoginForm />);
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 });
