@@ -4,18 +4,24 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Alert from './Alert';
 
+function Component() {
+  return (
+    <Alert
+      alertLabel={{ label1: 'Learn More', label2: 'View Changes' }}
+      alertLinks={{ link1: '#', link2: '#' }}
+      status="default"
+      supportingDetail="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam."
+      title="We’ve just released a new feature"
+      isOpen={true}
+    />
+  );
+}
+
 describe('Alert Component', () => {
   beforeEach(() => {
     render(
       <ThemeProvider>
-        <Alert
-          alertLabel={{ label1: 'Learn More', label2: 'View Changes' }}
-          alertLinks={{ link1: '#', link2: '#' }}
-          status="default"
-          supportingDetail="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam."
-          title="We’ve just released a new feature"
-          isOpen={true}
-        />
+        <Component />
       </ThemeProvider>
     );
   });
@@ -27,16 +33,7 @@ describe('Alert Component', () => {
 
   describe('Snapshot', () => {
     it('Should match snapshot', () => {
-      const component = renderer.create(
-        <Alert
-          alertLabel={{ label1: 'Learn More', label2: 'View Changes' }}
-          alertLinks={{ link1: '#', link2: '#' }}
-          status="default"
-          supportingDetail="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam."
-          title="We’ve just released a new feature"
-          isOpen={true}
-        />
-      );
+      const component = renderer.create(<Component />);
 
       const tree = component.toJSON();
       expect(tree).toMatchSnapshot();
