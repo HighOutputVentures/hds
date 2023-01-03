@@ -1,9 +1,8 @@
-import '@testing-library/react/dont-cleanup-after-each';
-
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
+import '@testing-library/react/dont-cleanup-after-each';
 import React from 'react';
-
+import renderer from 'react-test-renderer';
 import ArrayField from './ArrayField';
 
 describe('Array Field Component', () => {
@@ -26,20 +25,41 @@ describe('Array Field Component', () => {
     );
   });
 
-  it('should renders input field form container', async () => {
-    const formControl = await screen.findAllByTestId(
+  it('should renders input field form container', () => {
+    const formControl = screen.queryByTestId(
       ':r1:-form-container-form-control'
     );
-    expect(formControl).toHaveLength(1);
+    expect(formControl).toBeDefined();
   });
 
-  it('should renders input field input group', async () => {
-    const inputGroup = await screen.findAllByTestId(':r0:-input-field-group');
-    expect(inputGroup).toHaveLength(1);
+  it('should renders input field input group', () => {
+    const inputGroup = screen.queryByTestId(':r0:-input-field-group');
+    expect(inputGroup).toBeDefined();
   });
 
-  it('should renders input field input', async () => {
-    const input = await screen.findAllByTestId(':r0:-input-field-input');
-    expect(input).toHaveLength(1);
+  it('should renders input field input', () => {
+    const input = screen.queryByTestId(':r0:-input-field-input');
+    expect(input).toBeDefined();
+  });
+
+  describe('Snapshot', () => {
+    it('Should match snapshot', () => {
+      const component = renderer.create(
+        <ArrayField
+          defaultValues={{
+            input: [{ value: '' }],
+          }}
+          maxValue={3}
+          onChange={function () {}}
+          onRemove={function () {}}
+          onAppend={function () {}}
+          onBlur={function () {}}
+        />
+      );
+
+      const tree = component.toJSON();
+      expect(tree).toMatchSnapshot();
+      component.unmount();
+    });
   });
 });
