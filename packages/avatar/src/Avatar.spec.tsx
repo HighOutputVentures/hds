@@ -2,6 +2,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
 import * as React from "react";
+import renderer from "react-test-renderer";
 import Avatar from "./Avatar";
 import CompanyIcon from "./examples/CompanyIcon";
 
@@ -89,5 +90,15 @@ describe("Avatar", () => {
     );
 
     expect(queryByRole("presentation", { name: "Company Icon" })).toBeDefined();
+  });
+
+  describe("Snapshot", () => {
+    it("Should match snapshot", () => {
+      const component = renderer.create(<Avatar badge badgeIcon={CompanyIcon} />);
+
+      const tree = component.toJSON();
+      expect(tree).toMatchSnapshot();
+      component.unmount();
+    });
   });
 });

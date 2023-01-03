@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AvatarLabel Snapshot Should match snapshot 1`] = `
+<div
+  className="css-0"
+>
+  <div
+    className="css-0"
+  >
+    <span
+      className="chakra-avatar css-1ruhx4w"
+      data-bordered={false}
+      data-clickable={false}
+      data-elevated={false}
+      data-fallback={true}
+      data-online={false}
+    >
+      <div
+        aria-label="John Doe"
+        className="chakra-avatar__initials css-0"
+        role="img"
+      >
+        JD
+      </div>
+    </span>
+  </div>
+  <div
+    className="css-0"
+  >
+    <h2
+      className="chakra-heading css-0"
+    >
+      John Doe
+    </h2>
+    <p
+      className="chakra-text css-0"
+    >
+      johndoe@dummy.blaa
+    </p>
+  </div>
+</div>
+`;
