@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
+import renderer from 'react-test-renderer';
 import OTPVerificationForm from './OTPVerificationForm';
 
 describe('Email Login Component', () => {
@@ -29,5 +30,14 @@ describe('One Time Password Verification Component', () => {
   it('should render otp component', async () => {
     const otpComponent = await screen.findAllByTestId('otp.component');
     expect(otpComponent).toHaveLength(1);
+  });
+});
+
+describe('Snapshot', () => {
+  it('(OTPVerificationForm) Should match snapshot', () => {
+    const component = renderer.create(<OTPVerificationForm otpReceived />);
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 });
