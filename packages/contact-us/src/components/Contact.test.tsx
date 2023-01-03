@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 
+import renderer from 'react-test-renderer';
 import ContactCard from './ContactCard';
 import { Default as ContactCardComponent } from './ContactCard.stories';
 import ContactForm from './ContactForm';
@@ -101,6 +102,16 @@ describe('Contact Form Component', () => {
       /please enter a valid email address./i
     );
     expect(emailValid).toBeInTheDocument();
+  });
+
+  describe('Snapshot', () => {
+    it('(ContactForm) Should match snapshot', () => {
+      const component = renderer.create(<ContactForm />);
+
+      const tree = component.toJSON();
+      expect(tree).toMatchSnapshot();
+      component.unmount();
+    });
   });
 });
 
@@ -228,6 +239,16 @@ describe('Contact Card Component', () => {
     const title = getByText(/test title/i);
     expect(title).toBeInTheDocument();
   });
+
+  describe('Snapshot', () => {
+    it('(ContactCard) Should match snapshot', () => {
+      const component = renderer.create(<ContactCard />);
+
+      const tree = component.toJSON();
+      expect(tree).toMatchSnapshot();
+      component.unmount();
+    });
+  });
 });
 
 describe('Storybook - Contact Card Component', () => {
@@ -302,6 +323,16 @@ describe('Contact Page Component', () => {
   it('should render title', async () => {
     const title = await screen.findAllByTestId('text.contactpage.title');
     expect(title).toHaveLength(1);
+  });
+
+  describe('Snapshot', () => {
+    it('(ContactPage) Should match snapshot', () => {
+      const component = renderer.create(<ContactPage />);
+
+      const tree = component.toJSON();
+      expect(tree).toMatchSnapshot();
+      component.unmount();
+    });
   });
 });
 
