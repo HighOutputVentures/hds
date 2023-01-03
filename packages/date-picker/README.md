@@ -30,6 +30,7 @@ const MOCKDATA = [
 export const DatePicker = () => {
   const onClose = () => {};
   let isOpen = false;
+  const [date, setDate] = React.useState([]);
   return (
     <DatePicker
       dateEvents={MOCKDATA}
@@ -38,12 +39,14 @@ export const DatePicker = () => {
       timezone={'Asia/Manila'}
       onClose={onClose}
       isOpen={isOpen}
+      onApplyDate={(dates) => setDates(dates)}
     />
   );
 };
 export const DatePickerDropdown = () => {
   const onClose = () => {};
   let isOpen = false;
+  const [date, setDate] = React.useState([]);
   return (
     <DatePickerDropdown
       dateEvents={MOCKDATA}
@@ -52,6 +55,7 @@ export const DatePickerDropdown = () => {
       timezone={'Asia/Manila'}
       onClose={onClose}
       isOpen={isOpen}
+      onApplyDate={(dates) => setDates(dates)}
     />
   );
 };
@@ -59,6 +63,7 @@ export const DatePickerDropdown = () => {
 export const DatePickerModal = () => {
   const onClose = () => {};
   let isOpen = false;
+  const [date, setDate] = React.useState([]);
   return (
     <DatePickerModal
       dateEvents={MOCKDATA}
@@ -67,6 +72,7 @@ export const DatePickerModal = () => {
       timezone={'Asia/Manila'}
       onClose={onClose}
       isOpen={isOpen}
+      onApplyDate={(dates) => setDates(dates)}
     />
   );
 };
