@@ -1,6 +1,7 @@
 import "@testing-library/jest-dom";
 import { fireEvent, render, waitFor } from "@testing-library/react";
 import * as React from "react";
+import renderer from "react-test-renderer";
 import Avatar from "./Avatar";
 import AvatarGroup, { AvatarGroupProps } from "./AvatarGroup";
 
@@ -71,6 +72,24 @@ describe("AvatarGroup", () => {
 
     await waitFor(() => {
       expect(queryByRole("tooltip", { name: "Add user" })).toBeDefined();
+    });
+  });
+
+  describe("Snapshot", () => {
+    it("Should match snapshot", () => {
+      const component = renderer.create(
+        <AvatarGroup>
+          <Avatar src="https://i.pravatar.cc/50?u=1" />
+          <Avatar src="https://i.pravatar.cc/50?u=2" />
+          <Avatar src="https://i.pravatar.cc/50?u=3" />
+          <Avatar src="https://i.pravatar.cc/50?u=4" />
+          <Avatar src="https://i.pravatar.cc/50?u=5" />
+        </AvatarGroup>,
+      );
+
+      const tree = component.toJSON();
+      expect(tree).toMatchSnapshot();
+      component.unmount();
     });
   });
 });
