@@ -1,17 +1,14 @@
+import { ThemeProvider } from '@highoutput/hds';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
+import renderer from 'react-test-renderer';
 import AutoCompleteInput from './AutoCompleteInput';
 
-import ThemeProvider from '../../../hds/src/components/ThemeProvider';
-
 const OPTIONS = ['user1', 'user2', 'user3', 'user4', 'user5'];
-
-const SELECT_OPTION = Object.entries(OPTIONS).map(([value, label]) => {
-  return {
-    value,
-    label,
-  };
-});
+const SELECT_OPTION = Object.entries(OPTIONS).map(([value, label]) => ({
+  value,
+  label,
+}));
 
 describe('AutoCompleteInput Component', () => {
   beforeEach(() => {
@@ -44,5 +41,23 @@ describe('AutoCompleteInput Component', () => {
     });
 
     expect(autoCompleteInput).toHaveLength(1);
+  });
+
+  describe('Snapshot', () => {
+    it('Should match snapshot', () => {
+      const component = renderer.create(
+        <ThemeProvider>
+          <AutoCompleteInput
+            label="Users"
+            options={SELECT_OPTION}
+            onChangeValue={function () {}}
+          />
+        </ThemeProvider>
+      );
+
+      const tree = component.toJSON();
+      expect(tree).toMatchSnapshot();
+      component.unmount();
+    });
   });
 });

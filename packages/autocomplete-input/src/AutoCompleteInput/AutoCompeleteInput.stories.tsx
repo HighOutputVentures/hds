@@ -1,10 +1,9 @@
 import { Flex } from '@chakra-ui/react';
+import { ThemeProvider } from '@highoutput/hds';
 import { useArgs } from '@storybook/addons';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 import AutoCompleteInput from './AutoCompleteInput';
-
-import ThemeProvider from '../../../hds/src/components/ThemeProvider';
 
 export default {
   title: 'Components/Form Fields/Auto Complete Input',
