@@ -1,5 +1,5 @@
 {
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -49,6 +49,6 @@
     }
   ],
   "dependencies": {
-    "@highoutput/hds-icons": "^0.1.18"
+    "@highoutput/hds-icons": "^0.1.19"
   }
 }
