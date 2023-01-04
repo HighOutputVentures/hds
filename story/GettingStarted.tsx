@@ -96,6 +96,14 @@ const packageList = [
     packageLink: "https://www.npmjs.com/package/@highoutput/hds-carousel",
     packageName: " @highoutput/hds-carousel",
   },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-date-picker",
+    packageName: " @highoutput/hds-date-picker",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-experimental",
+    packageName: " @highoutput/hds-experimental",
+  },
 ];
 
 const GettingStarted = () => {

@@ -1,5 +1,5 @@
 {
-  "version": "0.1.43",
+  "version": "0.1.44",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -49,8 +49,8 @@
     }
   ],
   "dependencies": {
-    "@highoutput/hds": "0.1.51",
-    "@highoutput/hds-icons": "0.1.18"
+    "@highoutput/hds": "^0.1.52",
+    "@highoutput/hds-icons": "^0.1.19"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "7.0.8",
