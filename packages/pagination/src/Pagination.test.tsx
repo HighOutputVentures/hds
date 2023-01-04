@@ -1,6 +1,7 @@
 import "@testing-library/jest-dom";
 import { fireEvent, render } from "@testing-library/react";
 import * as React from "react";
+import renderer from "react-test-renderer";
 import Pagination from "./Pagination";
 
 // Heads up! we're only gonna test "minimal" variant
@@ -55,5 +56,21 @@ describe("Pagination", () => {
 
     fireEvent.click(getByRole("button", { name: "Go to previous page" }));
     expect(onPageChange).toHaveBeenCalledWith(1);
+  });
+
+  it("Should match snapshot", () => {
+    const component = renderer.create(
+      <Pagination
+        variant="minimal"
+        page={1}
+        pageSize={5}
+        total={100}
+        onPageChange={function () {}}
+      />,
+    );
+
+    const snapshot = component.toJSON();
+    expect(snapshot).toMatchSnapshot();
+    component.unmount();
   });
 });
