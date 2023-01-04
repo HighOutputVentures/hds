@@ -1,6 +1,6 @@
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 import { Avatar, HStack, Icon } from '@chakra-ui/react';
-// @ts-ignore
+// @ts-ignore "Bug 🐜"
 import { FormContainer, FormContainerProps } from '@highoutput/hds-forms';
 import {
   chakraComponents,
@@ -9,7 +9,6 @@ import {
   SingleValue,
 } from 'chakra-react-select';
 import React, { useId } from 'react';
-
 import getStyles from './styles';
 
 export interface Item {
@@ -21,18 +20,10 @@ export interface OptionItem extends Item {
   avatar?: string;
 }
 
-// export interface AutoCompleteInputFieldPartProps
-//   extends FormContainerPartProps {
-//   reactChakraStyle?:
-//     | ChakraStylesConfig<Item, boolean, GroupBase<Item>>
-//     | undefined;
-// }
-
 export interface AutoCompleteInputFieldProps
   extends Omit<FormContainerProps, 'partProps'> {
   options: OptionItem[];
   loading?: boolean;
-  // fieldLabelProps?: Omit<BoxProps, 'children'>;
   required?: boolean;
   placement?: 'auto' | 'top' | 'bottom';
   multiple?: boolean;
@@ -40,7 +31,6 @@ export interface AutoCompleteInputFieldProps
   autoFocus?: boolean;
   showDropdownIndicator?: boolean;
   placeholder?: string;
-  // partProps?: Partial<AutoCompleteInputFieldPartProps>;
   value?: string | string[] | number | number[];
   onChangeValue: (...event: any[]) => void;
 }

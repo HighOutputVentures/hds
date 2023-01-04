@@ -1,8 +1,8 @@
+import { ThemeProvider } from '@highoutput/hds';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
+import renderer from 'react-test-renderer';
 import InputDropdown from './InputDropdown';
-
-import ThemeProvider from '@highoutput/hds/src/components/ThemeProvider';
 
 const OPTIONS = ['user1', 'user2', 'user3', 'user4', 'user5'];
 
@@ -44,5 +44,21 @@ describe('Input Dropdown Component', () => {
     });
 
     expect(InputDropdown).toHaveLength(1);
+  });
+
+  describe('Snapshot', () => {
+    const component = renderer.create(
+      <ThemeProvider>
+        <InputDropdown
+          label="Users"
+          options={SELECT_OPTION}
+          onChangeValue={jest.fn()}
+        />
+      </ThemeProvider>
+    );
+
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 });
