@@ -1,6 +1,7 @@
 import "@testing-library/jest-dom";
 import { fireEvent, render, waitFor } from "@testing-library/react";
 import * as React from "react";
+import renderer from "react-test-renderer";
 import Switch, { SwitchProps } from "./Switch";
 
 describe("Switch", () => {
@@ -42,5 +43,12 @@ describe("Switch", () => {
     await waitFor(() => {
       expect(onCheck).toHaveBeenCalledWith(expect.any(Boolean));
     });
+  });
+
+  it("Should match snapshot", () => {
+    const component = renderer.create(<Switch />);
+    const snapshot = component.toJSON();
+    expect(snapshot).toMatchSnapshot();
+    component.unmount();
   });
 });
