@@ -1,5 +1,6 @@
 import { cleanup, render } from '@testing-library/react';
 import * as React from 'react';
+import renderer from 'react-test-renderer';
 import LogoSpinner from './LogoSpinner';
 
 const duration = Math.random();
@@ -21,5 +22,17 @@ describe('LogoSpinner', () => {
     );
 
     expect(getByText('Hello world')).toBeDefined();
+  });
+
+  it('Should match snapshot', () => {
+    const component = renderer.create(
+      <LogoSpinner duration={duration}>
+        <div>Hello world</div>
+      </LogoSpinner>
+    );
+
+    const snapshot = component.toJSON();
+    expect(snapshot).toMatchSnapshot();
+    component.unmount();
   });
 });
