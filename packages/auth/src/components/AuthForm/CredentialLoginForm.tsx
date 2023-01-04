@@ -18,6 +18,7 @@ import {
 export type CredentialLoginFormDefaultProps = {
   loginTitle?: ReactNode;
   signUpTitle?: ReactNode;
+  width?: string | number;
 };
 export interface CredentialLoginFormNameProps
   extends CredentialLoginFormDefaultProps {
@@ -43,6 +44,7 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
     variant,
     onSubmit,
     nameLabel = 'Username',
+    width = '512px',
   } = props;
 
   const [showPassword, setShowPassword] = React.useState(false);
@@ -68,7 +70,7 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
   };
 
   return (
-    <Box as={'form'} maxW={512} onSubmit={handleSubmit(onSubmitForm)}>
+    <Box as={'form'} w={width} onSubmit={handleSubmit(onSubmitForm)}>
       <Center m={0} p={0}>
         {isSignUp && signUpTitle ? (
           signUpTitle
@@ -97,12 +99,6 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
             placeholder={`Input your ${nameLabel?.toLowerCase()}`}
             errorMsg={formState.errors.name?.message}
             disabled={formState.isSubmitting}
-            // partProps={{
-            //   input: {
-            //     'aria-label': 'name-input',
-            //     role: 'input',
-            //   },
-            // }}
           />
         ) : (
           <InputField
@@ -112,9 +108,6 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
             placeholder="Input your email"
             errorMsg={formState.errors.email?.message}
             disabled={formState.isSubmitting}
-            // partProps={{
-            //   input: { 'aria-label': 'email-input', role: 'input' },
-            // }}
           />
         )}
 
@@ -138,12 +131,6 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
               {showPassword ? <ViewIcon /> : <ViewOffIcon />}
             </Button>
           }
-          // partProps={{
-          //   input: {
-          //     'aria-label': 'password-input',
-          //     role: 'input',
-          //   },
-          // }}
         />
       </Stack>
       <Button

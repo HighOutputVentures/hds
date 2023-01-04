@@ -28,6 +28,18 @@ const ReleaseDetails = () => {
           </Text>
         </ListItem>
       </UnorderedList>
+
+      <Text size="header-5" mb={5}>
+        🧹 Chores:
+      </Text>
+
+      <UnorderedList mb={5}>
+        <ListItem>
+          <Text size="paragraph-md-default">
+            added width option in CredentialLoginForm
+          </Text>
+        </ListItem>
+      </UnorderedList>
     </Box>
   );
 };
