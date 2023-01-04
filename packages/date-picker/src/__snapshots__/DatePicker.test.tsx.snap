@@ -1,0 +1,811 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshots (DatePicker Dual Date) Should match snapshot 1`] = `
+Array [
+  <div
+    className="css-a3ggia"
+    data-testid="dual-datepicker"
+  >
+    <div
+      className="chakra-stack css-n21gh5"
+    >
+      <div
+        className="css-1xhj18k"
+      >
+        <div
+          className="css-0"
+        >
+          <div
+            className="chakra-stack css-4ihfsm"
+          >
+            <div
+              className="chakra-stack css-1hfury2"
+            >
+              <svg
+                className="chakra-icon chakra-icon css-1xogjj1"
+                focusable={false}
+                onClick={[Function]}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                  fill="currentColor"
+                />
+              </svg>
+              <p
+                className="chakra-text css-fzwid6"
+              >
+                January 2023
+              </p>
+              <svg
+                className="chakra-icon chakra-icon css-1xogjj1"
+                focusable={false}
+                onClick={[Function]}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <div
+              className="chakra-stack css-ni0b0p"
+            >
+              <p
+                className="chakra-text css-54cw8p"
+              >
+                Select Date
+              </p>
+              <p
+                className="chakra-text css-d6rt7l"
+              >
+                –
+              </p>
+              <p
+                className="chakra-text css-1vwzryi"
+              >
+                Select Date
+              </p>
+            </div>
+            <div
+              className="css-1geqftd"
+            >
+              <div
+                className="css-5f38dt"
+              >
+                Mo
+              </div>
+              <div
+                className="css-5f38dt"
+              >
+                Tu
+              </div>
+              <div
+                className="css-5f38dt"
+              >
+                We
+              </div>
+              <div
+                className="css-5f38dt"
+              >
+                Th
+              </div>
+              <div
+                className="css-5f38dt"
+              >
+                Fr
+              </div>
+              <div
+                className="css-5f38dt"
+              >
+                Sat
+              </div>
+              <div
+                className="css-5f38dt"
+              >
+                Su
+              </div>
+            </div>
+            <div
+              className="css-1c3l4rb"
+            >
+              <div
+                className="css-1c6bxay"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-1c958lr"
+      >
+        <div
+          className="chakra-stack css-tth4vk"
+        >
+          <button
+            className="chakra-button css-11a6hrq"
+            onClick={[Function]}
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            className="chakra-button css-1wl73lo"
+            type="button"
+          >
+            Apply
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <span />,
+]
+`;
+
+exports[`Snapshots (DatePicker Preset Range) Should match snapshot 1`] = `
+<div
+  className="css-4ivr56"
+  data-testid="range-datepicker"
+>
+  <div
+    className="chakra-stack css-14stpeb"
+  >
+    <p
+      className="chakra-text css-1c02hwd"
+      onClick={[Function]}
+    >
+      Today
+    </p>
+    <p
+      className="chakra-text css-1c02hwd"
+      onClick={[Function]}
+    >
+      Yesterday
+    </p>
+    <p
+      className="chakra-text css-1c02hwd"
+      onClick={[Function]}
+    >
+      This week
+    </p>
+    <p
+      className="chakra-text css-1c02hwd"
+      onClick={[Function]}
+    >
+      Last week
+    </p>
+    <p
+      className="chakra-text css-1c02hwd"
+      onClick={[Function]}
+    >
+      This month
+    </p>
+    <p
+      className="chakra-text css-1c02hwd"
+      onClick={[Function]}
+    >
+      Last month
+    </p>
+    <p
+      className="chakra-text css-1c02hwd"
+      onClick={[Function]}
+    >
+      This year
+    </p>
+    <p
+      className="chakra-text css-1c02hwd"
+      onClick={[Function]}
+    >
+      Last year
+    </p>
+    <p
+      className="chakra-text css-1c02hwd"
+      onClick={[Function]}
+    >
+      All time
+    </p>
+  </div>
+  <div
+    className="chakra-stack css-n21gh5"
+  >
+    <div
+      className="css-1xhj18k"
+    >
+      <div
+        className="css-0"
+      >
+        <div
+          className="chakra-stack css-4ihfsm"
+        >
+          <div
+            className="chakra-stack css-rv21ye"
+          >
+            <svg
+              className="chakra-icon chakra-icon css-1xogjj1"
+              focusable={false}
+              onClick={[Function]}
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                fill="currentColor"
+              />
+            </svg>
+            <p
+              className="chakra-text css-fzwid6"
+            >
+              January 2023
+            </p>
+            <svg
+              className="chakra-icon chakra-icon css-1xogjj1"
+              focusable={false}
+              onClick={[Function]}
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          <div
+            className="css-1geqftd"
+          >
+            <div
+              className="css-5f38dt"
+            >
+              Mo
+            </div>
+            <div
+              className="css-5f38dt"
+            >
+              Tu
+            </div>
+            <div
+              className="css-5f38dt"
+            >
+              We
+            </div>
+            <div
+              className="css-5f38dt"
+            >
+              Th
+            </div>
+            <div
+              className="css-5f38dt"
+            >
+              Fr
+            </div>
+            <div
+              className="css-5f38dt"
+            >
+              Sat
+            </div>
+            <div
+              className="css-5f38dt"
+            >
+              Su
+            </div>
+          </div>
+          <div
+            className="css-1c3l4rb"
+          >
+            <div
+              className="css-1c6bxay"
+            />
+          </div>
+        </div>
+      </div>
+      <hr
+        aria-orientation="vertical"
+        className="chakra-divider css-12gj880"
+      />
+      <div
+        className="css-0"
+      >
+        <div
+          className="chakra-stack css-4ihfsm"
+        >
+          <div
+            className="chakra-stack css-rv21ye"
+          >
+            <svg
+              className="chakra-icon chakra-icon css-1xogjj1"
+              focusable={false}
+              onClick={[Function]}
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                fill="currentColor"
+              />
+            </svg>
+            <p
+              className="chakra-text css-fzwid6"
+            >
+              January 2023
+            </p>
+            <svg
+              className="chakra-icon chakra-icon css-1xogjj1"
+              focusable={false}
+              onClick={[Function]}
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          <div
+            className="css-1geqftd"
+          >
+            <div
+              className="css-5f38dt"
+            >
+              Mo
+            </div>
+            <div
+              className="css-5f38dt"
+            >
+              Tu
+            </div>
+            <div
+              className="css-5f38dt"
+            >
+              We
+            </div>
+            <div
+              className="css-5f38dt"
+            >
+              Th
+            </div>
+            <div
+              className="css-5f38dt"
+            >
+              Fr
+            </div>
+            <div
+              className="css-5f38dt"
+            >
+              Sat
+            </div>
+            <div
+              className="css-5f38dt"
+            >
+              Su
+            </div>
+          </div>
+          <div
+            className="css-1c3l4rb"
+          >
+            <div
+              className="css-1c6bxay"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-18xo0nj"
+    >
+      <div
+        className="chakra-stack css-r99mt0"
+      >
+        <p
+          className="chakra-text css-e5rdmw"
+        >
+          Select Date
+        </p>
+        <p
+          className="chakra-text css-d6rt7l"
+        >
+          –
+        </p>
+        <p
+          className="chakra-text css-9qj5qe"
+        >
+          Select Date
+        </p>
+      </div>
+      <div
+        className="chakra-stack css-1yfjwjq"
+      >
+        <button
+          className="chakra-button css-1ynx0f"
+          onClick={[Function]}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          className="chakra-button css-5suas7"
+          type="button"
+        >
+          Apply
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Snapshots (DatePicker Single Date) Should match snapshot 1`] = `
+Array [
+  <div
+    className="css-a3ggia"
+    data-testid="single-datepicker"
+  >
+    <div
+      className="chakra-stack css-n21gh5"
+    >
+      <div
+        className="css-1xhj18k"
+      >
+        <div
+          className="css-0"
+        >
+          <div
+            className="chakra-stack css-4ihfsm"
+          >
+            <div
+              className="chakra-stack css-1hfury2"
+            >
+              <svg
+                className="chakra-icon chakra-icon css-1xogjj1"
+                focusable={false}
+                onClick={[Function]}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                  fill="currentColor"
+                />
+              </svg>
+              <p
+                className="chakra-text css-fzwid6"
+              >
+                January 2023
+              </p>
+              <svg
+                className="chakra-icon chakra-icon css-1xogjj1"
+                focusable={false}
+                onClick={[Function]}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <div
+              className="chakra-stack css-ni0b0p"
+            >
+              <p
+                className="chakra-text css-1dw64w7"
+              >
+                Select Date
+              </p>
+              <div
+                className="css-1tstedy"
+              >
+                Today
+              </div>
+            </div>
+            <div
+              className="css-1geqftd"
+            >
+              <div
+                className="css-5f38dt"
+              >
+                Mo
+              </div>
+              <div
+                className="css-5f38dt"
+              >
+                Tu
+              </div>
+              <div
+                className="css-5f38dt"
+              >
+                We
+              </div>
+              <div
+                className="css-5f38dt"
+              >
+                Th
+              </div>
+              <div
+                className="css-5f38dt"
+              >
+                Fr
+              </div>
+              <div
+                className="css-5f38dt"
+              >
+                Sat
+              </div>
+              <div
+                className="css-5f38dt"
+              >
+                Su
+              </div>
+            </div>
+            <div
+              className="css-1c3l4rb"
+            >
+              <div
+                className="css-1c6bxay"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-1c958lr"
+      >
+        <div
+          className="chakra-stack css-tth4vk"
+        >
+          <button
+            className="chakra-button css-11a6hrq"
+            onClick={[Function]}
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            className="chakra-button css-1wl73lo"
+            onClick={[Function]}
+            type="button"
+          >
+            Apply
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <span />,
+]
+`;
+
+exports[`Snapshots (DatePickerDropdown) Should match snapshot 1`] = `
+Array [
+  <button
+    aria-controls="menu-list-:r8:"
+    aria-expanded={false}
+    aria-haspopup="menu"
+    className="chakra-button chakra-menu__menu-button css-2f31vo"
+    id="menu-button-:r8:"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <span
+      className="chakra-button__icon css-1wh2kri"
+    >
+      <svg
+        aria-hidden={true}
+        className="chakra-icon css-onkibi"
+        focusable={false}
+        viewBox="0 0 14 14"
+      >
+        <path
+          d="M10.8889,5.5 L3.11111,5.5 L3.11111,7.05556 L10.8889,7.05556 L10.8889,5.5 Z M12.4444,1.05556 L11.6667,1.05556 L11.6667,0 L10.1111,0 L10.1111,1.05556 L3.88889,1.05556 L3.88889,0 L2.33333,0 L2.33333,1.05556 L1.55556,1.05556 C0.692222,1.05556 0.00777777,1.75556 0.00777777,2.61111 L0,12.5 C0,13.3556 0.692222,14 1.55556,14 L12.4444,14 C13.3,14 14,13.3556 14,12.5 L14,2.61111 C14,1.75556 13.3,1.05556 12.4444,1.05556 Z M12.4444,12.5 L1.55556,12.5 L1.55556,3.94444 L12.4444,3.94444 L12.4444,12.5 Z M8.55556,8.61111 L3.11111,8.61111 L3.11111,10.1667 L8.55556,10.1667 L8.55556,8.61111 Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
+    <span
+      className="css-xl71ch"
+    >
+      Select Date
+    </span>
+  </button>,
+  <div
+    className="css-r6z5ec"
+    style={
+      Object {
+        "inset": "0 auto auto 0",
+        "minWidth": "max-content",
+        "position": "absolute",
+        "visibility": "hidden",
+      }
+    }
+  >
+    <div
+      aria-orientation="vertical"
+      className="chakra-menu__menu-list css-b7mlum"
+      data-testid="dropdown-datepicker"
+      id="menu-list-:r8:"
+      onKeyDown={[Function]}
+      role="menu"
+      style={
+        Object {
+          "opacity": 0,
+          "transform": "scale(0.8) translateZ(0)",
+          "transformOrigin": "var(--popper-transform-origin)",
+          "visibility": "hidden",
+        }
+      }
+      tabIndex={-1}
+    >
+      <div
+        className="css-a3ggia"
+        data-testid="dual-datepicker"
+      >
+        <div
+          className="chakra-stack css-n21gh5"
+        >
+          <div
+            className="css-1xhj18k"
+          >
+            <div
+              className="css-0"
+            >
+              <div
+                className="chakra-stack css-4ihfsm"
+              >
+                <div
+                  className="chakra-stack css-1hfury2"
+                >
+                  <svg
+                    className="chakra-icon chakra-icon css-1xogjj1"
+                    focusable={false}
+                    onClick={[Function]}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <p
+                    className="chakra-text css-fzwid6"
+                  >
+                    January 2023
+                  </p>
+                  <svg
+                    className="chakra-icon chakra-icon css-1xogjj1"
+                    focusable={false}
+                    onClick={[Function]}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="chakra-stack css-ni0b0p"
+                >
+                  <p
+                    className="chakra-text css-54cw8p"
+                  >
+                    Select Date
+                  </p>
+                  <p
+                    className="chakra-text css-d6rt7l"
+                  >
+                    –
+                  </p>
+                  <p
+                    className="chakra-text css-1vwzryi"
+                  >
+                    Select Date
+                  </p>
+                </div>
+                <div
+                  className="css-1geqftd"
+                >
+                  <div
+                    className="css-5f38dt"
+                  >
+                    Mo
+                  </div>
+                  <div
+                    className="css-5f38dt"
+                  >
+                    Tu
+                  </div>
+                  <div
+                    className="css-5f38dt"
+                  >
+                    We
+                  </div>
+                  <div
+                    className="css-5f38dt"
+                  >
+                    Th
+                  </div>
+                  <div
+                    className="css-5f38dt"
+                  >
+                    Fr
+                  </div>
+                  <div
+                    className="css-5f38dt"
+                  >
+                    Sat
+                  </div>
+                  <div
+                    className="css-5f38dt"
+                  >
+                    Su
+                  </div>
+                </div>
+                <div
+                  className="css-1c3l4rb"
+                >
+                  <div
+                    className="css-1c6bxay"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="css-1c958lr"
+          >
+            <div
+              className="chakra-stack css-tth4vk"
+            >
+              <button
+                className="chakra-button css-11a6hrq"
+                onClick={[Function]}
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                className="chakra-button css-1wl73lo"
+                type="button"
+              >
+                Apply
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <span />,
+]
+`;
+
+exports[`Snapshots (DatePickerModal) Should match snapshot 1`] = `
+Array [
+  <div
+    className="css-0"
+    data-testid="modal-datepicker"
+  >
+    <button
+      className="chakra-button css-2f31vo"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="chakra-button__icon css-1wh2kri"
+      >
+        <svg
+          aria-hidden={true}
+          className="chakra-icon css-onkibi"
+          focusable={false}
+          viewBox="0 0 14 14"
+        >
+          <path
+            d="M10.8889,5.5 L3.11111,5.5 L3.11111,7.05556 L10.8889,7.05556 L10.8889,5.5 Z M12.4444,1.05556 L11.6667,1.05556 L11.6667,0 L10.1111,0 L10.1111,1.05556 L3.88889,1.05556 L3.88889,0 L2.33333,0 L2.33333,1.05556 L1.55556,1.05556 C0.692222,1.05556 0.00777777,1.75556 0.00777777,2.61111 L0,12.5 C0,13.3556 0.692222,14 1.55556,14 L12.4444,14 C13.3,14 14,13.3556 14,12.5 L14,2.61111 C14,1.75556 13.3,1.05556 12.4444,1.05556 Z M12.4444,12.5 L1.55556,12.5 L1.55556,3.94444 L12.4444,3.94444 L12.4444,12.5 Z M8.55556,8.61111 L3.11111,8.61111 L3.11111,10.1667 L8.55556,10.1667 L8.55556,8.61111 Z"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+      Select Date
+    </button>
+  </div>,
+  <span />,
+]
+`;
