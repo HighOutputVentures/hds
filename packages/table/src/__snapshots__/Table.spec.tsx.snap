@@ -94,12 +94,12 @@ exports[`Table Should match snapshot 1`] = `
                 </svg>
               </button>
               <button
-                aria-controls="popover-content-:ri:"
+                aria-controls="popover-content-:r9:"
                 aria-expanded={false}
                 aria-haspopup="dialog"
                 aria-label="Hint"
                 className="css-1dqet0s"
-                id="popover-trigger-:ri:"
+                id="popover-trigger-:r9:"
                 onClick={[Function]}
               >
                 <svg
@@ -148,7 +148,7 @@ exports[`Table Should match snapshot 1`] = `
               >
                 <section
                   className="chakra-popover__content css-1deuoi4"
-                  id="popover-content-:ri:"
+                  id="popover-content-:r9:"
                   onBlur={[Function]}
                   onKeyDown={[Function]}
                   role="dialog"
@@ -180,7 +180,7 @@ exports[`Table Should match snapshot 1`] = `
                   </div>
                   <div
                     className="chakra-popover__body css-0"
-                    id="popover-body-:ri:"
+                    id="popover-body-:r9:"
                   >
                     Hint: This is your email
                   </div>
@@ -250,17 +250,17 @@ exports[`Table Should match snapshot 1`] = `
                     className="chakra-avatar css-1ruhx4w"
                   >
                     <div
-                      aria-label="Todd Parisian"
+                      aria-label="John"
                       className="chakra-avatar__initials css-0"
                       role="img"
                     >
-                      TP
+                      J
                     </div>
                   </span>
                   <p
                     className="chakra-text css-0"
                   >
-                    Todd Parisian
+                    John
                   </p>
                 </div>
               </div>
@@ -276,7 +276,7 @@ exports[`Table Should match snapshot 1`] = `
               <div
                 className="css-0"
               >
-                Lonzo_Kertzmann47@yahoo.com
+                john@domain.blah
               </div>
             </div>
           </td>
@@ -338,17 +338,17 @@ exports[`Table Should match snapshot 1`] = `
                     className="chakra-avatar css-1ruhx4w"
                   >
                     <div
-                      aria-label="Hilda Kozey"
+                      aria-label="mary"
                       className="chakra-avatar__initials css-0"
                       role="img"
                     >
-                      HK
+                      m
                     </div>
                   </span>
                   <p
                     className="chakra-text css-0"
                   >
-                    Hilda Kozey
+                    mary
                   </p>
                 </div>
               </div>
@@ -364,271 +364,7 @@ exports[`Table Should match snapshot 1`] = `
               <div
                 className="css-0"
               >
-                Candice69@gmail.com
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr
-          className="css-0"
-        >
-          <td
-            className="css-0"
-            onClick={[Function]}
-          >
-            <div
-              className="css-120nera"
-            >
-              <label
-                className="chakra-checkbox css-1elxtiq"
-                onClick={[Function]}
-              >
-                <input
-                  aria-label="Select item"
-                  checked={false}
-                  className="chakra-checkbox__input"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  style={
-                    Object {
-                      "border": "0",
-                      "clip": "rect(0, 0, 0, 0)",
-                      "height": "1px",
-                      "margin": "-1px",
-                      "overflow": "hidden",
-                      "padding": "0",
-                      "position": "absolute",
-                      "whiteSpace": "nowrap",
-                      "width": "1px",
-                    }
-                  }
-                  type="checkbox"
-                />
-                <span
-                  aria-hidden={true}
-                  className="chakra-checkbox__control css-dnty2r"
-                  onMouseDown={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  onMouseUp={[Function]}
-                />
-              </label>
-              <div
-                className="css-0"
-              >
-                <div
-                  className="chakra-stack css-15lgeks"
-                >
-                  <span
-                    className="chakra-avatar css-1ruhx4w"
-                  >
-                    <div
-                      aria-label="Dana Stracke"
-                      className="chakra-avatar__initials css-0"
-                      role="img"
-                    >
-                      DS
-                    </div>
-                  </span>
-                  <p
-                    className="chakra-text css-0"
-                  >
-                    Dana Stracke
-                  </p>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td
-            className="css-0"
-            onClick={[Function]}
-          >
-            <div
-              className="css-120nera"
-            >
-              <div
-                className="css-0"
-              >
-                Alysha92@gmail.com
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr
-          className="css-0"
-        >
-          <td
-            className="css-0"
-            onClick={[Function]}
-          >
-            <div
-              className="css-120nera"
-            >
-              <label
-                className="chakra-checkbox css-1elxtiq"
-                onClick={[Function]}
-              >
-                <input
-                  aria-label="Select item"
-                  checked={false}
-                  className="chakra-checkbox__input"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  style={
-                    Object {
-                      "border": "0",
-                      "clip": "rect(0, 0, 0, 0)",
-                      "height": "1px",
-                      "margin": "-1px",
-                      "overflow": "hidden",
-                      "padding": "0",
-                      "position": "absolute",
-                      "whiteSpace": "nowrap",
-                      "width": "1px",
-                    }
-                  }
-                  type="checkbox"
-                />
-                <span
-                  aria-hidden={true}
-                  className="chakra-checkbox__control css-dnty2r"
-                  onMouseDown={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  onMouseUp={[Function]}
-                />
-              </label>
-              <div
-                className="css-0"
-              >
-                <div
-                  className="chakra-stack css-15lgeks"
-                >
-                  <span
-                    className="chakra-avatar css-1ruhx4w"
-                  >
-                    <div
-                      aria-label="Henrietta Lebsack"
-                      className="chakra-avatar__initials css-0"
-                      role="img"
-                    >
-                      HL
-                    </div>
-                  </span>
-                  <p
-                    className="chakra-text css-0"
-                  >
-                    Henrietta Lebsack
-                  </p>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td
-            className="css-0"
-            onClick={[Function]}
-          >
-            <div
-              className="css-120nera"
-            >
-              <div
-                className="css-0"
-              >
-                Gabriel.Abshire63@yahoo.com
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr
-          className="css-0"
-        >
-          <td
-            className="css-0"
-            onClick={[Function]}
-          >
-            <div
-              className="css-120nera"
-            >
-              <label
-                className="chakra-checkbox css-1elxtiq"
-                onClick={[Function]}
-              >
-                <input
-                  aria-label="Select item"
-                  checked={false}
-                  className="chakra-checkbox__input"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  style={
-                    Object {
-                      "border": "0",
-                      "clip": "rect(0, 0, 0, 0)",
-                      "height": "1px",
-                      "margin": "-1px",
-                      "overflow": "hidden",
-                      "padding": "0",
-                      "position": "absolute",
-                      "whiteSpace": "nowrap",
-                      "width": "1px",
-                    }
-                  }
-                  type="checkbox"
-                />
-                <span
-                  aria-hidden={true}
-                  className="chakra-checkbox__control css-dnty2r"
-                  onMouseDown={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  onMouseUp={[Function]}
-                />
-              </label>
-              <div
-                className="css-0"
-              >
-                <div
-                  className="chakra-stack css-15lgeks"
-                >
-                  <span
-                    className="chakra-avatar css-1ruhx4w"
-                  >
-                    <div
-                      aria-label="Teresa Hackett"
-                      className="chakra-avatar__initials css-0"
-                      role="img"
-                    >
-                      TH
-                    </div>
-                  </span>
-                  <p
-                    className="chakra-text css-0"
-                  >
-                    Teresa Hackett
-                  </p>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td
-            className="css-0"
-            onClick={[Function]}
-          >
-            <div
-              className="css-120nera"
-            >
-              <div
-                className="css-0"
-              >
-                Virgie.Grant@hotmail.com
+                mary@domain.blah
               </div>
             </div>
           </td>

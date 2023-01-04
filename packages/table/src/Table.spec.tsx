@@ -143,7 +143,20 @@ describe("Table", () => {
   it("Should match snapshot", () => {
     const component = renderer.create(
       <Table
-        items={items}
+        items={[
+          {
+            id: 1,
+            name: "John",
+            email: "john@domain.blah",
+            avatar: "http://localhost:8080/images/john/pp",
+          },
+          {
+            id: 2,
+            name: "mary",
+            email: "mary@domain.blah",
+            avatar: "http://localhost:8080/images/mary/pp",
+          },
+        ]}
         columns={[
           {
             label: "Name",
