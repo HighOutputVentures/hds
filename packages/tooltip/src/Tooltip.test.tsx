@@ -1,9 +1,10 @@
 import { Icon } from '@chakra-ui/react';
-import ThemeProvider from '@highoutput/hds/src/components/ThemeProvider';
+import { ThemeProvider } from '@highoutput/hds';
 import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
+import renderer from 'react-test-renderer';
 import Tooltip from './Tooltip';
 
 describe('Checkbox Component', () => {
@@ -34,5 +35,19 @@ describe('Checkbox Component', () => {
 
       expect(tooltip).not.toBeInTheDocument();
     });
+  });
+
+  it('Should match snapshot', () => {
+    const component = renderer.create(
+      <ThemeProvider>
+        <Tooltip label="This is a tooltip">
+          <Icon />
+        </Tooltip>
+      </ThemeProvider>
+    );
+
+    const snapshot = component.toJSON();
+    expect(snapshot).toMatchSnapshot();
+    component.unmount();
   });
 });
