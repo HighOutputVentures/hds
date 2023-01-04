@@ -1,0 +1,640 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table Should match snapshot 1`] = `
+<div
+  className="css-yyjzgd"
+>
+  <div
+    className="chakra-table__container css-1fofo75"
+  >
+    <table
+      className="chakra-table css-1lravjh"
+    >
+      <thead
+        className="css-0"
+      >
+        <tr
+          className="css-0"
+        >
+          <th
+            className="css-0"
+          >
+            <div
+              className="css-70qvj9"
+            >
+              <label
+                className="chakra-checkbox css-1cd8jem"
+                onClick={[Function]}
+              >
+                <input
+                  aria-label="Select all"
+                  checked={false}
+                  className="chakra-checkbox__input"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  style={
+                    Object {
+                      "border": "0",
+                      "clip": "rect(0, 0, 0, 0)",
+                      "height": "1px",
+                      "margin": "-1px",
+                      "overflow": "hidden",
+                      "padding": "0",
+                      "position": "absolute",
+                      "whiteSpace": "nowrap",
+                      "width": "1px",
+                    }
+                  }
+                  type="checkbox"
+                />
+                <span
+                  aria-hidden={true}
+                  className="chakra-checkbox__control css-dnty2r"
+                  onMouseDown={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                />
+              </label>
+              Name
+            </div>
+          </th>
+          <th
+            className="css-0"
+          >
+            <div
+              className="css-70qvj9"
+            >
+              Email
+              <button
+                aria-label="Sort desc"
+                className="css-sl2x72"
+                onClick={[Function]}
+                role="button"
+              >
+                <svg
+                  className="chakra-icon css-8jpexl"
+                  fill="none"
+                  focusable={false}
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.99992 3.33325V12.6666M7.99992 12.6666L12.6666 7.99992M7.99992 12.6666L3.33325 7.99992"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1.33333"
+                  />
+                </svg>
+              </button>
+              <button
+                aria-controls="popover-content-:ri:"
+                aria-expanded={false}
+                aria-haspopup="dialog"
+                aria-label="Hint"
+                className="css-1dqet0s"
+                id="popover-trigger-:ri:"
+                onClick={[Function]}
+              >
+                <svg
+                  className="chakra-icon css-brlnl4"
+                  fill="none"
+                  focusable={false}
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g
+                    clipPath="url(#clip0_5775_9734)"
+                  >
+                    <path
+                      d="M6.05992 5.99998C6.21665 5.55442 6.52602 5.17872 6.93322 4.9394C7.34042 4.70009 7.81918 4.61261 8.2847 4.69245C8.75022 4.7723 9.17246 5.01433 9.47664 5.37567C9.78081 5.737 9.94729 6.19433 9.94659 6.66665C9.94659 7.99998 7.94659 8.66665 7.94659 8.66665M7.99992 11.3333H8.00659M14.6666 7.99998C14.6666 11.6819 11.6818 14.6666 7.99992 14.6666C4.31802 14.6666 1.33325 11.6819 1.33325 7.99998C1.33325 4.31808 4.31802 1.33331 7.99992 1.33331C11.6818 1.33331 14.6666 4.31808 14.6666 7.99998Z"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.33333"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath
+                      id="clip0_5775_9734"
+                    >
+                      <rect
+                        fill="white"
+                        height="16"
+                        width="16"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+              <div
+                className="chakra-popover__popper css-0"
+                style={
+                  Object {
+                    "inset": "0 auto auto 0",
+                    "minWidth": "max-content",
+                    "position": "absolute",
+                    "visibility": "hidden",
+                  }
+                }
+              >
+                <section
+                  className="chakra-popover__content css-1deuoi4"
+                  id="popover-content-:ri:"
+                  onBlur={[Function]}
+                  onKeyDown={[Function]}
+                  role="dialog"
+                  style={
+                    Object {
+                      "--popper-arrow-shadow-color": undefined,
+                      "--popper-arrow-size": undefined,
+                      "opacity": 0,
+                      "transform": "scale(0.95) translateZ(0)",
+                      "transformOrigin": "var(--popper-transform-origin)",
+                      "visibility": "hidden",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <div
+                    className="chakra-popover__arrow-positioner css-0"
+                    data-popper-arrow=""
+                    style={
+                      Object {
+                        "position": "absolute",
+                      }
+                    }
+                  >
+                    <div
+                      className="chakra-popover__arrow css-0"
+                      data-popper-arrow-inner=""
+                    />
+                  </div>
+                  <div
+                    className="chakra-popover__body css-0"
+                    id="popover-body-:ri:"
+                  >
+                    Hint: This is your email
+                  </div>
+                </section>
+              </div>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        className="css-0"
+      >
+        <tr
+          className="css-0"
+        >
+          <td
+            className="css-0"
+            onClick={[Function]}
+          >
+            <div
+              className="css-120nera"
+            >
+              <label
+                className="chakra-checkbox css-1elxtiq"
+                onClick={[Function]}
+              >
+                <input
+                  aria-label="Select item"
+                  checked={false}
+                  className="chakra-checkbox__input"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  style={
+                    Object {
+                      "border": "0",
+                      "clip": "rect(0, 0, 0, 0)",
+                      "height": "1px",
+                      "margin": "-1px",
+                      "overflow": "hidden",
+                      "padding": "0",
+                      "position": "absolute",
+                      "whiteSpace": "nowrap",
+                      "width": "1px",
+                    }
+                  }
+                  type="checkbox"
+                />
+                <span
+                  aria-hidden={true}
+                  className="chakra-checkbox__control css-dnty2r"
+                  onMouseDown={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                />
+              </label>
+              <div
+                className="css-0"
+              >
+                <div
+                  className="chakra-stack css-15lgeks"
+                >
+                  <span
+                    className="chakra-avatar css-1ruhx4w"
+                  >
+                    <div
+                      aria-label="Todd Parisian"
+                      className="chakra-avatar__initials css-0"
+                      role="img"
+                    >
+                      TP
+                    </div>
+                  </span>
+                  <p
+                    className="chakra-text css-0"
+                  >
+                    Todd Parisian
+                  </p>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td
+            className="css-0"
+            onClick={[Function]}
+          >
+            <div
+              className="css-120nera"
+            >
+              <div
+                className="css-0"
+              >
+                Lonzo_Kertzmann47@yahoo.com
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr
+          className="css-0"
+        >
+          <td
+            className="css-0"
+            onClick={[Function]}
+          >
+            <div
+              className="css-120nera"
+            >
+              <label
+                className="chakra-checkbox css-1elxtiq"
+                onClick={[Function]}
+              >
+                <input
+                  aria-label="Select item"
+                  checked={false}
+                  className="chakra-checkbox__input"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  style={
+                    Object {
+                      "border": "0",
+                      "clip": "rect(0, 0, 0, 0)",
+                      "height": "1px",
+                      "margin": "-1px",
+                      "overflow": "hidden",
+                      "padding": "0",
+                      "position": "absolute",
+                      "whiteSpace": "nowrap",
+                      "width": "1px",
+                    }
+                  }
+                  type="checkbox"
+                />
+                <span
+                  aria-hidden={true}
+                  className="chakra-checkbox__control css-dnty2r"
+                  onMouseDown={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                />
+              </label>
+              <div
+                className="css-0"
+              >
+                <div
+                  className="chakra-stack css-15lgeks"
+                >
+                  <span
+                    className="chakra-avatar css-1ruhx4w"
+                  >
+                    <div
+                      aria-label="Hilda Kozey"
+                      className="chakra-avatar__initials css-0"
+                      role="img"
+                    >
+                      HK
+                    </div>
+                  </span>
+                  <p
+                    className="chakra-text css-0"
+                  >
+                    Hilda Kozey
+                  </p>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td
+            className="css-0"
+            onClick={[Function]}
+          >
+            <div
+              className="css-120nera"
+            >
+              <div
+                className="css-0"
+              >
+                Candice69@gmail.com
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr
+          className="css-0"
+        >
+          <td
+            className="css-0"
+            onClick={[Function]}
+          >
+            <div
+              className="css-120nera"
+            >
+              <label
+                className="chakra-checkbox css-1elxtiq"
+                onClick={[Function]}
+              >
+                <input
+                  aria-label="Select item"
+                  checked={false}
+                  className="chakra-checkbox__input"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  style={
+                    Object {
+                      "border": "0",
+                      "clip": "rect(0, 0, 0, 0)",
+                      "height": "1px",
+                      "margin": "-1px",
+                      "overflow": "hidden",
+                      "padding": "0",
+                      "position": "absolute",
+                      "whiteSpace": "nowrap",
+                      "width": "1px",
+                    }
+                  }
+                  type="checkbox"
+                />
+                <span
+                  aria-hidden={true}
+                  className="chakra-checkbox__control css-dnty2r"
+                  onMouseDown={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                />
+              </label>
+              <div
+                className="css-0"
+              >
+                <div
+                  className="chakra-stack css-15lgeks"
+                >
+                  <span
+                    className="chakra-avatar css-1ruhx4w"
+                  >
+                    <div
+                      aria-label="Dana Stracke"
+                      className="chakra-avatar__initials css-0"
+                      role="img"
+                    >
+                      DS
+                    </div>
+                  </span>
+                  <p
+                    className="chakra-text css-0"
+                  >
+                    Dana Stracke
+                  </p>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td
+            className="css-0"
+            onClick={[Function]}
+          >
+            <div
+              className="css-120nera"
+            >
+              <div
+                className="css-0"
+              >
+                Alysha92@gmail.com
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr
+          className="css-0"
+        >
+          <td
+            className="css-0"
+            onClick={[Function]}
+          >
+            <div
+              className="css-120nera"
+            >
+              <label
+                className="chakra-checkbox css-1elxtiq"
+                onClick={[Function]}
+              >
+                <input
+                  aria-label="Select item"
+                  checked={false}
+                  className="chakra-checkbox__input"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  style={
+                    Object {
+                      "border": "0",
+                      "clip": "rect(0, 0, 0, 0)",
+                      "height": "1px",
+                      "margin": "-1px",
+                      "overflow": "hidden",
+                      "padding": "0",
+                      "position": "absolute",
+                      "whiteSpace": "nowrap",
+                      "width": "1px",
+                    }
+                  }
+                  type="checkbox"
+                />
+                <span
+                  aria-hidden={true}
+                  className="chakra-checkbox__control css-dnty2r"
+                  onMouseDown={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                />
+              </label>
+              <div
+                className="css-0"
+              >
+                <div
+                  className="chakra-stack css-15lgeks"
+                >
+                  <span
+                    className="chakra-avatar css-1ruhx4w"
+                  >
+                    <div
+                      aria-label="Henrietta Lebsack"
+                      className="chakra-avatar__initials css-0"
+                      role="img"
+                    >
+                      HL
+                    </div>
+                  </span>
+                  <p
+                    className="chakra-text css-0"
+                  >
+                    Henrietta Lebsack
+                  </p>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td
+            className="css-0"
+            onClick={[Function]}
+          >
+            <div
+              className="css-120nera"
+            >
+              <div
+                className="css-0"
+              >
+                Gabriel.Abshire63@yahoo.com
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr
+          className="css-0"
+        >
+          <td
+            className="css-0"
+            onClick={[Function]}
+          >
+            <div
+              className="css-120nera"
+            >
+              <label
+                className="chakra-checkbox css-1elxtiq"
+                onClick={[Function]}
+              >
+                <input
+                  aria-label="Select item"
+                  checked={false}
+                  className="chakra-checkbox__input"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  style={
+                    Object {
+                      "border": "0",
+                      "clip": "rect(0, 0, 0, 0)",
+                      "height": "1px",
+                      "margin": "-1px",
+                      "overflow": "hidden",
+                      "padding": "0",
+                      "position": "absolute",
+                      "whiteSpace": "nowrap",
+                      "width": "1px",
+                    }
+                  }
+                  type="checkbox"
+                />
+                <span
+                  aria-hidden={true}
+                  className="chakra-checkbox__control css-dnty2r"
+                  onMouseDown={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                />
+              </label>
+              <div
+                className="css-0"
+              >
+                <div
+                  className="chakra-stack css-15lgeks"
+                >
+                  <span
+                    className="chakra-avatar css-1ruhx4w"
+                  >
+                    <div
+                      aria-label="Teresa Hackett"
+                      className="chakra-avatar__initials css-0"
+                      role="img"
+                    >
+                      TH
+                    </div>
+                  </span>
+                  <p
+                    className="chakra-text css-0"
+                  >
+                    Teresa Hackett
+                  </p>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td
+            className="css-0"
+            onClick={[Function]}
+          >
+            <div
+              className="css-120nera"
+            >
+              <div
+                className="css-0"
+              >
+                Virgie.Grant@hotmail.com
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
