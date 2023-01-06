@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@highoutput/hds';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import * as React from 'react';
@@ -124,5 +125,29 @@ describe('Tag', () => {
       expect(tree).toMatchSnapshot();
       component.unmount();
     });
+  });
+
+  it('Should match snapshot', () => {
+    const component = renderer.create(
+      <ThemeProvider>
+        <Tag
+          label="Tag Label"
+          indicator
+          icon={AUIcon}
+          avatar="https://i.pravatar.cc/25"
+          checkbox
+          checked
+          onCheck={function () {}}
+          badge
+          badgeCount={1_000_000}
+          closable
+          onClose={function () {}}
+        />
+      </ThemeProvider>,
+    );
+
+    const snapshot = component.toJSON();
+    expect(snapshot).toMatchSnapshot();
+    component.unmount();
   });
 });

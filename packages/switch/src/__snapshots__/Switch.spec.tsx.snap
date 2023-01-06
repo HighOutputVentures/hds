@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch Should match snapshot 1`] = `
+<div
+  className="chakra-form-control css-0"
+  role="group"
+>
+  <label
+    className="chakra-switch css-16pgy8f"
+    data-checked=""
+    onClick={[Function]}
+  >
+    <input
+      aria-disabled={false}
+      aria-invalid={false}
+      checked={true}
+      className="chakra-switch__input"
+      disabled={false}
+      id=":r0:"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      readOnly={false}
+      required={false}
+      style={
+        Object {
+          "border": "0",
+          "clip": "rect(0, 0, 0, 0)",
+          "height": "1px",
+          "margin": "-1px",
+          "overflow": "hidden",
+          "padding": "0",
+          "position": "absolute",
+          "whiteSpace": "nowrap",
+          "width": "1px",
+        }
+      }
+      type="checkbox"
+    />
+    <span
+      aria-hidden={true}
+      className="chakra-switch__track css-14qxnv8"
+      data-checked=""
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+    >
+      <span
+        className="chakra-switch__thumb css-0"
+        data-checked=""
+      />
+    </span>
+  </label>
+  <div
+    className="css-0"
+  >
+    <label
+      className="chakra-form__label css-uvho5g"
+      htmlFor=":r0:"
+      id="field-:r1:-label"
+    >
+      Checkbox label
+    </label>
+    <div
+      className="chakra-form__helper-text css-0"
+      id="field-:r1:-helptext"
+    >
+      Checkbox helper text
+    </div>
+  </div>
+</div>
+`;
