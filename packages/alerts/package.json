@@ -47,8 +47,5 @@
       "path": "dist/@highoutput/hds-alerts.esm.js",
       "limit": "10 KB"
     }
-  ],
-  "dependencies": {
-    "@highoutput/hds-icons": "^0.1.19"
-  }
+  ]
 }
