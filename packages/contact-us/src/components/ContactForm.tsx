@@ -103,7 +103,7 @@ const ContactForm: FC<ContactFormProps> = (props) => {
           {hasError && (
             <Alert status="error">
               <AlertIcon />
-              <AlertDescription>Ops, Something went wrong.</AlertDescription>
+              <AlertDescription>Oops, Something went wrong.</AlertDescription>
             </Alert>
           )}
 
