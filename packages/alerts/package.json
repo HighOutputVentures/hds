@@ -15,7 +15,6 @@
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
@@ -47,8 +46,5 @@
       "path": "dist/@highoutput/hds-alerts.esm.js",
       "limit": "10 KB"
     }
-  ],
-  "dependencies": {
-    "@highoutput/hds-icons": "^0.1.19"
-  }
+  ]
 }
