@@ -15,7 +15,6 @@
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "generate:types": "chakra-cli tokens ./src/theme/index.ts"
@@ -64,7 +63,6 @@
   },
   "gitHead": "2cc842169e828ff56ef57e039534fb0414854443",
   "dependencies": {
-    "@highoutput/hds": "^0.1.52",
     "@highoutput/hds-forms": "^0.1.27",
     "@hookform/resolvers": "^2.9.10",
     "js-cookie": "^3.0.1",
