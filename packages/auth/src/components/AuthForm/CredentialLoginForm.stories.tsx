@@ -24,4 +24,6 @@ export const Default = Template.bind({});
 
 Default.args = {
   ...Default.args,
+  variant: 'email-password',
+  onSubmit: () => {},
 };
