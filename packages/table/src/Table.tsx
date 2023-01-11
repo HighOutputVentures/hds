@@ -22,25 +22,25 @@ import * as React from "react";
 import ArrowDownIcon from "./icons/ArrowDownIcon";
 import HelpCircleIcon from "./icons/HelpCircleIcon";
 
-type UnknownArray = unknown[];
-type ArrayItem<T extends UnknownArray> = T[number];
+export type UnknownArray = unknown[];
+export type ArrayItem<T extends UnknownArray> = T[number];
 
-type SortDirection = "asc" | "desc";
+export type SortDirection = "asc" | "desc";
 
-type SortContext = {
+export type SortContext = {
   direction: SortDirection;
 };
 
-type CheckContext<T> = {
+export type CheckContext<T> = {
   item: T;
   isChecked: boolean;
 };
 
-type ClickContext<T> = {
+export type ClickContext<T> = {
   item: T;
 };
 
-type Column<T extends UnknownArray> = {
+export type Column<T extends UnknownArray> = {
   label: string;
   width?: string;
   tooltip?: React.ReactNode;
@@ -53,7 +53,7 @@ type Column<T extends UnknownArray> = {
   defaultChecked?: ((item: ArrayItem<T>) => boolean) | boolean;
 };
 
-type CheckAllContext<T extends UnknownArray> = {
+export type CheckAllContext<T extends UnknownArray> = {
   selected: ArrayItem<T>[];
   isChecked: boolean;
 };
