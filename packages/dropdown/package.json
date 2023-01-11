@@ -37,7 +37,7 @@
   },
   "name": "@highoutput/hds-dropdown",
   "author": "jadekenneth.github.io",
-  "module": "dist/dropdown.esm.js",
+  "module": "dist/hds-dropdown.esm.js",
   "size-limit": [
     {
       "path": "dist/highoutput/hds-dropdown.cjs.production.min.js",

@@ -14,11 +14,8 @@ import {
   PlacementWithLogical,
   Text,
 } from '@chakra-ui/react';
-// @ts-ignore
 import { ThreeDots } from '@highoutput/hds-icons';
 import React from 'react';
-
-// import ThreeDots from '../Icon/ThreeDots';
 
 export interface MenuDropdownFieldProps {
   indicator?: boolean;
