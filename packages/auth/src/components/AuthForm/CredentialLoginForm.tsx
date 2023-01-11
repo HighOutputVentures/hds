@@ -20,7 +20,6 @@ export type CredentialLoginFormDefaultProps = {
   signUpTitle?: ReactNode;
   passwordLabel?: string;
   customLink?: ReactNode;
-  defaultLink?: boolean;
   passwordLeftIcon?: ReactNode;
   formHeaderTitle?: ReactNode | string;
   formHeaderSubTitle?: ReactNode | string;
@@ -56,11 +55,11 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
     passwordLabel,
     width = '512px',
     customLink,
-    defaultLink = false,
   } = props;
 
   const [showPassword, setShowPassword] = React.useState(false);
   const [isSignUp, setIsSignUp] = React.useState(false);
+  const [defaultLinkActive, setDefaultLinkActive] = React.useState(true);
   const { register, handleSubmit, formState } = useForm<
     withCredentialFormSchemaEmailValues & withCredentialFormSchemaNameValues
   >({
@@ -71,6 +70,12 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
     ),
     shouldUnregister: true,
   });
+
+  React.useEffect(() => {
+    if (typeof customLink !== 'undefined') {
+      setDefaultLinkActive(false);
+    }
+  }, [customLink, setDefaultLinkActive]);
 
   const onSubmitForm = async (
     values: withCredentialFormSchemaNameValues &
@@ -176,7 +181,7 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
         {isSignUp ? 'Sign Up' : 'Login'}
       </Button>
       {customLink && customLink}
-      {defaultLink && (
+      {defaultLinkActive && (
         <Center>
           <Text>
             {isSignUp ? 'Already have an account?' : 'No account yet?'}{' '}

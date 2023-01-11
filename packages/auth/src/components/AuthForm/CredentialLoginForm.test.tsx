@@ -6,7 +6,7 @@ import CredentialLoginForm from './CredentialLoginForm';
 
 describe('Login Form Email-based Component', () => {
   beforeEach(() => {
-    render(<CredentialLoginForm variant="email-password" defaultLink />);
+    render(<CredentialLoginForm variant="email-password" />);
   });
   it('should display error message on email', async () => {
     // const emailInput = screen.getByRole('input', { name: 'email-input' });
