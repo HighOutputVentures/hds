@@ -1,64 +1,40 @@
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import {
-  Button,
-} from '@chakra-ui/react';
+import { Box, useBoolean } from '@chakra-ui/react';
 import React, { forwardRef } from 'react';
-import { UseFormRegisterReturn } from 'react-hook-form';
-import InputField from '../InputField/InputField';
+import InputField, { InputFieldProps } from '../InputField/InputField';
 
-// type WithoutChildren<T> = Omit<T, 'children'>;
+export type PasswordInputFieldProps = Omit<
+  InputFieldProps,
+  'type' | 'leftIcon' | 'rightIcon'
+>;
 
-export interface PasswordInputFieldProps extends UseFormRegisterReturn {
-  // partProps?: Partial<{
-  //   button?: WithoutChildren<ButtonProps>;
-  //   input?: WithoutChildren<InputProps>;
-  //   inputGroup?: WithoutChildren<InputGroupProps>;
-  //   inputLeftElement?: WithoutChildren<InputElementProps>;
-  //   inputRightElement?: WithoutChildren<InputElementProps>;
-  // }>;
-  placeholder: string;
-  errorMsg?: string;
-  onPressEnter?: () => void;
-}
+export default forwardRef<HTMLInputElement, PasswordInputFieldProps>(
+  function PasswordInputField(props, ref) {
+    const [hidden, { toggle }] = useBoolean(true);
 
-const PasswordInputField = forwardRef<
-  HTMLInputElement,
-  PasswordInputFieldProps
->((props, _) => {
-  const {
-    placeholder,
-    onBlur,
-    errorMsg,
-    onChange,
-    onPressEnter,
-  } = props;
-  const [showPassword, setShowPassword] = React.useState(false);
-  const onClickRightIcon = () => setShowPassword(prev => !prev);
+    const toggleControl = (
+      <Box
+        as="span"
+        role="button"
+        aria-live="polite"
+        aria-label={hidden ? 'Show password' : 'Hide password'}
+        cursor="pointer"
+        bgColor="transparent"
+        onClick={toggle}
+        tabIndex={-1}
+      >
+        {hidden && <ViewIcon role="img" aria-label="Eye open" />}
+        {!hidden && <ViewOffIcon role="img" aria-label="Eye closed" />}
+      </Box>
+    );
 
-  return (
-    <InputField
-      placeholder={placeholder}
-      id="Password-input"
-      type={showPassword ? 'text' : 'password'}
-      errorMsg={errorMsg}
-      onBlur={onBlur}
-      onChange={onChange}
-      onPressEnter={onPressEnter}
-      rightIcon={
-        <Button
-          background={'none'}
-          _hover={{ background: 'none' }}
-          _active={{ background: 'none' }}
-          aria-label={'show-hide-btn'}
-          onClick={onClickRightIcon}
-        >
-          {showPassword ? <ViewIcon /> : <ViewOffIcon />}
-        </Button>
-      }
-    />
-  );
-});
-
-PasswordInputField.displayName = 'PasswordInputField';
-
-export default PasswordInputField;
+    return (
+      <InputField
+        ref={ref}
+        rightIcon={toggleControl}
+        {...(hidden && { type: 'password' })}
+        {...props}
+      />
+    );
+  }
+);
