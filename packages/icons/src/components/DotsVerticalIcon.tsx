@@ -28,7 +28,7 @@ const DotsVerticalIcon: React.FC<IconProps> = (props) => {
       <path
         d="M10.0001 16.6666C10.4603 16.6666 10.8334 16.2935 10.8334 15.8333C10.8334 15.3731 10.4603 15 10.0001 15C9.53984 15 9.16675 15.3731 9.16675 15.8333C9.16675 16.2935 9.53984 16.6666 10.0001 16.6666Z"
         stroke="currentColor"
-        stroke-width="1.66667"
+        strokeWidth="1.66667"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

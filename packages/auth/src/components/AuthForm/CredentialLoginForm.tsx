@@ -1,4 +1,4 @@
-import {  ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { Box, Button, Center, Stack, Text, VStack } from '@chakra-ui/react';
 // @ts-ignore
 import { InputField } from '@highoutput/hds-forms';

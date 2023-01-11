@@ -11,21 +11,22 @@ import {
   MenuButton,
   MenuItemProps,
   MenuList,
+  PlacementWithLogical,
   Text,
 } from '@chakra-ui/react';
-// @ts-ignore
 import { ThreeDots } from '@highoutput/hds-icons';
 import React from 'react';
-// import ThreeDots from '../Icon/ThreeDots';
 
 export interface MenuDropdownFieldProps {
   indicator?: boolean;
-  menuHeader: {
+  menuHeader?: {
     profileUrl: string;
     userName: string;
     emailAddress: string;
   };
   menuItems: Omit<MenuItemProps, 'css' | 'style'>;
+  gap?: string;
+  placement?: PlacementWithLogical | undefined;
 }
 
 export interface IKebabMenu extends MenuDropdownFieldProps {
@@ -43,20 +44,31 @@ export interface IProfileMenu extends MenuDropdownFieldProps {
   menuButtonText?: never;
   profileUrl: string;
 }
+export interface IMeatBallMenu extends MenuDropdownFieldProps {
+  menuType: 'meatball';
+  menuButtonText?: never;
+  profileUrl?: never;
+}
 
-export type IMenuDropdownFieldProps = IKebabMenu | IButtonMenu | IProfileMenu;
+export type IMenuDropdownFieldProps =
+  | IKebabMenu
+  | IButtonMenu
+  | IProfileMenu
+  | IMeatBallMenu;
 const MenuDropdown = (props: IMenuDropdownFieldProps) => {
   const {
     menuHeader,
     menuButtonText,
     indicator = true,
     menuItems,
+    gap,
     profileUrl,
     menuType,
+    placement,
   } = props;
 
   return (
-    <Menu data-testid="menu-dropdown">
+    <Menu data-testid="menu-dropdown" placement={placement}>
       {({ isOpen }) => (
         <>
           <MenuButton
@@ -96,6 +108,16 @@ const MenuDropdown = (props: IMenuDropdownFieldProps) => {
                 src={profileUrl}
                 border={isOpen ? '4px solid #F4EBFF' : undefined}
               />
+            ) : menuType === 'meatball' ? (
+              <Box transform={'rotate(90deg)'}>
+                <Icon
+                  as={ThreeDots}
+                  width="20px"
+                  height="20px"
+                  _active={{ background: 'transparent' }}
+                  color={isOpen ? ' #344054' : '#98A2B3'}
+                />
+              </Box>
             ) : (
               <Text
                 fontSize={'18px'}
@@ -111,26 +133,28 @@ const MenuDropdown = (props: IMenuDropdownFieldProps) => {
             boxShadow={
               '0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)'
             }
-            marginTop="52px"
+            marginTop={gap}
             data-testid="menu-list"
             py={'0px'}
             fontSize={'14px'}
             color="neutrals.900"
           >
-            <HStack p={'16px 12px'}>
-              <Avatar src={menuHeader.profileUrl} width="40px" height="40px">
-                {indicator && <AvatarBadge boxSize="1em" bg="#00C408" />}
-              </Avatar>
+            {menuHeader && (
+              <HStack p={'16px 12px'}>
+                <Avatar src={menuHeader?.profileUrl} width="40px" height="40px">
+                  {indicator && <AvatarBadge boxSize="1em" bg="#00C408" />}
+                </Avatar>
 
-              <Box>
-                <Text size="label-xs-default" color="neutrals.900" mb="4px">
-                  {menuHeader.userName}
-                </Text>
-                <Text size="label-xs-default" color="neutrals.500">
-                  {menuHeader.emailAddress}
-                </Text>
-              </Box>
-            </HStack>
+                <Box>
+                  <Text size="label-xs-default" color="neutrals.900" mb="4px">
+                    {menuHeader?.userName}
+                  </Text>
+                  <Text size="label-xs-default" color="neutrals.500">
+                    {menuHeader?.emailAddress}
+                  </Text>
+                </Box>
+              </HStack>
+            )}
             <Divider orientation="horizontal" />
             <Menu>
               {() => {
