@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`One Time Password Login Component Snapshot (OTPForm) Should match snapshot 1`] = `
+<form
+  className="css-1ivgbss"
+  data-testid="box.otpform.form"
+  onSubmit={[Function]}
+>
+  <div
+    className="css-jmbq56"
+  >
+    <h1
+      className="chakra-heading css-wlea3r"
+    >
+      Check your inbox
+    </h1>
+    <p
+      className="chakra-text css-0"
+    >
+      We have sent a 6-digit code to your email 
+    </p>
+  </div>
+  <div
+    aria-label="Form Group"
+    className="chakra-form-control css-0"
+    data-testid=":r1:-form-container-form-control"
+    role="group"
+  >
+    <div
+      className="chakra-stack css-1tsaady"
+    >
+      <input
+        aria-label="Please enter your pin code"
+        autoComplete="one-time-code"
+        className="chakra-pin-input css-25hifv"
+        data-testid=":r0:-pininput-pin-0"
+        disabled={false}
+        id="otp--1"
+        inputMode="numeric"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder=""
+        type="tel"
+        value=""
+      />
+      <input
+        aria-label="Please enter your pin code"
+        autoComplete="one-time-code"
+        className="chakra-pin-input css-25hifv"
+        data-testid=":r0:-pininput-pin-1"
+        disabled={false}
+        id="otp--1"
+        inputMode="numeric"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder=""
+        type="tel"
+        value=""
+      />
+      <input
+        aria-label="Please enter your pin code"
+        autoComplete="one-time-code"
+        className="chakra-pin-input css-25hifv"
+        data-testid=":r0:-pininput-pin-2"
+        disabled={false}
+        id="otp--1"
+        inputMode="numeric"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder=""
+        type="tel"
+        value=""
+      />
+      <div
+        className="css-iux5u6"
+      >
+        -
+      </div>
+      <input
+        aria-label="Please enter your pin code"
+        autoComplete="one-time-code"
+        className="chakra-pin-input css-25hifv"
+        data-testid=":r0:-pininput-pin-3"
+        disabled={false}
+        id="otp--1"
+        inputMode="numeric"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder=""
+        type="tel"
+        value=""
+      />
+      <input
+        aria-label="Please enter your pin code"
+        autoComplete="one-time-code"
+        className="chakra-pin-input css-25hifv"
+        data-testid=":r0:-pininput-pin-4"
+        disabled={false}
+        id="otp--1"
+        inputMode="numeric"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder=""
+        type="tel"
+        value=""
+      />
+      <input
+        aria-label="Please enter your pin code"
+        autoComplete="one-time-code"
+        className="chakra-pin-input css-25hifv"
+        data-testid=":r0:-pininput-pin-5"
+        disabled={false}
+        id="otp--1"
+        inputMode="numeric"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder=""
+        type="tel"
+        value=""
+      />
+    </div>
+  </div>
+  <button
+    className="chakra-button css-yrcen6"
+    data-testid="button.otp.submit"
+    disabled={false}
+    type="submit"
+  >
+    Sign In
+  </button>
+</form>
+`;
