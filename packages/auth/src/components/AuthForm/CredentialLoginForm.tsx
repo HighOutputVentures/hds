@@ -19,6 +19,8 @@ export type CredentialLoginFormDefaultProps = {
   loginTitle?: ReactNode;
   signUpTitle?: ReactNode;
   passwordLabel?: string;
+  customLink?: ReactNode;
+  defaultLink?: boolean;
   passwordLeftIcon?: ReactNode;
   formHeaderTitle?: ReactNode | string;
   formHeaderSubTitle?: ReactNode | string;
@@ -53,6 +55,8 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
     onSubmit,
     passwordLabel,
     width = '512px',
+    customLink,
+    defaultLink = false,
   } = props;
 
   const [showPassword, setShowPassword] = React.useState(false);
@@ -117,7 +121,9 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
                   props.nameLabel?.slice(1)
                 : undefined
             }
-            placeholder={`Input your ${props.nameLabel?.toLowerCase()}`}
+            placeholder={`Input your ${
+              props.nameLabel?.toLowerCase() ?? 'username'
+            }`}
             errorMsg={formState.errors.name?.message}
             disabled={formState.isSubmitting}
           />
@@ -169,22 +175,25 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
       >
         {isSignUp ? 'Sign Up' : 'Login'}
       </Button>
-      <Center>
-        <Text>
-          {isSignUp ? 'Already have an account?' : 'No account yet?'}{' '}
-          <Text
-            as={'a'}
-            data-testid={'switch-form-link'}
-            _hover={{ textDecoration: 'underline', cursor: 'pointer' }}
-            aria-label={isSignUp ? 'login-link-label' : 'signup-link-label'}
-            onClick={() => setIsSignUp((prev) => !prev)}
-            fontWeight={'bold'}
-            role={'link'}
-          >
-            {isSignUp ? 'Login' : 'Sign up'}
+      {customLink && customLink}
+      {defaultLink && (
+        <Center>
+          <Text>
+            {isSignUp ? 'Already have an account?' : 'No account yet?'}{' '}
+            <Text
+              as={'a'}
+              data-testid={'switch-form-link'}
+              _hover={{ textDecoration: 'underline', cursor: 'pointer' }}
+              aria-label={isSignUp ? 'login-link-label' : 'signup-link-label'}
+              onClick={() => setIsSignUp((prev) => !prev)}
+              fontWeight={'bold'}
+              role={'link'}
+            >
+              {isSignUp ? 'Login' : 'Sign up'}
+            </Text>
           </Text>
-        </Text>
-      </Center>
+        </Center>
+      )}
     </Box>
   );
 };
