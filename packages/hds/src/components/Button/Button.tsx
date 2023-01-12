@@ -6,7 +6,6 @@ import { ButtonVariantsTypes } from '../../theme/components/button/variants';
 
 export interface ButtonProps {
   children: ReactNode;
-  dataTestid: string;
   variant?: ButtonVariantsTypes;
   isDisabled?: boolean;
   isLoading?: boolean;
