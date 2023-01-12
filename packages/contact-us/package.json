@@ -53,6 +53,11 @@
     "@size-limit/preset-small-lib": "7.0.8",
     "size-limit": "7.0.8"
   },
+  "dependencies": {
+    "@highoutput/hds": "*",
+    "@highoutput/hds-icons": "*",
+    "@highoutput/hds-forms": "*"
+  },
   "jest": {
     "verbose": true,
     "moduleNameMapper": {
