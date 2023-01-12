@@ -17,5 +17,9 @@ const Template: ComponentStory<typeof PasswordInputField> = (args) => (
 export const Default = Template.bind({});
 
 Default.args = {
+  label: 'Password',
+  placeholder: 'Enter password',
+  errorMsg: '',
+  helperMsg: '',
   ...Default.args,
 };
