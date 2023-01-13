@@ -14,13 +14,19 @@ export interface ButtonProps {
   type?: 'button' | 'reset' | 'submit';
   onClick?: () => void;
   disabled?: boolean;
+  block?: boolean;
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ block, ...props }, ref) => {
   const uid = useId();
 
   return (
-    <ChakraButton {...props} ref={ref} data-testid={`${uid}-button`}>
+    <ChakraButton
+      {...props}
+      ref={ref}
+      data-testid={`${uid}-button`}
+      {...(block && { width: 'full' })}
+    >
       {props.children}
     </ChakraButton>
   );
