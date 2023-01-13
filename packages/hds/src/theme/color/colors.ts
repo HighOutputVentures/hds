@@ -4,11 +4,11 @@ const colors = {
   'canvas.light': { 500: '#E5E5E5' },
   'canvas.dark': { 500: '#1F1E1F' },
   'brand.primary': {
-    900: '#414180',
-    800: '#5353A3',
-    700: '#7070DD',
-    600: '#C0C0FC',
-    500: '#E3E3FC',
+    900: '#4A3880',
+    800: '#5F48A3',
+    700: '#8A68EF',
+    600: '#C3B8E6',
+    500: '#EDE8FC',
   },
   'brand.secondary': {
     900: '#57805D',
