@@ -2,7 +2,17 @@ export const Tabs = {
   parts: ['tab', 'tabpanel', 'tablist'],
   baseStyle: {
     root: { w: 'full', mt: 6 },
-    tab: { fontWeight: '500', color: 'gray.500' },
+    tab: {
+      fontWeight: '500',
+      color: 'gray.500',
+      orientation: {
+        vertical: {
+          tab: {
+            w: '142px',
+          },
+        },
+      },
+    },
   },
   sizes: {
     sm: {
