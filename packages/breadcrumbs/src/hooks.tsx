@@ -1,13 +1,13 @@
 import { IBreadCrumbLinks } from './Breadcrumbs';
 
-type UseOtherPaginationInfoArgs = {
+type useTransformBreadCrumbInfoArgs = {
   start: number;
 
   maxLinkControls?: 6 | 4 | 2;
   originalBreadCrumbDaTa: IBreadCrumbLinks['typedef'];
 };
 
-type UseOtherPaginationInfoReturn = {
+type useTransformBreadCrumbInfoReturn = {
   transformedBreadCrumbData: IBreadCrumbLinks['typedef'] | null;
 };
 
@@ -16,7 +16,7 @@ export function useTransformBreadCrumbInfo({
 
   originalBreadCrumbDaTa,
   maxLinkControls = 6,
-}: UseOtherPaginationInfoArgs): UseOtherPaginationInfoReturn {
+}: useTransformBreadCrumbInfoArgs): useTransformBreadCrumbInfoReturn {
   const size = originalBreadCrumbDaTa.length;
 
   const transformedBreadCrumbData: IBreadCrumbLinks['typedef'] =
