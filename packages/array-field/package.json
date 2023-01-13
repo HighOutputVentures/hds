@@ -1,5 +1,5 @@
 {
-  "version": "0.1.44",
+  "version": "0.1.46",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -14,8 +14,8 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
+    "prepare": "tsdx build --transpileOnly",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "generate:types": "chakra-cli tokens ./src/theme/index.ts"
@@ -54,18 +54,14 @@
     "size-limit": "7.0.8"
   },
   "jest": {
-    "moduleNameMapper": {
-      "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
-      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
-    }
+    "verbose": true
   },
   "publishConfig": {
     "access": "public"
   },
   "gitHead": "2cc842169e828ff56ef57e039534fb0414854443",
   "dependencies": {
-    "@highoutput/hds": "^0.1.52",
-    "@highoutput/hds-forms": "^0.1.27",
+    "@highoutput/hds-forms": "*",
     "@hookform/resolvers": "^2.9.10",
     "yup": "^0.32.11"
   }

@@ -6,10 +6,7 @@ export type ButtonVariantsTypes =
   | 'outline-error'
   | 'ghost-error';
 
-export type CloseButtonVariantTypes =
-  | 'solid-close-btn'
-  | 'outline-close-btn'
-  | 'ghost-close-btn';
+export type CloseButtonVariantTypes = 'solid-close-btn' | 'outline-close-btn' | 'ghost-close-btn';
 
 export const buttonVariants = {
   'solid-primary': {

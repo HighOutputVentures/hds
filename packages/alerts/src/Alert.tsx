@@ -8,8 +8,7 @@ import {
   ScaleFade,
   Text,
 } from '@chakra-ui/react';
-// @ts-ignore
-import { CheckCircleGreenIcon, WarningIcon } from '@highoutput/hds-icons';
+import { CheckCircleIcon, WarningIcon } from '@highoutput/hds-icons';
 import React from 'react';
 
 export interface AlertsProps {
@@ -46,7 +45,7 @@ const Alert = (props: AlertsProps) => {
 
   const AlertIcon =
     status === 'success'
-      ? CheckCircleGreenIcon
+      ? CheckCircleIcon
       : status === 'warning'
       ? WarningIcon
       : InfoOutlineIcon;

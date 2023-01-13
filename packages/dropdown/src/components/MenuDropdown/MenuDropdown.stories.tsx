@@ -137,6 +137,12 @@ const Template: ComponentStory<typeof MenuDropdown> = () => {
             menuItems={menuItems}
           />
         </VStack>
+        <VStack spacing="20px">
+          <Text fontSize={'18px'} fontWeight={500}>
+            Meatball dropdown type
+          </Text>
+          <MenuDropdown menuType={'meatball'} menuItems={menuItems} />
+        </VStack>
       </Flex>
     </ThemeProvider>
   );

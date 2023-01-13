@@ -11,14 +11,6 @@ import FormContainer, {
   FormContainerProps,
 } from '../FormContainer/FormContainer';
 
-// type WithoutChildren<T> = Omit<T, 'children'>;
-
-// export interface InputFieldPartProps extends FormContainerPartProps {
-//   input?: WithoutChildren<InputProps>;
-//   inputGroup?: WithoutChildren<InputGroupProps>;
-//   inputLeftElement?: WithoutChildren<InputElementProps>;
-//   inputRightElement?: WithoutChildren<InputElementProps>;
-// }
 export interface InputFieldProps extends Omit<FormContainerProps, 'partProps'> {
   size?: InputGroupProps['size'];
   type?: string;
@@ -31,11 +23,10 @@ export interface InputFieldProps extends Omit<FormContainerProps, 'partProps'> {
   disabled?: boolean;
   readOnly?: boolean;
   defaultValue?: string;
-  __testId?: string;
   variant?: string;
-  onPressEnter?(): void;
+  onPressEnter?(event: React.KeyboardEvent<HTMLInputElement>): void;
   inputValue?: string | undefined;
-  // partProps?: Partial<InputFieldPartProps>;
+  __testId?: string;
 }
 
 const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
@@ -77,7 +68,6 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
           )}
           <Input
             sx={styles.formInput}
-            // {...partProps?.input}
             errorBorderColor="red.500"
             autoFocus={autoFocus}
             ref={ref}
@@ -92,20 +82,15 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
             defaultValue={defaultValue}
             maxLength={maxLength}
             variant={variant}
-            onKeyPress={(e: { key: string }) => {
-              if (e.key === 'Enter') {
-                if (onPressEnter) onPressEnter();
-              }
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') onPressEnter?.(e);
             }}
             value={inputValue ? inputValue.trim() : undefined}
             role="input"
             data-testid={__testId ?? `${uid}-input-field-input`}
           />
           {rightIcon && (
-            <InputRightElement
-              // {...partProps?.inputRightElement}
-              data-testid={`${uid}-input-field-right-element`}
-            >
+            <InputRightElement data-testid={`${uid}-input-field-right-element`}>
               {rightIcon}
             </InputRightElement>
           )}

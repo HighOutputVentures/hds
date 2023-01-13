@@ -6,7 +6,6 @@ import {
   FigmaIcon,
   GoogleIcon,
   TwitterIcon,
-  // @ts-ignore
 } from '@highoutput/hds-icons';
 import React from 'react';
 
@@ -59,8 +58,7 @@ const SocialButton = (props: Omit<SocialButtonProps, 'children'>) => {
       _active: {
         bg: variant === 'outline' ? 'white' : 'white',
         border: '1px solid #D0D5DD',
-        boxShadow:
-          '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7',
+        boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7',
       },
     },
     facebook: {
@@ -83,8 +81,7 @@ const SocialButton = (props: Omit<SocialButtonProps, 'children'>) => {
       _active: {
         bg: variant === 'outline' ? 'white' : '#1877F2',
         border: '1px solid #D0D5DD',
-        boxShadow:
-          '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7',
+        boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7',
       },
     },
     figma: {
@@ -107,8 +104,7 @@ const SocialButton = (props: Omit<SocialButtonProps, 'children'>) => {
       _active: {
         bg: variant === 'outline' ? 'white' : '#000000',
         border: '1px solid #D0D5DD',
-        boxShadow:
-          '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7',
+        boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7',
         _disabled: {
           bg: 'none',
           boxShadow: 'none',
@@ -135,8 +131,7 @@ const SocialButton = (props: Omit<SocialButtonProps, 'children'>) => {
       _active: {
         bg: variant === 'outline' ? 'white' : '#000000',
         border: '1px solid #D0D5DD',
-        boxShadow:
-          '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7',
+        boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7',
       },
     },
     dribble: {
@@ -159,8 +154,7 @@ const SocialButton = (props: Omit<SocialButtonProps, 'children'>) => {
       _active: {
         bg: variant === 'outline' ? 'white' : '#E62872',
         border: '1px solid #D0D5DD',
-        boxShadow:
-          '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7',
+        boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7',
       },
     },
     twitter: {
@@ -182,8 +176,7 @@ const SocialButton = (props: Omit<SocialButtonProps, 'children'>) => {
       },
       _active: {
         bg: variant === 'outline' ? 'white' : '#0C8BD9',
-        boxShadow:
-          '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7',
+        boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7',
       },
     },
   };

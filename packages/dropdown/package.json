@@ -1,5 +1,5 @@
 {
-  "version": "0.1.12",
+  "version": "0.1.15",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -14,8 +14,8 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
+    "prepare": "tsdx build --transpileOnly",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
@@ -37,7 +37,7 @@
   },
   "name": "@highoutput/hds-dropdown",
   "author": "jadekenneth.github.io",
-  "module": "dist/dropdown.esm.js",
+  "module": "dist/hds-dropdown.esm.js",
   "size-limit": [
     {
       "path": "dist/highoutput/hds-dropdown.cjs.production.min.js",
@@ -49,8 +49,6 @@
     }
   ],
   "dependencies": {
-    "@highoutput/hds-forms": "^0.1.27",
-    "@highoutput/hds-icons": "^0.1.19",
     "chakra-react-select": "^4.4.2"
   },
   "gitHead": "afaba7738378dde0e95931c54c07f09c27286376"

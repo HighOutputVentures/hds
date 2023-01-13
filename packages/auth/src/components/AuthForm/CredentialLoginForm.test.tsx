@@ -6,7 +6,7 @@ import CredentialLoginForm from './CredentialLoginForm';
 
 describe('Login Form Email-based Component', () => {
   beforeEach(() => {
-    render(<CredentialLoginForm />);
+    render(<CredentialLoginForm variant="email-password" />);
   });
   it('should display error message on email', async () => {
     // const emailInput = screen.getByRole('input', { name: 'email-input' });
@@ -76,7 +76,9 @@ describe('Login form Username-based component', () => {
 
 describe('Snapshot', () => {
   it('(CredentialLoginForm) Should match snapshot', () => {
-    const component = renderer.create(<CredentialLoginForm />);
+    const component = renderer.create(
+      <CredentialLoginForm variant="name-password" />
+    );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
     component.unmount();
