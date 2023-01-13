@@ -27,13 +27,13 @@ exports[`AvatarLabel Snapshot Should match snapshot 1`] = `
   <div
     className="css-0"
   >
-    <h2
-      className="chakra-heading css-0"
+    <p
+      className="chakra-text css-luvoqg"
     >
       John Doe
-    </h2>
+    </p>
     <p
-      className="chakra-text css-0"
+      className="chakra-text css-1hu2wkm"
     >
       johndoe@dummy.blaa
     </p>
