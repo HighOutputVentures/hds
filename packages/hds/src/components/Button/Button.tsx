@@ -25,7 +25,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ block, ...props }, 
       {...props}
       ref={ref}
       data-testid={`${uid}-button`}
-      {...(block && { width: 'full' })}
+      {...(block && { width: 'full', flex: 1 })}
     >
       {props.children}
     </ChakraButton>
