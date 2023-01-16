@@ -5,14 +5,14 @@ exports[`Pagination Should match snapshot 1`] = `
   className="css-8omsyd"
 >
   <div
-    className="css-1d0o8pg"
+    className="css-su60pv"
   >
     <div
-      className="css-ss3qhx"
+      className="css-8dt55n"
     >
       <button
         aria-label="Go to previous page"
-        className="chakra-button css-13fngr8"
+        className="chakra-button css-wklby5"
         disabled={true}
         onClick={[Function]}
         type="button"
@@ -112,7 +112,7 @@ exports[`Pagination Should match snapshot 1`] = `
       </div>
       <button
         aria-label="Go to next page"
-        className="chakra-button css-13fngr8"
+        className="chakra-button css-wklby5"
         disabled={false}
         onClick={[Function]}
         type="button"
