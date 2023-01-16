@@ -22,8 +22,8 @@ export default function TrendPositive(props: React.ComponentProps<'svg'>) {
         d="M1 49C14.6391 44.4536 19.0903 26.9737 33 25C45.8241 23.1804 52.2702 39.9551 65 37C80.4372 33.4164 81.4031 2.29974 97 1"
         stroke="#00C408"
         strokeWidth="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <defs>
         <linearGradient
