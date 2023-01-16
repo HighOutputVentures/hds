@@ -6,7 +6,7 @@ Array [
     aria-controls="menu-list-:r1:"
     aria-expanded={false}
     aria-haspopup="menu"
-    className="chakra-button chakra-menu__menu-button css-10eyodx"
+    className="chakra-button chakra-menu__menu-button css-wzb3yu"
     data-testid="menu-profile"
     id="menu-button-:r1:"
     onClick={[Function]}
@@ -50,7 +50,7 @@ Array [
   >
     <div
       aria-orientation="vertical"
-      className="chakra-menu__menu-list css-1xvrq0b"
+      className="chakra-menu__menu-list css-lfkiw7"
       data-testid="menu-list"
       id="menu-list-:r1:"
       onKeyDown={[Function]}
@@ -69,7 +69,7 @@ Array [
         className="chakra-stack css-6aub0l"
       >
         <span
-          className="chakra-avatar css-9x7c7o"
+          className="chakra-avatar css-37of3x"
         >
           <svg
             aria-label=" avatar"
@@ -110,7 +110,7 @@ Array [
         className="chakra-divider css-svjswr"
       />
       <button
-        className="chakra-menu__menuitem css-1pt4b4r"
+        className="chakra-menu__menuitem css-1hsqdlt"
         id="menu-list-:r5:-menuitem-:r6:"
         onClick={[Function]}
         onFocus={[Function]}
