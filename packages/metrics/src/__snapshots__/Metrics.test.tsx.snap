@@ -37,7 +37,7 @@ exports[`Metrics renders correctly with negative metric change 1`] = `
           stroke="#DC180C"
           stroke-linecap="round"
           stroke-linejoin="round"
-          stroke-width="2"
+          strokeWidth="2"
         />
       </svg>
       <p
@@ -99,7 +99,7 @@ exports[`Metrics renders correctly with positive metric change 1`] = `
           stroke="#00C408"
           stroke-linecap="round"
           stroke-linejoin="round"
-          stroke-width="2"
+          strokeWidth="2"
         />
       </svg>
       <p

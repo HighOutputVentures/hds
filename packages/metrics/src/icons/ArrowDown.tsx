@@ -13,7 +13,7 @@ export default function ArrowDown(props: React.ComponentProps<'svg'>) {
       <path
         d="M10 4.16669V15.8334M10 15.8334L15.8333 10M10 15.8334L4.16667 10"
         stroke="#DC180C"
-        stroke-width="2"
+        strokeWidth="2"
         stroke-linecap="round"
         stroke-linejoin="round"
       />

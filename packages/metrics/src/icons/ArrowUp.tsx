@@ -13,7 +13,7 @@ export default function ArrowUp(props: React.ComponentProps<'svg'>) {
       <path
         d="M10 15.8334V4.16669M10 4.16669L4.16666 10M10 4.16669L15.8333 10"
         stroke="#00C408"
-        stroke-width="2"
+        strokeWidth="2"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
