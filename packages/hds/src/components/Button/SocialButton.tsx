@@ -1,4 +1,5 @@
 import { Button, IconButton } from '@chakra-ui/react';
+//@ts-ignore
 import {
   AppleIcon,
   DribbleIcon,
