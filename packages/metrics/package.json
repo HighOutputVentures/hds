@@ -37,14 +37,14 @@
     },
     "name": "@highoutput/hds-metrics",
     "author": "DESKTOP-73OE1C6\\User",
-    "module": "dist/@highoutput/hds-metrics.esm.js",
+    "module": "dist/hds-metrics.esm.js",
     "size-limit": [
         {
-            "path": "dist/@highoutput/hds-metrics.cjs.production.min.js",
+            "path": "dist/hds-metrics.cjs.production.min.js",
             "limit": "10 KB"
         },
         {
-            "path": "dist/@highoutput/hds-metrics.esm.js",
+            "path": "dist/hds-metrics.esm.js",
             "limit": "10 KB"
         }
     ]
