@@ -125,5 +125,9 @@ Array [
     </div>
   </div>,
   <span />,
+  <span
+    hidden={true}
+    id="__chakra_env"
+  />,
 ]
 `;

@@ -42,7 +42,6 @@ exports[`Array Field Component Snapshot Should match snapshot 1`] = `
     >
       <button
         className="chakra-button css-1xxv165"
-        disabled={true}
         onClick={[Function]}
         type="button"
       >
@@ -62,7 +61,6 @@ exports[`Array Field Component Snapshot Should match snapshot 1`] = `
       </button>
       <button
         className="chakra-button css-1xxv165"
-        disabled={false}
         onClick={[Function]}
         type="button"
       >
