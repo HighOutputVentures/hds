@@ -2,18 +2,18 @@
 
 exports[` 1`] = `
 <div
-  className="chakra-tabs css-13rbvqk"
+  className="chakra-tabs css-1rwh58z"
 >
   <div
     aria-orientation="horizontal"
-    className="chakra-tabs__tablist css-l946o7"
+    className="chakra-tabs__tablist css-1tt9qos"
     onKeyDown={[Function]}
     role="tablist"
   >
     <button
       aria-controls="tabs-:r0:--tabpanel--1"
       aria-selected={false}
-      className="chakra-tabs__tab css-1y9k4vb"
+      className="chakra-tabs__tab css-jm9r3u"
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
       onFocus={[Function]}
@@ -30,7 +30,7 @@ exports[` 1`] = `
     <button
       aria-controls="tabs-:r0:--tabpanel--1"
       aria-selected={false}
-      className="chakra-tabs__tab css-syjvoj"
+      className="chakra-tabs__tab css-17os8v2"
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
       onFocus={[Function]}

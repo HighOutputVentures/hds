@@ -36,6 +36,7 @@ const ButtonTabsTemplate: ComponentStory<typeof Tab> = (args) => {
   return (
     <ThemeProvider>
       <ButtonTabs {...args} tabLabel={tabs} tabItems={tabItems} size={'sm'} />
+      <ButtonTabs {...args} tabLabel={tabs} tabItems={tabItems} size={'md'} />
     </ThemeProvider>
   );
 };
@@ -55,7 +56,7 @@ const tabs = [
   'Plan',
   'Billing',
   'Email',
-  'Notifiactions 2',
+  'Notifications 2',
   'Integrations',
   'API',
 ];

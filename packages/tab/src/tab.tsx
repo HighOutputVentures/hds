@@ -1,13 +1,13 @@
-import React, { ReactNode } from 'react';
 import {
   Flex,
-  Text,
-  Tabs,
   Tab as ChakraTab,
   TabList,
   TabPanels,
+  Tabs,
+  Text,
   useMultiStyleConfig,
 } from '@chakra-ui/react';
+import React, { ReactNode } from 'react';
 
 export type TabProps = {
   orientation?: 'horizontal' | 'vertical';
@@ -15,7 +15,7 @@ export type TabProps = {
   tabLabel: string[];
   placement?: 'center' | 'left' | 'right';
   tabItems: ReactNode;
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md';
 };
 
 const Tab = React.forwardRef<HTMLDivElement, TabProps>((props, _) => {
