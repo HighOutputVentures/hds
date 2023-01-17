@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Array Field Component Snapshot Should match snapshot 1`] = `
+<div
+  className="css-3a3hw0"
+>
+  <div
+    className="css-147dy5z"
+    onBlur={[Function]}
+    onChange={[Function]}
+  >
+    <div
+      aria-label="Form Group"
+      className="chakra-form-control css-0"
+      data-testid=":r1:-form-container-form-control"
+      role="group"
+    >
+      <div
+        className="chakra-input__group css-bx0blc"
+        data-testid=":r0:-input-field-group"
+      >
+        <input
+          className="chakra-input css-0"
+          data-testid=":r0:-input-field-input"
+          disabled={false}
+          id="input"
+          name="input.0.value"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          placeholder=""
+          readOnly={false}
+          required={false}
+          role="input"
+          type="text"
+        />
+      </div>
+    </div>
+    <div
+      className="chakra-stack css-owjkmg"
+    >
+      <button
+        className="chakra-button css-1xxv165"
+        onClick={[Function]}
+        type="button"
+      >
+        <svg
+          className="chakra-icon chakra-icon css-ikjmp3"
+          focusable={false}
+          viewBox="0 0 24 24"
+        >
+          <g
+            fill="currentColor"
+          >
+            <path
+              d="M19.452 7.5H4.547a.5.5 0 00-.5.545l1.287 14.136A2 2 0 007.326 24h9.347a2 2 0 001.992-1.819L19.95 8.045a.5.5 0 00-.129-.382.5.5 0 00-.369-.163zm-9.2 13a.75.75 0 01-1.5 0v-9a.75.75 0 011.5 0zm5 0a.75.75 0 01-1.5 0v-9a.75.75 0 011.5 0zM22 4h-4.75a.25.25 0 01-.25-.25V2.5A2.5 2.5 0 0014.5 0h-5A2.5 2.5 0 007 2.5v1.25a.25.25 0 01-.25.25H2a1 1 0 000 2h20a1 1 0 000-2zM9 3.75V2.5a.5.5 0 01.5-.5h5a.5.5 0 01.5.5v1.25a.25.25 0 01-.25.25h-5.5A.25.25 0 019 3.75z"
+            />
+          </g>
+        </svg>
+      </button>
+      <button
+        className="chakra-button css-1xxv165"
+        onClick={[Function]}
+        type="button"
+      >
+        <svg
+          className="chakra-icon chakra-icon css-ikjmp3"
+          focusable={false}
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M0,12a1.5,1.5,0,0,0,1.5,1.5h8.75a.25.25,0,0,1,.25.25V22.5a1.5,1.5,0,0,0,3,0V13.75a.25.25,0,0,1,.25-.25H22.5a1.5,1.5,0,0,0,0-3H13.75a.25.25,0,0,1-.25-.25V1.5a1.5,1.5,0,0,0-3,0v8.75a.25.25,0,0,1-.25.25H1.5A1.5,1.5,0,0,0,0,12Z"
+            fill="currentColor"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
