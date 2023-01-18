@@ -37,3 +37,4 @@ export { default as UsersIcon } from './components/UsersIcon';
 export { default as WarningFolderIcon } from './components/WarningFolderIcon';
 export { default as WarningIcon } from './components/WarningIcon';
 export { default as ZapIcon } from './components/ZapIcon';
+export { default as FileUploadIcon } from './components/FileUploadIcon';
