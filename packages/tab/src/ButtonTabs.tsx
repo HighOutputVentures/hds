@@ -16,21 +16,21 @@ export interface ButtonTabsProps {
   gap?: string;
   _selected?: SystemStyleObject;
   placeContent?: ResponsiveValue<Property.PlaceContent>;
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md';
 }
 const ButtonTabs = (props: ButtonTabsProps) => {
   const {
     tabItems,
     tabLabel,
     placeContent,
-    size,
+    size = 'sm',
     _selected = { background: '#F9FAFB', color: '#344054' },
     gap = '32px',
   } = props;
 
   const styles = useMultiStyleConfig('Tabs', { variant: 'unstyled', size });
   return (
-    <Tabs variant={'unstyled'} w="full">
+    <Tabs variant={'unstyled'} w="full" height={'full'}>
       <TabList
         border={'1px solid #D0D5DD'}
         borderRadius={'8px'}
@@ -38,7 +38,6 @@ const ButtonTabs = (props: ButtonTabsProps) => {
         placeContent={placeContent}
         overflow={'hidden'}
         mb={gap}
-        alignItems="start"
         sx={styles.tablist}
       >
         {tabLabel.map((label, idx) => {
@@ -46,7 +45,8 @@ const ButtonTabs = (props: ButtonTabsProps) => {
             <Tab
               _selected={_selected}
               padding={'10px 16px'}
-              sx={styles.tab}
+              sx={size === 'md' ? styles.tab : undefined}
+              maxW={'auto'}
               borderRight={
                 idx === tabLabel.length - 1 ? 'none' : '1px solid #D0D5DD'
               }
