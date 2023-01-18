@@ -20,10 +20,18 @@ export interface BreadcrumbProps {
     | string
     | React.ReactElement<any, string | React.JSXElementConstructor<any>>;
   icon: any;
-  type: 'color-in-text' | 'color-on-bg' | 'default';
+  activeLinkType?: 'color-in-text' | 'color-on-bg' | 'default';
+  backgroundStyleType?: 'bg-grey-with-border' | 'default';
 }
 const Breadcrumbs = (props: BreadcrumbProps) => {
-  const { maxLinkControls = 6, separator, breadCrumbLinks, icon, type } = props;
+  const {
+    maxLinkControls = 6,
+    separator,
+    backgroundStyleType = 'default',
+    breadCrumbLinks,
+    icon,
+    activeLinkType = 'default',
+  } = props;
   const [start, setStart] = React.useState(0);
   const { transformedBreadCrumbData } = useTransformBreadCrumbInfo({
     start,
@@ -33,9 +41,9 @@ const Breadcrumbs = (props: BreadcrumbProps) => {
   const [active, setActive] = React.useState('#');
 
   const textColor = (link: string) => {
-    if (active === link && type === 'color-in-text') return '#4A3880';
-    if (active === link && type === 'color-on-bg') return '#4A3880';
-    if (active === link && type === 'default') return 'neutrals.900';
+    if (active === link && activeLinkType === 'color-in-text') return '#4A3880';
+    if (active === link && activeLinkType === 'color-on-bg') return '#4A3880';
+    if (active === link && activeLinkType === 'default') return 'neutrals.900';
     else return 'neutrals.600';
   };
 
@@ -43,7 +51,9 @@ const Breadcrumbs = (props: BreadcrumbProps) => {
     <HStack
       height={'32.67px'}
       align="center"
-      bgColor={'#FCFCFC'}
+      bgColor={
+        backgroundStyleType === 'bg-grey-with-border' ? '#FCFCFC' : 'none'
+      }
       padding={'4px'}
       borderRadius={'8px'}
       color={'neutrals.600'}
@@ -72,12 +82,12 @@ const Breadcrumbs = (props: BreadcrumbProps) => {
                 textDecorationLine={'none'}
                 color={textColor(d?.link!)}
                 bgColor={
-                  active === d?.link && type === 'color-on-bg'
+                  active === d?.link && activeLinkType === 'color-on-bg'
                     ? '#EDE8FC'
                     : 'none'
                 }
                 padding={
-                  active === d?.link && type === 'color-on-bg'
+                  active === d?.link && activeLinkType === 'color-on-bg'
                     ? '4px 8px'
                     : 'none'
                 }

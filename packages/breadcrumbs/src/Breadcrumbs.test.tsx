@@ -14,7 +14,8 @@ describe('Checkbox Component', () => {
           separator={<ChevronRightIcon color="#D6D6D6" />}
           maxLinkControls={2}
           icon={<AttachmentIcon />}
-          type={'color-on-bg'}
+          activeLinkType={'color-on-bg'}
+          backgroundStyleType={'bg-grey-with-border'}
           breadCrumbLinks={[
             { link: '#hello', name: 'Home' },
             { link: '#Settings', name: 'Settings' },
@@ -44,7 +45,8 @@ describe('Checkbox Component', () => {
           separator={<ChevronRightIcon color="#D6D6D6" />}
           maxLinkControls={2}
           icon={<AttachmentIcon />}
-          type={'color-on-bg'}
+          activeLinkType={'color-on-bg'}
+          backgroundStyleType={'bg-grey-with-border'}
           breadCrumbLinks={[
             { link: '#hello', name: 'Home' },
             { link: '#Settings', name: 'Settings' },

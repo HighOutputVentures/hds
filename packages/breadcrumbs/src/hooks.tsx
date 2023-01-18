@@ -40,11 +40,7 @@ export function useTransformBreadCrumbInfo({
               .map((_, i) => originalBreadCrumbDaTa[size - 1 - i])
               .reverse(),
           ]
-      : [
-          ...new Array(size)
-            .fill(null)
-            .map((_, i) => originalBreadCrumbDaTa[i]),
-        ];
+      : originalBreadCrumbDaTa;
 
   return {
     transformedBreadCrumbData,
