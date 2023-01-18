@@ -25,7 +25,7 @@ export interface BreadcrumbProps {
 }
 const Breadcrumbs = (props: BreadcrumbProps) => {
   const {
-    maxLinkControls = 6,
+    maxLinkControls = 'all',
     separator,
     backgroundStyleType = 'default',
     breadCrumbLinks,

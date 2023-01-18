@@ -15,7 +15,7 @@ export function useTransformBreadCrumbInfo({
   start,
 
   originalBreadCrumbDaTa,
-  maxLinkControls = 6,
+  maxLinkControls = 'all',
 }: useTransformBreadCrumbInfoArgs): useTransformBreadCrumbInfoReturn {
   const size = originalBreadCrumbDaTa.length;
 
