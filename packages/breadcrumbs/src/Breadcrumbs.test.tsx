@@ -6,7 +6,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Breadcrumbs from './Breadcrumbs';
 
-describe('Checkbox Component', () => {
+describe('Breadcrumbs Component', () => {
   beforeEach(() => {
     render(
       <ThemeProvider>
