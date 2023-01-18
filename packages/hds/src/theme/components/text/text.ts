@@ -64,6 +64,11 @@ export const Text = {
       lineHeight: '20px',
       letterSpacing: '0.02em',
     },
+    'paragraph-xxs-default': {
+      fontSize: '12px',
+      fontWeight: 400,
+      lineHeight: '16px',
+    },
     /* Labels */
     'label-xl-default': {
       fontSize: '32px',
