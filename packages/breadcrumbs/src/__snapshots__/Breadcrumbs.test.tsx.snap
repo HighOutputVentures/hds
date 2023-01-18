@@ -50,7 +50,7 @@ Array [
           className="chakra-breadcrumb__list-item css-aou3wz"
         >
           <a
-            className="chakra-breadcrumb__link css-j2kqo6"
+            className="chakra-breadcrumb__link css-9phpk7"
             href="#hello"
             onClick={[Function]}
           >
@@ -80,7 +80,7 @@ Array [
           className="chakra-breadcrumb__list-item css-aou3wz"
         >
           <a
-            className="chakra-breadcrumb__link css-j2kqo6"
+            className="chakra-breadcrumb__link css-9phpk7"
             onClick={[Function]}
           >
             <p
@@ -109,7 +109,7 @@ Array [
           className="chakra-breadcrumb__list-item css-aou3wz"
         >
           <a
-            className="chakra-breadcrumb__link css-j2kqo6"
+            className="chakra-breadcrumb__link css-9phpk7"
             href="#Copy"
             onClick={[Function]}
           >
@@ -124,5 +124,9 @@ Array [
     </nav>
   </div>,
   <span />,
+  <span
+    hidden={true}
+    id="__chakra_env"
+  />,
 ]
 `;
