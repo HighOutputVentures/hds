@@ -14,7 +14,7 @@ export interface IBreadCrumbLinks {
   typedef: Array<{ name: string; link: string } | null | undefined>;
 }
 export interface BreadcrumbProps {
-  maxLinkControls: 6 | 4 | 2;
+  maxLinkControls: 6 | 4 | 2 | 'all';
   breadCrumbLinks: IBreadCrumbLinks['typedef'];
   separator:
     | string
