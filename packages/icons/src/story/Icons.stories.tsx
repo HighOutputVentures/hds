@@ -38,6 +38,7 @@ import WarningFolderIcon from '../components/WarningFolderIcon';
 import WarningIcon from '../components/WarningIcon';
 import ZapIcon from '../components/ZapIcon';
 import GridView from './GridView';
+import FileUploadIcon from '../components/FileUploadIcon';
 import { sortObject } from './utils';
 
 const meta: ComponentMeta<typeof Icon> = {
@@ -132,6 +133,7 @@ const RandomTemplate = (args: any) => {
         TrashIcon,
         WarningIcon,
         CheckCircleIcon,
+        FileUploadIcon,
       })}
       {...args}
     />
