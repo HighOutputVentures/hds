@@ -39,3 +39,4 @@ export { default as WarningIcon } from './components/WarningIcon';
 export { default as ZapIcon } from './components/ZapIcon';
 export { default as FileUploadIcon } from './components/FileUploadIcon';
 export { default as FileIcon } from './components/FileIcon';
+export { default as FilmIcon } from './components/FilmIcon';
