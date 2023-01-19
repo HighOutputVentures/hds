@@ -42,6 +42,7 @@ import FileUploadIcon from '../components/FileUploadIcon';
 import FileIcon from '../components/FileIcon';
 import FilmIcon from '../components/FilmIcon';
 import ImageIcon from '../components/ImageIcon';
+import ErrorFileIcon from '../components/ErrorFileIcon';
 import { sortObject } from './utils';
 
 const meta: ComponentMeta<typeof Icon> = {
@@ -156,6 +157,7 @@ const ColoredIcons = (args: any) => {
         FileIcon,
         FilmIcon,
         ImageIcon,
+        ErrorFileIcon,
       })}
       {...args}
     />

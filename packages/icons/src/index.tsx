@@ -41,3 +41,4 @@ export { default as FileUploadIcon } from './components/FileUploadIcon';
 export { default as FileIcon } from './components/FileIcon';
 export { default as FilmIcon } from './components/FilmIcon';
 export { default as ImageIcon } from './components/ImageIcon';
+export { default as ErrorFileIcon } from './components/ErrorFileIcon';
