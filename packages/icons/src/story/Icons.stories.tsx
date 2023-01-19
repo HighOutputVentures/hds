@@ -39,6 +39,7 @@ import WarningIcon from '../components/WarningIcon';
 import ZapIcon from '../components/ZapIcon';
 import GridView from './GridView';
 import FileUploadIcon from '../components/FileUploadIcon';
+import FileIcon from '../components/FileIcon';
 import { sortObject } from './utils';
 
 const meta: ComponentMeta<typeof Icon> = {
@@ -150,6 +151,7 @@ const ColoredIcons = (args: any) => {
         SuccessCircleIcon,
         UploadIcon,
         PrimaryIcon,
+        FileIcon,
       })}
       {...args}
     />
