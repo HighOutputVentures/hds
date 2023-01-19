@@ -6,7 +6,7 @@ Array [
     aria-controls="menu-list-:r1:"
     aria-expanded={false}
     aria-haspopup="menu"
-    className="chakra-button chakra-menu__menu-button css-wzb3yu"
+    className="chakra-button chakra-menu__menu-button css-9ydq4u"
     data-testid="menu-profile"
     id="menu-button-:r1:"
     onClick={[Function]}
