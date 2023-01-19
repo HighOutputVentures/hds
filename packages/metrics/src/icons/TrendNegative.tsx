@@ -34,8 +34,8 @@ export default function TrendNegative(props: React.ComponentProps<'svg'>) {
           y2="65"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.641167" stop-color="white" stop-opacity="0" />
-          <stop offset="1" stop-color="white" />
+          <stop offset="0.641167" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
       </defs>
     </svg>
