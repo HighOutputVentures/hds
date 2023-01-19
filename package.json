@@ -8,7 +8,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=c97132e80915",
-    "test": "npx lerna run test -u",
+    "test": "npx lerna run test",
     "build": "npx lerna run build"
   },
   "devDependencies": {
