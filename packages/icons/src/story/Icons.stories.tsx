@@ -41,6 +41,7 @@ import GridView from './GridView';
 import FileUploadIcon from '../components/FileUploadIcon';
 import FileIcon from '../components/FileIcon';
 import FilmIcon from '../components/FilmIcon';
+import ImageIcon from '../components/ImageIcon';
 import { sortObject } from './utils';
 
 const meta: ComponentMeta<typeof Icon> = {
@@ -154,6 +155,7 @@ const ColoredIcons = (args: any) => {
         PrimaryIcon,
         FileIcon,
         FilmIcon,
+        ImageIcon,
       })}
       {...args}
     />
