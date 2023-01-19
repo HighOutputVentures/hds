@@ -1,9 +1,10 @@
 export type ButtonVariantsTypes =
   | 'solid-primary'
   | 'outline-primary'
-  | 'ghost-primary'
+  | 'ghost-primary-outlined'
   | 'solid-error'
   | 'outline-error'
+  | 'unstyled'
   | 'ghost-error';
 
 export type CloseButtonVariantTypes = 'solid-close-btn' | 'outline-close-btn' | 'ghost-close-btn';
@@ -14,7 +15,6 @@ export const buttonVariants = {
     color: 'neutrals.100',
     borderRadius: '4px',
     border: '1px solid #7070DD',
-
     boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
     _hover: {
       _disabled: {
@@ -81,6 +81,31 @@ export const buttonVariants = {
     _disabled: {
       bg: '#E3E3FC',
       border: '1px solid #E3E3FC',
+      boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
+    },
+  },
+  'ghost-primary-outline': {
+    color: 'brand.primary.700',
+    bg: '#E3E3FC',
+    border: 'none',
+    boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
+    borderRadius: '4px',
+    _hover: {
+      color: 'brand.primary.300',
+      _disabled: {
+        color: 'brand.primary.300',
+        border: 'none',
+        boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
+      },
+    },
+    _active: {
+      bg: '#C0C0FC',
+      border: 'none',
+      boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
+    },
+    _disabled: {
+      color: 'brand.primary.300',
+      border: 'none',
       boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
     },
   },
@@ -181,6 +206,19 @@ export const buttonVariants = {
     },
     _focus: {
       color: 'neutrals.600',
+    },
+  },
+  unstyled: {
+    bg: 'transparent',
+    border: 'none',
+    color: 'neutrals.900',
+    _hover: {
+      bg: 'transparent',
+      color: 'neutrals.700',
+    },
+    _focused: {
+      bg: 'transparent',
+      color: 'brand.primary.700',
     },
   },
   'ghost-close-btn': {
