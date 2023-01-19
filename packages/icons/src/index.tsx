@@ -43,3 +43,4 @@ export { default as FilmIcon } from './components/FilmIcon';
 export { default as ImageIcon } from './components/ImageIcon';
 export { default as ErrorFileIcon } from './components/ErrorFileIcon';
 export { default as ErrorImageIcon } from './components/ErrorImageIcon';
+export { default as ErrorFilmIcon } from './components/ErrorFilmIcon';
