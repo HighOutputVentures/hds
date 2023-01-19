@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Checkbox Component Should match snapshot 1`] = `
+exports[`Breadcrumbs Component Should match snapshot 1`] = `
 Array [
   <div
-    className="chakra-stack css-1xcp7r9"
+    className="chakra-stack css-i5rtz8"
     data-testid="breadcrumb"
   >
     <div

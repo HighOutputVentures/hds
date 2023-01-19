@@ -6,7 +6,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Breadcrumbs from './Breadcrumbs';
 
-describe('Checkbox Component', () => {
+describe('Breadcrumbs Component', () => {
   beforeEach(() => {
     render(
       <ThemeProvider>
@@ -14,7 +14,6 @@ describe('Checkbox Component', () => {
           separator={<ChevronRightIcon color="#D6D6D6" />}
           maxLinkControls={2}
           icon={<AttachmentIcon />}
-          type={'color-on-bg'}
           breadCrumbLinks={[
             { link: '#hello', name: 'Home' },
             { link: '#Settings', name: 'Settings' },
@@ -44,7 +43,6 @@ describe('Checkbox Component', () => {
           separator={<ChevronRightIcon color="#D6D6D6" />}
           maxLinkControls={2}
           icon={<AttachmentIcon />}
-          type={'color-on-bg'}
           breadCrumbLinks={[
             { link: '#hello', name: 'Home' },
             { link: '#Settings', name: 'Settings' },
