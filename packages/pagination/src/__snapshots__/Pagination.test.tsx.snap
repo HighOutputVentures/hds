@@ -5,15 +5,14 @@ exports[`Pagination Should match snapshot 1`] = `
   className="css-8omsyd"
 >
   <div
-    className="css-1d0o8pg"
+    className="css-su60pv"
   >
     <div
-      className="css-ss3qhx"
+      className="css-8dt55n"
     >
       <button
         aria-label="Go to previous page"
-        className="chakra-button css-13fngr8"
-        disabled={true}
+        className="chakra-button css-wklby5"
         onClick={[Function]}
         type="button"
       >
@@ -42,7 +41,6 @@ exports[`Pagination Should match snapshot 1`] = `
         <button
           aria-label="Go to page 1"
           className="chakra-button css-1pwj5mw"
-          disabled={false}
           onClick={[Function]}
           role="button"
           type="button"
@@ -52,7 +50,6 @@ exports[`Pagination Should match snapshot 1`] = `
         <button
           aria-label="Go to page 2"
           className="chakra-button css-zndnet"
-          disabled={false}
           onClick={[Function]}
           role="button"
           type="button"
@@ -62,7 +59,6 @@ exports[`Pagination Should match snapshot 1`] = `
         <button
           aria-label="Go to page 3"
           className="chakra-button css-zndnet"
-          disabled={false}
           onClick={[Function]}
           role="button"
           type="button"
@@ -72,7 +68,6 @@ exports[`Pagination Should match snapshot 1`] = `
         <button
           aria-label="Go to page null"
           className="chakra-button css-zndnet"
-          disabled={true}
           onClick={[Function]}
           role="button"
           type="button"
@@ -82,7 +77,6 @@ exports[`Pagination Should match snapshot 1`] = `
         <button
           aria-label="Go to page 18"
           className="chakra-button css-zndnet"
-          disabled={false}
           onClick={[Function]}
           role="button"
           type="button"
@@ -92,7 +86,6 @@ exports[`Pagination Should match snapshot 1`] = `
         <button
           aria-label="Go to page 19"
           className="chakra-button css-zndnet"
-          disabled={false}
           onClick={[Function]}
           role="button"
           type="button"
@@ -102,7 +95,6 @@ exports[`Pagination Should match snapshot 1`] = `
         <button
           aria-label="Go to page 20"
           className="chakra-button css-zndnet"
-          disabled={false}
           onClick={[Function]}
           role="button"
           type="button"
@@ -112,8 +104,7 @@ exports[`Pagination Should match snapshot 1`] = `
       </div>
       <button
         aria-label="Go to next page"
-        className="chakra-button css-13fngr8"
-        disabled={false}
+        className="chakra-button css-wklby5"
         onClick={[Function]}
         type="button"
       >

@@ -56,7 +56,6 @@ export default function GroupPagination(props: GroupPaginationProps & SystemStyl
           <Icon as={ArrowLeftIcon} />
           Previous
         </Button>
-
         {pageControls.map((n) => {
           return (
             <Button

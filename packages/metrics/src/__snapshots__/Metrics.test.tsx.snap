@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Metrics renders correctly with negative metric change 1`] = `
+<div>
+  <div
+    border-radius="8px"
+    class="css-cyzquv"
+  >
+    <div
+      class="chakra-stack css-1j6tgk9"
+    >
+      <p
+        class="chakra-text css-0"
+      >
+        Revenue
+      </p>
+    </div>
+    <p
+      class="chakra-text css-g89h0y"
+    >
+      $1,000
+    </p>
+    <div
+      class="chakra-stack css-134ztor"
+    >
+      <svg
+        class="chakra-icon css-13otjrl"
+        fill="none"
+        focusable="false"
+        height="20"
+        viewBox="0 0 20 20"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 4.16669V15.8334M10 15.8334L15.8333 10M10 15.8334L4.16667 10"
+          stroke="#DC180C"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        />
+      </svg>
+      <p
+        class="chakra-text css-1vqbz9l"
+      >
+        -5
+        %
+      </p>
+      <p
+        class="chakra-text css-m6obuh"
+      >
+        Last viewed: 1 hour ago
+      </p>
+    </div>
+    <button
+      class="chakra-button css-lnp69a"
+      type="button"
+    >
+      View details
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Metrics renders correctly with positive metric change 1`] = `
+<div>
+  <div
+    border-radius="8px"
+    class="css-cyzquv"
+  >
+    <div
+      class="chakra-stack css-1j6tgk9"
+    >
+      <p
+        class="chakra-text css-0"
+      >
+        Revenue
+      </p>
+    </div>
+    <p
+      class="chakra-text css-g89h0y"
+    >
+      $1,000
+    </p>
+    <div
+      class="chakra-stack css-134ztor"
+    >
+      <svg
+        class="chakra-icon css-13otjrl"
+        fill="none"
+        focusable="false"
+        height="20"
+        viewBox="0 0 20 20"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 15.8334V4.16669M10 4.16669L4.16666 10M10 4.16669L15.8333 10"
+          stroke="#00C408"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        />
+      </svg>
+      <p
+        class="chakra-text css-1c6sp0k"
+      >
+        5
+        %
+      </p>
+      <p
+        class="chakra-text css-m6obuh"
+      >
+        Last viewed: 1 hour ago
+      </p>
+    </div>
+    <button
+      class="chakra-button css-lnp69a"
+      type="button"
+    >
+      View details
+    </button>
+  </div>
+</div>
+`;

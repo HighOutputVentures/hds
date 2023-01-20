@@ -12,10 +12,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import ThemeProvider from "../../packages/hds/src/components/ThemeProvider";
-const rule_603010 = require("../../assets/mdx-color-assets/603010.svg");
-const brandPalette = require("../../assets/mdx-color-assets/brand-palette.svg");
-const randomColor = require("../../assets/mdx-color-assets/random-color.svg");
-const sampleImage = require("../../assets/mdx-color-assets/sample-image.svg");
+
 const Color = () => {
   const colors = [
     { color: "#FCFCFC", name: "neutrals/100 Surface" },
@@ -135,7 +132,7 @@ const Color = () => {
           Use a standard value for saturation and brightness to determine our
           brand primary palettes.
         </Text>
-        <Image src={brandPalette} />
+        <Image src={"/mdx-color-assets/brand-palette.svg"} />
         <Text size="paragraph-xxl-default" mt="104px" mb={"100px"}>
           Following the 60/30/10 rule, it allow us to have a unifying criteria
           when applying our brand to UI. This rule guides us how and when to use
@@ -150,7 +147,7 @@ const Color = () => {
           color.
         </Text>
         <Center w="full">
-          <Image src={rule_603010} />
+          <Image src={"/mdx-color-assets/603010.svg"} />
         </Center>
         <Text size="header-2" mt={"367px"} mb="64px">
           Color as a system
@@ -204,7 +201,7 @@ const Color = () => {
             spacing="20px"
           >
             <Box borderRadius="50%" height={"56px"} width={"56px"}>
-              <Image src={randomColor} />
+              <Image src={"/mdx-color-assets/random-color.svg"} />
             </Box>
             <Text size="paragraph-xxl-default">
               700 accents: green, orange, blue, violet
@@ -258,7 +255,7 @@ const Color = () => {
             color={"white"}
           >
             <Box borderRadius="50%" height={"56px"} width={"56px"}>
-              <Image src={randomColor} />
+              <Image src={"/mdx-color-assets/random-color.svg"} />
             </Box>
             <Text size="paragraph-xxl-default">
               700 accents: green, orange, blue, violet
@@ -351,7 +348,7 @@ const Color = () => {
                 );
               })}
             </Flex>
-            <Image src={sampleImage} />
+            <Image src={"/mdx-color-assets/sample-image.svg"} />
           </HStack>
           <Flex width="full" gap="80px">
             <Box

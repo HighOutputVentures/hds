@@ -118,13 +118,13 @@ Array [
         </div>
       </div>
       <div
-        className="css-1c958lr"
+        className="css-1ca8fdd"
       >
         <div
           className="chakra-stack css-tth4vk"
         >
           <button
-            className="chakra-button css-11a6hrq"
+            className="chakra-button css-6lubos"
             onClick={[Function]}
             type="button"
           >
@@ -141,6 +141,10 @@ Array [
     </div>
   </div>,
   <span />,
+  <span
+    hidden={true}
+    id="__chakra_env"
+  />,
 ]
 `;
 
@@ -389,7 +393,7 @@ exports[`Snapshots (DatePicker Preset Range) Should match snapshot 1`] = `
       </div>
     </div>
     <div
-      className="css-18xo0nj"
+      className="css-1tkpbqe"
     >
       <div
         className="chakra-stack css-r99mt0"
@@ -545,13 +549,13 @@ Array [
         </div>
       </div>
       <div
-        className="css-1c958lr"
+        className="css-1ca8fdd"
       >
         <div
           className="chakra-stack css-tth4vk"
         >
           <button
-            className="chakra-button css-11a6hrq"
+            className="chakra-button css-6lubos"
             onClick={[Function]}
             type="button"
           >
@@ -569,6 +573,10 @@ Array [
     </div>
   </div>,
   <span />,
+  <span
+    hidden={true}
+    id="__chakra_env"
+  />,
 ]
 `;
 
@@ -578,7 +586,7 @@ Array [
     aria-controls="menu-list-:r8:"
     aria-expanded={false}
     aria-haspopup="menu"
-    className="chakra-button chakra-menu__menu-button css-2f31vo"
+    className="chakra-button chakra-menu__menu-button css-151goxk"
     id="menu-button-:r8:"
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -618,7 +626,7 @@ Array [
   >
     <div
       aria-orientation="vertical"
-      className="chakra-menu__menu-list css-b7mlum"
+      className="chakra-menu__menu-list css-p1q6qi"
       data-testid="dropdown-datepicker"
       id="menu-list-:r8:"
       onKeyDown={[Function]}
@@ -749,13 +757,13 @@ Array [
             </div>
           </div>
           <div
-            className="css-1c958lr"
+            className="css-1ca8fdd"
           >
             <div
               className="chakra-stack css-tth4vk"
             >
               <button
-                className="chakra-button css-11a6hrq"
+                className="chakra-button css-6lubos"
                 onClick={[Function]}
                 type="button"
               >
@@ -774,6 +782,10 @@ Array [
     </div>
   </div>,
   <span />,
+  <span
+    hidden={true}
+    id="__chakra_env"
+  />,
 ]
 `;
 
@@ -784,7 +796,7 @@ Array [
     data-testid="modal-datepicker"
   >
     <button
-      className="chakra-button css-2f31vo"
+      className="chakra-button css-151goxk"
       onClick={[Function]}
       type="button"
     >
@@ -807,5 +819,9 @@ Array [
     </button>
   </div>,
   <span />,
+  <span
+    hidden={true}
+    id="__chakra_env"
+  />,
 ]
 `;

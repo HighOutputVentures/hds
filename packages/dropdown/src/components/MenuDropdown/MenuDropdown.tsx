@@ -15,6 +15,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { ThreeDots } from '@highoutput/hds-icons';
+import { ButtonVariantsTypes } from '@highoutput/hds';
 import React from 'react';
 
 export interface MenuDropdownFieldProps {
@@ -27,6 +28,7 @@ export interface MenuDropdownFieldProps {
   menuItems: Omit<MenuItemProps, 'css' | 'style'>;
   gap?: string;
   placement?: PlacementWithLogical | undefined;
+  variant?: ButtonVariantsTypes;
 }
 
 export interface IKebabMenu extends MenuDropdownFieldProps {
@@ -65,6 +67,7 @@ const MenuDropdown = (props: IMenuDropdownFieldProps) => {
     profileUrl,
     menuType,
     placement,
+    variant = 'unstyled',
   } = props;
 
   return (
@@ -72,8 +75,8 @@ const MenuDropdown = (props: IMenuDropdownFieldProps) => {
       {({ isOpen }) => (
         <>
           <MenuButton
+            variant={variant}
             as={Button}
-            backgroundColor="white"
             isActive={isOpen}
             rightIcon={
               menuType === 'button' && !isOpen ? (
@@ -82,7 +85,6 @@ const MenuDropdown = (props: IMenuDropdownFieldProps) => {
                 <ChevronUpIcon width="20px" height="20px" />
               ) : undefined
             }
-            color="black"
             data-testid={
               menuType === 'button'
                 ? 'menu-button'
@@ -90,7 +92,6 @@ const MenuDropdown = (props: IMenuDropdownFieldProps) => {
                 ? 'menu-kebab'
                 : 'menu-profile'
             }
-            _hover={{ background: 'white' }}
             border={menuType === 'button' ? '1px solid #D6D6D6' : undefined}
             width={menuType === 'button' ? '130px' : undefined}
             height={menuType === 'button' ? '44px' : undefined}
@@ -119,12 +120,7 @@ const MenuDropdown = (props: IMenuDropdownFieldProps) => {
                 />
               </Box>
             ) : (
-              <Text
-                fontSize={'18px'}
-                fontWeight={500}
-                color="neutrals.700"
-                lineHeight={'24px'}
-              >
+              <Text fontSize={'18px'} fontWeight={500} lineHeight={'24px'}>
                 {menuButtonText}
               </Text>
             )}
