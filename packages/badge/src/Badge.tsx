@@ -2,6 +2,7 @@ import { Avatar, chakra } from "@chakra-ui/react";
 import * as React from "react";
 import { BadgeAccent, BadgeSize } from "./types";
 import useBadgeStyle from "./useBadgeStyle";
+import { clone } from "./utils";
 
 export interface BadgeProps {
   size?: BadgeSize;
@@ -68,9 +69,3 @@ export default React.forwardRef<HTMLDivElement, BadgeProps>(function Badge({
     </chakra.div>
   );
 });
-
-function clone(element: any, props: Record<string, any> = {}) {
-  if (React.isValidElement(element)) return React.cloneElement(element, props);
-
-  throw new Error("Couldn't clone element");
-}

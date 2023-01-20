@@ -14,3 +14,6 @@ export type BadgeAccent =
   | "orange";
 
 export type BadgeSize = "sm" | "md" | "lg";
+export type BadgeGroupSize = "md" | "lg";
+export type BadgeGroupAccent = "primary" | "gray" | "error" | "warning" | "success";
+export type BadgeGroupVariant = "dark" | "light" | "default";

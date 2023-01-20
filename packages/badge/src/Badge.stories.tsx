@@ -3,7 +3,7 @@ import { ChakraProvider, VStack } from "@chakra-ui/react";
 import { ComponentStory, Meta } from "@storybook/react";
 import * as React from "react";
 import Badge from "./Badge";
-import AUIcon from "./examples/AU";
+import AUIcon from "./examples/AUIcon";
 import ExampleIcon from "./examples/ExampleIcon";
 
 const meta: Meta = {
@@ -16,7 +16,7 @@ const meta: Meta = {
         name: "string",
         required: false,
       },
-      defaultValue: "lg",
+      defaultValue: "md",
       control: "select",
       options: ["sm", "md", "lg"],
     },
@@ -46,6 +46,8 @@ const meta: Meta = {
     },
   },
 };
+
+export default meta;
 
 const Template: ComponentStory<typeof Badge> = (args) => {
   return (
@@ -94,5 +96,3 @@ const Template: ComponentStory<typeof Badge> = (args) => {
 export const Default = Template.bind({});
 
 Default.args = {};
-
-export default meta;

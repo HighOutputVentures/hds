@@ -10,11 +10,7 @@ type UseBadgeStyleArg = {
   hasIndicator?: boolean;
 };
 
-export default function useBadgeStyle(args: UseBadgeStyleArg) {
-  return getBadgeAccentStyles(args);
-}
-
-type BadgeAccentStyle = {
+type BadgeStyle = {
   container: SystemStyleObject;
   avatar: SystemStyleObject;
   label: SystemStyleObject;
@@ -22,26 +18,20 @@ type BadgeAccentStyle = {
   dot: SystemStyleObject;
 };
 
-type CreateAccentStyleArg = {
+type CreateBadgeStyleArg = {
   labelColor: string;
   dotBgColor: string;
   containerBgColor: string;
 };
 
-function createAccentStyle({ labelColor, dotBgColor, containerBgColor }: CreateAccentStyleArg) {
-  return ({
+function createBadgeStyle({ labelColor, dotBgColor, containerBgColor }: CreateBadgeStyleArg) {
+  return function getStyleUsingConfig({
     size,
     hasAvatar,
     hasLeftIcon,
     hasRightIcon,
     hasIndicator,
-  }: {
-    size: BadgeSize;
-    hasAvatar?: boolean;
-    hasLeftIcon?: boolean;
-    hasRightIcon?: boolean;
-    hasIndicator?: boolean;
-  }): BadgeAccentStyle => {
+  }: Omit<UseBadgeStyleArg, "accent">): BadgeStyle {
     const hasIcon = hasLeftIcon || hasRightIcon;
 
     return {
@@ -108,72 +98,76 @@ function createAccentStyle({ labelColor, dotBgColor, containerBgColor }: CreateA
   };
 }
 
-export const getBadgeAccentStyles = ({ accent, ...config }: UseBadgeStyleArg) => {
+export const getBadgeStyle = ({ accent, ...config }: UseBadgeStyleArg) => {
   return {
-    gray: createAccentStyle({
+    gray: createBadgeStyle({
       containerBgColor: "#F2F4F7",
       labelColor: "#344054",
       dotBgColor: "#667085",
     })(config),
-    primary: createAccentStyle({
+    primary: createBadgeStyle({
       containerBgColor: "#EDE8FC",
       labelColor: "#8A68EF",
       dotBgColor: "#9E77ED",
     })(config),
-    error: createAccentStyle({
+    error: createBadgeStyle({
       containerBgColor: "#FEF3F2",
       labelColor: "#B42318",
       dotBgColor: "#F04438",
     })(config),
-    warning: createAccentStyle({
+    warning: createBadgeStyle({
       containerBgColor: "#FFFAEB",
       labelColor: "#B54708",
       dotBgColor: "#F79009",
     })(config),
-    success: createAccentStyle({
+    success: createBadgeStyle({
       containerBgColor: "#ECFDF3",
       labelColor: "#027A48",
       dotBgColor: "#12B76A",
     })(config),
-    "blue-gray": createAccentStyle({
+    "blue-gray": createBadgeStyle({
       containerBgColor: "#F8F9FC",
       labelColor: "#363F72",
       dotBgColor: "#4E5BA6",
     })(config),
-    "blue-light": createAccentStyle({
+    "blue-light": createBadgeStyle({
       containerBgColor: "#F0F9FF",
       labelColor: "#026AA2",
       dotBgColor: "#0BA5EC",
     })(config),
-    blue: createAccentStyle({
+    blue: createBadgeStyle({
       containerBgColor: "#EFF8FF",
       labelColor: "#175CD3",
       dotBgColor: "#2E90FA",
     })(config),
-    indigo: createAccentStyle({
+    indigo: createBadgeStyle({
       containerBgColor: "#EEF4FF",
       labelColor: "#3538CD",
       dotBgColor: "#6172F3",
     })(config),
-    purple: createAccentStyle({
+    purple: createBadgeStyle({
       containerBgColor: "#F4F3FF",
       labelColor: "#5925DC",
       dotBgColor: "#7A5AF8",
     })(config),
-    pink: createAccentStyle({
+    pink: createBadgeStyle({
       containerBgColor: "#FDF2FA",
       labelColor: "#C11574",
       dotBgColor: "#EE46BC",
     })(config),
-    rose: createAccentStyle({
+    rose: createBadgeStyle({
       containerBgColor: "#FFF1F3",
       labelColor: "#C01048",
       dotBgColor: "#F63D68",
     })(config),
-    orange: createAccentStyle({
+    orange: createBadgeStyle({
       containerBgColor: "#FEF6EE",
       labelColor: "#B93815",
       dotBgColor: "#EF6820",
     })(config),
   }[accent];
 };
+
+export default function useBadgeStyle(args: UseBadgeStyleArg) {
+  return getBadgeStyle(args);
+}

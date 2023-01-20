@@ -1,22 +1,36 @@
+import { Icon } from "@chakra-ui/icons";
+import { ChakraProvider } from "@chakra-ui/react";
 import { ComponentStory, Meta } from "@storybook/react";
 import * as React from "react";
-import { ThemeProvider } from "../../hds/src";
 import BadgeGroup from "./BadgeGroup";
+import Example2Icon from "./examples/Example2Icon";
 
 const meta: Meta = {
   title: "Components/Badge/BadgeGroup",
+  component: BadgeGroup,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof BadgeGroup> = () => {
+const Template: ComponentStory<typeof BadgeGroup> = (args) => {
   return (
-    <ThemeProvider>
-      <BadgeGroup />
-    </ThemeProvider>
+    <ChakraProvider>
+      <BadgeGroup {...args} />
+    </ChakraProvider>
   );
 };
 
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.args = {
+  size: "md",
+  accent: "primary",
+  variant: "default",
+  title: "Title",
+  description: "This is a description",
+  descriptionFirst: false,
+  icon: <Icon as={Example2Icon} />,
+  onClick() {
+    alert("We gotcha 👌");
+  },
+};
