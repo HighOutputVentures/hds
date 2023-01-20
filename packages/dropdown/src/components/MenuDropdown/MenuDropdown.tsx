@@ -21,7 +21,7 @@ import React, { FC } from 'react';
 export interface MenuDropdownFieldProps {
   menuType: 'kebab' | 'button' | 'profile' | 'meatball';
   menuButtonText: string;
-  profileUrl?: never;
+  profileUrl?: string;
   indicator?: boolean;
   menuHeader?: {
     profileUrl: string;
