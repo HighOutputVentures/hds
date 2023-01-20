@@ -20,7 +20,7 @@ import React, { FC } from 'react';
 
 export interface MenuDropdownFieldProps {
   menuType: 'kebab' | 'button' | 'profile' | 'meatball';
-  menuButtonText: string;
+  menuButtonText?: string;
   profileUrl?: string;
   indicator?: boolean;
   menuHeader?: {
@@ -37,7 +37,7 @@ export interface MenuDropdownFieldProps {
 const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
   const {
     menuHeader,
-    menuButtonText,
+    menuButtonText = '',
     indicator = true,
     menuItems,
     gap,
