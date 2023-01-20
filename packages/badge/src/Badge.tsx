@@ -14,18 +14,21 @@ export interface BadgeProps {
   hasIndicator?: boolean;
 }
 
-export default React.forwardRef<HTMLDivElement, BadgeProps>(function Badge({
-  label,
-  avatar,
-  leftIcon,
-  rightIcon,
-  hasIndicator,
-  size = "md",
-  accent = "primary",
-  // capture non-jsx passed props
-  // like aria-label, etc.
-  ...props
-}) {
+export default React.forwardRef<HTMLDivElement, BadgeProps>(function Badge(
+  {
+    label,
+    avatar,
+    leftIcon,
+    rightIcon,
+    hasIndicator,
+    size = "md",
+    accent = "primary",
+    // capture non-jsx passed props
+    // like aria-label, etc.
+    ...props
+  },
+  ref,
+) {
   const styles = useBadgeStyle({
     size,
     accent,
@@ -36,13 +39,17 @@ export default React.forwardRef<HTMLDivElement, BadgeProps>(function Badge({
   });
 
   return (
-    <chakra.div role="status" {...props} sx={styles.container}>
+    <chakra.div ref={ref} role="status" {...props} sx={styles.container}>
       {/* <!-- Dot --> */}
-      {!!hasIndicator && <chakra.div sx={styles.dot} />}
+      {!!hasIndicator && (
+        <chakra.div role="status" aria-label="Online" aria-live="polite" sx={styles.dot} />
+      )}
 
       {/* <!-- Avatar --> */}
-      {!!avatar && typeof avatar === "string" && <Avatar src={avatar} sx={styles.icon} />}
       {!!avatar && typeof avatar !== "string" && <>{clone(avatar, styles.icon)}</>}
+      {!!avatar && typeof avatar === "string" && (
+        <Avatar src={avatar} role="img" aria-label="Avatar" sx={styles.icon} />
+      )}
 
       {/* <!-- Left Icon --> */}
       {!!leftIcon && (
