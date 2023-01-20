@@ -13,13 +13,13 @@ npm i @highoutput/hds-badge
 ### Usage
 
 ```tsx
-import { Badge, withBadge } from "@highoutput/hds-badge";
+import { Badge } from "@highoutput/hds-badge";
 import { ThemeProvider, extendTheme } from "@highoutput/hds";
 
 export default function Example() {
   return (
-    <ThemeProvider theme={extendTheme(withBadge())}>
-      <Badge>100k</Badge>
+    <ThemeProvider>
+      <Badge label="Hello world" />
     </ThemeProvider>
   );
 }
