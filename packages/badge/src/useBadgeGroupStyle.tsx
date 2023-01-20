@@ -17,7 +17,10 @@ type BadgeGroupStyle = {
   icon: SystemStyleObject;
 };
 
-type BadgeGroupVariantTuple = [default_: string, light: string, dark: string];
+// Sadly, named tuple seems to be unsupported
+// Please make the commented code below as a reference
+// type BadgeGroupVariantTuple = [default_: string, light: string, dark: string];
+type BadgeGroupVariantTuple = [string, string, string];
 
 type CreateBadgeGroupStyleArg = {
   containerBgColor: BadgeGroupVariantTuple;
