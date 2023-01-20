@@ -37,14 +37,14 @@
   },
   "name": "@highoutput/hds-breadcrumbs",
   "author": "jadekenneth.github.io",
-  "module": "dist/@highoutput/hds-breadcrumbs.esm.js",
+  "module": "dist/hds-breadcrumbs.esm.js",
   "size-limit": [
     {
-      "path": "dist/@highoutput/hds-breadcrumbs.cjs.production.min.js",
+      "path": "dist/hds-breadcrumbs.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/@highoutput/hds-breadcrumbs.esm.js",
+      "path": "dist/hds-breadcrumbs.esm.js",
       "limit": "10 KB"
     }
   ]
