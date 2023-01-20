@@ -30,8 +30,10 @@ const Breadcrumbs = (props: BreadcrumbProps) => {
     backgroundStyleType = 'default',
     breadCrumbLinks,
     icon,
+
     activeLinkType = 'default',
   } = props;
+
   const [start, setStart] = React.useState(0);
   const { transformedBreadCrumbData } = useTransformBreadCrumbInfo({
     start,
@@ -41,11 +43,16 @@ const Breadcrumbs = (props: BreadcrumbProps) => {
   const [active, setActive] = React.useState('#');
 
   const textColor = (link: string) => {
-    if (active === link && activeLinkType === 'color-in-text') return '#4A3880';
-    if (active === link && activeLinkType === 'color-on-bg') return '#4A3880';
-    if (active === link && activeLinkType === 'default') return 'neutrals.900';
+    const hash = link?.substring(link.indexOf('#'));
+    if (active === hash && activeLinkType === 'color-in-text') return '#4A3880';
+    if (active === hash && activeLinkType === 'color-on-bg') return '#4A3880';
+    if (active === hash && activeLinkType === 'default') return 'neutrals.900';
     else return 'neutrals.600';
   };
+
+  React.useEffect(() => {
+    setActive(document.location.hash);
+  }, []);
 
   return (
     <HStack
