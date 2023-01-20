@@ -1,6 +1,7 @@
 export type ButtonVariantsTypes =
   | 'solid-primary'
   | 'outline-primary'
+  | 'ghost-primary'
   | 'ghost-primary-outlined'
   | 'solid-error'
   | 'outline-error'
