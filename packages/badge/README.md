@@ -7,16 +7,20 @@ We aim to build a library of custom ReactJS components that implements our uniqu
 To install the package, use:
 
 ```bash
-npm i @highoutput/hds-carousel
+npm i @highoutput/hds-badge
 ```
 
 ### Usage
 
 ```tsx
-import { Badge } from '@highoutput/hds-badge';
-import { ThemeProvider } from '@highoutput/hds';
+import { Badge, withBadge } from "@highoutput/hds-badge";
+import { ThemeProvider, extendTheme } from "@highoutput/hds";
 
 export default function Example() {
-  return <ThemeProvider></ThemeProvider>;
+  return (
+    <ThemeProvider theme={extendTheme(withBadge())}>
+      <Badge>100k</Badge>
+    </ThemeProvider>
+  );
 }
 ```
