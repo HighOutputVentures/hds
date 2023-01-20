@@ -43,7 +43,7 @@ const Breadcrumbs = (props: BreadcrumbProps) => {
   const [active, setActive] = React.useState('#');
 
   const textColor = (link: string) => {
-    const hash = link.substring(link.indexOf('#'));
+    const hash = link?.substring(link.indexOf('#'));
     if (active === hash && activeLinkType === 'color-in-text') return '#4A3880';
     if (active === hash && activeLinkType === 'color-on-bg') return '#4A3880';
     if (active === hash && activeLinkType === 'default') return 'neutrals.900';
