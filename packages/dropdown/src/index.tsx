@@ -15,5 +15,4 @@ export {
   IButtonMenu,
   IKebabMenu,
   IProfileMenu,
-  // AutoCompleteInputFieldPartProps,
 };

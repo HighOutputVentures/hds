@@ -16,7 +16,7 @@ import {
 } from '@chakra-ui/react';
 import { ThreeDots } from '@highoutput/hds-icons';
 import { ButtonVariantsTypes } from '@highoutput/hds';
-import React from 'react';
+import React, { FC } from 'react';
 
 export interface MenuDropdownFieldProps {
   indicator?: boolean;
@@ -57,7 +57,8 @@ export type IMenuDropdownFieldProps =
   | IButtonMenu
   | IProfileMenu
   | IMeatBallMenu;
-const MenuDropdown = (props: IMenuDropdownFieldProps) => {
+
+const MenuDropdown: FC<IMenuDropdownFieldProps> = (props) => {
   const {
     menuHeader,
     menuButtonText,
@@ -73,7 +74,7 @@ const MenuDropdown = (props: IMenuDropdownFieldProps) => {
   return (
     <Menu data-testid="menu-dropdown" placement={placement}>
       {({ isOpen }) => (
-        <>
+        <Box w="full">
           <MenuButton
             variant={variant}
             as={Button}
@@ -92,9 +93,7 @@ const MenuDropdown = (props: IMenuDropdownFieldProps) => {
                 ? 'menu-kebab'
                 : 'menu-profile'
             }
-            border={menuType === 'button' ? '1px solid #D6D6D6' : undefined}
-            width={menuType === 'button' ? '130px' : undefined}
-            height={menuType === 'button' ? '44px' : undefined}
+            display="flex"
           >
             {menuType === 'kebab' ? (
               <Icon
@@ -120,11 +119,10 @@ const MenuDropdown = (props: IMenuDropdownFieldProps) => {
                 />
               </Box>
             ) : (
-              <Text fontSize={'18px'} fontWeight={500} lineHeight={'24px'}>
-                {menuButtonText}
-              </Text>
+              <Text size="label-sm-default">{menuButtonText}</Text>
             )}
           </MenuButton>
+
           <MenuList
             boxShadow={
               '0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)'
@@ -158,7 +156,7 @@ const MenuDropdown = (props: IMenuDropdownFieldProps) => {
               }}
             </Menu>
           </MenuList>
-        </>
+        </Box>
       )}
     </Menu>
   );
