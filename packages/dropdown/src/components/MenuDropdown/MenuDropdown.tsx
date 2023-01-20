@@ -19,6 +19,9 @@ import { ButtonVariantsTypes } from '@highoutput/hds';
 import React, { FC } from 'react';
 
 export interface MenuDropdownFieldProps {
+  menuType: 'kebab' | 'button' | 'profile' | 'meatball';
+  menuButtonText: string;
+  profileUrl?: never;
   indicator?: boolean;
   menuHeader?: {
     profileUrl: string;
@@ -31,34 +34,7 @@ export interface MenuDropdownFieldProps {
   variant?: ButtonVariantsTypes;
 }
 
-export interface IKebabMenu extends MenuDropdownFieldProps {
-  menuType: 'kebab';
-  menuButtonText?: never;
-  profileUrl?: never;
-}
-export interface IButtonMenu extends MenuDropdownFieldProps {
-  menuType: 'button';
-  menuButtonText: string;
-  profileUrl?: never;
-}
-export interface IProfileMenu extends MenuDropdownFieldProps {
-  menuType: 'profile';
-  menuButtonText?: never;
-  profileUrl: string;
-}
-export interface IMeatBallMenu extends MenuDropdownFieldProps {
-  menuType: 'meatball';
-  menuButtonText?: never;
-  profileUrl?: never;
-}
-
-export type IMenuDropdownFieldProps =
-  | IKebabMenu
-  | IButtonMenu
-  | IProfileMenu
-  | IMeatBallMenu;
-
-const MenuDropdown: FC<IMenuDropdownFieldProps> = (props) => {
+const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
   const {
     menuHeader,
     menuButtonText,
