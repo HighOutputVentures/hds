@@ -1,6 +1,7 @@
 export type ButtonVariantsTypes =
   | 'solid-primary'
   | 'outline-primary'
+  | 'ghost-primary'
   | 'ghost-primary-outlined'
   | 'solid-error'
   | 'outline-error'
@@ -210,15 +211,22 @@ export const buttonVariants = {
   },
   unstyled: {
     bg: 'transparent',
-    border: 'none',
     color: 'neutrals.900',
+    border: '0px solid transparent',
+    _active: {
+      bg: 'transparent',
+      color: 'neutrals.700',
+      border: '0px solid transparent',
+    },
     _hover: {
       bg: 'transparent',
       color: 'neutrals.700',
+      border: '0px solid transparent',
     },
     _focused: {
       bg: 'transparent',
       color: 'brand.primary.700',
+      border: '0px solid transparent',
     },
   },
   'ghost-close-btn': {
