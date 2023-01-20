@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react';
-import { Button } from '@highoutput/hds';
+import { Button, ButtonVariantsTypes } from '@highoutput/hds';
 import {
   As,
   Modal as ChakraModal,
@@ -21,6 +21,7 @@ export interface ModalProps {
   onOk: () => void;
   okText?: string;
   closeText?: string;
+  variants?: ButtonVariantsTypes | undefined;
   size?: 'lg' | 'md' | 'sm' | 'xs';
   align?: 'left' | 'center' | 'right';
   icon?: As<any>;
@@ -42,6 +43,7 @@ const Modal: FC<ModalProps> = ({
   okText = 'Ok',
   closeText = 'Close',
   size = 'sm',
+  variants = 'solid-primary',
   align,
   icon,
   title,
@@ -66,7 +68,7 @@ const Modal: FC<ModalProps> = ({
                 {closeText}
               </Button>
               <Spacer maxW="4" />
-              <Button onClick={onOk} block variant="solid-primary">
+              <Button onClick={onOk} block variant={variants}>
                 {okText}
               </Button>
             </Flex>
