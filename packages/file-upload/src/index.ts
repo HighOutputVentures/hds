@@ -1,3 +1,4 @@
-import FileUpload from './component/FileUpload';
+import FileUpload from './FileUpload/FileUpload';
+import ProgressBox from './ProgressBox/ProgressBox';
 
-export { FileUpload };
+export { FileUpload, ProgressBox };
