@@ -7,7 +7,7 @@ We aim to build a library of custom ReactJS components that implements our uniqu
 To install package, use:
 
 ```bash
-npm i @highoutput/hds-modal
+npm i @highoutput/file-upload
 ```
 
 ### Usage
