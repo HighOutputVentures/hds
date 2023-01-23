@@ -2,7 +2,7 @@ export type ButtonVariantsTypes =
   | 'solid-primary'
   | 'outline-primary'
   | 'ghost-primary'
-  | 'ghost-primary-outlined'
+  | 'menu-button-primary'
   | 'solid-error'
   | 'outline-error'
   | 'unstyled'
@@ -85,7 +85,7 @@ export const buttonVariants = {
       boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
     },
   },
-  'ghost-primary-outline': {
+  'menu-button-primary': {
     color: 'brand.primary.700',
     bg: '#E3E3FC',
     border: 'none',

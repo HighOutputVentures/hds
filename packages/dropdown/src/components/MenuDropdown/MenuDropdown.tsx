@@ -15,7 +15,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { ThreeDots } from '@highoutput/hds-icons';
-import { ButtonVariantsTypes } from '@highoutput/hds';
+import { ButtonVariantsTypes } from '@highoutput/hds/src/theme/components/button/variants';
 import React, { FC } from 'react';
 
 export interface MenuDropdownFieldProps {
@@ -55,13 +55,14 @@ const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
             variant={variant}
             as={Button}
             isActive={isOpen}
-            rightIcon={
-              menuType === 'button' && !isOpen ? (
-                <ChevronDownIcon width="20px" height="20px" />
-              ) : menuType === 'button' && isOpen ? (
-                <ChevronUpIcon width="20px" height="20px" />
-              ) : undefined
-            }
+            {...(variant !== 'menu-button-primary' && {
+              rightIcon:
+                menuType === 'button' && !isOpen ? (
+                  <ChevronDownIcon width="20px" height="20px" />
+                ) : menuType === 'button' && isOpen ? (
+                  <ChevronUpIcon width="20px" height="20px" />
+                ) : undefined,
+            })}
             data-testid={
               menuType === 'button'
                 ? 'menu-button'
