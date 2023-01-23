@@ -1,6 +1,10 @@
 import { Box, Flex, Icon, Progress, Text } from '@chakra-ui/react';
 import React, { FC } from 'react';
-import { UploadIcon, TrashIcon, SuccessCircleIcon } from '../../../icons/dist';
+import {
+  UploadIcon,
+  TrashIcon,
+  SuccessCircleIcon,
+} from '@highoutput/hds-icons';
 
 const color = {
   bg: '#E5E7EB',

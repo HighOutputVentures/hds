@@ -1,6 +1,6 @@
 import { Box, Flex, Icon, Input, Stack, Text } from '@chakra-ui/react';
 import React, { FC } from 'react';
-import { FileUploadIcon } from '../../../icons/dist';
+import { FileUploadIcon } from '@highoutput/hds-icons';
 import { ChangeHandler } from 'react-hook-form';
 
 const color = {
