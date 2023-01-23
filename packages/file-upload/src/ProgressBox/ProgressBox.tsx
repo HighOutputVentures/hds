@@ -21,13 +21,13 @@ const sizes = {
 export interface ProgressBox {
   size?: 'lg' | 'md' | 'sm' | 'xs';
   value?: number;
-  file?: FileList;
+  file?: File[];
   onDelete?: () => void;
 }
 
 const ProgressBox: FC<ProgressBox> = ({
   size = 'sm',
-  value = 80,
+  value,
   file,
   onDelete,
 }) => {
@@ -38,6 +38,9 @@ const ProgressBox: FC<ProgressBox> = ({
     if (megabyte < 1) return `${kilobyte.toFixed(2)}KB`;
     return `${megabyte.toFixed(2)}MB`;
   };
+
+  const files = (file?.length && Array.from(file)) as Record<string, any>[];
+  const blob = files?.reduce((f: any) => new Blob([f], { type: f?.type }));
 
   return (
     <>
@@ -60,11 +63,16 @@ const ProgressBox: FC<ProgressBox> = ({
                 as={UploadIcon}
               />
               <Box mx={4}>
-                <Text fontWeight={500} size="label-xs-default" noOfLines={1}>
-                  {file?.[0]?.name ?? 'Name'}
+                <Text
+                  fontWeight={500}
+                  size="label-xs-default"
+                  isTruncated
+                  maxW={320}
+                >
+                  {blob?.name ?? 'Name'}
                 </Text>
                 <Text size="paragraph-xs-default" color={color.textColor.gray}>
-                  {calculateFileSize(file?.[0]?.size ?? 10000)}
+                  {calculateFileSize(blob?.size)}
                 </Text>
               </Box>
             </Flex>

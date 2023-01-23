@@ -20,4 +20,5 @@ export const Default = Template.bind({});
 
 Default.args = {
   ...Default.args,
+  value: 80,
 };
