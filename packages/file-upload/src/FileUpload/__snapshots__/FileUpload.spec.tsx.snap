@@ -47,6 +47,7 @@ exports[`FileUpload should render FileUpload 1`] = `
     </p>
     <input
       class="chakra-input css-167pywf"
+      data-testid="file"
       id="file"
       type="file"
     />

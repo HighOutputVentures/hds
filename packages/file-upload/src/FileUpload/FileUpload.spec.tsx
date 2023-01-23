@@ -9,4 +9,11 @@ describe('FileUpload', () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it('should have a input type of file upload', () => {
+    const { getByTestId } = render(<FileUpload />);
+
+    const input = getByTestId('file');
+    expect(input).toHaveProperty('type', 'file');
+  });
 });

@@ -72,6 +72,7 @@ const FileUpload: FC<FileUpload> = ({
           {accepts?.toLocaleUpperCase()} (max. 800x400px)
         </Text>
         <Input
+          data-testid="file"
           id="file"
           type="file"
           w="100%"
