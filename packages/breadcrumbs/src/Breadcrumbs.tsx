@@ -40,9 +40,8 @@ const Breadcrumbs = (props: BreadcrumbProps) => {
     maxLinkControls,
     originalBreadCrumbDaTa: breadCrumbLinks,
   });
-  const fullPath = window.location.href;
-  const pathWithoutHttps = fullPath.replace(window.location.origin, '');
-  const [active, setActive] = React.useState(pathWithoutHttps);
+
+  const [active, setActive] = React.useState('');
 
   const textColor = (pathLink: string) => {
     if (active === pathLink && activeLinkType === 'color-in-text')
@@ -53,7 +52,11 @@ const Breadcrumbs = (props: BreadcrumbProps) => {
       return 'neutrals.900';
     else return 'neutrals.600';
   };
-
+  React.useEffect(() => {
+    const fullPath = window.location.href;
+    const pathWithoutHttps = fullPath.replace(window.location.origin, '');
+    setActive(pathWithoutHttps);
+  }, []);
   return (
     <HStack
       height={'32.67px'}
