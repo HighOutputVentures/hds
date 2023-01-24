@@ -51,7 +51,6 @@ Array [
         >
           <a
             className="chakra-breadcrumb__link css-9phpk7"
-            href="#hello"
             onClick={[Function]}
           >
             <p
@@ -110,7 +109,6 @@ Array [
         >
           <a
             className="chakra-breadcrumb__link css-9phpk7"
-            href="#Copy"
             onClick={[Function]}
           >
             <p
