@@ -17,7 +17,7 @@ const Template: ComponentStory<typeof FileUpload> = (args) => {
       <Flex justify="center">
         <FileUpload
           {...args}
-          onChange={(e): void => setFiles(e?.target?.files)}
+          onChange={(event) => setFiles(event?.target?.files)}
         />
       </Flex>
 
