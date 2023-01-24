@@ -11,7 +11,9 @@ import React from 'react';
 import { useTransformBreadCrumbInfo } from './hooks';
 
 export interface IBreadCrumbLinks {
-  typedef: Array<{ name: string; link: string } | null | undefined>;
+  typedef: Array<
+    { name: string; link: string; isActive?: boolean } | null | undefined
+  >;
 }
 export interface BreadcrumbProps {
   maxLinkControls: 6 | 4 | 2 | 'all';
@@ -22,6 +24,7 @@ export interface BreadcrumbProps {
   icon: any;
   activeLinkType?: 'color-in-text' | 'color-on-bg' | 'default';
   backgroundStyleType?: 'bg-grey-with-border' | 'default';
+  onClick?: (link: string) => void;
 }
 const Breadcrumbs = (props: BreadcrumbProps) => {
   const {
@@ -30,7 +33,7 @@ const Breadcrumbs = (props: BreadcrumbProps) => {
     backgroundStyleType = 'default',
     breadCrumbLinks,
     icon,
-
+    onClick,
     activeLinkType = 'default',
   } = props;
 
@@ -41,22 +44,13 @@ const Breadcrumbs = (props: BreadcrumbProps) => {
     originalBreadCrumbDaTa: breadCrumbLinks,
   });
 
-  const [active, setActive] = React.useState('');
-
-  const textColor = (pathLink: string) => {
-    if (active === pathLink && activeLinkType === 'color-in-text')
-      return '#4A3880';
-    if (active === pathLink && activeLinkType === 'color-on-bg')
-      return '#4A3880';
-    if (active === pathLink && activeLinkType === 'default')
-      return 'neutrals.900';
+  const textColor = (active: boolean) => {
+    if (active && activeLinkType === 'color-in-text') return '#4A3880';
+    if (active && activeLinkType === 'color-on-bg') return '#4A3880';
+    if (active && activeLinkType === 'default') return 'neutrals.900';
     else return 'neutrals.600';
   };
-  React.useEffect(() => {
-    const fullPath = window.location.href;
-    const pathWithoutHttps = fullPath.replace(window.location.origin, '');
-    setActive(pathWithoutHttps);
-  }, []);
+
   return (
     <HStack
       height={'32.67px'}
@@ -83,21 +77,20 @@ const Breadcrumbs = (props: BreadcrumbProps) => {
           return (
             <BreadcrumbItem textDecoration={'none'} key={idx}>
               <BreadcrumbLink
-                href={d?.link ?? undefined}
                 onClick={() =>
                   d === null
                     ? setStart(idx === 0 ? start - 1 : start + 1)
-                    : setActive(d.link)
+                    : onClick?.(d.link)
                 }
                 textDecorationLine={'none'}
-                color={textColor(d?.link!)}
+                color={textColor(d?.isActive!)}
                 bgColor={
-                  active === d?.link && activeLinkType === 'color-on-bg'
+                  d?.isActive && activeLinkType === 'color-on-bg'
                     ? '#EDE8FC'
                     : 'none'
                 }
                 padding={
-                  active === d?.link && activeLinkType === 'color-on-bg'
+                  d?.isActive && activeLinkType === 'color-on-bg'
                     ? '4px 8px'
                     : 'none'
                 }
