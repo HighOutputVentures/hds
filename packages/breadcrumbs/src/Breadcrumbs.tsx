@@ -40,19 +40,19 @@ const Breadcrumbs = (props: BreadcrumbProps) => {
     maxLinkControls,
     originalBreadCrumbDaTa: breadCrumbLinks,
   });
-  const [active, setActive] = React.useState('#');
+  const fullPath = window.location.href;
+  const pathWithoutHttps = fullPath.replace(window.location.origin, '');
+  const [active, setActive] = React.useState(pathWithoutHttps);
 
-  const textColor = (link: string) => {
-    const hash = link?.substring(link.indexOf('#'));
-    if (active === hash && activeLinkType === 'color-in-text') return '#4A3880';
-    if (active === hash && activeLinkType === 'color-on-bg') return '#4A3880';
-    if (active === hash && activeLinkType === 'default') return 'neutrals.900';
+  const textColor = (pathLink: string) => {
+    if (active === pathLink && activeLinkType === 'color-in-text')
+      return '#4A3880';
+    if (active === pathLink && activeLinkType === 'color-on-bg')
+      return '#4A3880';
+    if (active === pathLink && activeLinkType === 'default')
+      return 'neutrals.900';
     else return 'neutrals.600';
   };
-
-  React.useEffect(() => {
-    setActive(document.location.hash);
-  }, []);
 
   return (
     <HStack

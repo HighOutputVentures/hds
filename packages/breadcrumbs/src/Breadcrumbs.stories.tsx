@@ -12,6 +12,8 @@ export default {
 } as ComponentMeta<typeof Breadcrumbs>;
 
 const Template: ComponentStory<typeof Breadcrumbs> = (props) => {
+  const relativePath =
+    '/iframe.html?viewMode=story&id=components-breadcrumbs--default';
   return (
     <ThemeProvider>
       <Flex
@@ -29,16 +31,16 @@ const Template: ComponentStory<typeof Breadcrumbs> = (props) => {
           activeLinkType={'color-on-bg'}
           backgroundStyleType={'bg-grey-with-border'}
           breadCrumbLinks={[
-            { link: '#hello', name: 'Home' },
-            { link: '#Settings', name: 'Settings' },
-            { link: '#Faqs', name: 'Faqs' },
-            { link: '#Logout', name: 'Logout' },
-            { link: '#New', name: 'New' },
-            { link: '#Create', name: 'Create' },
-            { link: '#Contact', name: 'Contact' },
-            { link: '#Read', name: 'Read' },
-            { link: '#Save', name: 'Save' },
-            { link: '#Copy', name: 'Copy' },
+            { link: `${relativePath}#hello`, name: 'Home' },
+            { link: `${relativePath}#Settings`, name: 'Settings' },
+            { link: `${relativePath}#Faqs`, name: 'Faqs' },
+            { link: `${relativePath}#Logout`, name: 'Logout' },
+            { link: `${relativePath}#New`, name: 'New' },
+            { link: `${relativePath}#Create`, name: 'Create' },
+            { link: `${relativePath}#Contact`, name: 'Contact' },
+            { link: `${relativePath}#Read`, name: 'Read' },
+            { link: `${relativePath}#Save`, name: 'Save' },
+            { link: `${relativePath}#Copy`, name: 'Copy' },
           ]}
         />
         <Breadcrumbs
@@ -47,16 +49,16 @@ const Template: ComponentStory<typeof Breadcrumbs> = (props) => {
           icon={<AttachmentIcon />}
           activeLinkType={'color-on-bg'}
           breadCrumbLinks={[
-            { link: '#hello', name: 'Home' },
-            { link: '#Settings', name: 'Settings' },
-            { link: '#Faqs', name: 'Faqs' },
-            { link: '#Logout', name: 'Logout' },
-            { link: '#New', name: 'New' },
-            { link: '#Create', name: 'Create' },
-            { link: '#Contact', name: 'Contact' },
-            { link: '#Read', name: 'Read' },
-            { link: '#Save', name: 'Save' },
-            { link: '#Copy', name: 'Copy' },
+            { link: `${relativePath}#hello`, name: 'Home' },
+            { link: `${relativePath}#Settings`, name: 'Settings' },
+            { link: `${relativePath}#Faqs`, name: 'Faqs' },
+            { link: `${relativePath}#Logout`, name: 'Logout' },
+            { link: `${relativePath}#New`, name: 'New' },
+            { link: `${relativePath}#Create`, name: 'Create' },
+            { link: `${relativePath}#Contact`, name: 'Contact' },
+            { link: `${relativePath}#Read`, name: 'Read' },
+            { link: `${relativePath}#Save`, name: 'Save' },
+            { link: `${relativePath}#Copy`, name: 'Copy' },
           ]}
         />
       </Flex>
