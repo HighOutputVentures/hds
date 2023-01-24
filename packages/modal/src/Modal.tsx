@@ -18,7 +18,7 @@ import React, { FC, ReactNode } from 'react';
 export interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onOk: () => void;
+  onOk?: () => void;
   okText?: string;
   closeText?: string;
   variants?: ButtonVariantsTypes | undefined;
@@ -63,15 +63,17 @@ const Modal: FC<ModalProps> = ({
           <ModalHeader>{title}</ModalHeader>
           <ModalBody>{children}</ModalBody>
           <ModalFooter>
-            <Flex w="full" justifyContent="flex-end">
-              <Button onClick={onClose} block variant="outline-primary">
-                {closeText}
-              </Button>
-              <Spacer maxW="4" />
-              <Button onClick={onOk} block variant={variants}>
-                {okText}
-              </Button>
-            </Flex>
+            {okText && (
+              <Flex w="full" justifyContent="flex-end">
+                <Button onClick={onClose} block variant="outline-primary">
+                  {closeText}
+                </Button>
+                <Spacer maxW="4" />
+                <Button onClick={onOk} block variant={variants}>
+                  {okText}
+                </Button>
+              </Flex>
+            )}
           </ModalFooter>
         </Box>
       </ModalContent>
