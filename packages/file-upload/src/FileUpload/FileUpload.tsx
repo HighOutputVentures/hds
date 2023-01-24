@@ -1,6 +1,7 @@
 import { Box, Flex, Icon, Input, Stack, Text } from '@chakra-ui/react';
 import React, { FC } from 'react';
 import { FileUploadIcon } from '@highoutput/hds-icons';
+import { ChangeHandler } from 'react-hook-form';
 
 const color = {
   bg: '#E5E7EB',
@@ -9,8 +10,8 @@ const color = {
 
 export interface FileUpload {
   accepts?: string;
-  onChange?: (data: Record<string, any>) => void;
-  onBlur?: (data: Record<string, any>) => void;
+  onChange?: ChangeHandler;
+  onBlur?: ChangeHandler;
   disabled?: boolean;
 }
 
