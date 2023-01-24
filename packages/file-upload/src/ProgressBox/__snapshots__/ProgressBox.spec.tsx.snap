@@ -48,14 +48,14 @@ exports[`FileUpload should render FileUpload 1`] = `
             class="css-10go69x"
           >
             <p
-              class="chakra-text css-m794u2"
+              class="chakra-text css-oasw9e"
             >
               Name
             </p>
             <p
               class="chakra-text css-1azrnsv"
             >
-              9.77KB
+              0.00KB
             </p>
           </div>
         </div>
@@ -90,17 +90,16 @@ exports[`FileUpload should render FileUpload 1`] = `
             <div
               aria-valuemax="100"
               aria-valuemin="0"
-              aria-valuenow="80"
+              aria-valuenow="0"
               class="css-nkvdwk"
               role="progressbar"
-              style="width: 80%;"
+              style="width: 0%;"
             />
           </div>
         </div>
         <p
           class="chakra-text css-1azrnsv"
         >
-          80
           %
         </p>
       </div>
