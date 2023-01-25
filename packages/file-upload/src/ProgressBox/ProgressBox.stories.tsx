@@ -17,8 +17,13 @@ const Template: ComponentStory<typeof ProgressBox> = (args) => (
 );
 
 export const Default = Template.bind({});
+export const Error = Template.bind({});
 
 Default.args = {
   ...Default.args,
   value: 80,
+};
+Error.args = {
+  ...Default.args,
+  hasError: true,
 };
