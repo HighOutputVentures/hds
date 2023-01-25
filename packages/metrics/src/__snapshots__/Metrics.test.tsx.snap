@@ -4,7 +4,7 @@ exports[`Metrics renders correctly with negative metric change 1`] = `
 <div>
   <div
     border-radius="8px"
-    class="css-jcd661"
+    class="css-vi7wl0"
   >
     <div
       class="chakra-stack css-1a8w4xd"
@@ -106,7 +106,7 @@ exports[`Metrics renders correctly with positive metric change 1`] = `
 <div>
   <div
     border-radius="8px"
-    class="css-jcd661"
+    class="css-vi7wl0"
   >
     <div
       class="chakra-stack css-1a8w4xd"
