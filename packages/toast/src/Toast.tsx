@@ -3,7 +3,7 @@ import { CheckCircleIcon, InfoCircleIcon } from "@highoutput/hds-icons";
 import * as React from "react";
 import XIcon from "./XIcon";
 
-type RenderToast = NonNullable<UseToastOptions["render"]>;
+export type RenderToast = NonNullable<UseToastOptions["render"]>;
 
 const defaultProps = {
   status: "success",
@@ -14,15 +14,7 @@ export const Toast: RenderToast = (props) => {
   const { status, description, onClose } = Object.assign(defaultProps, props);
 
   const colors = useColors(props.status);
-
-  const getIcon = React.useCallback(() => {
-    switch (status) {
-      case "error":
-        return <InfoCircleIcon color={colors.icon} width={5} height={5} />;
-      default:
-        return <CheckCircleIcon color={colors.icon} width={5} height={5} />;
-    }
-  }, [props.status]);
+  const HintIcon = React.useMemo(() => getIcon(status), [status]);
 
   return (
     <Flex
@@ -39,7 +31,7 @@ export const Toast: RenderToast = (props) => {
       paddingLeft={4}
       gap={3}
     >
-      {getIcon()}
+      <HintIcon width={5} height={5} color={colors.icon} />
 
       <Text
         size="paragraph-xs-default"
@@ -57,6 +49,15 @@ export const Toast: RenderToast = (props) => {
     </Flex>
   );
 };
+
+function getIcon(key: UseToastOptions["status"]) {
+  switch (key) {
+    case "error":
+      return InfoCircleIcon;
+    default:
+      return CheckCircleIcon;
+  }
+}
 
 function useColors(key: UseToastOptions["status"]) {
   const colorsMap = {

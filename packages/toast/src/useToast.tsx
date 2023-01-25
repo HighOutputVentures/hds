@@ -13,7 +13,24 @@ export type UseToastReturn = {
   success: UseToastFn;
 };
 
-const defaultToastConfig: UseToastOptions = {
+/**
+ *
+ * Default toast options. Can also be used in ThemeProvider
+ *
+ * @example
+ *
+ * import { defaultToastConfig } from '@highoutput/hds-toast';
+ * ```ts
+ * <ThemeProvider
+ *  toastOptions={{
+ *    defaultOptions: { ...defaultToastConfig }
+ *  }}
+ * >
+ * ...
+ * </ThemeProvider>
+ * ```
+ */
+export const defaultToastConfig: UseToastOptions = {
   position: "top",
   render: Toast,
   isClosable: true,

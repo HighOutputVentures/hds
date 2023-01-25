@@ -1,2 +1,8 @@
-export { Toast } from "./Toast";
-export { useToast, UseToastFn, UseToastFnConfig, UseToastReturn } from "./useToast";
+export { RenderToast, Toast } from "./Toast";
+export {
+  defaultToastConfig,
+  useToast,
+  UseToastFn,
+  UseToastFnConfig,
+  UseToastReturn,
+} from "./useToast";
