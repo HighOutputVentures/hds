@@ -13,6 +13,7 @@ import ChevronUpIcon from '../components/ChevronUpIcon';
 import HovIcon from '../components/company/HovIcon';
 import ErrorFolderIcon from '../components/ErrorFolderIcon';
 import ExitIcon from '../components/ExitIcon';
+import FileUploadIcon from '../components/FileUploadIcon';
 import HelpIcon from '../components/HelpIcon';
 import HomeIcon from '../components/HomeIcon';
 import InfoCircleIcon from '../components/InfoCircleIcon';
@@ -29,6 +30,7 @@ import GoogleIcon from '../components/social/GoogleIcon';
 import TwitterIcon from '../components/social/TwitterIcon';
 import SuccessCircleIcon from '../components/SuccessCircleIcon';
 import ThreeDots from '../components/ThreeDots';
+import TrashErrorIcon from '../components/TrashErrorIcon';
 import TrashIcon from '../components/TrashIcon';
 import UploadIcon from '../components/UploadIcon';
 import UserIcon from '../components/UserIcon';
@@ -38,7 +40,6 @@ import WarningFolderIcon from '../components/WarningFolderIcon';
 import WarningIcon from '../components/WarningIcon';
 import ZapIcon from '../components/ZapIcon';
 import GridView from './GridView';
-import FileUploadIcon from '../components/FileUploadIcon';
 import { sortObject } from './utils';
 
 const meta: ComponentMeta<typeof Icon> = {
@@ -150,6 +151,7 @@ const ColoredIcons = (args: any) => {
         SuccessCircleIcon,
         UploadIcon,
         PrimaryIcon,
+        TrashErrorIcon,
       })}
       {...args}
     />
