@@ -51,7 +51,7 @@ exports[`Metrics renders correctly with negative metric change 1`] = `
       class="chakra-stack css-s2mkdb"
     >
       <div
-        class="chakra-stack css-dsg7g2"
+        class="chakra-stack css-i1m1ot"
       >
         <p
           class="chakra-text css-g89h0y"
@@ -59,7 +59,7 @@ exports[`Metrics renders correctly with negative metric change 1`] = `
           $1,000
         </p>
         <div
-          class="chakra-stack css-134ztor"
+          class="chakra-stack css-bjqmq7"
         >
           <svg
             class="chakra-icon css-13otjrl"
@@ -153,7 +153,7 @@ exports[`Metrics renders correctly with positive metric change 1`] = `
       class="chakra-stack css-s2mkdb"
     >
       <div
-        class="chakra-stack css-dsg7g2"
+        class="chakra-stack css-i1m1ot"
       >
         <p
           class="chakra-text css-g89h0y"
@@ -161,7 +161,7 @@ exports[`Metrics renders correctly with positive metric change 1`] = `
           $1,000
         </p>
         <div
-          class="chakra-stack css-134ztor"
+          class="chakra-stack css-bjqmq7"
         >
           <svg
             class="chakra-icon css-13otjrl"
