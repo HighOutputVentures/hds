@@ -11,10 +11,18 @@ import ChevronLeftIcon from '../components/ChevronLeftIcon';
 import ChevronRightIcon from '../components/ChevronRightIcon';
 import ChevronUpIcon from '../components/ChevronUpIcon';
 import HovIcon from '../components/company/HovIcon';
+import ErrorFileIcon from '../components/ErrorFileIcon';
+import ErrorFilmIcon from '../components/ErrorFilmIcon';
 import ErrorFolderIcon from '../components/ErrorFolderIcon';
+import ErrorImageIcon from '../components/ErrorImageIcon';
+import ErrorUploadIcon from '../components/ErrorUploadIcon';
 import ExitIcon from '../components/ExitIcon';
+import FileIcon from '../components/FileIcon';
+import FileUploadIcon from '../components/FileUploadIcon';
+import FilmIcon from '../components/FilmIcon';
 import HelpIcon from '../components/HelpIcon';
 import HomeIcon from '../components/HomeIcon';
+import ImageIcon from '../components/ImageIcon';
 import InfoCircleIcon from '../components/InfoCircleIcon';
 import LayersTwoIcon from '../components/LayersTwoIcon';
 import MessageSmileIcon from '../components/MessageSmileIcon';
@@ -29,6 +37,7 @@ import GoogleIcon from '../components/social/GoogleIcon';
 import TwitterIcon from '../components/social/TwitterIcon';
 import SuccessCircleIcon from '../components/SuccessCircleIcon';
 import ThreeDots from '../components/ThreeDots';
+import TrashErrorIcon from '../components/TrashErrorIcon';
 import TrashIcon from '../components/TrashIcon';
 import UploadIcon from '../components/UploadIcon';
 import UserIcon from '../components/UserIcon';
@@ -38,14 +47,6 @@ import WarningFolderIcon from '../components/WarningFolderIcon';
 import WarningIcon from '../components/WarningIcon';
 import ZapIcon from '../components/ZapIcon';
 import GridView from './GridView';
-import FileUploadIcon from '../components/FileUploadIcon';
-import FileIcon from '../components/FileIcon';
-import FilmIcon from '../components/FilmIcon';
-import ImageIcon from '../components/ImageIcon';
-import ErrorFileIcon from '../components/ErrorFileIcon';
-import ErrorImageIcon from '../components/ErrorImageIcon';
-import ErrorFilmIcon from '../components/ErrorFilmIcon';
-import ErrorUploadIcon from '../components/ErrorUploadIcon';
 import { sortObject } from './utils';
 
 const meta: ComponentMeta<typeof Icon> = {
@@ -157,6 +158,7 @@ const ColoredIcons = (args: any) => {
         SuccessCircleIcon,
         UploadIcon,
         PrimaryIcon,
+        TrashErrorIcon,
         FileIcon,
         FilmIcon,
         ImageIcon,
