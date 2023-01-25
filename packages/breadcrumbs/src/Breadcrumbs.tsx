@@ -45,8 +45,9 @@ const Breadcrumbs = (props: BreadcrumbProps) => {
   });
 
   const textColor = (active: boolean) => {
-    if (active && activeLinkType === 'color-in-text') return '#4A3880';
-    if (active && activeLinkType === 'color-on-bg') return '#4A3880';
+    if (active && activeLinkType === 'color-in-text')
+      return 'brand.primary.900';
+    if (active && activeLinkType === 'color-on-bg') return 'brand.primary.900';
     if (active && activeLinkType === 'default') return 'neutrals.900';
     else return 'neutrals.600';
   };
