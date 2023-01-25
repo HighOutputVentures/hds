@@ -104,6 +104,10 @@ const packageList = [
     packageLink: "https://www.npmjs.com/package/@highoutput/hds-experimental",
     packageName: " @highoutput/hds-experimental",
   },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-file-upload",
+    packageName: " @highoutput/hds-file-upload",
+  },
 ];
 
 const GettingStarted = () => {
