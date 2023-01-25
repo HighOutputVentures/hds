@@ -87,7 +87,7 @@ const Breadcrumbs = (props: BreadcrumbProps) => {
                 color={textColor(d?.isActive!)}
                 bgColor={
                   d?.isActive && activeLinkType === 'color-on-bg'
-                    ? '#EDE8FC'
+                    ? 'brand.primary.500'
                     : 'none'
                 }
                 padding={
