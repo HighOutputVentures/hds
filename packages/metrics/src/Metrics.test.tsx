@@ -51,7 +51,7 @@ describe('Metrics', () => {
         metricValue="$1,000"
         lastViewedText="Last viewed: 1 hour ago"
         viewDetailsText="View details"
-        viewDetailsCalllback={viewDetailsCallback}
+        viewDetailsCallback={viewDetailsCallback}
       />
     );
 
