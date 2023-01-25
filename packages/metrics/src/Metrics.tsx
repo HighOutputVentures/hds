@@ -48,7 +48,7 @@ const Metrics: FC<MetricsProps> = ({
     <Flex
       flexDir="column"
       minHeight={114}
-      width="390px"
+      maxW="390px"
       bg="white"
       border="1px solid #FCFCFC"
       padding="20px 16px"
