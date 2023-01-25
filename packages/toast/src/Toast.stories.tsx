@@ -4,7 +4,7 @@ import { VStack } from "@chakra-ui/react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import * as React from "react";
 import { ThemeProvider } from "../../hds";
-import Toast from "./Toast";
+import { Toast } from "./Toast";
 
 const meta: ComponentMeta<typeof Toast> = {
   title: "Components/Toast",
