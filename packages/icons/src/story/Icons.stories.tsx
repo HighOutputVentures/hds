@@ -11,11 +11,18 @@ import ChevronLeftIcon from '../components/ChevronLeftIcon';
 import ChevronRightIcon from '../components/ChevronRightIcon';
 import ChevronUpIcon from '../components/ChevronUpIcon';
 import HovIcon from '../components/company/HovIcon';
+import ErrorFileIcon from '../components/ErrorFileIcon';
+import ErrorFilmIcon from '../components/ErrorFilmIcon';
 import ErrorFolderIcon from '../components/ErrorFolderIcon';
+import ErrorImageIcon from '../components/ErrorImageIcon';
+import ErrorUploadIcon from '../components/ErrorUploadIcon';
 import ExitIcon from '../components/ExitIcon';
+import FileIcon from '../components/FileIcon';
 import FileUploadIcon from '../components/FileUploadIcon';
+import FilmIcon from '../components/FilmIcon';
 import HelpIcon from '../components/HelpIcon';
 import HomeIcon from '../components/HomeIcon';
+import ImageIcon from '../components/ImageIcon';
 import InfoCircleIcon from '../components/InfoCircleIcon';
 import LayersTwoIcon from '../components/LayersTwoIcon';
 import MessageSmileIcon from '../components/MessageSmileIcon';
@@ -152,6 +159,13 @@ const ColoredIcons = (args: any) => {
         UploadIcon,
         PrimaryIcon,
         TrashErrorIcon,
+        FileIcon,
+        FilmIcon,
+        ImageIcon,
+        ErrorFileIcon,
+        ErrorImageIcon,
+        ErrorFilmIcon,
+        ErrorUploadIcon,
       })}
       {...args}
     />
