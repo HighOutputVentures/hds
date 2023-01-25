@@ -1,19 +1,19 @@
-import React, { FC, ReactNode } from 'react';
-import { Button, ButtonVariantsTypes } from '@highoutput/hds';
 import {
   As,
-  Modal as ChakraModal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
   Box,
   Flex,
   Icon,
+  Modal as ChakraModal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
   Spacer,
 } from '@chakra-ui/react';
+import { Button, ButtonVariantsTypes } from '@highoutput/hds';
+import React, { FC, ReactNode } from 'react';
 
 export interface ModalProps {
   isOpen: boolean;
@@ -40,7 +40,7 @@ const Modal: FC<ModalProps> = ({
   isOpen,
   onClose,
   onOk,
-  okText = 'Ok',
+  okText,
   closeText = 'Close',
   size = 'sm',
   variants = 'solid-primary',
