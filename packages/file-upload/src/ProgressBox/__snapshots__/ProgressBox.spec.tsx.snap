@@ -3,7 +3,7 @@
 exports[`FileUpload should render FileUpload 1`] = `
 <div>
   <div
-    class="css-1m5bjwx"
+    class="css-zg4w2o"
   >
     <div
       class="css-1kxrbkv"
@@ -15,7 +15,7 @@ exports[`FileUpload should render FileUpload 1`] = `
           class="css-70qvj9"
         >
           <svg
-            class="chakra-icon chakra-icon css-1ke8k6m"
+            class="chakra-icon chakra-icon css-1ogxkfj"
             focusable="false"
             viewBox="0 0 46 46"
           >
@@ -48,12 +48,12 @@ exports[`FileUpload should render FileUpload 1`] = `
             class="css-10go69x"
           >
             <p
-              class="chakra-text css-oasw9e"
+              class="chakra-text css-3v2y0x"
             >
               Name
             </p>
             <p
-              class="chakra-text css-1azrnsv"
+              class="chakra-text css-162yuu5"
             >
               0.00KB
             </p>
@@ -63,7 +63,7 @@ exports[`FileUpload should render FileUpload 1`] = `
           class="css-4g6ai3"
         >
           <svg
-            class="chakra-icon chakra-icon css-1eb7ezl"
+            class="chakra-icon chakra-icon css-3kr7z7"
             focusable="false"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +98,7 @@ exports[`FileUpload should render FileUpload 1`] = `
           </div>
         </div>
         <p
-          class="chakra-text css-1azrnsv"
+          class="chakra-text css-162yuu5"
         >
           %
         </p>
