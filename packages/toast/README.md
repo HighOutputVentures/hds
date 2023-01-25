@@ -7,24 +7,27 @@ We aim to build a library of custom ReactJS components that implements our uniqu
 To install the package, use:
 
 ```bash
-npm i @highoutput/hds-tag
+npm i @highoutput/hds-toast
 ```
 
 ### Usage
 
 ```tsx
-import { Tag, withTag } from '@highoutput/hds-tag';
-import { ThemeProvider, extendTheme } from '@highoutput/hds';
-import { useCallback } from 'react';
+import { useToast } from "@highoutput/hds-toast";
+import { ThemeProvider, extendTheme } from "@highoutput/hds";
 
 export default function Example() {
-  const handleClose = useCallback(() => {
-    /* heavy logic after close */
-  }, []);
+  const toast = useToast();
 
   return (
-    <ThemeProvider theme={extendTheme(withTag())}>
-      <Tag label="Hello World" closable={true} onClose={handleClose} />
+    <ThemeProvider>
+      <button
+        onClick={function () {
+          toast.success("Hello world!");
+        }}
+      >
+        Click me
+      </button>
     </ThemeProvider>
   );
 }
