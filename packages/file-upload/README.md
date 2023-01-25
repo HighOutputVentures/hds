@@ -13,15 +13,31 @@ npm i @highoutput/file-upload
 ### Usage
 
 ```tsx
-import FileUpload from '@highoutput/file-upload';
+import { FileUpload, ProgressBox } from '@highoutput/hds-file-upload';
 
 export const FileUploadSample = () => {
-  const handleChange = () => {
-    // do something
-  };
+  const [files, setFiles] = useState([]);
+
+  const handleChange = (event) => Promise.resolve(setFiles(event.target.files));
 
   return (
-    <FileUpload onChange={handleChange} accepts=".png, .gif, .jpeg, .svg" />
+    <ThemeProvider>
+      <Flex justify="center">
+        <FileUpload {...args} onChange={handleChange} />
+      </Flex>
+
+      {(files as File[])?.length ? (
+        <Flex justify="center">
+          <ProgressBox
+            file={files}
+            onDelete={(): void => setFiles([])}
+            value={80}
+          />
+        </Flex>
+      ) : (
+        <></>
+      )}
+    </ThemeProvider>
   );
 };
 ```
