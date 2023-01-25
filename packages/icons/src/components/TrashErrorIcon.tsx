@@ -1,7 +1,7 @@
 import { Icon, IconProps } from '@chakra-ui/react';
 import * as React from 'react';
 
-export default function TrashErrorIcon(props: IconProps) {
+const TrashErrorIcon: React.FC<IconProps> = (props) => {
   return (
     <Icon
       width={4}
@@ -30,4 +30,6 @@ export default function TrashErrorIcon(props: IconProps) {
       />
     </Icon>
   );
-}
+};
+
+export default TrashErrorIcon;
