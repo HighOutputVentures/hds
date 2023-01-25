@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingIndicator should render 1`] = `
+<div>
+  <div
+    class="css-xi606m"
+  >
+    <div
+      class="chakra-spinner css-1y7joxr"
+    >
+      <span
+        class="css-8b45rq"
+      >
+        Loading...
+      </span>
+    </div>
+    <p
+      class="chakra-text css-9c7r58"
+    >
+      Loading...
+    </p>
+  </div>
+</div>
+`;
