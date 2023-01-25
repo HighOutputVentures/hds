@@ -1,0 +1,17 @@
+addReviewers: true
+
+addAssignees: author
+
+reviewers:
+  - nberongoy
+  - Boniqx
+  - nerflim
+  - lcjay2212
+  - gojchristopher
+  - jade-kenneth
+  - calvo-jp
+
+numberOfReviewers: 0
+
+skipKeywords:
+  - wip
