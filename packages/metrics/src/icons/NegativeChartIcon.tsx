@@ -21,9 +21,9 @@ export default function NegativeChartIcon(props: React.ComponentProps<'svg'>) {
       <path
         d="M97 49C83.3609 44.4536 78.9097 26.9737 65 25C52.1759 23.1804 45.7298 39.9551 33 37C17.5628 33.4164 16.5969 2.29974 1 1"
         stroke="#F04438"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <defs>
         <linearGradient
