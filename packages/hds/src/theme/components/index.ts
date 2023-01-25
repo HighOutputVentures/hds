@@ -11,6 +11,7 @@ import PinInputField from './pinInputField';
 import RadioImage from './radioImage';
 import Select from './select';
 import Stack from './stack';
+import Spinner from './spinner';
 import Switch from './switch';
 import Tabs from './tabs';
 import Text from './text/text';
@@ -31,6 +32,7 @@ const components: { [key: string]: ComponentStyleConfig } = {
   Select,
   RadioImage,
   PinInputField,
+  Spinner,
 };
 
 export default components;
