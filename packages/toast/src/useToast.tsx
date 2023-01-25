@@ -1,5 +1,4 @@
 import { ToastId, useToast as _, UseToastOptions } from "@chakra-ui/react";
-import { useMemo } from "react";
 import { Toast } from "./Toast";
 
 export type UseToastFnConfig = Pick<
@@ -24,9 +23,7 @@ const defaultToastConfig: UseToastOptions = {
 };
 
 export function useToast(): UseToastReturn {
-  const toast = useMemo(() => {
-    return _(defaultToastConfig);
-  }, []);
+  const toast = _(defaultToastConfig);
 
   return {
     error(description, overrides) {

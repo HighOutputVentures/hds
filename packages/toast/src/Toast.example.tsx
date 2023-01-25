@@ -1,21 +1,21 @@
 import * as React from "react";
-import { useToast } from "./useToast";
+import { useToast, UseToastFnConfig } from "./useToast";
 
-export function ToastExample() {
+export function ToastExample({ onCloseComplete }: UseToastFnConfig) {
   const toast = useToast();
 
   return (
     <>
       <button
         onClick={() => {
-          toast.success("This is a success message!!");
+          toast.success("This is a success message!!", { onCloseComplete });
         }}
       >
         Success
       </button>
       <button
         onClick={() => {
-          toast.error("This is an error message!!");
+          toast.error("This is an error message!!", { onCloseComplete });
         }}
       >
         Error
