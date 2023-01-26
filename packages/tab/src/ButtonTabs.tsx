@@ -43,6 +43,7 @@ const ButtonTabs = (props: ButtonTabsProps) => {
         {tabLabel.map((label, idx) => {
           return (
             <Tab
+              key={`${label}${idx}`}
               _selected={_selected}
               padding={'10px 16px'}
               sx={size === 'md' ? styles.tab : undefined}
