@@ -2,7 +2,7 @@ import { TabPanel, TabPanels } from '@chakra-ui/react';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Tab from './tab';
+import Tab from './Tab';
 
 describe('Should render Tab', () => {
   beforeEach(() => {

@@ -1,11 +1,11 @@
 // @ts-nocheck
-import { TabPanel } from '@chakra-ui/react';
+import { TabPanel, TabPanels } from '@chakra-ui/react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 // @ts-ignore
-import { TabPanels, ThemeProvider } from '../../hds/src';
+import { ThemeProvider } from '@highoutput/hds/src';
 import ButtonTabs from './ButtonTabs';
-import Tab from './tab';
+import Tab from './Tab';
 
 export default {
   title: 'Components/Tab',
