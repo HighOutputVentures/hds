@@ -5,7 +5,7 @@ import * as React from 'react';
 // @ts-ignore
 import { ThemeProvider } from '@highoutput/hds/src';
 import ButtonTabs from './ButtonTabs';
-import Tab from './Tab';
+import Tab from './tab';
 
 export default {
   title: 'Components/Tab',

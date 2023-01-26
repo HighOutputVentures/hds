@@ -9,7 +9,7 @@ import {
   TabsProps,
 } from '@chakra-ui/react';
 import ButtonTabs, { ButtonTabsProps } from './ButtonTabs';
-import Tab, { TabProps } from './Tab';
+import Tab, { TabProps } from './tab';
 
 export {
   ButtonTabs,
