@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ThemeProvider } from '~/hds';
 import ButtonTabs from './ButtonTabs';
-import Tab from './tab';
+import Tab from './Tab';
 
 export default {
   title: 'Components/Tab',
