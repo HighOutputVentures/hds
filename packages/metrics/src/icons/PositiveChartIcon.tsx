@@ -34,7 +34,7 @@ export default function PositiveChartIcon(props: React.ComponentProps<'svg'>) {
           y2="49"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.641167" stop-color="white" stop-opacity="0" />
+          <stop offset="0.641167" stop-color="white" stopOpacity="0" />
           <stop offset="1" stop-color="white" />
         </linearGradient>
       </defs>
