@@ -34,7 +34,7 @@ export default function TrendPositive(props: React.ComponentProps<'svg'>) {
           y2="49"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.641167" stopColor="white" stop-opacity="0" />
+          <stop offset="0.641167" stopColor="white" stopOpacity="0" />
           <stop offset="1" stopColor="white" />
         </linearGradient>
       </defs>
