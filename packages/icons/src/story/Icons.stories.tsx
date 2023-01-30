@@ -6,10 +6,10 @@ import BoxCircularBGIcon from '../components/BoxCircularBGIcon';
 import BoxIcon from '../components/BoxIcon';
 import CheckCircleIcon from '../components/CheckCircleIcon';
 import CheckIcon from '../components/CheckIcon';
-import ChevronDownIcon from '../components/ChevronDownIcon';
-import ChevronLeftIcon from '../components/ChevronLeftIcon';
-import ChevronRightIcon from '../components/ChevronRightIcon';
-import ChevronUpIcon from '../components/ChevronUpIcon';
+import ChevronDownIcon from '../components/arrow/ChevronDownIcon';
+import ChevronLeftIcon from '../components/arrow/ChevronLeftIcon';
+import ChevronRightIcon from '../components/arrow/ChevronRightIcon';
+import ChevronUpIcon from '../components/arrow/ChevronUpIcon';
 import HovIcon from '../components/company/HovIcon';
 import ErrorFileIcon from '../components/ErrorFileIcon';
 import ErrorFilmIcon from '../components/ErrorFilmIcon';
@@ -48,6 +48,15 @@ import WarningIcon from '../components/WarningIcon';
 import ZapIcon from '../components/ZapIcon';
 import GridView from './GridView';
 import { sortObject } from './utils';
+import NegativeArrowIcon from '../components/arrow/NegativeArrowIcon';
+import PositiveArrowIcon from '../components/arrow/PositiveArrowIcon';
+import ArrowLeftIcon from '../components/arrow/ArrowLeftIcon';
+import ArrowRightIcon from '../components/arrow/ArrowRightIcon';
+import ArrowPositiveChange from '../components/arrow/ArrowPositiveChange';
+import NegativeChartIcon from '../components/chart/NegativeChartIcon';
+import PositiveChartIcon from '../components/chart/PositiveChartIcon';
+import TrendNegative from '../components/chart/TrendNegative';
+import TrendPositive from '../components/chart/TrendPositive';
 
 const meta: ComponentMeta<typeof Icon> = {
   title: 'Components/Icons',
@@ -93,6 +102,11 @@ const ArrowsTemplate = (args: any) => {
         ChevronRightIcon,
         ChevronDownIcon,
         ChevronUpIcon,
+        NegativeArrowIcon,
+        PositiveArrowIcon,
+        ArrowPositiveChange,
+        ArrowLeftIcon,
+        ArrowRightIcon,
       })}
       {...args}
     />
@@ -101,6 +115,20 @@ const ArrowsTemplate = (args: any) => {
 
 const CompanyTemplate = (args: any) => {
   return <GridView data={sortObject({ HovIcon })} {...args} />;
+};
+
+const ChartTemplate = (args: any) => {
+  return (
+    <GridView
+      data={sortObject({
+        NegativeChartIcon,
+        PositiveChartIcon,
+        TrendNegative,
+        TrendPositive,
+      })}
+      {...args}
+    />
+  );
 };
 
 const SocialTemplate = (args: any) => {
@@ -185,6 +213,10 @@ const StoryTemplate: ComponentStory<any> = (args) => {
         <Box>
           <Title>Company Icons</Title>
           <CompanyTemplate width={width} height={height} />
+        </Box>
+        <Box>
+          <Title>Chart Icons</Title>
+          <ChartTemplate width={width} height={height} />
         </Box>
         <Box>
           <Title>Social Icons</Title>
