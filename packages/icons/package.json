@@ -63,7 +63,7 @@
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
     }
   },
-  "gitHead": "220c468183d0032ba2f8eb5b26d89cf5712292c0",
+  "gitHead": "759184e06d7b1b7528e9f04c70049b1804bfa627",
   "dependencies": {
     "@chakra-ui/icons": "2.0.11",
     "@chakra-ui/react": "^2.3.7",

@@ -50,7 +50,7 @@
   "jest": {
     "verbose": true
   },
-  "gitHead": "2cc842169e828ff56ef57e039534fb0414854443",
+  "gitHead": "759184e06d7b1b7528e9f04c70049b1804bfa627",
   "dependencies": {
     "@highoutput/hds-icons": "^0.1.27"
   }
