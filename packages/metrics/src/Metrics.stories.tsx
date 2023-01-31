@@ -29,7 +29,7 @@ Default.args = {
       bg="green.100"
       borderRadius={100}
     >
-      <ArrowPositiveChange />
+      <ArrowPositiveChange w={5} h={5} mt={1.5} />
     </Flex>
   ),
   metricValue: '4000',
