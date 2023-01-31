@@ -174,7 +174,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                   index,
                 ) => {
                   return (
-                    <Th key={React.useId()} width={width}>
+                    <Th key={`tableHeading__[${index}]`} width={width}>
                       <Flex alignItems="center">
                         {!!onCheck && (
                           <Checkbox
@@ -220,14 +220,14 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
           <Tbody>
             {items.map((item, index_0) => {
               return (
-                <Tr key={React.useId()}>
+                <Tr key={`tablRow__[${index_0}]`}>
                   {columns.map(
                     ({ onSort, onCheck, onClick, defaultChecked, ...others }, index_1) => {
                       const renderRow = others.renderRow ?? ((obj) => String(obj));
 
                       return (
                         <Td
-                          key={React.useId()}
+                          key={`tableCol__[${index_0}${index_1}]`}
                           onClick={() => {
                             onClick?.({ item });
                           }}
