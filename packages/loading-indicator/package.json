@@ -48,5 +48,11 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "react-lottie": "^1.2.3"
+  },
+  "devDependencies": {
+    "@types/react-lottie": "^1.2.6"
   }
 }

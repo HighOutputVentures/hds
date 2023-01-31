@@ -1,12 +1,33 @@
 import React, { FC } from 'react';
-import { Text, Box, Spinner } from '@chakra-ui/react';
+import { Text, Box } from '@chakra-ui/react';
+import Lottie from 'react-lottie';
+import {
+  twoToneIndicator,
+  dottedIndicator,
+  ellipsisIndicator,
+} from './indicators';
 
 export interface LoadingIndicatorProps {
-  variant?: 'solid' | 'twotone';
+  variant?: 'solid' | 'twotone' | 'dotted' | 'ellipsis';
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   showLabel?: boolean;
   labelText?: string;
 }
+
+const variants = {
+  solid: twoToneIndicator,
+  twotone: twoToneIndicator,
+  dotted: dottedIndicator,
+  ellipsis: ellipsisIndicator,
+};
+
+const sizes = {
+  xs: 20,
+  sm: 30,
+  md: 40,
+  lg: 50,
+  xl: 60,
+};
 
 const LoadingIndicator: FC<LoadingIndicatorProps> = ({
   variant = 'solid',
@@ -15,8 +36,19 @@ const LoadingIndicator: FC<LoadingIndicatorProps> = ({
   labelText = 'Loading...',
 }) => {
   return (
-    <Box textAlign="center">
-      <Spinner variant={variant} size={size} />
+    <Box textAlign="center" pointerEvents="none">
+      <Lottie
+        options={{
+          loop: true,
+          autoplay: true,
+          animationData: variants[variant],
+          rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+          },
+        }}
+        height={sizes[size]}
+        width={sizes[size]}
+      />
       {showLabel && <Text fontSize="10px">{labelText}</Text>}
     </Box>
   );
