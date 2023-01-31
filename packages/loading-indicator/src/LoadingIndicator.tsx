@@ -1,10 +1,11 @@
+import { Box, Text } from '@chakra-ui/react';
 import React, { FC } from 'react';
-import { Text, Box } from '@chakra-ui/react';
 import Lottie from 'react-lottie';
 import {
-  twoToneIndicator,
   dottedIndicator,
   ellipsisIndicator,
+  solidIndicator,
+  twoToneIndicator,
 } from './indicators';
 
 export interface LoadingIndicatorProps {
@@ -15,7 +16,7 @@ export interface LoadingIndicatorProps {
 }
 
 const variants = {
-  solid: twoToneIndicator,
+  solid: solidIndicator,
   twotone: twoToneIndicator,
   dotted: dottedIndicator,
   ellipsis: ellipsisIndicator,
