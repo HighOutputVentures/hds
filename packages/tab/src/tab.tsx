@@ -49,6 +49,7 @@ const Tab = React.forwardRef<HTMLDivElement, TabProps>((props, _) => {
     <Flex w="full" h="full">
       <Tabs orientation={tabOrientation} gap="32px" w="full" h="full">
         <TabList
+          key={`${variant}-${Math.random()}`}
           gap="4px"
           flexDir={tabOrientation === 'vertical' ? 'column' : 'row'}
           placeContent={tabPlacement}

@@ -28,10 +28,13 @@ const ButtonTabs = (props: ButtonTabsProps) => {
     gap = '32px',
   } = props;
 
+  console.log(`${size}-${Math.random()}`);
+
   const styles = useMultiStyleConfig('Tabs', { variant: 'unstyled', size });
   return (
     <Tabs variant={'unstyled'} w="full" height={'full'}>
       <TabList
+        key={`${size}-${Math.random()}`}
         border={'1px solid #D0D5DD'}
         borderRadius={'8px'}
         width="fit-content"
