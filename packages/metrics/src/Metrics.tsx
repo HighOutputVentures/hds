@@ -9,11 +9,13 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import * as React from 'react';
-import ArrowDown from './icons/ArrowDown';
-import ArrowUp from './icons/ArrowUp';
-import NegativeChartIcon from './icons/NegativeChartIcon';
-import PositiveChartIcon from './icons/PositiveChartIcon';
-import { DotsVerticalIcon } from '@highoutput/hds-icons';
+import {
+  DotsVerticalIcon,
+  NegativeChartIcon,
+  PositiveChartIcon,
+  PositiveArrowIcon,
+  NegativeArrowIcon,
+} from '@highoutput/hds-icons';
 
 export interface MetricsProps {
   /** Percentage change of Metric */
@@ -70,9 +72,9 @@ const Metrics: FC<MetricsProps> = ({
           </Text>
           <HStack height="18px" borderRadius="16px" padding="2px 10px 2px 0px">
             {metricChange === 'positive' ? (
-              <Icon as={ArrowUp} />
+              <Icon as={PositiveArrowIcon} />
             ) : (
-              <Icon as={ArrowDown} />
+              <Icon as={NegativeArrowIcon} />
             )}
             <Text
               color={

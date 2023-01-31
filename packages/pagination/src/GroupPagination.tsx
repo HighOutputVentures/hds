@@ -1,8 +1,7 @@
 import { Box, Button, ButtonGroup, Icon, SystemStyleObject } from "@chakra-ui/react";
 import * as React from "react";
 import { useOtherPaginationInfo, useStyles } from "./hooks";
-import ArrowLeftIcon from "./icons/ArrowLeft";
-import ArrowRightIcon from "./icons/ArrowRight";
+import { ArrowRightIcon, ArrowLeftIcon } from "@highoutput/hds-icons";
 
 type GroupPaginationBaseProps = {
   maxPageControls?: 4 | 6;
