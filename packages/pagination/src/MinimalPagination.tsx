@@ -1,8 +1,7 @@
 import { Box, Button, Flex, HStack, Icon, Spacer, SystemStyleObject, Text } from "@chakra-ui/react";
 import * as React from "react";
 import { useOtherPaginationInfo, useStyles } from "./hooks";
-import ArrowLeftIcon from "./icons/ArrowLeft";
-import ArrowRightIcon from "./icons/ArrowRight";
+import { ArrowRightIcon, ArrowLeftIcon } from "@highoutput/hds-icons";
 
 type MinimalPaginationBaseProps = {
   /** toggle legend. eg `Page 1 of 10` */

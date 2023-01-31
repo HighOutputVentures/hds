@@ -1,8 +1,8 @@
 import { Flex, ThemeProvider } from '@highoutput/hds';
 import { ComponentStory, Meta } from '@storybook/react';
 import * as React from 'react';
-import ArrowPositiveChange from './icons/ArrowPositiveChange';
 import Metrics from './Metrics';
+import { ArrowPositiveChange } from '@highoutput/hds-icons';
 
 export default {
   title: 'Components/Metrics',
