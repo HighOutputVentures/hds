@@ -35,7 +35,7 @@ Array [
               <p
                 className="chakra-text css-fzwid6"
               >
-                January 2023
+                February 2023
               </p>
               <svg
                 className="chakra-icon chakra-icon css-1xogjj1"
@@ -240,7 +240,7 @@ exports[`Snapshots (DatePicker Preset Range) Should match snapshot 1`] = `
             <p
               className="chakra-text css-fzwid6"
             >
-              January 2023
+              February 2023
             </p>
             <svg
               className="chakra-icon chakra-icon css-1xogjj1"
@@ -329,7 +329,7 @@ exports[`Snapshots (DatePicker Preset Range) Should match snapshot 1`] = `
             <p
               className="chakra-text css-fzwid6"
             >
-              January 2023
+              February 2023
             </p>
             <svg
               className="chakra-icon chakra-icon css-1xogjj1"
@@ -471,7 +471,7 @@ Array [
               <p
                 className="chakra-text css-fzwid6"
               >
-                January 2023
+                February 2023
               </p>
               <svg
                 className="chakra-icon chakra-icon css-1xogjj1"
@@ -674,7 +674,7 @@ Array [
                   <p
                     className="chakra-text css-fzwid6"
                   >
-                    January 2023
+                    February 2023
                   </p>
                   <svg
                     className="chakra-icon chakra-icon css-1xogjj1"
