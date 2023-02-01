@@ -21,6 +21,7 @@ import {
 import * as React from "react";
 import ArrowDownIcon from "./icons/ArrowDownIcon";
 import HelpCircleIcon from "./icons/HelpCircleIcon";
+import { v4 as uuid } from "uuid";
 
 export type UnknownArray = unknown[];
 export type ArrayItem<T extends UnknownArray> = T[number];
@@ -174,7 +175,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                   index,
                 ) => {
                   return (
-                    <Th key={`tableHeading__[${index}]`} width={width}>
+                    <Th key={uuid()} width={width}>
                       <Flex alignItems="center">
                         {!!onCheck && (
                           <Checkbox
@@ -220,14 +221,14 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
           <Tbody>
             {items.map((item, index_0) => {
               return (
-                <Tr key={`tablRow__[${index_0}]`}>
+                <Tr key={uuid()}>
                   {columns.map(
                     ({ onSort, onCheck, onClick, defaultChecked, ...others }, index_1) => {
                       const renderRow = others.renderRow ?? ((obj) => String(obj));
 
                       return (
                         <Td
-                          key={`tableCol__[${index_0}${index_1}]`}
+                          key={uuid()}
                           onClick={() => {
                             onClick?.({ item });
                           }}
