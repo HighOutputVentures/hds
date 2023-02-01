@@ -53,6 +53,7 @@
     "react-lottie": "^1.2.3"
   },
   "devDependencies": {
-    "@types/react-lottie": "^1.2.6"
+    "@types/react-lottie": "^1.2.6",
+    "jest-canvas-mock": "^2.4.0"
   }
 }

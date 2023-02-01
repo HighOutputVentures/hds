@@ -10,9 +10,9 @@ describe('LoadingIndicator', () => {
   });
 
   it('should show the label by default', () => {
-    const { getAllByText } = render(<LoadingIndicator />);
+    const { getByText } = render(<LoadingIndicator />);
 
-    expect(getAllByText('Loading...')[1]).toBeTruthy();
+    expect(getByText('Loading...')).toBeTruthy();
   });
 
   it('should update the label', () => {
@@ -24,8 +24,8 @@ describe('LoadingIndicator', () => {
   });
 
   it('should hide the label', () => {
-    const { getAllByText } = render(<LoadingIndicator showLabel={false} />);
+    const { queryByText } = render(<LoadingIndicator showLabel={false} />);
 
-    expect(getAllByText('Loading...').length).toBe(1);
+    expect(queryByText('Loading...')).toBeFalsy();
   });
 });
