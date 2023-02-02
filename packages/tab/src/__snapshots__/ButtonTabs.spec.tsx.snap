@@ -13,7 +13,7 @@ exports[` 1`] = `
     <button
       aria-controls="tabs-:r0:--tabpanel--1"
       aria-selected={false}
-      className="chakra-tabs__tab css-jm9r3u"
+      className="chakra-tabs__tab css-1jy8375"
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
       onFocus={[Function]}
@@ -30,7 +30,7 @@ exports[` 1`] = `
     <button
       aria-controls="tabs-:r0:--tabpanel--1"
       aria-selected={false}
-      className="chakra-tabs__tab css-17os8v2"
+      className="chakra-tabs__tab css-q25bzy"
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
       onFocus={[Function]}

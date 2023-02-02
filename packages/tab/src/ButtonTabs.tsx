@@ -29,7 +29,7 @@ const ButtonTabs = (props: ButtonTabsProps) => {
     onChangeHandler,
     fitToBox,
     size = 'sm',
-    defaultIndex = 1,
+    defaultIndex = 0,
     _selected = { background: '#F9FAFB', color: '#344054' },
     gap = '32px',
   } = props;
