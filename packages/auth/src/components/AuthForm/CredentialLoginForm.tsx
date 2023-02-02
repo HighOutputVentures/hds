@@ -24,6 +24,7 @@ export type CredentialLoginFormDefaultProps = {
   formHeaderTitle?: ReactNode | string;
   formHeaderSubTitle?: ReactNode | string;
   width?: string | number;
+  formName?: string;
 };
 export interface CredentialLoginFormNameProps
   extends CredentialLoginFormDefaultProps {
@@ -52,6 +53,7 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
     passwordLeftIcon,
     loginTitle,
     onSubmit,
+    formName,
     passwordLabel,
     width = '512px',
     customLink,
@@ -88,17 +90,13 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
 
   return (
     <Box as={'form'} w={width} onSubmit={handleSubmit(onSubmitForm)}>
-      <Center my={8} p={0}>
+      <Center p={0}>
         <VStack spacing="15px">
-          {isSignUp && signUpTitle ? (
-            signUpTitle
-          ) : !isSignUp && loginTitle ? (
-            loginTitle
-          ) : !isSignUp && !loginTitle ? (
-            <Text size="header-3">Login</Text>
-          ) : (
-            isSignUp && !signUpTitle && <Text size="header-3">Sign up</Text>
-          )}
+          {isSignUp && signUpTitle
+            ? signUpTitle
+            : !isSignUp && loginTitle
+            ? loginTitle
+            : !isSignUp && !loginTitle}
           {formHeaderSubTitle && formHeaderTitle}
           {formHeaderTitle && typeof formHeaderTitle === 'string' && (
             <Text color="neutrals.600" size="label-xs-default">
@@ -173,6 +171,7 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
       </Stack>
       <Button
         w="full"
+        data-testid={`${formName}-submit-button`}
         variant="primary"
         isLoading={formState.isSubmitting}
         type="submit"
