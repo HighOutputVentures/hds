@@ -21,6 +21,7 @@ export interface ModalProps {
   onOk?: () => void;
   okText?: string;
   closeText?: string;
+  isLoading?: boolean;
   variants?: ButtonVariantsTypes | undefined;
   size?: 'lg' | 'md' | 'sm' | 'xs';
   align?: 'left' | 'center' | 'right';
@@ -42,6 +43,7 @@ const Modal: FC<ModalProps> = ({
   onOk,
   okText,
   closeText = 'Close',
+  isLoading = false,
   size = 'sm',
   variants = 'solid-primary',
   align,
@@ -65,11 +67,21 @@ const Modal: FC<ModalProps> = ({
           <ModalFooter>
             {okText && (
               <Flex w="full" justifyContent="flex-end">
-                <Button onClick={onClose} block variant="outline-primary">
+                <Button
+                  onClick={onClose}
+                  block
+                  variant="outline-primary"
+                  isDisabled={isLoading}
+                >
                   {closeText}
                 </Button>
                 <Spacer maxW="4" />
-                <Button onClick={onOk} block variant={variants}>
+                <Button
+                  onClick={onOk}
+                  block
+                  variant={variants}
+                  isLoading={isLoading}
+                >
                   {okText}
                 </Button>
               </Flex>
