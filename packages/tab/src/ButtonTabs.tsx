@@ -29,7 +29,7 @@ const ButtonTabs = (props: ButtonTabsProps) => {
     onChangeHandler,
     fitToBox,
     size = 'sm',
-    defaultIndex = 0,
+    defaultIndex,
     _selected = { background: '#F9FAFB', color: '#344054' },
     gap = '32px',
   } = props;
@@ -37,7 +37,7 @@ const ButtonTabs = (props: ButtonTabsProps) => {
   const styles = useMultiStyleConfig('Tabs', { variant: 'unstyled', size });
   return (
     <Tabs
-      defaultIndex={defaultIndex}
+      defaultIndex={defaultIndex || 0}
       onChange={(e) => {
         if (onChangeHandler) onChangeHandler(e);
       }}
