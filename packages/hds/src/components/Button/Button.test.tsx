@@ -15,7 +15,7 @@ describe('Button Component', () => {
   });
 
   it('should render button component', async () => {
-    const submitButton = await screen.findAllByTestId(':r0:-button');
+    const submitButton = await screen.findAllByTestId('hds.button');
     expect(submitButton).toHaveLength(1);
   });
 

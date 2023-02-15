@@ -10,7 +10,7 @@ describe('Social Button Component', () => {
   });
 
   it('should render social button for dribble ', async () => {
-    const submitButton = await screen.findAllByTestId('dribble.social.btn');
+    const submitButton = await screen.findAllByTestId('hds.dribble.social.icon.btn');
     expect(submitButton).toHaveLength(1);
   });
 });
@@ -20,7 +20,7 @@ describe('Social Button Component', () => {
   });
 
   it('should render social button for twitter ', async () => {
-    const submitButton = await screen.findAllByTestId('twitter.social.btn');
+    const submitButton = await screen.findAllByTestId('hds.twitter.social.icon.btn');
     expect(submitButton).toHaveLength(1);
   });
 });
@@ -30,7 +30,7 @@ describe('Social Button Component', () => {
   });
 
   it('should render social button for figma ', async () => {
-    const submitButton = await screen.findAllByTestId('figma.social.btn');
+    const submitButton = await screen.findAllByTestId('hds.figma.social.icon.btn');
     expect(submitButton).toHaveLength(1);
   });
 });
@@ -40,7 +40,7 @@ describe('Social Button Component', () => {
   });
 
   it('should render social button for facebook ', async () => {
-    const submitButton = await screen.findAllByTestId('facebook.social.btn');
+    const submitButton = await screen.findAllByTestId('hds.facebook.social.icon.btn');
     expect(submitButton).toHaveLength(1);
   });
 });
@@ -50,7 +50,7 @@ describe('Social Button Component', () => {
   });
 
   it('should render social button for apple ', async () => {
-    const submitButton = await screen.findAllByTestId('apple.social.btn');
+    const submitButton = await screen.findAllByTestId('hds.apple.social.icon.btn');
     expect(submitButton).toHaveLength(1);
   });
 });
@@ -60,7 +60,7 @@ describe('Social Button Component', () => {
   });
 
   it('should render social button for google ', async () => {
-    const submitButton = await screen.findAllByTestId('google.social.btn');
+    const submitButton = await screen.findAllByTestId('hds.google.social.icon.btn');
     expect(submitButton).toHaveLength(1);
   });
 });

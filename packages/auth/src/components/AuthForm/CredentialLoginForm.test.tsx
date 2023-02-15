@@ -10,7 +10,7 @@ describe('Login Form Email-based Component', () => {
   });
   it('should display error message on email', async () => {
     // const emailInput = screen.getByRole('input', { name: 'email-input' });
-    const emailInput = screen.getByTestId(':r0:-input-field-input');
+    const emailInput = screen.getByTestId('email-input');
     const submitBtn = screen.getByRole('button', { name: 'Login' });
     fireEvent.change(emailInput, { target: { value: 'hello@g' } });
     fireEvent.click(submitBtn);
@@ -30,7 +30,7 @@ describe('Login Form Email-based Component', () => {
     expect(errorText).toBeInTheDocument();
   });
   it('should toggle showing and hiding password', () => {
-    const showHideBtn = screen.getByTestId('show-hide-btn');
+    const showHideBtn = screen.getByTestId('hds.show.hide.btn');
     fireEvent.click(showHideBtn);
     const showPasswordLabel = screen.getByRole('button', {
       name: 'show-password',
@@ -43,15 +43,15 @@ describe('Login Form Email-based Component', () => {
     expect(hidePasswordLabel).toBeInTheDocument();
   });
   it('should toggle login to signup form', async () => {
-    const switchLink = screen.getByTestId('switch-form-link');
+    const switchLink = screen.getByTestId('hds.switch.form.link');
     fireEvent.click(switchLink);
     const textLoginLabel = screen.getByRole('link', {
-      name: 'login-link-label',
+      name: 'hds.login.link.label',
     });
     expect(textLoginLabel).toBeInTheDocument();
     fireEvent.click(switchLink);
     const textSignUpLabel = await screen.findByRole('link', {
-      name: 'signup-link-label',
+      name: 'hds.signup.link.label',
     });
     expect(textSignUpLabel).toBeInTheDocument();
   });
@@ -65,7 +65,7 @@ describe('Login form Username-based component', () => {
   });
   it('should display error message on name', async () => {
     // const nameInput = screen.getByRole('input', { name: 'name-input' });
-    const nameInput = screen.getByTestId(':ro:-input-field-input');
+    const nameInput = screen.getByTestId('name-input');
     const submitBtn = screen.getByRole('button', { name: 'Login' });
     fireEvent.change(nameInput, { target: { value: null } });
     fireEvent.click(submitBtn);

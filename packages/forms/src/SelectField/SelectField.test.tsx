@@ -20,6 +20,6 @@ describe('SelectField', () => {
   });
 
   it('should render Select', () => {
-    expect(screen.queryByTestId(':r0:-select-field-select')).toBeDefined();
+    expect(screen.queryByTestId('hds.select.field')).toBeDefined();
   });
 });

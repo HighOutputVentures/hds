@@ -9,7 +9,7 @@ describe('Close Button Component', () => {
   });
 
   it('should render close button ', async () => {
-    const submitButton = await screen.findAllByTestId('close.btn');
+    const submitButton = await screen.findAllByTestId('hds.close.btn');
     expect(submitButton).toHaveLength(1);
   });
 });

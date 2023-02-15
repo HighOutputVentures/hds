@@ -21,7 +21,7 @@ exports[`Array Field Component Snapshot Should match snapshot 1`] = `
       >
         <input
           className="chakra-input css-0"
-          data-testid=":r0:-input-field-input"
+          data-testid="hds.input.field"
           disabled={false}
           id="input"
           name="input.0.value"

@@ -124,6 +124,7 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
                   props.nameLabel?.slice(1)
                 : undefined
             }
+            __testId="name-input"
             placeholder={`Input your ${
               props.nameLabel?.toLowerCase() ?? 'username'
             }`}
@@ -137,6 +138,7 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
             label={props.emailLabel}
             leftIcon={props.emailLeftIcon}
             placeholder="Input your email"
+            __testId="email-input"
             errorMsg={formState.errors.email?.message}
             disabled={formState.isSubmitting}
           />
@@ -151,9 +153,10 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
           errorMsg={formState.errors.password?.message}
           disabled={formState.isSubmitting}
           leftIcon={passwordLeftIcon}
+          __testId="password-input"
           rightIcon={
             <Button
-              data-testid={'show-hide-btn'}
+              data-testid={'hds.show.hide.btn'}
               background={'none'}
               _hover={{ background: 'none' }}
               _active={{ background: 'none' }}
@@ -171,7 +174,7 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
       </Stack>
       <Button
         w="full"
-        data-testid={`${formName}-submit-button`}
+        data-testid={`hds.${formName}.submit.button`}
         variant="primary"
         isLoading={formState.isSubmitting}
         type="submit"
@@ -186,9 +189,11 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
             {isSignUp ? 'Already have an account?' : 'No account yet?'}{' '}
             <Text
               as={'a'}
-              data-testid={'switch-form-link'}
+              data-testid={'hds.switch.form.link'}
               _hover={{ textDecoration: 'underline', cursor: 'pointer' }}
-              aria-label={isSignUp ? 'login-link-label' : 'signup-link-label'}
+              aria-label={
+                isSignUp ? 'hds.login.link.label' : 'hds.signup.link.label'
+              }
               onClick={() => setIsSignUp((prev) => !prev)}
               fontWeight={'bold'}
               role={'link'}

@@ -48,7 +48,7 @@ exports[`Contact Card Component Snapshot (ContactCard) Should match snapshot 1`]
           >
             <input
               className="chakra-input css-0"
-              data-testid=":r9:-input-field-input"
+              data-testid="hds.input.field"
               disabled={false}
               id="name"
               name="details.name"
@@ -84,7 +84,7 @@ exports[`Contact Card Component Snapshot (ContactCard) Should match snapshot 1`]
           >
             <input
               className="chakra-input css-0"
-              data-testid=":rc:-input-field-input"
+              data-testid="hds.input.field"
               disabled={false}
               id="emailAddress"
               name="emailAddress"
@@ -180,7 +180,7 @@ exports[`Contact Form Component Snapshot (ContactForm) Should match snapshot 1`]
         >
           <input
             className="chakra-input css-0"
-            data-testid=":r0:-input-field-input"
+            data-testid="hds.input.field"
             disabled={false}
             id="name"
             name="details.name"
@@ -216,7 +216,7 @@ exports[`Contact Form Component Snapshot (ContactForm) Should match snapshot 1`]
         >
           <input
             className="chakra-input css-0"
-            data-testid=":r3:-input-field-input"
+            data-testid="hds.input.field"
             disabled={false}
             id="emailAddress"
             name="emailAddress"
@@ -377,7 +377,7 @@ exports[`Contact Page Component Snapshot (ContactPage) Should match snapshot 1`]
               >
                 <input
                   className="chakra-input css-0"
-                  data-testid=":ri:-input-field-input"
+                  data-testid="hds.input.field"
                   disabled={false}
                   id="name"
                   name="details.name"
@@ -413,7 +413,7 @@ exports[`Contact Page Component Snapshot (ContactPage) Should match snapshot 1`]
               >
                 <input
                   className="chakra-input css-0"
-                  data-testid=":rl:-input-field-input"
+                  data-testid="hds.input.field"
                   disabled={false}
                   id="emailAddress"
                   name="emailAddress"

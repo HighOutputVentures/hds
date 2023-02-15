@@ -30,7 +30,7 @@ describe('Contact Form Component', () => {
   });
 
   it('should render 2 input field', async () => {
-    const inputFields = await screen.findAllByTestId(/input-field-input/i);
+    const inputFields = await screen.findAllByTestId(/hds.input.field/i);
     expect(inputFields).toHaveLength(2);
   });
 
@@ -135,7 +135,7 @@ describe('Storybook - Contact Form Component', () => {
   });
 
   it('should render 2 input field', async () => {
-    const inputFields = await screen.findAllByTestId(/input-field-input/i);
+    const inputFields = await screen.findAllByTestId(/hds.input.field/i);
     expect(inputFields).toHaveLength(2);
   });
 
