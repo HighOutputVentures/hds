@@ -30,7 +30,7 @@ exports[`Snapshot (OTPVerificationForm) Should match snapshot 1`] = `
       <div
         aria-label="Form Group"
         className="chakra-form-control css-0"
-        data-testid=":r1:-form-container-form-control"
+        data-testid="hds.form.control"
         role="group"
       >
         <div

@@ -11,7 +11,7 @@ describe('Auto form component', () => {
   });
 
   it('should render form inputs', () => {
-    const inputs = screen.queryByTestId(':r0:-input-field-group');
+    const inputs = screen.queryByTestId('hds.input.group');
     expect(inputs).toBeDefined();
   });
 
@@ -28,7 +28,9 @@ describe('Auto form component', () => {
     });
 
     await waitFor(() => {
-      expect(screen.queryAllByTestId(/form-container-error/i)).toHaveLength(2);
+      expect(
+        screen.queryAllByTestId(/hds.form.control.error.message/i)
+      ).toHaveLength(2);
     });
   });
 });

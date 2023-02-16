@@ -10,17 +10,18 @@ export interface CloseButtonProps {
   variant?: CloseButtonVariantTypes;
   size?: CloseButtonSizeTypes;
   disabled?: boolean;
+  __testId?: string;
 }
 
 const CloseButton = (props: Omit<CloseButtonProps, 'children'>) => {
-  const { disabled, variant, size, onClicked } = props;
+  const { disabled, variant, size, onClicked, __testId } = props;
 
   return (
     <Button
       size={size ?? 'button-close-sm'}
       variant={variant ?? 'solid-close-btn'}
       isDisabled={disabled}
-      data-testid="close.btn"
+      data-testid={__testId ?? 'hds.close.btn'}
       onClick={onClicked}
     >
       <Icon as={CloseIcon} />

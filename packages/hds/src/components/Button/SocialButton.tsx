@@ -16,10 +16,20 @@ export interface SocialButtonProps {
   buttonText?: string;
   variant: 'outline' | 'solid';
   disabled?: boolean;
+  __testId?: string;
+  __iconTestId?: string;
 }
 
 const SocialButton = (props: Omit<SocialButtonProps, 'children'>) => {
-  const { disabled, type = 'google', variant, buttonText, onClicked } = props;
+  const {
+    disabled,
+    type = 'google',
+    variant,
+    buttonText,
+    onClicked,
+    __iconTestId,
+    __testId,
+  } = props;
 
   const useIcon = () => {
     switch (type) {
@@ -192,7 +202,7 @@ const SocialButton = (props: Omit<SocialButtonProps, 'children'>) => {
           leftIcon={useIcon()}
           variant={variant}
           isDisabled={disabled}
-          data-testid={`${type}.social.btn`}
+          data-testid={__testId ?? `hds.${type}.social.btn`}
           onClick={onClicked}
         >
           {buttonText}
@@ -202,7 +212,7 @@ const SocialButton = (props: Omit<SocialButtonProps, 'children'>) => {
           {...defaultStyle[type]}
           width={'44px'}
           height={'44px'}
-          data-testid={`${type}.social.btn`}
+          data-testid={__iconTestId ?? `hds.${type}.social.icon.btn`}
           aria-label={`btn-${useIcon()}`}
           disabled={disabled}
           icon={useIcon()}

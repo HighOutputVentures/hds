@@ -6,7 +6,7 @@ import {
   InputRightElement,
   useMultiStyleConfig,
 } from '@chakra-ui/react';
-import React, { forwardRef, ReactNode, useId } from 'react';
+import React, { forwardRef, ReactNode } from 'react';
 import FormContainer, {
   FormContainerProps,
 } from '../FormContainer/FormContainer';
@@ -27,6 +27,9 @@ export interface InputFieldProps extends Omit<FormContainerProps, 'partProps'> {
   onPressEnter?(event: React.KeyboardEvent<HTMLInputElement>): void;
   inputValue?: string | undefined;
   __testId?: string;
+  __inputLeftElementTestId?: string;
+  __inputRightElementTestId?: string;
+  __inputGroupTestId?: string;
 }
 
 const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
@@ -35,6 +38,9 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
       type = 'text',
       size = 'md',
       __testId,
+      __inputLeftElementTestId,
+      __inputRightElementTestId,
+      __inputGroupTestId,
       maxLength,
       autoFocus,
       placeholder,
@@ -52,17 +58,18 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
       inputValue,
     } = props;
     const styles = useMultiStyleConfig('Form', { variant, size });
-    const uid = useId();
 
     return (
       <FormContainer {...props}>
         <InputGroup
           sx={styles.formInputGroup}
           size={size}
-          data-testid={`${uid}-input-field-group`}
+          data-testid={__inputGroupTestId ?? 'hds.input.group'}
         >
           {leftIcon && (
-            <InputLeftElement data-testid={`${uid}-input-field-left-element`}>
+            <InputLeftElement
+              data-testid={__inputLeftElementTestId ?? 'hds.input.left.element'}
+            >
               {leftIcon}
             </InputLeftElement>
           )}
@@ -87,10 +94,14 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
             }}
             value={inputValue ? inputValue.trim() : undefined}
             role="input"
-            data-testid={__testId ?? `${uid}-input-field-input`}
+            data-testid={__testId ?? 'hds.input.field'}
           />
           {rightIcon && (
-            <InputRightElement data-testid={`${uid}-input-field-right-element`}>
+            <InputRightElement
+              data-testid={
+                __inputRightElementTestId ?? 'hds.input.right.element'
+              }
+            >
               {rightIcon}
             </InputRightElement>
           )}

@@ -23,7 +23,7 @@ exports[`One Time Password Login Component Snapshot (OTPForm) Should match snaps
   <div
     aria-label="Form Group"
     className="chakra-form-control css-0"
-    data-testid=":r1:-form-container-form-control"
+    data-testid="hds.form.control"
     role="group"
   >
     <div

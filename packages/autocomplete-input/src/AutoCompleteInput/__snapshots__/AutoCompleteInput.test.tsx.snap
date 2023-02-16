@@ -5,14 +5,14 @@ Array [
   <div
     aria-label="Form Group"
     className="chakra-form-control css-1kxonj9"
-    data-testid=":r1:-form-container-form-control"
+    data-testid="hds.form.control"
     role="group"
   >
     <label
       className="chakra-form__label css-1xgte9r"
-      data-testid=":r1:-form-container-label"
-      htmlFor="field-:r2:"
-      id="field-:r2:-label"
+      data-testid="hds.form.control.label"
+      htmlFor="field-:r1:"
+      id="field-:r1:-label"
     >
       Users
     </label>

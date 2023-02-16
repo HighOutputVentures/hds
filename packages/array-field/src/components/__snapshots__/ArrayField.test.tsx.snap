@@ -12,16 +12,16 @@ exports[`Array Field Component Snapshot Should match snapshot 1`] = `
     <div
       aria-label="Form Group"
       className="chakra-form-control css-0"
-      data-testid=":r1:-form-container-form-control"
+      data-testid="hds.form.control"
       role="group"
     >
       <div
         className="chakra-input__group css-bx0blc"
-        data-testid=":r0:-input-field-group"
+        data-testid="hds.input.group"
       >
         <input
           className="chakra-input css-0"
-          data-testid=":r0:-input-field-input"
+          data-testid="hds.input.field"
           disabled={false}
           id="input"
           name="input.0.value"

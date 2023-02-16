@@ -19,16 +19,14 @@ describe('PasswordInputField', () => {
   });
 
   it('should renders InputGroup', () => {
-    expect(screen.queryByTestId(':r0:-input-field-group')).toBeDefined();
+    expect(screen.queryByTestId('hds.input.group')).toBeDefined();
   });
 
   it('should renders Input', () => {
-    expect(screen.queryByTestId(':r0:-input-field-input')).toBeDefined();
+    expect(screen.queryByTestId('hds.input.field')).toBeDefined();
   });
 
   it("should render 'rightElement'", () => {
-    expect(
-      screen.queryByTestId(':r0:-input-field-right-element')
-    ).toBeDefined();
+    expect(screen.queryByTestId('hds.input.right.element')).toBeDefined();
   });
 });
