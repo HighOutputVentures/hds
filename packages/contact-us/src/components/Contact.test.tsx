@@ -65,7 +65,7 @@ describe('Contact Form Component', () => {
     const submit = await screen.findByTestId('box.contactform.form');
     await fireEvent.submit(submit);
     const errorFormContorl = await screen.findAllByTestId(
-      /form-container-error/i
+      /hds.form.control.error.message/i
     );
     expect(errorFormContorl).toHaveLength(3);
   });
@@ -170,7 +170,7 @@ describe('Storybook - Contact Form Component', () => {
     const submit = await screen.findByTestId('box.contactform.form');
     await fireEvent.submit(submit);
     const errorFormContorl = await screen.findAllByTestId(
-      /form-container-error/i
+      /hds.form.control.error.message/i
     );
     expect(errorFormContorl).toHaveLength(3);
   });

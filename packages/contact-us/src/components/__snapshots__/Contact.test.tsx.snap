@@ -31,12 +31,12 @@ exports[`Contact Card Component Snapshot (ContactCard) Should match snapshot 1`]
         <div
           aria-label="Form Group"
           className="chakra-form-control css-0"
-          data-testid=":ra:-form-container-form-control"
+          data-testid="hds.form.control"
           role="group"
         >
           <label
             className="chakra-form__label css-168uyi5"
-            data-testid=":ra:-form-container-label"
+            data-testid="hds.form.control.label"
             htmlFor="name"
             id="name-label"
           >
@@ -44,7 +44,7 @@ exports[`Contact Card Component Snapshot (ContactCard) Should match snapshot 1`]
           </label>
           <div
             className="chakra-input__group css-bx0blc"
-            data-testid=":r9:-input-field-group"
+            data-testid="hds.input.group"
           >
             <input
               className="chakra-input css-0"
@@ -67,12 +67,12 @@ exports[`Contact Card Component Snapshot (ContactCard) Should match snapshot 1`]
         <div
           aria-label="Form Group"
           className="chakra-form-control css-0"
-          data-testid=":rd:-form-container-form-control"
+          data-testid="hds.form.control"
           role="group"
         >
           <label
             className="chakra-form__label css-168uyi5"
-            data-testid=":rd:-form-container-label"
+            data-testid="hds.form.control.label"
             htmlFor="emailAddress"
             id="emailAddress-label"
           >
@@ -80,7 +80,7 @@ exports[`Contact Card Component Snapshot (ContactCard) Should match snapshot 1`]
           </label>
           <div
             className="chakra-input__group css-bx0blc"
-            data-testid=":rc:-input-field-group"
+            data-testid="hds.input.group"
           >
             <input
               className="chakra-input css-0"
@@ -103,12 +103,12 @@ exports[`Contact Card Component Snapshot (ContactCard) Should match snapshot 1`]
         <div
           aria-label="Form Group"
           className="chakra-form-control css-0"
-          data-testid=":rg:-form-container-form-control"
+          data-testid="hds.form.control"
           role="group"
         >
           <label
             className="chakra-form__label css-168uyi5"
-            data-testid=":rg:-form-container-label"
+            data-testid="hds.form.control.label"
             htmlFor="message"
             id="message-label"
           >
@@ -119,7 +119,7 @@ exports[`Contact Card Component Snapshot (ContactCard) Should match snapshot 1`]
           >
             <textarea
               className="chakra-textarea css-djz069"
-              data-testid=":rf:-textarea-field-input"
+              data-testid="hds.textarea.field.input"
               disabled={false}
               id="message"
               label="Desciption of concern"
@@ -163,12 +163,12 @@ exports[`Contact Form Component Snapshot (ContactForm) Should match snapshot 1`]
       <div
         aria-label="Form Group"
         className="chakra-form-control css-0"
-        data-testid=":r1:-form-container-form-control"
+        data-testid="hds.form.control"
         role="group"
       >
         <label
           className="chakra-form__label css-168uyi5"
-          data-testid=":r1:-form-container-label"
+          data-testid="hds.form.control.label"
           htmlFor="name"
           id="name-label"
         >
@@ -176,7 +176,7 @@ exports[`Contact Form Component Snapshot (ContactForm) Should match snapshot 1`]
         </label>
         <div
           className="chakra-input__group css-bx0blc"
-          data-testid=":r0:-input-field-group"
+          data-testid="hds.input.group"
         >
           <input
             className="chakra-input css-0"
@@ -199,12 +199,12 @@ exports[`Contact Form Component Snapshot (ContactForm) Should match snapshot 1`]
       <div
         aria-label="Form Group"
         className="chakra-form-control css-0"
-        data-testid=":r4:-form-container-form-control"
+        data-testid="hds.form.control"
         role="group"
       >
         <label
           className="chakra-form__label css-168uyi5"
-          data-testid=":r4:-form-container-label"
+          data-testid="hds.form.control.label"
           htmlFor="emailAddress"
           id="emailAddress-label"
         >
@@ -212,7 +212,7 @@ exports[`Contact Form Component Snapshot (ContactForm) Should match snapshot 1`]
         </label>
         <div
           className="chakra-input__group css-bx0blc"
-          data-testid=":r3:-input-field-group"
+          data-testid="hds.input.group"
         >
           <input
             className="chakra-input css-0"
@@ -235,12 +235,12 @@ exports[`Contact Form Component Snapshot (ContactForm) Should match snapshot 1`]
       <div
         aria-label="Form Group"
         className="chakra-form-control css-0"
-        data-testid=":r7:-form-container-form-control"
+        data-testid="hds.form.control"
         role="group"
       >
         <label
           className="chakra-form__label css-168uyi5"
-          data-testid=":r7:-form-container-label"
+          data-testid="hds.form.control.label"
           htmlFor="message"
           id="message-label"
         >
@@ -251,7 +251,7 @@ exports[`Contact Form Component Snapshot (ContactForm) Should match snapshot 1`]
         >
           <textarea
             className="chakra-textarea css-djz069"
-            data-testid=":r6:-textarea-field-input"
+            data-testid="hds.textarea.field.input"
             disabled={false}
             id="message"
             label="Desciption of concern"
@@ -360,12 +360,12 @@ exports[`Contact Page Component Snapshot (ContactPage) Should match snapshot 1`]
             <div
               aria-label="Form Group"
               className="chakra-form-control css-0"
-              data-testid=":rj:-form-container-form-control"
+              data-testid="hds.form.control"
               role="group"
             >
               <label
                 className="chakra-form__label css-168uyi5"
-                data-testid=":rj:-form-container-label"
+                data-testid="hds.form.control.label"
                 htmlFor="name"
                 id="name-label"
               >
@@ -373,7 +373,7 @@ exports[`Contact Page Component Snapshot (ContactPage) Should match snapshot 1`]
               </label>
               <div
                 className="chakra-input__group css-bx0blc"
-                data-testid=":ri:-input-field-group"
+                data-testid="hds.input.group"
               >
                 <input
                   className="chakra-input css-0"
@@ -396,12 +396,12 @@ exports[`Contact Page Component Snapshot (ContactPage) Should match snapshot 1`]
             <div
               aria-label="Form Group"
               className="chakra-form-control css-0"
-              data-testid=":rm:-form-container-form-control"
+              data-testid="hds.form.control"
               role="group"
             >
               <label
                 className="chakra-form__label css-168uyi5"
-                data-testid=":rm:-form-container-label"
+                data-testid="hds.form.control.label"
                 htmlFor="emailAddress"
                 id="emailAddress-label"
               >
@@ -409,7 +409,7 @@ exports[`Contact Page Component Snapshot (ContactPage) Should match snapshot 1`]
               </label>
               <div
                 className="chakra-input__group css-bx0blc"
-                data-testid=":rl:-input-field-group"
+                data-testid="hds.input.group"
               >
                 <input
                   className="chakra-input css-0"
@@ -432,12 +432,12 @@ exports[`Contact Page Component Snapshot (ContactPage) Should match snapshot 1`]
             <div
               aria-label="Form Group"
               className="chakra-form-control css-0"
-              data-testid=":rp:-form-container-form-control"
+              data-testid="hds.form.control"
               role="group"
             >
               <label
                 className="chakra-form__label css-168uyi5"
-                data-testid=":rp:-form-container-label"
+                data-testid="hds.form.control.label"
                 htmlFor="message"
                 id="message-label"
               >
@@ -448,7 +448,7 @@ exports[`Contact Page Component Snapshot (ContactPage) Should match snapshot 1`]
               >
                 <textarea
                   className="chakra-textarea css-djz069"
-                  data-testid=":ro:-textarea-field-input"
+                  data-testid="hds.textarea.field.input"
                   disabled={false}
                   id="message"
                   label="Desciption of concern"
