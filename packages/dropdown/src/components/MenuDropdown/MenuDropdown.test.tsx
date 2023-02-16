@@ -35,7 +35,7 @@ describe('Menu Dropdown Kebab Type Component', () => {
   });
 
   it('Should render menu dropdown', async () => {
-    const MenuKebab = await screen.findAllByTestId('menu-kebab');
+    const MenuKebab = await screen.findAllByTestId('hds.menu.kebab');
 
     expect(MenuKebab).toHaveLength(1);
   });
@@ -71,7 +71,7 @@ describe('Menu Dropdown Button Type Component', () => {
   });
 
   it('Should render menu dropdown', async () => {
-    const MenuKebab = await screen.findAllByTestId('menu-button');
+    const MenuKebab = await screen.findAllByTestId('hds.menu.button');
 
     expect(MenuKebab).toHaveLength(1);
   });
@@ -107,7 +107,7 @@ describe('Menu Dropdown Profile Type Component', () => {
   });
 
   it('Should render menu dropdown', async () => {
-    const MenuKebab = await screen.findAllByTestId('menu-profile');
+    const MenuKebab = await screen.findAllByTestId('hds.menu.profile');
 
     expect(MenuKebab).toHaveLength(1);
   });

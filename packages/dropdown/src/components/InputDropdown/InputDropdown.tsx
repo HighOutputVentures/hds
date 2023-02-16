@@ -8,7 +8,7 @@ import {
   Select,
   SingleValue,
 } from 'chakra-react-select';
-import React, { useId } from 'react';
+import React from 'react';
 // @ts-ignore
 import { CheckIcon } from '@highoutput/hds-icons';
 import getStyles from './styles';
@@ -38,6 +38,7 @@ export interface InputDropdownFieldProps
   // partProps?: Partial<AutoCompleteInputFieldPartProps>;
   value?: string | string[] | number | number[];
   onChangeValue: (...event: any[]) => void;
+  __selectTestId?: string;
 }
 
 const InputDropdown = (props: InputDropdownFieldProps) => {
@@ -50,14 +51,12 @@ const InputDropdown = (props: InputDropdownFieldProps) => {
     errorMsg,
     autoFocus,
     disabled,
-
+    __selectTestId,
     onChangeValue,
     multiple,
     loading,
     placeholder,
   } = props;
-
-  const uid = useId();
 
   const [optionVal, setOptionVal] = React.useState(options);
 
@@ -104,7 +103,7 @@ const InputDropdown = (props: InputDropdownFieldProps) => {
           backspaceRemovesValue
           autoFocus={autoFocus}
           isLoading={loading}
-          data-testid={`${uid}-input-dropdown-field`}
+          data-testid={__selectTestId ?? `hds.input.dropdown.field`}
           isSearchable
           onInputChange={(e, _) => handleInputChange(e)}
           isDisabled={disabled}

@@ -28,6 +28,9 @@ export interface MenuDropdownFieldProps {
     userName: string;
     emailAddress: string;
   };
+  __menuTestId?: string;
+  __menuButtonTestId?: string;
+  __menuListTestId?: string;
   menuItems: Omit<MenuItemProps, 'css' | 'style'>;
   gap?: string;
   placement?: PlacementWithLogical | undefined;
@@ -42,13 +45,19 @@ const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
     menuItems,
     gap,
     profileUrl,
+    __menuTestId,
+    __menuButtonTestId,
+    __menuListTestId,
     menuType,
     placement,
     variant = 'unstyled',
   } = props;
 
   return (
-    <Menu data-testid="menu-dropdown" placement={placement}>
+    <Menu
+      data-testid={__menuTestId ?? 'hds.menu.dropdown'}
+      placement={placement}
+    >
       {({ isOpen }) => (
         <Box w="full">
           <MenuButton
@@ -64,11 +73,11 @@ const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
                 ) : undefined,
             })}
             data-testid={
-              menuType === 'button'
-                ? 'menu-button'
+              __menuButtonTestId ?? menuType === 'button'
+                ? 'hds.menu.button'
                 : menuType === 'kebab'
-                ? 'menu-kebab'
-                : 'menu-profile'
+                ? 'hds.menu.kebab'
+                : 'hds.menu.profile'
             }
             display="flex"
           >
@@ -105,7 +114,7 @@ const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
               '0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)'
             }
             marginTop={gap}
-            data-testid="menu-list"
+            data-testid={__menuListTestId ?? 'hds.menu.list'}
             py={'0px'}
             fontSize={'14px'}
             color="neutrals.900"

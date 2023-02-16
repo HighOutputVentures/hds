@@ -9,8 +9,8 @@ describe('Button Component', () => {
   beforeEach(() => {
     render(
       <ThemeProvider>
-        <Button>Submit</Button>
-      </ThemeProvider>
+        <Button __testId="hds.button">Submit</Button>
+      </ThemeProvider>,
     );
   });
 

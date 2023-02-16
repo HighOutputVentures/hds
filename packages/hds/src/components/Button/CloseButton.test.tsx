@@ -5,7 +5,7 @@ import CloseButton from './CloseButton';
 
 describe('Close Button Component', () => {
   beforeEach(() => {
-    render(<CloseButton />);
+    render(<CloseButton __testId="hds.close.btn" />);
   });
 
   it('should render close button ', async () => {
