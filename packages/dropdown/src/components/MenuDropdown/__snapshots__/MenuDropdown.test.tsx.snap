@@ -10,7 +10,7 @@ Array [
       aria-expanded={false}
       aria-haspopup="menu"
       className="chakra-button chakra-menu__menu-button css-1syj7ef"
-      data-testid="menu-profile"
+      data-testid="hds.menu.profile"
       id="menu-button-:r1:"
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -54,7 +54,7 @@ Array [
       <div
         aria-orientation="vertical"
         className="chakra-menu__menu-list css-lfkiw7"
-        data-testid="menu-list"
+        data-testid="hds.menu.list"
         id="menu-list-:r1:"
         onKeyDown={[Function]}
         role="menu"

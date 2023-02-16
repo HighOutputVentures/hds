@@ -1,6 +1,5 @@
 import { Button as ChakraButton } from '@chakra-ui/react';
 import React, { ReactNode, forwardRef } from 'react';
-
 import { ButtonSizeTypes } from '../../theme/components/button/sizes';
 import { ButtonVariantsTypes } from '../../theme/components/button/variants';
 
@@ -18,9 +17,7 @@ export interface ButtonProps {
   block?: boolean;
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ block, ...props }, ref) => {
-  const { __testId } = props;
-
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ block, __testId, ...props }, ref) => {
   return (
     <ChakraButton
       {...props}
@@ -32,5 +29,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ block, ...props }, 
     </ChakraButton>
   );
 });
+
 
 export default Button;
