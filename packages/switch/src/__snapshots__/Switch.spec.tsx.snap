@@ -3,11 +3,13 @@
 exports[`Switch Should match snapshot 1`] = `
 <div
   className="chakra-form-control css-0"
+  data-testid="hds.switch.form.control"
   role="group"
 >
   <label
     className="chakra-switch css-16pgy8f"
     data-checked=""
+    data-testid="hds.switch"
     onClick={[Function]}
   >
     <input
@@ -59,6 +61,7 @@ exports[`Switch Should match snapshot 1`] = `
   >
     <label
       className="chakra-form__label css-uvho5g"
+      data-testid="hds.switch.label"
       htmlFor=":r0:"
       id="field-:r1:-label"
     >
@@ -66,6 +69,7 @@ exports[`Switch Should match snapshot 1`] = `
     </label>
     <div
       className="chakra-form__helper-text css-0"
+      data-testid="hds.switch.helper.text"
       id="field-:r1:-helptext"
     >
       Checkbox helper text

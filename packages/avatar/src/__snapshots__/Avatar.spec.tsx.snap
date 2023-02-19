@@ -8,6 +8,7 @@ exports[`Avatar Snapshot Should match snapshot 1`] = `
   data-elevated={false}
   data-fallback={true}
   data-online={false}
+  data-testid="hds-avatar"
 >
   <svg
     aria-label=" avatar"

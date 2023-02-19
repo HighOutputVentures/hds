@@ -13,6 +13,7 @@ exports[`Pagination Should match snapshot 1`] = `
       <button
         aria-label="Go to previous page"
         className="chakra-button css-wklby5"
+        data-testid="hds.minimal-pagination.previous.button"
         onClick={[Function]}
         type="button"
       >
@@ -38,6 +39,7 @@ exports[`Pagination Should match snapshot 1`] = `
         <button
           aria-label="Go to page 1"
           className="chakra-button css-1pwj5mw"
+          data-testid="hds.minimal-pagination.page.control"
           onClick={[Function]}
           role="button"
           type="button"
@@ -47,6 +49,7 @@ exports[`Pagination Should match snapshot 1`] = `
         <button
           aria-label="Go to page 2"
           className="chakra-button css-zndnet"
+          data-testid="hds.minimal-pagination.page.control"
           onClick={[Function]}
           role="button"
           type="button"
@@ -56,6 +59,7 @@ exports[`Pagination Should match snapshot 1`] = `
         <button
           aria-label="Go to page 3"
           className="chakra-button css-zndnet"
+          data-testid="hds.minimal-pagination.page.control"
           onClick={[Function]}
           role="button"
           type="button"
@@ -65,6 +69,7 @@ exports[`Pagination Should match snapshot 1`] = `
         <button
           aria-label="Go to page null"
           className="chakra-button css-zndnet"
+          data-testid="hds.minimal-pagination.page.control"
           onClick={[Function]}
           role="button"
           type="button"
@@ -74,6 +79,7 @@ exports[`Pagination Should match snapshot 1`] = `
         <button
           aria-label="Go to page 18"
           className="chakra-button css-zndnet"
+          data-testid="hds.minimal-pagination.page.control"
           onClick={[Function]}
           role="button"
           type="button"
@@ -83,6 +89,7 @@ exports[`Pagination Should match snapshot 1`] = `
         <button
           aria-label="Go to page 19"
           className="chakra-button css-zndnet"
+          data-testid="hds.minimal-pagination.page.control"
           onClick={[Function]}
           role="button"
           type="button"
@@ -92,6 +99,7 @@ exports[`Pagination Should match snapshot 1`] = `
         <button
           aria-label="Go to page 20"
           className="chakra-button css-zndnet"
+          data-testid="hds.minimal-pagination.page.control"
           onClick={[Function]}
           role="button"
           type="button"
@@ -102,6 +110,7 @@ exports[`Pagination Should match snapshot 1`] = `
       <button
         aria-label="Go to next page"
         className="chakra-button css-wklby5"
+        data-testid="hds.minimal-pagination.next.button"
         onClick={[Function]}
         type="button"
       >
