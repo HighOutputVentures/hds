@@ -3,6 +3,7 @@
 exports[`Carousel Snapshot Should match snapshot 1`] = `
 <div
   className="css-0"
+  data-testid="hds.carousel.container"
 >
   <div
     className="carousel-root"
@@ -22,6 +23,7 @@ exports[`Carousel Snapshot Should match snapshot 1`] = `
           aria-label="Slide 1"
           className="chakra-button css-4xx2wk"
           data-selected={true}
+          datat-testid="hds.carousel.indicator"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex={0}
@@ -31,6 +33,7 @@ exports[`Carousel Snapshot Should match snapshot 1`] = `
           aria-label="Slide 2"
           className="chakra-button css-4xx2wk"
           data-selected={false}
+          datat-testid="hds.carousel.indicator"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex={0}
@@ -40,6 +43,7 @@ exports[`Carousel Snapshot Should match snapshot 1`] = `
           aria-label="Slide 3"
           className="chakra-button css-4xx2wk"
           data-selected={false}
+          datat-testid="hds.carousel.indicator"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex={0}
@@ -49,6 +53,7 @@ exports[`Carousel Snapshot Should match snapshot 1`] = `
           aria-label="Slide 4"
           className="chakra-button css-4xx2wk"
           data-selected={false}
+          datat-testid="hds.carousel.indicator"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex={0}
@@ -58,6 +63,7 @@ exports[`Carousel Snapshot Should match snapshot 1`] = `
           aria-label="Slide 5"
           className="chakra-button css-4xx2wk"
           data-selected={false}
+          datat-testid="hds.carousel.indicator"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex={0}
@@ -67,6 +73,7 @@ exports[`Carousel Snapshot Should match snapshot 1`] = `
       <button
         aria-label="previous slide"
         className="chakra-button css-p7mkev"
+        data-testid="hds.carousel.previous.btn"
         onClick={[Function]}
         type="button"
       >
@@ -185,6 +192,7 @@ exports[`Carousel Snapshot Should match snapshot 1`] = `
       <button
         aria-label="next slide"
         className="chakra-button css-p7mkev"
+        data-testid="hds.carousel.next.btn"
         onClick={[Function]}
         type="button"
       >

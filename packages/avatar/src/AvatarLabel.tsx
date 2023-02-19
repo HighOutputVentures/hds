@@ -30,6 +30,7 @@ export default function AvatarLabel(props: PropsWithChildren<AvatarLabelProps>) 
     children,
     supportText,
     online,
+    __testId,
     onlineIndicator,
     ...others
   } = props;
@@ -76,7 +77,7 @@ export default function AvatarLabel(props: PropsWithChildren<AvatarLabelProps>) 
         })}
       </Box>
 
-      <Box sx={styles.label}>
+      <Box sx={styles.label} data-testid={__testId ?? 'hds.avatar-label'}>
         <Text sx={styles.heading} color="neutrals.800" size="labels-xs-default">
           {name}
         </Text>

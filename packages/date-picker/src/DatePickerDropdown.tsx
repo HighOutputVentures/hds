@@ -63,7 +63,7 @@ const DatePickerDropdown = (props: DatePickerDropdownProps) => {
         w={'100%'}
         height={'100%'}
         border="none"
-        data-testid={'dropdown-datepicker'}
+        data-testid={'hds.dropdown-datepicker'}
       >
         <DatePicker
           dateEvents={dateEvents}

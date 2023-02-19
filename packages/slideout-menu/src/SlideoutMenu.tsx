@@ -48,18 +48,18 @@ const SlideoutMenu = forwardRef<Ref, SlideoutMenuProps>(
         </Button>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose} size={size}>
           <DrawerOverlay />
-          <DrawerContent data-testid="hds-slideout-content">
+          <DrawerContent data-testid="hds.slideout.content">
             <DrawerCloseButton size="sm" color="gray.500" />
 
-            <DrawerHeader fontSize="md" px={3}>
+            <DrawerHeader fontSize="md" px={3} data-testid="hds.slideout.header">
               {header}
             </DrawerHeader>
 
-            <DrawerBody fontSize="sm" px={3}>
+            <DrawerBody fontSize="sm" px={3} data-testid="hds.slideout.body">
               {children}
             </DrawerBody>
 
-            <DrawerFooter borderTopWidth={1} borderTopColor="gray.100" px={3}>
+            <DrawerFooter borderTopWidth={1} borderTopColor="gray.100" data-testid="hds.slideout.footer" px={3}>
               {footer}
             </DrawerFooter>
           </DrawerContent>

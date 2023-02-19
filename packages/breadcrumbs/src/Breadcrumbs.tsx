@@ -62,7 +62,7 @@ const Breadcrumbs = (props: BreadcrumbProps) => {
       padding={'4px'}
       borderRadius={'8px'}
       color={'neutrals.600'}
-      data-testid="breadcrumb"
+      data-testid="hds.breadcrumb"
     >
       <Flex justify="end" align={'end'} gap="14px">
         <Box position={'relative'} top={'-2px'}>
@@ -76,7 +76,7 @@ const Breadcrumbs = (props: BreadcrumbProps) => {
             return null;
           }
           return (
-            <BreadcrumbItem textDecoration={'none'} key={idx}>
+            <BreadcrumbItem data-testid="hds.breadcrum-item" textDecoration={'none'} key={idx}>
               <BreadcrumbLink
                 onClick={() =>
                   d === null
@@ -85,6 +85,7 @@ const Breadcrumbs = (props: BreadcrumbProps) => {
                 }
                 textDecorationLine={'none'}
                 color={textColor(d?.isActive!)}
+                data-testid="hds.breadcrumb-link"
                 bgColor={
                   d?.isActive && activeLinkType === 'color-on-bg'
                     ? 'brand.primary.500'

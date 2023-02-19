@@ -42,6 +42,7 @@ export default React.forwardRef<HTMLDivElement, RangeSliderProps>(function HdsRa
       aria-label={["Min value", "Max value"]}
       orientation="horizontal"
       defaultValue={defaultValue}
+      data-testid="hds.range-slider"
       onChange={(newValue) => {
         invariant(newValue.length === 2);
         setValue([newValue[0], newValue[1]]);
@@ -55,17 +56,17 @@ export default React.forwardRef<HTMLDivElement, RangeSliderProps>(function HdsRa
         ...styles.container,
       }}
     >
-      <RangeSliderTrack>
-        <RangeSliderFilledTrack />
+      <RangeSliderTrack data-testid="hds.range-slider.track">
+        <RangeSliderFilledTrack data-testid="hds.range-slider.filled.track"/>
       </RangeSliderTrack>
 
-      <RangeSliderThumb index={0}>
+      <RangeSliderThumb index={0} data-testid="hds.range-slider.thumb.0">
         {labeled && labelVariant === "static" && <Text sx={styles.staticLabel}>{value[0]}%</Text>}
         {labeled && labelVariant === "floating" && (
           <Text sx={styles.floatingLabel}>{value[0]}%</Text>
         )}
       </RangeSliderThumb>
-      <RangeSliderThumb index={1}>
+      <RangeSliderThumb index={1} data-testid="hds.range-slider.thumb.1">
         {labeled && labelVariant === "static" && <Text sx={styles.staticLabel}>{value[1]}%</Text>}
         {labeled && labelVariant === "floating" && (
           <Text sx={styles.floatingLabel}>{value[1]}%</Text>

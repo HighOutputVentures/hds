@@ -98,6 +98,7 @@ export default function MinimalPagination(props: MinimalPaginationProps & System
           <Button
             variant="unstyled"
             aria-label="Go to previous page"
+            data-testid="hds.minimal-pagination.previous.button"
             onClick={handlePageChange("decrement")}
             disabled={!hasPrevious}
             sx={styles.button?.({ isOutlined: hasButtonOutline })}
@@ -120,6 +121,7 @@ export default function MinimalPagination(props: MinimalPaginationProps & System
                     key={n}
                     variant="unstyled"
                     disabled={!n}
+                    data-testid="hds.minimal-pagination.page.control"
                     onClick={() => {
                       n && onPageChange?.(n);
                     }}
@@ -139,6 +141,7 @@ export default function MinimalPagination(props: MinimalPaginationProps & System
             variant="unstyled"
             aria-label="Go to next page"
             onClick={handlePageChange("increment")}
+            data-testid="hds.minimal-pagination.next.button"
             disabled={!hasNext}
             sx={styles.button?.({ isOutlined: hasButtonOutline })}
           >

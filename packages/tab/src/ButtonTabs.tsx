@@ -42,12 +42,14 @@ const ButtonTabs = (props: ButtonTabsProps) => {
         if (onChangeHandler) onChangeHandler(e);
       }}
       variant={'unstyled'}
+      data-testid="hds.tab-button.tabs"
       w="full"
       height={'full'}
     >
       <TabList
         border={'1px solid #D0D5DD'}
         borderRadius={'8px'}
+        data-testid="hds.tab-button.list"
         width={fitToBox ? '100%' : 'fit-content'}
         placeContent={placeContent}
         overflow={'hidden'}
@@ -59,6 +61,7 @@ const ButtonTabs = (props: ButtonTabsProps) => {
             <Tab
               key={`${label}${idx}`}
               _selected={_selected}
+              data-testid="hds.tab-button.tab"
               padding={'10px 16px'}
               sx={size === 'md' ? styles.tab : undefined}
               maxW={'auto'}
@@ -72,7 +75,7 @@ const ButtonTabs = (props: ButtonTabsProps) => {
           );
         })}
       </TabList>
-      <TabPanels>{tabItems}</TabPanels>
+      <TabPanels data-testid="hds.tab-button.tab.panel">{tabItems}</TabPanels>
     </Tabs>
   );
 };

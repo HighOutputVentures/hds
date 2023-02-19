@@ -41,6 +41,7 @@ export default React.forwardRef<HTMLDivElement, SliderProps>(function HdsSlider(
       aria-label="Value"
       orientation="horizontal"
       defaultValue={defaultValue}
+      data-testid="hds.slider"
       onChange={setValue}
       onChangeEnd={onChange}
       sx={{
@@ -48,11 +49,11 @@ export default React.forwardRef<HTMLDivElement, SliderProps>(function HdsSlider(
         ...styles.container,
       }}
     >
-      <SliderTrack>
-        <SliderFilledTrack />
+      <SliderTrack data-testid="hds.slider.track">
+        <SliderFilledTrack data-testid="hds.slider.filled.track"/>
       </SliderTrack>
 
-      <SliderThumb>
+      <SliderThumb data-testid="hds.slider.thumb">
         {labeled && labelVariant === "static" && <Text sx={styles.staticLabel}>{value}%</Text>}
         {labeled && labelVariant === "floating" && <Text sx={styles.floatingLabel}>{value}%</Text>}
       </SliderThumb>

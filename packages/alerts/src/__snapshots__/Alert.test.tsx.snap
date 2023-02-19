@@ -3,7 +3,7 @@
 exports[`Alert Component Snapshot Should match snapshot 1`] = `
 <div
   className="css-1ac0ctp"
-  data-testid="alert-box"
+  data-testid="hds.alert.container"
 >
   <svg
     className="chakra-icon chakra-icon css-hnz1ry"
@@ -43,11 +43,13 @@ exports[`Alert Component Snapshot Should match snapshot 1`] = `
   >
     <p
       className="chakra-text css-88nnmw"
+      data-testid="hds.alert.title"
     >
       We’ve just released a new feature
     </p>
     <p
       className="chakra-text css-1g8kskj"
+      data-testid="hds.alert.message"
     >
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.
     </p>
@@ -56,6 +58,7 @@ exports[`Alert Component Snapshot Should match snapshot 1`] = `
     >
       <a
         className="chakra-text css-17o29vu"
+        data-testid="hds.alert.link"
         href="#"
         target="_blank"
       >
@@ -63,6 +66,7 @@ exports[`Alert Component Snapshot Should match snapshot 1`] = `
       </a>
       <a
         className="chakra-text css-4g6ai3"
+        data-testid="hds.alert.link"
         href="#"
         target="_blank"
       >

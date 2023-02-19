@@ -3,10 +3,12 @@
 exports[`Badge Should match Badge snapshot 1`] = `
 <div
   className="css-1jwgep6"
+  data-testid="hds.badge.container"
   role="status"
 >
   <p
     className="css-69eft0"
+    data-testid="hds.badge-label"
   >
     Hello, Benjamen!😏
   </p>

@@ -12,6 +12,7 @@ exports[`CheckboxGroup Snapshot Should match snapshot 1`] = `
     aria-label="Select item 1"
     aria-rowindex={0}
     className="css-bo25ge"
+    data-testid="hds.checkbox-group.container"
     onClick={[Function]}
     role="checkbox"
     tabIndex={0}
@@ -23,6 +24,7 @@ exports[`CheckboxGroup Snapshot Should match snapshot 1`] = `
     </div>
     <div
       className="CheckboxGroup__Checkbox css-dkjtxe"
+      data-testid="hds.checkbox-group.checkbox"
       tabIndex={-1}
     />
   </div>
@@ -31,6 +33,7 @@ exports[`CheckboxGroup Snapshot Should match snapshot 1`] = `
     aria-label="Select item 2"
     aria-rowindex={1}
     className="css-bo25ge"
+    data-testid="hds.checkbox-group.container"
     onClick={[Function]}
     role="checkbox"
     tabIndex={0}
@@ -42,6 +45,7 @@ exports[`CheckboxGroup Snapshot Should match snapshot 1`] = `
     </div>
     <div
       className="CheckboxGroup__Checkbox css-dkjtxe"
+      data-testid="hds.checkbox-group.checkbox"
       tabIndex={-1}
     />
   </div>
@@ -50,6 +54,7 @@ exports[`CheckboxGroup Snapshot Should match snapshot 1`] = `
     aria-label="Select item 3"
     aria-rowindex={2}
     className="css-bo25ge"
+    data-testid="hds.checkbox-group.container"
     onClick={[Function]}
     role="checkbox"
     tabIndex={0}
@@ -61,6 +66,7 @@ exports[`CheckboxGroup Snapshot Should match snapshot 1`] = `
     </div>
     <div
       className="CheckboxGroup__Checkbox css-dkjtxe"
+      data-testid="hds.checkbox-group.checkbox"
       tabIndex={-1}
     />
   </div>
@@ -69,6 +75,7 @@ exports[`CheckboxGroup Snapshot Should match snapshot 1`] = `
     aria-label="Select item 4"
     aria-rowindex={3}
     className="css-bo25ge"
+    data-testid="hds.checkbox-group.container"
     onClick={[Function]}
     role="checkbox"
     tabIndex={0}
@@ -80,6 +87,7 @@ exports[`CheckboxGroup Snapshot Should match snapshot 1`] = `
     </div>
     <div
       className="CheckboxGroup__Checkbox css-dkjtxe"
+      data-testid="hds.checkbox-group.checkbox"
       tabIndex={-1}
     />
   </div>
@@ -88,6 +96,7 @@ exports[`CheckboxGroup Snapshot Should match snapshot 1`] = `
     aria-label="Select item 5"
     aria-rowindex={4}
     className="css-bo25ge"
+    data-testid="hds.checkbox-group.container"
     onClick={[Function]}
     role="checkbox"
     tabIndex={0}
@@ -99,6 +108,7 @@ exports[`CheckboxGroup Snapshot Should match snapshot 1`] = `
     </div>
     <div
       className="CheckboxGroup__Checkbox css-dkjtxe"
+      data-testid="hds.checkbox-group.checkbox"
       tabIndex={-1}
     />
   </div>

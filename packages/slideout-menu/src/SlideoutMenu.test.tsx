@@ -14,7 +14,7 @@ describe('SlideoutMenu', () => {
 
     fireEvent.click(triggerBtn);
 
-    expect(getByTestId('hds-slideout-content')).toBeTruthy();
+    expect(getByTestId('hds.slideout.content')).toBeTruthy();
   });
 
   it('should display the trigger button', () => {
@@ -30,7 +30,7 @@ describe('SlideoutMenu', () => {
 
     fireEvent.click(triggerBtn);
 
-    expect(getByTestId('hds-slideout-content')).toBeTruthy();
+    expect(getByTestId('hds.slideout.content')).toBeTruthy();
   });
 
   it('should render the header', async () => {

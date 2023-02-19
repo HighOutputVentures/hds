@@ -47,11 +47,12 @@ const Tab = React.forwardRef<HTMLDivElement, TabProps>((props, _) => {
 
   return (
     <Flex w="full" h="full">
-      <Tabs orientation={tabOrientation} gap="32px" w="full" h="full">
+      <Tabs orientation={tabOrientation} data-testid="hds.tabs" gap="32px" w="full" h="full">
         <TabList
           gap="4px"
           flexDir={tabOrientation === 'vertical' ? 'column' : 'row'}
           placeContent={tabPlacement}
+          data-testid="hds.tab.list"
           sx={styles.tablist}
         >
           {tabLabel?.map((item, idx) => {
@@ -59,6 +60,7 @@ const Tab = React.forwardRef<HTMLDivElement, TabProps>((props, _) => {
               <ChakraTab
                 key={item + idx}
                 sx={styles.tab}
+                data-testid="hds.tab"
                 justifyContent={
                   tabOrientation === 'vertical' ? 'flex-start' : 'center'
                 }
@@ -71,6 +73,7 @@ const Tab = React.forwardRef<HTMLDivElement, TabProps>((props, _) => {
         </TabList>
         <TabPanels
           width="auto"
+          data-testid="hds.tab.panels"
           height="auto"
           pt={tabOrientation === 'horizontal' ? '32px' : '0'}
         >

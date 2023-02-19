@@ -58,7 +58,7 @@ const Tooltip = (props: PropsWithChildren<TooltipProps>) => {
   return (
     <Tooltips
       hasArrow={arrow}
-      data-testid="tooltip"
+      data-testid="hds.tooltip"
       placement={placement}
       p={Boolean(supportingTextDetail) ? '0px' : '8px 12px'}
       label={
@@ -74,7 +74,7 @@ const Tooltip = (props: PropsWithChildren<TooltipProps>) => {
           : undefined
       }
     >
-      <span data-testid="tooltip-trigger">{children}</span>
+      <span data-testid="hds.tooltip-trigger">{children}</span>
     </Tooltips>
   );
 };
