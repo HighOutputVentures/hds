@@ -4,7 +4,7 @@ exports[`Breadcrumbs Component Should match snapshot 1`] = `
 Array [
   <div
     className="chakra-stack css-i5rtz8"
-    data-testid="breadcrumb"
+    data-testid="hds.breadcrumb"
   >
     <div
       className="css-1ktsxmj"
@@ -48,9 +48,11 @@ Array [
       >
         <li
           className="chakra-breadcrumb__list-item css-aou3wz"
+          data-testid="hds.breadcrum-item"
         >
           <a
             className="chakra-breadcrumb__link css-9phpk7"
+            data-testid="hds.breadcrumb-link"
             onClick={[Function]}
           >
             <p
@@ -77,9 +79,11 @@ Array [
         </li>
         <li
           className="chakra-breadcrumb__list-item css-aou3wz"
+          data-testid="hds.breadcrum-item"
         >
           <a
             className="chakra-breadcrumb__link css-9phpk7"
+            data-testid="hds.breadcrumb-link"
             onClick={[Function]}
           >
             <p
@@ -106,9 +110,11 @@ Array [
         </li>
         <li
           className="chakra-breadcrumb__list-item css-aou3wz"
+          data-testid="hds.breadcrum-item"
         >
           <a
             className="chakra-breadcrumb__link css-9phpk7"
+            data-testid="hds.breadcrumb-link"
             onClick={[Function]}
           >
             <p

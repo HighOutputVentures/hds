@@ -16,7 +16,7 @@ import {
 } from '@chakra-ui/react';
 import moment, { Moment } from 'moment';
 import 'moment-timezone';
-import React, { useId } from 'react';
+import React, { Fragment, useId } from 'react';
 
 export interface dateInfoProps {
   info: Array<{ day: number; year: number; month: number }>;
@@ -299,10 +299,10 @@ export const DatePicker = (props: DatePickerProps) => {
       bg={'white'}
       data-testid={
         type === 'pre-set ranges'
-          ? 'range-datepicker'
+          ? 'hds.range-datepicker'
           : type === 'dual dates'
-          ? 'dual-datepicker'
-          : 'single-datepicker'
+          ? 'hds.dual-datepicker'
+          : 'hds.single-datepicker'
       }
     >
       {type === 'pre-set ranges' && (
@@ -730,7 +730,7 @@ const IndividualDate = (props: IndividualDateProps) => {
                       w={'40px'}
                       height={'40px'}
                       alignItems={'center'}
-                      key={`${id}-${cell.day}-${cell.month}-${cell.year}`}
+                      key={`${idx}-${id}-${cell.day}-${cell.month}-${cell.year}`}
                       position={'relative'}
                       bg={
                         dateRow.toString() === dateRangeFrom.toString() ||
@@ -810,14 +810,13 @@ const IndividualDate = (props: IndividualDateProps) => {
                       </Center>
                       {sortedDateEvents?.map((date, idx) => {
                         return (
-                          <>
+                          <Fragment key={idx}>
                             {moment(date.date).format('ll').toString() ===
                               dateRow.format('ll').toString() && (
                               <Tooltip
                                 label={userId === date.id ? date.title : null}
                                 placement={'top'}
                                 borderRadius={'8px'}
-                                key={idx}
                               >
                                 <Box
                                   height={'full'}
@@ -842,7 +841,7 @@ const IndividualDate = (props: IndividualDateProps) => {
                                 </Box>
                               </Tooltip>
                             )}
-                          </>
+                          </Fragment>
                         );
                       })}
                     </GridItem>

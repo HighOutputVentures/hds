@@ -33,6 +33,10 @@ export interface MetricsProps {
   /** View Callback function you can add your modal or redirection to page here */
   viewDetailsCallback?: () => {};
   showChart?: boolean;
+  __metricButtonTestId?: string;
+  __metricValueTestId?: string;
+  __metricLabelTestId?: string;
+  __metricChartTestId?: string;
 }
 
 const Metrics: FC<MetricsProps> = ({
@@ -45,6 +49,10 @@ const Metrics: FC<MetricsProps> = ({
   viewDetailsText,
   viewDetailsCallback,
   showChart,
+  __metricButtonTestId,
+  __metricValueTestId,
+  __metricLabelTestId,
+  __metricChartTestId,
 }) => {
   return (
     <Flex
@@ -54,23 +62,24 @@ const Metrics: FC<MetricsProps> = ({
       bg="white"
       border="1px solid #FCFCFC"
       padding="20px 16px"
+      data-testid="hds.metrics-card.container"
       boxShadow="0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)"
       border-radius="8px"
     >
       <HStack mr={8} w="full" align="start" justify="space-between">
         <HStack>
           {icon}
-          <Text size="label-sm-default">{metricLabel}</Text>
+          <Text size="label-sm-default" data-testid={__metricLabelTestId ?? 'hds.metrics-card.label'}>{metricLabel}</Text>
         </HStack>
         <Icon as={DotsVerticalIcon} color="neutrals.500" />
       </HStack>
 
       <HStack w="full" spacing="16px" mt="24px">
         <VStack w="full" align="start" spacing="16px">
-          <Text mt={2} size="header-4">
+          <Text mt={2} size="header-4" data-testid={__metricValueTestId ?? 'hds.metrics-card.value'}>
             {metricValue}
           </Text>
-          <HStack height="18px" borderRadius="16px" padding="2px 10px 2px 0px">
+          <HStack height="18px" borderRadius="16px" padding="2px 10px 2px 0px" data-testid="hds.metrics-card.text">
             {metricChange === 'positive' ? (
               <Icon as={PositiveArrowIcon} />
             ) : (
@@ -90,12 +99,12 @@ const Metrics: FC<MetricsProps> = ({
           </HStack>
         </VStack>
         {showChart && metricChange === 'positive' && (
-          <Box maxW="128px" w="full" maxH="64px" h="full">
+          <Box maxW="128px" w="full" maxH="64px" h="full" data-testid={__metricChartTestId ?? 'hds.metrics-card.chart'}>
             <Icon as={PositiveChartIcon} w="full" h="full" />
           </Box>
         )}{' '}
         {showChart && metricChange === 'negative' && (
-          <Box maxW="128px" w="full" maxH="64px" h="full">
+          <Box maxW="128px" w="full" maxH="64px" h="full" data-testid={__metricChartTestId ?? 'hds.metrics-card.chart'}>
             <Icon as={NegativeChartIcon} w="full" h="full" />
           </Box>
         )}
@@ -109,6 +118,7 @@ const Metrics: FC<MetricsProps> = ({
             textDecoration: 'none',
             color: 'brand.primary.700',
           }}
+          data-testid={__metricButtonTestId ?? "hds.metrics-card.button"}
           alignSelf="end"
           onClick={() => {
             if (viewDetailsCallback) viewDetailsCallback();

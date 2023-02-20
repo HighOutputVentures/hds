@@ -39,7 +39,7 @@ export default function LogoSpinner({
   if (!loading) return <React.Fragment>{children}</React.Fragment>;
 
   return (
-    <Container {...partProps?.container}>
+    <Container {...partProps?.container} data-testid="hds.spinner.container">
       <Flex
         position="relative"
         w="200px"

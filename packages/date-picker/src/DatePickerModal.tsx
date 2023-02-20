@@ -30,7 +30,7 @@ const DatePickerModal = (props: DatePickerModalProps) => {
   );
 
   return (
-    <Box data-testid={'modal-datepicker'}>
+    <Box data-testid={'hds.modal-datepicker'}>
       <Button
         onClick={onOpen}
         leftIcon={<CalendarIcon />}

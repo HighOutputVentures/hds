@@ -52,18 +52,18 @@ const Modal: FC<ModalProps> = ({
   children,
 }) => {
   return (
-    <ChakraModal isOpen={isOpen} onClose={onClose} size={sizes[size]}>
+    <ChakraModal isOpen={isOpen} onClose={onClose} size={sizes[size]} >
       <ModalOverlay />
-      <ModalContent textAlign={align}>
+      <ModalContent textAlign={align} data-testid="hds.modal">
         {icon && (
-          <Box pl="4" pt="4" {...(align === 'right' && { mr: 5, mt: 7 })}>
+          <Box pl="4" pt="4" {...(align === 'right' && { mr: 5, mt: 7 })} data-testid="hds.modal.icon">
             <Icon as={icon} width="48px" height="48px" />
           </Box>
         )}
         <Box flex={1}>
           <ModalCloseButton />
-          <ModalHeader>{title}</ModalHeader>
-          <ModalBody>{children}</ModalBody>
+          <ModalHeader data-testid="hds.modal.header">{title}</ModalHeader>
+          <ModalBody data-testid="hds.modal.body">{children}</ModalBody>
           <ModalFooter>
             {okText && (
               <Flex w="full" justifyContent="flex-end">
@@ -71,6 +71,7 @@ const Modal: FC<ModalProps> = ({
                   onClick={onClose}
                   block
                   variant="outline-primary"
+                  __testId='hds.modal-close.button'
                   isDisabled={isLoading}
                 >
                   {closeText}
@@ -78,6 +79,7 @@ const Modal: FC<ModalProps> = ({
                 <Spacer maxW="4" />
                 <Button
                   onClick={onOk}
+                  __testId="hds.modal-submit.button"
                   block
                   variant={variants}
                   isLoading={isLoading}

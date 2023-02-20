@@ -12,6 +12,8 @@ export interface BadgeProps {
   leftIcon?: JSX.Element;
   rightIcon?: JSX.Element;
   hasIndicator?: boolean;
+  __badgeContainerTestId?: string;
+  __badgeLabelTestId?: string;
 }
 
 export default React.forwardRef<HTMLDivElement, BadgeProps>(function Badge(
@@ -20,6 +22,8 @@ export default React.forwardRef<HTMLDivElement, BadgeProps>(function Badge(
     avatar,
     leftIcon,
     rightIcon,
+    __badgeContainerTestId,
+    __badgeLabelTestId,
     hasIndicator,
     size = "md",
     accent = "primary",
@@ -39,7 +43,7 @@ export default React.forwardRef<HTMLDivElement, BadgeProps>(function Badge(
   });
 
   return (
-    <chakra.div ref={ref} role="status" {...props} sx={styles.container}>
+    <chakra.div ref={ref} role="status" {...props} sx={styles.container} data-testid={__badgeContainerTestId ?? 'hds.badge.container'}>
       {/* <!-- Dot --> */}
       {!!hasIndicator && (
         <chakra.div role="status" aria-label="Online" aria-live="polite" sx={styles.dot} />
@@ -62,7 +66,7 @@ export default React.forwardRef<HTMLDivElement, BadgeProps>(function Badge(
       )}
 
       {/* <!-- Label --> */}
-      <chakra.p sx={styles.label}>{label}</chakra.p>
+      <chakra.p sx={styles.label} data-testid={__badgeLabelTestId ?? "hds.badge-label"}>{label}</chakra.p>
 
       {/* <!-- Right Icon --> */}
       {!!rightIcon && (

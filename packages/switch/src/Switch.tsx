@@ -33,12 +33,13 @@ export default React.forwardRef<HTMLInputElement, SwitchProps>(function HdsSwitc
   const uniqid = React.useId();
 
   return (
-    <FormControl variant="unstyled" sx={{ ...others, ...styles.control }}>
+    <FormControl variant="unstyled" sx={{ ...others, ...styles.control }} data-testid="hds.switch.form.control">
       <Switch
         variant="hds"
         ref={ref}
         id={uniqid}
         size={size}
+        data-testid="hds.switch"
         isChecked={checked}
         colorScheme={colorScheme}
         isDisabled={disabled}
@@ -49,11 +50,11 @@ export default React.forwardRef<HTMLInputElement, SwitchProps>(function HdsSwitc
 
       <Box>
         {label && (
-          <FormLabel htmlFor={uniqid} sx={styles.label}>
+          <FormLabel htmlFor={uniqid} sx={styles.label} data-testid="hds.switch.label">
             {label}
           </FormLabel>
         )}
-        {helperText && <FormHelperText sx={styles.helperText}>{helperText}</FormHelperText>}
+        {helperText && <FormHelperText sx={styles.helperText} data-testid="hds.switch.helper.text">{helperText}</FormHelperText>}
       </Box>
     </FormControl>
   );

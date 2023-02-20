@@ -43,12 +43,13 @@ export default function GroupPagination(props: GroupPaginationProps & SystemStyl
 
   return (
     <Box sx={others}>
-      <ButtonGroup variant="unstyled" spacing={0} sx={styles.group}>
+      <ButtonGroup variant="unstyled" spacing={0} sx={styles.group} data-testid="hds.group-button.pagination">
         <Button
           variant="unstyled"
           aria-label="Go to previous page"
           onClick={handlePageChange("decrement")}
           disabled={!hasPrevious}
+          data-testid="hds.group-pagination.previous.button"
           _disabled={{}}
           data-freeflow="true"
         >
@@ -61,6 +62,7 @@ export default function GroupPagination(props: GroupPaginationProps & SystemStyl
               key={n}
               variant="unstyled"
               disabled={!n}
+              data-testid={'hds.group-pagination.page.control'}
               onClick={() => {
                 n && onPageChange?.(n);
               }}
@@ -78,6 +80,7 @@ export default function GroupPagination(props: GroupPaginationProps & SystemStyl
           onClick={handlePageChange("increment")}
           disabled={!hasNext}
           _disabled={{}}
+          data-testid="hds.group-pagination.next.button"
           data-freeflow="true"
         >
           Next

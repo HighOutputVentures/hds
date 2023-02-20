@@ -25,6 +25,8 @@ export type CarouselProps<T extends unknown[]> = SystemStyleObject & {
   isSwipeable?: boolean;
   wrapIndicator?: boolean;
   children: (item: T[number], index: number) => React.ReactNode;
+  __carouselContainerTestId?: string;
+  __indicatorTestId?: string;
 };
 
 export default function Carousel<T extends unknown[]>({
@@ -34,6 +36,8 @@ export default function Carousel<T extends unknown[]>({
   loop,
   autoPlay,
   isSwipeable,
+  __indicatorTestId,
+  __carouselContainerTestId,
   wrapIndicator,
   children,
   ...props
@@ -52,6 +56,7 @@ export default function Carousel<T extends unknown[]>({
         ...styles.container,
         ".control-dots": styles.dots,
       }}
+      data-testid={__carouselContainerTestId ?? "hds.carousel.container"}
     >
       <CarouselStyle />
       <ReactResponsiveCarousel
@@ -68,6 +73,7 @@ export default function Carousel<T extends unknown[]>({
           <IconButton
             variant="unstyled"
             aria-label={label}
+            data-testid="hds.carousel.next.btn"
             icon={<Icon as={ChevronRightIcon} />}
             onClick={handler}
             sx={styles.arrow}
@@ -77,6 +83,7 @@ export default function Carousel<T extends unknown[]>({
           <IconButton
             variant="unstyled"
             aria-label={label}
+            data-testid="hds.carousel.previous.btn"
             icon={<Icon as={ChevronLeftIcon} />}
             onClick={handler}
             sx={styles.arrow}
@@ -91,6 +98,7 @@ export default function Carousel<T extends unknown[]>({
               onKeyDown={handler}
               aria-label={`${label} ${index + 1}`}
               data-selected={isSelected}
+              datat-testid={__indicatorTestId ?? 'hds.carousel.indicator'}
               sx={styles.dot}
             />
           );

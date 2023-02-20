@@ -25,6 +25,7 @@ export const Toast: RenderToast = (props) => {
       borderColor={colors.containerBorder}
       rounded="8px"
       width="550px"
+      data-testid="hds.toast.container"
       maxWidth="full"
       alignItems="center"
       padding={2}
@@ -38,12 +39,13 @@ export const Toast: RenderToast = (props) => {
         letterSpacing="unset"
         fontWeight="500"
         color={colors.text}
+        data-testid="hds.toast.description"
         flexGrow={1}
       >
         {description}
       </Text>
 
-      <Flex as="button" role="button" aria-label="Close alert" onClick={onClose}>
+      <Flex as="button" role="button"  data-testid="hds.toast.close.button" aria-label="Close alert" onClick={onClose}>
         <Icon width={9} height={9} as={XIcon} color={colors.xmark} />
       </Flex>
     </Flex>

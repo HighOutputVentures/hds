@@ -97,7 +97,7 @@ const AutoForm: FC<AutoFormProps> = (props) => {
           type="submit"
           variant={'primary'}
           width={'100%'}
-          data-testid="button.form.submit"
+          data-testid="hds.button-form.submit"
         >
           Submit
         </Button>

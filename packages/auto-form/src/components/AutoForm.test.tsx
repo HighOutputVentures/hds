@@ -21,7 +21,7 @@ describe('Auto form component', () => {
   });
 
   test('user clicks submit with no value or invalid input and renders error messages', async () => {
-    const submit = screen.getByTestId('button.form.submit');
+    const submit = screen.getByTestId('hds.button-form.submit');
 
     await act(async () => {
       fireEvent.submit(submit);

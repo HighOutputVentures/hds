@@ -5,6 +5,7 @@ exports[`Metrics renders correctly with negative metric change 1`] = `
   <div
     border-radius="8px"
     class="css-vi7wl0"
+    data-testid="hds.metrics-card.container"
   >
     <div
       class="chakra-stack css-1a8w4xd"
@@ -14,6 +15,7 @@ exports[`Metrics renders correctly with negative metric change 1`] = `
       >
         <p
           class="chakra-text css-0"
+          data-testid="hds.metrics-card.label"
         >
           Revenue
         </p>
@@ -55,11 +57,13 @@ exports[`Metrics renders correctly with negative metric change 1`] = `
       >
         <p
           class="chakra-text css-g89h0y"
+          data-testid="hds.metrics-card.value"
         >
           $1,000
         </p>
         <div
           class="chakra-stack css-bjqmq7"
+          data-testid="hds.metrics-card.text"
         >
           <svg
             class="chakra-icon chakra-icon css-ng1qa0"
@@ -91,6 +95,7 @@ exports[`Metrics renders correctly with negative metric change 1`] = `
     </div>
     <button
       class="chakra-button css-1i9b51t"
+      data-testid="hds.metrics-card.button"
       type="button"
     >
       View details
@@ -104,6 +109,7 @@ exports[`Metrics renders correctly with positive metric change 1`] = `
   <div
     border-radius="8px"
     class="css-vi7wl0"
+    data-testid="hds.metrics-card.container"
   >
     <div
       class="chakra-stack css-1a8w4xd"
@@ -113,6 +119,7 @@ exports[`Metrics renders correctly with positive metric change 1`] = `
       >
         <p
           class="chakra-text css-0"
+          data-testid="hds.metrics-card.label"
         >
           Revenue
         </p>
@@ -154,11 +161,13 @@ exports[`Metrics renders correctly with positive metric change 1`] = `
       >
         <p
           class="chakra-text css-g89h0y"
+          data-testid="hds.metrics-card.value"
         >
           $1,000
         </p>
         <div
           class="chakra-stack css-bjqmq7"
+          data-testid="hds.metrics-card.text"
         >
           <svg
             class="chakra-icon chakra-icon css-ng1qa0"
@@ -190,6 +199,7 @@ exports[`Metrics renders correctly with positive metric change 1`] = `
     </div>
     <button
       class="chakra-button css-1i9b51t"
+      data-testid="hds.metrics-card.button"
       type="button"
     >
       View details

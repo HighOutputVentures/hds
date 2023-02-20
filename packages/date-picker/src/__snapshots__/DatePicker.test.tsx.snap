@@ -4,7 +4,7 @@ exports[`Snapshots (DatePicker Dual Date) Should match snapshot 1`] = `
 Array [
   <div
     className="css-a3ggia"
-    data-testid="dual-datepicker"
+    data-testid="hds.dual-datepicker"
   >
     <div
       className="chakra-stack css-n21gh5"
@@ -151,7 +151,7 @@ Array [
 exports[`Snapshots (DatePicker Preset Range) Should match snapshot 1`] = `
 <div
   className="css-4ivr56"
-  data-testid="range-datepicker"
+  data-testid="hds.range-datepicker"
 >
   <div
     className="chakra-stack css-14stpeb"
@@ -440,7 +440,7 @@ exports[`Snapshots (DatePicker Single Date) Should match snapshot 1`] = `
 Array [
   <div
     className="css-a3ggia"
-    data-testid="single-datepicker"
+    data-testid="hds.single-datepicker"
   >
     <div
       className="chakra-stack css-n21gh5"
@@ -627,7 +627,7 @@ Array [
     <div
       aria-orientation="vertical"
       className="chakra-menu__menu-list css-p1q6qi"
-      data-testid="dropdown-datepicker"
+      data-testid="hds.dropdown-datepicker"
       id="menu-list-:r8:"
       onKeyDown={[Function]}
       role="menu"
@@ -643,7 +643,7 @@ Array [
     >
       <div
         className="css-a3ggia"
-        data-testid="dual-datepicker"
+        data-testid="hds.dual-datepicker"
       >
         <div
           className="chakra-stack css-n21gh5"
@@ -793,7 +793,7 @@ exports[`Snapshots (DatePickerModal) Should match snapshot 1`] = `
 Array [
   <div
     className="css-0"
-    data-testid="modal-datepicker"
+    data-testid="hds.modal-datepicker"
   >
     <button
       className="chakra-button css-151goxk"

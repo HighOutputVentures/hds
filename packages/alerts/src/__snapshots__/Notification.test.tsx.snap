@@ -3,7 +3,7 @@
 exports[`Notification Component Snapshot Should match snapshot 1`] = `
 <div
   className="css-1wr1rkl"
-  data-testid="notification-box"
+  data-testid="hds.notification.container"
 >
   <svg
     className="chakra-icon chakra-icon css-kw85s7"
@@ -23,12 +23,14 @@ exports[`Notification Component Snapshot Should match snapshot 1`] = `
     >
       <p
         className="chakra-text css-1xhu8vj"
+        data-testid="hds.notification.title"
       >
         We’ve just released a new feature
       </p>
     </div>
     <p
       className="chakra-text css-nkyeo7"
+      data-testid="hds.notification.message"
     >
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.
     </p>
@@ -37,6 +39,7 @@ exports[`Notification Component Snapshot Should match snapshot 1`] = `
     >
       <a
         className="chakra-text css-o9hqjy"
+        data-testid="hds.notification.link"
         href="#"
         target="_blank"
       >
@@ -44,6 +47,7 @@ exports[`Notification Component Snapshot Should match snapshot 1`] = `
       </a>
       <a
         className="chakra-text css-4g6ai3"
+        data-testid="hds.notification.link"
         href="#"
         target="_blank"
       >

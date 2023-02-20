@@ -73,7 +73,7 @@ const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
                 ) : undefined,
             })}
             data-testid={
-              __menuButtonTestId ?? menuType === 'button'
+              __menuButtonTestId ? __menuButtonTestId : menuType === 'button'
                 ? 'hds.menu.button'
                 : menuType === 'kebab'
                 ? 'hds.menu.kebab'

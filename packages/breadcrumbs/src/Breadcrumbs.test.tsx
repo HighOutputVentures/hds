@@ -32,7 +32,7 @@ describe('Breadcrumbs Component', () => {
   });
 
   it('should render breadcrumb', async () => {
-    const breadcrumb = screen.getByTestId('breadcrumb');
+    const breadcrumb = screen.getByTestId('hds.breadcrumb');
     expect(breadcrumb).toBeInTheDocument();
   });
 

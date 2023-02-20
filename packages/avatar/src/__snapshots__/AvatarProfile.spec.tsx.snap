@@ -8,6 +8,7 @@ exports[`AvatarProfile Snapshot Should match snapshot 1`] = `
   data-elevated={true}
   data-fallback={true}
   data-online={false}
+  data-testid="hds-avatar"
 >
   <div
     aria-label="John Doe"

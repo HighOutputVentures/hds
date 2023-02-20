@@ -6,7 +6,7 @@ import renderer from 'react-test-renderer';
 import ArrayField from './ArrayField';
 
 describe('Array Field Component', () => {
-  beforeAll(() => {
+  beforeEach(() => {
     render(
       <ArrayField
         defaultValues={{
@@ -35,9 +35,9 @@ describe('Array Field Component', () => {
     expect(inputGroup).toBeDefined();
   });
 
-  it('should renders input field input', () => {
-    const input = screen.queryByTestId('hds.input.field');
-    expect(input).toBeDefined();
+  it('should renders input field input', async () => {
+    const input = await screen.findAllByTestId('hds.array-field.input');
+    expect(input).toHaveLength(1);
   });
 
   describe('Snapshot', () => {

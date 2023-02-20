@@ -110,6 +110,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
       )}
 
       <TableContainer
+      data-testid="hds.table.container"
         sx={{
           "&::-webkit-scrollbar": {
             width: "12px",
@@ -134,6 +135,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
         }}
       >
         <Table
+          data-testid="hds.table"
           sx={{
             thead: {
               bgColor: "#F9FAFB",
@@ -167,15 +169,15 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
             },
           }}
         >
-          <Thead>
-            <Tr>
+          <Thead data-testid="hds.table.header">
+            <Tr data-testid="hds.table.header.tr">
               {columns.map(
                 (
                   { label, tooltip, width, onSort, onCheck, onCheckAll, defaultSort = "desc" },
                   index,
                 ) => {
                   return (
-                    <Th key={uuid()} width={width}>
+                    <Th key={uuid()} width={width} data-testid="hds.table.header.th">
                       <Flex alignItems="center">
                         {!!onCheck && (
                           <Checkbox
@@ -218,10 +220,10 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
             </Tr>
           </Thead>
 
-          <Tbody>
+          <Tbody data-testid="hds.table.body">
             {items.map((item, index_0) => {
               return (
-                <Tr key={uuid()}>
+                <Tr key={uuid()} data-testid="hds.table.body.tr">
                   {columns.map(
                     ({ onSort, onCheck, onClick, defaultChecked, ...others }, index_1) => {
                       const renderRow = others.renderRow ?? ((obj) => String(obj));
@@ -232,6 +234,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                           onClick={() => {
                             onClick?.({ item });
                           }}
+                          data-testid="hds.table.body.td"
                         >
                           <Flex alignItems="center" gap="12px">
                             {onCheck && (
