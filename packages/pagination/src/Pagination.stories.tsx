@@ -62,14 +62,13 @@ export default {
       control: "boolean",
     },
     maxPageControls: {
-      name: "maxPageControls",
+      name: "page",
       type: {
-        name: "string",
-        required: false,
+        name: "number",
+        required: true,
       },
-      defaultValue: 6,
-      control: "select",
-      options: [4, 6],
+      defaultValue: 2,
+      control: "number",
     },
     hasButtonIcon: {
       name: "hasButtonIcon",
@@ -110,15 +109,19 @@ const Template: ComponentStory<typeof Pagination> = () => {
         variant="minimal"
         page={args.page}
         pageSize={args.pageSize}
-        total={args.total}
+        count={args.total}
         hasLegend={args.hasLegend}
         isLegendCentered={args.isLegendCentered}
         hasButtonIcon={args.hasButtonIcon}
         hasButtonLabel={args.hasButtonLabel}
         hasButtonOutline={args.hasButtonOutline}
         hasPageControls={args.hasPageControls}
-        maxPageControls={args.maxPageControls}
-        onPageChange={(page: number) => setArgs({ ...args, page })}
+        onChange={(value) => {
+          setArgs({
+            ...args,
+            ...value,
+          });
+        }}
       />
 
       <Pagination
@@ -126,9 +129,14 @@ const Template: ComponentStory<typeof Pagination> = () => {
         variant="group"
         page={args.page}
         pageSize={args.pageSize}
-        total={args.total}
-        maxPageControls={args.maxPageControls}
-        onPageChange={(page: number) => setArgs({ ...args, page })}
+        count={args.total}
+        sizes={[10, 20, 30, 40, 50]}
+        onChange={(value) => {
+          setArgs({
+            ...args,
+            ...value,
+          });
+        }}
       />
     </ChakraProvider>
   );
