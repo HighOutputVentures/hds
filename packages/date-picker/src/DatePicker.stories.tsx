@@ -30,11 +30,10 @@ const Template: ComponentStory<typeof DatePicker> = (props) => {
   );
 };
 const ModalTemplate: ComponentStory<typeof DatePicker> = (props) => {
-  const { isOpen, onClose } = useDisclosure();
   return (
     <ThemeProvider>
       <Flex alignItems="start" flexDir="row" height={'500px'}>
-        <DatePickerModal {...props} onClose={onClose} isOpen={isOpen} />
+        <DatePickerModal {...props} />
       </Flex>
     </ThemeProvider>
   );
@@ -49,6 +48,7 @@ const DropdownTemplate: ComponentStory<typeof DatePicker> = (props) => {
     </ThemeProvider>
   );
 };
+
 export const Default = Template.bind({});
 export const Modal = ModalTemplate.bind({});
 export const Dropdown = DropdownTemplate.bind({});
