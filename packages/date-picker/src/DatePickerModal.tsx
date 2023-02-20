@@ -77,10 +77,8 @@ const DatePickerModal = (props: DatePickerModalProps) => {
         >
           {selectedDate.length === 0 && 'Select Date'}
           {selectedDate.length >= 1 && <FormattedDate date={selectedDate[0]} />}
-          {selectedDate.length === 2 && <DateSeparator />}
-          {selectedDate.length === 2 && (
-            <FormattedDate date={selectedDate[1]} />
-          )}
+          {selectedDate.length >= 2 && <DateSeparator />}
+          {selectedDate.length >= 2 && <FormattedDate date={selectedDate[1]} />}
         </Button>
       )}
 
