@@ -36,7 +36,7 @@ const DatePickerModal = (props: DatePickerModalProps) => {
     userId,
     dateEvents,
     onApplyDate,
-    timezone = 'en-US',
+    timezone = 'Asia/Manila',
     children,
   } = props;
 
