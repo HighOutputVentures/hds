@@ -50,6 +50,10 @@
     "@size-limit/preset-small-lib": "7.0.8",
     "size-limit": "7.0.8"
   },
+  "dependencies": {
+    "@zag-js/pagination": "^0.1.11",
+    "@zag-js/react": "^0.3.9"
+  },
   "jest": {
     "verbose": true
   },
