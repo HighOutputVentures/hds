@@ -25,6 +25,8 @@ export type CredentialLoginFormDefaultProps = {
   formHeaderSubTitle?: ReactNode | string;
   width?: string | number;
   formName?: string;
+  __passwordTestId?: string;
+  __inputTestId?: string;
 };
 export interface CredentialLoginFormNameProps
   extends CredentialLoginFormDefaultProps {
@@ -53,8 +55,9 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
     passwordLeftIcon,
     loginTitle,
     onSubmit,
-    formName,
     passwordLabel,
+    __inputTestId,
+    __passwordTestId,
     width = '512px',
     customLink,
   } = props;
@@ -124,7 +127,7 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
                   props.nameLabel?.slice(1)
                 : undefined
             }
-            __testId="name-input"
+            __testId={__inputTestId ?? 'hds.credential.input.username'}
             placeholder={`Input your ${
               props.nameLabel?.toLowerCase() ?? 'username'
             }`}
@@ -138,7 +141,7 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
             label={props.emailLabel}
             leftIcon={props.emailLeftIcon}
             placeholder="Input your email"
-            __testId="email-input"
+            __testId={__inputTestId ?? 'hds.credential.input.email'}
             errorMsg={formState.errors.email?.message}
             disabled={formState.isSubmitting}
           />
@@ -153,7 +156,7 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
           errorMsg={formState.errors.password?.message}
           disabled={formState.isSubmitting}
           leftIcon={passwordLeftIcon}
-          __testId="password-input"
+          __testId={__passwordTestId ?? 'hds.credential.input.password'}
           rightIcon={
             <Button
               data-testid={'hds.show.hide.btn'}
@@ -174,7 +177,7 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
       </Stack>
       <Button
         w="full"
-        data-testid={`hds.${formName}.submit.button`}
+        data-testid={`hds.credential.submit.button`}
         variant="primary"
         isLoading={formState.isSubmitting}
         type="submit"

@@ -9,7 +9,7 @@ export type PasswordInputFieldProps = Omit<
 >;
 
 export default forwardRef<HTMLInputElement, PasswordInputFieldProps>(
-  function PasswordInputField(props, ref) {
+  function PasswordInputField({ __testId, ...props }, ref) {
     const [hidden, { toggle }] = useBoolean(true);
 
     const toggleControl = (
@@ -31,6 +31,7 @@ export default forwardRef<HTMLInputElement, PasswordInputFieldProps>(
     return (
       <InputField
         ref={ref}
+        __testId={__testId ?? 'hds.password.input.field'}
         rightIcon={toggleControl}
         {...(hidden && { type: 'password' })}
         {...props}

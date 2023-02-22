@@ -4,6 +4,7 @@ exports[`LoadingIndicator should render 1`] = `
 <div>
   <div
     class="css-w3pvmd"
+    data-testid="hds.loading-indicator.container"
   >
     <div
       aria-label="animation"
@@ -62,6 +63,7 @@ exports[`LoadingIndicator should render 1`] = `
     </div>
     <p
       class="chakra-text css-9c7r58"
+      data-testid="hds.loading-indicator.label"
     >
       Loading...
     </p>

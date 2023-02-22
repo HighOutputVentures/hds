@@ -37,7 +37,11 @@ const LoadingIndicator: FC<LoadingIndicatorProps> = ({
   labelText = 'Loading...',
 }) => {
   return (
-    <Box textAlign="center" pointerEvents="none">
+    <Box
+      textAlign="center"
+      pointerEvents="none"
+      data-testid="hds.loading-indicator.container"
+    >
       <Lottie
         options={{
           loop: true,
@@ -50,7 +54,11 @@ const LoadingIndicator: FC<LoadingIndicatorProps> = ({
         height={sizes[size]}
         width={sizes[size]}
       />
-      {showLabel && <Text fontSize="10px">{labelText}</Text>}
+      {showLabel && (
+        <Text fontSize="10px" data-testid="hds.loading-indicator.label">
+          {labelText}
+        </Text>
+      )}
     </Box>
   );
 };

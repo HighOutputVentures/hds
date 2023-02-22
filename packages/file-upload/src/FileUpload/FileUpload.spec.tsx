@@ -13,7 +13,7 @@ describe('FileUpload', () => {
   it('should have a input type of file upload', () => {
     const { getByTestId } = render(<FileUpload />);
 
-    const input = getByTestId('file');
+    const input = getByTestId('hds.file.input.upload');
     expect(input).toHaveProperty('type', 'file');
   });
 });

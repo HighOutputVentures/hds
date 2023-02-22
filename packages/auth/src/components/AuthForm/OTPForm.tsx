@@ -79,7 +79,7 @@ const OTPForm = (props: OTPFormProps) => {
         type="submit"
         isLoading={formStateOtp.isSubmitting}
         width={'100%'}
-        data-testid="button.otp.submit"
+        data-testid="hds.otp.submit.button"
         marginTop={5}
       >
         {buttonText ? buttonText : 'Sign In'}

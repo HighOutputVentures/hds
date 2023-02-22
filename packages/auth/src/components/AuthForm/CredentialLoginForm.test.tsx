@@ -10,7 +10,7 @@ describe('Login Form Email-based Component', () => {
   });
   it('should display error message on email', async () => {
     // const emailInput = screen.getByRole('input', { name: 'email-input' });
-    const emailInput = screen.getByTestId('email-input');
+    const emailInput = screen.getByTestId('hds.credential.input.email');
     const submitBtn = screen.getByRole('button', { name: 'Login' });
     fireEvent.change(emailInput, { target: { value: 'hello@g' } });
     fireEvent.click(submitBtn);
@@ -65,7 +65,7 @@ describe('Login form Username-based component', () => {
   });
   it('should display error message on name', async () => {
     // const nameInput = screen.getByRole('input', { name: 'name-input' });
-    const nameInput = screen.getByTestId('name-input');
+    const nameInput = screen.getByTestId('hds.credential.input.username');
     const submitBtn = screen.getByRole('button', { name: 'Login' });
     fireEvent.change(nameInput, { target: { value: null } });
     fireEvent.click(submitBtn);

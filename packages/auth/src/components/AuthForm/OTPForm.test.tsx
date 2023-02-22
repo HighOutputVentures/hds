@@ -10,7 +10,7 @@ describe('One Time Password Login Component', () => {
   });
 
   it('should render button submit for otp', async () => {
-    const submitButton = await screen.findAllByTestId('button.otp.submit');
+    const submitButton = await screen.findAllByTestId('hds.otp.submit.button');
     expect(submitButton).toHaveLength(1);
   });
   test('user clicks submit with no value or incomplete input and renders error messages', async () => {
