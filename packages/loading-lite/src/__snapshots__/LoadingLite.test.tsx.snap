@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingLite should render 1`] = `
+<div>
+  <div
+    class="css-w3pvmd"
+  >
+    <div
+      class="css-nwcjbf"
+    />
+    <p
+      class="chakra-text css-9c7r58"
+    >
+      Loading...
+    </p>
+  </div>
+</div>
+`;
