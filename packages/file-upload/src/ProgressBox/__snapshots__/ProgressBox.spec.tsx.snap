@@ -61,6 +61,7 @@ exports[`FileUpload should render FileUpload 1`] = `
         </div>
         <div
           class="css-4g6ai3"
+          data-testid="hds.progress.delete.button"
         >
           <svg
             class="chakra-icon chakra-icon css-3kr7z7"
@@ -86,6 +87,7 @@ exports[`FileUpload should render FileUpload 1`] = `
         >
           <div
             class="css-qwlwgv"
+            data-testid="hds.progress"
           >
             <div
               aria-valuemax="100"
@@ -99,6 +101,7 @@ exports[`FileUpload should render FileUpload 1`] = `
         </div>
         <p
           class="chakra-text css-162yuu5"
+          data-testid="hds.progress.value"
         >
           %
         </p>

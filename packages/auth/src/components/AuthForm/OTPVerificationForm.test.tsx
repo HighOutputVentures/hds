@@ -10,7 +10,9 @@ describe('Email Login Component', () => {
   });
 
   it('should render button submit for email', async () => {
-    const submitButton = await screen.findAllByTestId('button.email.submit');
+    const submitButton = await screen.findAllByTestId(
+      'hds.otp.verification.submit.button'
+    );
     expect(submitButton).toHaveLength(1);
   });
   test('user clicks submit with no value or invalid input and renders error messages', async () => {

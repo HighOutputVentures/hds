@@ -7,7 +7,7 @@ import {
   Select,
   SingleValue,
 } from 'chakra-react-select';
-import React, { useId } from 'react';
+import React from 'react';
 import getStyles from './styles';
 
 export interface Item {
@@ -30,6 +30,7 @@ export interface AutoCompleteInputFieldProps
   autoFocus?: boolean;
   showDropdownIndicator?: boolean;
   placeholder?: string;
+  __testId?: string;
   value?: string | string[] | number | number[];
   onChangeValue: (...event: any[]) => void;
 }
@@ -48,9 +49,8 @@ const AutoCompleteInput = (props: AutoCompleteInputFieldProps) => {
     multiple,
     loading,
     placeholder,
+    __testId,
   } = props;
-
-  const uid = useId();
 
   const styles = getStyles({
     error: Boolean(errorMsg),
@@ -73,7 +73,7 @@ const AutoCompleteInput = (props: AutoCompleteInputFieldProps) => {
         backspaceRemovesValue
         autoFocus={autoFocus}
         isLoading={loading}
-        data-testid={`${uid}-auto-complete-input-field`}
+        data-testid={__testId ?? `hds.autocomplete.input.field`}
         isSearchable
         isDisabled={disabled}
         isClearable

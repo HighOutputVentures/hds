@@ -85,7 +85,11 @@ const ProgressBox: FC<ProgressBox> = ({
                 )}
               </Box>
             </Flex>
-            <Box cursor="pointer" onClick={onDelete}>
+            <Box
+              cursor="pointer"
+              onClick={onDelete}
+              data-testid="hds.progress.delete.button"
+            >
               <Icon
                 color={!hasError ? 'neutrals.600' : 'interface.error.800'}
                 h="1.25rem"
@@ -112,12 +116,17 @@ const ProgressBox: FC<ProgressBox> = ({
                   isAnimated
                   hasStripe
                   value={value}
+                  data-testid="hds.progress"
                   colorScheme="purple"
                   borderRadius={4}
                   max={100}
                 />
               </Box>
-              <Text color="neutrals.700" size="label-xs-default">
+              <Text
+                color="neutrals.700"
+                size="label-xs-default"
+                data-testid="hds.progress.value"
+              >
                 {value}%
               </Text>
             </Flex>

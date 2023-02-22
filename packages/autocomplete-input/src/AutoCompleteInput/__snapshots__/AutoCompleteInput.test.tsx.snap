@@ -11,8 +11,8 @@ Array [
     <label
       className="chakra-form__label css-1xgte9r"
       data-testid="hds.form.control.label"
-      htmlFor="field-:r1:"
-      id="field-:r1:-label"
+      htmlFor="field-:r0:"
+      id="field-:r0:-label"
     >
       Users
     </label>

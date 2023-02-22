@@ -23,7 +23,7 @@ describe('PasswordInputField', () => {
   });
 
   it('should renders Input', () => {
-    expect(screen.queryByTestId('hds.input.field')).toBeDefined();
+    expect(screen.queryByTestId('hds.password.input.field')).toBeDefined();
   });
 
   it("should render 'rightElement'", () => {

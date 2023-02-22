@@ -13,11 +13,13 @@ export interface FileUpload {
   onChange?: ChangeHandler;
   onBlur?: ChangeHandler;
   disabled?: boolean;
+  __testId?: string;
 }
 
 const FileUpload: FC<FileUpload> = ({
   accepts,
   onChange,
+  __testId,
   disabled,
   onBlur,
 }) => {
@@ -72,13 +74,13 @@ const FileUpload: FC<FileUpload> = ({
           {accepts?.toLocaleUpperCase()} (max. 800x400px)
         </Text>
         <Input
-          data-testid="file"
           id="file"
           type="file"
           w="100%"
           h="100%"
           opacity={0}
           pos="absolute"
+          data-testid={__testId ?? 'hds.file.input.upload'}
           top={0}
           cursor="pointer"
           accept={accepts}
