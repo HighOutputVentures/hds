@@ -1,35 +1,49 @@
-import React, { FC } from 'react';
-import { Box, Text, Flex } from '@chakra-ui/react';
-import { Button } from '@highoutput/hds';
+import React, { FC, ReactElement } from 'react';
+import {
+  Box,
+  Text,
+  Flex,
+  InputGroup,
+  InputLeftElement,
+  Input,
+  Button,
+} from '@chakra-ui/react';
+import { EmailIcon } from '@chakra-ui/icons';
 
 export interface CTA {
-  header: string;
-  content: string;
-  closeLabel?: string;
-  submitLabel?: string;
+  header?: string;
+  subHeader?: string;
+  secondaryLabel?: string;
+  primaryLabel?: string;
   onClose?: () => void;
   onSubmit?: () => void;
+  content: ReactElement;
+  isSubscription?: boolean;
 }
 
 const CTA: FC<CTA> = ({
   header,
-  content,
-  closeLabel,
-  submitLabel,
+  subHeader,
+  secondaryLabel,
+  primaryLabel,
   onSubmit,
   onClose,
+  isSubscription,
 }) => (
   <Box>
     <Flex
       direction="column"
-      w="48rem"
+      w={{ base: 'auto', lg: '48rem' }}
       border="2px"
       borderColor="neutrals.200"
       borderRadius="0.5rem"
       justifyContent="center"
       p="24px"
     >
-      <Text fontWeight={500} size="label-md-default">
+      <Text
+        fontWeight={500}
+        size={{ base: 'label-sm-default', lg: 'label-md-default' }}
+      >
         {header}
       </Text>
       <Text
@@ -38,18 +52,59 @@ const CTA: FC<CTA> = ({
         lineHeight="20px"
         letterSpacing="0.02em"
       >
-        {content}
+        {subHeader}
       </Text>
 
-      <Flex direction="row" gap={4} mt="1.25rem">
-        <Button onClick={onClose} variant="outline">
-          <Text color="neutrals.700" size="button-default">
-            {closeLabel}
-          </Text>
-        </Button>
-        <Button onClick={onSubmit}>
-          <Text size="button-default">{submitLabel}</Text>
-        </Button>
+      <Flex
+        direction={{ base: 'column', lg: 'row' }}
+        gap={{ base: 2, lg: 4 }}
+        mt="1.25rem"
+      >
+        {isSubscription ? (
+          <Flex direction="column" gap={2}>
+            <Text size="label-xs-default" fontWeight={500}>
+              Subscribe to updates
+            </Text>
+            <Flex
+              direction={{ base: 'column', lg: 'row' }}
+              gap={{ base: 2, lg: 4 }}
+            >
+              <InputGroup>
+                <InputLeftElement
+                  pointerEvents="none"
+                  children={<EmailIcon color="neutrals.700" />}
+                />
+                <Input type="email" placeholder="you@untitledui.com" />
+              </InputGroup>
+              <Button
+                onClick={onSubmit}
+                px="2rem"
+                width={{ base: '100%', lg: 'auto' }}
+              >
+                <Text size="button-default">{primaryLabel}</Text>
+              </Button>
+            </Flex>
+          </Flex>
+        ) : (
+          <>
+            {secondaryLabel && (
+              <Button
+                onClick={onClose}
+                variant="outline"
+                width={{ base: '100%', lg: 'auto' }}
+              >
+                <Text color="neutrals.700" size="button-default">
+                  {secondaryLabel}
+                </Text>
+              </Button>
+            )}
+            {primaryLabel && (
+              <Button onClick={onSubmit} width={{ base: '100%', lg: 'auto' }}>
+                <Text size="button-default">{primaryLabel}</Text>
+              </Button>
+            )}
+          </>
+        )}
       </Flex>
     </Flex>
   </Box>

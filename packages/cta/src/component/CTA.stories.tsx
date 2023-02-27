@@ -19,11 +19,20 @@ const Template: ComponentStory<typeof CTA> = (args) => {
 };
 
 export const Default = Template.bind({});
+export const SubscriptionCTA = Template.bind({});
 
 Default.args = {
   ...Default.args,
   header: "We've just released a new update!",
-  content: 'Check out the all new dashboard view. Pages and now load faster.',
-  submitLabel: 'Changelog',
-  closeLabel: 'Dismiss',
+  subHeader: 'Check out the all new dashboard view. Pages and now load faster.',
+  primaryLabel: 'Changelog',
+  secondaryLabel: 'Dismiss',
+};
+
+SubscriptionCTA.args = {
+  ...Default.args,
+  header: 'We’ve just released a new update!',
+  subHeader: 'Check out the all new dashboard view. Pages and now load faster.',
+  primaryLabel: 'Subscribe',
+  isSubscription: true,
 };
