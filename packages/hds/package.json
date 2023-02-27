@@ -45,6 +45,16 @@
       "limit": "10 KB"
     }
   ],
+  "exports":{
+    "./accordion": "./dist/components/Accordion/index.d.ts",
+    "./alert": "./dist/components/Alert/index.d.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "accordion": ["dist/components/Accordion/index.d.ts"],
+      "alert":["dist/components/Alert/index.d.ts"]
+    }
+  },
   "devDependencies": {
     "@size-limit/preset-small-lib": "7.0.8",
     "@swc/helpers": "^0.4.12",
