@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { EmailIcon } from '@chakra-ui/icons';
 
-export interface CTA {
+export interface CTAProps {
   header?: string;
   subHeader?: string;
   secondaryLabel?: string;
@@ -21,7 +21,7 @@ export interface CTA {
   isSubscription?: boolean;
 }
 
-const CTA: FC<CTA> = ({
+const CTA: FC<CTAProps> = ({
   header,
   subHeader,
   secondaryLabel,
