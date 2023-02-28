@@ -35,6 +35,7 @@ export interface MenuDropdownFieldProps {
   placement?: PlacementWithLogical | undefined;
   variant?: ButtonVariantsTypes;
   closeOnSelect?: boolean;
+  showRightIcon?: boolean;
 }
 
 const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
@@ -43,6 +44,7 @@ const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
     menuButtonText = '',
     indicator = true,
     closeOnSelect = true,
+    showRightIcon = true,
     menuItems,
     gap,
     profileUrl,
@@ -66,14 +68,13 @@ const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
             variant={variant}
             as={Button}
             isActive={isOpen}
-            {...(variant !== 'menu-button-primary' && {
-              rightIcon:
-                menuType === 'button' && !isOpen ? (
-                  <ChevronDownIcon width="20px" height="20px" />
-                ) : menuType === 'button' && isOpen ? (
-                  <ChevronUpIcon width="20px" height="20px" />
-                ) : undefined,
-            })}
+            rightIcon={
+              menuType === 'button' && !isOpen && showRightIcon ? (
+                <ChevronDownIcon width="20px" height="20px" />
+              ) : menuType === 'button' && isOpen && showRightIcon ? (
+                <ChevronUpIcon width="20px" height="20px" />
+              ) : undefined
+            }
             data-testid={
               __menuButtonTestId
                 ? __menuButtonTestId
