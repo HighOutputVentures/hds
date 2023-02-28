@@ -19,7 +19,12 @@ export const CTASample = () => {
   return (
     <ThemeProvider>
       <Flex justify="center">
-        <CTA {...args} />
+        <CTA
+          header={`We've just released a new update!`}
+          subHeader="Check out the all new dashboard view. Pages and now load faster."
+          primaryLabel="Changelog"
+          secondaryLabel="Dismiss"
+        />
       </Flex>
     </ThemeProvider>
   );

@@ -55,3 +55,5 @@ export { default as NegativeChartIcon } from './components/chart/NegativeChartIc
 export { default as PositiveChartIcon } from './components/chart/PositiveChartIcon';
 export { default as TrendNegative } from './components/chart/TrendNegative';
 export { default as TrendPositive } from './components/chart/TrendPositive';
+export { default as EmailIcon } from './components/EmialIcon';
+export { default as VisaIcon } from './components/payment-method-icon/VisaIcon';

@@ -17,7 +17,7 @@ export interface CTA {
   primaryLabel?: string;
   onClose?: () => void;
   onSubmit?: () => void;
-  content: ReactElement;
+  content?: ReactElement;
   isSubscription?: boolean;
 }
 
@@ -29,6 +29,7 @@ const CTA: FC<CTA> = ({
   onSubmit,
   onClose,
   isSubscription,
+  content,
 }) => (
   <Box>
     <Flex
@@ -54,6 +55,8 @@ const CTA: FC<CTA> = ({
       >
         {subHeader}
       </Text>
+
+      <Box>{content}</Box>
 
       <Flex
         direction={{ base: 'column', lg: 'row' }}
