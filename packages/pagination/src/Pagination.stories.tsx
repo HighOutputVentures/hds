@@ -1,7 +1,7 @@
-import { ThemeProvider } from "@highoutput/hds";
 import { useArgs } from "@storybook/addons";
 import { ComponentStory, Meta } from "@storybook/react";
 import * as React from "react";
+import { ThemeProvider } from "~/hds";
 import Pagination from "./Pagination";
 
 export default {
