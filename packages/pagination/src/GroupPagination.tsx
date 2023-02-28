@@ -3,9 +3,11 @@ import { ArrowLeftIcon, ArrowRightIcon } from "@highoutput/hds-icons";
 import * as pagination from "@zag-js/pagination";
 import { normalizeProps, useMachine } from "@zag-js/react";
 import * as React from "react";
+import { v4 as uuid } from "uuid";
 import { useStyles } from "./hooks";
 
 export type GroupPaginationProps = {
+  id?: string;
   page: number;
   pageSize: number;
   count: number;
@@ -21,7 +23,7 @@ export default function GroupPagination({
   sizes,
   ...props
 }: GroupPaginationProps & SystemStyleObject) {
-  const id = React.useId();
+  const id = props.id ?? React.useId();
   const styles = useStyles("group");
 
   const [state, send] = useMachine(
@@ -42,6 +44,7 @@ export default function GroupPagination({
         {!!sizes && (
           <Box width="130px" flexShrink={0} flexGrow={0}>
             <Select
+              variant="unstyled"
               sx={styles.select}
               value={pageSize}
               onChange={({ target }) => {
@@ -66,7 +69,7 @@ export default function GroupPagination({
           <Button
             variant="unstyled"
             aria-label="Go to previous page"
-            disabled={api.isFirstPage}
+            isDisabled={api.isFirstPage}
             data-testid="hds.group-pagination.previous.button"
             _disabled={{}}
             data-freeflow="true"
@@ -80,7 +83,7 @@ export default function GroupPagination({
             if (page.type === "page") {
               return (
                 <Button
-                  key={page.value}
+                  key={uuid()}
                   variant="unstyled"
                   data-testid={"hds.group-pagination.page.control"}
                   _disabled={{}}
@@ -93,7 +96,8 @@ export default function GroupPagination({
 
             return (
               <Button
-                key={index}
+                key={uuid()}
+                isDisabled
                 variant="unstyled"
                 data-testid={"hds.group-pagination.ellipsis"}
                 {...api.getEllipsisProps({ index })}
@@ -106,7 +110,7 @@ export default function GroupPagination({
           <Button
             variant="unstyled"
             aria-label="Go to next page"
-            disabled={api.isLastPage}
+            isDisabled={api.isLastPage}
             _disabled={{}}
             data-testid="hds.group-pagination.next.button"
             data-freeflow="true"

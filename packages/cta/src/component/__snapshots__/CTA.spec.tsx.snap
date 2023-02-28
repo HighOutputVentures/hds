@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CTA should render CTA 1`] = `
+<div>
+  <div
+    class="css-0"
+  >
+    <div
+      class="css-1h6gok3"
+    >
+      <p
+        class="chakra-text css-10rvbm3"
+      >
+        We've just released a new update!
+      </p>
+      <p
+        class="chakra-text css-1tg9lzs"
+      >
+        Check out the all new dashboard view. Pages and now load faster.
+      </p>
+      <div
+        class="css-0"
+      />
+      <div
+        class="css-qqq897"
+      >
+        <button
+          class="chakra-button css-1j8h89v"
+          type="button"
+        >
+          <p
+            class="chakra-text css-162yuu5"
+          >
+            Dismiss
+          </p>
+        </button>
+        <button
+          class="chakra-button css-1j8h89v"
+          type="button"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            Changelog
+          </p>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

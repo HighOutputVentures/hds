@@ -5,6 +5,6 @@ export const Select = {
       color: 'gray.400',
     },
   },
-}
+};
 
-export default Select
+export default Select;

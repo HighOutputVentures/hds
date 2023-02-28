@@ -3,6 +3,7 @@ import { ArrowLeftIcon, ArrowRightIcon } from "@highoutput/hds-icons";
 import * as pagination from "@zag-js/pagination";
 import { normalizeProps, useMachine } from "@zag-js/react";
 import * as React from "react";
+import { v4 as uuid } from "uuid";
 import { useStyles } from "./hooks";
 
 type MinimalPaginationBaseProps = {
@@ -21,6 +22,7 @@ type MinimalPaginationBaseProps = {
 };
 
 export type MinimalPaginationProps = {
+  id?: string;
   page: number;
   pageSize: number;
   count: number;
@@ -56,7 +58,7 @@ export default function MinimalPagination(props: MinimalPaginationProps & System
 
   const styles = useStyles("minimal");
 
-  const id = React.useId();
+  const id = others.id ?? React.useId();
 
   const [state, send] = useMachine(
     pagination.machine({
@@ -116,7 +118,7 @@ export default function MinimalPagination(props: MinimalPaginationProps & System
                 if (page_.type === "page") {
                   return (
                     <Button
-                      key={`page.${page_.value}`}
+                      key={uuid()}
                       variant="unstyled"
                       sx={styles.pageControl?.({ isActive: page === page_.value })}
                       aria-label={`Go to page ${page_.value}`}
@@ -130,7 +132,7 @@ export default function MinimalPagination(props: MinimalPaginationProps & System
 
                 return (
                   <Button
-                    key={`ellipsis.${index}`}
+                    key={uuid()}
                     variant="unsstyled"
                     sx={styles.pageControl?.({})}
                     {...api.getEllipsisProps({ index })}

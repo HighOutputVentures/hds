@@ -57,6 +57,8 @@ import NegativeChartIcon from '../components/chart/NegativeChartIcon';
 import PositiveChartIcon from '../components/chart/PositiveChartIcon';
 import TrendNegative from '../components/chart/TrendNegative';
 import TrendPositive from '../components/chart/TrendPositive';
+import EmailIcon from '../components/EmialIcon';
+import VisaIcon from '../components/payment-method-icon/VisaIcon';
 
 const meta: ComponentMeta<typeof Icon> = {
   title: 'Components/Icons',
@@ -117,6 +119,10 @@ const CompanyTemplate = (args: any) => {
   return <GridView data={sortObject({ HovIcon })} {...args} />;
 };
 
+const PaymentTemplate = (args: any) => {
+  return <GridView data={sortObject({ VisaIcon })} {...args} />;
+};
+
 const ChartTemplate = (args: any) => {
   return (
     <GridView
@@ -170,6 +176,7 @@ const RandomTemplate = (args: any) => {
         WarningIcon,
         CheckCircleIcon,
         FileUploadIcon,
+        EmailIcon,
       })}
       {...args}
     />
@@ -213,6 +220,10 @@ const StoryTemplate: ComponentStory<any> = (args) => {
         <Box>
           <Title>Company Icons</Title>
           <CompanyTemplate width={width} height={height} />
+        </Box>
+        <Box>
+          <Title>Payment Icons</Title>
+          <PaymentTemplate width={width} height={height} />
         </Box>
         <Box>
           <Title>Chart Icons</Title>
