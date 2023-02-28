@@ -1,11 +1,11 @@
 import { AddIcon, DeleteIcon } from '@chakra-ui/icons';
 import { Button, Flex, Icon, Text, VStack } from '@chakra-ui/react';
-// @ts-ignore
 import { InputField } from '@highoutput/hds-forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { ReactNode } from 'react';
 import { useFieldArray, useForm } from 'react-hook-form';
 import { ArrayFieldSchema, ArrayFieldTypeValues } from './validation';
+
 
 export interface ArrayFieldProps {
   buttonRemoveChildren?: ReactNode;
@@ -21,19 +21,22 @@ export interface ArrayFieldProps {
   label?: string;
   placeholder?: string;
   isRequired?: boolean;
+  __btnTestId?: string;
+  __inputTestId?: string;
 }
 
 const ArrayField = (props: ArrayFieldProps) => {
   const {
     placeholder,
     defaultValues,
-
     onChange,
     onRemove,
     onBlur,
     onAppend,
     label,
     isRequired,
+    __inputTestId,
+    __btnTestId,
     buttonAddChildren,
     buttonRemoveChildren,
     maxValue,
@@ -85,6 +88,7 @@ const ArrayField = (props: ArrayFieldProps) => {
             id={'input'}
             placeholder={placeholder ?? ''}
             {...register(`input.${idx}.value`)}
+            __testId={__inputTestId ?? 'hds.array-field.input'}
             errorMsg={
               isRequired ? formState.errors?.input?.[idx]?.value?.message : ''
             }
@@ -96,6 +100,7 @@ const ArrayField = (props: ArrayFieldProps) => {
                 remove(idx);
                 handleRemove();
               }}
+              data-testid={__btnTestId ?? 'hds.array-field.remove.btn'}
               disabled={fields.length <= 1}
               width="32px"
               height="40px"
@@ -111,6 +116,7 @@ const ArrayField = (props: ArrayFieldProps) => {
                 variant="outline"
                 width="32px"
                 height="40px"
+                data-testid={__btnTestId ?? 'hds.array-field.add.btn'}
                 disabled={maxValue === fields.length}
                 onClick={handleAddField}
               >

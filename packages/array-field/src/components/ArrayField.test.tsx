@@ -6,7 +6,7 @@ import renderer from 'react-test-renderer';
 import ArrayField from './ArrayField';
 
 describe('Array Field Component', () => {
-  beforeAll(() => {
+  beforeEach(() => {
     render(
       <ArrayField
         defaultValues={{
@@ -26,20 +26,18 @@ describe('Array Field Component', () => {
   });
 
   it('should renders input field form container', () => {
-    const formControl = screen.queryByTestId(
-      ':r1:-form-container-form-control'
-    );
+    const formControl = screen.queryByTestId('hds.form.control');
     expect(formControl).toBeDefined();
   });
 
   it('should renders input field input group', () => {
-    const inputGroup = screen.queryByTestId(':r0:-input-field-group');
+    const inputGroup = screen.queryByTestId('hds.input.group');
     expect(inputGroup).toBeDefined();
   });
 
-  it('should renders input field input', () => {
-    const input = screen.queryByTestId(':r0:-input-field-input');
-    expect(input).toBeDefined();
+  it('should renders input field input', async () => {
+    const input = await screen.findAllByTestId('hds.array-field.input');
+    expect(input).toHaveLength(1);
   });
 
   describe('Snapshot', () => {

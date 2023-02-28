@@ -1,0 +1,53 @@
+{
+  "version": "0.2.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build --transpileOnly",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "@highoutput/hds-slideout-menu",
+  "author": "Milfren John dela Vega",
+  "module": "dist/hds-slideout-menu.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/hds-slideout-menu.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/hds-slideout-menu.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "e3fb4446117b7fd00243aab34a25fb2ed0376f1b"
+}

@@ -27,14 +27,12 @@ describe('Input Dropdown Component', () => {
   });
 
   it('Should render Input Dropdown  form container', async () => {
-    const formControl = await screen.findAllByTestId(
-      ':r1:-form-container-form-control'
-    );
+    const formControl = await screen.findAllByTestId('hds.form.control');
     expect(formControl).toHaveLength(1);
   });
   it('Should render Input Dropdown  label', async () => {
     const formControlLabel = await screen.findAllByTestId(
-      ':r4:-form-container-label'
+      'hds.form.control.label'
     );
     expect(formControlLabel).toHaveLength(1);
   });

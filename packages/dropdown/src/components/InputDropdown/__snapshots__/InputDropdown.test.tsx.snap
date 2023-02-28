@@ -5,14 +5,14 @@ Array [
   <div
     aria-label="Form Group"
     className="chakra-form-control css-1kxonj9"
-    data-testid=":r1:-form-container-form-control"
+    data-testid="hds.form.control"
     role="group"
   >
     <label
       className="chakra-form__label css-1xgte9r"
-      data-testid=":r1:-form-container-label"
-      htmlFor="field-:r2:"
-      id="field-:r2:-label"
+      data-testid="hds.form.control.label"
+      htmlFor="field-:r0:"
+      id="field-:r0:-label"
     >
       Users
     </label>
@@ -23,7 +23,7 @@ Array [
         className="css-10swtys"
       >
         <svg
-          className="chakra-icon css-n059si"
+          className="chakra-icon css-bmmmzk"
           focusable={false}
           viewBox="0 0 24 24"
         >
@@ -110,7 +110,7 @@ Array [
             className=" css-hfbj6y"
           >
             <svg
-              className="chakra-icon chakra-icon css-4v11vh"
+              className="chakra-icon chakra-icon css-1n9wk9c"
               focusable={false}
               viewBox="0 0 24 24"
             >
@@ -125,5 +125,9 @@ Array [
     </div>
   </div>,
   <span />,
+  <span
+    hidden={true}
+    id="__chakra_env"
+  />,
 ]
 `;

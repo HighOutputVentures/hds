@@ -10,14 +10,14 @@ describe('One Time Password Login Component', () => {
   });
 
   it('should render button submit for otp', async () => {
-    const submitButton = await screen.findAllByTestId('button.otp.submit');
+    const submitButton = await screen.findAllByTestId('hds.otp.submit.button');
     expect(submitButton).toHaveLength(1);
   });
   test('user clicks submit with no value or incomplete input and renders error messages', async () => {
     const submit = await screen.findByTestId('box.otpform.form');
     await fireEvent.submit(submit);
     const errorFormControl = await screen.findAllByTestId(
-      /form-container-error/i
+      /hds.form.control.error.message/i
     );
     expect(errorFormControl).toHaveLength(1);
   });

@@ -21,26 +21,27 @@ import {
 import * as React from "react";
 import ArrowDownIcon from "./icons/ArrowDownIcon";
 import HelpCircleIcon from "./icons/HelpCircleIcon";
+import { v4 as uuid } from "uuid";
 
-type UnknownArray = unknown[];
-type ArrayItem<T extends UnknownArray> = T[number];
+export type UnknownArray = unknown[];
+export type ArrayItem<T extends UnknownArray> = T[number];
 
-type SortDirection = "asc" | "desc";
+export type SortDirection = "asc" | "desc";
 
-type SortContext = {
+export type SortContext = {
   direction: SortDirection;
 };
 
-type CheckContext<T> = {
+export type CheckContext<T> = {
   item: T;
   isChecked: boolean;
 };
 
-type ClickContext<T> = {
+export type ClickContext<T> = {
   item: T;
 };
 
-type Column<T extends UnknownArray> = {
+export type Column<T extends UnknownArray> = {
   label: string;
   width?: string;
   tooltip?: React.ReactNode;
@@ -53,7 +54,7 @@ type Column<T extends UnknownArray> = {
   defaultChecked?: ((item: ArrayItem<T>) => boolean) | boolean;
 };
 
-type CheckAllContext<T extends UnknownArray> = {
+export type CheckAllContext<T extends UnknownArray> = {
   selected: ArrayItem<T>[];
   isChecked: boolean;
 };
@@ -109,6 +110,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
       )}
 
       <TableContainer
+      data-testid="hds.table.container"
         sx={{
           "&::-webkit-scrollbar": {
             width: "12px",
@@ -133,6 +135,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
         }}
       >
         <Table
+          data-testid="hds.table"
           sx={{
             thead: {
               bgColor: "#F9FAFB",
@@ -166,15 +169,15 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
             },
           }}
         >
-          <Thead>
-            <Tr>
+          <Thead data-testid="hds.table.header">
+            <Tr data-testid="hds.table.header.tr">
               {columns.map(
                 (
                   { label, tooltip, width, onSort, onCheck, onCheckAll, defaultSort = "desc" },
                   index,
                 ) => {
                   return (
-                    <Th key={React.useId()} width={width}>
+                    <Th key={uuid()} width={width} data-testid="hds.table.header.th">
                       <Flex alignItems="center">
                         {!!onCheck && (
                           <Checkbox
@@ -217,20 +220,21 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
             </Tr>
           </Thead>
 
-          <Tbody>
+          <Tbody data-testid="hds.table.body">
             {items.map((item, index_0) => {
               return (
-                <Tr key={React.useId()}>
+                <Tr key={uuid()} data-testid="hds.table.body.tr">
                   {columns.map(
                     ({ onSort, onCheck, onClick, defaultChecked, ...others }, index_1) => {
                       const renderRow = others.renderRow ?? ((obj) => String(obj));
 
                       return (
                         <Td
-                          key={React.useId()}
+                          key={uuid()}
                           onClick={() => {
                             onClick?.({ item });
                           }}
+                          data-testid="hds.table.body.td"
                         >
                           <Flex alignItems="center" gap="12px">
                             {onCheck && (

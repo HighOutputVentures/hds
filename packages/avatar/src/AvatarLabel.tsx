@@ -1,4 +1,4 @@
-import { Box, Heading, SystemStyleObject, Text, useMultiStyleConfig } from "@chakra-ui/react";
+import { Box, SystemStyleObject, Text, useMultiStyleConfig } from "@chakra-ui/react";
 import * as React from "react";
 import { PropsWithChildren } from "react";
 import { AvatarBaseProps } from "./Avatar";
@@ -30,6 +30,7 @@ export default function AvatarLabel(props: PropsWithChildren<AvatarLabelProps>) 
     children,
     supportText,
     online,
+    __testId,
     onlineIndicator,
     ...others
   } = props;
@@ -76,9 +77,13 @@ export default function AvatarLabel(props: PropsWithChildren<AvatarLabelProps>) 
         })}
       </Box>
 
-      <Box sx={styles.label}>
-        <Heading sx={styles.heading}>{name}</Heading>
-        <Text sx={styles.supportText}>{supportText}</Text>
+      <Box sx={styles.label} data-testid={__testId ?? 'hds.avatar-label'}>
+        <Text sx={styles.heading} color="neutrals.800" size="labels-xs-default">
+          {name}
+        </Text>
+        <Text sx={styles.supportText} color="neutrals.600" size="labels-xxs-default">
+          {supportText}
+        </Text>
       </Box>
     </Box>
   );

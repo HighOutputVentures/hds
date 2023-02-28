@@ -31,31 +31,31 @@ exports[`Contact Card Component Snapshot (ContactCard) Should match snapshot 1`]
         <div
           aria-label="Form Group"
           className="chakra-form-control css-0"
-          data-testid=":ra:-form-container-form-control"
+          data-testid="hds.form.control"
           role="group"
         >
           <label
             className="chakra-form__label css-168uyi5"
-            data-testid=":ra:-form-container-label"
+            data-testid="hds.form.control.label"
             htmlFor="name"
             id="name-label"
           >
             Name
           </label>
           <div
-            className="chakra-input__group css-4302v8"
-            data-testid=":r9:-input-field-group"
+            className="chakra-input__group css-bx0blc"
+            data-testid="hds.input.group"
           >
             <input
               className="chakra-input css-0"
-              data-testid=":r9:-input-field-input"
+              data-testid="hds.input.field"
               disabled={false}
               id="name"
               name="details.name"
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
-              onKeyPress={[Function]}
+              onKeyDown={[Function]}
               placeholder="Input your name"
               readOnly={false}
               required={false}
@@ -67,31 +67,31 @@ exports[`Contact Card Component Snapshot (ContactCard) Should match snapshot 1`]
         <div
           aria-label="Form Group"
           className="chakra-form-control css-0"
-          data-testid=":rd:-form-container-form-control"
+          data-testid="hds.form.control"
           role="group"
         >
           <label
             className="chakra-form__label css-168uyi5"
-            data-testid=":rd:-form-container-label"
+            data-testid="hds.form.control.label"
             htmlFor="emailAddress"
             id="emailAddress-label"
           >
             Email
           </label>
           <div
-            className="chakra-input__group css-4302v8"
-            data-testid=":rc:-input-field-group"
+            className="chakra-input__group css-bx0blc"
+            data-testid="hds.input.group"
           >
             <input
               className="chakra-input css-0"
-              data-testid=":rc:-input-field-input"
+              data-testid="hds.input.field"
               disabled={false}
               id="emailAddress"
               name="emailAddress"
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
-              onKeyPress={[Function]}
+              onKeyDown={[Function]}
               placeholder="Input your email address"
               readOnly={false}
               required={false}
@@ -103,23 +103,23 @@ exports[`Contact Card Component Snapshot (ContactCard) Should match snapshot 1`]
         <div
           aria-label="Form Group"
           className="chakra-form-control css-0"
-          data-testid=":rg:-form-container-form-control"
+          data-testid="hds.form.control"
           role="group"
         >
           <label
             className="chakra-form__label css-168uyi5"
-            data-testid=":rg:-form-container-label"
+            data-testid="hds.form.control.label"
             htmlFor="message"
             id="message-label"
           >
             Desciption of concern
           </label>
           <div
-            className="chakra-input__group css-4302v8"
+            className="chakra-input__group css-bx0blc"
           >
             <textarea
               className="chakra-textarea css-djz069"
-              data-testid=":rf:-textarea-field-input"
+              data-testid="hds.textarea.field.input"
               disabled={false}
               id="message"
               label="Desciption of concern"
@@ -163,31 +163,31 @@ exports[`Contact Form Component Snapshot (ContactForm) Should match snapshot 1`]
       <div
         aria-label="Form Group"
         className="chakra-form-control css-0"
-        data-testid=":r1:-form-container-form-control"
+        data-testid="hds.form.control"
         role="group"
       >
         <label
           className="chakra-form__label css-168uyi5"
-          data-testid=":r1:-form-container-label"
+          data-testid="hds.form.control.label"
           htmlFor="name"
           id="name-label"
         >
           Name
         </label>
         <div
-          className="chakra-input__group css-4302v8"
-          data-testid=":r0:-input-field-group"
+          className="chakra-input__group css-bx0blc"
+          data-testid="hds.input.group"
         >
           <input
             className="chakra-input css-0"
-            data-testid=":r0:-input-field-input"
+            data-testid="hds.input.field"
             disabled={false}
             id="name"
             name="details.name"
             onBlur={[Function]}
             onChange={[Function]}
             onFocus={[Function]}
-            onKeyPress={[Function]}
+            onKeyDown={[Function]}
             placeholder="Input your name"
             readOnly={false}
             required={false}
@@ -199,31 +199,31 @@ exports[`Contact Form Component Snapshot (ContactForm) Should match snapshot 1`]
       <div
         aria-label="Form Group"
         className="chakra-form-control css-0"
-        data-testid=":r4:-form-container-form-control"
+        data-testid="hds.form.control"
         role="group"
       >
         <label
           className="chakra-form__label css-168uyi5"
-          data-testid=":r4:-form-container-label"
+          data-testid="hds.form.control.label"
           htmlFor="emailAddress"
           id="emailAddress-label"
         >
           Email
         </label>
         <div
-          className="chakra-input__group css-4302v8"
-          data-testid=":r3:-input-field-group"
+          className="chakra-input__group css-bx0blc"
+          data-testid="hds.input.group"
         >
           <input
             className="chakra-input css-0"
-            data-testid=":r3:-input-field-input"
+            data-testid="hds.input.field"
             disabled={false}
             id="emailAddress"
             name="emailAddress"
             onBlur={[Function]}
             onChange={[Function]}
             onFocus={[Function]}
-            onKeyPress={[Function]}
+            onKeyDown={[Function]}
             placeholder="Input your email address"
             readOnly={false}
             required={false}
@@ -235,23 +235,23 @@ exports[`Contact Form Component Snapshot (ContactForm) Should match snapshot 1`]
       <div
         aria-label="Form Group"
         className="chakra-form-control css-0"
-        data-testid=":r7:-form-container-form-control"
+        data-testid="hds.form.control"
         role="group"
       >
         <label
           className="chakra-form__label css-168uyi5"
-          data-testid=":r7:-form-container-label"
+          data-testid="hds.form.control.label"
           htmlFor="message"
           id="message-label"
         >
           Desciption of concern
         </label>
         <div
-          className="chakra-input__group css-4302v8"
+          className="chakra-input__group css-bx0blc"
         >
           <textarea
             className="chakra-textarea css-djz069"
-            data-testid=":r6:-textarea-field-input"
+            data-testid="hds.textarea.field.input"
             disabled={false}
             id="message"
             label="Desciption of concern"
@@ -360,31 +360,31 @@ exports[`Contact Page Component Snapshot (ContactPage) Should match snapshot 1`]
             <div
               aria-label="Form Group"
               className="chakra-form-control css-0"
-              data-testid=":rj:-form-container-form-control"
+              data-testid="hds.form.control"
               role="group"
             >
               <label
                 className="chakra-form__label css-168uyi5"
-                data-testid=":rj:-form-container-label"
+                data-testid="hds.form.control.label"
                 htmlFor="name"
                 id="name-label"
               >
                 Name
               </label>
               <div
-                className="chakra-input__group css-4302v8"
-                data-testid=":ri:-input-field-group"
+                className="chakra-input__group css-bx0blc"
+                data-testid="hds.input.group"
               >
                 <input
                   className="chakra-input css-0"
-                  data-testid=":ri:-input-field-input"
+                  data-testid="hds.input.field"
                   disabled={false}
                   id="name"
                   name="details.name"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
-                  onKeyPress={[Function]}
+                  onKeyDown={[Function]}
                   placeholder="Input your name"
                   readOnly={false}
                   required={false}
@@ -396,31 +396,31 @@ exports[`Contact Page Component Snapshot (ContactPage) Should match snapshot 1`]
             <div
               aria-label="Form Group"
               className="chakra-form-control css-0"
-              data-testid=":rm:-form-container-form-control"
+              data-testid="hds.form.control"
               role="group"
             >
               <label
                 className="chakra-form__label css-168uyi5"
-                data-testid=":rm:-form-container-label"
+                data-testid="hds.form.control.label"
                 htmlFor="emailAddress"
                 id="emailAddress-label"
               >
                 Email
               </label>
               <div
-                className="chakra-input__group css-4302v8"
-                data-testid=":rl:-input-field-group"
+                className="chakra-input__group css-bx0blc"
+                data-testid="hds.input.group"
               >
                 <input
                   className="chakra-input css-0"
-                  data-testid=":rl:-input-field-input"
+                  data-testid="hds.input.field"
                   disabled={false}
                   id="emailAddress"
                   name="emailAddress"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
-                  onKeyPress={[Function]}
+                  onKeyDown={[Function]}
                   placeholder="Input your email address"
                   readOnly={false}
                   required={false}
@@ -432,23 +432,23 @@ exports[`Contact Page Component Snapshot (ContactPage) Should match snapshot 1`]
             <div
               aria-label="Form Group"
               className="chakra-form-control css-0"
-              data-testid=":rp:-form-container-form-control"
+              data-testid="hds.form.control"
               role="group"
             >
               <label
                 className="chakra-form__label css-168uyi5"
-                data-testid=":rp:-form-container-label"
+                data-testid="hds.form.control.label"
                 htmlFor="message"
                 id="message-label"
               >
                 Desciption of concern
               </label>
               <div
-                className="chakra-input__group css-4302v8"
+                className="chakra-input__group css-bx0blc"
               >
                 <textarea
                   className="chakra-textarea css-djz069"
-                  data-testid=":ro:-textarea-field-input"
+                  data-testid="hds.textarea.field.input"
                   disabled={false}
                   id="message"
                   label="Desciption of concern"

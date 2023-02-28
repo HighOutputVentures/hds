@@ -4,6 +4,7 @@ exports[`Tag Should match snapshot 1`] = `
 Array [
   <span
     className="css-1ipiso8"
+    data-testid="hds.tag"
   >
     <div
       className="css-1w2j5n9"
@@ -11,6 +12,7 @@ Array [
     <label
       checked={true}
       className="chakra-checkbox css-1577qb8"
+      data-testid="hds.tag.checkbox"
       onClick={[Function]}
     >
       <input
@@ -52,6 +54,7 @@ Array [
     <svg
       aria-label="Tag Icon"
       className="chakra-icon css-1jxv7ty"
+      data-testid="hds.tag.left.icon"
       fill="none"
       focusable={false}
       height="16"
@@ -129,6 +132,7 @@ Array [
     <span
       aria-label="Tag Avatar"
       className="chakra-avatar css-sb6ugy"
+      data-testid="hds.tag.avatar"
       role="img"
     >
       <svg
@@ -156,6 +160,7 @@ Array [
     <div
       aria-label="Green Dot"
       className="css-0"
+      data-testid="hds.tag.indicator"
       role="presentation"
     />
     <div
@@ -163,6 +168,7 @@ Array [
     />
     <span
       className="css-1ny2kle"
+      data-testid="hds.tag.label"
       role="contentinfo"
     >
       Tag Label
@@ -173,6 +179,7 @@ Array [
     <button
       aria-label="Close Tag"
       className="css-e9kjw6"
+      data-testid="hds.tag.close.button"
       onClick={[Function]}
       role="button"
       type="button"
@@ -204,12 +211,17 @@ Array [
     />
   </span>,
   <span />,
+  <span
+    hidden={true}
+    id="__chakra_env"
+  />,
 ]
 `;
 
 exports[`Tag Snapshot Should match snapshot 1`] = `
 <span
   className="css-1qm7lvz"
+  data-testid="hds.tag"
 >
   <div
     className="css-1w2j5n9"
@@ -217,6 +229,7 @@ exports[`Tag Snapshot Should match snapshot 1`] = `
   <label
     checked={true}
     className="chakra-checkbox css-1elxtiq"
+    data-testid="hds.tag.checkbox"
     onClick={[Function]}
   >
     <input
@@ -258,6 +271,7 @@ exports[`Tag Snapshot Should match snapshot 1`] = `
   <svg
     aria-label="Tag Icon"
     className="chakra-icon css-1jxv7ty"
+    data-testid="hds.tag.left.icon"
     fill="none"
     focusable={false}
     height="16"
@@ -335,6 +349,7 @@ exports[`Tag Snapshot Should match snapshot 1`] = `
   <span
     aria-label="Tag Avatar"
     className="chakra-avatar css-1ruhx4w"
+    data-testid="hds.tag.avatar"
     role="img"
   >
     <svg
@@ -362,6 +377,7 @@ exports[`Tag Snapshot Should match snapshot 1`] = `
   <div
     aria-label="Green Dot"
     className="css-0"
+    data-testid="hds.tag.indicator"
     role="presentation"
   />
   <div
@@ -369,6 +385,7 @@ exports[`Tag Snapshot Should match snapshot 1`] = `
   />
   <span
     className="css-zvlevn"
+    data-testid="hds.tag.label"
     role="contentinfo"
   >
     Tag Label
@@ -379,6 +396,7 @@ exports[`Tag Snapshot Should match snapshot 1`] = `
   <button
     aria-label="Close Tag"
     className="css-sorhh"
+    data-testid="hds.tag.close.button"
     onClick={[Function]}
     role="button"
     type="button"

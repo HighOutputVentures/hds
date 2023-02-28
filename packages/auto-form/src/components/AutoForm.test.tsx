@@ -11,7 +11,7 @@ describe('Auto form component', () => {
   });
 
   it('should render form inputs', () => {
-    const inputs = screen.queryByTestId(':r0:-input-field-group');
+    const inputs = screen.queryByTestId('hds.input.group');
     expect(inputs).toBeDefined();
   });
 
@@ -21,14 +21,16 @@ describe('Auto form component', () => {
   });
 
   test('user clicks submit with no value or invalid input and renders error messages', async () => {
-    const submit = screen.getByTestId('button.form.submit');
+    const submit = screen.getByTestId('hds.button-form.submit');
 
     await act(async () => {
       fireEvent.submit(submit);
     });
 
     await waitFor(() => {
-      expect(screen.queryAllByTestId(/form-container-error/i)).toHaveLength(2);
+      expect(
+        screen.queryAllByTestId(/hds.form.control.error.message/i)
+      ).toHaveLength(2);
     });
   });
 });

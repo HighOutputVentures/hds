@@ -14,6 +14,7 @@ exports[`AvatarLabel Snapshot Should match snapshot 1`] = `
       data-elevated={false}
       data-fallback={true}
       data-online={false}
+      data-testid="hds-avatar"
     >
       <div
         aria-label="John Doe"
@@ -26,14 +27,15 @@ exports[`AvatarLabel Snapshot Should match snapshot 1`] = `
   </div>
   <div
     className="css-0"
+    data-testid="hds.avatar-label"
   >
-    <h2
-      className="chakra-heading css-0"
+    <p
+      className="chakra-text css-luvoqg"
     >
       John Doe
-    </h2>
+    </p>
     <p
-      className="chakra-text css-0"
+      className="chakra-text css-1hu2wkm"
     >
       johndoe@dummy.blaa
     </p>

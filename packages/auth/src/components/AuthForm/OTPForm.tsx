@@ -1,5 +1,4 @@
 import { Box, Button, Heading, Text } from '@chakra-ui/react';
-// @ts-ignore
 import { PinInputField } from '@highoutput/hds-forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { ReactNode } from 'react';
@@ -80,7 +79,7 @@ const OTPForm = (props: OTPFormProps) => {
         type="submit"
         isLoading={formStateOtp.isSubmitting}
         width={'100%'}
-        data-testid="button.otp.submit"
+        data-testid="hds.otp.submit.button"
         marginTop={5}
       >
         {buttonText ? buttonText : 'Sign In'}

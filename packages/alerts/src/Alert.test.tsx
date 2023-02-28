@@ -27,9 +27,23 @@ describe('Alert Component', () => {
   });
 
   it('Should render', async () => {
-    const AlertBox = await screen.findAllByTestId('alert-box');
+    const AlertBox = await screen.findAllByTestId('hds.alert.container');
     expect(AlertBox).toHaveLength(1);
   });
+  it('should render title', async () => {
+    const title = await screen.findAllByTestId('hds.alert.title');
+    expect(title).toHaveLength(1);
+  })
+
+  it('should render supporting detail', async () => {
+    const supportingDetail = await screen.findAllByTestId('hds.alert.message');
+    expect(supportingDetail).toHaveLength(1);
+  })
+
+  it('should render alert links', async () => {
+    const notificationLinks = await screen.findAllByTestId('hds.alert.link');
+    expect(notificationLinks).toHaveLength(2);
+  })
 
   describe('Snapshot', () => {
     it('Should match snapshot', () => {

@@ -104,6 +104,43 @@ const packageList = [
     packageLink: "https://www.npmjs.com/package/@highoutput/hds-experimental",
     packageName: " @highoutput/hds-experimental",
   },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-metrics",
+    packageName: " @highoutput/hds-metrics",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-breadcrumbs",
+    packageName: " @highoutput/hds-breadcrumbs",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-table",
+    packageName: " @highoutput/hds-tabs",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-tabs",
+    packageName: " @highoutput/hds-tabs",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-modal",
+    packageName: " @highoutput/hds-modal",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-badge",
+    packageName: " @highoutput/hds-badge",
+  },
+  {
+    packageLink:
+      "https://www.npmjs.com/package/@highoutput/hds-loading-indicator",
+    packageName: " @highoutput/hds-loading-indicator",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-toast",
+    packageName: " @highoutput/hds-toast",
+  },
+  {
+    packageLink: "https://www.npmjs.com/package/@highoutput/hds-file-upload",
+    packageName: " @highoutput/hds-file-upload",
+  },
 ];
 
 const GettingStarted = () => {
@@ -165,8 +202,7 @@ const GettingStarted = () => {
             <Text size="paragraph-md-default">
               <Link
                 href="https://hds-highoutput.vercel.app/?path=/story/getting-started--page"
-                isExternal
-              >
+                isExternal>
                 Storybook Documentation and Preview{" "}
                 <ExternalLinkIcon mx="2px" />
               </Link>
@@ -244,8 +280,7 @@ function Snippet({ children, ...props }: BoxProps) {
       style={colorScheme}
       language="typescript"
       padding="24px!important"
-      {...props}
-    >
+      {...props}>
       {children}
     </Box>
   );

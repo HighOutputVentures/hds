@@ -1,5 +1,4 @@
 import { Box, Button } from '@chakra-ui/react';
-// @ts-ignore
 import { InputField } from '@highoutput/hds-forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
@@ -17,6 +16,7 @@ export interface OTPVerificationProps extends OTPFormProps {
   otpReceived: boolean;
   numberOfFields?: number;
   otpType?: 'number' | 'alphanumeric';
+  __testId?: string;
 }
 
 const OTPVerificationForm = (props: OTPVerificationProps) => {
@@ -27,6 +27,7 @@ const OTPVerificationForm = (props: OTPVerificationProps) => {
     title,
     subTitle,
     onSubmitOTPValue,
+    __testId,
   } = props;
 
   const { register, handleSubmit, formState } =
@@ -63,24 +64,19 @@ const OTPVerificationForm = (props: OTPVerificationProps) => {
           <InputField
             id="emailAddress"
             {...register('emailAddress')}
+            __testId={__testId ?? 'hds.otp.verification.input.email'}
             errorMsg={errors.emailAddress?.message}
             disabled={isSubmitting}
             placeholder={'Enter your email address'}
-            // partProps={{
-            //   input: {
-            //     'aria-label': 'email-input',
-            //     role: 'input',
-            //   },
-            // }}
           />
 
           <Button
             variant={'primary'}
             type="submit"
             isLoading={isSubmitting}
+            data-testid="hds.otp.verification.submit.button"
             width={'100%'}
             marginTop={'10px'}
-            data-testid="button.email.submit"
           >
             Sign In
           </Button>

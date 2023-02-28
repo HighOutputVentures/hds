@@ -6,19 +6,11 @@ import {
   InputRightElement,
   useMultiStyleConfig,
 } from '@chakra-ui/react';
-import React, { forwardRef, ReactNode, useId } from 'react';
+import React, { forwardRef, ReactNode } from 'react';
 import FormContainer, {
   FormContainerProps,
 } from '../FormContainer/FormContainer';
 
-// type WithoutChildren<T> = Omit<T, 'children'>;
-
-// export interface InputFieldPartProps extends FormContainerPartProps {
-//   input?: WithoutChildren<InputProps>;
-//   inputGroup?: WithoutChildren<InputGroupProps>;
-//   inputLeftElement?: WithoutChildren<InputElementProps>;
-//   inputRightElement?: WithoutChildren<InputElementProps>;
-// }
 export interface InputFieldProps extends Omit<FormContainerProps, 'partProps'> {
   size?: InputGroupProps['size'];
   type?: string;
@@ -31,11 +23,13 @@ export interface InputFieldProps extends Omit<FormContainerProps, 'partProps'> {
   disabled?: boolean;
   readOnly?: boolean;
   defaultValue?: string;
-  __testId?: string;
   variant?: string;
-  onPressEnter?(): void;
+  onPressEnter?(event: React.KeyboardEvent<HTMLInputElement>): void;
   inputValue?: string | undefined;
-  // partProps?: Partial<InputFieldPartProps>;
+  __testId?: string;
+  __inputLeftElementTestId?: string;
+  __inputRightElementTestId?: string;
+  __inputGroupTestId?: string;
 }
 
 const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
@@ -44,6 +38,9 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
       type = 'text',
       size = 'md',
       __testId,
+      __inputLeftElementTestId,
+      __inputRightElementTestId,
+      __inputGroupTestId,
       maxLength,
       autoFocus,
       placeholder,
@@ -61,23 +58,23 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
       inputValue,
     } = props;
     const styles = useMultiStyleConfig('Form', { variant, size });
-    const uid = useId();
 
     return (
       <FormContainer {...props}>
         <InputGroup
           sx={styles.formInputGroup}
           size={size}
-          data-testid={`${uid}-input-field-group`}
+          data-testid={__inputGroupTestId ?? 'hds.input.group'}
         >
           {leftIcon && (
-            <InputLeftElement data-testid={`${uid}-input-field-left-element`}>
+            <InputLeftElement
+              data-testid={__inputLeftElementTestId ?? 'hds.input.left.element'}
+            >
               {leftIcon}
             </InputLeftElement>
           )}
           <Input
             sx={styles.formInput}
-            // {...partProps?.input}
             errorBorderColor="red.500"
             autoFocus={autoFocus}
             ref={ref}
@@ -92,19 +89,18 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
             defaultValue={defaultValue}
             maxLength={maxLength}
             variant={variant}
-            onKeyPress={(e: { key: string }) => {
-              if (e.key === 'Enter') {
-                if (onPressEnter) onPressEnter();
-              }
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') onPressEnter?.(e);
             }}
             value={inputValue ? inputValue.trim() : undefined}
             role="input"
-            data-testid={__testId ?? `${uid}-input-field-input`}
+            data-testid={__testId ?? 'hds.input.field'}
           />
           {rightIcon && (
             <InputRightElement
-              // {...partProps?.inputRightElement}
-              data-testid={`${uid}-input-field-right-element`}
+              data-testid={
+                __inputRightElementTestId ?? 'hds.input.right.element'
+              }
             >
               {rightIcon}
             </InputRightElement>

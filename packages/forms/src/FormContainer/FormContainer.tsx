@@ -6,28 +6,23 @@ import {
   ThemingProps,
   useMultiStyleConfig,
 } from '@chakra-ui/react';
-import React, { FC, ReactNode, useId } from 'react';
+import React, { FC, ReactNode } from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 
-// type WithoutChildren<T> = Omit<T, 'children'>;
 
-// export interface FormContainerPartProps {
-//   formControl?: WithoutChildren<FormControlProps>;
-//   formLabel?: WithoutChildren<FormLabelProps>;
-//   formErrorMessage?: WithoutChildren<FormErrorMessageProps>;
-//   formHelperText?: WithoutChildren<HelpTextProps>;
-// }
 export interface FormContainerProps
   extends Partial<UseFormRegisterReturn>,
     ThemingProps {
   id?: string;
   label?: string;
-  // labelColor?: string;
   errorMsg?: string;
   helperMsg?: string;
   disabled?: boolean;
   children?: ReactNode;
-  // partProps?: Partial<FormContainerPartProps>;
+  __formControlTestId?: string;
+  __formLabelTestId?: string;
+  __formErrorMessageTestId?: string;
+  __formHelperTextTestId?: string;
 }
 
 const FormContainer: FC<FormContainerProps> = ({
@@ -38,23 +33,26 @@ const FormContainer: FC<FormContainerProps> = ({
   children,
   disabled,
   variant,
+  __formControlTestId,
+  __formErrorMessageTestId,
+  __formHelperTextTestId,
+  __formLabelTestId,
 }) => {
   const styles = useMultiStyleConfig('Form', { variant });
-  const uid = useId();
 
   return (
     <FormControl
       id={id}
       isInvalid={Boolean(errorMsg)}
       isReadOnly={disabled}
-      data-testid={`${uid}-form-container-form-control`}
+      data-testid={__formControlTestId ?? 'hds.form.control'}
       sx={styles.formControl}
       aria-label="Form Group"
     >
       {label && (
         <FormLabel
           borderRadius="4px"
-          data-testid={`${uid}-form-container-label`}
+          data-testid={__formLabelTestId ?? `hds.form.control.label`}
           sx={styles.formLabel}
         >
           {label}
@@ -63,14 +61,18 @@ const FormContainer: FC<FormContainerProps> = ({
       {children}
       <FormErrorMessage
         sx={styles.formErrorMessage}
-        data-testid={`${uid}-form-container-error`}
+        data-testid={
+          __formErrorMessageTestId ?? `hds.form.control.error.message`
+        }
       >
         {errorMsg}
       </FormErrorMessage>
       {helperMsg && (
         <FormHelperText
           sx={styles.formHelperText}
-          data-testid={`${uid}-form-container-helper`}
+          data-testid={
+            __formHelperTextTestId ?? `hds.form.container.helper.message`
+          }
         >
           {helperMsg}
         </FormHelperText>

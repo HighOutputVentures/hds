@@ -21,7 +21,7 @@ describe('InputField', () => {
   });
 
   it('should render InputField', () => {
-    expect(screen.queryByTestId(':r0:-input-field-group')).toBeDefined();
+    expect(screen.queryByTestId('hds.input.field')).toBeDefined();
   });
 
   it('should render Input', () => {
@@ -29,12 +29,10 @@ describe('InputField', () => {
   });
 
   it("should render 'leftElement'", () => {
-    expect(screen.queryByTestId(':r0:-input-field-left-element')).toBeDefined();
+    expect(screen.queryByTestId('hds.input.left.element')).toBeDefined();
   });
 
   it("should render 'rightElement'", () => {
-    expect(
-      screen.queryByTestId(':r0:-input-field-right-element')
-    ).toBeDefined();
+    expect(screen.queryByTestId('hds.input.right.element')).toBeDefined();
   });
 });

@@ -31,7 +31,9 @@ describe('Datepicker pre-set range type Component', () => {
   });
 
   it('Should render', async () => {
-    const RangeDatePicker = await screen.findAllByTestId('range-datepicker');
+    const RangeDatePicker = await screen.findAllByTestId(
+      'hds.range-datepicker'
+    );
     expect(RangeDatePicker).toHaveLength(1);
   });
 });
@@ -53,7 +55,9 @@ describe('Datepicker single date type Component', () => {
   });
 
   it('Should render', async () => {
-    const SingleDatePicker = await screen.findAllByTestId('single-datepicker');
+    const SingleDatePicker = await screen.findAllByTestId(
+      'hds.single-datepicker'
+    );
     expect(SingleDatePicker).toHaveLength(1);
   });
 });
@@ -75,7 +79,7 @@ describe('Datepicker dual date type Component', () => {
   });
 
   it('Should render', async () => {
-    const DualDatePicker = await screen.findAllByTestId('dual-datepicker');
+    const DualDatePicker = await screen.findAllByTestId('hds.dual-datepicker');
     expect(DualDatePicker).toHaveLength(1);
   });
 });
@@ -88,8 +92,6 @@ describe('Datepicker modal Component', () => {
           dateEvents={MOCKDATA}
           type={'dual dates'}
           userId="1"
-          onClose={jest.fn()}
-          isOpen={true}
           timezone={'Asia/Manila'}
         />
       </ThemeProvider>
@@ -97,7 +99,9 @@ describe('Datepicker modal Component', () => {
   });
 
   it('Should render', async () => {
-    const ModalDatePicker = await screen.findAllByTestId('modal-datepicker');
+    const ModalDatePicker = await screen.findAllByTestId(
+      'hds.modal-datepicker'
+    );
     expect(ModalDatePicker).toHaveLength(1);
   });
 });
@@ -120,7 +124,7 @@ describe('Datepicker dropdown Component', () => {
 
   it('Should render', async () => {
     const DropdownDatePicker = await screen.findAllByTestId(
-      'dropdown-datepicker'
+      'hds.dropdown-datepicker'
     );
     expect(DropdownDatePicker).toHaveLength(1);
   });
@@ -186,8 +190,6 @@ describe('Snapshots', () => {
           dateEvents={MOCKDATA}
           type="dual dates"
           userId="1"
-          onClose={noop}
-          isOpen
           timezone="Asia/Manila"
         />
       </ThemeProvider>

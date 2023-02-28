@@ -1,50 +1,3 @@
-type UseOtherPaginationInfoArgs = {
-  page: number;
-  pageSize: number;
-  total: number;
-  maxPageControls?: 6 | 4;
-};
-
-type UseOtherPaginationInfoReturn = {
-  hasNext: boolean;
-  hasPrevious: boolean;
-  totalPages: number;
-  pageControls: (number | null)[];
-};
-
-export function useOtherPaginationInfo({
-  page,
-  total,
-  pageSize,
-  maxPageControls = 6,
-}: UseOtherPaginationInfoArgs): UseOtherPaginationInfoReturn {
-  const totalPages = Math.ceil(total / pageSize);
-  const pageControls =
-    page + maxPageControls < totalPages
-      ? [
-          ...new Array(maxPageControls / 2).fill(null).map((_, i) => page + i),
-          null,
-          ...new Array(maxPageControls / 2)
-            .fill(null)
-            .map((_, i) => totalPages - i)
-            .reverse(),
-        ]
-      : new Array(maxPageControls + 1)
-          .fill(null)
-          .map((_, i) => totalPages - i)
-          .reverse();
-
-  const hasNext = page * pageSize < total;
-  const hasPrevious = page > 1;
-
-  return {
-    hasNext,
-    hasPrevious,
-    totalPages,
-    pageControls,
-  };
-}
-
 export function useStyles(variant: "group" | "minimal") {
   if (variant === "group") {
     return {
@@ -85,6 +38,15 @@ export function useStyles(variant: "group" | "minimal") {
           color: "#525252",
           width: "unset",
           padding: "10px 16px",
+        },
+      },
+      select: {
+        width: "full",
+        color: "#0F0F0F",
+        borderColor: "#D6D6D6",
+        _focus: {
+          boxShadow: "none",
+          borderColor: "brand.primary.500",
         },
       },
     };

@@ -4,7 +4,7 @@ exports[`Snapshots (DatePicker Dual Date) Should match snapshot 1`] = `
 Array [
   <div
     className="css-a3ggia"
-    data-testid="dual-datepicker"
+    data-testid="hds.dual-datepicker"
   >
     <div
       className="chakra-stack css-n21gh5"
@@ -35,7 +35,7 @@ Array [
               <p
                 className="chakra-text css-fzwid6"
               >
-                January 2023
+                February 2023
               </p>
               <svg
                 className="chakra-icon chakra-icon css-1xogjj1"
@@ -118,13 +118,13 @@ Array [
         </div>
       </div>
       <div
-        className="css-1c958lr"
+        className="css-1ca8fdd"
       >
         <div
           className="chakra-stack css-tth4vk"
         >
           <button
-            className="chakra-button css-11a6hrq"
+            className="chakra-button css-6lubos"
             onClick={[Function]}
             type="button"
           >
@@ -141,13 +141,17 @@ Array [
     </div>
   </div>,
   <span />,
+  <span
+    hidden={true}
+    id="__chakra_env"
+  />,
 ]
 `;
 
 exports[`Snapshots (DatePicker Preset Range) Should match snapshot 1`] = `
 <div
   className="css-4ivr56"
-  data-testid="range-datepicker"
+  data-testid="hds.range-datepicker"
 >
   <div
     className="chakra-stack css-14stpeb"
@@ -236,7 +240,7 @@ exports[`Snapshots (DatePicker Preset Range) Should match snapshot 1`] = `
             <p
               className="chakra-text css-fzwid6"
             >
-              January 2023
+              February 2023
             </p>
             <svg
               className="chakra-icon chakra-icon css-1xogjj1"
@@ -325,7 +329,7 @@ exports[`Snapshots (DatePicker Preset Range) Should match snapshot 1`] = `
             <p
               className="chakra-text css-fzwid6"
             >
-              January 2023
+              February 2023
             </p>
             <svg
               className="chakra-icon chakra-icon css-1xogjj1"
@@ -389,7 +393,7 @@ exports[`Snapshots (DatePicker Preset Range) Should match snapshot 1`] = `
       </div>
     </div>
     <div
-      className="css-18xo0nj"
+      className="css-1tkpbqe"
     >
       <div
         className="chakra-stack css-r99mt0"
@@ -436,7 +440,7 @@ exports[`Snapshots (DatePicker Single Date) Should match snapshot 1`] = `
 Array [
   <div
     className="css-a3ggia"
-    data-testid="single-datepicker"
+    data-testid="hds.single-datepicker"
   >
     <div
       className="chakra-stack css-n21gh5"
@@ -467,7 +471,7 @@ Array [
               <p
                 className="chakra-text css-fzwid6"
               >
-                January 2023
+                February 2023
               </p>
               <svg
                 className="chakra-icon chakra-icon css-1xogjj1"
@@ -545,13 +549,13 @@ Array [
         </div>
       </div>
       <div
-        className="css-1c958lr"
+        className="css-1ca8fdd"
       >
         <div
           className="chakra-stack css-tth4vk"
         >
           <button
-            className="chakra-button css-11a6hrq"
+            className="chakra-button css-6lubos"
             onClick={[Function]}
             type="button"
           >
@@ -569,6 +573,10 @@ Array [
     </div>
   </div>,
   <span />,
+  <span
+    hidden={true}
+    id="__chakra_env"
+  />,
 ]
 `;
 
@@ -578,7 +586,7 @@ Array [
     aria-controls="menu-list-:r8:"
     aria-expanded={false}
     aria-haspopup="menu"
-    className="chakra-button chakra-menu__menu-button css-2f31vo"
+    className="chakra-button chakra-menu__menu-button css-151goxk"
     id="menu-button-:r8:"
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -618,8 +626,8 @@ Array [
   >
     <div
       aria-orientation="vertical"
-      className="chakra-menu__menu-list css-b7mlum"
-      data-testid="dropdown-datepicker"
+      className="chakra-menu__menu-list css-p1q6qi"
+      data-testid="hds.dropdown-datepicker"
       id="menu-list-:r8:"
       onKeyDown={[Function]}
       role="menu"
@@ -635,7 +643,7 @@ Array [
     >
       <div
         className="css-a3ggia"
-        data-testid="dual-datepicker"
+        data-testid="hds.dual-datepicker"
       >
         <div
           className="chakra-stack css-n21gh5"
@@ -666,7 +674,7 @@ Array [
                   <p
                     className="chakra-text css-fzwid6"
                   >
-                    January 2023
+                    February 2023
                   </p>
                   <svg
                     className="chakra-icon chakra-icon css-1xogjj1"
@@ -749,13 +757,13 @@ Array [
             </div>
           </div>
           <div
-            className="css-1c958lr"
+            className="css-1ca8fdd"
           >
             <div
               className="chakra-stack css-tth4vk"
             >
               <button
-                className="chakra-button css-11a6hrq"
+                className="chakra-button css-6lubos"
                 onClick={[Function]}
                 type="button"
               >
@@ -774,6 +782,10 @@ Array [
     </div>
   </div>,
   <span />,
+  <span
+    hidden={true}
+    id="__chakra_env"
+  />,
 ]
 `;
 
@@ -781,10 +793,10 @@ exports[`Snapshots (DatePickerModal) Should match snapshot 1`] = `
 Array [
   <div
     className="css-0"
-    data-testid="modal-datepicker"
+    data-testid="hds.modal-datepicker"
   >
     <button
-      className="chakra-button css-2f31vo"
+      className="chakra-button css-151goxk"
       onClick={[Function]}
       type="button"
     >
@@ -807,5 +819,9 @@ Array [
     </button>
   </div>,
   <span />,
+  <span
+    hidden={true}
+    id="__chakra_env"
+  />,
 ]
 `;

@@ -3,6 +3,7 @@
 exports[`Checkbox Snapshot Should match snapshot 1`] = `
 <label
   className="chakra-checkbox css-1elxtiq"
+  data-testid="hds.tag.checkbox"
   onClick={[Function]}
 >
   <input

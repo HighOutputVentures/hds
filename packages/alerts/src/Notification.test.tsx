@@ -29,9 +29,24 @@ describe('Notification Component', () => {
   });
 
   it('Should render', async () => {
-    const NotificationBox = await screen.findAllByTestId('notification-box');
+    const NotificationBox = await screen.findAllByTestId('hds.notification.container');
     expect(NotificationBox).toHaveLength(1);
   });
+
+  it('should render title', async () => {
+    const title = await screen.findAllByTestId('hds.notification.title');
+    expect(title).toHaveLength(1);
+  })
+
+  it('should render supporting detail', async () => {
+    const supportingDetail = await screen.findAllByTestId('hds.notification.message');
+    expect(supportingDetail).toHaveLength(1);
+  })
+
+  it('should render notification links', async () => {
+    const notificationLinks = await screen.findAllByTestId('hds.notification.link');
+    expect(notificationLinks).toHaveLength(2);
+  })
 
   describe('Snapshot', () => {
     it('Should match snapshot', () => {

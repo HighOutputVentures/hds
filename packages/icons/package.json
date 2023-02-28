@@ -1,5 +1,5 @@
 {
-  "version": "0.1.19",
+  "version": "0.1.31",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -14,8 +14,8 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
+    "prepare": "tsdx build --transpileOnly",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
@@ -63,7 +63,7 @@
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
     }
   },
-  "gitHead": "220c468183d0032ba2f8eb5b26d89cf5712292c0",
+  "gitHead": "fdd8e792c3efa26acd6026d3e90b5eacd97cd5b4",
   "dependencies": {
     "@chakra-ui/icons": "2.0.11",
     "@chakra-ui/react": "^2.3.7",

@@ -23,7 +23,7 @@ exports[`One Time Password Login Component Snapshot (OTPForm) Should match snaps
   <div
     aria-label="Form Group"
     className="chakra-form-control css-0"
-    data-testid=":r1:-form-container-form-control"
+    data-testid="hds.form.control"
     role="group"
   >
     <div
@@ -33,7 +33,7 @@ exports[`One Time Password Login Component Snapshot (OTPForm) Should match snaps
         aria-label="Please enter your pin code"
         autoComplete="one-time-code"
         className="chakra-pin-input css-25hifv"
-        data-testid=":r0:-pininput-pin-0"
+        data-testid="hds.pininput.pin"
         disabled={false}
         id="otp--1"
         inputMode="numeric"
@@ -49,7 +49,7 @@ exports[`One Time Password Login Component Snapshot (OTPForm) Should match snaps
         aria-label="Please enter your pin code"
         autoComplete="one-time-code"
         className="chakra-pin-input css-25hifv"
-        data-testid=":r0:-pininput-pin-1"
+        data-testid="hds.pininput.pin"
         disabled={false}
         id="otp--1"
         inputMode="numeric"
@@ -65,7 +65,7 @@ exports[`One Time Password Login Component Snapshot (OTPForm) Should match snaps
         aria-label="Please enter your pin code"
         autoComplete="one-time-code"
         className="chakra-pin-input css-25hifv"
-        data-testid=":r0:-pininput-pin-2"
+        data-testid="hds.pininput.pin"
         disabled={false}
         id="otp--1"
         inputMode="numeric"
@@ -86,7 +86,7 @@ exports[`One Time Password Login Component Snapshot (OTPForm) Should match snaps
         aria-label="Please enter your pin code"
         autoComplete="one-time-code"
         className="chakra-pin-input css-25hifv"
-        data-testid=":r0:-pininput-pin-3"
+        data-testid="hds.pininput.pin"
         disabled={false}
         id="otp--1"
         inputMode="numeric"
@@ -102,7 +102,7 @@ exports[`One Time Password Login Component Snapshot (OTPForm) Should match snaps
         aria-label="Please enter your pin code"
         autoComplete="one-time-code"
         className="chakra-pin-input css-25hifv"
-        data-testid=":r0:-pininput-pin-4"
+        data-testid="hds.pininput.pin"
         disabled={false}
         id="otp--1"
         inputMode="numeric"
@@ -118,7 +118,7 @@ exports[`One Time Password Login Component Snapshot (OTPForm) Should match snaps
         aria-label="Please enter your pin code"
         autoComplete="one-time-code"
         className="chakra-pin-input css-25hifv"
-        data-testid=":r0:-pininput-pin-5"
+        data-testid="hds.pininput.pin"
         disabled={false}
         id="otp--1"
         inputMode="numeric"
@@ -134,7 +134,7 @@ exports[`One Time Password Login Component Snapshot (OTPForm) Should match snaps
   </div>
   <button
     className="chakra-button css-yrcen6"
-    data-testid="button.otp.submit"
+    data-testid="hds.otp.submit.button"
     disabled={false}
     type="submit"
   >

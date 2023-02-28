@@ -1,5 +1,4 @@
 import { Box, Button, VStack } from '@chakra-ui/react';
-// @ts-ignore
 import { InputField, TextAreaField } from '@highoutput/hds-forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { FC } from 'react';
@@ -40,6 +39,7 @@ const getInputType = (
         key={key}
         id={key}
         label={label}
+        __testId="hds.autoform.text.field"
         placeholder={placeholder}
         errorMsg={error}
         disabled={isSubmitting}
@@ -52,6 +52,7 @@ const getInputType = (
         key={key}
         id={key}
         label={label}
+        __testId="hds.autoform.input.field"
         placeholder={placeholder}
         errorMsg={error}
         disabled={isSubmitting}
@@ -98,7 +99,7 @@ const AutoForm: FC<AutoFormProps> = (props) => {
           type="submit"
           variant={'primary'}
           width={'100%'}
-          data-testid="button.form.submit"
+          data-testid="hds.button-form.submit"
         >
           Submit
         </Button>

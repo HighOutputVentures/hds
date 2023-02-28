@@ -9,13 +9,13 @@ describe('Button Component', () => {
   beforeEach(() => {
     render(
       <ThemeProvider>
-        <Button>Submit</Button>
-      </ThemeProvider>
+        <Button __testId="hds.button">Submit</Button>
+      </ThemeProvider>,
     );
   });
 
   it('should render button component', async () => {
-    const submitButton = await screen.findAllByTestId(':r0:-button');
+    const submitButton = await screen.findAllByTestId('hds.button');
     expect(submitButton).toHaveLength(1);
   });
 

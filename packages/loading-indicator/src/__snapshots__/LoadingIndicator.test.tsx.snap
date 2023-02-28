@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingIndicator should render 1`] = `
+<div>
+  <div
+    class="css-w3pvmd"
+    data-testid="hds.loading-indicator.container"
+  >
+    <div
+      aria-label="animation"
+      role="button"
+      style="width: 40px; height: 40px; overflow: hidden; margin: 0px auto; outline: none;"
+      tabindex="0"
+      title=""
+    >
+      <svg
+        height="1080"
+        preserveAspectRatio="xMidYMid slice"
+        style="width: 100%; height: 100%; transform: translate3d(0,0,0);"
+        viewBox="0 0 1080 1080"
+        width="1080"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <defs>
+          <clippath
+            id="__lottie_element_2"
+          >
+            <rect
+              height="1080"
+              width="1080"
+              x="0"
+              y="0"
+            />
+          </clippath>
+        </defs>
+        <g
+          clip-path="url(#__lottie_element_2)"
+        >
+          <g
+            opacity="1"
+            style="display: block;"
+            transform="matrix(1,0,0,1,520,520)"
+          >
+            <g
+              opacity="1"
+              transform="matrix(1,0,0,1,20,20)"
+            >
+              <path
+                d=" M0,346 C0,346 0,346 0,346 C-190.9573974609375,346 -346,190.9573974609375 -346,0 C-346,-190.9573974609375 -190.9573974609375,-346 0,-346"
+                fill-opacity="0"
+                stroke="rgb(138,104,239)"
+                stroke-linecap="round"
+                stroke-linejoin="miter"
+                stroke-miterlimit="4"
+                stroke-opacity="1"
+                stroke-width="80"
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <p
+      class="chakra-text css-9c7r58"
+      data-testid="hds.loading-indicator.label"
+    >
+      Loading...
+    </p>
+  </div>
+</div>
+`;

@@ -6,15 +6,23 @@ import BoxCircularBGIcon from '../components/BoxCircularBGIcon';
 import BoxIcon from '../components/BoxIcon';
 import CheckCircleIcon from '../components/CheckCircleIcon';
 import CheckIcon from '../components/CheckIcon';
-import ChevronDownIcon from '../components/ChevronDownIcon';
-import ChevronLeftIcon from '../components/ChevronLeftIcon';
-import ChevronRightIcon from '../components/ChevronRightIcon';
-import ChevronUpIcon from '../components/ChevronUpIcon';
+import ChevronDownIcon from '../components/arrow/ChevronDownIcon';
+import ChevronLeftIcon from '../components/arrow/ChevronLeftIcon';
+import ChevronRightIcon from '../components/arrow/ChevronRightIcon';
+import ChevronUpIcon from '../components/arrow/ChevronUpIcon';
 import HovIcon from '../components/company/HovIcon';
+import ErrorFileIcon from '../components/ErrorFileIcon';
+import ErrorFilmIcon from '../components/ErrorFilmIcon';
 import ErrorFolderIcon from '../components/ErrorFolderIcon';
+import ErrorImageIcon from '../components/ErrorImageIcon';
+import ErrorUploadIcon from '../components/ErrorUploadIcon';
 import ExitIcon from '../components/ExitIcon';
+import FileIcon from '../components/FileIcon';
+import FileUploadIcon from '../components/FileUploadIcon';
+import FilmIcon from '../components/FilmIcon';
 import HelpIcon from '../components/HelpIcon';
 import HomeIcon from '../components/HomeIcon';
+import ImageIcon from '../components/ImageIcon';
 import InfoCircleIcon from '../components/InfoCircleIcon';
 import LayersTwoIcon from '../components/LayersTwoIcon';
 import MessageSmileIcon from '../components/MessageSmileIcon';
@@ -29,6 +37,7 @@ import GoogleIcon from '../components/social/GoogleIcon';
 import TwitterIcon from '../components/social/TwitterIcon';
 import SuccessCircleIcon from '../components/SuccessCircleIcon';
 import ThreeDots from '../components/ThreeDots';
+import TrashErrorIcon from '../components/TrashErrorIcon';
 import TrashIcon from '../components/TrashIcon';
 import UploadIcon from '../components/UploadIcon';
 import UserIcon from '../components/UserIcon';
@@ -39,6 +48,15 @@ import WarningIcon from '../components/WarningIcon';
 import ZapIcon from '../components/ZapIcon';
 import GridView from './GridView';
 import { sortObject } from './utils';
+import NegativeArrowIcon from '../components/arrow/NegativeArrowIcon';
+import PositiveArrowIcon from '../components/arrow/PositiveArrowIcon';
+import ArrowLeftIcon from '../components/arrow/ArrowLeftIcon';
+import ArrowRightIcon from '../components/arrow/ArrowRightIcon';
+import ArrowPositiveChange from '../components/arrow/ArrowPositiveChange';
+import NegativeChartIcon from '../components/chart/NegativeChartIcon';
+import PositiveChartIcon from '../components/chart/PositiveChartIcon';
+import TrendNegative from '../components/chart/TrendNegative';
+import TrendPositive from '../components/chart/TrendPositive';
 
 const meta: ComponentMeta<typeof Icon> = {
   title: 'Components/Icons',
@@ -84,6 +102,11 @@ const ArrowsTemplate = (args: any) => {
         ChevronRightIcon,
         ChevronDownIcon,
         ChevronUpIcon,
+        NegativeArrowIcon,
+        PositiveArrowIcon,
+        ArrowPositiveChange,
+        ArrowLeftIcon,
+        ArrowRightIcon,
       })}
       {...args}
     />
@@ -92,6 +115,20 @@ const ArrowsTemplate = (args: any) => {
 
 const CompanyTemplate = (args: any) => {
   return <GridView data={sortObject({ HovIcon })} {...args} />;
+};
+
+const ChartTemplate = (args: any) => {
+  return (
+    <GridView
+      data={sortObject({
+        NegativeChartIcon,
+        PositiveChartIcon,
+        TrendNegative,
+        TrendPositive,
+      })}
+      {...args}
+    />
+  );
 };
 
 const SocialTemplate = (args: any) => {
@@ -132,6 +169,7 @@ const RandomTemplate = (args: any) => {
         TrashIcon,
         WarningIcon,
         CheckCircleIcon,
+        FileUploadIcon,
       })}
       {...args}
     />
@@ -148,6 +186,14 @@ const ColoredIcons = (args: any) => {
         SuccessCircleIcon,
         UploadIcon,
         PrimaryIcon,
+        TrashErrorIcon,
+        FileIcon,
+        FilmIcon,
+        ImageIcon,
+        ErrorFileIcon,
+        ErrorImageIcon,
+        ErrorFilmIcon,
+        ErrorUploadIcon,
       })}
       {...args}
     />
@@ -167,6 +213,10 @@ const StoryTemplate: ComponentStory<any> = (args) => {
         <Box>
           <Title>Company Icons</Title>
           <CompanyTemplate width={width} height={height} />
+        </Box>
+        <Box>
+          <Title>Chart Icons</Title>
+          <ChartTemplate width={width} height={height} />
         </Box>
         <Box>
           <Title>Social Icons</Title>

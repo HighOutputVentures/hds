@@ -19,12 +19,12 @@ describe('Checkbox Component', () => {
   });
 
   it('should toggle tooltip when hover and unhover tooltip trigger', async () => {
-    const tooltip_child = screen.getByTestId('tooltip-trigger');
+    const tooltip_child = screen.getByTestId('hds.tooltip-trigger');
 
     userEvent.hover(tooltip_child);
 
     waitFor(() => {
-      const tooltip = screen.getByTestId('tooltip');
+      const tooltip = screen.getByTestId('hds.tooltip');
       expect(tooltip).toBeInTheDocument();
     });
 

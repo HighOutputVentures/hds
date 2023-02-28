@@ -6,18 +6,23 @@ exports[`Table Should match snapshot 1`] = `
 >
   <div
     className="chakra-table__container css-1fofo75"
+    data-testid="hds.table.container"
   >
     <table
       className="chakra-table css-1lravjh"
+      data-testid="hds.table"
     >
       <thead
         className="css-0"
+        data-testid="hds.table.header"
       >
         <tr
           className="css-0"
+          data-testid="hds.table.header.tr"
         >
           <th
             className="css-0"
+            data-testid="hds.table.header.th"
           >
             <div
               className="css-70qvj9"
@@ -64,6 +69,7 @@ exports[`Table Should match snapshot 1`] = `
           </th>
           <th
             className="css-0"
+            data-testid="hds.table.header.th"
           >
             <div
               className="css-70qvj9"
@@ -94,12 +100,12 @@ exports[`Table Should match snapshot 1`] = `
                 </svg>
               </button>
               <button
-                aria-controls="popover-content-:r9:"
+                aria-controls="popover-content-:r1:"
                 aria-expanded={false}
                 aria-haspopup="dialog"
                 aria-label="Hint"
                 className="css-1dqet0s"
-                id="popover-trigger-:r9:"
+                id="popover-trigger-:r1:"
                 onClick={[Function]}
               >
                 <svg
@@ -148,7 +154,7 @@ exports[`Table Should match snapshot 1`] = `
               >
                 <section
                   className="chakra-popover__content css-1deuoi4"
-                  id="popover-content-:r9:"
+                  id="popover-content-:r1:"
                   onBlur={[Function]}
                   onKeyDown={[Function]}
                   role="dialog"
@@ -180,7 +186,7 @@ exports[`Table Should match snapshot 1`] = `
                   </div>
                   <div
                     className="chakra-popover__body css-0"
-                    id="popover-body-:r9:"
+                    id="popover-body-:r1:"
                   >
                     Hint: This is your email
                   </div>
@@ -192,12 +198,15 @@ exports[`Table Should match snapshot 1`] = `
       </thead>
       <tbody
         className="css-0"
+        data-testid="hds.table.body"
       >
         <tr
           className="css-0"
+          data-testid="hds.table.body.tr"
         >
           <td
             className="css-0"
+            data-testid="hds.table.body.td"
             onClick={[Function]}
           >
             <div
@@ -268,6 +277,7 @@ exports[`Table Should match snapshot 1`] = `
           </td>
           <td
             className="css-0"
+            data-testid="hds.table.body.td"
             onClick={[Function]}
           >
             <div
@@ -283,9 +293,11 @@ exports[`Table Should match snapshot 1`] = `
         </tr>
         <tr
           className="css-0"
+          data-testid="hds.table.body.tr"
         >
           <td
             className="css-0"
+            data-testid="hds.table.body.td"
             onClick={[Function]}
           >
             <div
@@ -356,6 +368,7 @@ exports[`Table Should match snapshot 1`] = `
           </td>
           <td
             className="css-0"
+            data-testid="hds.table.body.td"
             onClick={[Function]}
           >
             <div

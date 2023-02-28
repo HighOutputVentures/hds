@@ -1,8 +1,9 @@
 import { Box, Button, Flex, HStack, Icon, Spacer, SystemStyleObject, Text } from "@chakra-ui/react";
+import { ArrowLeftIcon, ArrowRightIcon } from "@highoutput/hds-icons";
+import * as pagination from "@zag-js/pagination";
+import { normalizeProps, useMachine } from "@zag-js/react";
 import * as React from "react";
-import { useOtherPaginationInfo, useStyles } from "./hooks";
-import ArrowLeftIcon from "./icons/ArrowLeft";
-import ArrowRightIcon from "./icons/ArrowRight";
+import { useStyles } from "./hooks";
 
 type MinimalPaginationBaseProps = {
   /** toggle legend. eg `Page 1 of 10` */
@@ -11,8 +12,6 @@ type MinimalPaginationBaseProps = {
   isLegendCentered?: boolean;
   /** toggle page controls. should still be hidden if `hasLegend` is set to `true` 🥸 */
   hasPageControls?: boolean;
-  /** control how many page controls appear */
-  maxPageControls?: 4 | 6;
   /** toggle left and right arrow icon */
   hasButtonIcon?: boolean;
   /** toggle arrow label */
@@ -24,15 +23,14 @@ type MinimalPaginationBaseProps = {
 export type MinimalPaginationProps = {
   page: number;
   pageSize: number;
-  total: number;
-  onPageChange: (newPage: number) => void;
+  count: number;
+  onChange: (value: { page: number; pageSize: number }) => void;
 } & MinimalPaginationBaseProps;
 
 const defaultProps: Required<MinimalPaginationBaseProps> = {
   hasLegend: false,
   isLegendCentered: true,
   hasPageControls: true,
-  maxPageControls: 6,
   hasButtonIcon: true,
   hasButtonLabel: true,
   hasButtonOutline: true,
@@ -42,12 +40,11 @@ export default function MinimalPagination(props: MinimalPaginationProps & System
   const {
     page,
     pageSize,
-    total,
-    onPageChange,
+    count,
+    onChange,
     hasLegend,
     isLegendCentered,
     hasPageControls,
-    maxPageControls,
     hasButtonIcon,
     hasButtonLabel,
     hasButtonOutline,
@@ -59,24 +56,23 @@ export default function MinimalPagination(props: MinimalPaginationProps & System
 
   const styles = useStyles("minimal");
 
-  const { hasNext, hasPrevious, pageControls, totalPages } = useOtherPaginationInfo({
-    page,
-    pageSize,
-    total,
-    maxPageControls,
-  });
+  const id = React.useId();
 
-  const handlePageChange = (type: "increment" | "decrement") => {
-    const newPage = type === "increment" ? page + 1 : page - 1;
+  const [state, send] = useMachine(
+    pagination.machine({
+      id,
+      count,
+      page,
+      pageSize,
+      onChange,
+    }),
+  );
 
-    return function callback(..._args: unknown[]) {
-      onPageChange?.(newPage);
-    };
-  };
+  const api = pagination.connect(state, send, normalizeProps);
 
   const Legend = () => (
     <Text sx={styles.legend}>
-      Page {page} of {totalPages}
+      Page {page} of {api.totalPages}
     </Text>
   );
 
@@ -99,9 +95,10 @@ export default function MinimalPagination(props: MinimalPaginationProps & System
           <Button
             variant="unstyled"
             aria-label="Go to previous page"
-            onClick={handlePageChange("decrement")}
-            disabled={!hasPrevious}
+            data-testid="hds.minimal-pagination.previous.button"
+            disabled={api.isFirstPage}
             sx={styles.button?.({ isOutlined: hasButtonOutline })}
+            {...api.prevPageTriggerProps}
           >
             {hasButtonIcon && <Icon as={ArrowLeftIcon} sx={styles.icon} />}
             {hasButtonLabel && <React.Fragment>Previous</React.Fragment>}
@@ -115,20 +112,30 @@ export default function MinimalPagination(props: MinimalPaginationProps & System
           {/* <!-- PAGE CONTROLS --> */}
           {!!hasPageControls && !hasLegend && (
             <HStack spacing="2px">
-              {pageControls.map((n) => {
+              {api.pages.map((page_, index) => {
+                if (page_.type === "page") {
+                  return (
+                    <Button
+                      key={`page.${page_.value}`}
+                      variant="unstyled"
+                      sx={styles.pageControl?.({ isActive: page === page_.value })}
+                      aria-label={`Go to page ${page_.value}`}
+                      data-testid="hds.minimal-pagination.page.control"
+                      {...api.getPageTriggerProps(page_)}
+                    >
+                      {page_.value}
+                    </Button>
+                  );
+                }
+
                 return (
                   <Button
-                    key={n}
-                    variant="unstyled"
-                    disabled={!n}
-                    onClick={() => {
-                      n && onPageChange?.(n);
-                    }}
-                    sx={styles.pageControl?.({ isActive: n === page })}
-                    role="button"
-                    aria-label={`Go to page ${n}`}
+                    key={`ellipsis.${index}`}
+                    variant="unsstyled"
+                    sx={styles.pageControl?.({})}
+                    {...api.getEllipsisProps({ index })}
                   >
-                    {n ?? "..."}
+                    ...
                   </Button>
                 );
               })}
@@ -139,9 +146,10 @@ export default function MinimalPagination(props: MinimalPaginationProps & System
           <Button
             variant="unstyled"
             aria-label="Go to next page"
-            onClick={handlePageChange("increment")}
-            disabled={!hasNext}
+            data-testid="hds.minimal-pagination.next.button"
+            disabled={!api.isLastPage}
             sx={styles.button?.({ isOutlined: hasButtonOutline })}
+            {...api.nextPageTriggerProps}
           >
             {hasButtonLabel && <React.Fragment>Next</React.Fragment>}
             {hasButtonIcon && <Icon as={ArrowRightIcon} sx={styles.icon} />}

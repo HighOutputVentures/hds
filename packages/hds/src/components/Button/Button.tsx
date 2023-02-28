@@ -1,25 +1,34 @@
 import { Button as ChakraButton } from '@chakra-ui/react';
-import React, { FC, ReactNode, useId } from 'react';
-
+import React, { ReactNode, forwardRef } from 'react';
 import { ButtonSizeTypes } from '../../theme/components/button/sizes';
 import { ButtonVariantsTypes } from '../../theme/components/button/variants';
 
 export interface ButtonProps {
   children: ReactNode;
   variant?: ButtonVariantsTypes;
+  isDisabled?: boolean;
+  isLoading?: boolean;
+  loadingText?: string;
   size?: ButtonSizeTypes;
+  type?: 'button' | 'reset' | 'submit';
+  __testId?: string;
   onClick?: () => void;
   disabled?: boolean;
+  block?: boolean;
 }
 
-const Button: FC<ButtonProps> = (props) => {
-  const uid = useId();
-
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ block, __testId, ...props }, ref) => {
   return (
-    <ChakraButton {...props} data-testid={`${uid}-button`}>
+    <ChakraButton
+      {...props}
+      ref={ref}
+      data-testid={__testId ?? `hds.button`}
+      {...(block && { width: 'full', flex: 1 })}
+    >
       {props.children}
     </ChakraButton>
   );
-};
+});
+
 
 export default Button;

@@ -7,7 +7,7 @@ import {
   PinInputProps,
   useStyleConfig,
 } from '@chakra-ui/react';
-import React, { forwardRef, useId, useMemo } from 'react';
+import React, { forwardRef, useMemo } from 'react';
 import { ChangeHandler } from 'react-hook-form';
 import FormContainer, {
   FormContainerProps,
@@ -48,8 +48,6 @@ const PinInputField = forwardRef<HTMLInputElement, PinInputFieldProps>(
         : Array.from({ length: 3 });
     }, [numberOfFields]);
 
-    const uid = useId();
-
     return (
       <FormContainer {...props}>
         <HStack spacing={3}>
@@ -68,7 +66,7 @@ const PinInputField = forwardRef<HTMLInputElement, PinInputFieldProps>(
               onChange?.({ target: { value, name } });
             }}
             onComplete={onComplete}
-            data-testid={`${uid}-pininput-input`}
+            data-testid={`hds.pininput.input`}
           >
             {fieldsArray.map((_, idx) => {
               return (
@@ -93,8 +91,7 @@ const PinInputField = forwardRef<HTMLInputElement, PinInputFieldProps>(
                     h="12"
                     key={idx}
                     sx={styles}
-                    // {...partProps?.pin}
-                    data-testid={`${uid}-pininput-pin-${idx}`}
+                    data-testid={`hds.pininput.pin`}
                   />
                 </React.Fragment>
               );

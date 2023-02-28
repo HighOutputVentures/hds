@@ -26,6 +26,8 @@ type CheckboxGroupVariant = "circle" | "square" | "dot";
 type CheckboxGroupBaseProps<T extends unknown[]> = {
   size?: CheckboxGroupSize;
   variant?: CheckboxGroupVariant;
+  __checkboxGroupTestId?: string;
+  __checkboxTestId?: string;
   items: T;
   children(context: RenderChildrenContext<T[number]>): React.ReactNode;
   compareFn?: (item: T[number]) => unknown;
@@ -47,6 +49,8 @@ export type CheckboxGroupProps<T extends unknown[]> = SystemStyleObject & Checkb
 export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupProps<T>) {
   const {
     variant = "circle",
+    __checkboxGroupTestId,
+    __checkboxTestId,
     size = "md",
     items,
     children,
@@ -109,6 +113,7 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
           getProps({ disabled } = {}) {
             return {
               checkbox: {
+                'data-testid': __checkboxTestId ?? 'hds.checkbox-group.checkbox',
                 ...(!disabled && {
                   ...(!selected && {
                     border: "1px solid #D6D6D6",
@@ -149,6 +154,7 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
                 ].join(),
               },
               icon: {
+                'data-testid':'hds.checkbox-group.icon',
                 className: "CheckboxGroup__Icon",
                 ...(disabled && {
                   color: "#D0D5DD",
@@ -180,6 +186,7 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
                 "aria-role": "Checkbox Icon",
               },
               container: {
+                'data-testid': __checkboxGroupTestId ?? 'hds.checkbox-group.container',
                 ...(!disabled && {
                   ...(!selected && {
                     border: "1px solid #EAECF0",

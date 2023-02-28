@@ -8,8 +8,7 @@ import {
   ScaleFade,
   Text,
 } from '@chakra-ui/react';
-// @ts-ignore
-import { CheckCircleGreenIcon, WarningIcon } from '@highoutput/hds-icons';
+import { CheckCircleIcon, WarningIcon } from '@highoutput/hds-icons';
 import React from 'react';
 
 export interface AlertsProps {
@@ -29,6 +28,11 @@ export interface AlertsProps {
   height?: string;
   width?: string;
   scaleFadeEffect?: boolean;
+  __alertContainerTestId?: string;
+  __alertMessageTestId?: string;
+  __alertLinkTestId?: string;
+  __alertTitleTestId?: string;
+
 }
 const Alert = (props: AlertsProps) => {
   const {
@@ -39,6 +43,10 @@ const Alert = (props: AlertsProps) => {
     isOpen,
     height,
     width,
+    __alertContainerTestId,
+    __alertLinkTestId,
+    __alertMessageTestId,
+    __alertTitleTestId,
     onClose,
     alertLabel,
     alertLinks,
@@ -46,7 +54,7 @@ const Alert = (props: AlertsProps) => {
 
   const AlertIcon =
     status === 'success'
-      ? CheckCircleGreenIcon
+      ? CheckCircleIcon
       : status === 'warning'
       ? WarningIcon
       : InfoOutlineIcon;
@@ -110,12 +118,12 @@ const Alert = (props: AlertsProps) => {
       borderColor={`${BoxBorderColor}`}
       direction={['column', 'row']}
       maxW="1216px"
+      data-testid={__alertContainerTestId ?? "hds.alert.container"}
       w={width}
       h={height}
       position={'relative'}
       gap={'13.67px'}
       borderRadius={'8px'}
-      data-testid="alert-box"
     >
       <Icon
         as={AlertIcon}
@@ -128,6 +136,7 @@ const Alert = (props: AlertsProps) => {
           color={AlertTitleColor}
           fontWeight={500}
           fontSize={'14px'}
+          data-testid={__alertTitleTestId ?? "hds.alert.title"}
           mb={supportingDetail ? '4px' : '0px'}
           lineHeight="20px"
         >
@@ -136,6 +145,7 @@ const Alert = (props: AlertsProps) => {
         {supportingDetail && (
           <Text
             color={AlertDescColor}
+            data-testid={__alertMessageTestId ?? "hds.alert.message"}
             fontSize={'14px'}
             mb="12px"
             lineHeight="20px"
@@ -152,6 +162,7 @@ const Alert = (props: AlertsProps) => {
               lineHeight="24px"
               fontWeight={500}
               cursor="pointer"
+              data-testid={__alertLinkTestId ?? "hds.alert.link"}
               href={`${alertLinks?.link1}`}
               target={'_blank'}
             >
@@ -160,6 +171,7 @@ const Alert = (props: AlertsProps) => {
             <Text
               as="a"
               href={`${alertLinks?.link2}`}
+              data-testid={__alertLinkTestId ?? "hds.alert.link"}
               target={'_blank'}
               cursor="pointer"
             >

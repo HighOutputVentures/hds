@@ -1,91 +1,122 @@
-import { Box, Button, ButtonGroup, Icon, SystemStyleObject } from "@chakra-ui/react";
+import { Box, Button, ButtonGroup, Flex, Icon, Select, SystemStyleObject } from "@chakra-ui/react";
+import { ArrowLeftIcon, ArrowRightIcon } from "@highoutput/hds-icons";
+import * as pagination from "@zag-js/pagination";
+import { normalizeProps, useMachine } from "@zag-js/react";
 import * as React from "react";
-import { useOtherPaginationInfo, useStyles } from "./hooks";
-import ArrowLeftIcon from "./icons/ArrowLeft";
-import ArrowRightIcon from "./icons/ArrowRight";
-
-type GroupPaginationBaseProps = {
-  maxPageControls?: 4 | 6;
-};
+import { useStyles } from "./hooks";
 
 export type GroupPaginationProps = {
   page: number;
   pageSize: number;
-  total: number;
-  onPageChange: (newPage: number) => void;
-} & GroupPaginationBaseProps;
-
-const defaultProps: Required<GroupPaginationBaseProps> = {
-  maxPageControls: 6,
+  count: number;
+  sizes?: number[];
+  onChange?: (value: { page: number; pageSize: number }) => void;
 };
 
-export default function GroupPagination(props: GroupPaginationProps & SystemStyleObject) {
+export default function GroupPagination({
+  page,
+  pageSize,
+  count,
+  onChange,
+  sizes,
+  ...props
+}: GroupPaginationProps & SystemStyleObject) {
+  const id = React.useId();
   const styles = useStyles("group");
 
-  const { page, pageSize, total, onPageChange, maxPageControls, ...others } = Object.assign(
-    defaultProps,
-    props,
+  const [state, send] = useMachine(
+    pagination.machine({
+      id,
+      count,
+      page,
+      pageSize,
+      onChange,
+    }),
   );
 
-  const { hasNext, hasPrevious, pageControls } = useOtherPaginationInfo({
-    page,
-    pageSize,
-    total,
-    maxPageControls,
-  });
-
-  const handlePageChange = (type: "increment" | "decrement") => {
-    return function fn(..._args: unknown[]) {
-      const newPage = type === "increment" ? page + 1 : page - 1;
-
-      onPageChange?.(newPage);
-    };
-  };
+  const api = pagination.connect(state, send, normalizeProps);
 
   return (
-    <Box sx={others}>
-      <ButtonGroup variant="unstyled" spacing={0} sx={styles.group}>
-        <Button
-          variant="unstyled"
-          aria-label="Go to previous page"
-          onClick={handlePageChange("decrement")}
-          disabled={!hasPrevious}
-          _disabled={{}}
-          data-freeflow="true"
-        >
-          <Icon as={ArrowLeftIcon} />
-          Previous
-        </Button>
-
-        {pageControls.map((n) => {
-          return (
-            <Button
-              key={n}
-              variant="unstyled"
-              disabled={!n}
-              onClick={() => {
-                n && onPageChange?.(n);
+    <Box sx={props}>
+      <Flex gap={4} alignItems="center">
+        {!!sizes && (
+          <Box width="130px" flexShrink={0} flexGrow={0}>
+            <Select
+              sx={styles.select}
+              value={pageSize}
+              onChange={({ target }) => {
+                api.setPageSize(parseInt(target.value));
               }}
-              _disabled={{}}
-              aria-selected={n === page}
             >
-              {n ?? "..."}
-            </Button>
-          );
-        })}
+              {sizes.map((size) => (
+                <option key={size} value={size}>
+                  {size} Entries
+                </option>
+              ))}
+            </Select>
+          </Box>
+        )}
 
-        <Button
+        <ButtonGroup
           variant="unstyled"
-          aria-label="Go to next page"
-          onClick={handlePageChange("increment")}
-          disabled={!hasNext}
-          _disabled={{}}
-          data-freeflow="true"
+          spacing={0}
+          sx={styles.group}
+          data-testid="hds.group-button.pagination"
         >
-          Next
-          <Icon as={ArrowRightIcon} />
-        </Button>
-      </ButtonGroup>
+          <Button
+            variant="unstyled"
+            aria-label="Go to previous page"
+            disabled={api.isFirstPage}
+            data-testid="hds.group-pagination.previous.button"
+            _disabled={{}}
+            data-freeflow="true"
+            {...api.prevPageTriggerProps}
+          >
+            <Icon as={ArrowLeftIcon} />
+            Previous
+          </Button>
+
+          {api.pages.map((page, index) => {
+            if (page.type === "page") {
+              return (
+                <Button
+                  key={page.value}
+                  variant="unstyled"
+                  data-testid={"hds.group-pagination.page.control"}
+                  _disabled={{}}
+                  {...api.getPageTriggerProps(page)}
+                >
+                  {page.value}
+                </Button>
+              );
+            }
+
+            return (
+              <Button
+                key={index}
+                variant="unstyled"
+                data-testid={"hds.group-pagination.ellipsis"}
+                {...api.getEllipsisProps({ index })}
+              >
+                ...
+              </Button>
+            );
+          })}
+
+          <Button
+            variant="unstyled"
+            aria-label="Go to next page"
+            disabled={api.isLastPage}
+            _disabled={{}}
+            data-testid="hds.group-pagination.next.button"
+            data-freeflow="true"
+            {...api.nextPageTriggerProps}
+          >
+            Next
+            <Icon as={ArrowRightIcon} />
+          </Button>
+        </ButtonGroup>
+      </Flex>
     </Box>
   );
 }
