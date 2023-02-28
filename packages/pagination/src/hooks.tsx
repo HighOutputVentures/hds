@@ -17,8 +17,15 @@ export function useStyles(variant: "group" | "minimal") {
           gap: "8px",
           width: "40px",
           height: "40px",
-          _disabled: {},
-          _hover: {},
+          _disabled: {
+            cursor: "not-allowed",
+            opacity: 1,
+          },
+          _hover: {
+            borderTop: "1px solid #D6D6D6",
+            borderBottom: "1px solid #D6D6D6",
+            borderLeft: "1px solid #F0F0F0",
+          },
           _focus: {},
           _active: {},
           _selected: {
@@ -28,10 +35,16 @@ export function useStyles(variant: "group" | "minimal") {
           _first: {
             roundedLeft: "8px",
             borderLeft: "1px solid #D6D6D6",
+            _hover: {
+              borderLeft: "1px solid #D6D6D6",
+            },
           },
           _last: {
             roundedRight: "8px",
             borderRight: "1px solid #D6D6D6",
+            _hover: {
+              borderRight: "1px solid #D6D6D6",
+            },
           },
         },
         "button[data-freeflow]": {
@@ -41,13 +54,15 @@ export function useStyles(variant: "group" | "minimal") {
         },
       },
       select: {
+        fontSize: "14px",
+        lineHeight: "1",
+        height: "40px",
         width: "full",
-        color: "#0F0F0F",
+        color: "#0F0F0F!important",
+        rounded: "lg",
+        border: "1px solid",
         borderColor: "#D6D6D6",
-        _focus: {
-          boxShadow: "none",
-          borderColor: "brand.primary.500",
-        },
+        paddingX: 2,
       },
     };
   }
