@@ -1,7 +1,6 @@
 import {
   Divider,
   Flex,
-  Menu,
   MenuGroup,
   MenuItem,
   Text,
@@ -34,7 +33,7 @@ export default {
 } as ComponentMeta<typeof MenuDropdown>;
 
 const menuItems = (
-  <Menu>
+  <>
     <MenuGroup>
       <MenuItem icon={<UserIcon />} command="⌘K->P">
         View Profile
@@ -84,7 +83,7 @@ const menuItems = (
         Log out
       </MenuItem>
     </MenuGroup>
-  </Menu>
+  </>
 );
 
 const Template: ComponentStory<typeof MenuDropdown> = (args) => {

@@ -9,7 +9,6 @@ import {
   Icon,
   Menu,
   MenuButton,
-  MenuItemProps,
   MenuList,
   PlacementWithLogical,
   Text,
@@ -31,10 +30,12 @@ export interface MenuDropdownFieldProps {
   __menuTestId?: string;
   __menuButtonTestId?: string;
   __menuListTestId?: string;
-  menuItems: Omit<MenuItemProps, 'css' | 'style'>;
+  menuItems: React.ReactNode;
   gap?: string;
   placement?: PlacementWithLogical | undefined;
   variant?: ButtonVariantsTypes;
+  closeOnSelect?: boolean;
+  showRightIcon?: boolean;
 }
 
 const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
@@ -42,6 +43,8 @@ const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
     menuHeader,
     menuButtonText = '',
     indicator = true,
+    closeOnSelect = true,
+    showRightIcon = true,
     menuItems,
     gap,
     profileUrl,
@@ -57,6 +60,7 @@ const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
     <Menu
       data-testid={__menuTestId ?? 'hds.menu.dropdown'}
       placement={placement}
+      closeOnSelect={closeOnSelect}
     >
       {({ isOpen }) => (
         <Box w="full">
@@ -64,16 +68,17 @@ const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
             variant={variant}
             as={Button}
             isActive={isOpen}
-            {...(variant !== 'menu-button-primary' && {
-              rightIcon:
-                menuType === 'button' && !isOpen ? (
-                  <ChevronDownIcon width="20px" height="20px" />
-                ) : menuType === 'button' && isOpen ? (
-                  <ChevronUpIcon width="20px" height="20px" />
-                ) : undefined,
-            })}
+            rightIcon={
+              menuType === 'button' && !isOpen && showRightIcon ? (
+                <ChevronDownIcon width="20px" height="20px" />
+              ) : menuType === 'button' && isOpen && showRightIcon ? (
+                <ChevronUpIcon width="20px" height="20px" />
+              ) : undefined
+            }
             data-testid={
-              __menuButtonTestId ? __menuButtonTestId : menuType === 'button'
+              __menuButtonTestId
+                ? __menuButtonTestId
+                : menuType === 'button'
                 ? 'hds.menu.button'
                 : menuType === 'kebab'
                 ? 'hds.menu.kebab'
@@ -136,11 +141,7 @@ const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
               </HStack>
             )}
             <Divider orientation="horizontal" />
-            <Menu>
-              {() => {
-                return <>{menuItems}</>;
-              }}
-            </Menu>
+            {menuItems}
           </MenuList>
         </Box>
       )}

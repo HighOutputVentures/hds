@@ -8,8 +8,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=c97132e80915",
-    "test": "npx lerna run test",
-    "build": "npx lerna run build"
+    "test": "npx lerna run test --concurrency=5", 
+    "build": "npx lerna run build --concurrency=5"
   },
   "devDependencies": {
     "@babel/core": "7.20.2",
