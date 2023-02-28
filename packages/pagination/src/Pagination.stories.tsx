@@ -1,4 +1,4 @@
-import { ChakraProvider } from "@chakra-ui/react";
+import { ThemeProvider } from "@highoutput/hds";
 import { useArgs } from "@storybook/addons";
 import { ComponentStory, Meta } from "@storybook/react";
 import * as React from "react";
@@ -104,7 +104,7 @@ const Template: ComponentStory<typeof Pagination> = () => {
   const [args, setArgs] = useArgs();
 
   return (
-    <ChakraProvider>
+    <ThemeProvider>
       <Pagination
         variant="minimal"
         page={args.page}
@@ -138,7 +138,7 @@ const Template: ComponentStory<typeof Pagination> = () => {
           });
         }}
       />
-    </ChakraProvider>
+    </ThemeProvider>
   );
 };
 
