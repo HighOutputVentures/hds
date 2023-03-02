@@ -13,29 +13,41 @@ npm i @highoutput/hds-pagination
 ### Usage
 
 ```tsx
+import { ThemeProvider, Box } from "@highoutput/hds";
 import { Pagination } from "@highoutput/hds-pagination";
+import { Table } from "@highoutput/hds-table";
 import * as React from "react";
 
 export const SamplePage = () => {
   const [page, setPage] = React.useState(1);
+  const [pageSize, setPageSize] = React.useState(10);
 
   return (
-    <>
-      {/* More codes... */}
-
-      <Pagination
-        variant="minimal"
-        page={1}
-        pageSize={5}
-        total={100}
-        onPageChange={setPage}
-        hasLegend={false}
-        hasPageControls
-        maxPageControls={4}
+    <ThemeProvider>
+      <Table
+        /*
+         *
+         * more codes here...
+         *
+         */
+        renderFooter={
+          <Box p={4}>
+            <Pagination
+              variant="minimal"
+              page={page}
+              pageSize={pageSize}
+              count={100}
+              hasLegend={false}
+              hasPageControls
+              onChange={function ({ page, pageSize }) {
+                setPage(page);
+                setPageSize(pageSize);
+              }}
+            />
+          </Box>
+        }
       />
-
-      {/* More codes... */}
-    </>
+    </ThemeProvider>
   );
 };
 ```
