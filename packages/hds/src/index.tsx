@@ -14,6 +14,22 @@ import { ButtonVariantsTypes, CloseButtonVariantTypes } from './theme/components
 import { extendTheme } from './utils/theme.utils';
 
 export {
+  Alert,
+  AlertDescription,
+  AlertDescriptionProps,
+  AlertDialog,
+  AlertDialogBody,
+  AlertDialogCloseButton,
+  AlertDialogContent,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogOverlay,
+  AlertDialogProps,
+  AlertIcon,
+  AlertIconProps,
+  AlertProps,
+  AlertTitle,
+  AlertTitleProps,
   AspectRatio,
   AspectRatioProps,
   Avatar,

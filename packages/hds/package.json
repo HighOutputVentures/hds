@@ -45,16 +45,17 @@
       "limit": "10 KB"
     }
   ],
-  "exports":{
-    "./accordion": "./dist/components/Accordion/index.d.ts",
-    "./alert": "./dist/components/Alert/index.d.ts",
-    "./button": "./dist/components/Button/index.d.ts"
-  },
   "typesVersions": {
     "*": {
-      "accordion": ["dist/components/Accordion/index.d.ts"],
-      "alert":["dist/components/Alert/index.d.ts"],
-      "button":["dist/components/Button/index.d.ts"]
+      "accordion": [
+        "dist/components/Accordion/index.d.ts"
+      ],
+      "alert": [
+        "dist/components/Alert/index.d.ts"
+      ],
+      "button": [
+        "dist/components/Button/index.d.ts"
+      ]
     }
   },
   "devDependencies": {
