@@ -2,7 +2,7 @@
   "version": "0.2.1",
   "license": "MIT",
   "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "typings": "dist/index.js",
   "files": [
     "dist",
     "src"
@@ -45,16 +45,30 @@
       "limit": "10 KB"
     }
   ],
-  "exports":{
+  "exports": {
+    ".": "./dist/index.d.ts",
     "./accordion": "./dist/components/Accordion/index.d.ts",
     "./alert": "./dist/components/Alert/index.d.ts",
-    "./button": "./dist/components/Button/index.d.ts"
+    "./button": "./dist/components/Button/index.d.ts",
+    "./checkbox": "./dist/components/Checkbox/index.d.ts"
   },
   "typesVersions": {
     "*": {
-      "accordion": ["dist/components/Accordion/index.d.ts"],
-      "alert":["dist/components/Alert/index.d.ts"],
-      "button":["dist/components/Button/index.d.ts"]
+      ".": [
+        "dist/index.d.ts"
+      ],
+      "accordion": [
+        "dist/components/Accordion/index.d.ts"
+      ],
+      "alert": [
+        "dist/components/Alert/index.d.ts"
+      ],
+      "button": [
+        "dist/components/Button/index.d.ts"
+      ],
+      "checkbox": [
+        "dist/components/Checkbox/index.d.ts"
+      ]
     }
   },
   "devDependencies": {
