@@ -77,6 +77,8 @@ const ContactForm: FC<ContactFormProps> = (props) => {
             data-testid="input.contactform.email"
           />
           <TextAreaField
+            experimental_spaceX={undefined}
+            experimental_spaceY={undefined}
             {...register('message')}
             id="message"
             label="Desciption of concern"
