@@ -2,6 +2,9 @@ import ThemeProvider, { ThemeProviderProps } from '../src/components/ThemeProvid
 import theme from '../src/theme';
 import { extendTheme } from '../src/utils/theme.utils';
 export {
+  Alert,
+  AlertDescription,
+  AlertIcon,
   AspectRatio,
   AspectRatioProps,
   Avatar,
