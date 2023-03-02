@@ -12,7 +12,7 @@ import {
   ModalOverlay,
   Spacer,
 } from '@chakra-ui/react';
-import { Button, ButtonVariantsTypes } from '@highoutput/hds';
+import { Button, ButtonVariantsTypes } from '@highoutput/hds/button';
 import React, { FC, ReactNode } from 'react';
 
 export interface ModalProps {
@@ -52,11 +52,16 @@ const Modal: FC<ModalProps> = ({
   children,
 }) => {
   return (
-    <ChakraModal isOpen={isOpen} onClose={onClose} size={sizes[size]} >
+    <ChakraModal isOpen={isOpen} onClose={onClose} size={sizes[size]}>
       <ModalOverlay />
       <ModalContent textAlign={align} data-testid="hds.modal">
         {icon && (
-          <Box pl="4" pt="4" {...(align === 'right' && { mr: 5, mt: 7 })} data-testid="hds.modal.icon">
+          <Box
+            pl="4"
+            pt="4"
+            {...(align === 'right' && { mr: 5, mt: 7 })}
+            data-testid="hds.modal.icon"
+          >
             <Icon as={icon} width="48px" height="48px" />
           </Box>
         )}
@@ -71,7 +76,7 @@ const Modal: FC<ModalProps> = ({
                   onClick={onClose}
                   block
                   variant="outline-primary"
-                  __testId='hds.modal-close.button'
+                  __testId="hds.modal-close.button"
                   isDisabled={isLoading}
                 >
                   {closeText}

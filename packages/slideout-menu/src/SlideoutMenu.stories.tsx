@@ -1,8 +1,8 @@
-import { ThemeProvider, Button, Box, Flex } from '@highoutput/hds';
+import { Box, Flex, ThemeProvider } from '@highoutput/hds';
+import { Button } from '@highoutput/hds/button';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React, { useRef } from 'react';
 import SlideoutMenu, { SlideoutMenuRef } from './SlideoutMenu';
-
 export default {
   title: 'Components/Slideout Menu',
   component: SlideoutMenu,

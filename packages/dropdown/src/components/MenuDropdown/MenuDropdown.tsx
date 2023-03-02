@@ -14,7 +14,8 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { ThreeDots } from '@highoutput/hds-icons';
-import { ButtonVariantsTypes } from '@highoutput/hds/src/theme/components/button/variants';
+
+import { ButtonVariantsTypes } from '@highoutput/hds/button';
 import React, { FC } from 'react';
 
 export interface MenuDropdownFieldProps {

@@ -1,5 +1,5 @@
 import { Button as ChakraButton } from '@chakra-ui/react';
-import React, { ReactNode, forwardRef } from 'react';
+import React, { forwardRef, ReactNode } from 'react';
 import { ButtonSizeTypes } from '../../theme/components/button/sizes';
 import { ButtonVariantsTypes } from '../../theme/components/button/variants';
 
@@ -30,5 +30,5 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ block, __testId, ..
   );
 });
 
-
 export default Button;
+Button.displayName = 'Button';

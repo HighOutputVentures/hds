@@ -1,6 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-
 import { ThemeProvider } from '../..';
 import Button from './Button';
 

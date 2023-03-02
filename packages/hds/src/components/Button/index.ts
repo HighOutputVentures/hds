@@ -1,11 +1,11 @@
-import { CloseButtonSizeTypes } from '../../theme/components/button/sizes';
+import Button, { ButtonProps } from '../../../src/components/Button/Button';
+import CloseButton, { CloseButtonProps } from '../../../src/components/Button/CloseButton';
+import SocialButton, { SocialButtonProps } from '../../../src/components/Button/SocialButton';
+import { CloseButtonSizeTypes } from '../../../src/theme/components/button/sizes';
 import {
   ButtonVariantsTypes,
   CloseButtonVariantTypes,
-} from '../../theme/components/button/variants';
-import Button, { ButtonProps } from './Button';
-import CloseButton, { CloseButtonProps } from './CloseButton';
-import SocialButton, { SocialButtonProps } from './SocialButton';
+} from '../../../src/theme/components/button/variants';
 export {
   Button,
   ButtonProps,
