@@ -55,5 +55,6 @@
   "devDependencies": {
     "@types/react-lottie": "1.2.6",
     "jest-canvas-mock": "2.4.0"
-  }
+  },
+  "gitHead": "7de6f34c785f6404215c0192c3be29ffc3be1d8d"
 }
