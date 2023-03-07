@@ -51,7 +51,7 @@ Array [
           data-testid="hds.breadcrum-item"
         >
           <a
-            className="chakra-breadcrumb__link css-9phpk7"
+            className="chakra-breadcrumb__link css-j2kqo6"
             data-testid="hds.breadcrumb-link"
             onClick={[Function]}
           >
@@ -82,7 +82,7 @@ Array [
           data-testid="hds.breadcrum-item"
         >
           <a
-            className="chakra-breadcrumb__link css-9phpk7"
+            className="chakra-breadcrumb__link css-j2kqo6"
             data-testid="hds.breadcrumb-link"
             onClick={[Function]}
           >
@@ -113,7 +113,7 @@ Array [
           data-testid="hds.breadcrum-item"
         >
           <a
-            className="chakra-breadcrumb__link css-9phpk7"
+            className="chakra-breadcrumb__link css-j2kqo6"
             data-testid="hds.breadcrumb-link"
             onClick={[Function]}
           >
@@ -128,9 +128,5 @@ Array [
     </nav>
   </div>,
   <span />,
-  <span
-    hidden={true}
-    id="__chakra_env"
-  />,
 ]
 `;
