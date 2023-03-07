@@ -1,5 +1,6 @@
 import {
-  ResponsiveValue,
+  Box,
+  Portal,
   SystemStyleObject,
   Tab,
   TabList,
@@ -8,7 +9,6 @@ import {
   Text,
   useMultiStyleConfig,
 } from '@chakra-ui/react';
-import { Property } from '@storybook/theming/dist/ts3.9/_modules/@emotion-react-node_modules-csstype-index';
 import React, { ReactNode } from 'react';
 export interface ButtonTabsProps {
   tabLabel: Array<string>;
@@ -16,10 +16,11 @@ export interface ButtonTabsProps {
   gap?: string;
   _selected?: SystemStyleObject;
   onChangeHandler?: (e: number) => void;
-  placeContent?: ResponsiveValue<Property.PlaceContent>;
+  placeContent?: 'center' | 'end' | 'start';
   size?: 'sm' | 'md';
   fitToBox?: boolean;
   defaultIndex?: number;
+  inverted?: boolean;
 }
 const ButtonTabs = (props: ButtonTabsProps) => {
   const {
@@ -27,6 +28,7 @@ const ButtonTabs = (props: ButtonTabsProps) => {
     tabLabel,
     placeContent,
     onChangeHandler,
+    inverted = false,
     fitToBox,
     size = 'sm',
     defaultIndex,
@@ -35,6 +37,8 @@ const ButtonTabs = (props: ButtonTabsProps) => {
   } = props;
 
   const styles = useMultiStyleConfig('Tabs', { variant: 'unstyled', size });
+  const tabListRef = React.useRef(null);
+  const tabPanelRef = React.useRef(null);
   return (
     <Tabs
       defaultIndex={defaultIndex || 0}
@@ -45,37 +49,46 @@ const ButtonTabs = (props: ButtonTabsProps) => {
       data-testid="hds.tab-button.tabs"
       w="full"
       height={'full'}
+      align={placeContent}
     >
-      <TabList
-        border={'1px solid #D0D5DD'}
-        borderRadius={'8px'}
-        data-testid="hds.tab-button.list"
-        width={fitToBox ? '100%' : 'fit-content'}
-        placeContent={placeContent}
-        overflow={'hidden'}
-        mb={gap}
-        sx={styles.tablist}
-      >
-        {tabLabel.map((label, idx) => {
-          return (
-            <Tab
-              key={`${label}${idx}`}
-              _selected={_selected}
-              data-testid="hds.tab-button.tab"
-              padding={'10px 16px'}
-              sx={size === 'md' ? styles.tab : undefined}
-              maxW={'auto'}
-              width={fitToBox ? '100%' : 'auto'}
-              borderRight={
-                idx === tabLabel.length - 1 ? 'none' : '1px solid #D0D5DD'
-              }
-            >
-              <Text size="label-xs-default">{label}</Text>
-            </Tab>
-          );
-        })}
-      </TabList>
-      <TabPanels data-testid="hds.tab-button.tab.panel">{tabItems}</TabPanels>
+      <Portal containerRef={tabListRef}>
+        <TabList
+          border={'1px solid #D0D5DD'}
+          borderRadius={'8px'}
+          data-testid="hds.tab-button.list"
+          width={fitToBox ? '100%' : 'fit-content'}
+          overflow={'hidden'}
+          mb={gap}
+          sx={styles.tablist}
+          {...(placeContent === 'end' && { ml: 'auto' })}
+          {...(placeContent === 'start' && { mr: 'auto' })}
+        >
+          {tabLabel.map((label, idx) => {
+            return (
+              <Tab
+                key={`${label}${idx}`}
+                _selected={_selected}
+                data-testid="hds.tab-button.tab"
+                padding={'10px 16px'}
+                sx={size === 'md' ? styles.tab : undefined}
+                maxW={'auto'}
+                width={fitToBox ? '100%' : 'auto'}
+                borderRight={
+                  idx === tabLabel.length - 1 ? 'none' : '1px solid #D0D5DD'
+                }
+              >
+                <Text size="label-xs-default">{label}</Text>
+              </Tab>
+            );
+          })}
+        </TabList>
+      </Portal>
+      <Portal containerRef={tabPanelRef}>
+        <TabPanels data-testid="hds.tab-button.tab.panel">{tabItems}</TabPanels>
+      </Portal>
+
+      <Box ref={inverted ? tabPanelRef : tabListRef} />
+      <Box ref={inverted ? tabListRef : tabPanelRef} />
     </Tabs>
   );
 };
