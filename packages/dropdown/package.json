@@ -49,6 +49,7 @@
     }
   ],
   "dependencies": {
+    "@highoutput/hds-icons": "^0.1.32",
     "chakra-react-select": "^4.4.2"
   },
   "gitHead": "afaba7738378dde0e95931c54c07f09c27286376"
