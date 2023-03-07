@@ -16,7 +16,7 @@ exports[`Array Field Component Snapshot Should match snapshot 1`] = `
       role="group"
     >
       <div
-        className="chakra-input__group css-bx0blc"
+        className="chakra-input__group css-4302v8"
         data-testid="hds.input.group"
       >
         <input
@@ -43,6 +43,7 @@ exports[`Array Field Component Snapshot Should match snapshot 1`] = `
       <button
         className="chakra-button css-1xxv165"
         data-testid="hds.array-field.remove.btn"
+        disabled={true}
         onClick={[Function]}
         type="button"
       >
@@ -63,6 +64,7 @@ exports[`Array Field Component Snapshot Should match snapshot 1`] = `
       <button
         className="chakra-button css-1xxv165"
         data-testid="hds.array-field.add.btn"
+        disabled={false}
         onClick={[Function]}
         type="button"
       >
