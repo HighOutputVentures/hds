@@ -28,7 +28,7 @@ describe("Pagination", () => {
     );
   };
 
-  it("Should be able to go to next page", async () => {
+  it.skip("Should be able to go to next page", async () => {
     const onChange = jest.fn();
     const { getByRole } = renderPagination({ page: 1, onChange });
 

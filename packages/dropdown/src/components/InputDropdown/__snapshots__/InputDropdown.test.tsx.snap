@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` 1`] = `
+exports[`Snapshot should match snapshot 1`] = `
 Array [
   <div
     aria-label="Form Group"
@@ -23,7 +23,7 @@ Array [
         className="css-10swtys"
       >
         <svg
-          className="chakra-icon css-bmmmzk"
+          className="chakra-icon css-n059si"
           focusable={false}
           viewBox="0 0 24 24"
         >
@@ -57,7 +57,7 @@ Array [
       >
         <span
           className="css-1f43avz-a11yText-A11yText"
-          id="react-select-2-live-region"
+          id="react-select-5-live-region"
         />
         <span
           aria-atomic="false"
@@ -66,33 +66,33 @@ Array [
           className="css-1f43avz-a11yText-A11yText"
         />
         <div
-          className=" css-ijyw6z"
+          className=" css-1g24mso"
           onMouseDown={[Function]}
           onTouchEnd={[Function]}
         >
           <div
-            className=" css-sy0cn0"
+            className=" css-xct6wr"
           >
             <div
-              className=" css-1puyje9"
-              id="react-select-2-placeholder"
+              className=" css-1eohtqe"
+              id="react-select-5-placeholder"
             >
               Select...
             </div>
             <div
-              className=" css-svnjlw"
+              className=" css-18euh9p"
               data-value=""
             >
               <input
                 aria-autocomplete="list"
-                aria-describedby="react-select-2-placeholder"
+                aria-describedby="react-select-5-placeholder"
                 aria-expanded={false}
                 aria-haspopup={true}
                 aria-label="input-dropdown"
                 autoCapitalize="none"
                 autoComplete="off"
                 autoCorrect="off"
-                className=" css-146k1ar-input"
+                className=" css-10wwmqn"
                 disabled={false}
                 id="input-dropdown"
                 onBlur={[Function]}
@@ -110,7 +110,7 @@ Array [
             className=" css-hfbj6y"
           >
             <svg
-              className="chakra-icon chakra-icon css-1n9wk9c"
+              className="chakra-icon chakra-icon css-4v11vh"
               focusable={false}
               viewBox="0 0 24 24"
             >
@@ -125,9 +125,5 @@ Array [
     </div>
   </div>,
   <span />,
-  <span
-    hidden={true}
-    id="__chakra_env"
-  />,
 ]
 `;

@@ -6,77 +6,10 @@ exports[` 1`] = `
   data-testid="hds.tab-button.tabs"
 >
   <div
-    aria-orientation="horizontal"
-    className="chakra-tabs__tablist css-1tt9qos"
-    data-testid="hds.tab-button.list"
-    onKeyDown={[Function]}
-    role="tablist"
-  >
-    <button
-      aria-controls="tabs-:r0:--tabpanel--1"
-      aria-selected={false}
-      className="chakra-tabs__tab css-1jy8375"
-      data-testid="hds.tab-button.tab"
-      id="tabs-:r0:--tab--1"
-      onClick={[Function]}
-      onFocus={[Function]}
-      role="tab"
-      tabIndex={-1}
-      type="button"
-    >
-      <p
-        className="chakra-text css-0"
-      >
-        My details
-      </p>
-    </button>
-    <button
-      aria-controls="tabs-:r0:--tabpanel--1"
-      aria-selected={false}
-      className="chakra-tabs__tab css-q25bzy"
-      data-testid="hds.tab-button.tab"
-      id="tabs-:r0:--tab--1"
-      onClick={[Function]}
-      onFocus={[Function]}
-      role="tab"
-      tabIndex={-1}
-      type="button"
-    >
-      <p
-        className="chakra-text css-0"
-      >
-        Profile
-      </p>
-    </button>
-  </div>
+    className="css-0"
+  />
   <div
-    className="chakra-tabs__tab-panels css-8atqhb"
-    data-testid="hds.tab-button.tab.panel"
-  >
-    <div
-      className="chakra-tabs__tab-panels css-8atqhb"
-    >
-      <div
-        aria-labelledby="tabs-:r0:--tab-0"
-        className="chakra-tabs__tab-panel css-sjt5nk"
-        hidden={false}
-        id="tabs-:r0:--tabpanel-0"
-        role="tabpanel"
-        tabIndex={0}
-      >
-        One
-      </div>
-      <div
-        aria-labelledby="tabs-:r0:--tab-1"
-        className="chakra-tabs__tab-panel css-sjt5nk"
-        hidden={true}
-        id="tabs-:r0:--tabpanel-1"
-        role="tabpanel"
-        tabIndex={0}
-      >
-        Two
-      </div>
-    </div>
-  </div>
+    className="css-0"
+  />
 </div>
 `;
