@@ -43,7 +43,7 @@ exports[`Contact Card Component Snapshot (ContactCard) Should match snapshot 1`]
             Name
           </label>
           <div
-            className="chakra-input__group css-bx0blc"
+            className="chakra-input__group css-4302v8"
             data-testid="hds.input.group"
           >
             <input
@@ -79,7 +79,7 @@ exports[`Contact Card Component Snapshot (ContactCard) Should match snapshot 1`]
             Email
           </label>
           <div
-            className="chakra-input__group css-bx0blc"
+            className="chakra-input__group css-4302v8"
             data-testid="hds.input.group"
           >
             <input
@@ -115,7 +115,7 @@ exports[`Contact Card Component Snapshot (ContactCard) Should match snapshot 1`]
             Desciption of concern
           </label>
           <div
-            className="chakra-input__group css-bx0blc"
+            className="chakra-input__group css-4302v8"
           >
             <textarea
               className="chakra-textarea css-djz069"
@@ -175,7 +175,7 @@ exports[`Contact Form Component Snapshot (ContactForm) Should match snapshot 1`]
           Name
         </label>
         <div
-          className="chakra-input__group css-bx0blc"
+          className="chakra-input__group css-4302v8"
           data-testid="hds.input.group"
         >
           <input
@@ -211,7 +211,7 @@ exports[`Contact Form Component Snapshot (ContactForm) Should match snapshot 1`]
           Email
         </label>
         <div
-          className="chakra-input__group css-bx0blc"
+          className="chakra-input__group css-4302v8"
           data-testid="hds.input.group"
         >
           <input
@@ -247,7 +247,7 @@ exports[`Contact Form Component Snapshot (ContactForm) Should match snapshot 1`]
           Desciption of concern
         </label>
         <div
-          className="chakra-input__group css-bx0blc"
+          className="chakra-input__group css-4302v8"
         >
           <textarea
             className="chakra-textarea css-djz069"
@@ -372,7 +372,7 @@ exports[`Contact Page Component Snapshot (ContactPage) Should match snapshot 1`]
                 Name
               </label>
               <div
-                className="chakra-input__group css-bx0blc"
+                className="chakra-input__group css-4302v8"
                 data-testid="hds.input.group"
               >
                 <input
@@ -408,7 +408,7 @@ exports[`Contact Page Component Snapshot (ContactPage) Should match snapshot 1`]
                 Email
               </label>
               <div
-                className="chakra-input__group css-bx0blc"
+                className="chakra-input__group css-4302v8"
                 data-testid="hds.input.group"
               >
                 <input
@@ -444,7 +444,7 @@ exports[`Contact Page Component Snapshot (ContactPage) Should match snapshot 1`]
                 Desciption of concern
               </label>
               <div
-                className="chakra-input__group css-bx0blc"
+                className="chakra-input__group css-4302v8"
               >
                 <textarea
                   className="chakra-textarea css-djz069"

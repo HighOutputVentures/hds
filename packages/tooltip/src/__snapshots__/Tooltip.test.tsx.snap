@@ -40,9 +40,5 @@ Array [
     </svg>
   </span>,
   <span />,
-  <span
-    hidden={true}
-    id="__chakra_env"
-  />,
 ]
 `;
