@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build",
+    "build": "tsdx build --entry ./src/index.tsx --entry ./src/components/Accordion/index.tsx",
     "test": "tsdx test --passWithNoTests",
     "prepare": "tsdx build --transpileOnly",
     "lint": "tsdx lint",
@@ -45,6 +45,19 @@
       "limit": "10 KB"
     }
   ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./accordion": {
+      "production": {
+        "import": "./dist/components/Accordion/index.esm.production.min.js",
+        "require": "./dist/components/Accordion/index.cjs.production.min.js"
+      },
+      "development": {
+        "import": "./dist/components/Accordion/index.esm.development.min.js",
+        "require": "./dist/components/Accordion/index.cjs.development.min.js"
+      }
+    }
+  },
   "typesVersions": {
     "*": {
       "accordion": [
