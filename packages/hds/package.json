@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build",
+    "build": "tsdx build --entry ./src/index.tsx --entry ./src/components/Accordion/index.tsx",
     "test": "tsdx test --passWithNoTests",
     "prepare": "tsdx build --transpileOnly",
     "lint": "tsdx lint",
@@ -34,19 +34,35 @@
   "author": {
     "name": "Niel Berongoy"
   },
-  "module": "dist/hds.esm.js",
+  "module": "dist/index.esm.js",
   "size-limit": [
     {
-      "path": "dist/hds.cjs.production.min.js",
+      "path": "dist/index.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/hds.esm.js",
+      "path": "dist/index.esm.js",
       "limit": "10 KB"
     }
   ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./accordion": {
+      "production": {
+        "import": "./dist/components/Accordion/index.esm.production.min.js",
+        "require": "./dist/components/Accordion/index.cjs.production.min.js"
+      },
+      "development": {
+        "import": "./dist/components/Accordion/index.esm.development.min.js",
+        "require": "./dist/components/Accordion/index.cjs.development.min.js"
+      }
+    }
+  },
   "typesVersions": {
     "*": {
+      ".": [
+        "dist/index.d.ts"
+      ],
       "accordion": [
         "dist/components/Accordion/index.d.ts"
       ],
