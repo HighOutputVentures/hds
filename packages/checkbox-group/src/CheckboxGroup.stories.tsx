@@ -4,7 +4,7 @@ import * as React from "react";
 import CheckboxGroup from "./CheckboxGroup";
 import CogIcon from "./examples/CogIcon";
 // @ts-ignore
-import { ThemeProvider } from "@highoutput/hds/src";
+import { ThemeProvider } from "@highoutput/hds";
 
 export default {
   title: "Components/CheckboxGroup",

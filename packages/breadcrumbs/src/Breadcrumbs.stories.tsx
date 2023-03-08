@@ -1,6 +1,6 @@
 import { AttachmentIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { Flex } from '@chakra-ui/react';
-import ThemeProvider from '@highoutput/hds/src/components/ThemeProvider';
+import { ThemeProvider } from '@highoutput/hds';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
