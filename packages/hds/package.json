@@ -12,9 +12,10 @@
   },
   "scripts": {
     "start": "tsdx watch",
+    "buildEntries": "--entry find ./src -name 'index*.tsx'",
     "build": "tsdx build --entry ./src/index.tsx --entry ./src/components/Accordion/index.tsx",
     "test": "tsdx test --passWithNoTests",
-    "prepare": "tsdx build --transpileOnly",
+    "prepare": "tsdx build --entry ./src/index.tsx --entry ./src/components/Accordion/index.tsx  --transpileOnly",
     "lint": "tsdx lint",
     "size": "size-limit",
     "analyze": "size-limit --why",
