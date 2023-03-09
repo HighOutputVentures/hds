@@ -18,13 +18,13 @@ export const Tabs = {
     sm: {
       tab: {
         w: 'auto',
-        height: '30px',
+        h: '32px',
       },
     },
     md: {
       tab: {
         minW: '249px',
-        height: '34px',
+        h: '34px',
       },
     },
   },
