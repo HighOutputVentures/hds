@@ -15,6 +15,10 @@ export type TabProps = {
   tabLabel: string[];
   placement?: 'center' | 'left' | 'right';
   tabItems: ReactNode;
+  addNotificationCountToTabs?: {
+    tab: string;
+    count: number;
+  }[]; //should be equal to tabLabel\
   size?: 'sm' | 'md';
 };
 
@@ -26,8 +30,9 @@ const Tab = React.forwardRef<HTMLDivElement, TabProps>((props, _) => {
     size = 'sm',
     orientation = 'horizontal',
     variant = 'primary',
+    addNotificationCountToTabs,
   } = props;
-
+  const [selectedTab, setSelectedTab] = React.useState(tabLabel[0]);
   const [tabOrientation, setTabOrientation] = React.useState(orientation);
 
   const styles = useMultiStyleConfig('Tabs', { variant, size });
@@ -45,9 +50,17 @@ const Tab = React.forwardRef<HTMLDivElement, TabProps>((props, _) => {
     }
   }, [variant, setTabOrientation]);
 
+  const onClickTab = (tab: string) => setSelectedTab(tab);
+
   return (
     <Flex w="full" h="full">
-      <Tabs orientation={tabOrientation} data-testid="hds.tabs" gap="32px" w="full" h="full">
+      <Tabs
+        orientation={tabOrientation}
+        data-testid="hds.tabs"
+        gap="32px"
+        w="full"
+        h="full"
+      >
         <TabList
           gap="4px"
           flexDir={tabOrientation === 'vertical' ? 'column' : 'row'}
@@ -61,12 +74,53 @@ const Tab = React.forwardRef<HTMLDivElement, TabProps>((props, _) => {
                 key={item + idx}
                 sx={styles.tab}
                 data-testid="hds.tab"
+                h="32px"
+                onClick={() => onClickTab(item)}
                 justifyContent={
                   tabOrientation === 'vertical' ? 'flex-start' : 'center'
                 }
-                minW={tabOrientation === 'vertical' ? '142px' : 'auto'}
+                minW={
+                  tabOrientation === 'vertical'
+                    ? '142px'
+                    : addNotificationCountToTabs
+                    ? 'auto'
+                    : 'auto'
+                }
               >
-                <Text size="label-xs-default">{item}</Text>
+                <Flex align="center" gap={2}>
+                  <Text size="label-xs-default">{item}</Text>
+                  {addNotificationCountToTabs &&
+                    addNotificationCountToTabs.length >= 1 &&
+                    addNotificationCountToTabs.map((tabItem, idx) => {
+                      return (
+                        tabItem.tab.toLowerCase() === item.toLowerCase() && (
+                          <Flex
+                            key={tabItem.tab + idx}
+                            align="center"
+                            width="25px"
+                            height="24px"
+                            justify="center"
+                            pt="2px"
+                            bgColor={
+                              selectedTab === item ? '#D5BCEC' : 'neutrals.100'
+                            }
+                            borderRadius="full"
+                          >
+                            <Text
+                              size="label-xs-default"
+                              color={
+                                selectedTab === item
+                                  ? '#7224BF'
+                                  : 'neutrals.800'
+                              }
+                            >
+                              {tabItem.count}
+                            </Text>
+                          </Flex>
+                        )
+                      );
+                    })}
+                </Flex>
               </ChakraTab>
             );
           })}

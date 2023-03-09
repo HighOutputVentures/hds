@@ -26,7 +26,12 @@ const tabItems = (
 const Template: ComponentStory<typeof Tab> = (args) => {
   return (
     <ThemeProvider>
-      <Tab {...args} tabLabel={tabs} tabItems={tabItems} />
+      <Tab
+        {...args}
+        tabLabel={tabs}
+        addNotificationCountToTabs={addNotificationTab}
+        tabItems={tabItems}
+      />
     </ThemeProvider>
   );
 };
@@ -46,6 +51,25 @@ Default.args = {
 ButtonTab.args = {
   ...ButtonTab.args,
 };
+
+const addNotificationTab = [
+  {
+    tab: 'Notifications',
+    count: 2,
+  },
+  {
+    tab: 'Team',
+    count: 4,
+  },
+  {
+    tab: 'Email',
+    count: 3,
+  },
+  {
+    tab: 'My details',
+    count: 2,
+  },
+];
 const tabs = [
   'My details',
   'Profile',
@@ -54,7 +78,7 @@ const tabs = [
   'Plan',
   'Billing',
   'Email',
-  'Notifications 2',
+  'Notifications',
   'Integrations',
   'API',
 ];

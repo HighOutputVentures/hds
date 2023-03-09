@@ -18,7 +18,7 @@ exports[` 1`] = `
       <button
         aria-controls="tabs-:r0:--tabpanel--1"
         aria-selected={false}
-        className="chakra-tabs__tab css-1c44rwm"
+        className="chakra-tabs__tab css-1p6h840"
         data-testid="hds.tab"
         id="tabs-:r0:--tab--1"
         onClick={[Function]}
@@ -27,16 +27,20 @@ exports[` 1`] = `
         tabIndex={-1}
         type="button"
       >
-        <p
-          className="chakra-text css-0"
+        <div
+          className="css-j2at52"
         >
-          My details
-        </p>
+          <p
+            className="chakra-text css-0"
+          >
+            My details
+          </p>
+        </div>
       </button>
       <button
         aria-controls="tabs-:r0:--tabpanel--1"
         aria-selected={false}
-        className="chakra-tabs__tab css-1c44rwm"
+        className="chakra-tabs__tab css-1p6h840"
         data-testid="hds.tab"
         id="tabs-:r0:--tab--1"
         onClick={[Function]}
@@ -45,16 +49,20 @@ exports[` 1`] = `
         tabIndex={-1}
         type="button"
       >
-        <p
-          className="chakra-text css-0"
+        <div
+          className="css-j2at52"
         >
-          Profile
-        </p>
+          <p
+            className="chakra-text css-0"
+          >
+            Profile
+          </p>
+        </div>
       </button>
       <button
         aria-controls="tabs-:r0:--tabpanel--1"
         aria-selected={false}
-        className="chakra-tabs__tab css-1c44rwm"
+        className="chakra-tabs__tab css-1p6h840"
         data-testid="hds.tab"
         id="tabs-:r0:--tab--1"
         onClick={[Function]}
@@ -63,16 +71,20 @@ exports[` 1`] = `
         tabIndex={-1}
         type="button"
       >
-        <p
-          className="chakra-text css-0"
+        <div
+          className="css-j2at52"
         >
-          Password
-        </p>
+          <p
+            className="chakra-text css-0"
+          >
+            Password
+          </p>
+        </div>
       </button>
       <button
         aria-controls="tabs-:r0:--tabpanel--1"
         aria-selected={false}
-        className="chakra-tabs__tab css-1c44rwm"
+        className="chakra-tabs__tab css-1p6h840"
         data-testid="hds.tab"
         id="tabs-:r0:--tab--1"
         onClick={[Function]}
@@ -81,11 +93,15 @@ exports[` 1`] = `
         tabIndex={-1}
         type="button"
       >
-        <p
-          className="chakra-text css-0"
+        <div
+          className="css-j2at52"
         >
-          Team
-        </p>
+          <p
+            className="chakra-text css-0"
+          >
+            Team
+          </p>
+        </div>
       </button>
     </div>
     <div

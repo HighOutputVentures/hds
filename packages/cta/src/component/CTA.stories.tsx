@@ -71,7 +71,7 @@ const TemplateContent: ComponentStory<typeof CTA> = (args) => {
               </Box>
 
               <Flex justifyContent="flex-end">
-                <Button variant="outline">Edit</Button>
+                <Button variant="outline-primary">Edit</Button>
               </Flex>
             </Flex>
           }
