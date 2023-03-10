@@ -59,6 +59,7 @@ import TrendNegative from '../components/chart/TrendNegative';
 import TrendPositive from '../components/chart/TrendPositive';
 import EmailIcon from '../components/EmialIcon';
 import VisaIcon from '../components/payment-method-icon/VisaIcon';
+import BellIcon from '../components/BellIcon';
 
 const meta: ComponentMeta<typeof Icon> = {
   title: 'Components/Icons',
@@ -158,6 +159,7 @@ const RandomTemplate = (args: any) => {
     <GridView
       data={sortObject({
         BoxIcon,
+        BellIcon,
         CheckIcon,
         ExitIcon,
         HelpIcon,
