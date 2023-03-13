@@ -23,7 +23,7 @@ Array [
         className="css-10swtys"
       >
         <svg
-          className="chakra-icon css-n059si"
+          className="chakra-icon css-bmmmzk"
           focusable={false}
           viewBox="0 0 24 24"
         >
@@ -66,21 +66,21 @@ Array [
           className="css-1f43avz-a11yText-A11yText"
         />
         <div
-          className=" css-1g24mso"
+          className=" css-ijyw6z"
           onMouseDown={[Function]}
           onTouchEnd={[Function]}
         >
           <div
-            className=" css-xct6wr"
+            className=" css-sy0cn0"
           >
             <div
-              className=" css-1eohtqe"
+              className=" css-1puyje9"
               id="react-select-5-placeholder"
             >
               Select...
             </div>
             <div
-              className=" css-18euh9p"
+              className=" css-svnjlw"
               data-value=""
             >
               <input
@@ -92,7 +92,7 @@ Array [
                 autoCapitalize="none"
                 autoComplete="off"
                 autoCorrect="off"
-                className=" css-10wwmqn"
+                className=" css-146k1ar-input"
                 disabled={false}
                 id="input-dropdown"
                 onBlur={[Function]}
@@ -110,7 +110,7 @@ Array [
             className=" css-hfbj6y"
           >
             <svg
-              className="chakra-icon chakra-icon css-4v11vh"
+              className="chakra-icon chakra-icon css-1n9wk9c"
               focusable={false}
               viewBox="0 0 24 24"
             >
@@ -125,5 +125,9 @@ Array [
     </div>
   </div>,
   <span />,
+  <span
+    hidden={true}
+    id="__chakra_env"
+  />,
 ]
 `;
