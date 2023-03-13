@@ -5,18 +5,19 @@ exports[`Pagination Should match snapshot 1`] = `
   className="css-8omsyd"
 >
   <div
-    className="css-su60pv"
+    className="css-1d0o8pg"
   >
     <div
-      className="css-8dt55n"
+      className="css-ss3qhx"
     >
       <button
         aria-label="Go to previous page"
-        className="chakra-button css-wklby5"
+        className="chakra-button css-13fngr8"
         data-disabled=""
         data-part="prev-page-trigger"
         data-scope="pagination"
         data-testid="hds.minimal-pagination.previous.button"
+        disabled={true}
         id="pagination::r0::prev"
         onClick={[Function]}
         type="button"
@@ -126,10 +127,11 @@ exports[`Pagination Should match snapshot 1`] = `
       </div>
       <button
         aria-label="Go to next page"
-        className="chakra-button css-wklby5"
+        className="chakra-button css-13fngr8"
         data-part="next-page-trigger"
         data-scope="pagination"
         data-testid="hds.minimal-pagination.next.button"
+        disabled={true}
         id="pagination::r0::next"
         onClick={[Function]}
         type="button"
