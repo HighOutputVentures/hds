@@ -58,3 +58,4 @@ export { default as TrendPositive } from './components/chart/TrendPositive';
 export { default as EmailIcon } from './components/EmialIcon';
 export { default as VisaIcon } from './components/payment-method-icon/VisaIcon';
 export { default as BellIcon } from './components/BellIcon';
+export { default as PrimarySearchIcon } from './components/PrimarySearchIcon';

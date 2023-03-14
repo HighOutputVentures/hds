@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmptyState should render EmptyState 1`] = `
+<div>
+  <div
+    class="css-0"
+  >
+    <div
+      class="css-km9j2t"
+    >
+      <p
+        class="chakra-text css-10rvbm3"
+      >
+        No projects found
+      </p>
+      <p
+        class="chakra-text css-17jjy1e"
+      >
+        Your search “Landing page design” did not match any projects. Please try again.
+      </p>
+      <div
+        class="css-8vgms9"
+      >
+        <button
+          class="chakra-button css-4xx2wk"
+          type="button"
+        >
+          Dismiss
+        </button>
+        <button
+          class="chakra-button css-4xx2wk"
+          type="button"
+        >
+          <span
+            class="chakra-button__icon css-1wh2kri"
+          >
+            <svg
+              aria-hidden="true"
+              class="chakra-icon css-onkibi"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0,12a1.5,1.5,0,0,0,1.5,1.5h8.75a.25.25,0,0,1,.25.25V22.5a1.5,1.5,0,0,0,3,0V13.75a.25.25,0,0,1,.25-.25H22.5a1.5,1.5,0,0,0,0-3H13.75a.25.25,0,0,1-.25-.25V1.5a1.5,1.5,0,0,0-3,0v8.75a.25.25,0,0,1-.25.25H1.5A1.5,1.5,0,0,0,0,12Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          Changelog
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

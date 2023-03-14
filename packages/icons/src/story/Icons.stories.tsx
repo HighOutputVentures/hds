@@ -60,6 +60,7 @@ import TrendPositive from '../components/chart/TrendPositive';
 import EmailIcon from '../components/EmialIcon';
 import VisaIcon from '../components/payment-method-icon/VisaIcon';
 import BellIcon from '../components/BellIcon';
+import PrimarySearchIcon from '../components/PrimarySearchIcon';
 
 const meta: ComponentMeta<typeof Icon> = {
   title: 'Components/Icons',
@@ -203,6 +204,7 @@ const ColoredIcons = (args: any) => {
         ErrorImageIcon,
         ErrorFilmIcon,
         ErrorUploadIcon,
+        PrimarySearchIcon,
       })}
       {...args}
     />
