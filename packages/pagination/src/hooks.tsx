@@ -1,4 +1,4 @@
-export function useStyles(variant: "group" | "minimal") {
+export function useStyles(variant: "group" | "minimal" | "relay") {
   if (variant === "group") {
     return {
       group: {
@@ -67,6 +67,48 @@ export function useStyles(variant: "group" | "minimal") {
     };
   }
 
+  if (variant === "relay") {
+    return {
+      legend: {
+        color: "#7A7A7A",
+        fontSize: "14px",
+        linHeight: "20px",
+        fontWeight: "medium",
+      },
+      button() {
+        return {
+          color: "#525252",
+          bgColor: "#FFFFFF",
+          fontWeight: "medium",
+          fontSize: "18px",
+          lineHeight: "24px",
+          display: "flex",
+          alignItems: "center",
+          gap: "8px",
+          _hover: {},
+          _focus: {},
+          _active: {},
+          _disabled: {},
+          border: "1px solid #D6D6D6",
+          boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05)",
+          borderRadius: "8px",
+          padding: "10px 14px",
+        };
+      },
+      select: {
+        fontSize: "14px",
+        lineHeight: "1",
+        height: "40px",
+        width: "full",
+        color: "#0F0F0F!important",
+        rounded: "lg",
+        border: "1px solid",
+        borderColor: "#D6D6D6",
+        paddingX: 2,
+      },
+    };
+  }
+
   return {
     legend: {
       color: "#7A7A7A",
@@ -74,7 +116,7 @@ export function useStyles(variant: "group" | "minimal") {
       linHeight: "20px",
       fontWeight: "medium",
     },
-    button({ isOutlined }: { isOutlined?: boolean }) {
+    button({ isOutlined }: { isOutlined?: boolean } = {}) {
       return {
         color: "#525252",
         bgColor: "#FFFFFF",

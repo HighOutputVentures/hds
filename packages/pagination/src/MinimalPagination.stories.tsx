@@ -5,7 +5,7 @@ import { ThemeProvider } from "~/hds";
 import Pagination from "./Pagination";
 
 export default {
-  title: "Components/Pagination",
+  title: "Components/Pagination/Minimal",
   argTypes: {
     page: {
       name: "page",
@@ -116,21 +116,6 @@ const Template: ComponentStory<typeof Pagination> = () => {
         hasButtonLabel={args.hasButtonLabel}
         hasButtonOutline={args.hasButtonOutline}
         hasPageControls={args.hasPageControls}
-        onChange={(value) => {
-          setArgs({
-            ...args,
-            ...value,
-          });
-        }}
-      />
-
-      <Pagination
-        mt={16}
-        variant="group"
-        page={args.page}
-        pageSize={args.pageSize}
-        count={args.total}
-        sizes={[10, 20, 30, 40, 50]}
         onChange={(value) => {
           setArgs({
             ...args,
