@@ -61,6 +61,9 @@ import EmailIcon from '../components/EmialIcon';
 import VisaIcon from '../components/payment-method-icon/VisaIcon';
 import BellIcon from '../components/BellIcon';
 import PrimarySearchIcon from '../components/PrimarySearchIcon';
+import SwitchHorizontalIcon from '../components/SwitchHorizontalIcon';
+import ActivityIcon from '../components/ActivityIcon';
+import CoinsIcon from '../components/CoinsIcon';
 
 const meta: ComponentMeta<typeof Icon> = {
   title: 'Components/Icons',
@@ -162,6 +165,9 @@ const RandomTemplate = (args: any) => {
         BoxIcon,
         BellIcon,
         CheckIcon,
+        SwitchHorizontalIcon,
+        ActivityIcon,
+        CoinsIcon,
         ExitIcon,
         HelpIcon,
         HomeIcon,
