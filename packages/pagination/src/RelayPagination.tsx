@@ -1,4 +1,14 @@
-import { Box, Button, Flex, Icon, Select, Spacer, SystemStyleObject, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Flex,
+  Icon,
+  Select,
+  Spacer,
+  SystemStyleObject,
+  Text,
+} from "@chakra-ui/react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@highoutput/hds-icons";
 import * as React from "react";
 import { useStyles } from "./hooks";
@@ -93,28 +103,36 @@ export default function RelayPagination({
             </Box>
           )}
 
-          <Button
+          <ButtonGroup
             variant="unstyled"
-            aria-label="Go to previous page"
-            data-testid="hds.relay-pagination.previous.button"
-            sx={styles.button?.()}
-            onClick={prev}
-            isDisabled={!hasPrev}
+            spacing={0}
+            sx={styles.group}
+            data-testid="hds.relay-pagination.button.group"
           >
-            <Icon as={ArrowLeftIcon} sx={styles.icon} />
-            Previous
-          </Button>
-          <Button
-            variant="unstyled"
-            aria-label="Go to next page"
-            data-testid="hds.relay-pagination.next.button"
-            sx={styles.button?.()}
-            onClick={next}
-            isDisabled={!hasNext}
-          >
-            Next
-            <Icon as={ArrowRightIcon} sx={styles.icon} />
-          </Button>
+            <Button
+              variant="unstyled"
+              aria-label="Go to previous page"
+              onClick={prev}
+              isDisabled={!hasPrev}
+              data-testid="hds.relay-pagination.button.previous"
+              data-freeflow="true"
+            >
+              <Icon as={ArrowLeftIcon} sx={styles.icon} />
+              Previous
+            </Button>
+
+            <Button
+              variant="unstyled"
+              aria-label="Go to next page"
+              onClick={next}
+              isDisabled={!hasNext}
+              data-testid="hds.relay-pagination.button.next"
+              data-freeflow="true"
+            >
+              Next
+              <Icon as={ArrowRightIcon} sx={styles.icon} />
+            </Button>
+          </ButtonGroup>
         </Flex>
       </Flex>
     </Box>
