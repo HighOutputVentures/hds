@@ -1,27 +1,32 @@
 import {
   Box,
+  Center,
   chakra,
   Checkbox,
   Flex,
+  HStack,
   Icon,
   Popover,
   PopoverArrow,
   PopoverBody,
   PopoverContent,
   PopoverTrigger,
+  Spinner,
   SystemStyleObject,
   Table,
   TableContainer,
   Tbody,
   Td,
+  Text,
   Th,
   Thead,
   Tr,
 } from "@chakra-ui/react";
 import * as React from "react";
+import { v4 as uuid } from "uuid";
+import { tableContainerStyles, tableStyles } from "./hooks";
 import ArrowDownIcon from "./icons/ArrowDownIcon";
 import HelpCircleIcon from "./icons/HelpCircleIcon";
-import { v4 as uuid } from "uuid";
 
 export type UnknownArray = unknown[];
 export type ArrayItem<T extends UnknownArray> = T[number];
@@ -62,6 +67,8 @@ export type CheckAllContext<T extends UnknownArray> = {
 export type TableProps<T extends UnknownArray> = {
   items: T;
   columns: Column<T>[];
+  isLoading?: boolean;
+  renderLoader?: React.ReactNode;
   renderHeader?: React.ReactNode;
   renderFooter?: React.ReactNode;
 } & Omit<
@@ -71,7 +78,7 @@ export type TableProps<T extends UnknownArray> = {
 >;
 
 export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
-  const { items, columns, renderHeader, renderFooter, ...styles } = props;
+  const { items, columns, isLoading, renderLoader, renderHeader, renderFooter, ...styles } = props;
 
   /*
 
@@ -95,6 +102,11 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
 
   const [checkedItems, setCheckedItems] = React.useState(getCheckStatus);
 
+  const Loader = () => {
+    if (!!renderLoader) return <React.Fragment>{renderLoader}</React.Fragment>;
+    return <DefaultLoader numOfCols={columns.length} />;
+  };
+
   return (
     <Box
       sx={{
@@ -109,66 +121,8 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
         </Box>
       )}
 
-      <TableContainer
-      data-testid="hds.table.container"
-        sx={{
-          "&::-webkit-scrollbar": {
-            width: "12px",
-          },
-          "&::-webkit-scrollbar-thumb": {
-            rounded: "full",
-            bgColor: "neutrals.300",
-            border: "6px solid",
-            borderColor: "transparent",
-            backgroundClip: "padding-box",
-          },
-          "&::-webkit-scrollbar-track-piece": {
-            rounded: "full",
-            bgColor: "neutrals.100",
-            border: "6px solid",
-            borderColor: "transparent",
-            backgroundClip: "padding-box",
-          },
-          "&::-webkit-scrollbar-track": {
-            bgColor: "transparent",
-          },
-        }}
-      >
-        <Table
-          data-testid="hds.table"
-          sx={{
-            thead: {
-              bgColor: "#F9FAFB",
-            },
-            "th, td": {
-              borderColor: "#EAECF0",
-            },
-            th: {
-              paddingY: "12px",
-              paddingX: "24px",
-              textTransform: "unset",
-              color: "#667085",
-              fontSize: "12px",
-              lineHeight: "18px",
-              fontWeight: "medium",
-            },
-            td: {
-              paddingY: "16px",
-              paddingX: "24px",
-              color: "#7A7A7A",
-              fontSize: "14px",
-              lineHeight: "20px",
-              letterSpacing: "0.02em",
-            },
-            tr: {
-              _last: {
-                td: {
-                  borderBottom: "none",
-                },
-              },
-            },
-          }}
-        >
+      <TableContainer data-testid="hds.table.container" sx={tableContainerStyles}>
+        <Table data-testid="hds.table" sx={tableStyles}>
           <Thead data-testid="hds.table.header">
             <Tr data-testid="hds.table.header.tr">
               {columns.map(
@@ -221,49 +175,53 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
           </Thead>
 
           <Tbody data-testid="hds.table.body">
-            {items.map((item, index_0) => {
-              return (
-                <Tr key={uuid()} data-testid="hds.table.body.tr">
-                  {columns.map(
-                    ({ onSort, onCheck, onClick, defaultChecked, ...others }, index_1) => {
-                      const renderRow = others.renderRow ?? ((obj) => String(obj));
+            {isLoading && <Loader />}
+            {!isLoading && !items.length && <Empty numOfCols={columns.length} />}
+            {!isLoading &&
+              items.length &&
+              items.map((item, index_0) => {
+                return (
+                  <Tr key={uuid()} data-testid="hds.table.body.tr">
+                    {columns.map(
+                      ({ onSort, onCheck, onClick, defaultChecked, ...others }, index_1) => {
+                        const renderRow = others.renderRow ?? ((obj) => String(obj));
 
-                      return (
-                        <Td
-                          key={uuid()}
-                          onClick={() => {
-                            onClick?.({ item });
-                          }}
-                          data-testid="hds.table.body.td"
-                        >
-                          <Flex alignItems="center" gap="12px">
-                            {onCheck && (
-                              <Checkbox
-                                aria-label="Select item"
-                                isChecked={checkedItems[index_1][index_0]}
-                                onChange={(e) => {
-                                  const isChecked = e.target.checked;
-                                  onCheck({ isChecked, item });
-                                  setCheckedItems((i) => {
-                                    return i.map((j, idx_0) => {
-                                      return idx_0 === index_1
-                                        ? j.map((k, idx_1) => (idx_1 === index_0 ? isChecked : k))
-                                        : j;
+                        return (
+                          <Td
+                            key={uuid()}
+                            onClick={() => {
+                              onClick?.({ item });
+                            }}
+                            data-testid="hds.table.body.td"
+                          >
+                            <Flex alignItems="center" gap="12px">
+                              {onCheck && (
+                                <Checkbox
+                                  aria-label="Select item"
+                                  isChecked={checkedItems[index_1][index_0]}
+                                  onChange={(e) => {
+                                    const isChecked = e.target.checked;
+                                    onCheck({ isChecked, item });
+                                    setCheckedItems((i) => {
+                                      return i.map((j, idx_0) => {
+                                        return idx_0 === index_1
+                                          ? j.map((k, idx_1) => (idx_1 === index_0 ? isChecked : k))
+                                          : j;
+                                      });
                                     });
-                                  });
-                                }}
-                              />
-                            )}
+                                  }}
+                                />
+                              )}
 
-                            <Box>{renderRow(item)}</Box>
-                          </Flex>
-                        </Td>
-                      );
-                    },
-                  )}
-                </Tr>
-              );
-            })}
+                              <Box>{renderRow(item)}</Box>
+                            </Flex>
+                          </Td>
+                        );
+                      },
+                    )}
+                  </Tr>
+                );
+              })}
           </Tbody>
         </Table>
       </TableContainer>
@@ -274,6 +232,29 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
         </Box>
       )}
     </Box>
+  );
+}
+
+function Empty({ numOfCols }: { numOfCols: number }) {
+  return (
+    <Td data-testid="hds.table.empty" colSpan={numOfCols}>
+      <Center width="full">
+        <Text size="sm">No records found</Text>
+      </Center>
+    </Td>
+  );
+}
+
+function DefaultLoader({ numOfCols }: { numOfCols: number }) {
+  return (
+    <Td data-testid="hds.table.loader" colSpan={numOfCols}>
+      <Center width="full">
+        <HStack spacing={3}>
+          <Spinner size="sm" />
+          <Text size="sm">Loading...</Text>
+        </HStack>
+      </Center>
+    </Td>
   );
 }
 

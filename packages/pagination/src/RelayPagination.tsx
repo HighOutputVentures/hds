@@ -33,8 +33,8 @@ export default function RelayPagination({
   const styles = useStyles("relay");
 
   const remainder = count % pageSize;
-  const indexFrom = (page - 1) * pageSize + 1;
-  const indexTo = page * pageSize;
+  const indexFrom = count <= 0 ? 0 : (page - 1) * pageSize + 1;
+  const indexTo = count <= 0 ? 0 : page * pageSize;
 
   const hasPrev = page > 1;
   const hasNext = page * pageSize < count;
