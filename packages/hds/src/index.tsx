@@ -14,15 +14,6 @@ import { ButtonVariantsTypes, CloseButtonVariantTypes } from './theme/components
 import { extendTheme } from './utils/theme.utils';
 
 export {
-  Accordion,
-  AccordionButton,
-  AccordionButtonProps,
-  AccordionIcon,
-  AccordionItem,
-  AccordionItemProps,
-  AccordionPanel,
-  AccordionPanelProps,
-  AccordionProps,
   Alert,
   AlertDescription,
   AlertDescriptionProps,
