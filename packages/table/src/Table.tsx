@@ -64,18 +64,17 @@ export type CheckAllContext<T extends UnknownArray> = {
   isChecked: boolean;
 };
 
-export type TableProps<T extends UnknownArray> = {
+export type TableBaseProps<T extends UnknownArray> = {
   items: T;
   columns: Column<T>[];
   isLoading?: boolean;
   renderLoader?: React.ReactNode;
   renderHeader?: React.ReactNode;
   renderFooter?: React.ReactNode;
-} & Omit<
-  SystemStyleObject,
-  /* ensure base types won't be overrident */
-  "columns" | "items" | "renderHeader" | "renderFooter"
->;
+};
+
+export type TableProps<T extends UnknownArray> = TableBaseProps<T> &
+  Omit<SystemStyleObject, Required<keyof TableBaseProps<T>>>;
 
 export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
   const { items, columns, isLoading, renderLoader, renderHeader, renderFooter, ...styles } = props;
@@ -176,9 +175,9 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
 
           <Tbody data-testid="hds.table.body">
             {isLoading && <Loader />}
-            {!isLoading && !items.length && <Empty numOfCols={columns.length} />}
+            {!isLoading && items.length <= 0 && <Empty numOfCols={columns.length} />}
             {!isLoading &&
-              items.length &&
+              items.length >= 1 &&
               items.map((item, index_0) => {
                 return (
                   <Tr key={uuid()} data-testid="hds.table.body.tr">
