@@ -64,6 +64,7 @@ Default.args = {
       </chakra.button>
     </Flex>
   ),
+  isLoading: false,
   columns: [
     {
       label: "Name",
