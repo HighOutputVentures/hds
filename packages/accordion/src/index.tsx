@@ -3,7 +3,6 @@ export {
   AccordionButton,
   AccordionButtonProps,
   AccordionIcon,
-  AccordionIconProps,
   AccordionItem,
   AccordionItemProps,
   AccordionPanel,
