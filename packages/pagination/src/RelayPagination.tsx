@@ -14,12 +14,23 @@ import * as React from "react";
 import { useStyles } from "./hooks";
 import { decrement, increment } from "./utils";
 
+type Value = {
+  page: number;
+  pageSize: number;
+  isNextPage?: boolean;
+  isPreviousPage?: boolean;
+};
+
 export type RelayPaginationProps = {
   page: number;
   pageSize: number;
   sizes?: number[];
   count: number;
-  onChange(value: { page: number; pageSize: number }): void;
+  onChange(value: Value): void;
+  /** disable next button eg. when fetching next page */
+  isNextDisabled?: boolean;
+  /** disable previous button eg. when fetching previous page */
+  isPreviousDisabled?: boolean;
 };
 
 export default function RelayPagination({
@@ -28,6 +39,8 @@ export default function RelayPagination({
   sizes,
   count,
   onChange,
+  isNextDisabled,
+  isPreviousDisabled,
   ...others
 }: RelayPaginationProps & SystemStyleObject) {
   const styles = useStyles("relay");
@@ -45,6 +58,7 @@ export default function RelayPagination({
     onChange({
       page: decrement(page),
       pageSize,
+      isPreviousPage: true,
     });
   }, [
     //
@@ -59,6 +73,7 @@ export default function RelayPagination({
     onChange({
       page: increment(page),
       pageSize,
+      isNextPage: true,
     });
   }, [
     //
@@ -113,7 +128,7 @@ export default function RelayPagination({
               variant="unstyled"
               aria-label="Go to previous page"
               onClick={prev}
-              isDisabled={!hasPrev}
+              isDisabled={!hasPrev || isPreviousDisabled}
               data-testid="hds.relay-pagination.button.previous"
               data-freeflow="true"
             >
@@ -125,7 +140,7 @@ export default function RelayPagination({
               variant="unstyled"
               aria-label="Go to next page"
               onClick={next}
-              isDisabled={!hasNext}
+              isDisabled={!hasNext || isNextDisabled}
               data-testid="hds.relay-pagination.button.next"
               data-freeflow="true"
             >
