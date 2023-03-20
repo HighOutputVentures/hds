@@ -37,6 +37,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - run: |
+          git fetch --no-tags --prune --depth=1 origin +refs/heads/master:refs/remotes/origin/master
+
       - run: npm install
-      - run: npm run test
-      - run: npm run build
+      - run: npx lerna run test --since origin/master
+      - run: npx lerna run build --since origin/master
