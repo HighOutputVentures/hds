@@ -1,28 +1,24 @@
-// @ts-nocheck
-
 import { Avatar, Badge, Box, chakra, Flex, Heading, HStack, Icon, Text } from "@chakra-ui/react";
 import { faker } from "@faker-js/faker";
 import { ThemeProvider } from "@highoutput/hds";
 import { ComponentStory, Meta } from "@storybook/react";
 import * as React from "react";
-import DotsVerticalIcon from "./icons/DotsVerticalIcon";
-import PencilIcon from "./icons/PencilIcon";
-import TrashIcon from "./icons/TrashIcon";
-import Table from "./Table";
+import { DotsVerticalIcon, TrashIcon } from "~/icons";
+import { Pagination } from "~/pagination";
+import Table, { TableProps } from "./Table";
 
-export default { title: "Components/Table", argTypes: {} } as Meta;
-
-const Template: ComponentStory<typeof Table> = (args) => {
-  return (
-    <ThemeProvider>
-      <Table {...args} />
-    </ThemeProvider>
-  );
+type TUser = {
+  id: string;
+  name: string;
+  email: string;
+  avatar: string;
+  username: string;
+  isActive: boolean;
+  role: string;
+  teams: string[];
 };
 
-export const Default = Template.bind({});
-
-const items = new Array(10).fill(null).map(() => {
+function mockUser(): TUser {
   return {
     id: faker.datatype.uuid(),
     name: faker.name.fullName(),
@@ -33,11 +29,24 @@ const items = new Array(10).fill(null).map(() => {
     role: faker.name.jobTitle(),
     teams: ["Design", "Product", "Marketing"],
   };
-});
+}
 
-Default.args = {
-  items,
-  renderHeader: (
+const items = new Array(5).fill(null).map(() => mockUser());
+
+export default { title: "Components/Table", argTypes: {} } as Meta;
+
+const Template: ComponentStory<(props: TableProps<TUser[]>) => JSX.Element> = (args) => {
+  return (
+    <ThemeProvider>
+      <Table {...args} />
+    </ThemeProvider>
+  );
+};
+
+export const Default = Template.bind({});
+
+function Header() {
+  return (
     <Flex alignItems="center" justifyContent="space-between">
       <HStack spacing="8px">
         <Heading fontSize="20px" lineHeight="20px" color="#0F0F0F" fontWeight="normal">
@@ -63,8 +72,25 @@ Default.args = {
         <Icon as={DotsVerticalIcon} w="20px" h="20px" color="#A3A3A3" />
       </chakra.button>
     </Flex>
-  ),
+  );
+}
+
+function Footer() {
+  return (
+    <Pagination
+      variant="relay"
+      page={1}
+      pageSize={10}
+      count={100}
+      sizes={[10, 20, 30, 40, 50]}
+      onChange={function noop() {}}
+    />
+  );
+}
+
+Default.args = {
   isLoading: false,
+  items,
   columns: [
     {
       label: "Name",
@@ -166,11 +192,12 @@ Default.args = {
       renderRow() {
         return (
           <HStack spacing="24px">
-            <Icon as={TrashIcon} d="flex" w="20px" h="20px" color="#7A7A7A" />
-            <Icon as={PencilIcon} d="flex" w="20px" h="20px" color="#7A7A7A" />
+            <TrashIcon d="flex" w="20px" h="20px" color="#7A7A7A" />
           </HStack>
         );
       },
     },
   ],
+  renderHeader: <Header />,
+  renderFooter: <Footer />,
 };
