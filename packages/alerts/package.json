@@ -21,6 +21,9 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
+  "dependencies": {
+    "@highoutput/hds-icons": "*"
+  },
   "peerDependencies": {
     "react": ">=16"
   },

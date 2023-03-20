@@ -52,7 +52,8 @@
     "access": "public"
   },
   "dependencies": {
-    "chakra-react-select": "4.4.0"
+    "chakra-react-select": "4.4.0",
+    "@highoutput/hds-forms": "*"
   },
   "gitHead": "2cc842169e828ff56ef57e039534fb0414854443"
 }
