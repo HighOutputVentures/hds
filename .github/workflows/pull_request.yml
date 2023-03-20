@@ -37,6 +37,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - run: npm install --ignore-scripts
-      - run: npx lerna run test --since master
-      - run: npx lerna run build --since master
+      - run: |
+          git fetch --no-tags --prune --depth=1 origin +refs/heads/master:refs/remotes/origin/master
+
+      - run: npm install
+      - run: npx lerna run test --since origin/master
+      - run: npx lerna run build --since origin/master
