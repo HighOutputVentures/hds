@@ -1,4 +1,3 @@
-import { SystemStyleObject } from "@chakra-ui/react";
 import * as React from "react";
 import GroupPagination, { GroupPaginationProps } from "./GroupPagination";
 import MinimalPagination, { MinimalPaginationProps } from "./MinimalPagination";
@@ -9,7 +8,7 @@ export type PaginationProps =
   | ({ variant: "relay" } & RelayPaginationProps)
   | ({ variant: "group" } & GroupPaginationProps);
 
-export default function Pagination(props: PaginationProps & SystemStyleObject) {
+export default function Pagination(props: PaginationProps) {
   switch (props.variant) {
     case "minimal":
       return <MinimalPagination {...props} />;
@@ -18,6 +17,6 @@ export default function Pagination(props: PaginationProps & SystemStyleObject) {
     case "relay":
       return <RelayPagination {...props} />;
     default:
-      throw new Error("Unsupported pagination variant");
+      throw new Error("Unsupported pagination 'variant'");
   }
 }

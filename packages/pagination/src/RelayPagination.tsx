@@ -9,7 +9,7 @@ import {
   SystemStyleObject,
   Text,
 } from "@chakra-ui/react";
-import { ArrowLeftIcon, ArrowRightIcon } from "@highoutput/hds-icons";
+import { ArrowLeftIcon, ArrowRightIcon, ChevronDownIcon } from "@highoutput/hds-icons";
 import * as React from "react";
 import { useStyles } from "./hooks";
 import { decrement, increment } from "./utils";
@@ -21,17 +21,20 @@ type Value = {
   isPreviousPage?: boolean;
 };
 
-export type RelayPaginationProps = {
+type RelayBasePaginationProps = {
   page: number;
   pageSize: number;
   sizes?: number[];
   count: number;
-  onChange(value: Value): void;
-  /** disable next button eg. when fetching next page */
+  onChange: (value: Value) => void;
+  isNextLoading?: boolean;
   isNextDisabled?: boolean;
-  /** disable previous button eg. when fetching previous page */
+  isPreviousLoading?: boolean;
   isPreviousDisabled?: boolean;
 };
+
+export type RelayPaginationProps = RelayBasePaginationProps &
+  Omit<SystemStyleObject, Required<keyof RelayBasePaginationProps>>;
 
 export default function RelayPagination({
   page,
@@ -41,8 +44,10 @@ export default function RelayPagination({
   onChange,
   isNextDisabled,
   isPreviousDisabled,
+  isNextLoading,
+  isPreviousLoading,
   ...others
-}: RelayPaginationProps & SystemStyleObject) {
+}: RelayPaginationProps) {
   const styles = useStyles("relay");
 
   const remainder = count % pageSize;
@@ -83,9 +88,19 @@ export default function RelayPagination({
   ]);
 
   return (
-    <Box sx={others}>
+    <Box
+      as="nav"
+      aria-label="Pagination"
+      aria-busy={isNextLoading || isPreviousLoading}
+      sx={others}
+    >
       <Flex alignItems="center">
-        <Text data-testid="hds.relay-pagination.legend" sx={styles.legend}>
+        <Text
+          data-testid="hds.relay-pagination.legend"
+          sx={styles.legend}
+          role="status"
+          aria-live="polite"
+        >
           Page {indexFrom} - {indexTo > count ? indexFrom - 1 + remainder : indexTo} of {count}
         </Text>
 
@@ -108,10 +123,11 @@ export default function RelayPagination({
                     pageSize: newSize,
                   });
                 }}
+                icon={<ChevronDownIcon sx={styles.selectIcon} />}
               >
                 {sizes.map((size) => (
                   <option key={size} value={size}>
-                    {size} Entries
+                    {size} entries
                   </option>
                 ))}
               </Select>
@@ -129,6 +145,7 @@ export default function RelayPagination({
               aria-label="Go to previous page"
               onClick={prev}
               isDisabled={!hasPrev || isPreviousDisabled}
+              isLoading={isPreviousLoading}
               data-testid="hds.relay-pagination.button.previous"
               data-freeflow="true"
             >
@@ -141,6 +158,7 @@ export default function RelayPagination({
               aria-label="Go to next page"
               onClick={next}
               isDisabled={!hasNext || isNextDisabled}
+              isLoading={isNextLoading}
               data-testid="hds.relay-pagination.button.next"
               data-freeflow="true"
             >

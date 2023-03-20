@@ -11,6 +11,7 @@ export function useStyles(variant: "group" | "minimal" | "relay") {
       icon: iconStyles,
       legend: legendStyles,
       select: selectStyles,
+      selectIcon: selectIconStyles,
       group: buttonGroupStyles,
     };
   }
@@ -75,14 +76,20 @@ const iconStyles = {
 
 const selectStyles = {
   fontSize: "14px",
-  lineHeight: "1",
   height: "40px",
   width: "full",
-  color: "#0F0F0F!important",
+  color: "#525252!important",
   rounded: "lg",
   border: "1px solid",
   borderColor: "#D6D6D6",
-  paddingX: 2,
+  paddingX: 2.5,
+};
+
+const selectIconStyles = {
+  width: "14px!important",
+  height: "14px!important",
+  stroke: "#7A7A7A",
+  strokeWidth: 2.5,
 };
 
 const buttonGroupStyles = {

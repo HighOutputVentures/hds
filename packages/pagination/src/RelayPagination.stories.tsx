@@ -34,6 +34,42 @@ export default {
       defaultValue: 100,
       control: "number",
     },
+    isNextLoading: {
+      name: "isNextLoading",
+      type: {
+        name: "boolean",
+        required: false,
+      },
+      defaultValue: false,
+      control: "boolean",
+    },
+    isPreviousLoading: {
+      name: "isPreviousLoading",
+      type: {
+        name: "boolean",
+        required: false,
+      },
+      defaultValue: false,
+      control: "boolean",
+    },
+    isNextDisabled: {
+      name: "isNextDisabled",
+      type: {
+        name: "boolean",
+        required: false,
+      },
+      defaultValue: false,
+      control: "boolean",
+    },
+    isPreviousDisabled: {
+      name: "isPreviousDisabled",
+      type: {
+        name: "boolean",
+        required: false,
+      },
+      defaultValue: false,
+      control: "boolean",
+    },
   },
 } as Meta;
 
@@ -54,6 +90,10 @@ const Template: ComponentStory<typeof Pagination> = () => {
             ...value,
           });
         }}
+        isNextLoading={args.isNextLoading}
+        isNextDisabled={args.isNextDisabled}
+        isPreviousLoading={args.isPreviousLoading}
+        isPreviousDisabled={args.isPreviousDisabled}
       />
     </ThemeProvider>
   );

@@ -24,7 +24,7 @@ import {
 } from "@chakra-ui/react";
 import * as React from "react";
 import { v4 as uuid } from "uuid";
-import { tableContainerStyles, tableStyles } from "./hooks";
+import { useStyles } from "./hooks";
 import ArrowDownIcon from "./icons/ArrowDownIcon";
 import HelpCircleIcon from "./icons/HelpCircleIcon";
 
@@ -77,7 +77,9 @@ export type TableProps<T extends UnknownArray> = TableBaseProps<T> &
   Omit<SystemStyleObject, Required<keyof TableBaseProps<T>>>;
 
 export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
-  const { items, columns, isLoading, renderLoader, renderHeader, renderFooter, ...styles } = props;
+  const { items, columns, isLoading, renderLoader, renderHeader, renderFooter, ...others } = props;
+
+  const styles = useStyles({ hasBottomRowBorder: !!renderFooter });
 
   /*
 
@@ -101,32 +103,49 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
 
   const [checkedItems, setCheckedItems] = React.useState(getCheckStatus);
 
-  const Loader = () => {
-    if (!!renderLoader) return <React.Fragment>{renderLoader}</React.Fragment>;
-    return <DefaultLoader numOfCols={columns.length} />;
-  };
+  const totalColumns = columns.length;
+  const shouldShowTable = items.length >= 1;
+  const shouldShowEmpty = items.length <= 0 && !isLoading;
+  const shouldHardLoad = items.length <= 0 && !!isLoading;
+  const shouldSoftLoad = items.length >= 1 && !!isLoading;
+
+  const SoftLoader = () => (!renderLoader ? <SoftLoaderDefault /> : <>{renderLoader}</>);
+  const HardLoader = () =>
+    !renderLoader ? <HardLoaderDefault numOfCols={totalColumns} /> : <>{renderLoader}</>;
 
   return (
     <Box
       sx={{
-        ...styles,
+        ...others,
         border: "1px solid #EAECF0",
         rounded: "md",
+        position: "relative",
       }}
     >
-      {renderHeader && (
+      {!!renderHeader && (
         <Box borderBottom="1px solid #EAECF0" paddingX="24px" paddingY="20px">
           {renderHeader}
         </Box>
       )}
 
-      <TableContainer data-testid="hds.table.container" sx={tableContainerStyles}>
-        <Table data-testid="hds.table" sx={tableStyles}>
+      {shouldSoftLoad && <SoftLoader />}
+
+      <TableContainer data-testid="hds.table.container" aria-busy={isLoading} sx={styles.container}>
+        <Table data-testid="hds.table" sx={styles.table}>
           <Thead data-testid="hds.table.header">
             <Tr data-testid="hds.table.header.tr">
               {columns.map(
                 (
-                  { label, tooltip, width, onSort, onCheck, onCheckAll, defaultSort = "desc" },
+                  {
+                    //
+                    label,
+                    tooltip,
+                    width,
+                    onSort,
+                    onCheck,
+                    onCheckAll,
+                    defaultSort = "desc",
+                  },
                   index,
                 ) => {
                   return (
@@ -173,11 +192,11 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
             </Tr>
           </Thead>
 
-          <Tbody data-testid="hds.table.body">
-            {isLoading && <Loader />}
-            {!isLoading && items.length <= 0 && <Empty numOfCols={columns.length} />}
-            {!isLoading &&
-              items.length >= 1 &&
+          <Tbody position="relative" data-testid="hds.table.body">
+            {shouldSoftLoad && <SoftLoaderOverlay />}
+            {shouldHardLoad && <HardLoader />}
+            {shouldShowEmpty && <Empty numOfCols={totalColumns} />}
+            {shouldShowTable &&
               items.map((item, index_0) => {
                 return (
                   <Tr key={uuid()} data-testid="hds.table.body.tr">
@@ -225,7 +244,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
         </Table>
       </TableContainer>
 
-      {renderFooter && (
+      {!!renderFooter && (
         <Box paddingX="24px" paddingY="12px">
           {renderFooter}
         </Box>
@@ -236,24 +255,67 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
 
 function Empty({ numOfCols }: { numOfCols: number }) {
   return (
-    <Td data-testid="hds.table.empty" colSpan={numOfCols}>
-      <Center width="full">
-        <Text size="sm">No records found</Text>
-      </Center>
-    </Td>
+    <Tr data-testid="hds.table.empty.row">
+      <Td data-testid="hds.table.empty.col" colSpan={numOfCols}>
+        <Center width="full">
+          <Text size="sm">No records found</Text>
+        </Center>
+      </Td>
+    </Tr>
   );
 }
 
-function DefaultLoader({ numOfCols }: { numOfCols: number }) {
+function SoftLoaderDefault() {
   return (
-    <Td data-testid="hds.table.loader" colSpan={numOfCols}>
-      <Center width="full">
-        <HStack spacing={3}>
-          <Spinner size="sm" />
-          <Text size="sm">Loading...</Text>
-        </HStack>
-      </Center>
-    </Td>
+    <Spinner
+      pos="absolute"
+      size="lg"
+      zIndex="3"
+      top="50%"
+      left="50%"
+      transform="translate(-50%, -50%)"
+      color="brand.primary.700"
+      emptyColor="neutrals.200"
+      thickness="3px"
+      speed="0.75s"
+    />
+  );
+}
+
+function SoftLoaderOverlay() {
+  return (
+    <Tr
+      position="absolute"
+      zIndex="2"
+      bgColor="#ffffffab"
+      top={0}
+      left={0}
+      width="full"
+      height="full"
+    />
+  );
+}
+
+function HardLoaderDefault({ numOfCols }: { numOfCols: number }) {
+  return (
+    <Tr data-testid="hds.table.loader.row">
+      <Td data-testid="hds.table.loader.col" colSpan={numOfCols}>
+        <Center width="full">
+          <HStack spacing={2}>
+            <Spinner
+              size="sm"
+              color="brand.primary.700"
+              emptyColor="neutrals.200"
+              thickness="3px"
+              speed="0.75s"
+            />
+            <Text size="sm" color="neutrals.500">
+              Loading...
+            </Text>
+          </HStack>
+        </Center>
+      </Td>
+    </Tr>
   );
 }
 

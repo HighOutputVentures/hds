@@ -2,10 +2,10 @@
 
 exports[`Table Should match snapshot 1`] = `
 <div
-  className="css-yyjzgd"
+  className="css-1uzs8zz"
 >
   <div
-    className="chakra-table__container css-1fofo75"
+    className="chakra-table__container css-noq6c0"
     data-testid="hds.table.container"
   >
     <table
@@ -197,7 +197,7 @@ exports[`Table Should match snapshot 1`] = `
         </tr>
       </thead>
       <tbody
-        className="css-0"
+        className="css-79elbk"
         data-testid="hds.table.body"
       >
         <tr
