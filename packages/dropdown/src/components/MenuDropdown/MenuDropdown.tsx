@@ -123,8 +123,9 @@ const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
             py={'0px'}
             fontSize={'14px'}
             color="neutrals.900"
+            overflow="hidden"
           >
-            {menuHeader && (
+            {menuHeader && false && (
               <HStack p={'16px 12px'}>
                 <Avatar src={menuHeader?.profileUrl} width="40px" height="40px">
                   {indicator && <AvatarBadge boxSize="1em" bg="#00C408" />}
