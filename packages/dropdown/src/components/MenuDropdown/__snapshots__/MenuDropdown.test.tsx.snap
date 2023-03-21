@@ -53,7 +53,7 @@ Array [
     >
       <div
         aria-orientation="vertical"
-        className="chakra-menu__menu-list css-1xvrq0b"
+        className="chakra-menu__menu-list css-8t7bdd"
         data-testid="hds.menu.list"
         id="menu-list-:r1:"
         onKeyDown={[Function]}
