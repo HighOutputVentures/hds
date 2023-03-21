@@ -124,9 +124,14 @@ export default function RelayPagination({
                   });
                 }}
                 icon={<ChevronDownIcon sx={styles.selectIcon} />}
+                data-testid="hds.relay-pagination.select"
               >
                 {sizes.map((size) => (
-                  <option key={size} value={size}>
+                  <option
+                    key={size}
+                    value={size}
+                    data-testid={`hds.relay-pagination.select.${size}`}
+                  >
                     {size} entries
                   </option>
                 ))}
