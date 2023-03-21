@@ -8,7 +8,6 @@
           "build",
           "test",
           "lint",
-          "prepare",
           "size",
           "analyze",
           "storybook",
@@ -22,14 +21,7 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ]
-    },
-    "prepare": {
-      "dependsOn": [
-        "^prepare"
-      ]
+      "dependsOn": ["^build"]
     }
   },
   "affected": {

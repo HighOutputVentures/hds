@@ -1,11 +1,5 @@
-import { Button } from '@chakra-ui/react';
-import {
-  Alert,
-  AlertDescription,
-  AlertIcon,
-  Box,
-  Stack,
-} from '@highoutput/hds';
+import { Button, Alert, AlertDescription, AlertIcon } from '@chakra-ui/react';
+import { Box, Stack } from '@highoutput/hds';
 import { InputField, TextAreaField } from '@highoutput/hds-forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { FC } from 'react';
