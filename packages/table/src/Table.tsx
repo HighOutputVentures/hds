@@ -255,8 +255,8 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
 
 function Empty({ numOfCols }: { numOfCols: number }) {
   return (
-    <Tr data-testid="hds.table.empty.row">
-      <Td data-testid="hds.table.empty.col" colSpan={numOfCols}>
+    <Tr data-testid="hds.table.empty-indicator">
+      <Td colSpan={numOfCols}>
         <Center width="full">
           <Text size="sm">No records found</Text>
         </Center>
@@ -285,6 +285,7 @@ function SoftLoaderDefault() {
 function SoftLoaderOverlay() {
   return (
     <Tr
+      data-testid="hds.table.loading-indicator"
       position="absolute"
       zIndex="2"
       bgColor="#ffffffab"
@@ -298,8 +299,8 @@ function SoftLoaderOverlay() {
 
 function HardLoaderDefault({ numOfCols }: { numOfCols: number }) {
   return (
-    <Tr data-testid="hds.table.loader.row">
-      <Td data-testid="hds.table.loader.col" colSpan={numOfCols}>
+    <Tr data-testid="hds.table.loading-indicator">
+      <Td colSpan={numOfCols}>
         <Center width="full">
           <HStack spacing={2}>
             <Spinner
