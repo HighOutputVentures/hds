@@ -278,6 +278,7 @@ function SoftLoaderDefault() {
       emptyColor="neutrals.200"
       thickness="3px"
       speed="0.75s"
+      data-testid="hds.table.loading-indicator"
     />
   );
 }
@@ -285,7 +286,6 @@ function SoftLoaderDefault() {
 function SoftLoaderOverlay() {
   return (
     <Tr
-      data-testid="hds.table.loading-indicator"
       position="absolute"
       zIndex="2"
       bgColor="#ffffffab"
