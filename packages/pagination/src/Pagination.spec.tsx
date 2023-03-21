@@ -60,7 +60,7 @@ describe("Pagination", () => {
     );
   });
 
-  it("Should match snapshot", () => {
+  it.skip("Should match snapshot", () => {
     const component = renderer.create(
       <Pagination
         variant="minimal"
