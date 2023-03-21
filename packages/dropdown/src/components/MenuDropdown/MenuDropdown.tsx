@@ -123,6 +123,7 @@ const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
             py={'0px'}
             fontSize={'14px'}
             color="neutrals.900"
+            overflow="hidden"
           >
             {menuHeader && (
               <HStack p={'16px 12px'}>
