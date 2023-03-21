@@ -55,8 +55,8 @@
   },
   "dependencies": {
     "@highoutput/hds": "^0.2.8",
-    "@highoutput/hds-forms": "^0.2.1",
-    "@highoutput/hds-icons": "^0.1.35"
+    "@highoutput/hds-forms": "*",
+    "@highoutput/hds-icons": "*"
   },
   "jest": {
     "verbose": true,

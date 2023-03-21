@@ -51,7 +51,7 @@
     "size-limit": "7.0.8"
   },
   "dependencies": {
-    "@highoutput/hds-icons": "^0.1.35",
+    "@highoutput/hds-icons": "*",
     "@zag-js/pagination": "^0.1.14",
     "@zag-js/react": "^0.3.10"
   },
