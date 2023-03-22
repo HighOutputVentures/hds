@@ -1,5 +1,5 @@
 {
-  "version": "0.2.6",
+  "version": "0.2.7",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -19,7 +19,7 @@
     "analyze": "size-limit --why"
   },
   "dependencies": {
-    "@highoutput/hds": "^0.2.12"
+    "@highoutput/hds": "^0.2.13"
   },
   "peerDependencies": {
     "react": ">=16"
