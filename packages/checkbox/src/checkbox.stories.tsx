@@ -2,7 +2,7 @@ import { HStack, VStack } from '@chakra-ui/react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
-import { ThemeProvider } from '../..';
+import { ThemeProvider } from '@highoutput/hds/src';
 import Checkbox from './checkbox';
 
 export default {

@@ -1,12 +1,6 @@
 import Button, { ButtonProps } from './components/Button/Button';
 import CloseButton, { CloseButtonProps } from './components/Button/CloseButton';
 import SocialButton, { SocialButtonProps } from './components/Button/SocialButton';
-import Checkbox, {
-  CheckProps,
-  CheckTypeProps,
-  CircleIcon,
-  RadioTypeProps,
-} from './components/Checkbox/checkbox';
 import ThemeProvider, { ThemeProviderProps } from './components/ThemeProvider';
 import theme from './theme';
 import { ButtonSizeTypes, CloseButtonSizeTypes } from './theme/components/button/sizes';
@@ -16,12 +10,6 @@ import { extendTheme } from './utils/theme.utils';
 export {
   AspectRatio,
   AspectRatioProps,
-  Avatar,
-  AvatarBadge,
-  AvatarBadgeProps,
-  AvatarGroup,
-  AvatarGroupProps,
-  AvatarProps,
   Badge,
   BadgeProps,
   Box,
@@ -346,11 +334,6 @@ export {
   SocialButtonProps,
   CloseButton,
   CloseButtonProps,
-  Checkbox,
-  CheckProps,
-  CheckTypeProps,
-  CircleIcon,
-  RadioTypeProps,
   theme,
   extendTheme,
 };
