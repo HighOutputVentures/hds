@@ -46,5 +46,8 @@
       "path": "dist/hds-button.esm.js",
       "limit": "10 KB"
     }
-  ]
+  ],
+  "dependencies": {
+    "@highoutput/hds-icons": "^0.1.36"
+  }
 }
