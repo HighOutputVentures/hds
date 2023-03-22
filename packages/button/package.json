@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -34,17 +34,20 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@highoutput/hds-checkbox",
+  "name": "@highoutput/hds-button",
   "author": "John Christopher Go",
-  "module": "dist/hds-checkbox.esm.js",
+  "module": "dist/hds-button.esm.js",
   "size-limit": [
     {
-      "path": "dist/hds-checkbox.cjs.production.min.js",
+      "path": "dist/hds-button.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/hds-checkbox.esm.js",
+      "path": "dist/hds-button.esm.js",
       "limit": "10 KB"
     }
-  ]
+  ],
+  "dependencies": {
+    "@highoutput/hds-icons": "^0.1.36"
+  }
 }
