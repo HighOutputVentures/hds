@@ -1,23 +1,21 @@
 import React from 'react';
-import ThemeProvider from '../ThemeProvider';
 import { fireEvent, render, screen, within } from '@testing-library/react';
 import Checkbox from './checkbox';
+import '@testing-library/jest-dom';
 
 const handleCheck = jest.fn();
 
 describe('Checkbox Component', () => {
   beforeEach(() => {
     render(
-      <ThemeProvider>
-        <Checkbox
-          type="checkboxType"
-          checkbox_icon="checkIcon"
-          onCheck={handleCheck}
-          __testId="checkbox-test"
-          label="Label"
-          helperMsg="this is a hint to help user"
-        />
-      </ThemeProvider>
+      <Checkbox
+        type="checkboxType"
+        checkbox_icon="checkIcon"
+        onCheck={handleCheck}
+        __testId="checkbox-test"
+        label="Label"
+        helperMsg="this is a hint to help user"
+      />
     );
   });
   it('Should render checkbox', async () => {
