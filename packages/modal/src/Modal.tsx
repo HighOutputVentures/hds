@@ -12,7 +12,8 @@ import {
   ModalOverlay,
   Spacer,
 } from '@chakra-ui/react';
-import { Button, ButtonVariantsTypes } from '@highoutput/hds';
+import { ButtonVariantsTypes } from '@highoutput/hds';
+import { Button } from '@highoutput/hds-button';
 import React, { FC, ReactNode } from 'react';
 
 export interface ModalProps {

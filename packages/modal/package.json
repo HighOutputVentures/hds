@@ -19,7 +19,8 @@
     "analyze": "size-limit --why"
   },
   "dependencies": {
-    "@highoutput/hds": "^0.2.14"
+    "@highoutput/hds": "^0.2.14",
+    "@highoutput/hds-button": "0.1.2"
   },
   "peerDependencies": {
     "react": ">=16"
