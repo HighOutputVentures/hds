@@ -11,6 +11,7 @@ import {
   MenuButton,
   MenuList,
   PlacementWithLogical,
+  Portal,
   Text,
 } from '@chakra-ui/react';
 import { ThreeDots } from '@highoutput/hds-icons';
@@ -114,36 +115,42 @@ const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
             )}
           </MenuButton>
 
-          <MenuList
-            boxShadow={
-              '0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)'
-            }
-            marginTop={gap}
-            data-testid={__menuListTestId ?? 'hds.menu.list'}
-            py={'0px'}
-            fontSize={'14px'}
-            color="neutrals.900"
-            overflow="hidden"
-          >
-            {menuHeader && (
-              <HStack p={'16px 12px'}>
-                <Avatar src={menuHeader?.profileUrl} width="40px" height="40px">
-                  {indicator && <AvatarBadge boxSize="1em" bg="#00C408" />}
-                </Avatar>
+          <Portal>
+            <MenuList
+              boxShadow={
+                '0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)'
+              }
+              marginTop={gap}
+              data-testid={__menuListTestId ?? 'hds.menu.list'}
+              py={'0px'}
+              fontSize={'14px'}
+              color="neutrals.900"
+              overflow="hidden"
+            >
+              {menuHeader && (
+                <HStack p={'16px 12px'}>
+                  <Avatar
+                    src={menuHeader?.profileUrl}
+                    width="40px"
+                    height="40px"
+                  >
+                    {indicator && <AvatarBadge boxSize="1em" bg="#00C408" />}
+                  </Avatar>
 
-                <Box>
-                  <Text size="label-xs-default" color="neutrals.900" mb="4px">
-                    {menuHeader?.userName}
-                  </Text>
-                  <Text size="label-xs-default" color="neutrals.500">
-                    {menuHeader?.emailAddress}
-                  </Text>
-                </Box>
-              </HStack>
-            )}
-            <Divider orientation="horizontal" />
-            {menuItems}
-          </MenuList>
+                  <Box>
+                    <Text size="label-xs-default" color="neutrals.900" mb="4px">
+                      {menuHeader?.userName}
+                    </Text>
+                    <Text size="label-xs-default" color="neutrals.500">
+                      {menuHeader?.emailAddress}
+                    </Text>
+                  </Box>
+                </HStack>
+              )}
+              <Divider orientation="horizontal" />
+              {menuItems}
+            </MenuList>
+          </Portal>
         </Box>
       )}
     </Menu>
