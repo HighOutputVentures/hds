@@ -1,6 +1,5 @@
 import { RepeatIcon } from '@chakra-ui/icons';
-import { Menu, MenuItem } from '@chakra-ui/react';
-import { ThemeProvider } from '@highoutput/hds';
+import { ChakraProvider, Menu, MenuItem } from '@chakra-ui/react';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import renderer from 'react-test-renderer';
@@ -9,7 +8,7 @@ import MenuDropdown from './MenuDropdown';
 describe('Menu Dropdown Kebab Type Component', () => {
   beforeEach(() => {
     render(
-      <ThemeProvider>
+      <ChakraProvider>
         <MenuDropdown
           menuHeader={{
             profileUrl: '',
@@ -30,7 +29,7 @@ describe('Menu Dropdown Kebab Type Component', () => {
           }
           menuType="kebab"
         />
-      </ThemeProvider>
+      </ChakraProvider>
     );
   });
 
@@ -44,7 +43,7 @@ describe('Menu Dropdown Kebab Type Component', () => {
 describe('Menu Dropdown Button Type Component', () => {
   beforeEach(() => {
     render(
-      <ThemeProvider>
+      <ChakraProvider>
         <MenuDropdown
           menuHeader={{
             profileUrl: '',
@@ -66,7 +65,7 @@ describe('Menu Dropdown Button Type Component', () => {
           menuType="button"
           menuButtonText="Account"
         />
-      </ThemeProvider>
+      </ChakraProvider>
     );
   });
 
@@ -80,7 +79,7 @@ describe('Menu Dropdown Button Type Component', () => {
 describe('Menu Dropdown Profile Type Component', () => {
   beforeEach(() => {
     render(
-      <ThemeProvider>
+      <ChakraProvider>
         <MenuDropdown
           menuHeader={{
             profileUrl: '',
@@ -102,7 +101,7 @@ describe('Menu Dropdown Profile Type Component', () => {
           menuType="profile"
           profileUrl=""
         />
-      </ThemeProvider>
+      </ChakraProvider>
     );
   });
 
@@ -115,7 +114,7 @@ describe('Menu Dropdown Profile Type Component', () => {
 
 describe('Snapshot', () => {
   const component = renderer.create(
-    <ThemeProvider>
+    <ChakraProvider>
       <MenuDropdown
         menuHeader={{
           profileUrl: '',
@@ -137,7 +136,7 @@ describe('Snapshot', () => {
         menuType="profile"
         profileUrl=""
       />
-    </ThemeProvider>
+    </ChakraProvider>
   );
 
   const tree = component.toJSON();

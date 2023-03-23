@@ -9,7 +9,7 @@ Array [
     role="group"
   >
     <label
-      className="chakra-form__label css-1xgte9r"
+      className="chakra-form__label css-q3w9z2"
       data-testid="hds.form.control.label"
       htmlFor="field-:r0:"
       id="field-:r0:-label"
@@ -66,7 +66,7 @@ Array [
           className="css-1f43avz-a11yText-A11yText"
         />
         <div
-          className=" css-1g24mso"
+          className=" css-1yj3qfd"
           onMouseDown={[Function]}
           onTouchEnd={[Function]}
         >
@@ -110,7 +110,7 @@ Array [
             className=" css-hfbj6y"
           >
             <svg
-              className="chakra-icon chakra-icon css-4v11vh"
+              className="chakra-icon chakra-icon css-fk2u4o"
               focusable={false}
               viewBox="0 0 24 24"
             >
