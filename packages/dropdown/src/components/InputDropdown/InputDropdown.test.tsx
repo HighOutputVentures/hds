@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@highoutput/hds';
+import { ChakraProvider } from '@chakra-ui/react';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import renderer from 'react-test-renderer';
@@ -30,7 +30,7 @@ describe('Input Dropdown Component', () => {
   });
   beforeEach(() => {
     render(
-      <ThemeProvider>
+      <ChakraProvider>
         <InputDropdown
           label="Users"
           options={SELECT_OPTION}
@@ -38,7 +38,7 @@ describe('Input Dropdown Component', () => {
           __formLabelTestId={'hds.form.control.label'}
           onChangeValue={jest.fn()}
         />
-      </ThemeProvider>
+      </ChakraProvider>
     );
   });
   it('Should render Input Dropdown  form container', async () => {
@@ -62,13 +62,13 @@ describe('Input Dropdown Component', () => {
 describe('Snapshot', () => {
   it('should match snapshot', () => {
     const component = renderer.create(
-      <ThemeProvider>
+      <ChakraProvider>
         <InputDropdown
           label="Users"
           options={SELECT_OPTION}
           onChangeValue={jest.fn()}
         />
-      </ThemeProvider>
+      </ChakraProvider>
     );
 
     const tree = component.toJSON();
