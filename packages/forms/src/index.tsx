@@ -1,3 +1,10 @@
+import {
+  InputAddon,
+  InputAddonProps,
+  InputGroup,
+  InputLeftAddon,
+  InputRightAddon,
+} from '@chakra-ui/react';
 import FormContainer, {
   FormContainerProps,
 } from './FormContainer/FormContainer';
@@ -12,7 +19,6 @@ import SelectField, { SelectFieldProps } from './SelectField/SelectField';
 import TextAreaField, {
   TextAreaFieldProps,
 } from './TextareaField/TextareaField';
-
 export {
   FormContainer,
   FormContainerProps,
@@ -26,4 +32,9 @@ export {
   SelectFieldProps,
   TextAreaField,
   TextAreaFieldProps,
+  InputAddon,
+  InputRightAddon,
+  InputLeftAddon,
+  InputAddonProps,
+  InputGroup,
 };
