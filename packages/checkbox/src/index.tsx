@@ -1,9 +1,4 @@
-import {
-  Radio,
-  RadioGroup,
-  RadioGroupProps,
-  RadioProps,
-} from '@chakra-ui/react';
+import { RadioGroup, RadioGroupProps } from '@chakra-ui/react';
 import Checkbox, {
   CheckProps,
   CheckTypeProps,
@@ -16,8 +11,6 @@ export {
   Checkbox,
   CircleIcon,
   RadioTypeProps,
-  Radio,
   RadioGroup,
   RadioGroupProps,
-  RadioProps,
 };
