@@ -1,4 +1,4 @@
-import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
+import { ChevronDownIcon } from '@chakra-ui/icons';
 import {
   Avatar,
   AvatarBadge,
@@ -9,6 +9,7 @@ import {
   Icon,
   Menu,
   MenuButton,
+  MenuGroup,
   MenuList,
   PlacementWithLogical,
   Portal,
@@ -47,114 +48,131 @@ const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
     closeOnSelect = true,
     showRightIcon = true,
     menuItems,
-    gap,
     profileUrl,
-    __menuTestId,
-    __menuButtonTestId,
-    __menuListTestId,
     menuType,
     placement,
     variant = 'unstyled',
   } = props;
 
+  const styles = useStyles();
+  const shouldShowRightIcon = menuType === 'button' && showRightIcon;
+
+  const getButtonContent = ({ isOpen }: { isOpen: boolean }) => {
+    switch (menuType) {
+      case 'kebab':
+        return <Icon as={ThreeDots} sx={styles.menubuttonIcon({ isOpen })} />;
+      case 'button':
+        return <Text size="label-sm-default">{menuButtonText}</Text>;
+      case 'profile':
+        return <Avatar src={profileUrl} sx={styles.menuAvatar({ isOpen })} />;
+      case 'meatball':
+        return (
+          <Box transform="rotate(90deg)">
+            <Icon as={ThreeDots} sx={styles.menubuttonIcon({ isOpen })} />
+          </Box>
+        );
+    }
+  };
+
   return (
-    <Menu
-      data-testid={__menuTestId ?? 'hds.menu.dropdown'}
-      placement={placement}
-      closeOnSelect={closeOnSelect}
-    >
+    <Menu placement={placement} closeOnSelect={closeOnSelect} data-testid="hds.menu.dropdown">
       {({ isOpen }) => (
-        <Box w="full">
+        <>
           <MenuButton
-            variant={variant}
             as={Button}
+            variant={variant}
             isActive={isOpen}
-            rightIcon={
-              menuType === 'button' && !isOpen && showRightIcon ? (
-                <ChevronDownIcon width="20px" height="20px" />
-              ) : menuType === 'button' && isOpen && showRightIcon ? (
-                <ChevronUpIcon width="20px" height="20px" />
-              ) : undefined
-            }
+            display="flex"
+            transition="all 300ms ease-in-out"
+            {...(shouldShowRightIcon && {
+              rightIcon: (
+                <ChevronDownIcon
+                  width={4}
+                  height={4}
+                  {...(isOpen && {
+                    transform: 'rotate(180deg)',
+                  })}
+                />
+              ),
+            })}
             data-testid={
-              __menuButtonTestId
-                ? __menuButtonTestId
-                : menuType === 'button'
+              menuType === 'button'
                 ? 'hds.menu.button'
                 : menuType === 'kebab'
                 ? 'hds.menu.kebab'
                 : 'hds.menu.profile'
             }
-            display="flex"
           >
-            {menuType === 'kebab' ? (
-              <Icon
-                as={ThreeDots}
-                width="20px"
-                height="20px"
-                _active={{ background: 'transparent' }}
-                color={isOpen ? ' #344054' : '#98A2B3'}
-              />
-            ) : menuType === 'profile' ? (
-              <Avatar
-                src={profileUrl}
-                border={isOpen ? '4px solid #F4EBFF' : undefined}
-              />
-            ) : menuType === 'meatball' ? (
-              <Box transform={'rotate(90deg)'}>
-                <Icon
-                  as={ThreeDots}
-                  width="20px"
-                  height="20px"
-                  _active={{ background: 'transparent' }}
-                  color={isOpen ? ' #344054' : '#98A2B3'}
-                />
-              </Box>
-            ) : (
-              <Text size="label-sm-default">{menuButtonText}</Text>
-            )}
+            {getButtonContent({ isOpen })}
           </MenuButton>
 
           <Portal>
-            <MenuList
-              boxShadow={
-                '0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)'
-              }
-              marginTop={gap}
-              data-testid={__menuListTestId ?? 'hds.menu.list'}
-              py={'0px'}
-              fontSize={'14px'}
-              color="neutrals.900"
-              overflow="hidden"
-            >
+            <MenuList data-testid="hds.menu.list" sx={styles.menulist}>
               {menuHeader && (
-                <HStack p={'16px 12px'}>
-                  <Avatar
-                    src={menuHeader?.profileUrl}
-                    width="40px"
-                    height="40px"
-                  >
-                    {indicator && <AvatarBadge boxSize="1em" bg="#00C408" />}
-                  </Avatar>
+                <>
+                  <MenuGroup>
+                    <HStack py={4} px={3}>
+                      <Avatar src={menuHeader?.profileUrl} width="40px" height="40px">
+                        {indicator && <AvatarBadge boxSize="1em" bg="#00C408" />}
+                      </Avatar>
+                      <Box>
+                        <Text size="label-xs-default" color="neutrals.900" mb={1}>
+                          {menuHeader?.userName}
+                        </Text>
 
-                  <Box>
-                    <Text size="label-xs-default" color="neutrals.900" mb="4px">
-                      {menuHeader?.userName}
-                    </Text>
-                    <Text size="label-xs-default" color="neutrals.500">
-                      {menuHeader?.emailAddress}
-                    </Text>
-                  </Box>
-                </HStack>
+                        <Text size="label-xs-default" color="neutrals.500">
+                          {menuHeader?.emailAddress}
+                        </Text>
+                      </Box>
+                    </HStack>
+                  </MenuGroup>
+                  <MenuGroup>
+                    <Divider orientation="horizontal" />
+                  </MenuGroup>
+                </>
               )}
-              <Divider orientation="horizontal" />
+
               {menuItems}
             </MenuList>
           </Portal>
-        </Box>
+        </>
       )}
     </Menu>
   );
 };
+
+function useStyles() {
+  return {
+    menulist: {
+      boxShadow: [
+        '0px 12px 16px -4px rgba(16, 24, 40, 0.08),',
+        '0px 4px 6px -2px rgba(16, 24, 40, 0.03)',
+      ].join(),
+      paddingY: '0px',
+      fontSize: '14px',
+      color: 'neutrals.900',
+      overflow: 'hidden',
+    },
+    menubuttonIcon({ isOpen }: { isOpen: boolean }) {
+      return {
+        width: '20px',
+        height: '20px',
+        color: isOpen ? ' #344054' : '#98A2B3',
+        _active: {
+          background: 'transparent',
+        },
+        transition: 'all 300ms ease-in-out',
+      };
+    },
+    menuAvatar({ isOpen }: { isOpen: boolean }) {
+      if (!isOpen) return {};
+
+      return {
+        border: '4px',
+        borderColor: '#F4EBFF',
+      };
+    },
+  };
+}
 
 export default MenuDropdown;

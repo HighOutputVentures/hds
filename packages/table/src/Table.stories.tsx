@@ -1,9 +1,21 @@
-import { Avatar, Badge, Box, chakra, Flex, Heading, HStack, Icon, Text } from "@chakra-ui/react";
+import {
+  Avatar,
+  Badge,
+  Box,
+  chakra,
+  Flex,
+  Heading,
+  HStack,
+  Icon,
+  MenuItem,
+  Text,
+} from "@chakra-ui/react";
 import { faker } from "@faker-js/faker";
-import { ThemeProvider } from "@highoutput/hds";
 import { ComponentStory, Meta } from "@storybook/react";
 import * as React from "react";
-import { DotsVerticalIcon, TrashIcon } from "~/icons";
+import { MenuDropdown } from "~/dropdown";
+import { ThemeProvider } from "~/hds";
+import { DotsVerticalIcon } from "~/icons";
 import { Pagination } from "~/pagination";
 import Table, { TableProps } from "./Table";
 
@@ -31,7 +43,7 @@ function mockUser(): TUser {
   };
 }
 
-const items = new Array(5).fill(null).map(() => mockUser());
+const items = new Array(1).fill(null).map(() => mockUser());
 
 export default { title: "Components/Table", argTypes: {} } as Meta;
 
@@ -110,8 +122,8 @@ Default.args = {
       },
       onCheck(/* { isChecked, item } */) {},
       onCheckAll(/* { isChecked, selected } */) {},
-      defaultChecked(item) {
-        return [items[0].id, items[2].id].includes(item.id);
+      defaultChecked() {
+        return false;
       },
     },
     {
@@ -191,9 +203,15 @@ Default.args = {
       label: "",
       renderRow() {
         return (
-          <HStack spacing="24px">
-            <TrashIcon d="flex" w="20px" h="20px" color="#7A7A7A" />
-          </HStack>
+          <MenuDropdown
+            menuType="kebab"
+            menuItems={
+              <>
+                <MenuItem>Edit</MenuItem>
+                <MenuItem>Delete</MenuItem>
+              </>
+            }
+          ></MenuDropdown>
         );
       },
     },

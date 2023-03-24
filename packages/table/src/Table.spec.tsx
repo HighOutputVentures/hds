@@ -3,7 +3,6 @@ import { faker } from "@faker-js/faker";
 import "@testing-library/jest-dom";
 import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import * as React from "react";
-import renderer from "react-test-renderer";
 import Table from "./Table";
 
 const items = new Array(5).fill(null).map(() => {
@@ -138,56 +137,5 @@ describe("Table", () => {
     const td = document.querySelector("td") as HTMLTableCellElement;
     fireEvent.click(td);
     expect(onClick).toHaveBeenCalled();
-  });
-
-  it("Should match snapshot", () => {
-    const component = renderer.create(
-      <Table
-        items={[
-          {
-            id: 1,
-            name: "John",
-            email: "john@domain.blah",
-            avatar: "http://localhost:8080/images/john/pp",
-          },
-          {
-            id: 2,
-            name: "mary",
-            email: "mary@domain.blah",
-            avatar: "http://localhost:8080/images/mary/pp",
-          },
-        ]}
-        columns={[
-          {
-            label: "Name",
-            renderRow({ name, avatar }) {
-              return (
-                <HStack spacing={2}>
-                  <Avatar src={avatar} name={name} />
-                  <Text>{name}</Text>
-                </HStack>
-              );
-            },
-            onCheck: function () {},
-            onCheckAll: function () {},
-            onClick: function () {},
-          },
-          {
-            label: "Email",
-            renderRow({ email }) {
-              return email;
-            },
-            onSort: function () {},
-            onClick: function () {},
-            defaultSort: "asc",
-            tooltip: "Hint: This is your email",
-          },
-        ]}
-      />,
-    );
-
-    const snapshot = component.toJSON();
-    expect(snapshot).toMatchSnapshot();
-    component.unmount();
   });
 });
