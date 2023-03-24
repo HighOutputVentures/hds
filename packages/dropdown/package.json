@@ -29,10 +29,10 @@
     }
   },
   "prettier": {
-    "printWidth": 80,
+    "printWidth": 100,
     "semi": true,
     "singleQuote": true,
-    "trailingComma": "es5"
+    "trailingComma": "all"
   },
   "name": "@highoutput/hds-dropdown",
   "author": "jadekenneth.github.io",
