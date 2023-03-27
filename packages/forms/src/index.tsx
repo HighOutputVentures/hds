@@ -4,6 +4,14 @@ import {
   InputGroup,
   InputLeftAddon,
   InputRightAddon,
+  FormControl,
+  FormControlProps,
+  FormErrorIcon,
+  FormErrorMessage,
+  FormErrorMessageProps,
+  FormHelperText,
+  FormLabel,
+  FormLabelProps,
 } from '@chakra-ui/react';
 import FormContainer, {
   FormContainerProps,
@@ -37,4 +45,12 @@ export {
   InputLeftAddon,
   InputAddonProps,
   InputGroup,
+  FormControl,
+  FormControlProps,
+  FormErrorIcon,
+  FormErrorMessage,
+  FormErrorMessageProps,
+  FormHelperText,
+  FormLabel,
+  FormLabelProps,
 };
