@@ -13,8 +13,7 @@ import {
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
-import CloseButton from '../../../components/Button/CloseButton';
-import SocialButton from '../../../components/Button/SocialButton';
+import { CloseButton, SocialButton } from '@highoutput/hds-button';
 import ThemeProvider from '../../../components/ThemeProvider';
 
 export default {
