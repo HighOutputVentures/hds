@@ -1,9 +1,12 @@
 {
   "npmClient": "npm",
-  "packages": [
-    "packages/**"
-  ],
+  "packages": ["packages/**"],
   "useWorkspaces": true,
   "version": "independent",
-  "useNx": true
+  "useNx": true,
+  "command": {
+    "publish": {
+      "before": ["npm run build"]
+    }
+  }
 }
