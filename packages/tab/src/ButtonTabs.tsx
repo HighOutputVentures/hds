@@ -18,6 +18,7 @@ export interface ButtonTabsProps {
   onChangeHandler?: (e: number) => void;
   placeContent?: 'center' | 'end' | 'start';
   size?: 'sm' | 'md';
+  isLazy?: boolean;
   fitToBox?: boolean;
   defaultIndex?: number;
   inverted?: boolean;
@@ -31,6 +32,7 @@ const ButtonTabs = (props: ButtonTabsProps) => {
     inverted = false,
     fitToBox,
     size = 'sm',
+    isLazy = true,
     defaultIndex,
     _selected = { background: '#F9FAFB', color: '#344054' },
     gap = '32px',
@@ -45,6 +47,7 @@ const ButtonTabs = (props: ButtonTabsProps) => {
       onChange={(e) => {
         if (onChangeHandler) onChangeHandler(e);
       }}
+      isLazy={isLazy}
       variant={'unstyled'}
       data-testid="hds.tab-button.tabs"
       w="full"

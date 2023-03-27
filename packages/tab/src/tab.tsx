@@ -15,6 +15,7 @@ export type TabProps = {
   tabLabel: string[];
   placement?: 'center' | 'left' | 'right';
   tabItems: ReactNode;
+  isLazy?: boolean;
   addNotificationCountToTabs?: {
     tab: string;
     count: number;
@@ -29,6 +30,7 @@ const Tab = React.forwardRef<HTMLDivElement, TabProps>((props, _) => {
     tabItems,
     size = 'sm',
     orientation = 'horizontal',
+    isLazy = true,
     variant = 'primary',
     addNotificationCountToTabs,
   } = props;
@@ -58,6 +60,7 @@ const Tab = React.forwardRef<HTMLDivElement, TabProps>((props, _) => {
         orientation={tabOrientation}
         data-testid="hds.tabs"
         gap="32px"
+        isLazy={isLazy}
         w="full"
         h="full"
       >
