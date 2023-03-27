@@ -1,4 +1,5 @@
-import { Box, Center, Text } from '@highoutput/hds';
+import { Box, Center } from '@highoutput/hds';
+import { Text } from '@chakra-ui/react';
 import { HovIcon } from '@highoutput/hds-icons';
 import React, { FC, ReactNode } from 'react';
 import ContactCard from './ContactCard';

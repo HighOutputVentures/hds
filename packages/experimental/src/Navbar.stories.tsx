@@ -1,5 +1,6 @@
-import { AspectRatio, Box, Flex, Image, SimpleGrid, Text, ThemeProvider } from "@highoutput/hds";
+import { AspectRatio, Box, Flex, Image, SimpleGrid, ThemeProvider } from "@highoutput/hds";
 import { ComponentStory, Meta } from "@storybook/react";
+import { Text } from "@chakra-ui/react";
 import React from "react";
 import ExampleLogo from "./examples/Logo";
 import Navbar from "./Navbar";

@@ -15,7 +15,8 @@ npm i @highoutput/hds-radio-group
 ```tsx
 import * as React from "react";
 import { CheckboxGroup } from "@highoutput/hds-checkbox-group";
-import { ThemeProvider, HStack, Box, Text } from "@highoutput/hds";
+import { ThemeProvider, HStack, Box  } from "@highoutput/hds";
+import {Text} from '@highoutput/hds-Typography
 import DollarIcon from "./DollarIcon";
 
 const users = [
