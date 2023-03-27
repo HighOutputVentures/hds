@@ -106,7 +106,7 @@ const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
             {getButtonContent({ isOpen })}
           </MenuButton>
 
-          <Portal>
+          <Portal appendToParentPortal={false}>
             <MenuList data-testid="hds.menu.list" sx={styles.menulist}>
               {menuHeader && (
                 <>
