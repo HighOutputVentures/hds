@@ -128,9 +128,7 @@ exports[` 1`] = `
           id="tabs-:r0:--tabpanel-1"
           role="tabpanel"
           tabIndex={0}
-        >
-          Two
-        </div>
+        />
         <div
           aria-labelledby="tabs-:r0:--tab-2"
           className="chakra-tabs__tab-panel css-sjt5nk"
@@ -138,9 +136,7 @@ exports[` 1`] = `
           id="tabs-:r0:--tabpanel-2"
           role="tabpanel"
           tabIndex={0}
-        >
-          Three
-        </div>
+        />
         <div
           aria-labelledby="tabs-:r0:--tab-3"
           className="chakra-tabs__tab-panel css-sjt5nk"
@@ -148,9 +144,7 @@ exports[` 1`] = `
           id="tabs-:r0:--tabpanel-3"
           role="tabpanel"
           tabIndex={0}
-        >
-          Four
-        </div>
+        />
       </div>
     </div>
   </div>

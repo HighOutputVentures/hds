@@ -1,4 +1,5 @@
-import { Box, BoxProps, Center, Text } from '@highoutput/hds';
+import { Box, BoxProps, Center } from '@highoutput/hds';
+import { Text } from '@chakra-ui/react';
 import React, { FC, ReactNode } from 'react';
 import ContactForm from './ContactForm';
 

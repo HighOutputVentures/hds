@@ -1,6 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { Box, Flex, Text, ThemeProvider, Button } from '@highoutput/hds';
+import { Box, Flex, ThemeProvider } from '@highoutput/hds';
+import { Button } from '@highoutput/hds-button';
+import { Text } from '@chakra-ui/react';
 import CTA from './CTA';
 import { EmailIcon, Icon } from '@chakra-ui/icons';
 import VisaIcon from './exampale/VisaIcon';
