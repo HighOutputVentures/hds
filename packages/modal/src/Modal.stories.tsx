@@ -1,5 +1,6 @@
-import { Button, Text, ThemeProvider } from '@highoutput/hds';
+import { Text, ThemeProvider } from '@highoutput/hds';
 import { SuccessCircleIcon } from '@highoutput/hds-icons';
+import { Button } from '@highoutput/hds-button';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React, { useState } from 'react';
 import Modal from './Modal';
