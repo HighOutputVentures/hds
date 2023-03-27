@@ -15,6 +15,8 @@ const Template: ComponentStory<typeof Tabs> = (args) => {
 
 export const Default = Template.bind({});
 
+const numberFormatter = Intl.NumberFormat('en', { notation: 'compact' });
+
 Default.args = {
   ...Default.args,
   items: [
@@ -23,7 +25,7 @@ Default.args = {
       render() {
         return <div>One</div>;
       },
-      badgeCount: 2,
+      badgeCount: numberFormatter.format(2),
     },
     {
       label: 'Profile',
@@ -42,7 +44,7 @@ Default.args = {
       render() {
         return <div>Four</div>;
       },
-      badgeCount: 4,
+      badgeCount: numberFormatter.format(4),
     },
     {
       label: 'Plan',
@@ -61,14 +63,14 @@ Default.args = {
       render() {
         return <div>Seven</div>;
       },
-      badgeCount: 2150,
+      badgeCount: numberFormatter.format(2150),
     },
     {
       label: 'Notifications',
       render() {
         return <div>Eight</div>;
       },
-      badgeCount: 1500,
+      badgeCount: numberFormatter.format(1500),
     },
     {
       label: 'Integrations',

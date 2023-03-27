@@ -14,7 +14,7 @@ import { v4 as uuid } from 'uuid';
 type Item = {
   label: string;
   render(): JSX.Element | null;
-  badgeCount?: number;
+  badgeCount?: number | string;
 };
 
 type Size = 'sm' | 'md';
@@ -110,12 +110,7 @@ export default function HdsTabs({
                 {label}
               </Text>
 
-              {badgeCount && (
-                <Badge
-                  count={numberFormatter.format(badgeCount)}
-                  isSelected={args[0] === selectedIndex}
-                />
-              )}
+              {badgeCount && <Badge count={badgeCount} isSelected={args[0] === selectedIndex} />}
             </Flex>
           </Tab>
         ))}
@@ -148,10 +143,8 @@ function placementToPlaceContent(placement?: Placement) {
   }
 }
 
-const numberFormatter = Intl.NumberFormat('en', { notation: 'compact' });
-
 type BadgeProps = {
-  count: string;
+  count: string | number;
   isSelected?: boolean;
 };
 
