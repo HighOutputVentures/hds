@@ -8,7 +8,7 @@ exports[`Snapshot (Tabs) Should match snapshot 1`] = `
   <div
     aria-orientation="horizontal"
     className="chakra-tabs__tablist css-5bpqcm"
-    data-testid="hds.tab.list"
+    data-testid="hds.tabs.tablist"
     onKeyDown={[Function]}
     role="tablist"
   >
@@ -16,7 +16,7 @@ exports[`Snapshot (Tabs) Should match snapshot 1`] = `
       aria-controls="tabs-:r0:--tabpanel--1"
       aria-selected={false}
       className="chakra-tabs__tab css-jid256"
-      data-testid="hds.tab"
+      data-testid="hds.tabs.tab"
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
       onFocus={[Function]}
@@ -29,7 +29,7 @@ exports[`Snapshot (Tabs) Should match snapshot 1`] = `
       >
         <p
           className="chakra-text css-epvm6"
-          data-testid="hds.tab.label"
+          data-testid="hds.tabs.tab.label"
         >
           One
         </p>
@@ -39,7 +39,7 @@ exports[`Snapshot (Tabs) Should match snapshot 1`] = `
       aria-controls="tabs-:r0:--tabpanel--1"
       aria-selected={false}
       className="chakra-tabs__tab css-jid256"
-      data-testid="hds.tab"
+      data-testid="hds.tabs.tab"
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
       onFocus={[Function]}
@@ -52,7 +52,7 @@ exports[`Snapshot (Tabs) Should match snapshot 1`] = `
       >
         <p
           className="chakra-text css-epvm6"
-          data-testid="hds.tab.label"
+          data-testid="hds.tabs.tab.label"
         >
           Two
         </p>
@@ -62,7 +62,7 @@ exports[`Snapshot (Tabs) Should match snapshot 1`] = `
       aria-controls="tabs-:r0:--tabpanel--1"
       aria-selected={false}
       className="chakra-tabs__tab css-jid256"
-      data-testid="hds.tab"
+      data-testid="hds.tabs.tab"
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
       onFocus={[Function]}
@@ -75,7 +75,7 @@ exports[`Snapshot (Tabs) Should match snapshot 1`] = `
       >
         <p
           className="chakra-text css-epvm6"
-          data-testid="hds.tab.label"
+          data-testid="hds.tabs.tab.label"
         >
           Three
         </p>
@@ -83,13 +83,13 @@ exports[`Snapshot (Tabs) Should match snapshot 1`] = `
     </button>
   </div>
   <div
-    className="chakra-tabs__tab-panels css-j1h17a"
-    data-testid="hds.tab.panels"
+    className="chakra-tabs__tab-panels css-j0hrwt"
+    data-testid="hds.tabs.panels"
   >
     <div
       aria-labelledby="tabs-:r0:--tab-0"
-      className="chakra-tabs__tab-panel css-sjt5nk"
-      data-testid="hds.tab.panels"
+      className="chakra-tabs__tab-panel css-47dblg"
+      data-testid="hds.tabs.panels.panel"
       hidden={false}
       id="tabs-:r0:--tabpanel-0"
       role="tabpanel"
@@ -101,8 +101,8 @@ exports[`Snapshot (Tabs) Should match snapshot 1`] = `
     </div>
     <div
       aria-labelledby="tabs-:r0:--tab-1"
-      className="chakra-tabs__tab-panel css-sjt5nk"
-      data-testid="hds.tab.panels"
+      className="chakra-tabs__tab-panel css-47dblg"
+      data-testid="hds.tabs.panels.panel"
       hidden={true}
       id="tabs-:r0:--tabpanel-1"
       role="tabpanel"
@@ -110,8 +110,8 @@ exports[`Snapshot (Tabs) Should match snapshot 1`] = `
     />
     <div
       aria-labelledby="tabs-:r0:--tab-2"
-      className="chakra-tabs__tab-panel css-sjt5nk"
-      data-testid="hds.tab.panels"
+      className="chakra-tabs__tab-panel css-47dblg"
+      data-testid="hds.tabs.panels.panel"
       hidden={true}
       id="tabs-:r0:--tabpanel-2"
       role="tabpanel"

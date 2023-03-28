@@ -67,21 +67,23 @@ export default function ButtonTabs({
       sx={styles.tablist}
       {...(placement === 'end' && { ml: 'auto' })}
       {...(placement === 'start' && { mr: 'auto' })}
-      data-testid="hds.tab-button.list"
+      data-testid="hds.button-tabs.list"
     >
       {items?.map(({ label }, idx) => {
         return (
           <Tab
             key={uuid()}
             _selected={_selected}
-            data-testid="hds.tab-button.tab"
+            data-testid="hds.button-tabs.tab"
             padding={'10px 16px'}
             sx={size === 'md' ? styles.tab : undefined}
             maxW={'auto'}
             width={fitToBox ? '100%' : 'auto'}
             borderRight={idx === items.length - 1 ? 'none' : '1px solid #D0D5DD'}
           >
-            <Text size="label-xs-default">{label}</Text>
+            <Text size="label-xs-default" data-testid="hds.button-tabs.tab.label">
+              {label}
+            </Text>
           </Tab>
         );
       })}
@@ -89,9 +91,9 @@ export default function ButtonTabs({
   );
 
   const panels = (
-    <TabPanels data-testid="hds.tab-button.tab.panel">
+    <TabPanels padding={0} data-testid="hds.button-tabs.panels">
       {items.map(({ render: Component }) => (
-        <TabPanel key={uuid()}>
+        <TabPanel key={uuid()} padding={0} data-testid="hds.button-tabs.panels.panel">
           <Component />
         </TabPanel>
       ))}
@@ -106,7 +108,7 @@ export default function ButtonTabs({
       align={placement}
       index={selectedIndex}
       onChange={setSelectedIndex}
-      data-testid="hds.tab-button.tabs"
+      data-testid="hds.button-tabs.tabs"
       {...(!preferMounted && {
         isLazy: true,
         lazyBehavior: 'unmount',

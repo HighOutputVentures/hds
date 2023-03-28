@@ -93,7 +93,7 @@ export default function HdsTabs({
         flexDir={modifiedOrientation === 'vertical' ? 'column' : 'row'}
         placeContent={placementToPlaceContent(placement)}
         sx={styles.tablist}
-        data-testid="hds.tab.list"
+        data-testid="hds.tabs.tablist"
       >
         {items?.map(({ label, badgeCount }, ...args) => (
           <Tab
@@ -103,10 +103,10 @@ export default function HdsTabs({
             justifyContent={modifiedOrientation === 'vertical' ? 'flex-start' : 'center'}
             transition="colors 300ms ease-in-out"
             sx={styles.tab}
-            data-testid="hds.tab"
+            data-testid="hds.tabs.tab"
           >
             <Flex align="center" gap={2}>
-              <Text size="label-xs-default" whiteSpace="nowrap" data-testid="hds.tab.label">
+              <Text size="label-xs-default" whiteSpace="nowrap" data-testid="hds.tabs.tab.label">
                 {label}
               </Text>
 
@@ -116,14 +116,9 @@ export default function HdsTabs({
         ))}
       </TabList>
 
-      <TabPanels
-        width="auto"
-        height="auto"
-        paddingTop={modifiedOrientation === 'horizontal' ? 8 : 0}
-        data-testid="hds.tab.panels"
-      >
+      <TabPanels width="auto" height="auto" padding={0} data-testid="hds.tabs.panels">
         {items?.map(({ render: Component }) => (
-          <TabPanel key={uuid()} data-testid="hds.tab.panels">
+          <TabPanel key={uuid()} padding={0} data-testid="hds.tabs.panels.panel">
             <Component />
           </TabPanel>
         ))}
@@ -165,7 +160,7 @@ function Badge({ count, isSelected }: BadgeProps) {
       })}
       transition="colors 300ms ease-in-out"
     >
-      <Text size="label-xs-default" color="inherit" data-testid="hds.tab.badge">
+      <Text size="label-xs-default" color="inherit" data-testid="hds.tabs.tab.badge">
         {count}
       </Text>
     </Flex>
