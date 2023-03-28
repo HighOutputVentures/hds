@@ -2,7 +2,7 @@
 
 exports[`Snapshot (ButtonTabs) Should match snapshot 1`] = `
 <div
-  className="chakra-tabs css-1rwh58z"
+  className="chakra-tabs css-smr3nb"
   data-testid="hds.button-tabs.tabs"
 >
   <div
