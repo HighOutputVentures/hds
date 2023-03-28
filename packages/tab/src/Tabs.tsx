@@ -80,6 +80,8 @@ export default function HdsTabs({
       gap={8}
       width="full"
       height="full"
+      margin={0}
+      padding={0}
       index={selectedIndex}
       onChange={setSelectedIndex}
       data-testid="hds.tabs"

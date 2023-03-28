@@ -105,6 +105,8 @@ export default function ButtonTabs({
       variant="unstyled"
       width="full"
       height="full"
+      margin={0}
+      padding={0}
       align={placement}
       index={selectedIndex}
       onChange={setSelectedIndex}
