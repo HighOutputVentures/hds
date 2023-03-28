@@ -3,10 +3,5 @@
   "packages": ["packages/**"],
   "useWorkspaces": true,
   "version": "independent",
-  "useNx": true,
-  "command": {
-    "publish": {
-      "before": ["npm run build"]
-    }
-  }
+  "useNx": true
 }
