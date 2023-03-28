@@ -116,14 +116,9 @@ export default function HdsTabs({
         ))}
       </TabList>
 
-      <TabPanels
-        width="auto"
-        height="auto"
-        paddingTop={modifiedOrientation === 'horizontal' ? 8 : 0}
-        data-testid="hds.tabs.panels"
-      >
+      <TabPanels width="auto" height="auto" padding={0} data-testid="hds.tabs.panels">
         {items?.map(({ render: Component }) => (
-          <TabPanel key={uuid()} data-testid="hds.tabs.panels.panel">
+          <TabPanel key={uuid()} padding={0} data-testid="hds.tabs.panels.panel">
             <Component />
           </TabPanel>
         ))}

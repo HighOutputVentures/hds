@@ -71,12 +71,12 @@ exports[`Snapshot (ButtonTabs) Should match snapshot 1`] = `
     </button>
   </div>
   <div
-    className="chakra-tabs__tab-panels css-8atqhb"
+    className="chakra-tabs__tab-panels css-7m8sgd"
     data-testid="hds.button-tabs.panels"
   >
     <div
       aria-labelledby="tabs-:r0:--tab-0"
-      className="chakra-tabs__tab-panel css-sjt5nk"
+      className="chakra-tabs__tab-panel css-47dblg"
       data-testid="hds.button-tabs.panels.panel"
       hidden={false}
       id="tabs-:r0:--tabpanel-0"
@@ -89,7 +89,7 @@ exports[`Snapshot (ButtonTabs) Should match snapshot 1`] = `
     </div>
     <div
       aria-labelledby="tabs-:r0:--tab-1"
-      className="chakra-tabs__tab-panel css-sjt5nk"
+      className="chakra-tabs__tab-panel css-47dblg"
       data-testid="hds.button-tabs.panels.panel"
       hidden={true}
       id="tabs-:r0:--tabpanel-1"
@@ -98,7 +98,7 @@ exports[`Snapshot (ButtonTabs) Should match snapshot 1`] = `
     />
     <div
       aria-labelledby="tabs-:r0:--tab-2"
-      className="chakra-tabs__tab-panel css-sjt5nk"
+      className="chakra-tabs__tab-panel css-47dblg"
       data-testid="hds.button-tabs.panels.panel"
       hidden={true}
       id="tabs-:r0:--tabpanel-2"

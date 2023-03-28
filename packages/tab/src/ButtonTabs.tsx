@@ -91,9 +91,9 @@ export default function ButtonTabs({
   );
 
   const panels = (
-    <TabPanels data-testid="hds.button-tabs.panels">
+    <TabPanels padding={0} data-testid="hds.button-tabs.panels">
       {items.map(({ render: Component }) => (
-        <TabPanel key={uuid()} data-testid="hds.button-tabs.panels.panel">
+        <TabPanel key={uuid()} padding={0} data-testid="hds.button-tabs.panels.panel">
           <Component />
         </TabPanel>
       ))}
