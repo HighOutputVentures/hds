@@ -3,12 +3,12 @@
 exports[`Snapshot (ButtonTabs) Should match snapshot 1`] = `
 <div
   className="chakra-tabs css-1rwh58z"
-  data-testid="hds.tab-button.tabs"
+  data-testid="hds.button-tabs.tabs"
 >
   <div
     aria-orientation="horizontal"
     className="chakra-tabs__tablist css-lvouy5"
-    data-testid="hds.tab-button.list"
+    data-testid="hds.button-tabs.list"
     onKeyDown={[Function]}
     role="tablist"
   >
@@ -16,7 +16,7 @@ exports[`Snapshot (ButtonTabs) Should match snapshot 1`] = `
       aria-controls="tabs-:r0:--tabpanel--1"
       aria-selected={false}
       className="chakra-tabs__tab css-1tpbcy4"
-      data-testid="hds.tab-button.tab"
+      data-testid="hds.button-tabs.tab"
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
       onFocus={[Function]}
@@ -26,6 +26,7 @@ exports[`Snapshot (ButtonTabs) Should match snapshot 1`] = `
     >
       <p
         className="chakra-text css-0"
+        data-testid="hds.button-tabs.tab.label"
       >
         One
       </p>
@@ -34,7 +35,7 @@ exports[`Snapshot (ButtonTabs) Should match snapshot 1`] = `
       aria-controls="tabs-:r0:--tabpanel--1"
       aria-selected={false}
       className="chakra-tabs__tab css-1tpbcy4"
-      data-testid="hds.tab-button.tab"
+      data-testid="hds.button-tabs.tab"
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
       onFocus={[Function]}
@@ -44,6 +45,7 @@ exports[`Snapshot (ButtonTabs) Should match snapshot 1`] = `
     >
       <p
         className="chakra-text css-0"
+        data-testid="hds.button-tabs.tab.label"
       >
         Two
       </p>
@@ -52,7 +54,7 @@ exports[`Snapshot (ButtonTabs) Should match snapshot 1`] = `
       aria-controls="tabs-:r0:--tabpanel--1"
       aria-selected={false}
       className="chakra-tabs__tab css-uh1hvz"
-      data-testid="hds.tab-button.tab"
+      data-testid="hds.button-tabs.tab"
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
       onFocus={[Function]}
@@ -62,6 +64,7 @@ exports[`Snapshot (ButtonTabs) Should match snapshot 1`] = `
     >
       <p
         className="chakra-text css-0"
+        data-testid="hds.button-tabs.tab.label"
       >
         Three
       </p>
@@ -69,11 +72,12 @@ exports[`Snapshot (ButtonTabs) Should match snapshot 1`] = `
   </div>
   <div
     className="chakra-tabs__tab-panels css-8atqhb"
-    data-testid="hds.tab-button.tab.panel"
+    data-testid="hds.button-tabs.panels"
   >
     <div
       aria-labelledby="tabs-:r0:--tab-0"
       className="chakra-tabs__tab-panel css-sjt5nk"
+      data-testid="hds.button-tabs.panels.panel"
       hidden={false}
       id="tabs-:r0:--tabpanel-0"
       role="tabpanel"
@@ -86,6 +90,7 @@ exports[`Snapshot (ButtonTabs) Should match snapshot 1`] = `
     <div
       aria-labelledby="tabs-:r0:--tab-1"
       className="chakra-tabs__tab-panel css-sjt5nk"
+      data-testid="hds.button-tabs.panels.panel"
       hidden={true}
       id="tabs-:r0:--tabpanel-1"
       role="tabpanel"
@@ -94,6 +99,7 @@ exports[`Snapshot (ButtonTabs) Should match snapshot 1`] = `
     <div
       aria-labelledby="tabs-:r0:--tab-2"
       className="chakra-tabs__tab-panel css-sjt5nk"
+      data-testid="hds.button-tabs.panels.panel"
       hidden={true}
       id="tabs-:r0:--tabpanel-2"
       role="tabpanel"
