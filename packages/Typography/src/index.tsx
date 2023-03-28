@@ -1,3 +1,3 @@
-import { Text, Heading } from '@chakra-ui/react';
+import { Text, Heading, Link, LinkBox, LinkOverlay } from '@chakra-ui/react';
 
-export { Text, Heading };
+export { Text, Heading, Link, LinkBox, LinkOverlay };
