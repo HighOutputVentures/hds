@@ -4,11 +4,11 @@ import SocialButton, { SocialButtonProps } from './components/SocialButton';
 import {
   ButtonSizeTypes,
   CloseButtonSizeTypes,
-} from '@highoutput/hds/src/theme/components/button/sizes';
+} from '../src/theme/button/sizes';
 import {
   ButtonVariantsTypes,
   CloseButtonVariantTypes,
-} from '@highoutput/hds/src/theme/components/button/variants';
+} from '../src/theme/button/variants';
 
 export {
   Button,
