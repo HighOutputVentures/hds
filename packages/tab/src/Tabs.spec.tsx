@@ -1,11 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import ButtonTabs from './ButtonTabs';
+import Tabs from './Tabs';
 
-describe('Snapshot (ButtonTabs)', () => {
+describe('Snapshot (Tabs)', () => {
   it('Should match snapshot', () => {
     const component = renderer.create(
-      <ButtonTabs
+      <Tabs
         items={[
           {
             label: 'One',

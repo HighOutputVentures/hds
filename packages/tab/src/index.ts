@@ -5,17 +5,13 @@ import {
   TabPanelProps,
   TabPanels,
   TabPanelsProps,
-  Tabs,
-  TabsProps,
 } from '@chakra-ui/react';
 import ButtonTabs, { ButtonTabsProps } from './ButtonTabs';
-import Tab, { TabProps } from './tab';
+import Tabs, { TabsProps } from './Tabs';
 
 export {
   ButtonTabs,
   ButtonTabsProps,
-  Tab,
-  TabProps,
   TabList,
   TabListProps,
   TabPanel,

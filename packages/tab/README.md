@@ -13,24 +13,34 @@ npm i @highoutput/hds-tab
 ### Usage
 
 ```tsx
-import { Tab } from '@highoutput/hds-tab'
+import { Tabs } from '@highoutput/hds-tab';
 import { ThemeProvider, extendTheme } from '@highoutput/hds';
-import { useCallback } from 'react';
 
 export default function Example() {
-  const handleClose = useCallback(() => {
-    /* heavy logic after close */
-  }, []);
-
   return (
-    <ThemeProvider theme={extendTheme(withTag())}>
-      <Tab tabLabels={['Label 1', 'Label 2']} 
-      tabItems={
-        <TabPanels>
-          <TabPanel>Label 1</TabPanel>
-          <TabPanel>Label 2</TabPanel>
-      </TabPanels>
-      }/>
+    <ThemeProvider>
+      <Tabs
+        items={[
+          {
+            label: 'One',
+            render() {
+              return <div>One</div>;
+            },
+          },
+          {
+            label: 'Two',
+            render() {
+              return <div>Two</div>;
+            },
+          },
+          {
+            label: 'Three',
+            render() {
+              return <div>Three</div>;
+            },
+          },
+        ]}
+      />
     </ThemeProvider>
   );
 }
