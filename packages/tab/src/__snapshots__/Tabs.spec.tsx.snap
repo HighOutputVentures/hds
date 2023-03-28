@@ -2,7 +2,7 @@
 
 exports[`Snapshot (Tabs) Should match snapshot 1`] = `
 <div
-  className="chakra-tabs css-1m7z0b0"
+  className="chakra-tabs css-8c3ncp"
   data-testid="hds.tabs"
 >
   <div
