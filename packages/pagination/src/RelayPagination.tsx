@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { ArrowLeftIcon, ArrowRightIcon, ChevronDownIcon } from "@highoutput/hds-icons";
 import * as React from "react";
+import { v4 as uuid } from "uuid";
 import { useStyles } from "./hooks";
 import { decrement, increment } from "./utils";
 
@@ -128,7 +129,7 @@ export default function RelayPagination({
               >
                 {sizes.map((size) => (
                   <option
-                    key={size}
+                    key={uuid()}
                     value={size}
                     data-testid={`hds.relay-pagination.select.${size}`}
                   >
