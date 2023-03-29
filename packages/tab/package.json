@@ -24,6 +24,12 @@
   "peerDependencies": {
     "react": ">=16"
   },
+  "dependencies": {
+    "uuid": "9.0.0"
+  },
+  "devDependencies": {
+    "@types/uuid": "9.0.0"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
