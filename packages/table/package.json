@@ -42,6 +42,9 @@
   "dependencies": {
     "uuid": "9.0.0"
   },
+  "devDependencies": {
+    "@types/uuid": "9.0.0"
+  },
   "size-limit": [
     {
       "path": "dist/hds-table.cjs.production.min.js",
