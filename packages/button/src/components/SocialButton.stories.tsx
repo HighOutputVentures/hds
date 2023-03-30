@@ -4,7 +4,7 @@ import React from 'react';
 import { extendTheme, ThemeProvider } from '@highoutput/hds/src';
 
 import SocialButton from './SocialButton';
-import withButton from '../theme/button/button';
+import withButton from '../theme/button/withButton';
 
 export default {
   title: 'Components/Button/SocialButton',

@@ -3,7 +3,7 @@ import React from 'react';
 
 import { extendTheme, ThemeProvider } from '@highoutput/hds/src';
 import CloseButton from './CloseButton';
-import withButton from '../theme/button/button';
+import withButton from '../theme/button/withButton';
 
 export default {
   title: 'Components/Button/CloseButton',

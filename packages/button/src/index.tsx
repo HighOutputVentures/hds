@@ -1,6 +1,9 @@
 import Button, { ButtonProps } from './components/Button';
 import CloseButton, { CloseButtonProps } from './components/CloseButton';
 import SocialButton, { SocialButtonProps } from './components/SocialButton';
+
+import withButton from './theme/button/withButton';
+
 import {
   ButtonSizeTypes,
   CloseButtonSizeTypes,
@@ -24,4 +27,5 @@ export {
   CloseButtonVariantTypes,
   ButtonSizeTypes,
   CloseButtonSizeTypes,
+  withButton,
 };

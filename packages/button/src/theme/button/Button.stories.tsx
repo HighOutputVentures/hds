@@ -14,7 +14,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
 import { CloseButton, SocialButton } from '../..';
-import withButton from './button';
+import withButton from './withButton';
 import { extendTheme, ThemeProvider } from '@highoutput/hds';
 
 export default {

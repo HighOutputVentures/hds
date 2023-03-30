@@ -3,7 +3,7 @@ import React from 'react';
 
 import { ThemeProvider, extendTheme } from '@highoutput/hds/src';
 import Button from './Button';
-import withButton from '../theme/button/button';
+import withButton from '../theme/button/withButton';
 
 export default {
   title: 'Components/Button/Button',
