@@ -1,6 +1,5 @@
 import { ComponentStyleConfig } from '@chakra-ui/react';
 import Box from './box';
-import Button from './button/button';
 import Checkbox from './checkbox';
 import Drawer from './drawer';
 import Flex from './flex';
@@ -19,7 +18,6 @@ import Text from './text/text';
 const components: { [key: string]: ComponentStyleConfig } = {
   Box,
   Stack,
-  Button,
   Checkbox,
   Link,
   Form,
