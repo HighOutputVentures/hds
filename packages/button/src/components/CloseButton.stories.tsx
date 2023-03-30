@@ -1,8 +1,9 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
-import { ThemeProvider } from '@highoutput/hds/src';
+import { extendTheme, ThemeProvider } from '@highoutput/hds/src';
 import CloseButton from './CloseButton';
+import withButton from '../theme/button/withButton';
 
 export default {
   title: 'Components/Button/CloseButton',
@@ -10,7 +11,7 @@ export default {
 } as ComponentMeta<typeof CloseButton>;
 
 const Template: ComponentStory<typeof CloseButton> = (args) => (
-  <ThemeProvider>
+  <ThemeProvider theme={extendTheme(withButton())}>
     <CloseButton {...args} />
   </ThemeProvider>
 );

@@ -13,8 +13,9 @@ import {
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
-import { CloseButton, SocialButton } from '@highoutput/hds-button';
-import ThemeProvider from '../../../components/ThemeProvider';
+import { CloseButton, SocialButton } from '../..';
+import withButton from './withButton';
+import { extendTheme, ThemeProvider } from '@highoutput/hds';
 
 export default {
   title: 'Components/Button System',
@@ -46,7 +47,7 @@ const ButtonRow: React.FC<ButtonRowProps> = ({ type, variant, button }) => {
 };
 
 const Template: ComponentStory<typeof Text> = () => (
-  <ThemeProvider>
+  <ThemeProvider theme={extendTheme(withButton())}>
     <TableContainer>
       <Table variant="simple">
         <Thead>

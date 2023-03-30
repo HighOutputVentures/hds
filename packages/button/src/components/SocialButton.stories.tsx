@@ -1,9 +1,10 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
-import { ThemeProvider } from '@highoutput/hds/src';
+import { extendTheme, ThemeProvider } from '@highoutput/hds/src';
 
 import SocialButton from './SocialButton';
+import withButton from '../theme/button/withButton';
 
 export default {
   title: 'Components/Button/SocialButton',
@@ -11,7 +12,7 @@ export default {
 } as ComponentMeta<typeof SocialButton>;
 
 const Template: ComponentStory<typeof SocialButton> = (args) => (
-  <ThemeProvider>
+  <ThemeProvider theme={extendTheme(withButton())}>
     <SocialButton {...args} />
   </ThemeProvider>
 );

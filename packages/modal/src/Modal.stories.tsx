@@ -1,5 +1,6 @@
-import { Text, ThemeProvider } from '@highoutput/hds';
+import { ThemeProvider } from '@highoutput/hds';
 import { SuccessCircleIcon } from '@highoutput/hds-icons';
+import { Text } from '@chakra-ui/react';
 import { Button } from '@highoutput/hds-button';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React, { useState } from 'react';
