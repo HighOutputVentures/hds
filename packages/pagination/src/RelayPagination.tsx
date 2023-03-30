@@ -58,7 +58,7 @@ export default function RelayPagination({
   const hasPrev = page > 1;
   const hasNext = page * pageSize < count;
 
-  const prev = React.useCallback(() => {
+  const prev = () => {
     if (!hasPrev) return;
 
     onChange({
@@ -66,14 +66,9 @@ export default function RelayPagination({
       pageSize,
       isPreviousPage: true,
     });
-  }, [
-    //
-    page,
-    pageSize,
-    hasPrev,
-  ]);
+  };
 
-  const next = React.useCallback(() => {
+  const next = () => {
     if (!hasNext) return;
 
     onChange({
@@ -81,12 +76,7 @@ export default function RelayPagination({
       pageSize,
       isNextPage: true,
     });
-  }, [
-    //
-    page,
-    pageSize,
-    hasNext,
-  ]);
+  };
 
   return (
     <Box
