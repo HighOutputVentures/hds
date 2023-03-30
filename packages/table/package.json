@@ -1,5 +1,5 @@
 {
-  "version": "0.2.8",
+  "version": "0.2.9",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -41,6 +41,9 @@
   "module": "dist/hds-table.esm.js",
   "dependencies": {
     "uuid": "9.0.0"
+  },
+  "devDependencies": {
+    "@types/uuid": "9.0.0"
   },
   "size-limit": [
     {
