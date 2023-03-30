@@ -1,7 +1,7 @@
 import { Button as ChakraButton } from '@chakra-ui/react';
 import React, { ReactNode, forwardRef } from 'react';
-import { ButtonSizeTypes } from '@highoutput/hds/src/theme/components/button/sizes';
-import { ButtonVariantsTypes } from '@highoutput/hds/src/theme/components/button/variants';
+import { ButtonSizeTypes } from '../theme/button/sizes';
+import { ButtonVariantsTypes } from '../theme/button/variants';
 
 export interface ButtonProps {
   children: ReactNode;
