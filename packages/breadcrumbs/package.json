@@ -30,10 +30,9 @@
     }
   },
   "prettier": {
-    "printWidth": 80,
-    "semi": true,
+    "printWidth": 100,
     "singleQuote": true,
-    "trailingComma": "es5"
+    "trailingComma": "all"
   },
   "name": "@highoutput/hds-breadcrumbs",
   "author": "jadekenneth.github.io",
@@ -47,5 +46,8 @@
       "path": "dist/hds-breadcrumbs.esm.js",
       "limit": "10 KB"
     }
-  ]
+  ],
+  "dependencies": {
+    "uuid": "9.0.0"
+  }
 }
