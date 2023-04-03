@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@highoutput/hds';
+import { ChakraProvider } from '@chakra-ui/react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
@@ -8,7 +8,7 @@ import Breadcrumbs from './Breadcrumbs';
 describe('Breadcrumbs Component', () => {
   beforeEach(() => {
     render(
-      <ThemeProvider>
+      <ChakraProvider>
         <Breadcrumbs
           withAccent
           items={[
@@ -28,7 +28,7 @@ describe('Breadcrumbs Component', () => {
             },
           ]}
         />
-      </ThemeProvider>
+      </ChakraProvider>,
     );
   });
 
@@ -39,7 +39,7 @@ describe('Breadcrumbs Component', () => {
 
   it('Should match snapshot', () => {
     const component = renderer.create(
-      <ThemeProvider>
+      <ChakraProvider>
         <Breadcrumbs
           withAccent
           items={[
@@ -59,7 +59,7 @@ describe('Breadcrumbs Component', () => {
             },
           ]}
         />
-      </ThemeProvider>
+      </ChakraProvider>,
     );
 
     const snapshot = component.toJSON();
