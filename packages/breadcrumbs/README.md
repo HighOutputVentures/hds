@@ -15,24 +15,27 @@ npm i @highoutput/hds-breadcrumbs
 ```tsx
 import { Breadcrumbs } from '@highoutput/hds-breadcrumbs';
 
-export const SamplePage = () => {
+export function SamplePage() {
   return (
     <Breadcrumbs
-      separator={<ChevronRightIcon color="#D6D6D6" />}
-      icon={<AttachmentIcon />}
-      breadCrumbLinks={[
-        { link: '#hello', name: 'Home' },
-        { link: '#Settings', name: 'Settings' },
-        { link: '#Faqs', name: 'Faqs' },
-        { link: '#Logout', name: 'Logout' },
-        { link: '#New', name: 'New' },
-        { link: '#Create', name: 'Create' },
-        { link: '#Contact', name: 'Contact' },
-        { link: '#Read', name: 'Read' },
-        { link: '#Save', name: 'Save' },
-        { link: '#Copy', name: 'Copy' },
+      homeHref="/dashboard"
+      items={[
+        {
+          href: '/settings',
+          label: 'Settings',
+        },
+        {
+          href: '#',
+          label: '...',
+          isDisabled: true,
+        },
+        {
+          href: '/settings/teams',
+          label: 'Teams',
+          isActive: true,
+        },
       ]}
     />
   );
-};
+}
 ```
