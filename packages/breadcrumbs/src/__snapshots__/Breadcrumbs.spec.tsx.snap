@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumbs Component Should match snapshot 1`] = `
+Array [
+  <nav
+    aria-label="breadcrumb"
+    className="chakra-breadcrumb css-11y8svu"
+    data-testid="hds.breadcrumb"
+  >
+    <ol
+      className="chakra-breadcrumb__list css-70qvj9"
+    >
+      <li
+        className="chakra-breadcrumb__list-item css-18biwo"
+      >
+        <a
+          className="chakra-breadcrumb__link css-ov0063"
+          href="/settings"
+          onClick={[Function]}
+        >
+          Settings
+        </a>
+        <span
+          className="css-1xgwh2j"
+          role="presentation"
+        >
+          <svg
+            className="chakra-icon css-u1p2d6"
+            fill="none"
+            focusable={false}
+            height="17"
+            viewBox="0 0 17 17"
+            width="17"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.66675 12.3333L10.6667 8.33331L6.66675 4.33331"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="1.33333"
+            />
+          </svg>
+        </span>
+      </li>
+      <li
+        className="chakra-breadcrumb__list-item css-18biwo"
+      >
+        <a
+          className="chakra-breadcrumb__link css-b1nu9m"
+          href="#"
+          onClick={[Function]}
+        >
+          ...
+        </a>
+        <span
+          className="css-1xgwh2j"
+          role="presentation"
+        >
+          <svg
+            className="chakra-icon css-u1p2d6"
+            fill="none"
+            focusable={false}
+            height="17"
+            viewBox="0 0 17 17"
+            width="17"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.66675 12.3333L10.6667 8.33331L6.66675 4.33331"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="1.33333"
+            />
+          </svg>
+        </span>
+      </li>
+      <li
+        className="chakra-breadcrumb__list-item css-18biwo"
+      >
+        <a
+          className="chakra-breadcrumb__link css-1jojhgu"
+          href="/settings/teams"
+          onClick={[Function]}
+        >
+          Teams
+        </a>
+      </li>
+    </ol>
+  </nav>,
+  <span />,
+]
+`;
