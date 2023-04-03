@@ -1,8 +1,4 @@
 const colors = {
-  'alpha.white': { 500: '#FFFFFF' },
-  'alpha.black': { 500: '#000000' },
-  'canvas.light': { 500: '#E5E5E5' },
-  'canvas.dark': { 500: '#1F1E1F' },
   'brand.primary': {
     900: '#4A3880',
     800: '#5F48A3',

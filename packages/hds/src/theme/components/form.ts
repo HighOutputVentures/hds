@@ -1,13 +1,7 @@
-import Text from './text/text';
+import Text from './text';
 
 export const Form = {
-  parts: [
-    'formLabel',
-    'formInput',
-    'formTextarea',
-    'formHelperText',
-    'formErrorMessage',
-  ],
+  parts: ['formLabel', 'formInput', 'formTextarea', 'formHelperText', 'formErrorMessage'],
   baseStyle: {
     formLabel: {
       size: 'label-xs-medium',
