@@ -1,13 +1,7 @@
 import Text from './text/text';
 
 export const Form = {
-  parts: [
-    'formLabel',
-    'formInput',
-    'formTextarea',
-    'formHelperText',
-    'formErrorMessage',
-  ],
+  parts: ['formLabel', 'formInput', 'formTextarea', 'formHelperText', 'formErrorMessage'],
   baseStyle: {
     formLabel: {
       size: 'label-xs-medium',
@@ -15,7 +9,6 @@ export const Form = {
     },
     formInput: {
       size: 'paragraph-sm-default',
-      padding: '8px 14px',
       _placeholder: {
         color: 'neutrals.500',
       },
