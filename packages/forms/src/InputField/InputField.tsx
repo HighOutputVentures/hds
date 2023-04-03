@@ -69,6 +69,7 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
           {leftIcon && (
             <InputLeftElement
               data-testid={__inputLeftElementTestId ?? 'hds.input.left.element'}
+              height="44px"
             >
               {leftIcon}
             </InputLeftElement>
