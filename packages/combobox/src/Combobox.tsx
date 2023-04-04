@@ -1,4 +1,4 @@
-import { Box, Flex, Icon, List, ListItem, Portal, chakra } from '@chakra-ui/react';
+import { Box, Flex, Icon, List, ListItem, chakra } from '@chakra-ui/react';
 import * as combobox from '@zag-js/combobox';
 import { normalizeProps, useMachine } from '@zag-js/react';
 import * as React from 'react';
@@ -39,11 +39,6 @@ export type ComboboxProps<T extends Option[]> = {
    * Adjust zIndex of menu
    */
   zIndex?: number;
-  /**
-   * You're mostly not going to need this.
-   * This is just for testing in storybook
-   */
-  portalRef?: React.RefObject<HTMLElement | null>;
 };
 
 /**
@@ -60,7 +55,6 @@ export default function Combobox<T extends Option[]>({
   isInvalid,
   isDisabled,
   isReadOnly,
-  portalRef,
   zIndex,
   name,
   value,
@@ -227,57 +221,55 @@ export default function Combobox<T extends Option[]>({
         </Flex>
       </Box>
 
-      <Portal containerRef={portalRef}>
-        <Box
-          as="nav"
-          border="1px"
-          borderTop="none"
-          borderColor="neutrals.200"
-          bgColor="white"
-          rounded="8px"
-          zIndex={zIndex}
-          overflow="hidden"
-          {...api.positionerProps}
-        >
-          <List {...api.contentProps} data-testid="hds.combobox.options">
-            {items.map((item, index) => {
-              return (
-                <ListItem
-                  key={uuid()}
-                  cursor="pointer"
-                  paddingY={2}
-                  paddingX={3}
-                  {...api.getOptionProps({
-                    index,
-                    label: item.label,
-                    value: item.value.toString(),
-                  })}
-                  transition="colors 300ms ease-in-out"
-                  data-testid="hds.combobox.options.option"
-                  _selected={{
-                    bgColor: 'neutrals.100',
-                  }}
-                >
-                  {item.label}
-                </ListItem>
-              );
-            })}
-
-            {!items.length && (
+      <Box
+        as="nav"
+        border="1px"
+        borderTop="none"
+        borderColor="neutrals.200"
+        bgColor="white"
+        rounded="8px"
+        zIndex={zIndex}
+        overflow="hidden"
+        {...api.positionerProps}
+      >
+        <List {...api.contentProps} data-testid="hds.combobox.options">
+          {items.map((item, index) => {
+            return (
               <ListItem
-                fontSize="sm"
-                py={3}
-                px={3}
-                color="neutrals.600"
-                textAlign="center"
-                data-testid="hds.combobox.nomatchfound"
+                key={uuid()}
+                cursor="pointer"
+                paddingY={2}
+                paddingX={3}
+                {...api.getOptionProps({
+                  index,
+                  label: item.label,
+                  value: item.value.toString(),
+                })}
+                transition="colors 300ms ease-in-out"
+                data-testid="hds.combobox.options.option"
+                _selected={{
+                  bgColor: 'neutrals.100',
+                }}
               >
-                No match found
+                {item.label}
               </ListItem>
-            )}
-          </List>
-        </Box>
-      </Portal>
+            );
+          })}
+
+          {!items.length && (
+            <ListItem
+              fontSize="sm"
+              py={3}
+              px={3}
+              color="neutrals.600"
+              textAlign="center"
+              data-testid="hds.combobox.nomatchfound"
+            >
+              No match found
+            </ListItem>
+          )}
+        </List>
+      </Box>
     </Box>
   );
 }

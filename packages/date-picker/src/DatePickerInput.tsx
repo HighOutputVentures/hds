@@ -7,6 +7,7 @@ import {
   useDisclosure,
   useOutsideClick,
 } from "@chakra-ui/react";
+import { autoPlacement, autoUpdate, useFloating } from "@floating-ui/react";
 import { format } from "date-fns";
 import * as React from "react";
 import Calendar from "./Calendar";
@@ -56,7 +57,30 @@ export default function DatePickerInput({
   const inputRef = React.useRef<HTMLInputElement>(null);
   const containerRef = React.useRef<HTMLDivElement>(null);
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { refs, strategy, x, y } = useFloating({
+    whileElementsMounted(...args) {
+      const cleanup = autoUpdate(...args, { animationFrame: true });
+      return cleanup;
+    },
+    middleware: [
+      autoPlacement({
+        allowedPlacements: [
+          "top",
+          "top-end",
+          "top-start",
+          "bottom",
+          "bottom-end",
+          "bottom-start",
+        ],
+      }),
+    ],
+  });
+
+  const { isOpen, onOpen, onClose } = useDisclosure({
+    id: `${uniqid}__HdsDatePicker`,
+  });
+
+  useOutsideClick({ ref: containerRef, handler: onClose });
 
   const dateToString = (d: Date) => {
     if (!dateFormat) {
@@ -68,10 +92,8 @@ export default function DatePickerInput({
     }
   };
 
-  useOutsideClick({ ref: containerRef, handler: onClose });
-
   return (
-    <Box id={uniqid} ref={containerRef} position="relative" sx={styles}>
+    <Box id={uniqid} ref={containerRef} sx={styles}>
       <Box
         border="1px"
         borderColor="neutrals.200"
@@ -101,6 +123,7 @@ export default function DatePickerInput({
         {...(isInvalid && {
           "data-invalid": true,
         })}
+        ref={refs.setReference}
       >
         <Flex
           left="14px"
@@ -120,6 +143,7 @@ export default function DatePickerInput({
           name={name}
           value={value ? dateToString(value) : ""}
           placeholder={placeholder}
+          width="full"
           flexGrow={1}
           paddingY="10px"
           paddingRight="14px"
@@ -130,7 +154,9 @@ export default function DatePickerInput({
           _focus={{
             outline: "none",
           }}
-          onFocus={onOpen}
+          onFocus={() => {
+            onOpen();
+          }}
           {...(isClearable && { paddingRight: `${14 + 8 + 20}px` })}
         />
 
@@ -146,8 +172,9 @@ export default function DatePickerInput({
 
       {isOpen && (
         <Box
-          top="100%"
-          left="0"
+          ref={refs.setFloating}
+          top={`${y ?? 0}px`}
+          left={`${x ?? 0}px`}
           width="fit-content"
           bgColor="white"
           border="1px"
@@ -155,7 +182,7 @@ export default function DatePickerInput({
           rounded="8px"
           paddingX="24px"
           paddingY="20px"
-          position="absolute"
+          position={strategy}
           marginTop="1px"
           sx={{
             /*
