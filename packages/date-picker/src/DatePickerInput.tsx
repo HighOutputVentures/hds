@@ -46,6 +46,7 @@ export default function DatePickerInput({
   isReadOnly,
   dateFormat,
   isClearable,
+  zIndex,
   ...styles
 }: DatePickerInputProps & StylingProps) {
   const uniqid = React.useId();
@@ -153,6 +154,12 @@ export default function DatePickerInput({
           paddingY="20px"
           position="absolute"
           marginTop="1px"
+          sx={{
+            /*
+             * only calendar needs the zIndex
+             */
+            zIndex,
+          }}
         >
           <Calendar
             selected={value ?? null}
