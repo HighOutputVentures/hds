@@ -48,7 +48,6 @@
   "dependencies": {
     "@zag-js/combobox": "^0.3.1",
     "@zag-js/react": "^0.3.12",
-    "downshift": "^7.6.0",
     "uuid": "^9.0.0"
   }
 }

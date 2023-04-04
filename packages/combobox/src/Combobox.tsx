@@ -108,10 +108,10 @@ export default function Combobox<T extends Option[]>({
       allowCustomValue,
       inputBehavior: 'autohighlight',
       selectInputOnFocus: true,
-      ...(value && {
+      ...(!!value && {
         selectionData: {
-          label: value?.label,
-          value: value?.value.toString(),
+          label: value.label,
+          value: value.value.toString(),
         },
       }),
     }),
