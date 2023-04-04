@@ -58,10 +58,7 @@ export default function DatePickerInput({
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   const { refs, strategy, x, y } = useFloating({
-    whileElementsMounted(...args) {
-      const cleanup = autoUpdate(...args, { animationFrame: true });
-      return cleanup;
-    },
+    whileElementsMounted: autoUpdate,
     middleware: [
       autoPlacement({
         allowedPlacements: [
