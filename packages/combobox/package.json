@@ -1,0 +1,54 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "name": "@highoutput/hds-combobox",
+  "author": "calvo-jp",
+  "module": "dist/combobox.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/combobox.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/combobox.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "dependencies": {
+    "@zag-js/combobox": "^0.3.1",
+    "@zag-js/react": "^0.3.12",
+    "downshift": "^7.6.0",
+    "uuid": "^9.0.0"
+  }
+}
