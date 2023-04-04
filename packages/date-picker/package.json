@@ -35,14 +35,14 @@
   },
   "name": "@highoutput/hds-date-picker",
   "author": "jadekenneth.github.io",
-  "module": "dist/@highoutput/hds-date-picker.esm.js",
+  "module": "dist/hds-date-picker.esm.js",
   "size-limit": [
     {
-      "path": "dist/@highoutput/hds-date-picker.cjs.production.min.js",
+      "path": "dist/hds-date-picker.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/@highoutput/hds-date-picker.esm.js",
+      "path": "dist/hds-date-picker.esm.js",
       "limit": "10 KB"
     }
   ],
