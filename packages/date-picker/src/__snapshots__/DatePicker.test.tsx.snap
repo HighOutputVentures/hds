@@ -35,7 +35,7 @@ Array [
               <p
                 className="chakra-text css-fzwid6"
               >
-                March 2023
+                April 2023
               </p>
               <svg
                 className="chakra-icon chakra-icon css-1xogjj1"
@@ -124,14 +124,14 @@ Array [
           className="chakra-stack css-tth4vk"
         >
           <button
-            className="chakra-button css-11a6hrq"
+            className="chakra-button css-1er92m6"
             onClick={[Function]}
             type="button"
           >
             Cancel
           </button>
           <button
-            className="chakra-button css-1wl73lo"
+            className="chakra-button css-1t56293"
             type="button"
           >
             Apply
@@ -236,7 +236,7 @@ exports[`Snapshots (DatePicker Preset Range) Should match snapshot 1`] = `
             <p
               className="chakra-text css-fzwid6"
             >
-              March 2023
+              April 2023
             </p>
             <svg
               className="chakra-icon chakra-icon css-1xogjj1"
@@ -325,7 +325,7 @@ exports[`Snapshots (DatePicker Preset Range) Should match snapshot 1`] = `
             <p
               className="chakra-text css-fzwid6"
             >
-              March 2023
+              April 2023
             </p>
             <svg
               className="chakra-icon chakra-icon css-1xogjj1"
@@ -467,7 +467,7 @@ Array [
               <p
                 className="chakra-text css-fzwid6"
               >
-                March 2023
+                April 2023
               </p>
               <svg
                 className="chakra-icon chakra-icon css-1xogjj1"
@@ -551,14 +551,14 @@ Array [
           className="chakra-stack css-tth4vk"
         >
           <button
-            className="chakra-button css-11a6hrq"
+            className="chakra-button css-1er92m6"
             onClick={[Function]}
             type="button"
           >
             Cancel
           </button>
           <button
-            className="chakra-button css-1wl73lo"
+            className="chakra-button css-1t56293"
             onClick={[Function]}
             type="button"
           >
@@ -578,7 +578,7 @@ Array [
     aria-controls="menu-list-:r8:"
     aria-expanded={false}
     aria-haspopup="menu"
-    className="chakra-button chakra-menu__menu-button css-2f31vo"
+    className="chakra-button chakra-menu__menu-button css-10804vt"
     id="menu-button-:r8:"
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -666,7 +666,7 @@ Array [
                   <p
                     className="chakra-text css-fzwid6"
                   >
-                    March 2023
+                    April 2023
                   </p>
                   <svg
                     className="chakra-icon chakra-icon css-1xogjj1"
@@ -755,14 +755,14 @@ Array [
               className="chakra-stack css-tth4vk"
             >
               <button
-                className="chakra-button css-11a6hrq"
+                className="chakra-button css-1er92m6"
                 onClick={[Function]}
                 type="button"
               >
                 Cancel
               </button>
               <button
-                className="chakra-button css-1wl73lo"
+                className="chakra-button css-1t56293"
                 type="button"
               >
                 Apply
@@ -784,7 +784,7 @@ Array [
     data-testid="hds.modal-datepicker"
   >
     <button
-      className="chakra-button css-2f31vo"
+      className="chakra-button css-10804vt"
       onClick={[Function]}
       type="button"
     >
