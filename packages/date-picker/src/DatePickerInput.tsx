@@ -62,10 +62,8 @@ export default function DatePickerInput({
     middleware: [
       autoPlacement({
         allowedPlacements: [
-          "top",
           "top-end",
           "top-start",
-          "bottom",
           "bottom-end",
           "bottom-start",
         ],
