@@ -1,7 +1,6 @@
 module.exports = {
-  rollup(config, options) {
+  rollup(config) {
     config.plugins = [...config.plugins];
-
     return config;
   },
 };

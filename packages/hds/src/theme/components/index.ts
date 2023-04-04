@@ -1,4 +1,3 @@
-import { ComponentStyleConfig } from '@chakra-ui/react';
 import Box from './box';
 import Checkbox from './checkbox';
 import Drawer from './drawer';
@@ -9,13 +8,13 @@ import Link from './link';
 import PinInputField from './pinInputField';
 import RadioImage from './radioImage';
 import Select from './select';
-import Stack from './stack';
 import Spinner from './spinner';
+import Stack from './stack';
 import Switch from './switch';
 import Tabs from './tabs';
-import Text from './text/text';
+import Text from './text';
 
-const components: { [key: string]: ComponentStyleConfig } = {
+const components = {
   Box,
   Stack,
   Checkbox,

@@ -1,4 +1,4 @@
-import Text from './text/text';
+import Text from './text';
 
 export const Form = {
   parts: ['formLabel', 'formInput', 'formTextarea', 'formHelperText', 'formErrorMessage'],
