@@ -6,11 +6,15 @@ import {
   IndividualMainDateProps,
   IndividualNextDateProps,
   IndividualPrevDateProps,
-} from './DatePicker';
+} from "./DatePicker";
 import DatePickerDropdown, {
   DatePickerDropdownProps,
-} from './DatePickerDropdown';
-import DatePickerModal, { DatePickerModalProps } from './DatePickerModal';
+} from "./DatePickerDropdown";
+import DatePickerModal, { DatePickerModalProps } from "./DatePickerModal";
+export {
+  default as DatePickerInput,
+  DatePickerInputProps,
+} from "./DatePickerInput";
 export {
   DatePicker,
   DatePickerProps,

@@ -31,9 +31,7 @@
   },
   "prettier": {
     "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
+    "trailingComma": "all"
   },
   "name": "@highoutput/hds-date-picker",
   "author": "jadekenneth.github.io",
@@ -49,7 +47,9 @@
     }
   ],
   "dependencies": {
+    "date-fns": "^2.29.3",
     "moment": "^2.29.4",
-    "moment-timezone": "^0.5.40"
+    "moment-timezone": "^0.5.40",
+    "uuid": "9.0.0"
   }
 }
