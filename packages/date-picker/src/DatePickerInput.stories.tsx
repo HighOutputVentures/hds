@@ -19,7 +19,7 @@ const Template: ComponentStory<typeof DatePicker> = () => {
 
   return (
     <ThemeProvider>
-      <Box height="500px">
+      <Box p={16}>
         <DatePickerInput
           width="340px"
           value={args.value}
@@ -34,6 +34,25 @@ const Template: ComponentStory<typeof DatePicker> = () => {
               console.log("No value");
             }
           }}
+          zIndex={1}
+        />
+
+        <DatePickerInput
+          mt={16}
+          width="340px"
+          value={args.value}
+          isClearable
+          placeholder="Select Date"
+          onChange={(value) => {
+            setArgs({ ...args, value });
+
+            if (value) {
+              console.log(format(value, "MMM dd, yyyy"));
+            } else {
+              console.log("No value");
+            }
+          }}
+          zIndex={1}
         />
       </Box>
     </ThemeProvider>

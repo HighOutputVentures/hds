@@ -47,6 +47,7 @@
     }
   ],
   "dependencies": {
+    "@floating-ui/react": "^0.22.3",
     "date-fns": "^2.29.3",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.40",

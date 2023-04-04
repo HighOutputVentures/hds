@@ -21,15 +21,16 @@ enum IdEnum {
 }
 
 const Template: ComponentStory<typeof Combobox> = (args) => {
-  const ref = React.useRef<HTMLDivElement>(null);
-
   return (
     <ThemeProvider>
       <Box h="500px">
-        <Combobox {...args} portalRef={ref} />
+        <Box>
+          <Combobox {...args} />
+        </Box>
+        <Box mt={4}>
+          <Combobox {...args} />
+        </Box>
       </Box>
-
-      <div ref={ref} />
     </ThemeProvider>
   );
 };
