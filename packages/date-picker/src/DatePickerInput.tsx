@@ -33,7 +33,10 @@ export type DatePickerInputProps = {
   dateFormat?: ((value: Date) => string) | string;
 };
 
-type StylingProps = Omit<SystemStyleObject, keyof DatePickerInputProps>;
+type StylingProps = Omit<
+  SystemStyleObject,
+  keyof Required<DatePickerInputProps>
+>;
 
 export default function DatePickerInput({
   id,
