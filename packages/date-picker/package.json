@@ -33,6 +33,12 @@
     "printWidth": 80,
     "trailingComma": "all"
   },
+  "jest": {
+    "verbose": true,
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest.setup.ts"
+    ]
+  },
   "name": "@highoutput/hds-date-picker",
   "author": "jadekenneth.github.io",
   "module": "dist/hds-date-picker.esm.js",
