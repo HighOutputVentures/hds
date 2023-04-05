@@ -1,12 +1,12 @@
-import { Icon, chakra } from '@chakra-ui/react';
-import { addMonths, format, isEqual, subMonths } from 'date-fns';
-import * as React from 'react';
-import { v4 as uuid } from 'uuid';
-import { DAYS } from './constants';
-import ChevronLeftIcon from './icons/ChevronLeftIcon';
-import ChevronRightIcon from './icons/ChevronRightIcon';
-import { Nullable } from './types';
-import { arrayChunk, getCalendar, noop } from './utils';
+import { chakra, Icon } from "@chakra-ui/react";
+import { addMonths, format, isEqual, subMonths } from "date-fns";
+import * as React from "react";
+import { v4 as uuid } from "uuid";
+import { DAYS } from "./constants";
+import ChevronLeftIcon from "./icons/ChevronLeftIcon";
+import ChevronRightIcon from "./icons/ChevronRightIcon";
+import { Nullable } from "./types";
+import { arrayChunk, getCalendar, noop } from "./utils";
 
 type CalendarProps = {
   selected?: Nullable<Date>;
@@ -40,7 +40,7 @@ export default function Calendar({ selected, onSelect = noop }: CalendarProps) {
           lineHeight="24px"
           color="gray.700"
         >
-          {format(baseDate, 'MMMM')}
+          {format(baseDate, "MMMM")}
         </chakra.p>
 
         <Control
@@ -51,7 +51,7 @@ export default function Calendar({ selected, onSelect = noop }: CalendarProps) {
         />
       </chakra.div>
 
-      <chakra.table marginTop="12px">
+      <chakra.table marginTop="12px" data-testid="hds.datepicker.calendar">
         <chakra.thead>
           <chakra.tr>
             {DAYS.map((d) => (
@@ -62,6 +62,7 @@ export default function Calendar({ selected, onSelect = noop }: CalendarProps) {
                 fontWeight="500"
                 fontSize="14px"
                 lineHeight="20px"
+                data-testid={`hds.datepicker.calendar.weekday.${d}`}
               >
                 {d}
               </chakra.th>
@@ -74,6 +75,7 @@ export default function Calendar({ selected, onSelect = noop }: CalendarProps) {
             <chakra.tr key={uuid()}>
               {arr.map((o) => {
                 const isActive = !!selected && isEqual(selected, o.value);
+                const formatted = format(o.value, "yyyy-MM-dd");
 
                 return (
                   <chakra.td key={uuid()}>
@@ -86,20 +88,21 @@ export default function Calendar({ selected, onSelect = noop }: CalendarProps) {
                       rounded="full"
                       transition="colors 300ms ease-in-out"
                       {...(o.isPlaceholder && {
-                        color: 'neutrals.600',
+                        color: "neutrals.600",
                       })}
                       {...(o.isCurrentDay && {
-                        bgColor: 'neutrals.200',
+                        bgColor: "neutrals.200",
                       })}
                       {...(isActive && {
-                        color: 'white',
-                        bgColor: 'brand.primary.700',
+                        color: "white",
+                        bgColor: "brand.primary.700",
                       })}
                       onClick={() => {
                         setBaseDate(o.value);
                         onSelect(o.value);
                       }}
                       tabIndex={-1}
+                      data-testid={`hds.datepicker.calendar.date.${formatted}`}
                     >
                       {o.value.getDate()}
                     </chakra.button>
@@ -114,8 +117,8 @@ export default function Calendar({ selected, onSelect = noop }: CalendarProps) {
   );
 }
 
-type ControlProps = React.ComponentProps<'button'> & {
-  icon(props: React.ComponentProps<'svg'>): JSX.Element;
+type ControlProps = React.ComponentProps<"button"> & {
+  icon(props: React.ComponentProps<"svg">): JSX.Element;
 };
 
 const Control = React.forwardRef<HTMLButtonElement, ControlProps>(
@@ -135,5 +138,5 @@ const Control = React.forwardRef<HTMLButtonElement, ControlProps>(
         <Icon as={icon} width={5} height={5} />
       </chakra.button>
     );
-  }
+  },
 );

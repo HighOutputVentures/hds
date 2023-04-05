@@ -1,9 +1,9 @@
 import {
   Box,
+  chakra,
   Flex,
   Icon,
   SystemStyleObject,
-  chakra,
   useDisclosure,
   useOutsideClick,
 } from "@chakra-ui/react";
@@ -88,8 +88,14 @@ export default function DatePickerInput({
   };
 
   return (
-    <Box id={uniqid} ref={containerRef} sx={styles}>
+    <Box
+      id={uniqid}
+      ref={containerRef}
+      sx={styles}
+      data-testid="hds.datepicker-input"
+    >
       <Box
+        ref={refs.setReference}
         border="1px"
         borderColor="neutrals.200"
         rounded="8px"
@@ -118,7 +124,7 @@ export default function DatePickerInput({
         {...(isInvalid && {
           "data-invalid": true,
         })}
-        ref={refs.setReference}
+        data-testid="hds.datepicker-input.controls"
       >
         <Flex
           left="14px"
@@ -128,6 +134,7 @@ export default function DatePickerInput({
           transform="translateY(-50%)"
           flexShrink={0}
           pointerEvents="none"
+          data-testid="hds.datepicker-input.icon.left"
         >
           <Icon as={CalendarIcon} width="20px" height="20px" />
         </Flex>
@@ -152,7 +159,9 @@ export default function DatePickerInput({
           onFocus={() => {
             onOpen();
           }}
+          onChange={noop}
           {...(isClearable && { paddingRight: `${14 + 8 + 20}px` })}
+          data-testid="hds.datepicker-input.controls.input"
         />
 
         {isClearable && !!value && (
@@ -161,6 +170,7 @@ export default function DatePickerInput({
               onChange(null);
               inputRef.current?.focus();
             }}
+            data-testid="hds.datepicker-input.controls.clear"
           />
         )}
       </Box>
@@ -185,6 +195,7 @@ export default function DatePickerInput({
              */
             zIndex,
           }}
+          data-testid="hds.datepicker-input.calendar-container"
         >
           <Calendar
             selected={value ?? null}
