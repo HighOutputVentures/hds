@@ -7,7 +7,12 @@ import {
   useDisclosure,
   useOutsideClick,
 } from "@chakra-ui/react";
-import { autoPlacement, autoUpdate, useFloating } from "@floating-ui/react";
+import {
+  autoPlacement,
+  autoUpdate,
+  flip,
+  useFloating,
+} from "@floating-ui/react";
 import { format } from "date-fns";
 import * as React from "react";
 import Calendar from "./Calendar";
@@ -26,9 +31,7 @@ export type DatePickerInputProps = {
   onChange?(newValue: Nullable<Date>): void;
   placeholder?: string;
   isInvalid?: boolean;
-  /** Not implemented yet */
   isDisabled?: boolean;
-  /** Not implemented yet */
   isReadOnly?: boolean;
   isClearable?: boolean;
   dateFormat?: ((value: Date) => string) | string;
@@ -50,10 +53,9 @@ export default function DatePickerInput({
   isReadOnly,
   dateFormat,
   isClearable,
-  zIndex,
+  zIndex = 1,
   ...styles
 }: DatePickerInputProps & StylingProps) {
-  const uniqid = React.useId();
   const inputRef = React.useRef<HTMLInputElement>(null);
   const containerRef = React.useRef<HTMLDivElement>(null);
 
@@ -62,38 +64,35 @@ export default function DatePickerInput({
     middleware: [
       autoPlacement({
         allowedPlacements: [
-          "top-end",
+          "bottom-start",
           "top-start",
           "bottom-end",
-          "bottom-start",
+          "top-end",
         ],
       }),
+      flip(),
     ],
   });
 
-  const { isOpen, onOpen, onClose } = useDisclosure({
-    id: `${uniqid}__HdsDatePicker`,
-  });
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   useOutsideClick({ ref: containerRef, handler: onClose });
 
-  const dateToString = (d: Date) => {
-    if (!dateFormat) {
-      return format(d, "MMM dd, yyyy");
-    } else if (typeof dateFormat === "string") {
-      return format(d, dateFormat);
-    } else {
-      return dateFormat(d);
-    }
-  };
+  const dateToString = React.useCallback(
+    (d: Date) => {
+      if (!dateFormat) {
+        return format(d, "MMM dd, yyyy");
+      } else if (typeof dateFormat === "string") {
+        return format(d, dateFormat);
+      } else {
+        return dateFormat(d);
+      }
+    },
+    [dateFormat],
+  );
 
   return (
-    <Box
-      id={uniqid}
-      ref={containerRef}
-      sx={styles}
-      data-testid="hds.datepicker-input"
-    >
+    <Box ref={containerRef} sx={styles} data-testid="hds.datepicker-input">
       <Box
         ref={refs.setReference}
         border="1px"
@@ -103,12 +102,13 @@ export default function DatePickerInput({
         overflow="hidden"
         position="relative"
         alignItems="center"
-        /*
-         * toggle clear button
-         */
+        transition="colors 300ms ease-in-out"
         _hover={{
           borderColor: "neutrals.300",
-          "& .clear-button": {
+          /*
+           * toggle clear button
+           */
+          "& .HdsDatePickerInputClearButton": {
             display: "flex",
           },
         }}
@@ -118,11 +118,20 @@ export default function DatePickerInput({
         _invalid={{
           borderColor: "interface.error.700",
         }}
+        _disabled={{
+          opacity: 0.6,
+          cursor: "not-allowed",
+        }}
         {...(isOpen && {
           "data-focus": true,
         })}
         {...(isInvalid && {
           "data-invalid": true,
+        })}
+        {...(isDisabled && {
+          "data-disabled": true,
+          _hover: {},
+          _focus: {},
         })}
         data-testid="hds.datepicker-input.controls"
       >
@@ -150,21 +159,24 @@ export default function DatePickerInput({
           paddingY="10px"
           paddingRight="14px"
           paddingLeft={`${14 + 8 + 20}px`}
+          readOnly={isReadOnly}
+          disabled={isDisabled}
           _placeholder={{
             color: "neutrals.400",
           }}
           _focus={{
             outline: "none",
           }}
-          onFocus={() => {
-            onOpen();
+          _disabled={{
+            cursor: "not-allowed",
           }}
+          onFocus={onOpen}
           onChange={noop}
           {...(isClearable && { paddingRight: `${14 + 8 + 20}px` })}
           data-testid="hds.datepicker-input.controls.input"
         />
 
-        {isClearable && !!value && (
+        {isClearable && !isDisabled && !isReadOnly && !!value && (
           <ClearButton
             onClick={() => {
               onChange(null);
@@ -175,7 +187,7 @@ export default function DatePickerInput({
         )}
       </Box>
 
-      {isOpen && (
+      {isOpen && !isReadOnly && (
         <Box
           ref={refs.setFloating}
           top={`${y ?? 0}px`}
@@ -231,7 +243,7 @@ const ClearButton = React.forwardRef<
       color="blackAlpha.600"
       transition="colors 300ms ease-in-out"
       tabIndex={-1}
-      className="clear-button"
+      className="HdsDatePickerInputClearButton"
       _hover={{
         color: "blackAlpha.700",
       }}

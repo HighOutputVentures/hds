@@ -1,36 +1,29 @@
-import { isToday } from 'date-fns';
+import {
+  addDays,
+  compareAsc,
+  compareDesc,
+  endOfMonth,
+  endOfWeek,
+  endOfYear,
+  getDaysInMonth,
+  isToday,
+  startOfMonth,
+  startOfWeek,
+  startOfYear,
+  subDays,
+  subMonths,
+  subWeeks,
+  subYears,
+} from "date-fns";
+import { START_OF_WEEK } from "./constants";
+import { CalendarObject, DateRange, TimeAdverbial } from "./types";
 
-function getMonthTotalDays(year: number, month: number) {
-  return 32 - new Date(year, month, 32).getDate();
-}
+export function getCalendar(date: Date) {
+  const firstDayOfMonth = startOfMonth(date);
+  const totalDaysInMonth = getDaysInMonth(date);
 
-function cloneDate(date: Date) {
-  return new Date(date.getTime());
-}
-
-export type CalendarObject = {
-  value: Date;
-  isNextMonth?: boolean;
-  isPrevMonth?: boolean;
-  isCurrentDay?: boolean;
-  isPlaceholder?: boolean;
-}[];
-
-type GetCalendarConfig = {
-  shouldAddPrevMonthId?: boolean;
-  shouldAddNextMonthId?: boolean;
-};
-
-export function getCalendar(date: Date, config: GetCalendarConfig = {}) {
-  const { shouldAddNextMonthId, shouldAddPrevMonthId } = config;
-
-  const year = date.getFullYear();
-  const month = date.getMonth();
-
-  const totalDaysInMonth = getMonthTotalDays(year, month);
-
-  const days: CalendarObject = arrOfNulls(totalDaysInMonth).map((_, index) => {
-    const d = new Date(year, month, index + 1);
+  const days: CalendarObject[] = nullArray(totalDaysInMonth).map((_, index) => {
+    const d = addDays(firstDayOfMonth, index);
 
     return {
       value: d,
@@ -46,18 +39,13 @@ export function getCalendar(date: Date, config: GetCalendarConfig = {}) {
   const lastWeekdayIndex = monthLastDay.value.getDay();
   const totalBlankSlotsLeft = getFillableSlotsLeft(startWeekdayIndex);
   const totalBlankSlotsRight = getFillableSlotsRight(lastWeekdayIndex);
-  const monthFirstDayCopy = cloneDate(monthFirstDay.value);
-  const monthLastDayCopy = cloneDate(monthLastDay.value);
 
   // fill blank slots with days from previous month
   if (totalBlankSlotsLeft >= 1) {
-    arrOfNulls(totalBlankSlotsLeft).forEach(() => {
-      const n = monthFirstDayCopy.setDate(monthFirstDayCopy.getDate() - 1);
-      const d = new Date(n);
-
+    nullArray(totalBlankSlotsLeft).forEach((_, index) => {
       days.unshift({
-        value: d,
-        isPrevMonth: !!shouldAddPrevMonthId,
+        value: subDays(monthFirstDay.value, index + 1),
+        isPrevMonth: true,
         isPlaceholder: true,
       });
     });
@@ -65,13 +53,10 @@ export function getCalendar(date: Date, config: GetCalendarConfig = {}) {
 
   // fill blank slots with days of next month
   if (totalBlankSlotsRight >= 1) {
-    arrOfNulls(totalBlankSlotsRight).forEach(() => {
-      const n = monthLastDayCopy.setDate(monthLastDayCopy.getDate() + 1);
-      const d = new Date(n);
-
+    nullArray(totalBlankSlotsRight).forEach((_, index) => {
       days.push({
-        value: d,
-        isNextMonth: !!shouldAddNextMonthId,
+        value: addDays(monthLastDay.value, index + 1),
+        isNextMonth: true,
         isPlaceholder: true,
       });
     });
@@ -103,8 +88,8 @@ function getFillableSlotsLeft(firstWeekdayIndex: number) {
   return firstWeekdayIndex;
 }
 
-function arrOfNulls(length: number) {
-  return new Array(length).fill(null);
+function nullArray(length = 0) {
+  return new Array<null>(length).fill(null);
 }
 
 export function arrayChunk<T extends unknown[]>(array: T, size: number) {
@@ -123,3 +108,105 @@ export function arrayChunk<T extends unknown[]>(array: T, size: number) {
 }
 
 export const noop = (..._: any): any => undefined;
+
+export function getDateRangeByTimeAdverbial(
+  adverbial: TimeAdverbial,
+  origin?: Date,
+): DateRange {
+  origin = origin ?? new Date();
+
+  if (adverbial === TimeAdverbial.Today) {
+    return {
+      start: origin,
+      until: origin,
+    };
+  }
+
+  if (adverbial === TimeAdverbial.Yesterday) {
+    return {
+      start: subDays(origin, 1),
+      until: origin,
+    };
+  }
+
+  if (adverbial === TimeAdverbial.ThisWeek) {
+    return {
+      start: startOfWeek(origin, { weekStartsOn: START_OF_WEEK }),
+      until: endOfWeek(origin, { weekStartsOn: START_OF_WEEK }),
+    };
+  }
+
+  if (adverbial === TimeAdverbial.LastWeek) {
+    const lastWeekFromOrigin = subWeeks(origin, 1);
+
+    return {
+      start: startOfWeek(lastWeekFromOrigin, { weekStartsOn: START_OF_WEEK }),
+      until: endOfWeek(lastWeekFromOrigin, { weekStartsOn: START_OF_WEEK }),
+    };
+  }
+
+  if (adverbial === TimeAdverbial.ThisMonth) {
+    return {
+      start: startOfMonth(origin),
+      until: endOfMonth(origin),
+    };
+  }
+
+  if (adverbial === TimeAdverbial.LastMonth) {
+    const lastMonthFromOrigin = subMonths(origin, 1);
+
+    return {
+      start: startOfMonth(lastMonthFromOrigin),
+      until: endOfMonth(lastMonthFromOrigin),
+    };
+  }
+
+  if (adverbial === TimeAdverbial.ThisYear) {
+    return {
+      start: startOfYear(origin),
+      until: endOfMonth(origin),
+    };
+  }
+
+  if (adverbial === TimeAdverbial.LastYear) {
+    const lastYearFromOrigin = subYears(origin, 1);
+
+    return {
+      start: startOfYear(lastYearFromOrigin),
+      until: endOfYear(lastYearFromOrigin),
+    };
+  }
+
+  return {
+    start: origin,
+    until: origin,
+  };
+}
+
+type GetRangeCalendarReturn = {
+  /** Calendar on the right */
+  current: CalendarObject[];
+  /** Calendar on the left */
+  previous: CalendarObject[];
+};
+
+export function getRangeCalendar(base: Date): GetRangeCalendarReturn {
+  return {
+    current: getCalendar(base),
+    previous: getCalendar(subMonths(base, 1)),
+  };
+}
+
+type SortDirection = "asc" | "desc";
+
+export function sortDates(array: Date[], direction?: SortDirection) {
+  const copy = [...array];
+
+  if (direction === "desc") {
+    copy.sort(compareDesc);
+  } else {
+    copy.sort(compareAsc);
+  }
+
+  return copy;
+}

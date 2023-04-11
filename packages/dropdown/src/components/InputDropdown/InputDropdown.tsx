@@ -1,16 +1,9 @@
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 import { As, Avatar, Flex, HStack, Icon, Text } from '@chakra-ui/react';
-// @ts-ignore
-import { FormContainer, FormContainerProps } from '@highoutput/hds-forms';
-import {
-  chakraComponents,
-  MultiValue,
-  Select,
-  SingleValue,
-} from 'chakra-react-select';
-import React from 'react';
-// @ts-ignore
+import { FormGroup, FormGroupProps } from '@highoutput/hds-forms';
 import { CheckIcon } from '@highoutput/hds-icons';
+import { chakraComponents, MultiValue, Select, SingleValue } from 'chakra-react-select';
+import React from 'react';
 import getStyles from './styles';
 export interface Item {
   value: string | number;
@@ -22,8 +15,7 @@ export interface OptionItem extends Item {
   username?: string;
 }
 
-export interface InputDropdownFieldProps
-  extends Omit<FormContainerProps, 'partProps'> {
+export interface InputDropdownFieldProps extends Omit<FormGroupProps, 'partProps'> {
   options: OptionItem[];
   loading?: boolean;
   // fieldLabelProps?: Omit<BoxProps, 'children'>;
@@ -48,9 +40,9 @@ const InputDropdown = (props: InputDropdownFieldProps) => {
     darkMode,
     placement,
     inputLeftIcon,
-    errorMsg,
+    error,
     autoFocus,
-    disabled,
+    isDisabled,
     __selectTestId,
     onChangeValue,
     multiple,
@@ -61,22 +53,18 @@ const InputDropdown = (props: InputDropdownFieldProps) => {
   const [optionVal, setOptionVal] = React.useState(options);
 
   const styles = getStyles({
-    error: Boolean(errorMsg),
+    error: Boolean(error),
     multiple,
     darkMode,
   });
   const handleInputChange = (value: string) => {
     if (value.length > 1) {
-      setOptionVal(
-        options.filter((d) =>
-          d.label.toLowerCase().includes(value.toLowerCase())
-        )
-      );
+      setOptionVal(options.filter((d) => d.label.toLowerCase().includes(value.toLowerCase())));
     } else setOptionVal(options);
   };
 
   return (
-    <FormContainer {...props}>
+    <FormGroup {...props}>
       <Flex borderRadius={'8px'} position="relative" gap="10px">
         <Flex
           align={'center'}
@@ -106,24 +94,20 @@ const InputDropdown = (props: InputDropdownFieldProps) => {
           data-testid={__selectTestId ?? `hds.input.dropdown.field`}
           isSearchable
           onInputChange={(e, _) => handleInputChange(e)}
-          isDisabled={disabled}
+          isDisabled={isDisabled}
           isClearable
           components={{
             ClearIndicator: () => null,
             IndicatorSeparator: () => null,
             DropdownIndicator: ({ selectProps }) => {
-              const icon = selectProps.menuIsOpen
-                ? ChevronUpIcon
-                : ChevronDownIcon;
+              const icon = selectProps.menuIsOpen ? ChevronUpIcon : ChevronDownIcon;
               return <Icon as={icon} w={4} h={6} stroke="brand.primary.500" />;
             },
 
             MultiValueContainer: ({ children, data, ...props }) => (
               <chakraComponents.MultiValueContainer {...props} data={data}>
                 <HStack align="center" spacing="5px">
-                  {data.avatar && (
-                    <Avatar width="16px" height="16px" src={data.avatar} />
-                  )}
+                  {data.avatar && <Avatar width="16px" height="16px" src={data.avatar} />}
                   {children}
                 </HStack>
               </chakraComponents.MultiValueContainer>
@@ -155,9 +139,7 @@ const InputDropdown = (props: InputDropdownFieldProps) => {
                         </Text>
                       </HStack>
                       {getValue().map((d) => {
-                        return d.label === v.label ? (
-                          <Icon as={CheckIcon} />
-                        ) : null;
+                        return d.label === v.label ? <Icon as={CheckIcon} /> : null;
                       })}
                     </Flex>
                   );
@@ -165,9 +147,7 @@ const InputDropdown = (props: InputDropdownFieldProps) => {
               </chakraComponents.MenuList>
             ),
           }}
-          onChange={(
-            options: MultiValue<Item> | (SingleValue<Item> | null)
-          ) => {
+          onChange={(options: MultiValue<Item> | (SingleValue<Item> | null)) => {
             return isArray<MultiValue<Item>>(options)
               ? onChangeValue(options.map((o) => o.value))
               : onChangeValue(options?.value ?? null);
@@ -179,7 +159,7 @@ const InputDropdown = (props: InputDropdownFieldProps) => {
           })}
         />
       </Flex>
-    </FormContainer>
+    </FormGroup>
   );
 };
 

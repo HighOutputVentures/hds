@@ -1,6 +1,6 @@
-import { Button, Alert, AlertDescription, AlertIcon } from '@chakra-ui/react';
+import { Alert, AlertDescription, AlertIcon, Button } from '@chakra-ui/react';
 import { Box, Stack } from '@highoutput/hds';
-import { InputField, TextAreaField } from '@highoutput/hds-forms';
+import { MultilineField, TextField } from '@highoutput/hds-forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { FC } from 'react';
 import { useForm } from 'react-hook-form';
@@ -58,31 +58,31 @@ const ContactForm: FC<ContactFormProps> = (props) => {
         data-testid="box.contactform.form"
       >
         <Stack spacing={4}>
-          <InputField
+          <TextField
             {...register('details.name')}
             id="name"
             label="Name"
             placeholder="Input your name"
-            errorMsg={errors.details?.name?.message}
-            disabled={isSubmitting}
+            error={errors.details?.name?.message}
+            isDisabled={isSubmitting}
           />
-          <InputField
+          <TextField
             {...register('emailAddress')}
             id="emailAddress"
             label="Email"
             placeholder="Input your email address"
-            errorMsg={errors.emailAddress?.message}
-            disabled={isSubmitting}
-            data-testid="input.contactform.email"
+            error={errors.emailAddress?.message}
+            isDisabled={isSubmitting}
+            __fieldTestId="input.contactform.email"
           />
-          <TextAreaField
+          <MultilineField
             {...register('message')}
             id="message"
             label="Desciption of concern"
             placeholder="Enter description"
-            errorMsg={errors.message?.message}
-            disabled={isSubmitting}
-            data-testid="textarea.contactform.description"
+            error={errors.message?.message}
+            isDisabled={isSubmitting}
+            __fieldTestId="textarea.contactform.description"
           />
           <Button
             w="full"

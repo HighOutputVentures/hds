@@ -10,7 +10,6 @@ import {
   MenuItem,
   Text,
 } from "@chakra-ui/react";
-import { faker } from "@faker-js/faker";
 import { ComponentStory, Meta } from "@storybook/react";
 import * as React from "react";
 import { MenuDropdown } from "~/dropdown";
@@ -30,22 +29,55 @@ type TUser = {
   teams: string[];
 };
 
-function mockUser(): TUser {
-  return {
-    id: faker.datatype.uuid(),
-    name: faker.name.fullName(),
-    email: faker.internet.email(),
-    avatar: faker.internet.avatar(),
-    username: faker.internet.userName(),
+const items: TUser[] = [
+  {
+    id: "1",
+    name: "John Doe",
+    email: "johndoe@dummy.bla",
+    avatar: "",
+    username: "johndoe",
     isActive: true,
-    role: faker.name.jobTitle(),
+    role: "Web Developer",
     teams: ["Design", "Product", "Marketing"],
-  };
-}
+  },
+  {
+    id: "2",
+    name: "Will Smith",
+    email: "willsmith@domain.xyz",
+    avatar: "",
+    username: "willsmith69",
+    isActive: true,
+    role: "Actor",
+    teams: ["Design", "Product", "Marketing"],
+  },
+  {
+    id: "3",
+    name: "Mary Doe",
+    email: "marydoe@dummy.bla",
+    avatar: "",
+    username: "marydoe1@hom.e",
+    isActive: true,
+    role: "House Wife",
+    teams: ["Design", "Product", "Marketing"],
+  },
+  {
+    id: "3",
+    name: "Peter Parker",
+    email: "spiderman@marvel.avngr",
+    avatar: "",
+    username: "friendlyneighbor@gmai.l",
+    isActive: true,
+    role: "Hero",
+    teams: ["Design", "Product", "Marketing"],
+  },
+];
 
-const items = new Array(1).fill(null).map(() => mockUser());
+const meta: Meta<typeof Table> = {
+  title: "Components/Table",
+  argTypes: {},
+};
 
-export default { title: "Components/Table", argTypes: {} } as Meta;
+export default meta;
 
 const Template: ComponentStory<(props: TableProps<TUser[]>) => JSX.Element> = (args) => {
   return (

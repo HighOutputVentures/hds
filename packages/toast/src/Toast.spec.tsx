@@ -1,7 +1,7 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import * as React from "react";
-import { ToastExample } from "./Toast.example";
+import { useToast, UseToastFnConfig } from "./useToast";
 
 const onCloseComplete = jest.fn();
 
@@ -66,3 +66,26 @@ describe("Toast", () => {
     });
   });
 });
+
+export function ToastExample({ onCloseComplete }: UseToastFnConfig) {
+  const toast = useToast();
+
+  return (
+    <>
+      <button
+        onClick={() => {
+          toast.success("This is a success message!!", { onCloseComplete });
+        }}
+      >
+        Success
+      </button>
+      <button
+        onClick={() => {
+          toast.error("This is an error message!!", { onCloseComplete });
+        }}
+      >
+        Error
+      </button>
+    </>
+  );
+}

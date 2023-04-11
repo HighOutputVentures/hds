@@ -21,7 +21,7 @@ export const Toast: RenderToast = (props) => {
       role="alert"
       aria-label={description}
       bgColor={colors.containerBg}
-      border="1px solid"
+      border="1px"
       borderColor={colors.containerBorder}
       rounded="8px"
       width="550px"
@@ -45,7 +45,13 @@ export const Toast: RenderToast = (props) => {
         {description}
       </Text>
 
-      <Flex as="button" role="button"  data-testid="hds.toast.close.button" aria-label="Close alert" onClick={onClose}>
+      <Flex
+        as="button"
+        role="button"
+        data-testid="hds.toast.close.button"
+        aria-label="Close alert"
+        onClick={onClose}
+      >
         <Icon width={9} height={9} as={XIcon} color={colors.xmark} />
       </Flex>
     </Flex>
@@ -62,23 +68,6 @@ function getIcon(key: UseToastOptions["status"]) {
 }
 
 function useColors(key: UseToastOptions["status"]) {
-  const colorsMap = {
-    error: {
-      containerBg: "#FCEAE8",
-      containerBorder: "#FCD2CF",
-      icon: "#9E241C",
-      text: "#800C05",
-      xmark: "#F04438",
-    },
-    success: {
-      containerBg: "#E8FCE9",
-      containerBorder: "#A3F0A7",
-      icon: "#139E19",
-      text: "#008005",
-      xmark: "#00C408",
-    },
-  };
-
   switch (key) {
     case "error":
       return colorsMap["error"];
@@ -86,3 +75,20 @@ function useColors(key: UseToastOptions["status"]) {
       return colorsMap["success"];
   }
 }
+
+const colorsMap = {
+  error: {
+    containerBg: "#FCEAE8",
+    containerBorder: "#FCD2CF",
+    icon: "#9E241C",
+    text: "#800C05",
+    xmark: "#F04438",
+  },
+  success: {
+    containerBg: "#E8FCE9",
+    containerBorder: "#A3F0A7",
+    icon: "#139E19",
+    text: "#008005",
+    xmark: "#00C408",
+  },
+};

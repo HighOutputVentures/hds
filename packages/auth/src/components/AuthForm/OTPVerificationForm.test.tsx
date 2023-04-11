@@ -19,7 +19,7 @@ describe('Email Login Component', () => {
     const submit = await screen.findByTestId('box.emailform.form');
     await fireEvent.submit(submit);
     const errorFormControl = await screen.findAllByTestId(
-      /hds.form.control.error.message/i
+      /hds.form-group.error/i
     );
     expect(errorFormControl).toHaveLength(1);
   });

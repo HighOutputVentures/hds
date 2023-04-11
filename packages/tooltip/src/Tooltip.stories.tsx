@@ -1,28 +1,28 @@
-import { Flex, Icon } from '@chakra-ui/react';
-import ThemeProvider from '@highoutput/hds/src/components/ThemeProvider';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Flex, Icon } from "@chakra-ui/react";
+import ThemeProvider from "@highoutput/hds/src/components/ThemeProvider";
+import { ComponentStory, Meta } from "@storybook/react";
+import React from "react";
+import Tooltip from "./Tooltip";
 
-import React from 'react';
-
-import Tooltip from './Tooltip';
-
-export default {
-  title: 'Components/Tooltip',
+const meta: Meta<typeof Tooltip> = {
+  title: "Components/Tooltip",
   component: Tooltip,
-} as ComponentMeta<typeof Tooltip>;
+};
 
-const Template: ComponentStory<typeof Tooltip> = (props) => {
+export default meta;
+
+const Template: ComponentStory<typeof Tooltip> = (args) => {
   return (
     <ThemeProvider>
       <Flex
-        gap={'50px'}
+        gap={"50px"}
         flexDir="column"
         width="full"
-        justify={'center'}
-        align={'center'}
-        height={'400px'}
+        justify={"center"}
+        align={"center"}
+        height={"400px"}
       >
-        <Tooltip {...props} isOpen={true}>
+        <Tooltip {...args}>
           <Icon />
         </Tooltip>
       </Flex>
@@ -34,7 +34,6 @@ export const Default = Template.bind({});
 
 Default.args = {
   ...Default.args,
-  label: 'This is a tooltip',
-  arrow: true,
-  theme: 'dark',
+  label: "This is a tooltip",
+  hasArrow: true,
 };

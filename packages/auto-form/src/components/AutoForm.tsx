@@ -1,5 +1,5 @@
 import { Box, Button, VStack } from '@chakra-ui/react';
-import { InputField, TextAreaField } from '@highoutput/hds-forms';
+import { MultilineField, TextField } from '@highoutput/hds-forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { FC } from 'react';
 import { useForm, UseFormReturn } from 'react-hook-form';
@@ -33,29 +33,30 @@ const getInputType = (
 
   const input_type = {
     textarea: (
-      // @ts-ignore "Bug"
-      <TextAreaField
+      <MultilineField
         {...register(key)}
         key={key}
         id={key}
         label={label}
-        __testId="hds.autoform.text.field"
+        __fieldTestId="hds.autoform.multiline-field"
         placeholder={placeholder}
-        errorMsg={error}
-        disabled={isSubmitting}
-        width="100%"
+        error={error}
+        isDisabled={isSubmitting}
+        styles={{
+          width: '100%',
+        }}
       />
     ),
     input: (
-      <InputField
+      <TextField
         {...register(key)}
         key={key}
         id={key}
         label={label}
-        __testId="hds.autoform.input.field"
+        __fieldTestId="hds.autoform.text-field"
         placeholder={placeholder}
-        errorMsg={error}
-        disabled={isSubmitting}
+        error={error}
+        isDisabled={isSubmitting}
       />
     ),
   };

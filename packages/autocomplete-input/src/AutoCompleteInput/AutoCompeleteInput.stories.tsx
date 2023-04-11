@@ -24,7 +24,7 @@ const Template: ComponentStory<typeof AutoCompleteInput> = (props) => {
           {...props}
           onChangeValue={onChange}
           options={args.options}
-          helperMsg="This is a hint to help user"
+          hint="This is a hint to help user"
         />
         <AutoCompleteInput
           {...props}
@@ -32,7 +32,7 @@ const Template: ComponentStory<typeof AutoCompleteInput> = (props) => {
           multiple
           value={options.map((item) => item.value)}
           options={args.options}
-          helperMsg="This is a hint to help user"
+          hint="This is a hint to help user"
         />
         <AutoCompleteInput
           {...props}
@@ -40,16 +40,16 @@ const Template: ComponentStory<typeof AutoCompleteInput> = (props) => {
           multiple
           value={options.map((item) => item.value)}
           options={args.options}
-          helperMsg="This is a hint to help user"
+          hint="This is a hint to help user"
         />
         <AutoCompleteInput
           {...props}
           onChangeValue={onChange}
           multiple
-          disabled
+          isDisabled
           value={options.map((item) => item.value)}
           options={args.options}
-          helperMsg="This is a hint to help user"
+          hint="This is a hint to help user"
         />
         <AutoCompleteInput
           {...props}
@@ -57,7 +57,7 @@ const Template: ComponentStory<typeof AutoCompleteInput> = (props) => {
           multiple
           value={options.map((item) => item.value)}
           options={args.options}
-          errorMsg="This is an error message"
+          error="This is an error message"
         />
       </Flex>
     </ThemeProvider>

@@ -27,7 +27,7 @@ const Template: ComponentStory<typeof InputDropdown> = (props) => {
           {...props}
           onChangeValue={onChange}
           options={args.options}
-          helperMsg="This is a hint to help user"
+          hint="This is a hint to help user"
           inputLeftIcon={SearchIcon}
         />
       </Flex>

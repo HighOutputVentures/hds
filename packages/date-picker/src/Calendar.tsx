@@ -87,6 +87,9 @@ export default function Calendar({ selected, onSelect = noop }: CalendarProps) {
                       lineHeight="20px"
                       rounded="full"
                       transition="colors 300ms ease-in-out"
+                      _hover={{
+                        bgColor: "neutrals.200",
+                      }}
                       {...(o.isPlaceholder && {
                         color: "neutrals.600",
                       })}
@@ -96,6 +99,7 @@ export default function Calendar({ selected, onSelect = noop }: CalendarProps) {
                       {...(isActive && {
                         color: "white",
                         bgColor: "brand.primary.700",
+                        _hover: {},
                       })}
                       onClick={() => {
                         setBaseDate(o.value);
