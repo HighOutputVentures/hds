@@ -10,7 +10,7 @@ export interface StepperProps {
   onChangeStep?: (activeStep: number) => void;
   size?: 'sm' | 'md' | 'lg' | 'xl';
   orientation?: 'horizontal' | 'vertical';
-  stepContentGap: string;
+  gap: string;
 }
 
 const Stepper = ({
@@ -20,12 +20,12 @@ const Stepper = ({
   size = 'lg',
   children,
   orientation = 'horizontal',
-  stepContentGap,
+  gap,
 }: StepperProps & React.PropsWithChildren<FlexProps>) => {
   return (
     <Flex
       flexDirection="column"
-      gap={stepContentGap}
+      gap={gap}
       {...(orientation === 'horizontal' && {
         mx: '129px',
       })}
