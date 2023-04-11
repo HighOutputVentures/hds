@@ -60,6 +60,7 @@ export function useStyles(config: UseStylesConfig = {}) {
           letterSpacing: "0.02em",
           border: "1px",
           borderColor: "neutrals.200",
+          boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05)",
           bgColor: "white",
           rounded: "4px",
           _placeholder: {
@@ -70,7 +71,7 @@ export function useStyles(config: UseStylesConfig = {}) {
           },
           _focus: {
             outline: "none",
-            boxShadow: "none",
+            boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05)",
             borderColor: "brand.primary.700",
             caretColor: "black",
           },
@@ -78,6 +79,7 @@ export function useStyles(config: UseStylesConfig = {}) {
             borderColor: "interface.error.700",
             _focus: {
               borderColor: "interface.error.700",
+              boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05)",
             },
           },
           _disabled: {
