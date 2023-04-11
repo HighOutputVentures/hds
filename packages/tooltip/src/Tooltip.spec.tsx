@@ -1,34 +1,37 @@
-import { Icon } from '@chakra-ui/react';
-import { ThemeProvider } from '@highoutput/hds';
+import { ChakraProvider, Icon } from '@chakra-ui/react';
 import '@testing-library/jest-dom';
-import { render, screen, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
+import { act } from 'react-dom/test-utils';
 import renderer from 'react-test-renderer';
 import Tooltip from './Tooltip';
 
 describe('Checkbox Component', () => {
   beforeEach(() => {
     render(
-      <ThemeProvider>
+      <ChakraProvider>
         <Tooltip label="This is a tooltip">
           <Icon />
         </Tooltip>
-      </ThemeProvider>
+      </ChakraProvider>
     );
   });
 
   it('should toggle tooltip when hover and unhover tooltip trigger', async () => {
-    const tooltip_child = screen.getByTestId('hds.tooltip-trigger');
+    const tooltip_child = screen.getByTestId('hds.tooltip.trigger');
 
-    userEvent.hover(tooltip_child);
+    await act(async () => {
+      fireEvent.mouseOver(tooltip_child);
+    });
 
     waitFor(() => {
       const tooltip = screen.getByTestId('hds.tooltip');
       expect(tooltip).toBeInTheDocument();
     });
 
-    userEvent.unhover(tooltip_child);
+    await act(async () => {
+      fireEvent.mouseOver(tooltip_child);
+    });
 
     await waitFor(() => {
       const tooltip = screen.queryByText(/This is a tooltip/);
@@ -39,11 +42,11 @@ describe('Checkbox Component', () => {
 
   it('Should match snapshot', () => {
     const component = renderer.create(
-      <ThemeProvider>
+      <ChakraProvider>
         <Tooltip label="This is a tooltip">
           <Icon />
         </Tooltip>
-      </ThemeProvider>
+      </ChakraProvider>
     );
 
     const snapshot = component.toJSON();
