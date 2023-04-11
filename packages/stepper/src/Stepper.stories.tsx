@@ -1,6 +1,6 @@
 import { Flex } from '@chakra-ui/react';
-import { ThemeProvider } from '@highoutput/hds';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ThemeProvider } from '~/hds';
 //@ts-ignore
 import React from 'react';
 
@@ -12,7 +12,7 @@ export default {
 } as ComponentMeta<typeof Stepper>;
 
 const Template: ComponentStory<typeof Stepper> = (props) => {
-  const steps = [
+  const items = [
     {
       label: 'Your details',
       description: 'Please provide your name and email',
@@ -26,13 +26,13 @@ const Template: ComponentStory<typeof Stepper> = (props) => {
       description: 'Start collaborating with your team',
     },
   ];
-  const [active, setActive] = React.useState<number>(1);
+  const [value, setValue] = React.useState<number>(1);
 
   const handleOnClickStep = (step: number) => {
     //  form validation eligible for next step
     //   if no error
     //   set active step
-    setActive(step);
+    setValue(step);
     // else
     // display errors
   };
@@ -41,9 +41,9 @@ const Template: ComponentStory<typeof Stepper> = (props) => {
       <Flex alignItems="start" flexDir="row" height={'500px'}>
         <Stepper
           {...props}
-          steps={steps}
-          active={active}
-          onClickStep={(d) => handleOnClickStep(d)}
+          items={items}
+          value={value}
+          onChangeStep={(d) => handleOnClickStep(d)}
         ></Stepper>
       </Flex>
     </ThemeProvider>

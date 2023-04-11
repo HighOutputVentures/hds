@@ -1,22 +1,22 @@
-import { Flex, FlexProps, Text, VStack } from '@highoutput/hds';
+import { Flex, FlexProps, Text, VStack } from '@chakra-ui/react';
 import { Checkbox } from '@highoutput/hds-checkbox';
 import React from 'react';
 export interface StepperProps {
-  steps: {
+  items: {
     label: string;
     description: string;
   }[];
-  active: number;
-  onClickStep?: (activeStep: number) => void;
+  value: number;
+  onChangeStep?: (activeStep: number) => void;
   size?: 'sm' | 'md' | 'lg' | 'xl';
   orientation?: 'horizontal' | 'vertical';
   stepContentGap: string;
 }
 
 const Stepper = ({
-  steps,
-  active,
-  onClickStep,
+  items,
+  value,
+  onChangeStep,
   size = 'lg',
   children,
   orientation = 'horizontal',
@@ -38,17 +38,17 @@ const Stepper = ({
         justifyContent="center"
         align={'center'}
       >
-        {steps.map((step, idx) => {
+        {items.map((step, idx) => {
           const stepNumber = idx + 1;
 
-          const prevStep = active - 1;
+          const prevStep = value - 1;
           return (
             <>
               {idx !== 0 && orientation === 'horizontal' && (
                 <Flex
                   width={'325px'}
                   height={'2px'}
-                  bgColor={stepNumber <= active ? '#7F56D9' : '#EAECF0'}
+                  bgColor={stepNumber <= value ? '#7F56D9' : '#EAECF0'}
                 />
               )}
               <Flex
@@ -60,15 +60,13 @@ const Stepper = ({
                   <Checkbox
                     size={size}
                     type="radioType"
-                    radio_icon={
-                      stepNumber < active ? 'checkIcon' : 'circleIcon'
-                    }
+                    radio_icon={stepNumber < value ? 'checkIcon' : 'circleIcon'}
                     variant="primary.solid"
                     onChange={() => {
-                      stepNumber <= active + 1 && onClickStep?.(stepNumber);
+                      stepNumber <= value + 1 && onChangeStep?.(stepNumber);
                     }}
-                    isChecked={stepNumber <= active}
-                    defaultChecked={prevStep < active}
+                    isChecked={stepNumber <= value}
+                    defaultChecked={prevStep < value}
                     data-testid={`hds.stepper.checkbox.${idx}`}
                   />
                 </Flex>
@@ -88,7 +86,7 @@ const Stepper = ({
                   <Text
                     size="label-sm-default"
                     color={
-                      active === stepNumber
+                      value === stepNumber
                         ? 'brand.primary.900'
                         : 'neutrals.900'
                     }
@@ -113,7 +111,7 @@ const Stepper = ({
                   <Text
                     size="paragraph-md-default"
                     color={
-                      active === stepNumber
+                      value === stepNumber
                         ? 'brand.primary.700'
                         : 'neutrals.600'
                     }
@@ -122,8 +120,8 @@ const Stepper = ({
                     width={'full'}
                     {...(orientation === 'vertical' && {
                       borderLeft:
-                        steps.length - 1 !== idx
-                          ? stepNumber < active
+                        items.length - 1 !== idx
+                          ? stepNumber < value
                             ? '2px solid #7F56D9'
                             : '2px solid #EAECF0'
                           : '2px solid transparent',
