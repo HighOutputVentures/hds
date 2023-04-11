@@ -1,13 +1,13 @@
-import { Flex, FlexProps, Text, VStack } from '@chakra-ui/react';
+import { Flex, Text, VStack } from '@chakra-ui/react';
 import { Checkbox } from '@highoutput/hds-checkbox';
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 export interface StepperProps {
   items: {
     label: string;
     description: string;
   }[];
   value: number;
-  onChangeStep?: (activeStep: number) => void;
+  onChange?: (activeStep: number) => void;
   size?: 'sm' | 'md' | 'lg' | 'xl';
   orientation?: 'horizontal' | 'vertical';
   gap: string;
@@ -16,12 +16,12 @@ export interface StepperProps {
 const Stepper = ({
   items,
   value,
-  onChangeStep,
+  onChange,
   size = 'lg',
   children,
   orientation = 'horizontal',
   gap,
-}: StepperProps & React.PropsWithChildren<FlexProps>) => {
+}: PropsWithChildren<StepperProps>) => {
   return (
     <Flex
       flexDirection="column"
@@ -63,7 +63,7 @@ const Stepper = ({
                     radio_icon={stepNumber < value ? 'checkIcon' : 'circleIcon'}
                     variant="primary.solid"
                     onChange={() => {
-                      stepNumber <= value + 1 && onChangeStep?.(stepNumber);
+                      stepNumber <= value + 1 && onChange?.(stepNumber);
                     }}
                     isChecked={stepNumber <= value}
                     defaultChecked={prevStep < value}
