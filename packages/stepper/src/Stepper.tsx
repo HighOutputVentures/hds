@@ -1,4 +1,6 @@
 import { Flex, Text, VStack } from '@chakra-ui/react';
+
+//@ts-ignore
 import { Checkbox } from '@highoutput/hds-checkbox';
 import React, { PropsWithChildren } from 'react';
 export interface StepperProps {
