@@ -1,5 +1,4 @@
-import { Icon } from '@chakra-ui/react';
-import { ThemeProvider } from '@highoutput/hds';
+import { ChakraProvider, Icon } from '@chakra-ui/react';
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
@@ -10,11 +9,11 @@ import Tooltip from './Tooltip';
 describe('Checkbox Component', () => {
   beforeEach(() => {
     render(
-      <ThemeProvider>
+      <ChakraProvider>
         <Tooltip label="This is a tooltip">
           <Icon />
         </Tooltip>
-      </ThemeProvider>
+      </ChakraProvider>
     );
   });
 
@@ -43,11 +42,11 @@ describe('Checkbox Component', () => {
 
   it('Should match snapshot', () => {
     const component = renderer.create(
-      <ThemeProvider>
+      <ChakraProvider>
         <Tooltip label="This is a tooltip">
           <Icon />
         </Tooltip>
-      </ThemeProvider>
+      </ChakraProvider>
     );
 
     const snapshot = component.toJSON();
