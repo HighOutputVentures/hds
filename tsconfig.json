@@ -1,28 +1,28 @@
 {
-  "compilerOptions": {
-    "module": "esnext",
-    "lib": ["dom", "esnext", "dom.iterable"],
-    "importHelpers": true,
-    "declaration": true,
-    "sourceMap": true,
-    "strict": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "moduleResolution": "node",
-    "jsx": "react",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "allowJs": true,
-    "composite": true,
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["./packages/*"]
-    }
-  },
-  "include": ["packages/**/src", "packages/**/package.json", "packages/date-picker/jest.setup.ts"],
-  "exclude": ["node_modules"]
+	"compilerOptions": {
+		"module": "esnext",
+		"lib": ["dom", "esnext", "dom.iterable"],
+		"importHelpers": true,
+		"declaration": true,
+		"sourceMap": true,
+		"strict": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"moduleResolution": "node",
+		"jsx": "react",
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"noEmit": true,
+		"allowJs": true,
+		"composite": true,
+		"baseUrl": ".",
+		"paths": {
+			"~/*": ["./packages/*"]
+		}
+	},
+	"include": ["packages/**/src", "packages/**/package.json"],
+	"exclude": ["node_modules"]
 }

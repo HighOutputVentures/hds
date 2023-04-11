@@ -2,81 +2,97 @@ import {
   Box,
   PlacementWithLogical,
   Text,
-  Tooltip as Tooltips,
+  Tooltip as ChakraTooltip,
 } from '@chakra-ui/react';
-import React, { PropsWithChildren } from 'react';
+import * as React from 'react';
+import invariant from 'tiny-invariant';
+
+type ColorScheme = 'dark' | 'light';
 
 export interface TooltipProps {
-  theme?: 'dark' | 'light';
-  arrow?: boolean;
   label: string;
-  supportingTextDetail?: string;
-  placement?: PlacementWithLogical | undefined;
-  isOpen?: boolean;
+  children: React.ReactNode;
+  hasArrow?: boolean;
+  placement?: PlacementWithLogical;
+  colorScheme?: ColorScheme;
+  supportingText?: string;
 }
 
-const Tooltip = (props: PropsWithChildren<TooltipProps>) => {
+export default function Tooltip(props: TooltipProps) {
   const {
-    arrow,
     label,
+    hasArrow,
     placement,
-    supportingTextDetail,
-    isOpen,
-    theme,
+    colorScheme = 'dark',
+    supportingText,
     children,
   } = props;
-  const labelWithSupporting = (
+
+  const LabelWithSupportingText = () => (
     <Box
-      maxWidth={'320px'}
+      maxWidth="320px"
       minHeight="34px"
-      p={'12px'}
-      borderRadius={'8px'}
-      width={'full'}
+      padding="12px"
+      rounded="8px"
+      width="full"
     >
       <Text
-        fontWeight={'500'}
+        fontWeight="500"
         fontSize="12px"
-        lineHeight={'18px'}
-        color={theme === 'dark' ? 'neutrals.100' : 'neutrals.700'}
-        mb="4px"
-        fontFamily={'Inter'}
+        lineHeight="18px"
+        marginBottom="4px"
+        color="neutrals.100"
+        {...(colorScheme === 'light' && {
+          color: 'neutrals.700',
+        })}
+        data-testid="hds.tooltip.label"
       >
         {label}
       </Text>
 
       <Text
-        fontWeight={'400'}
+        color="neutrals.300"
         fontSize="12px"
-        lineHeight={'18px'}
-        color={theme === 'dark' ? 'neutrals.300' : '"neutrals.600"'}
-        fontFamily={'Inter'}
+        fontWeight="400"
+        lineHeight="18px"
+        {...(colorScheme === 'light' && {
+          color: 'neutrals.600',
+        })}
+        data-testid="hds.tooltip.supporting-text"
       >
-        {supportingTextDetail}
+        {supportingText}
       </Text>
     </Box>
   );
-  return (
-    <Tooltips
-      hasArrow={arrow}
-      data-testid="hds.tooltip"
-      placement={placement}
-      p={Boolean(supportingTextDetail) ? '0px' : '8px 12px'}
-      label={
-        label && !Boolean(supportingTextDetail) ? label : labelWithSupporting
-      }
-      bg={theme === 'dark' ? '#0F0F0F' : '#FFFFFF'}
-      color={theme === 'dark' ? 'neutrals.100' : 'neutrals.700'}
-      isOpen={isOpen}
-      borderRadius={'8px'}
-      boxShadow={
-        theme === 'light'
-          ? ' 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)'
-          : undefined
-      }
-    >
-      <span data-testid="hds.tooltip-trigger">{children}</span>
-    </Tooltips>
-  );
-};
 
-export default Tooltip;
+  invariant(
+    React.isValidElement(children),
+    "'Children' must be a valid React element"
+  );
+
+  return (
+    <ChakraTooltip
+      label={!supportingText ? label : <LabelWithSupportingText />}
+      hasArrow={hasArrow}
+      placement={placement}
+      color="neutrals.100"
+      bgColor="neutrals.900"
+      rounded="8px"
+      {...(!supportingText && {
+        paddingY: '8px',
+        paddingX: '12px',
+      })}
+      {...(colorScheme === 'light' && {
+        color: 'neutrals.700',
+        bgColor: 'white',
+        boxShadow:
+          '0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)',
+      })}
+      data-testid="hds.tooltip"
+    >
+      {React.cloneElement<any>(children, {
+        'data-testid': 'hds.tooltip.trigger',
+      })}
+    </ChakraTooltip>
+  );
+}

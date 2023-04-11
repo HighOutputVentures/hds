@@ -1,15 +1,15 @@
 import { Flex, Icon } from '@chakra-ui/react';
 import ThemeProvider from '@highoutput/hds/src/components/ThemeProvider';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-
+import { ComponentStory, Meta } from '@storybook/react';
 import React from 'react';
-
 import Tooltip from './Tooltip';
 
-export default {
+const Story: Meta<typeof Tooltip> = {
   title: 'Components/Tooltip',
   component: Tooltip,
-} as ComponentMeta<typeof Tooltip>;
+};
+
+export default Story;
 
 const Template: ComponentStory<typeof Tooltip> = (props) => {
   return (
@@ -22,7 +22,7 @@ const Template: ComponentStory<typeof Tooltip> = (props) => {
         align={'center'}
         height={'400px'}
       >
-        <Tooltip {...props} isOpen={true}>
+        <Tooltip {...props}>
           <Icon />
         </Tooltip>
       </Flex>
@@ -35,6 +35,5 @@ export const Default = Template.bind({});
 Default.args = {
   ...Default.args,
   label: 'This is a tooltip',
-  arrow: true,
-  theme: 'dark',
+  hasArrow: true,
 };
