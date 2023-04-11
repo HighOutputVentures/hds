@@ -1,5 +1,5 @@
 import { Box, Button } from '@chakra-ui/react';
-import { InputField } from '@highoutput/hds-forms';
+import { TextField } from '@highoutput/hds-forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
 import { useForm } from 'react-hook-form';
@@ -14,7 +14,7 @@ export interface OTPVerificationProps extends OTPFormProps {
   onSubmitEmailValue?(value: GenerateEmailOTPSchemaValues): void;
   onSubmitOTPValue?(value: AuthenticateSchemaValues): void;
   otpReceived: boolean;
-  numberOfFields?: number;
+  numberOfFields?: 4 | 6;
   otpType?: 'number' | 'alphanumeric';
   __testId?: string;
 }
@@ -61,12 +61,12 @@ const OTPVerificationForm = (props: OTPVerificationProps) => {
           w={350}
           onSubmit={handleSubmit(onSubmitEmail)}
         >
-          <InputField
+          <TextField
             id="emailAddress"
             {...register('emailAddress')}
-            __testId={__testId ?? 'hds.otp.verification.input.email'}
-            errorMsg={errors.emailAddress?.message}
-            disabled={isSubmitting}
+            __fieldTestId={__testId ?? 'hds.otp.verification.input.email'}
+            error={errors.emailAddress?.message}
+            isDisabled={isSubmitting}
             placeholder={'Enter your email address'}
           />
 

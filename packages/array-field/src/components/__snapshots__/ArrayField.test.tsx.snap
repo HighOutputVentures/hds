@@ -10,17 +10,15 @@ exports[`Array Field Component Snapshot Should match snapshot 1`] = `
     onChange={[Function]}
   >
     <div
-      aria-label="Form Group"
       className="chakra-form-control css-0"
-      data-testid="hds.form.control"
+      data-testid="hds.form-group.group"
       role="group"
     >
       <div
         className="chakra-input__group css-4302v8"
-        data-testid="hds.input.group"
       >
         <input
-          className="chakra-input css-0"
+          className="chakra-input css-1kqk1cp"
           data-testid="hds.array-field.input"
           disabled={false}
           id="input"
@@ -28,12 +26,9 @@ exports[`Array Field Component Snapshot Should match snapshot 1`] = `
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
-          onKeyDown={[Function]}
           placeholder=""
           readOnly={false}
           required={false}
-          role="input"
-          type="text"
         />
       </div>
     </div>

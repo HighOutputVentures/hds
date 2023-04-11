@@ -35,20 +35,18 @@ describe('Input Dropdown Component', () => {
           label="Users"
           options={SELECT_OPTION}
           __selectTestId={'hds.input.field'}
-          __formLabelTestId={'hds.form.control.label'}
+          __labelTestId={'hds.form.control.label'}
           onChangeValue={jest.fn()}
         />
-      </ChakraProvider>
+      </ChakraProvider>,
     );
   });
   it('Should render Input Dropdown  form container', async () => {
-    const formControl = await screen.findAllByTestId('hds.form.control');
+    const formControl = await screen.findAllByTestId('hds.form-group.group');
     expect(formControl).toHaveLength(1);
   });
   it('Should render Input Dropdown  label', async () => {
-    const formControlLabel = await screen.findAllByTestId(
-      'hds.form.control.label'
-    );
+    const formControlLabel = await screen.findAllByTestId('hds.form.control.label');
     expect(formControlLabel).toHaveLength(1);
   });
   it('Should render Input Dropdown ', async () => {
@@ -63,12 +61,8 @@ describe('Snapshot', () => {
   it('should match snapshot', () => {
     const component = renderer.create(
       <ChakraProvider>
-        <InputDropdown
-          label="Users"
-          options={SELECT_OPTION}
-          onChangeValue={jest.fn()}
-        />
-      </ChakraProvider>
+        <InputDropdown label="Users" options={SELECT_OPTION} onChangeValue={jest.fn()} />
+      </ChakraProvider>,
     );
 
     const tree = component.toJSON();
