@@ -43,7 +43,7 @@ const Template: ComponentStory<typeof Stepper> = (props) => {
           {...props}
           items={items}
           value={value}
-          onChangeStep={(d) => handleOnClickStep(d)}
+          onChange={(d) => handleOnClickStep(d)}
         ></Stepper>
       </Flex>
     </ThemeProvider>
