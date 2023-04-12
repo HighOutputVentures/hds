@@ -41,7 +41,7 @@ Array [
       />
       <span
         aria-hidden={true}
-        className="chakra-checkbox__control css-h8v2ap"
+        className="chakra-checkbox__control css-1ghg39o"
         onMouseDown={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}

@@ -38,7 +38,8 @@ exports[`Snapshot (OTPVerificationForm) Should match snapshot 1`] = `
           <input
             aria-label="Please enter your pin code"
             autoComplete="one-time-code"
-            className="chakra-pin-input css-143gdnu"
+            className="chakra-pin-input css-qnlbca"
+            data-testid="hds.otp-field.input"
             id="pin-input-:r1:--1"
             inputMode="numeric"
             onBlur={[Function]}
@@ -52,7 +53,8 @@ exports[`Snapshot (OTPVerificationForm) Should match snapshot 1`] = `
           <input
             aria-label="Please enter your pin code"
             autoComplete="one-time-code"
-            className="chakra-pin-input css-143gdnu"
+            className="chakra-pin-input css-qnlbca"
+            data-testid="hds.otp-field.input"
             id="pin-input-:r1:--1"
             inputMode="numeric"
             onBlur={[Function]}
@@ -66,7 +68,8 @@ exports[`Snapshot (OTPVerificationForm) Should match snapshot 1`] = `
           <input
             aria-label="Please enter your pin code"
             autoComplete="one-time-code"
-            className="chakra-pin-input css-143gdnu"
+            className="chakra-pin-input css-qnlbca"
+            data-testid="hds.otp-field.input"
             id="pin-input-:r1:--1"
             inputMode="numeric"
             onBlur={[Function]}
@@ -83,7 +86,8 @@ exports[`Snapshot (OTPVerificationForm) Should match snapshot 1`] = `
           <input
             aria-label="Please enter your pin code"
             autoComplete="one-time-code"
-            className="chakra-pin-input css-143gdnu"
+            className="chakra-pin-input css-qnlbca"
+            data-testid="hds.otp-field.input"
             id="pin-input-:r1:--1"
             inputMode="numeric"
             onBlur={[Function]}
@@ -97,7 +101,8 @@ exports[`Snapshot (OTPVerificationForm) Should match snapshot 1`] = `
           <input
             aria-label="Please enter your pin code"
             autoComplete="one-time-code"
-            className="chakra-pin-input css-143gdnu"
+            className="chakra-pin-input css-qnlbca"
+            data-testid="hds.otp-field.input"
             id="pin-input-:r1:--1"
             inputMode="numeric"
             onBlur={[Function]}
@@ -111,7 +116,8 @@ exports[`Snapshot (OTPVerificationForm) Should match snapshot 1`] = `
           <input
             aria-label="Please enter your pin code"
             autoComplete="one-time-code"
-            className="chakra-pin-input css-143gdnu"
+            className="chakra-pin-input css-qnlbca"
+            data-testid="hds.otp-field.input"
             id="pin-input-:r1:--1"
             inputMode="numeric"
             onBlur={[Function]}

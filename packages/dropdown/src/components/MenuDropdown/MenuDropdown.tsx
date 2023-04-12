@@ -16,7 +16,6 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { ThreeDots } from '@highoutput/hds-icons';
-import { ButtonVariantsTypes } from '@highoutput/hds-button';
 import React, { FC } from 'react';
 
 export interface MenuDropdownFieldProps {
@@ -35,7 +34,6 @@ export interface MenuDropdownFieldProps {
   menuItems: React.ReactNode;
   gap?: string;
   placement?: PlacementWithLogical | undefined;
-  variant?: ButtonVariantsTypes;
   closeOnSelect?: boolean;
   showRightIcon?: boolean;
 }
@@ -51,7 +49,6 @@ const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
     profileUrl,
     menuType,
     placement,
-    variant = 'unstyled',
   } = props;
 
   const styles = useStyles();
@@ -80,7 +77,6 @@ const MenuDropdown: FC<MenuDropdownFieldProps> = (props) => {
         <>
           <MenuButton
             as={Button}
-            variant={variant}
             isActive={isOpen}
             display="flex"
             transition="all 300ms ease-in-out"
