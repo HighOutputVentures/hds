@@ -1,5 +1,15 @@
-export { AvatarProps, default as Avatar } from "./Avatar";
-export { AvatarGroupProps, default as AvatarGroup } from "./AvatarGroup";
-export { AvatarLabelProps, default as AvatarLabel } from "./AvatarLabel";
-export { AvatarProfileProps, default as AvatarProfile } from "./AvatarProfile";
-export { default as withAvatar } from "./withAvatar";
+import Avatar, { AvatarProps } from "./Avatar";
+import AvatarGroup, { AvatarGroupProps } from "./AvatarGroup";
+import AvatarLabel, { AvatarLabelProps } from "./AvatarLabel";
+import AvatarProfile, { AvatarProfileProps } from "./AvatarProfile";
+
+export {
+  Avatar,
+  AvatarProps,
+  AvatarGroup,
+  AvatarGroupProps,
+  AvatarLabel,
+  AvatarLabelProps,
+  AvatarProfile,
+  AvatarProfileProps,
+};

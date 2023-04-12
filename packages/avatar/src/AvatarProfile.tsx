@@ -1,36 +1,22 @@
-import { SystemStyleObject } from "@chakra-ui/react";
 import * as React from "react";
-import Avatar, { AvatarBaseProps } from "./Avatar";
-import { useActualSize } from "./hooks";
-import { Clickable, ResponsiveSize } from "./types";
+import Avatar, { AvatarProps } from "./Avatar";
 
-type AvatarProfileSize = "sm" | "md" | "lg";
+type Size = "sm" | "md" | "lg";
 
-type AvatarProfileBaseProps = {
-  size?: AvatarProfileSize | ResponsiveSize<AvatarProfileSize>;
-};
+type Base = Pick<AvatarProps, "src" | "name" | "onClick" | "__testId">;
 
-type InheritedAvatarProps = Pick<AvatarBaseProps, "src" | "name" | "verified">;
-
-// prettier-ignore
-export type AvatarProfileProps =
-  SystemStyleObject &
-  InheritedAvatarProps &
-  AvatarProfileBaseProps &
-  Clickable;
+export interface AvatarProfileProps extends Base {
+  size?: Size;
+}
 
 export default function AvatarProfile(props: AvatarProfileProps) {
-  const { size, ...others } = Object.assign({ size: "md" }, props);
+  const { size = "sm", ...others } = props;
 
-  const actualSize = useActualSize(size) || "md";
-  const psuedoSize = { sm: "3xl", md: "4xl", lg: "5xl" } as any;
-
-  return (
-    <Avatar
-      size={psuedoSize[actualSize as keyof typeof psuedoSize]}
-      {...others}
-      __elevated
-      __bordered
-    />
-  );
+  return <Avatar size={sizeMap[size]} isElevated isBordered {...others} />;
 }
+
+const sizeMap = {
+  sm: "3xl",
+  md: "4xl",
+  lg: "5xl",
+} as const;
