@@ -28,21 +28,18 @@ exports[`Snapshot (OTPVerificationForm) Should match snapshot 1`] = `
         </p>
       </div>
       <div
-        aria-label="Form Group"
         className="chakra-form-control css-0"
-        data-testid="hds.form.control"
+        data-testid="hds.form-group.group"
         role="group"
       >
         <div
-          className="chakra-stack css-1tsaady"
+          className="css-clgcik"
         >
           <input
             aria-label="Please enter your pin code"
             autoComplete="one-time-code"
-            className="chakra-pin-input css-25hifv"
-            data-testid="hds.pininput.pin"
-            disabled={false}
-            id="otp--1"
+            className="chakra-pin-input css-143gdnu"
+            id="pin-input-:r1:--1"
             inputMode="numeric"
             onBlur={[Function]}
             onChange={[Function]}
@@ -55,10 +52,8 @@ exports[`Snapshot (OTPVerificationForm) Should match snapshot 1`] = `
           <input
             aria-label="Please enter your pin code"
             autoComplete="one-time-code"
-            className="chakra-pin-input css-25hifv"
-            data-testid="hds.pininput.pin"
-            disabled={false}
-            id="otp--1"
+            className="chakra-pin-input css-143gdnu"
+            id="pin-input-:r1:--1"
             inputMode="numeric"
             onBlur={[Function]}
             onChange={[Function]}
@@ -71,10 +66,8 @@ exports[`Snapshot (OTPVerificationForm) Should match snapshot 1`] = `
           <input
             aria-label="Please enter your pin code"
             autoComplete="one-time-code"
-            className="chakra-pin-input css-25hifv"
-            data-testid="hds.pininput.pin"
-            disabled={false}
-            id="otp--1"
+            className="chakra-pin-input css-143gdnu"
+            id="pin-input-:r1:--1"
             inputMode="numeric"
             onBlur={[Function]}
             onChange={[Function]}
@@ -85,17 +78,13 @@ exports[`Snapshot (OTPVerificationForm) Should match snapshot 1`] = `
             value=""
           />
           <div
-            className="css-iux5u6"
-          >
-            -
-          </div>
+            className="css-yaj5k0"
+          />
           <input
             aria-label="Please enter your pin code"
             autoComplete="one-time-code"
-            className="chakra-pin-input css-25hifv"
-            data-testid="hds.pininput.pin"
-            disabled={false}
-            id="otp--1"
+            className="chakra-pin-input css-143gdnu"
+            id="pin-input-:r1:--1"
             inputMode="numeric"
             onBlur={[Function]}
             onChange={[Function]}
@@ -108,10 +97,8 @@ exports[`Snapshot (OTPVerificationForm) Should match snapshot 1`] = `
           <input
             aria-label="Please enter your pin code"
             autoComplete="one-time-code"
-            className="chakra-pin-input css-25hifv"
-            data-testid="hds.pininput.pin"
-            disabled={false}
-            id="otp--1"
+            className="chakra-pin-input css-143gdnu"
+            id="pin-input-:r1:--1"
             inputMode="numeric"
             onBlur={[Function]}
             onChange={[Function]}
@@ -124,10 +111,8 @@ exports[`Snapshot (OTPVerificationForm) Should match snapshot 1`] = `
           <input
             aria-label="Please enter your pin code"
             autoComplete="one-time-code"
-            className="chakra-pin-input css-25hifv"
-            data-testid="hds.pininput.pin"
-            disabled={false}
-            id="otp--1"
+            className="chakra-pin-input css-143gdnu"
+            id="pin-input-:r1:--1"
             inputMode="numeric"
             onBlur={[Function]}
             onChange={[Function]}

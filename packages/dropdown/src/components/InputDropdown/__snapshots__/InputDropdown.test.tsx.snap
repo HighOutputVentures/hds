@@ -3,14 +3,13 @@
 exports[`Snapshot should match snapshot 1`] = `
 Array [
   <div
-    aria-label="Form Group"
     className="chakra-form-control css-1kxonj9"
-    data-testid="hds.form.control"
+    data-testid="hds.form-group.group"
     role="group"
   >
     <label
-      className="chakra-form__label css-q3w9z2"
-      data-testid="hds.form.control.label"
+      className="chakra-form__label css-dh7ao0"
+      data-testid="hds.form-group.label"
       htmlFor="field-:r0:"
       id="field-:r0:-label"
     >

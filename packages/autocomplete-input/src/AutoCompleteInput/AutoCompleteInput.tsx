@@ -1,6 +1,6 @@
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 import { Avatar, HStack, Icon } from '@chakra-ui/react';
-import { FormContainer, FormContainerProps } from '@highoutput/hds-forms';
+import { FormGroup, FormGroupProps } from '@highoutput/hds-forms';
 import {
   chakraComponents,
   MultiValue,
@@ -19,8 +19,7 @@ export interface OptionItem extends Item {
   avatar?: string;
 }
 
-export interface AutoCompleteInputFieldProps
-  extends Omit<FormContainerProps, 'partProps'> {
+export interface AutoCompleteInputFieldProps extends FormGroupProps {
   options: OptionItem[];
   loading?: boolean;
   required?: boolean;
@@ -42,9 +41,9 @@ const AutoCompleteInput = (props: AutoCompleteInputFieldProps) => {
     darkMode,
     placement,
     showDropdownIndicator,
-    errorMsg,
+    error,
     autoFocus,
-    disabled,
+    isDisabled,
     onChangeValue,
     multiple,
     loading,
@@ -53,13 +52,13 @@ const AutoCompleteInput = (props: AutoCompleteInputFieldProps) => {
   } = props;
 
   const styles = getStyles({
-    error: Boolean(errorMsg),
+    error: Boolean(error),
     multiple,
     darkMode,
   });
 
   return (
-    <FormContainer {...props}>
+    <FormGroup {...props}>
       <Select
         options={options}
         chakraStyles={styles}
@@ -75,7 +74,7 @@ const AutoCompleteInput = (props: AutoCompleteInputFieldProps) => {
         isLoading={loading}
         data-testid={__testId ?? `hds.autocomplete.input.field`}
         isSearchable
-        isDisabled={disabled}
+        isDisabled={isDisabled}
         isClearable
         components={{
           ClearIndicator: () => null,
@@ -110,7 +109,7 @@ const AutoCompleteInput = (props: AutoCompleteInputFieldProps) => {
             : value === option.value;
         })}
       />
-    </FormContainer>
+    </FormGroup>
   );
 };
 

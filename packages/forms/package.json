@@ -31,9 +31,7 @@
   },
   "prettier": {
     "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
+    "trailingComma": "all"
   },
   "name": "@highoutput/hds-forms",
   "author": "calvo-jp",
@@ -55,13 +53,19 @@
   "publishConfig": {
     "access": "public"
   },
+  "jest": {
+    "verbose": true,
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest.setup.ts"
+    ]
+  },
   "dependencies": {
-    "@chakra-ui/react": "^2.3.7",
-    "@hookform/resolvers": "2.9.9",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-hook-form": "7.38.0",
-    "yup": "0.32.11"
+    "@floating-ui/react": "^0.22.3",
+    "@zag-js/combobox": "^0.3.1",
+    "@zag-js/react": "^0.3.12",
+    "downshift": "^7.6.0",
+    "react-textarea-autosize": "^8.4.1",
+    "uuid": "^9.0.0"
   },
   "gitHead": "2cc842169e828ff56ef57e039534fb0414854443"
 }

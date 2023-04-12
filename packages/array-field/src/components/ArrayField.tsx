@@ -1,11 +1,10 @@
 import { AddIcon, DeleteIcon } from '@chakra-ui/icons';
 import { Button, Flex, Icon, Text, VStack } from '@chakra-ui/react';
-import { InputField } from '@highoutput/hds-forms';
+import { TextField } from '@highoutput/hds-forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { ReactNode } from 'react';
 import { useFieldArray, useForm } from 'react-hook-form';
 import { ArrayFieldSchema, ArrayFieldTypeValues } from './validation';
-
 
 export interface ArrayFieldProps {
   buttonRemoveChildren?: ReactNode;
@@ -84,12 +83,12 @@ const ArrayField = (props: ArrayFieldProps) => {
           onBlur={handleOnBlurInput}
           onChange={handleOnChangeInput}
         >
-          <InputField
+          <TextField
             id={'input'}
             placeholder={placeholder ?? ''}
             {...register(`input.${idx}.value`)}
-            __testId={__inputTestId ?? 'hds.array-field.input'}
-            errorMsg={
+            __fieldTestId={__inputTestId ?? 'hds.array-field.input'}
+            error={
               isRequired ? formState.errors?.input?.[idx]?.value?.message : ''
             }
           />
