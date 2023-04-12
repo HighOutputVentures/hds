@@ -1,43 +1,21 @@
-import { extendTheme, VStack } from "@chakra-ui/react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { VStack } from "@chakra-ui/react";
+import { ComponentStory, Meta } from "@storybook/react";
 import * as React from "react";
-import { theme, ThemeProvider } from "../../hds/src";
-import Avatar from "./Avatar";
+import { ThemeProvider } from "../../hds/src";
 import AvatarGroup from "./AvatarGroup";
-import withAvatar from "./withAvatar";
 
-export default {
+const Story: Meta<typeof AvatarGroup> = {
   title: "Components/Avatar/AvatarGroup",
-  argTypes: {
-    size: {
-      name: "size",
-      type: {
-        name: "string",
-        required: false,
-      },
-      defaultValue: "md",
-      control: "select",
-      options: "xs|sm|md".split(/\|/g),
-    },
-  },
-} as ComponentMeta<typeof AvatarGroup>;
+  component: AvatarGroup,
+};
+
+export default Story;
 
 const Template: ComponentStory<typeof AvatarGroup> = (args) => {
   return (
-    <ThemeProvider theme={extendTheme(theme, withAvatar())}>
+    <ThemeProvider>
       <VStack align="start" spacing="8px">
-        <AvatarGroup {...args}>
-          <Avatar src="https://i.pravatar.cc/200?u=0" />
-          <Avatar src="https://i.pravatar.cc/200?u=1" />
-          <Avatar src="https://i.pravatar.cc/200?u=2" />
-          <Avatar src="https://i.pravatar.cc/200?u=3" />
-          <Avatar src="https://i.pravatar.cc/200?u=4" />
-          <Avatar src="https://i.pravatar.cc/200?u=5" />
-          <Avatar src="https://i.pravatar.cc/200?u=6" />
-          <Avatar src="https://i.pravatar.cc/200?u=7" />
-          <Avatar src="https://i.pravatar.cc/200?u=8" />
-          <Avatar src="https://i.pravatar.cc/200?u=9" />
-        </AvatarGroup>
+        <AvatarGroup {...args} />
       </VStack>
     </ThemeProvider>
   );
@@ -46,6 +24,20 @@ const Template: ComponentStory<typeof AvatarGroup> = (args) => {
 export const Default = Template.bind({});
 
 Default.args = {
+  ...Default.args,
   max: 5,
+  size: "sm",
   hasAddButton: true,
+  items: [
+    { name: "", src: "https://i.pravatar.cc/200?u=0" },
+    { name: "", src: "https://i.pravatar.cc/200?u=1" },
+    { name: "", src: "https://i.pravatar.cc/200?u=2" },
+    { name: "", src: "https://i.pravatar.cc/200?u=3" },
+    { name: "", src: "https://i.pravatar.cc/200?u=4" },
+    { name: "", src: "https://i.pravatar.cc/200?u=5" },
+    { name: "", src: "https://i.pravatar.cc/200?u=6" },
+    { name: "", src: "https://i.pravatar.cc/200?u=7" },
+    { name: "", src: "https://i.pravatar.cc/200?u=8" },
+    { name: "", src: "https://i.pravatar.cc/200?u=9" },
+  ],
 };

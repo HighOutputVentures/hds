@@ -30,7 +30,7 @@
     }
   },
   "prettier": {
-    "printWidth": 100,
+    "printWidth": 90,
     "trailingComma": "all"
   },
   "name": "@highoutput/hds-avatar",
@@ -48,6 +48,9 @@
   ],
   "jest": {
     "verbose": true
+  },
+  "dependencies": {
+    "@highoutput/hds-tooltip": "*"
   },
   "gitHead": "2cc842169e828ff56ef57e039534fb0414854443"
 }

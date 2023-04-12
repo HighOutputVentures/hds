@@ -1,87 +1,60 @@
-import { Box, SystemStyleObject, Text, useMultiStyleConfig } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import * as React from "react";
-import { PropsWithChildren } from "react";
-import { AvatarBaseProps } from "./Avatar";
-import { Badgeable, Clickable, FreeSize } from "./types";
-import { omit, pick } from "./utils";
+import Avatar, { AvatarProps } from "./Avatar";
 
 type Size = "sm" | "md" | "lg" | "xl";
 
-type AvatarLabelBaseProps = {
+export interface AvatarLabelProps extends AvatarProps {
   size?: Size;
-  fallback?: boolean;
   supportText?: string;
-};
+}
 
-// prettier-ignore
-export type AvatarLabelProps = 
-  SystemStyleObject &
-  FreeSize<AvatarBaseProps> &
-  AvatarLabelBaseProps &
-  Badgeable &
-  Clickable;
-
-export default function AvatarLabel(props: PropsWithChildren<AvatarLabelProps>) {
-  const {
-    src,
-    name,
-    size = "md",
-    fallback = true,
-    children,
-    supportText,
-    online,
-    __testId,
-    onlineIndicator,
-    ...others
-  } = props;
-
-  const styles = useMultiStyleConfig("AvatarLabel", { size, variant: "hds" });
-
-  if (!React.isValidElement(children)) {
-    console.error("'AvatarLabel' only accepts a single 'Avatar' child");
-
-    return null;
-  }
+export default function AvatarLabel(props: AvatarLabelProps) {
+  const { size = "md", name, supportText, ...others } = props;
 
   return (
     <Box
       sx={{
-        ...omit(
-          others,
-          "badge",
-          "clickable",
-          "verified",
-          /* @ts-ignore "This uses type guards here" */
-          "onClick",
-          "badgeIcon",
-        ),
-        ...styles.container,
-      }}
-    >
-      <Box sx={styles.avatar}>
-        {React.cloneElement<any>(children, {
-          src,
-          name: fallback ? name : undefined,
-          size,
-          online,
-          onlineIndicator,
-          ...pick(
-            others,
-            "badge",
-            "verified",
-            "clickable",
-            /* @ts-ignore "This uses type guards here" */
-            "onClick",
-            "badgeIcon",
-          ),
-        })}
-      </Box>
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
 
-      <Box sx={styles.label} data-testid={__testId ?? 'hds.avatar-label'}>
-        <Text sx={styles.heading} color="neutrals.800" size="labels-xs-default">
+        ...(size === "sm" && { gap: "10px" }),
+        ...(size === "md" && { gap: "12px" }),
+        ...(size === "lg" && { gap: "12px" }),
+        ...(size === "xl" && { gap: "16px" }),
+      }}
+      data-testid="hds.avatar-label"
+    >
+      <Avatar name={name} size={size} {...others} />
+
+      <Box>
+        <Text
+          sx={{
+            color: "neutrals.800",
+
+            ...(size === "sm" && { fontSize: "14px", lineHeight: "14px" }),
+            ...(size === "md" && { fontSize: "14px", lineHeight: "14px" }),
+            ...(size === "lg" && { fontSize: "18px", lineHeight: "18px" }),
+            ...(size === "xl" && { fontSize: "20px", lineHeight: "20px" }),
+          }}
+          data-testid="hds.avatar-label.name"
+        >
           {name}
         </Text>
-        <Text sx={styles.supportText} color="neutrals.600" size="labels-xxs-default">
+
+        <Text
+          sx={{
+            color: "neutrals.600",
+            marginTop: "4px",
+
+            ...(size === "sm" && { fontSize: "12px", lineHeight: "12px" }),
+            ...(size === "md" && { fontSize: "14px", lineHeight: "14px" }),
+            ...(size === "lg" && { fontSize: "14px", lineHeight: "14px" }),
+            ...(size === "xl" && { fontSize: "18px", lineHeight: "18px" }),
+          }}
+          data-testid="hds.avatar-label.support-text"
+        >
           {supportText}
         </Text>
       </Box>
