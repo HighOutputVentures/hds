@@ -1,6 +1,6 @@
 import { Flex } from '@chakra-ui/react';
+import { ThemeProvider } from '@highoutput/hds';
 import { SearchIcon } from '@highoutput/hds-icons';
-import ThemeProvider from '@highoutput/hds/src/components/ThemeProvider';
 import { useArgs } from '@storybook/addons';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
