@@ -1,6 +1,6 @@
-import { ThemeProvider, Box, Flex } from '@highoutput/hds';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Box, Flex, ThemeProvider } from '@highoutput/hds';
 import { Button } from '@highoutput/hds-button';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React, { useRef } from 'react';
 import SlideoutMenu, { SlideoutMenuRef } from './SlideoutMenu';
 
@@ -22,17 +22,13 @@ const Template: ComponentStory<typeof SlideoutMenu> = (args) => {
         footer={
           <Flex gap={2}>
             <Button
-              variant="outline-primary"
+              accent="gray"
+              variant="outline"
               onClick={() => menuRef.current?.onClose()}
             >
               Cancel
             </Button>
-            <Button
-              variant="solid-primary"
-              onClick={() => menuRef.current?.onClose()}
-            >
-              Save
-            </Button>
+            <Button onClick={() => menuRef.current?.onClose()}>Save</Button>
           </Flex>
         }
       >

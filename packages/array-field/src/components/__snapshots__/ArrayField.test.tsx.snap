@@ -18,7 +18,7 @@ exports[`Array Field Component Snapshot Should match snapshot 1`] = `
         className="chakra-input__group css-4302v8"
       >
         <input
-          className="chakra-input css-1kqk1cp"
+          className="chakra-input css-ay2syu"
           data-testid="hds.array-field.input"
           disabled={false}
           id="input"

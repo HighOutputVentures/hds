@@ -2,7 +2,6 @@ import Box from './box';
 import Checkbox from './checkbox';
 import Drawer from './drawer';
 import Flex from './flex';
-import Form from './form';
 import Heading from './heading';
 import Link from './link';
 import PinInputField from './pinInputField';
@@ -19,7 +18,6 @@ const components = {
   Stack,
   Checkbox,
   Link,
-  Form,
   Heading,
   Switch,
   Tabs,

@@ -14,16 +14,13 @@ npm i @highoutput/hds-button
 
 ```tsx
 import * as React from "react";
-import Button,{ CloseButton, SocialButton, withButton } from "@highoutput/hds-button";
-import { ThemeProvider, HStack, Box, extendTheme } from "@highoutput/hds";
-
+import { Button } from "@highoutput/hds-button";
+import { ThemeProvider } from "@highoutput/hds";
 
 export default function Example() {
   return (
-    <ThemeProvider theme={extendTheme(withButton())}>
-      <Button {...args} >Submit</Button>
-      <CloseButton {...args} />
-      <SocialButton {...args} />
+    <ThemeProvider>
+      <Button>Submit</Button>
     </ThemeProvider>
   );
 }

@@ -1,10 +1,10 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import React from 'react';
+import { EmailIcon, Icon } from '@chakra-ui/icons';
+import { Text } from '@chakra-ui/react';
 import { Box, Flex, ThemeProvider } from '@highoutput/hds';
 import { Button } from '@highoutput/hds-button';
-import { Text } from '@chakra-ui/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import React from 'react';
 import CTA from './CTA';
-import { EmailIcon, Icon } from '@chakra-ui/icons';
 import VisaIcon from './exampale/VisaIcon';
 
 export default {
@@ -73,7 +73,9 @@ const TemplateContent: ComponentStory<typeof CTA> = (args) => {
               </Box>
 
               <Flex justifyContent="flex-end">
-                <Button variant="outline-primary">Edit</Button>
+                <Button accent="gray" variant="outline">
+                  Edit
+                </Button>
               </Flex>
             </Flex>
           }
