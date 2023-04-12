@@ -1,86 +1,92 @@
-import { Avatar, AvatarBadge, Box, Icon, useMultiStyleConfig } from "@chakra-ui/react";
-import { SystemStyleObject } from "@chakra-ui/styled-system";
+import { As, Avatar as ChakraAvatar, AvatarBadge, Box, Icon } from "@chakra-ui/react";
 import * as React from "react";
+import { useStyles } from "./hooks";
 import UserIcon from "./icons/UserIcon";
 import VerifiedIcon from "./icons/VerifiedIcon";
-import { Badgeable, Clickable, ResponsiveSize } from "./types";
-import { omit } from "./utils";
+import { Size } from "./types";
 
-type AvatarSize = "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl";
-
-export type AvatarBaseProps = {
+export interface AvatarProps {
   src?: string;
   name?: string;
-  size?: AvatarSize | ResponsiveSize<AvatarSize>;
-  online?: boolean;
-  onlineIndicator?: boolean;
-  verified?: boolean;
-  /* 🔒 internals  */
-  __elevated?: boolean;
-  __bordered?: boolean;
+  size?: Size;
+  isOnline?: boolean;
+  hasOnlineIndicator?: boolean;
+  badgeIcon?: As<any>;
+  isVerified?: boolean;
+  isElevated?: boolean;
+  isBordered?: boolean;
+  onClick?(): void;
   __testId?: string;
-};
+  __zIndex?: number | string;
+}
 
-export type AvatarProps = SystemStyleObject & AvatarBaseProps & Badgeable & Clickable;
+export default React.forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
+  props,
+  ref,
+) {
+  const {
+    src,
+    name,
+    size = "md",
+    hasOnlineIndicator,
+    isOnline,
+    isBordered,
+    isElevated,
+    badgeIcon,
+    isVerified,
+    onClick,
+    __testId,
+    __zIndex,
+    ...others
+  } = props;
 
-/**
- *
- * ### HDS Avatar
- *
- * 💡
- *
- * Please only use the `size`s `2xl` and below.
- * `3xl` and up are only used for profile internally
- * and will be removed in the future.
- * They also does not support `badge` and other stuffs
- *
- */
-export default function HdsAvatar(props: AvatarProps) {
-  const { src, name, size = "md", onlineIndicator, online, __bordered, __elevated,__testId, ...p } = props;
-
-  const styles = useMultiStyleConfig("Avatar", { size, variant: "hds" });
+  const styles = useStyles({ size });
+  const isClickable = !!onClick;
+  const hasBadgeIcon = !!badgeIcon;
 
   return (
-    <Avatar
-      variant="hds"
+    <ChakraAvatar
+      ref={ref}
+      sx={{
+        ...styles.avatar({
+          isBordered,
+          isElevated,
+          isClickable,
+        }),
+        /*
+         * Please see AvatarGroup why we use this
+         */
+        zIndex: __zIndex,
+      }}
       src={src}
       size={size}
       name={name}
       icon={<Icon as={UserIcon} color="#475467" />}
-      data-online={!!online}
-      data-fallback={!src}
-      data-testid={__testId ?? "hds-avatar"}
-      data-elevated={!!__elevated}
-      data-bordered={!!__bordered}
-      data-clickable={!!p.clickable}
-      {...(p.clickable && {
+      styleConfig={{ sizes: {} }}
+      /*
+       * We need to accept props passed internally
+       * AvatarGroup won't work without this
+       */
+      {...others}
+      /*
+       * Clickable avatars
+       */
+      {...(isClickable && {
+        role: "button",
         tabIndex: 0,
-        onClick: p.onClick,
+        onClick,
       })}
-      sx={{
-        ...omit(
-          p,
-          "badge",
-          "clickable",
-          /* @ts-ignore "Include types which utilizes type guard-ing." */
-          "onClick",
-          "badgeIcon",
-        ),
-      }}
+      data-testid={__testId}
     >
-      {!!onlineIndicator /* <!-- Online Indicator --> */ && (
-        <AvatarBadge role="presentation" aria-label={online ? "Online" : "Offline"} />
-      )}
+      {!!hasOnlineIndicator && <AvatarBadge sx={styles.badge({ isOnline })} />}
 
-      {!!p.verified /* <!-- Verified --> */ && (
-        <Icon as={VerifiedIcon} role="presentation" aria-label="Verified" sx={styles.verified} />
-      )}
+      {!!isVerified && <Icon as={VerifiedIcon} sx={styles.badgeVerified()} />}
 
-      {!!p.badge /* <!-- Badge --> */ && (
-        <Box role="presentation" aria-label="Company Icon" sx={styles.customIcon}>
-          <Icon as={p.badgeIcon} />
+      {!!hasBadgeIcon && (
+        <Box sx={styles.badgeCustom()}>
+          <Icon as={badgeIcon} />
         </Box>
       )}
-    </Avatar>
+    </ChakraAvatar>
   );
-}
+});

@@ -1,96 +1,141 @@
-import {
-  AvatarGroup,
-  chakra,
-  HStack,
-  Icon,
-  SystemStyleObject,
-  Tooltip,
-  useBreakpoint,
-  useMultiStyleConfig,
-} from "@chakra-ui/react";
+import { AvatarGroup, Box, chakra, HStack, Icon } from "@chakra-ui/react";
+import { Tooltip } from "@highoutput/hds-tooltip";
 import * as React from "react";
-import { useActualSize } from "./hooks";
+import { v4 as uuid } from "uuid";
+import Avatar from "./Avatar";
 import PlusIcon from "./icons/PlusIcon";
-import { Breakpoints, ResponsiveSize } from "./types";
-import { findClosestBreakpoint } from "./utils";
 
-type AvatarGroupSize = "xs" | "sm" | "md";
+type Size = "xs" | "sm" | "md";
 
-type AvatarGroupBaseProps = {
-  max?: number | Partial<Record<Breakpoints, number>>;
-  size?: AvatarGroupSize | ResponsiveSize<AvatarGroupSize>;
-  hasAddButton?: boolean;
-  onAddButtonClick?(): void;
+type Item = {
+  src?: string;
+  name?: string;
 };
 
-export type AvatarGroupProps = SystemStyleObject & AvatarGroupBaseProps;
+export interface AvatarGroupProps<T extends Item> {
+  max?: number;
+  size?: Size;
+  items?: T[];
+  hasAddButton?: boolean;
+  onAddButtonClick?(items: Item[]): void;
+}
 
-export default function HdsAvatarGroup(props: React.PropsWithChildren<AvatarGroupProps>) {
-  const { max = 5, size = "md", children, hasAddButton, onAddButtonClick, ...others } = props;
+export default function HdsAvatarGroup<T extends Item>(props: AvatarGroupProps<T>) {
+  const {
+    max = 5,
+    size = "md",
+    items = [],
+    hasAddButton,
+    onAddButtonClick = function () {},
+  } = props;
 
-  const actualMax = useActualMax(max);
-  const actualSize = useActualSize(size) || "md";
+  /* Sadly, this is the only way we can modify excessLabel and group's styles */
+  const styleConfig = React.useMemo(
+    () => ({
+      parts: ["group", "excessLabel"],
+      sizes: {
+        xs: {
+          excessLabel: {
+            width: "24px",
+            height: "24px",
+            fontSize: "12px",
+            lineHeight: "18px",
+          },
+        },
+        sm: {
+          excessLabel: {
+            width: "32px",
+            height: "32px",
+            fontSize: "14px",
+            lineHeight: "20px",
+          },
+        },
+        md: {
+          excessLabel: {
+            width: "40px",
+            height: "40px",
+            fontSize: "16px",
+            lineHeight: "24px",
+          },
+        },
+      },
+      baseStyle: {
+        excessLabel: {
+          color: "#475467",
+          bgColor: "#F9FAFB",
+          border: "2px solid #FFFFFF",
+          fontWeight: "medium",
+          zIndex: items.length + 1,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        },
+        group: {},
+      },
+    }),
+    [items],
+  );
 
   return (
-    <HStack sx={others} spacing="8px" /* retain spacing */>
-      <AvatarGroup
-        variant="hds"
-        max={actualMax}
-        size={size}
-        spacing={getSizeSpace({ xs: "-4px", sm: "-8px", md: "-12px" }, actualSize)}
-        aria-label="Group of users"
-      >
-        {React.Children.map(children, (child, zIndex) => {
-          if (!React.isValidElement(child)) return null;
+    <HStack spacing="8px">
+      <Box>
+        <AvatarGroup
+          max={max}
+          size={size}
+          spacing={{ xs: "-4px", sm: "-8px", md: "-12px" }[size]}
+          styleConfig={styleConfig}
+          data-testid="hds.avatar-group"
+        >
+          {items.map(({ src, name }, index) => (
+            <Avatar
+              key={uuid()}
+              size={size}
+              src={src}
+              name={name}
+              isBordered
+              /*
+               *
+               * Image should be overlapped by the image next to it
+               *
+               */
+              __zIndex={index}
+              __testId="hds.avatar-group.avatar"
+            />
+          ))}
+        </AvatarGroup>
+      </Box>
 
-          return React.cloneElement<any>(child, {
-            size,
-            zIndex,
-            __bordered: true,
-          });
-        })}
-      </AvatarGroup>
+      {hasAddButton && (
+        <Tooltip label="Add user" hasArrow>
+          <chakra.button
+            role="button"
+            aria-label="Add User"
+            data-testid="hds.avatar-group.controls.add"
+            onClick={() => onAddButtonClick(items)}
+            sx={{
+              border: "1px dashed #C2C2C2",
+              rounded: "full",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "#525252",
 
-      {hasAddButton && <AddButton size={actualSize} onClick={onAddButtonClick} />}
+              ...(size === "xs" && { width: "24px", height: "24px" }),
+              ...(size === "sm" && { width: "32px", height: "32px" }),
+              ...(size === "md" && { width: "40px", height: "40px" }),
+            }}
+          >
+            <Icon
+              as={PlusIcon}
+              sx={{
+                ...(size === "xs" && { width: "16px", height: "16px" }),
+                ...(size === "sm" && { width: "16px", height: "16px" }),
+                ...(size === "md" && { width: "20px", height: "20px" }),
+              }}
+            />
+          </chakra.button>
+        </Tooltip>
+      )}
     </HStack>
   );
-}
-
-type AddButtonProps = React.ComponentProps<"button"> & { size: string /* unsafe. 🤐 */ };
-
-function AddButton({ size, ...props }: AddButtonProps) {
-  const styles = useMultiStyleConfig("AvatarGroupButton", { size });
-
-  return (
-    <Tooltip
-      variant="hds-avatar"
-      hasArrow
-      label="Add user"
-      placement="top"
-      role="tooltip"
-      aria-label="Add user"
-    >
-      <chakra.button role="button" aria-label="Add User" sx={styles.container} {...props}>
-        <Icon as={PlusIcon} sx={styles.icon} />
-      </chakra.button>
-    </Tooltip>
-  );
-}
-
-function useActualMax(max: AvatarGroupProps["max"], fallback = "md") {
-  const breakpoint = useBreakpoint({ fallback });
-
-  const breakpoints = typeof max === "number" ? [] : Object.keys(max || {});
-
-  return typeof max === "number"
-    ? max
-    : breakpoint in (max || {})
-    ? (max as any)[breakpoint]
-    : breakpoints.length
-    ? (max as any)[findClosestBreakpoint(breakpoints, breakpoint)]
-    : fallback;
-}
-
-function getSizeSpace(obj: any, size: string): string {
-  return obj[size];
 }

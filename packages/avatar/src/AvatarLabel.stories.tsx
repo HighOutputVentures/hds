@@ -1,80 +1,49 @@
 // @ts-nocheck
 
-import { extendTheme, Flex, HStack } from "@chakra-ui/react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Flex, HStack } from "@chakra-ui/react";
+import { ComponentStory, Meta } from "@storybook/react";
 import * as React from "react";
-import { theme, ThemeProvider } from "../../hds/src";
-import Avatar from "./Avatar";
+import { ThemeProvider } from "../../hds/src";
 import AvatarLabel from "./AvatarLabel";
 import CompanyIcon from "./examples/CompanyIcon";
-import withAvatar from "./withAvatar";
 
-export default {
+const Story: Meta<typeof AvatarLabel> = {
   title: "Components/Avatar/AvatarLabel",
-  argTypes: {
-    size: {
-      name: "size",
-      type: {
-        name: "string",
-        required: false,
-      },
-      defaultValue: "md",
-      control: "select",
-      options: "sm|md|lg|xl".split(/\|/g),
-    },
-  },
-} as ComponentMeta<typeof AvatarLabel>;
+  component: AvatarLabel,
+};
 
-const Template: ComponentStory<typeof Avatar> = (args) => {
+export default Story;
+
+const Template: ComponentStory<typeof AvatarLabel> = (args) => {
   return (
-    <ThemeProvider theme={extendTheme(theme, withAvatar())}>
+    <ThemeProvider>
       <HStack align="start" spacing={8}>
         <Flex gap={4} direction="column">
-          <AvatarLabel src="https://i.pravatar.cc/300?u=1" online {...args}>
-            <Avatar />
-          </AvatarLabel>
-          <AvatarLabel online {...args}>
-            <Avatar />
-          </AvatarLabel>
-          <AvatarLabel online fallback={false} {...args}>
-            <Avatar />
-          </AvatarLabel>
+          <AvatarLabel src="https://i.pravatar.cc/300?u=1" {...args} />
+          <AvatarLabel {...args} />
+          <AvatarLabel {...args} />
         </Flex>
 
         <Flex gap={4} direction="column">
-          <AvatarLabel src="https://i.pravatar.cc/300?u=2" verified {...args}>
-            <Avatar />
-          </AvatarLabel>
-          <AvatarLabel verified {...args}>
-            <Avatar />
-          </AvatarLabel>
-          <AvatarLabel verified fallback={false} {...args}>
-            <Avatar />
-          </AvatarLabel>
+          <AvatarLabel isVerified src="https://i.pravatar.cc/300?u=2" {...args} />
+          <AvatarLabel isVerified {...args} />
+          <AvatarLabel isVerified {...args} />
         </Flex>
 
         <Flex gap={4} direction="column">
-          <AvatarLabel src="https://i.pravatar.cc/300?u=3" badge badgeIcon={CompanyIcon} {...args}>
-            <Avatar />
-          </AvatarLabel>
-          <AvatarLabel badge badgeIcon={CompanyIcon} {...args}>
-            <Avatar />
-          </AvatarLabel>
-          <AvatarLabel badge badgeIcon={CompanyIcon} fallback={false} {...args}>
-            <Avatar />
-          </AvatarLabel>
+          <AvatarLabel
+            src="https://i.pravatar.cc/300?u=3"
+            badgeIcon={CompanyIcon}
+            {...args}
+          />
+          <AvatarLabel badgeIcon={CompanyIcon} {...args} />
+          <AvatarLabel badgeIcon={CompanyIcon} {...args} />
         </Flex>
 
         <Flex gap={4} direction="column">
-          <AvatarLabel src="https://i.pravatar.cc/300?u=3" onlineIndicator {...args}>
-            <Avatar />
-          </AvatarLabel>
-          <AvatarLabel onlineIndicator {...args}>
-            <Avatar />
-          </AvatarLabel>
-          <AvatarLabel onlineIndicator fallback={false} {...args}>
-            <Avatar />
-          </AvatarLabel>
+          <AvatarLabel hasOnlineIndicator src="https://i.pravatar.cc/300?u=3" {...args} />
+          <AvatarLabel hasOnlineIndicator {...args} />
+          <AvatarLabel hasOnlineIndicator {...args} />
         </Flex>
       </HStack>
     </ThemeProvider>
@@ -84,7 +53,8 @@ const Template: ComponentStory<typeof Avatar> = (args) => {
 export const Default = Template.bind({});
 
 Default.args = {
+  ...Default.args,
   name: "John Doe",
   supportText: "johndoe@dummy.bla",
-  online: true,
+  isOnline: true,
 };
