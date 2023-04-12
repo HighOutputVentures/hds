@@ -18,7 +18,7 @@ import { ThemeProvider, extendTheme } from "@highoutput/hds";
 
 export default function Example() {
   return (
-    <ThemeProvider theme={extendTheme(withAvatar())}>
+    <ThemeProvider>
       <Avatar
         size="xl"
         src="https://i.pravatar.cc/300"
