@@ -1,7 +1,5 @@
-import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { Box, Button, Center, Stack, Text, VStack } from '@chakra-ui/react';
-// @ts-ignore
-import { InputField } from '@highoutput/hds-forms';
+import { PasswordField, TextField } from '@highoutput/hds-forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { FC, ReactNode } from 'react';
 import { useForm } from 'react-hook-form';
@@ -31,14 +29,14 @@ export type CredentialLoginFormDefaultProps = {
 export interface CredentialLoginFormNameProps
   extends CredentialLoginFormDefaultProps {
   variant: 'name-password';
-  userNameLeftIcon?: ReactNode;
+  userNameLeftIcon?: JSX.Element;
   nameLabel?: string;
   onSubmit?(values: CredentialFormInputNameProps): void;
 }
 export interface CredentialLoginFormEmailProps
   extends CredentialLoginFormDefaultProps {
   variant: 'email-password';
-  emailLeftIcon?: ReactNode;
+  emailLeftIcon?: JSX.Element;
   emailLabel?: string;
   onSubmit?(values: CredentialFormInputEmailProps): void;
 }
@@ -52,7 +50,6 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
     signUpTitle,
     formHeaderSubTitle,
     formHeaderTitle,
-    passwordLeftIcon,
     loginTitle,
     onSubmit,
     passwordLabel,
@@ -62,7 +59,6 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
     customLink,
   } = props;
 
-  const [showPassword, setShowPassword] = React.useState(false);
   const [isSignUp, setIsSignUp] = React.useState(false);
   const [defaultLinkActive, setDefaultLinkActive] = React.useState(true);
   const { register, handleSubmit, formState } = useForm<
@@ -117,7 +113,7 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
 
       <Stack spacing={'1rem'}>
         {props.variant === 'name-password' ? (
-          <InputField
+          <TextField
             {...register('name')}
             id={'name'}
             leftIcon={props.userNameLeftIcon}
@@ -127,52 +123,34 @@ const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
                   props.nameLabel?.slice(1)
                 : undefined
             }
-            __testId={__inputTestId ?? 'hds.credential.input.username'}
+            __fieldTestId={__inputTestId ?? 'hds.credential.input.username'}
             placeholder={`Input your ${
               props.nameLabel?.toLowerCase() ?? 'username'
             }`}
-            errorMsg={formState.errors.name?.message}
-            disabled={formState.isSubmitting}
+            error={formState.errors.name?.message}
+            isDisabled={formState.isSubmitting}
           />
         ) : (
-          <InputField
+          <TextField
             {...register('email')}
             id={'email'}
             label={props.emailLabel}
             leftIcon={props.emailLeftIcon}
             placeholder="Input your email"
-            __testId={__inputTestId ?? 'hds.credential.input.email'}
-            errorMsg={formState.errors.email?.message}
-            disabled={formState.isSubmitting}
+            __fieldTestId={__inputTestId ?? 'hds.credential.input.email'}
+            error={formState.errors.email?.message}
+            isDisabled={formState.isSubmitting}
           />
         )}
 
-        <InputField
+        <PasswordField
           {...register('password')}
           id="password"
           label={passwordLabel}
-          type={showPassword ? 'text' : 'password'}
           placeholder="Input your password"
-          errorMsg={formState.errors.password?.message}
-          disabled={formState.isSubmitting}
-          leftIcon={passwordLeftIcon}
-          __testId={__passwordTestId ?? 'hds.credential.input.password'}
-          rightIcon={
-            <Button
-              data-testid={'hds.show.hide.btn'}
-              background={'none'}
-              _hover={{ background: 'none' }}
-              _active={{ background: 'none' }}
-              aria-label={showPassword ? 'show-password' : 'hide-password'}
-              onClick={() => setShowPassword((prev) => !prev)}
-            >
-              {showPassword ? (
-                <ViewIcon color="neutrals.600" fontSize="md" />
-              ) : (
-                <ViewOffIcon color="neutrals.600" fontSize="md" />
-              )}
-            </Button>
-          }
+          __fieldTestId={__passwordTestId ?? 'hds.credential.input.password'}
+          error={formState.errors.password?.message}
+          isDisabled={formState.isSubmitting}
         />
       </Stack>
       <Button

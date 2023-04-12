@@ -29,19 +29,7 @@ describe('Login Form Email-based Component', () => {
     const errorText = await screen.findByText(/password is required/i);
     expect(errorText).toBeInTheDocument();
   });
-  it('should toggle showing and hiding password', () => {
-    const showHideBtn = screen.getByTestId('hds.show.hide.btn');
-    fireEvent.click(showHideBtn);
-    const showPasswordLabel = screen.getByRole('button', {
-      name: 'show-password',
-    });
-    expect(showPasswordLabel).toBeInTheDocument();
-    fireEvent.click(showHideBtn);
-    const hidePasswordLabel = screen.getByRole('button', {
-      name: 'hide-password',
-    });
-    expect(hidePasswordLabel).toBeInTheDocument();
-  });
+
   it('should toggle login to signup form', async () => {
     const switchLink = screen.getByTestId('hds.switch.form.link');
     fireEvent.click(switchLink);

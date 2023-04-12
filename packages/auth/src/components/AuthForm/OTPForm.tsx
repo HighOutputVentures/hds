@@ -1,14 +1,14 @@
 import { Box, Button, Heading, Text } from '@chakra-ui/react';
-import { PinInputField } from '@highoutput/hds-forms';
+import { OtpField } from '@highoutput/hds-forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { ReactNode } from 'react';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { authenticateSchema, AuthenticateSchemaValues } from './validation';
 
 export interface OTPFormProps {
   title?: ReactNode;
   subTitle?: ReactNode;
-  numberOfFields?: number;
+  numberOfFields?: 6 | 4;
   buttonText?: string;
   otpType?: 'number' | 'alphanumeric';
   onSubmitOTPValue?(value: AuthenticateSchemaValues): void;
@@ -24,7 +24,7 @@ const OTPForm = (props: OTPFormProps) => {
   } = props;
   const buttonRef = React.useRef<HTMLButtonElement>(null);
   const {
-    register: registerOtp,
+    control,
     handleSubmit: handleSubmitOtp,
     formState: formStateOtp,
   } = useForm<AuthenticateSchemaValues>({
@@ -63,16 +63,26 @@ const OTPForm = (props: OTPFormProps) => {
         )}
       </Box>
 
-      <PinInputField
-        id="otp"
-        {...registerOtp('otp')}
-        errorMsg={formStateOtp.errors.otp?.message}
-        disabled={formStateOtp.isSubmitting}
-        numberOfFields={numberOfFields}
-        autoFocus
-        onComplete={buttonRef.current?.click}
-        type={otpType}
+      <Controller
+        name="otp"
+        control={control}
+        render={({ fieldState, field }) => (
+          <OtpField
+            id="otp"
+            error={fieldState.error?.message}
+            isDisabled={formStateOtp.isSubmitting}
+            fieldCount={numberOfFields}
+            autoFocus
+            onComplete={buttonRef.current?.click}
+            type={otpType}
+            value={field.value}
+            onChange={(value) => {
+              field.onChange({ target: { value } });
+            }}
+          />
+        )}
       />
+
       <Button
         variant={'primary'}
         ref={buttonRef}

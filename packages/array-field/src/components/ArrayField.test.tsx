@@ -26,13 +26,8 @@ describe('Array Field Component', () => {
   });
 
   it('should renders input field form container', () => {
-    const formControl = screen.queryByTestId('hds.form.control');
+    const formControl = screen.queryByTestId('hds.form-group.group');
     expect(formControl).toBeDefined();
-  });
-
-  it('should renders input field input group', () => {
-    const inputGroup = screen.queryByTestId('hds.input.group');
-    expect(inputGroup).toBeDefined();
   });
 
   it('should renders input field input', async () => {

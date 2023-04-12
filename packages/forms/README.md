@@ -19,11 +19,14 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as React from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
-import { TextAreaField } from './src';
+import { MultilineField, TextField } from './src';
 
-const schema = yup.object({
-  feedback: yup.string().min(5).max(150).trim(),
-});
+const schema = yup
+  .object({
+    email: yup.string().email.required(),
+    feedback: yup.string().min(5).max(150).trim().required(),
+  })
+  .required();
 
 type Schema = yup.InferType<typeof schema>;
 
@@ -33,15 +36,23 @@ export default function Component() {
     shouldFocusError: true,
     resolver: yupResolver(schema),
     defaultValues: {
+      email: '',
       feedback: '',
     },
   });
 
   return (
     <chakra.form onSubmit={handleSubmit(function noop() {})}>
-      <TextAreaField
+      <TextField
+        label="Email"
+        error={formState.errors.feedback?.message}
+        placeholder="johndoe@funny.lol"
+        {...register('email')}
+      />
+
+      <MultilineField
         label="Leave a Feedback"
-        errorMsg={formState.errors.feedback?.message}
+        error={formState.errors.feedback?.message}
         placeholder="Enter comment..."
         {...register('feedback')}
       />
