@@ -1,4 +1,4 @@
-import { Box, ThemeProvider } from '@highoutput/hds';
+import { Box, ChakraProvider } from '@chakra-ui/react';
 import { SettingIcon, UserIcon, ZapIcon } from '@highoutput/hds-icons';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
@@ -12,17 +12,13 @@ const itemsSingle: IMenuItemsSingle['items'] = [
 describe('Menu Dropdown Kebab Type Component', () => {
   beforeEach(() => {
     render(
-      <ThemeProvider>
-        <Dropdown
-          items={itemsSingle}
-          group={false}
-          __menuButtonTestId="hds.dropdown"
-        >
+      <ChakraProvider>
+        <Dropdown items={itemsSingle} group={false} __menuButtonTestId="hds.dropdown">
           {({ onToggle }) => {
             return <Box onClick={onToggle} />;
           }}
         </Dropdown>
-      </ThemeProvider>
+      </ChakraProvider>,
     );
   });
 
@@ -35,13 +31,13 @@ describe('Menu Dropdown Kebab Type Component', () => {
 
 describe('Snapshot', () => {
   const component = renderer.create(
-    <ThemeProvider>
+    <ChakraProvider>
       <Dropdown items={itemsSingle} group={false}>
         {({ onToggle }) => {
           return <Box onClick={onToggle} />;
         }}
       </Dropdown>
-    </ThemeProvider>
+    </ChakraProvider>,
   );
 
   const tree = component.toJSON();
