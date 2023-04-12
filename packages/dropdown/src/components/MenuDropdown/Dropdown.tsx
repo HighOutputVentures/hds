@@ -12,8 +12,9 @@ import {
   UseDisclosureReturn,
   useDisclosure,
 } from '@chakra-ui/react';
-import { ButtonVariantsTypes } from '@highoutput/hds/src/theme/components/button/variants';
+
 import React, { FC } from 'react';
+import { Variant } from '~/button/dist/types';
 
 export interface Items {
   label: string;
@@ -37,7 +38,7 @@ export interface DropdownFieldMainProps {
   __menuListTestId?: string;
   gap?: string;
   placement?: PlacementWithLogical | undefined;
-  variant?: ButtonVariantsTypes;
+  variant?: Variant;
   closeOnSelect?: boolean;
   showDropdownIndicator?: boolean;
   children(context: UseDisclosureReturn): JSX.Element | null;
@@ -53,9 +54,7 @@ export interface DropdownFieldPropsSingle extends DropdownFieldMainProps {
   hasDivider?: boolean;
 }
 
-export type DropdownFieldProps =
-  | DropdownFieldPropsGroup
-  | DropdownFieldPropsSingle;
+export type DropdownFieldProps = DropdownFieldPropsGroup | DropdownFieldPropsSingle;
 const Dropdown: FC<DropdownFieldProps> = (props) => {
   const {
     renderHeader,
@@ -111,18 +110,16 @@ const Dropdown: FC<DropdownFieldProps> = (props) => {
           <Divider orientation="horizontal" />
           <MenuGroup>
             {!group &&
-              (items as IMenuItemsSingle['items']).map(
-                ({ command, label, icon }, idx) => {
-                  return (
-                    <>
-                      <MenuItem command={command} icon={icon}>
-                        {label}
-                      </MenuItem>
-                      {hasDivider && idx !== items.length - 1 && <Divider />}
-                    </>
-                  );
-                }
-              )}
+              (items as IMenuItemsSingle['items']).map(({ command, label, icon }, idx) => {
+                return (
+                  <>
+                    <MenuItem command={command} icon={icon}>
+                      {label}
+                    </MenuItem>
+                    {hasDivider && idx !== items.length - 1 && <Divider />}
+                  </>
+                );
+              })}
             {group &&
               (items as IMenuItemsGroup['items']).map((item) => {
                 return item.map(({ label, command, icon }, idx) => {
