@@ -2,15 +2,27 @@ import { Box, Flex, Heading, Icon } from '@chakra-ui/react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ThemeProvider } from '../../../hds';
-import BoxCircularBGIcon from '../components/BoxCircularBGIcon';
-import BoxIcon from '../components/BoxIcon';
-import CheckCircleIcon from '../components/CheckCircleIcon';
-import CheckIcon from '../components/CheckIcon';
+import ActivityIcon from '../components/ActivityIcon';
+import ArrowLeftIcon from '../components/arrow/ArrowLeftIcon';
+import ArrowPositiveChange from '../components/arrow/ArrowPositiveChange';
+import ArrowRightIcon from '../components/arrow/ArrowRightIcon';
 import ChevronDownIcon from '../components/arrow/ChevronDownIcon';
 import ChevronLeftIcon from '../components/arrow/ChevronLeftIcon';
 import ChevronRightIcon from '../components/arrow/ChevronRightIcon';
 import ChevronUpIcon from '../components/arrow/ChevronUpIcon';
+import NegativeArrowIcon from '../components/arrow/NegativeArrowIcon';
+import PositiveArrowIcon from '../components/arrow/PositiveArrowIcon';
+import BellIcon from '../components/BellIcon';
+import BoxCircularBGIcon from '../components/BoxCircularBGIcon';
+import BoxIcon from '../components/BoxIcon';
+import NegativeChartIcon from '../components/chart/NegativeChartIcon';
+import PositiveChartIcon from '../components/chart/PositiveChartIcon';
+import TrendNegative from '../components/chart/TrendNegative';
+import TrendPositive from '../components/chart/TrendPositive';
+import CheckCircleIcon from '../components/CheckCircleIcon';
+import CheckIcon from '../components/CheckIcon';
 import HovIcon from '../components/company/HovIcon';
+import EmailIcon from '../components/EmialIcon';
 import ErrorFileIcon from '../components/ErrorFileIcon';
 import ErrorFilmIcon from '../components/ErrorFilmIcon';
 import ErrorFolderIcon from '../components/ErrorFolderIcon';
@@ -26,7 +38,9 @@ import ImageIcon from '../components/ImageIcon';
 import InfoCircleIcon from '../components/InfoCircleIcon';
 import LayersTwoIcon from '../components/LayersTwoIcon';
 import MessageSmileIcon from '../components/MessageSmileIcon';
+import VisaIcon from '../components/payment-method-icon/VisaIcon';
 import PrimaryIcon from '../components/PrimaryIcon';
+import PrimarySearchIcon from '../components/PrimarySearchIcon';
 import SearchIcon from '../components/SearchIcon';
 import SettingIcon from '../components/SettingIcon';
 import AppleIcon from '../components/social/AppleIcon';
@@ -36,6 +50,7 @@ import FigmaIcon from '../components/social/FigmaIcon';
 import GoogleIcon from '../components/social/GoogleIcon';
 import TwitterIcon from '../components/social/TwitterIcon';
 import SuccessCircleIcon from '../components/SuccessCircleIcon';
+import SwitchHorizontalIcon from '../components/SwitchHorizontalIcon';
 import ThreeDots from '../components/ThreeDots';
 import TrashErrorIcon from '../components/TrashErrorIcon';
 import TrashIcon from '../components/TrashIcon';
@@ -48,22 +63,6 @@ import WarningIcon from '../components/WarningIcon';
 import ZapIcon from '../components/ZapIcon';
 import GridView from './GridView';
 import { sortObject } from './utils';
-import NegativeArrowIcon from '../components/arrow/NegativeArrowIcon';
-import PositiveArrowIcon from '../components/arrow/PositiveArrowIcon';
-import ArrowLeftIcon from '../components/arrow/ArrowLeftIcon';
-import ArrowRightIcon from '../components/arrow/ArrowRightIcon';
-import ArrowPositiveChange from '../components/arrow/ArrowPositiveChange';
-import NegativeChartIcon from '../components/chart/NegativeChartIcon';
-import PositiveChartIcon from '../components/chart/PositiveChartIcon';
-import TrendNegative from '../components/chart/TrendNegative';
-import TrendPositive from '../components/chart/TrendPositive';
-import EmailIcon from '../components/EmialIcon';
-import VisaIcon from '../components/payment-method-icon/VisaIcon';
-import BellIcon from '../components/BellIcon';
-import PrimarySearchIcon from '../components/PrimarySearchIcon';
-import SwitchHorizontalIcon from '../components/SwitchHorizontalIcon';
-import ActivityIcon from '../components/ActivityIcon';
-import CoinsIcon from '../components/CoinsIcon';
 
 const meta: ComponentMeta<typeof Icon> = {
   title: 'Components/Icons',
@@ -167,7 +166,6 @@ const RandomTemplate = (args: any) => {
         CheckIcon,
         SwitchHorizontalIcon,
         ActivityIcon,
-        CoinsIcon,
         ExitIcon,
         HelpIcon,
         HomeIcon,

@@ -4,5 +4,11 @@
     "jsx": "react"
   },
   "include": ["src"],
-  "exclude": ["node_modules", "**/*.spec.*", "**/*.test.*", "**/*.example.*"]
+  "exclude": [
+    "node_modules",
+    "**/*.spec.*",
+    "**/*.test.*",
+    "**/*.stories.*",
+    "**/*.example.*"
+  ]
 }

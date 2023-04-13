@@ -2,14 +2,16 @@ import { Box, Flex, Text, VStack } from "@chakra-ui/react";
 import { ThemeProvider } from "@highoutput/hds";
 import { Avatar, AvatarLabel } from "@highoutput/hds-avatar";
 import { ExitIcon, SettingIcon, UserIcon, ZapIcon } from "@highoutput/hds-icons";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ComponentStory, Meta } from "@storybook/react";
 import React from "react";
 import Dropdown from "./Dropdown";
 
-export default {
-  title: "Components/Menu Dropdown",
+const Story: Meta<typeof Dropdown> = {
+  title: "Components/Dropdown",
   component: Dropdown,
-} as ComponentMeta<typeof Dropdown>;
+};
+
+export default Story;
 
 const itemsSingle = [
   { label: "View Profile", command: "⌘K->P", icon: <UserIcon /> },
@@ -19,9 +21,22 @@ const itemsSingle = [
 
 const itemsGroup = [
   [
-    { label: "View Profile", command: "⌘K->P", icon: <UserIcon /> },
-    { label: "Settings", command: "⌘S", icon: <SettingIcon /> },
-    { label: "Keyboard shortcuts", command: "?", icon: <ZapIcon /> },
+    {
+      label: "View Profile",
+      command: "⌘K->P",
+      icon: <UserIcon />,
+    },
+    {
+      label: "Settings",
+      command: "⌘S",
+      icon: <SettingIcon />,
+      isSelected: true,
+    },
+    {
+      label: "Keyboard shortcuts",
+      command: "?",
+      icon: <ZapIcon />,
+    },
   ],
   [
     {

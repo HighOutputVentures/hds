@@ -1,5 +1,5 @@
 {
-  "version": "0.2.27",
+  "version": "0.2.28",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -54,9 +54,9 @@
     "size-limit": "7.0.8"
   },
   "dependencies": {
-    "@highoutput/hds": "^0.2.26",
-    "@highoutput/hds-forms": "^0.2.9",
-    "@highoutput/hds-icons": "^0.1.37"
+    "@highoutput/hds": "*",
+    "@highoutput/hds-forms": "*",
+    "@highoutput/hds-icons": "*"
   },
   "jest": {
     "verbose": true,
@@ -75,5 +75,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "fdd8e792c3efa26acd6026d3e90b5eacd97cd5b4"
+  "gitHead": "be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef"
 }

@@ -1,5 +1,5 @@
 {
-  "version": "0.1.5",
+  "version": "0.1.6",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -47,5 +47,6 @@
       "path": "dist/hds-checkbox.esm.js",
       "limit": "10 KB"
     }
-  ]
+  ],
+  "gitHead": "be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef"
 }

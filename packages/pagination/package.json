@@ -1,5 +1,5 @@
 {
-  "version": "0.2.19",
+  "version": "0.2.20",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -52,9 +52,9 @@
     "size-limit": "7.0.8"
   },
   "dependencies": {
-    "@highoutput/hds-icons": "^0.1.37",
-    "@zag-js/pagination": "^0.1.14",
-    "@zag-js/react": "^0.3.10",
+    "@highoutput/hds-icons": "*",
+    "@zag-js/pagination": "0.1.14",
+    "@zag-js/react": "0.3.10",
     "uuid": "9.0.0"
   },
   "jest": {
@@ -63,5 +63,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "fdd8e792c3efa26acd6026d3e90b5eacd97cd5b4"
+  "gitHead": "be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef"
 }

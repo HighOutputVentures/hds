@@ -41,6 +41,10 @@ const Template: ComponentStory<typeof Button> = (args) => {
         <Button variant="link" {...args}>
           Button
         </Button>
+
+        <Button variant="unstyled" {...args}>
+          Button
+        </Button>
       </VStack>
     </ThemeProvider>
   );
@@ -53,6 +57,7 @@ Default.args = {
   size: "md",
   width: "150px",
   accent: "primary",
+  isActive: false,
   isLoading: false,
   isDisabled: false,
   leftIcon: <Icon as={PlaceholderIcon} />,
