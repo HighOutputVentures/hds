@@ -1,5 +1,5 @@
 {
-  "version": "0.2.2",
+  "version": "0.2.4",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -30,7 +30,7 @@
     }
   },
   "prettier": {
-    "printWidth": 100,
+    "printWidth": 90,
     "trailingComma": "all"
   },
   "name": "@highoutput/hds-switch",
