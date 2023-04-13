@@ -1,68 +1,106 @@
-import {
-  Box,
-  FormControl,
-  FormHelperText,
-  FormLabel,
-  Switch,
-  SystemStyleObject,
-  useMultiStyleConfig,
-} from "@chakra-ui/react";
+import { Box, FormControl, FormHelperText, FormLabel, Switch } from "@chakra-ui/react";
 import * as React from "react";
 
-type SwitchSize = "sm" | "md";
+type Size = "sm" | "md";
 
-type ResponsiveSize<T> = Record<"base" | "sm" | "md" | "lg" | "xl", T>;
-
-export type SwitchBaseProps = {
-  size?: SwitchSize | ResponsiveSize<SwitchSize>;
-  disabled?: boolean;
-  checked?: boolean;
+export type SwitchProps = {
+  size?: Size;
+  isChecked?: boolean;
+  isDisabled?: boolean;
   onCheck?(value: boolean): void;
+  hint?: string;
   label?: string;
-  helperText?: string;
   colorScheme?: "dark" | "light";
 };
 
-export type SwitchProps = SwitchBaseProps & Omit<SystemStyleObject, "colorScheme">;
+export default React.forwardRef<HTMLInputElement, SwitchProps>(function HdsSwitch(
+  props,
+  ref,
+) {
+  const {
+    size = "md",
+    isChecked,
+    isDisabled,
+    onCheck,
+    hint,
+    label,
+    colorScheme = "light",
+    ...others
+  } = props;
 
-export default React.forwardRef<HTMLInputElement, SwitchProps>(function HdsSwitch(props, ref) {
-  const { size, checked, onCheck, label, helperText, disabled, colorScheme, ...others } =
-    Object.assign(defaultProps, props);
-
-  const styles = useMultiStyleConfig("Switch", { variant: "hds", size, colorScheme });
   const uniqid = React.useId();
 
   return (
-    <FormControl variant="unstyled" sx={{ ...others, ...styles.control }} data-testid="hds.switch.form.control">
+    <FormControl
+      variant="unstyled"
+      sx={{
+        ...others,
+        display: "flex",
+        ...(size === "sm" && { gap: "8px" }),
+        ...(size === "md" && { gap: "12px" }),
+      }}
+      data-testid="hds.switch.form-group"
+    >
       <Switch
-        variant="hds"
         ref={ref}
         id={uniqid}
         size={size}
-        data-testid="hds.switch"
-        isChecked={checked}
+        variant="hdsSwitch"
+        isChecked={isChecked}
+        isDisabled={isDisabled}
         colorScheme={colorScheme}
-        isDisabled={disabled}
         onChange={(e) => {
-          onCheck(e.target.checked);
+          onCheck?.(e.target.checked);
         }}
+        data-testid="hds.switch"
       />
 
       <Box>
-        {label && (
-          <FormLabel htmlFor={uniqid} sx={styles.label} data-testid="hds.switch.label">
+        {!!label && (
+          <FormLabel
+            htmlFor={uniqid}
+            sx={{
+              color: "#344054",
+              fontWeight: "medium",
+
+              ...(size === "sm" && {
+                margin: "0px",
+                fontSize: "14px",
+                lineHeight: "20px",
+              }),
+              ...(size === "md" && {
+                margin: "0px",
+                fontSize: "16px",
+                lineHeight: "24px",
+              }),
+            }}
+            data-testid="hds.switch.label"
+          >
             {label}
           </FormLabel>
         )}
-        {helperText && <FormHelperText sx={styles.helperText} data-testid="hds.switch.helper.text">{helperText}</FormHelperText>}
+
+        {!!hint && (
+          <FormHelperText
+            sx={{
+              color: "#667085",
+              ...(size === "sm" && {
+                fontSize: "14px",
+                lineHeight: "20px",
+                marginTop: "unset",
+              }),
+              ...(size === "md" && {
+                fontSize: "16px",
+                lineHeight: "24px",
+                marginTop: "2px",
+              }),
+            }}
+            data-testid="hds.switch.hint"
+          >
+            {hint}
+          </FormHelperText>
+        )}
       </Box>
     </FormControl>
   );
 });
-
-const defaultProps = {
-  size: "md",
-  checked: false,
-  onCheck() {},
-  colorScheme: "light",
-};

@@ -20,7 +20,7 @@ describe("Switch", () => {
   });
 
   it("Should be able to set checked", () => {
-    const { getByRole } = renderTestComponent({ checked: true });
+    const { getByRole } = renderTestComponent({ isChecked: true });
     expect(getByRole("checkbox")).toHaveAttribute("checked");
   });
 
@@ -30,7 +30,7 @@ describe("Switch", () => {
   });
 
   it("Should be able to set helper text", () => {
-    const { queryByText } = renderTestComponent({ helperText: "Checkbox helper text" });
+    const { queryByText } = renderTestComponent({ hint: "Checkbox helper text" });
     expect(queryByText("Checkbox helper text")).toBeDefined();
   });
 

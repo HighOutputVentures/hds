@@ -2,20 +2,19 @@
 
 exports[`Switch Should match snapshot 1`] = `
 <div
-  className="chakra-form-control css-0"
-  data-testid="hds.switch.form.control"
+  className="chakra-form-control css-dtg2nl"
+  data-testid="hds.switch.form-group"
   role="group"
 >
   <label
     className="chakra-switch css-16pgy8f"
-    data-checked=""
     data-testid="hds.switch"
     onClick={[Function]}
   >
     <input
       aria-disabled={false}
       aria-invalid={false}
-      checked={true}
+      checked={false}
       className="chakra-switch__input"
       disabled={false}
       id=":r0:"
@@ -44,7 +43,6 @@ exports[`Switch Should match snapshot 1`] = `
     <span
       aria-hidden={true}
       className="chakra-switch__track css-14qxnv8"
-      data-checked=""
       onMouseDown={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
@@ -52,28 +50,11 @@ exports[`Switch Should match snapshot 1`] = `
     >
       <span
         className="chakra-switch__thumb css-0"
-        data-checked=""
       />
     </span>
   </label>
   <div
     className="css-0"
-  >
-    <label
-      className="chakra-form__label css-uvho5g"
-      data-testid="hds.switch.label"
-      htmlFor=":r0:"
-      id="field-:r1:-label"
-    >
-      Checkbox label
-    </label>
-    <div
-      className="chakra-form__helper-text css-0"
-      data-testid="hds.switch.helper.text"
-      id="field-:r1:-helptext"
-    >
-      Checkbox helper text
-    </div>
-  </div>
+  />
 </div>
 `;

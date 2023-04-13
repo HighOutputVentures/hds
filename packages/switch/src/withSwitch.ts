@@ -2,25 +2,26 @@ import { MultiStyleConfig } from "@chakra-ui/react";
 
 export default function withSwitch() {
   const Switch: MultiStyleConfig = {
-    parts: ["container", "thumb", "track", "control", "label", "helperText"],
+    parts: ["container", "thumb", "track"],
     variants: {
-      hds({ colorScheme }) {
+      hdsSwitch({ colorScheme }) {
         return {
           container: {},
           track: {
             padding: "2px",
             ...(colorScheme === "light" && {
-              bgColor: "#F9F5FF",
+              bgColor: "neutrals.200",
               _hover: {
-                bgColor: "#F4EBFF",
+                bgColor: "neutrals.100",
               },
               _focus: {
+                bgColor: "Gray.50",
                 boxShadow: "0px 0px 0px 4px #F4EBFF",
               },
               _checked: {
-                bgColor: "#E9D7FE",
+                bgColor: "brand.primary.700",
                 _hover: {
-                  bgColor: "#D6BBFB",
+                  bgColor: "brand.primary.900",
                 },
               },
               "&[data-disabled]": {
@@ -29,17 +30,17 @@ export default function withSwitch() {
               },
             }),
             ...(colorScheme === "dark" && {
-              bgColor: "#F0F0F0",
+              bgColor: "brand.primary.50",
               _hover: {
-                bgColor: "#FCFCFC",
+                bgColor: "brand.primary.100",
               },
               _focus: {
                 boxShadow: "0px 0px 0px 4px #F4EBFF",
               },
               _checked: {
-                bgColor: "#8A68EF",
+                bgColor: "brand.primary.200",
                 _hover: {
-                  bgColor: "#4A3880",
+                  bgColor: "brand.primary.300",
                 },
               },
               "&[data-disabled]": {
@@ -47,24 +48,16 @@ export default function withSwitch() {
                 opacity: 1,
               },
             }),
-            transition: "background-color 300ms ease-in-out, box-shadow 300ms ease-in-out",
+            transition:
+              "background-color 300ms ease-in-out, box-shadow 300ms ease-in-out",
           },
           thumb: {
             padding: "0px",
-            boxShadow: "0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)",
+            boxShadow:
+              "0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)",
             _checked: {
               transform: "translateX(100%)",
             },
-          },
-          control: {
-            display: "flex",
-          },
-          label: {
-            fontWeight: "medium",
-            color: "#344054",
-          },
-          helperText: {
-            color: "#667085",
           },
         };
       },
@@ -72,25 +65,12 @@ export default function withSwitch() {
     sizes: {
       sm: {
         track: {
-          width: "32px" /* exclude padding */,
-          height: "16px" /* exclude padding */,
+          width: "32px",
+          height: "16px",
         },
         thumb: {
           width: "16px",
           height: "16px",
-        },
-        control: {
-          gap: "8px",
-        },
-        label: {
-          margin: "0px",
-          fontSize: "14px",
-          lineHeight: "20px",
-        },
-        helperText: {
-          fontSize: "14px",
-          lineHeight: "20px",
-          marginTop: "unset",
         },
       },
       md: {
@@ -101,19 +81,6 @@ export default function withSwitch() {
         thumb: {
           width: "20px",
           height: "20px",
-        },
-        control: {
-          gap: "12px",
-        },
-        label: {
-          margin: "0px",
-          fontSize: "16px",
-          lineHeight: "24px",
-        },
-        helperText: {
-          fontSize: "16px",
-          lineHeight: "24px",
-          marginTop: "2px",
         },
       },
     },
