@@ -17,15 +17,16 @@ import { useStyles } from "./hooks";
 
 interface Item {
   icon?: JSX.Element;
-  label: string;
+  label: React.ReactNode;
   command?: string;
   onClick?(): void;
 }
 
 interface BaseProps {
-  renderHeader?: JSX.Element;
   placement?: PlacementWithLogical | undefined;
   closeOnSelect?: boolean;
+  renderHeader?: JSX.Element;
+  renderOption?(item: Item): JSX.Element;
   children(context: UseDisclosureReturn): JSX.Element;
   __menuTestId?: string;
   __menuItemTestId?: string;
@@ -45,10 +46,11 @@ export type DropdownProps = (GroupProps | SingleProps) & BaseProps;
 
 const Dropdown: React.FC<DropdownProps> = (props) => {
   const {
+    children,
     placement,
     renderHeader,
+    renderOption = (item) => item.label,
     closeOnSelect,
-    children,
     __menuTestId = "hds.dropdown",
     __menuItemTestId = "hds.dropdown.item",
     ...others
@@ -82,17 +84,25 @@ const Dropdown: React.FC<DropdownProps> = (props) => {
 
           {!others.isGrouped && (
             <MenuGroup sx={styles.menugroup}>
-              {others.items.map(({ command, label, icon, onClick }) => {
+              {others.items.map((item) => {
                 return (
                   <MenuItem
-                    key={uuid()}
-                    icon={icon}
-                    command={command}
-                    onClick={onClick}
                     sx={styles.menuitem}
+                    key={uuid()}
+                    onClick={item.onClick}
+                    /**
+                     *
+                     * Only render icon and command if
+                     * user did not provide the "renderOption" prop
+                     *
+                     */
+                    {...(!props.renderOption && {
+                      icon: item.icon,
+                      command: item.command,
+                    })}
                     data-testid={__menuItemTestId}
                   >
-                    {label}
+                    {renderOption(item)}
                   </MenuItem>
                 );
               })}
@@ -103,20 +113,27 @@ const Dropdown: React.FC<DropdownProps> = (props) => {
             props.items.map((items, idx_0, arr_0) => {
               return (
                 <MenuGroup key={uuid()} sx={styles.menugroup}>
-                  {items.map(({ label, command, icon, onClick }, idx_1, arr_1) => {
+                  {items.map((item, idx_1, arr_1) => {
                     const hasDivider =
                       idx_0 < arr_0.length - 1 && idx_1 === arr_1.length - 1;
 
                     return (
                       <React.Fragment key={uuid()}>
                         <MenuItem
-                          command={command}
-                          icon={icon}
-                          onClick={onClick}
+                          icon={item.icon}
                           sx={styles.menuitem}
                           data-testid={__menuItemTestId}
+                          /**
+                           *
+                           * See comment above
+                           *
+                           */
+                          {...(!props.renderOption && {
+                            icon: item.icon,
+                            command: item.command,
+                          })}
                         >
-                          {label}
+                          {renderOption(item)}
                         </MenuItem>
 
                         {hasDivider && <Divider sx={styles.divider} />}

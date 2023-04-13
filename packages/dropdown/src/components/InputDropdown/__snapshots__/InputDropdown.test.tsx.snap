@@ -65,21 +65,21 @@ Array [
           className="css-1f43avz-a11yText-A11yText"
         />
         <div
-          className=" css-1yj3qfd"
+          className=" css-citx3a"
           onMouseDown={[Function]}
           onTouchEnd={[Function]}
         >
           <div
-            className=" css-xct6wr"
+            className=" css-sy0cn0"
           >
             <div
-              className=" css-1eohtqe"
+              className=" css-1puyje9"
               id="react-select-5-placeholder"
             >
               Select...
             </div>
             <div
-              className=" css-18euh9p"
+              className=" css-svnjlw"
               data-value=""
             >
               <input
@@ -91,8 +91,9 @@ Array [
                 autoCapitalize="none"
                 autoComplete="off"
                 autoCorrect="off"
-                className=" css-10wwmqn"
+                className=" css-146k1ar-input"
                 disabled={false}
+                getClassNames={[Function]}
                 id="input-dropdown"
                 onBlur={[Function]}
                 onChange={[Function]}
