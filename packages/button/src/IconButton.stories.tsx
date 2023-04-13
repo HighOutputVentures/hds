@@ -23,6 +23,7 @@ const Template: ComponentStory<typeof IconButton> = (args) => {
         {!isGrayAccent && <IconButton variant="subtle" {...args} />}
         <IconButton variant="ghost" {...args} />
         <IconButton variant="link" {...args} />
+        <IconButton variant="unstyled" {...args} />
       </VStack>
     </ThemeProvider>
   );

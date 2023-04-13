@@ -1,6 +1,6 @@
 export type Size = "sm" | "md" | "lg" | "xl" | "2xl";
 
-export type Variant = "solid" | "outline" | "ghost" | "subtle" | "link";
+export type Variant = "solid" | "outline" | "ghost" | "subtle" | "link" | "unstyled";
 
 export type Accent = "primary" | "error" | "gray";
 
