@@ -17,11 +17,10 @@ import * as React from "react";
 import { Checkbox } from "@highoutput/hds-checkbox";
 import { ThemeProvider, HStack, Box, Text } from "@highoutput/hds";
 
-
 export default function Example() {
   return (
     <ThemeProvider>
-      <Checkbox {...args} type="checkboxType" checkbox_icon="minusIcon" />
+      <Checkbox size="sm" variant="solid" label="" hint="" />
     </ThemeProvider>
   );
 }
