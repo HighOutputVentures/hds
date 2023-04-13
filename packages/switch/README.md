@@ -13,12 +13,12 @@ npm i @highoutput/hds-switch
 ### Usage
 
 ```tsx
-import { Switch, withSwitch } from "@highoutput/hds-switch";
-import { ThemeProvider, extendTheme } from "@highoutput/hds";
+import { Switch } from "@highoutput/hds-switch";
+import { ThemeProvider } from "@highoutput/hds";
 
 export default function Example() {
   return (
-    <ThemeProvider theme={extendTheme(withSwitch())}>
+    <ThemeProvider>
       <Switch label="Hello" hint="world" onCheck={function noop(isChecked) {}} />
     </ThemeProvider>
   );

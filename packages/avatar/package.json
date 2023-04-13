@@ -50,7 +50,8 @@
     "verbose": true
   },
   "dependencies": {
-    "@highoutput/hds-tooltip": "^0.2.7"
+    "@highoutput/hds-tooltip": "*",
+    "uuid": "9.0.0"
   },
   "gitHead": "be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef"
 }

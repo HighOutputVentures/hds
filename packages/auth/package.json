@@ -61,9 +61,10 @@
   },
   "gitHead": "be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef",
   "dependencies": {
-    "@highoutput/hds-forms": "^0.2.10",
-    "@hookform/resolvers": "^2.9.10",
-    "js-cookie": "^3.0.1",
-    "yup": "^0.32.11"
+    "@highoutput/hds-forms": "*",
+    "@hookform/resolvers": "2.9.10",
+    "js-cookie": "3.0.1",
+    "react-hook-form": "7.38.0",
+    "yup": "0.32.11"
   }
 }
