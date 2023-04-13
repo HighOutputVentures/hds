@@ -58,7 +58,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "2cc842169e828ff56ef57e039534fb0414854443",
+  "gitHead": "be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef",
   "dependencies": {
     "@highoutput/hds-forms": "*",
     "@hookform/resolvers": "2.9.10",

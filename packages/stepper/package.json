@@ -50,5 +50,6 @@
   ],
   "dependencies": {
     "@highoutput/hds-checkbox": "^0.1.5"
-  }
+  },
+  "gitHead": "be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef"
 }
