@@ -9,15 +9,17 @@ export {
   ContainerProps,
   Divider,
   DividerProps,
+  extendTheme,
   Flex,
   FlexProps,
+  forwardRef,
   Grid,
   GridItem,
   GridItemProps,
   GridProps,
-  HStack,
   Heading,
   HeadingProps,
+  HStack,
   Icon,
   IconProps,
   Image,
@@ -52,14 +54,12 @@ export {
   Text,
   TextProps,
   UnorderedList,
-  VStack,
   VisuallyHidden,
+  VStack,
   Wrap,
   WrapItem,
   WrapItemProps,
   WrapProps,
-  forwardRef,
 } from '@chakra-ui/react';
-export { default as ThemeProvider, ThemeProviderProps } from './components/ThemeProvider';
 export { default as theme } from './theme';
-export { extendTheme } from './utils/extendTheme';
+export { default as ThemeProvider, ThemeProviderProps } from './ThemeProvider';
