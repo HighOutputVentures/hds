@@ -19,7 +19,7 @@ import { ThemeProvider, extendTheme } from "@highoutput/hds";
 export default function Example() {
   return (
     <ThemeProvider theme={extendTheme(withSwitch())}>
-      <Switch label="Hello" helperText="world" value="on" onToggle={function noop(value) {}} />
+      <Switch label="Hello" hint="world" onCheck={function noop(isChecked) {}} />
     </ThemeProvider>
   );
 }

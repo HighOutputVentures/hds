@@ -42,14 +42,14 @@ exports[`Switch Should match snapshot 1`] = `
     />
     <span
       aria-hidden={true}
-      className="chakra-switch__track css-14qxnv8"
+      className="chakra-switch__track css-t6swmr"
       onMouseDown={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       onMouseUp={[Function]}
     >
       <span
-        className="chakra-switch__thumb css-0"
+        className="chakra-switch__thumb css-lzolmj"
       />
     </span>
   </label>
