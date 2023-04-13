@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import * as React from "react";
 import { v4 as uuid } from "uuid";
+import { useStyles } from "./hooks";
 
 interface Item {
   icon?: JSX.Element;
@@ -33,13 +34,11 @@ interface BaseProps {
 interface GroupProps {
   items: Item[][];
   isGrouped: true;
-  hasDivider?: never;
 }
 
 interface SingleProps {
   items: Item[];
   isGrouped?: false;
-  hasDivider?: boolean;
 }
 
 export type DropdownProps = (GroupProps | SingleProps) & BaseProps;
@@ -49,13 +48,13 @@ const Dropdown: React.FC<DropdownProps> = (props) => {
     placement,
     renderHeader,
     closeOnSelect,
-    hasDivider,
     children,
     __menuTestId = "hds.dropdown",
     __menuItemTestId = "hds.dropdown.item",
     ...others
   } = props;
 
+  const styles = useStyles();
   const disclosure = useDisclosure();
 
   return (
@@ -73,51 +72,40 @@ const Dropdown: React.FC<DropdownProps> = (props) => {
       <MenuButton as={createRefReciever(children(disclosure))} />
 
       <Portal appendToParentPortal={false}>
-        <MenuList
-          py="0px"
-          color="neutrals.900"
-          fontSize="14px"
-          overflow="hidden"
-          boxShadow={boxShadow}
-          data-testid={__menuTestId}
-        >
+        <MenuList sx={styles.menulist} data-testid={__menuTestId}>
           {!!renderHeader && (
-            <MenuGroup>
-              <chakra.div py={2}>{renderHeader}</chakra.div>
-
-              <Divider orientation="horizontal" />
+            <MenuGroup sx={styles.menugroup}>
+              <chakra.div sx={styles.header}>{renderHeader}</chakra.div>
+              <Divider sx={styles.divider} />
             </MenuGroup>
           )}
 
           {!others.isGrouped && (
-            <MenuGroup>
-              {others.items.map(({ command, label, icon, onClick }, idx, arr) => {
-                const shouldAddDivider = hasDivider && idx !== arr.length - 1;
-
+            <MenuGroup sx={styles.menugroup}>
+              {others.items.map(({ command, label, icon, onClick }) => {
                 return (
-                  <React.Fragment key={uuid()}>
-                    <MenuItem
-                      command={command}
-                      icon={icon}
-                      onClick={onClick}
-                      data-testid={__menuItemTestId}
-                    >
-                      {label}
-                    </MenuItem>
-
-                    {shouldAddDivider && <Divider />}
-                  </React.Fragment>
+                  <MenuItem
+                    key={uuid()}
+                    icon={icon}
+                    command={command}
+                    onClick={onClick}
+                    sx={styles.menuitem}
+                    data-testid={__menuItemTestId}
+                  >
+                    {label}
+                  </MenuItem>
                 );
               })}
             </MenuGroup>
           )}
 
           {props.isGrouped &&
-            props.items.map((items) => {
+            props.items.map((items, idx_0, arr_0) => {
               return (
-                <MenuGroup key={uuid()}>
-                  {items.map(({ label, command, icon, onClick }, idx) => {
-                    const shouldAddDivider = idx === items.length - 1;
+                <MenuGroup key={uuid()} sx={styles.menugroup}>
+                  {items.map(({ label, command, icon, onClick }, idx_1, arr_1) => {
+                    const hasDivider =
+                      idx_0 < arr_0.length - 1 && idx_1 === arr_1.length - 1;
 
                     return (
                       <React.Fragment key={uuid()}>
@@ -125,12 +113,13 @@ const Dropdown: React.FC<DropdownProps> = (props) => {
                           command={command}
                           icon={icon}
                           onClick={onClick}
+                          sx={styles.menuitem}
                           data-testid={__menuItemTestId}
                         >
                           {label}
                         </MenuItem>
 
-                        {shouldAddDivider && <Divider />}
+                        {hasDivider && <Divider sx={styles.divider} />}
                       </React.Fragment>
                     );
                   })}
@@ -148,9 +137,5 @@ function createRefReciever(children: JSX.Element) {
     return React.cloneElement(children, { ref });
   });
 }
-
-const boxShadow =
-  "0px 12px 16px -4px rgba(16, 24, 40, 0.08)," +
-  "0px 4px 6px -2px rgba(16, 24, 40, 0.03)";
 
 export default Dropdown;
