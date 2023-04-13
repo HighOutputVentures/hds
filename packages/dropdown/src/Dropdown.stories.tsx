@@ -49,7 +49,6 @@ const Template: ComponentStory<typeof Dropdown> = () => {
                   supportText="olivia@untitledui.com"
                 />
               }
-              hasDivider
             >
               {({ onToggle }) => (
                 <Avatar src="https://i.pravatar.cc/300?u=1" onClick={onToggle} />
