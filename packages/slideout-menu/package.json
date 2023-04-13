@@ -1,5 +1,5 @@
 {
-  "version": "0.2.6",
+  "version": "0.2.7",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -49,5 +49,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "e3fb4446117b7fd00243aab34a25fb2ed0376f1b"
+  "gitHead": "be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef"
 }

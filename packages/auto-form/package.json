@@ -1,5 +1,5 @@
 {
-  "version": "0.2.11",
+  "version": "0.2.12",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -58,9 +58,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "2cc842169e828ff56ef57e039534fb0414854443",
+  "gitHead": "be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef",
   "dependencies": {
-    "@highoutput/hds-forms": "*",
+    "@highoutput/hds-forms": "^0.2.10",
     "@hookform/resolvers": "2.9.10",
     "react-hook-form": "7.38.0",
     "yup": "0.32.11"

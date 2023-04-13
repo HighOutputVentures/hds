@@ -1,5 +1,5 @@
 {
-  "version": "0.2.6",
+  "version": "0.2.7",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -50,5 +50,5 @@
   "jest": {
     "verbose": true
   },
-  "gitHead": "2cc842169e828ff56ef57e039534fb0414854443"
+  "gitHead": "be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef"
 }
