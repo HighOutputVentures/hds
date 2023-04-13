@@ -30,6 +30,7 @@ const itemsGroup = [
       label: "Settings",
       command: "⌘S",
       icon: <SettingIcon />,
+      isSelected: true,
     },
     {
       label: "Keyboard shortcuts",

@@ -20,6 +20,7 @@ interface Item {
   label: React.ReactNode;
   command?: string;
   onClick?(): void;
+  isSelected?: boolean;
 }
 
 interface BaseProps {

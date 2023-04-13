@@ -82,6 +82,9 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
           _hover: {
             bgColor: "brand.primary.900",
           },
+          _active: {
+            bgColor: "brand.primary.900",
+          },
           _focus: {
             outline: "none",
             boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F4EBFF",
@@ -100,11 +103,13 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
           _hover: {
             bgColor: "interface.error.900",
           },
+          _active: {
+            bgColor: "interface.error.900",
+          },
           _focus: {
             outline: "none",
             boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #FEE4E2",
           },
-          _active: {},
           _disabled: {
             cursor: "not-allowed",
             bgColor: "interface.error.500",
@@ -127,6 +132,11 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
           border: "1px",
           borderColor: "brand.primary.700",
           _hover: {
+            color: "brand.primary.900",
+            bgColor: "brand.primary.500",
+            borderColor: "brand.primary.600",
+          },
+          _active: {
             color: "brand.primary.900",
             bgColor: "brand.primary.500",
             borderColor: "brand.primary.600",
@@ -156,6 +166,11 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
             bgColor: "interface.error.500",
             borderColor: "interface.error.600",
           },
+          _active: {
+            color: "interface.error.900",
+            bgColor: "interface.error.500",
+            borderColor: "interface.error.600",
+          },
           _focus: {
             color: "interface.error.900",
             boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #FEE4E2",
@@ -177,6 +192,9 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
           border: "1px",
           borderColor: "neutrals.300",
           _hover: {
+            bgColor: "neutrals.100",
+          },
+          _active: {
             bgColor: "neutrals.100",
           },
           _focus: {
@@ -207,6 +225,10 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
             color: "brand.primary.900",
             bgColor: "brand.primary.500",
           },
+          _active: {
+            color: "brand.primary.900",
+            bgColor: "brand.primary.500",
+          },
           _focus: {
             color: "brand.primary.900",
             boxShadow: "none",
@@ -227,6 +249,10 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
             color: "interface.error.900",
             bgColor: "interface.error.500",
           },
+          _active: {
+            color: "interface.error.900",
+            bgColor: "interface.error.500",
+          },
           _focus: {
             color: "interface.error.900",
             boxShadow: "none",
@@ -244,6 +270,10 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
         ...(accent === "gray" && {
           color: "neutrals.700",
           _hover: {
+            color: "neutrals.900",
+            bgColor: "neutrals.200",
+          },
+          _active: {
             color: "neutrals.900",
             bgColor: "neutrals.200",
           },
@@ -274,6 +304,10 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
             color: "brand.primary.900",
             bgColor: "brand.primary.600",
           },
+          _active: {
+            color: "brand.primary.900",
+            bgColor: "brand.primary.600",
+          },
           _focus: {
             color: "brand.primary.900",
             boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F4EBFF",
@@ -292,6 +326,10 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
           color: "interface.error.700",
           bgColor: "interface.error.500",
           _hover: {
+            color: "interface.error.900",
+            bgColor: "rgba(220, 24, 12, 0.15)",
+          },
+          _active: {
             color: "interface.error.900",
             bgColor: "rgba(220, 24, 12, 0.15)",
           },
@@ -314,6 +352,10 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
           color: "interface.error.700",
           bgColor: "interface.error.500",
           _hover: {
+            color: "interface.error.900",
+            bgColor: "rgba(220, 24, 12, 0.15)",
+          },
+          _active: {
             color: "interface.error.900",
             bgColor: "rgba(220, 24, 12, 0.15)",
           },
@@ -338,14 +380,18 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
        */
 
       ...(variant === "link" && {
+        width: "fit-content",
         height: "fit-content",
-        bgColor: "transparent",
-        paddingY: "none",
+        padding: "0px",
+        bgColor: "unset",
         boxShadow: "none",
 
         ...(accent === "primary" && {
           color: "brand.primary.700",
           _hover: {
+            color: "brand.primary.900",
+          },
+          _active: {
             color: "brand.primary.900",
           },
           _disabled: {
@@ -362,6 +408,9 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
           _hover: {
             color: "interface.error.900",
           },
+          _active: {
+            color: "interface.error.900",
+          },
           _disabled: {
             color: "interface.error.500",
             cursor: "not-allowed",
@@ -376,6 +425,9 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
           _hover: {
             color: "neutrals.700",
           },
+          _active: {
+            color: "neutrals.700",
+          },
           _disabled: {
             color: "neutrals.300",
             cursor: "not-allowed",
@@ -384,6 +436,28 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
             },
           },
         }),
+      }),
+
+      ...(variant === "unstyled" && {
+        width: "fit-content",
+        height: "fit-content",
+        padding: "0px",
+        bgColor: "unset",
+        boxShadow: "none",
+        color: "neutrals.700",
+        _hover: {
+          color: "neutrals.900",
+        },
+        _active: {
+          color: "neutrals.900",
+        },
+        _disabled: {
+          color: "neutrals.500",
+          cursor: "not-allowed",
+          _hover: {
+            color: "neutrals.500",
+          },
+        },
       }),
     }),
     [
@@ -394,14 +468,31 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
     ],
   );
 
+  /**
+   *
+   * Only add width to button
+   * If variant is not "link" or "unstyled"
+   *
+   */
+  const shouldAdjustIconButtonWidth = variant !== "link" && variant !== "unstyled";
+
   const iconButton = React.useMemo(
     () => ({
       ...button,
-      ...(size === "sm" && { width: "36px" }),
-      ...(size === "md" && { width: "40px" }),
-      ...(size === "lg" && { width: "44px" }),
-      ...(size === "xl" && { width: "48px" }),
-      ...(size === "2xl" && { width: "56px" }),
+
+      ...(!shouldAdjustIconButtonWidth && {
+        minWidth: "unset",
+        paddingY: "unset",
+        paddingX: "unset",
+      }),
+
+      ...(shouldAdjustIconButtonWidth && {
+        ...(size === "sm" && { width: "36px" }),
+        ...(size === "md" && { width: "40px" }),
+        ...(size === "lg" && { width: "44px" }),
+        ...(size === "xl" && { width: "48px" }),
+        ...(size === "2xl" && { width: "56px" }),
+      }),
     }),
     [size, accent, variant],
   );
