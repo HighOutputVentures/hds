@@ -7,21 +7,22 @@ import {
   MenuItemOption,
   MenuList,
   MenuOptionGroup,
-} from '@chakra-ui/react';
-import InputDropdown, { InputDropdownFieldProps } from './components/InputDropdown/InputDropdown';
-import MenuDropdown, { MenuDropdownFieldProps } from './components/MenuDropdown/MenuDropdown';
+} from "@chakra-ui/react";
+import InputDropdown, {
+  InputDropdownFieldProps,
+} from "./components/InputDropdown/InputDropdown";
+import Dropdown, { DropdownProps } from "./Dropdown";
 export {
   InputDropdown,
   InputDropdownFieldProps,
-  MenuDropdown,
-  MenuDropdownFieldProps,
+  DropdownProps,
   Menu,
   MenuButton,
   MenuDivider,
   MenuGroup,
+  Dropdown,
   MenuItem,
   MenuItemOption,
   MenuList,
   MenuOptionGroup,
 };
-
