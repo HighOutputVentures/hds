@@ -47,10 +47,10 @@
     }
   ],
   "dependencies": {
-    "@highoutput/hds-button": "^0.1.10",
-    "@highoutput/hds-forms": "^0.2.9",
-    "@highoutput/hds-icons": "^0.1.37",
-    "chakra-react-select": "^4.4.2"
+    "@highoutput/hds-button": "*",
+    "@highoutput/hds-forms": "*",
+    "@highoutput/hds-icons": "*",
+    "chakra-react-select": "4.4.2"
   },
   "gitHead": "afaba7738378dde0e95931c54c07f09c27286376"
 }

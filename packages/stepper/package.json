@@ -49,6 +49,6 @@
     }
   ],
   "dependencies": {
-    "@highoutput/hds-checkbox": "^0.1.5"
+    "@highoutput/hds-checkbox": "*"
   }
 }

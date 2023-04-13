@@ -54,9 +54,9 @@
     "size-limit": "7.0.8"
   },
   "dependencies": {
-    "@highoutput/hds": "^0.2.26",
-    "@highoutput/hds-forms": "^0.2.9",
-    "@highoutput/hds-icons": "^0.1.37"
+    "@highoutput/hds": "*",
+    "@highoutput/hds-forms": "*",
+    "@highoutput/hds-icons": "*"
   },
   "jest": {
     "verbose": true,

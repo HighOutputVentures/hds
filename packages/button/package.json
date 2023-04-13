@@ -47,6 +47,6 @@
     }
   ],
   "dependencies": {
-    "@highoutput/hds-icons": "^0.2.1"
+    "@highoutput/hds-icons": "*"
   }
 }
