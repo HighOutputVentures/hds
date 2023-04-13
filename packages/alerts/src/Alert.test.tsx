@@ -1,4 +1,4 @@
-import ThemeProvider from '@highoutput/hds/src/components/ThemeProvider';
+import { ThemeProvider } from '@highoutput/hds';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import renderer from 'react-test-renderer';
@@ -33,17 +33,17 @@ describe('Alert Component', () => {
   it('should render title', async () => {
     const title = await screen.findAllByTestId('hds.alert.title');
     expect(title).toHaveLength(1);
-  })
+  });
 
   it('should render supporting detail', async () => {
     const supportingDetail = await screen.findAllByTestId('hds.alert.message');
     expect(supportingDetail).toHaveLength(1);
-  })
+  });
 
   it('should render alert links', async () => {
     const notificationLinks = await screen.findAllByTestId('hds.alert.link');
     expect(notificationLinks).toHaveLength(2);
-  })
+  });
 
   describe('Snapshot', () => {
     it('Should match snapshot', () => {

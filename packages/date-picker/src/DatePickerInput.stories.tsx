@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import ThemeProvider from "@highoutput/hds/src/components/ThemeProvider";
+import { ThemeProvider } from "@highoutput/hds";
 import { useArgs } from "@storybook/addons";
 import { ComponentStory, Meta } from "@storybook/react";
 import { format } from "date-fns";

@@ -2,8 +2,7 @@ import { Box, Code, Link, ListItem, OrderedList, Text } from "@chakra-ui/react";
 import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
-
-import ThemeProvider from "../../packages/hds/src/components/ThemeProvider";
+import { ThemeProvider } from "../../packages/hds";
 
 const HDSCore = () => {
   return (
