@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+Array [
+  <button
+    className="css-0"
+    onClick={[Function]}
+  />,
+  <span />,
+  <span />,
+]
+`;

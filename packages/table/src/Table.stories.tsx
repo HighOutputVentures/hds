@@ -1,19 +1,7 @@
-import {
-  Avatar,
-  Badge,
-  Box,
-  chakra,
-  Flex,
-  Heading,
-  HStack,
-  Icon,
-  MenuItem,
-  Text,
-} from "@chakra-ui/react";
+import { Avatar, Badge, Box, chakra, Flex, Heading, HStack, Icon, Text } from "@chakra-ui/react";
 import { faker } from "@faker-js/faker";
 import { ComponentStory, Meta } from "@storybook/react";
 import * as React from "react";
-import { MenuDropdown } from "~/dropdown";
 import { ThemeProvider } from "~/hds";
 import { DotsVerticalIcon } from "~/icons";
 import { Pagination } from "~/pagination";
@@ -196,22 +184,6 @@ Default.args = {
               </Badge>
             ))}
           </HStack>
-        );
-      },
-    },
-    {
-      label: "",
-      renderRow() {
-        return (
-          <MenuDropdown
-            menuType="kebab"
-            menuItems={
-              <>
-                <MenuItem>Edit</MenuItem>
-                <MenuItem>Delete</MenuItem>
-              </>
-            }
-          ></MenuDropdown>
         );
       },
     },
