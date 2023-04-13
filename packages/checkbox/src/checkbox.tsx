@@ -6,8 +6,9 @@ import {
   CheckboxProps,
   Icon,
   IconProps,
+  MultiStyleConfig,
+  ResponsiveValue,
   Text,
-  useMultiStyleConfig,
   VStack,
 } from '@chakra-ui/react';
 import React, { ReactNode } from 'react';
@@ -77,8 +78,16 @@ const checkboxHoverStyle = (variant: 'primary.outlined' | 'primary.solid') => {
 const Checkbox = React.forwardRef<HTMLInputElement, CheckProps>(
   (props, ref) => {
     const { size, variant, disabled, ...others } = props;
-
-    const styles = useMultiStyleConfig('Checkbox', { variant, size });
+    const styleConfigRadio = useCheckboxStyleConfig({
+      size: size,
+      variant: variant,
+      type: 'radio',
+    });
+    const styleConfigCheckbox = useCheckboxStyleConfig({
+      size: size,
+      variant: variant,
+      type: 'checkbox',
+    });
 
     var classHover = checkboxHoverStyle(variant || 'primary.outlined');
 
@@ -120,8 +129,9 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckProps>(
             size={size}
             ref={ref}
             icon={checkboxIcon()}
-            isDisabled={disabled}
             sx={classHover}
+            isDisabled={disabled}
+            styleConfig={styleConfigCheckbox}
             data-testid={props.__testId ?? `hds.checkbox`}
             onChange={({ target }) => {
               props.onCheck?.(target.checked);
@@ -145,19 +155,12 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckProps>(
             ref={ref}
             data-testid={props.__testId ?? `hds.checkbox`}
             sx={classHover}
+            styleConfig={styleConfigRadio}
+            icon={radioIcon()}
             isDisabled={disabled}
-            styleConfig={{
-              baseStyle: {
-                control: {
-                  ...styles.control,
-                  borderRadius: 'full',
-                },
-              },
-            }}
             onChange={({ target }) => {
               props.onCheck?.(target.checked);
             }}
-            icon={radioIcon()}
             {...omit(others, 'onCheck', 'helperMsg', '__testId')}
           >
             {props.label && typeof props.label === 'string' ? (
@@ -220,3 +223,114 @@ export const CircleIcon = (props: Omit<IconProps, 'children' | 'css'>) => (
     />
   </Icon>
 );
+type UseCheckboxStyleConfigArg = {
+  size: ResponsiveValue<(string & {}) | 'sm' | 'md' | 'lg'> | undefined;
+  variant: 'primary.outlined' | 'primary.solid' | undefined;
+  type: 'radio' | 'checkbox';
+};
+function useCheckboxStyleConfig(arg: UseCheckboxStyleConfigArg) {
+  const styleConfig = React.useMemo<MultiStyleConfig>(
+    function getStyleConfig() {
+      return {
+        parts: ['control', 'icon'],
+        baseStyle: {
+          control: {
+            borderColor: 'neutrals.300',
+            borderWidth: '2px',
+            borderStyle: 'solid',
+            padding: '6px',
+            _focus: { boxShadow: '0px 0px 0px 4px #F4EBFF' },
+            _checked: {
+              color: 'black',
+            },
+            color: 'transparent',
+            bg: 'alpha.white.500',
+            _disabled: {
+              borderColor: 'neutrals.200',
+              bg: 'neutrals.100',
+              _checked: {
+                borderColor: 'neutrals.200',
+                bg: 'neutrals.100',
+                color: 'neutrals.200',
+              },
+            },
+            rounded: arg.type === 'radio' ? 'full' : 'base',
+          },
+        },
+        sizes: {
+          sm: {
+            control: {
+              w: '16px',
+              h: '16px',
+            },
+            icon: {
+              w: '8px',
+              h: '8px',
+            },
+          },
+          md: {
+            control: {
+              w: '20px',
+              h: '20px',
+            },
+            icon: {
+              w: '10px',
+              h: '10px',
+            },
+          },
+          lg: {
+            control: {
+              w: '24px',
+              h: '24px',
+            },
+            icon: {
+              w: '10px',
+              h: '10px',
+            },
+          },
+          xl: {
+            control: {
+              w: '32px',
+              h: '32px',
+            },
+            icon: {
+              w: '12px',
+              h: '12px',
+            },
+          },
+        },
+        variants: {
+          'primary.outlined': {
+            control: {
+              pointerEvents: 'none',
+              _checked: {
+                bg: 'brand.primary.500',
+                color: 'brand.primary.700',
+                borderColor: 'brand.primary.700',
+                border: '1px solid',
+              },
+            },
+          },
+          'primary.solid': {
+            control: {
+              pointerEvents: 'none',
+              _checked: {
+                bg: 'brand.primary.700',
+                color: 'alpha.white.500',
+                borderColor: 'brand.primary.700',
+                border: '1px solid',
+              },
+            },
+          },
+        },
+        defaultProps: {
+          variant: 'primary.outlined',
+          size: 'sm',
+        },
+      };
+    },
+    [arg]
+  );
+
+  return styleConfig;
+}
