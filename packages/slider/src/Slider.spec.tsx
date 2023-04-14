@@ -1,9 +1,8 @@
+import { ChakraProvider } from "@chakra-ui/react";
 import "@testing-library/jest-dom";
 import { cleanup, fireEvent, render, waitFor } from "@testing-library/react";
 import * as React from "react";
-import { extendTheme, ThemeProvider } from "../../hds/src";
 import Slider, { SliderProps } from "./Slider";
-import withSlider from "./withSlider";
 
 jest.mock("./Slider", () => {
   return function MockedSlider({
@@ -40,9 +39,9 @@ describe("RangeSlider", () => {
 
   const renderTestComponent = (props: SliderProps = {}) => {
     return render(
-      <ThemeProvider theme={extendTheme(withSlider())}>
+      <ChakraProvider>
         <Slider {...props} />
-      </ThemeProvider>,
+      </ChakraProvider>,
     );
   };
 

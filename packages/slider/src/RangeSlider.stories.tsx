@@ -1,30 +1,17 @@
-import { Box, extendTheme } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { ComponentStory, Meta } from "@storybook/react";
 import * as React from "react";
 import { ThemeProvider } from "../../hds/src";
 import RangeSlider from "./RangeSlider";
-import withSlider from "./withSlider";
 
-const meta: Meta = {
+const Story: Meta<typeof RangeSlider> = {
   title: "Components/Slider/RangeSlider",
   component: RangeSlider,
-  argTypes: {
-    labelVariant: {
-      name: "labelVariant",
-      type: {
-        name: "string",
-        required: false,
-      },
-      defaultValue: "floating",
-      control: "select",
-      options: ["floating", "static"],
-    },
-  },
 };
 
 const Template: ComponentStory<typeof RangeSlider> = (args) => {
   return (
-    <ThemeProvider theme={extendTheme(withSlider())}>
+    <ThemeProvider>
       <Box py={16} px={8}>
         <RangeSlider {...args} />
       </Box>
@@ -35,10 +22,13 @@ const Template: ComponentStory<typeof RangeSlider> = (args) => {
 export const Default = Template.bind({});
 
 Default.args = {
+  ...Default.args,
   min: 0,
   max: 100,
   step: 1,
   defaultValue: [25, 75],
+  hasLabel: false,
+  keepLabelOpened: false,
 };
 
-export default meta;
+export default Story;
