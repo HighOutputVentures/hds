@@ -2,12 +2,12 @@
 
 exports[`Snapshot (Tabs) Should match snapshot 1`] = `
 <div
-  className="chakra-tabs css-8c3ncp"
+  className="chakra-tabs css-la4in9"
   data-testid="hds.tabs"
 >
   <div
     aria-orientation="horizontal"
-    className="chakra-tabs__tablist css-5bpqcm"
+    className="chakra-tabs__tablist css-laq73v"
     data-testid="hds.tabs.tablist"
     onKeyDown={[Function]}
     role="tablist"
@@ -15,7 +15,7 @@ exports[`Snapshot (Tabs) Should match snapshot 1`] = `
     <button
       aria-controls="tabs-:r0:--tabpanel--1"
       aria-selected={false}
-      className="chakra-tabs__tab css-jid256"
+      className="chakra-tabs__tab css-1iawfz1"
       data-testid="hds.tabs.tab"
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
@@ -25,20 +25,15 @@ exports[`Snapshot (Tabs) Should match snapshot 1`] = `
       type="button"
     >
       <div
-        className="css-j2at52"
+        className="css-1xedgln"
       >
-        <p
-          className="chakra-text css-epvm6"
-          data-testid="hds.tabs.tab.label"
-        >
-          One
-        </p>
+        One
       </div>
     </button>
     <button
       aria-controls="tabs-:r0:--tabpanel--1"
       aria-selected={false}
-      className="chakra-tabs__tab css-jid256"
+      className="chakra-tabs__tab css-1iawfz1"
       data-testid="hds.tabs.tab"
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
@@ -48,20 +43,15 @@ exports[`Snapshot (Tabs) Should match snapshot 1`] = `
       type="button"
     >
       <div
-        className="css-j2at52"
+        className="css-1xedgln"
       >
-        <p
-          className="chakra-text css-epvm6"
-          data-testid="hds.tabs.tab.label"
-        >
-          Two
-        </p>
+        Two
       </div>
     </button>
     <button
       aria-controls="tabs-:r0:--tabpanel--1"
       aria-selected={false}
-      className="chakra-tabs__tab css-jid256"
+      className="chakra-tabs__tab css-1iawfz1"
       data-testid="hds.tabs.tab"
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
@@ -71,19 +61,27 @@ exports[`Snapshot (Tabs) Should match snapshot 1`] = `
       type="button"
     >
       <div
-        className="css-j2at52"
+        className="css-1xedgln"
       >
-        <p
-          className="chakra-text css-epvm6"
-          data-testid="hds.tabs.tab.label"
-        >
-          Three
-        </p>
+        Three
       </div>
     </button>
   </div>
   <div
-    className="chakra-tabs__tab-panels css-j0hrwt"
+    className="chakra-tabs__tab-indicator css-131u3bt"
+    style={
+      Object {
+        "left": 0,
+        "position": "absolute",
+        "transitionDuration": "0ms",
+        "transitionProperty": "left, right, top, bottom, height, width",
+        "transitionTimingFunction": "cubic-bezier(0, 0, 0.2, 1)",
+        "width": 0,
+      }
+    }
+  />
+  <div
+    className="chakra-tabs__tab-panels css-pwpux2"
     data-testid="hds.tabs.panels"
   >
     <div

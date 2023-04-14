@@ -7,7 +7,7 @@ exports[`Snapshot (ButtonTabs) Should match snapshot 1`] = `
 >
   <div
     aria-orientation="horizontal"
-    className="chakra-tabs__tablist css-lvouy5"
+    className="chakra-tabs__tablist css-8owaep"
     data-testid="hds.button-tabs.list"
     onKeyDown={[Function]}
     role="tablist"
@@ -15,7 +15,7 @@ exports[`Snapshot (ButtonTabs) Should match snapshot 1`] = `
     <button
       aria-controls="tabs-:r0:--tabpanel--1"
       aria-selected={false}
-      className="chakra-tabs__tab css-1tpbcy4"
+      className="chakra-tabs__tab css-17028si"
       data-testid="hds.button-tabs.tab"
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
@@ -24,17 +24,12 @@ exports[`Snapshot (ButtonTabs) Should match snapshot 1`] = `
       tabIndex={-1}
       type="button"
     >
-      <p
-        className="chakra-text css-0"
-        data-testid="hds.button-tabs.tab.label"
-      >
-        One
-      </p>
+      One
     </button>
     <button
       aria-controls="tabs-:r0:--tabpanel--1"
       aria-selected={false}
-      className="chakra-tabs__tab css-1tpbcy4"
+      className="chakra-tabs__tab css-17028si"
       data-testid="hds.button-tabs.tab"
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
@@ -43,17 +38,12 @@ exports[`Snapshot (ButtonTabs) Should match snapshot 1`] = `
       tabIndex={-1}
       type="button"
     >
-      <p
-        className="chakra-text css-0"
-        data-testid="hds.button-tabs.tab.label"
-      >
-        Two
-      </p>
+      Two
     </button>
     <button
       aria-controls="tabs-:r0:--tabpanel--1"
       aria-selected={false}
-      className="chakra-tabs__tab css-uh1hvz"
+      className="chakra-tabs__tab css-17028si"
       data-testid="hds.button-tabs.tab"
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
@@ -62,12 +52,7 @@ exports[`Snapshot (ButtonTabs) Should match snapshot 1`] = `
       tabIndex={-1}
       type="button"
     >
-      <p
-        className="chakra-text css-0"
-        data-testid="hds.button-tabs.tab.label"
-      >
-        Three
-      </p>
+      Three
     </button>
   </div>
   <div
