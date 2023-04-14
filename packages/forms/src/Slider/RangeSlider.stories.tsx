@@ -5,7 +5,7 @@ import * as React from "react";
 import RangeSlider from "./RangeSlider";
 
 const Story: Meta<typeof RangeSlider> = {
-  title: "Components/Slider/RangeSlider",
+  title: "Components/Forms/RangeSlider",
   component: RangeSlider,
 };
 

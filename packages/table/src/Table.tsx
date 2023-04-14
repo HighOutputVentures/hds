@@ -159,6 +159,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                           <Checkbox
                             aria-label="Select all"
                             marginRight="12px"
+                            size="sm"
                             isChecked={isCheckedAll}
                             isIndeterminate={isIndeterminate}
                             onChange={(e) => {
@@ -221,6 +222,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                               {onCheck && (
                                 <Checkbox
                                   aria-label="Select item"
+                                  size="sm"
                                   isChecked={checkedItems[index_1][index_0]}
                                   onChange={(e) => {
                                     const isChecked = e.target.checked;

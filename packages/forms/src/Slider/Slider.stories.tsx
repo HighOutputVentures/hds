@@ -5,7 +5,7 @@ import * as React from "react";
 import Slider from "./Slider";
 
 const Story: Meta<typeof Slider> = {
-  title: "Components/Slider/Slider",
+  title: "Components/Forms/Slider",
   component: Slider,
 };
 
