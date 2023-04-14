@@ -1,5 +1,5 @@
 {
-  "version": "0.2.20",
+  "version": "0.2.21",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -52,7 +52,7 @@
     "size-limit": "7.0.8"
   },
   "dependencies": {
-    "@highoutput/hds-icons": "*",
+    "@highoutput/hds-icons": "^0.2.3",
     "@zag-js/pagination": "0.1.14",
     "@zag-js/react": "0.3.10",
     "uuid": "9.0.0"
