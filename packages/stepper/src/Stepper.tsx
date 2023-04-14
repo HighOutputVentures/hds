@@ -1,33 +1,43 @@
 import { Flex, Text, VStack } from '@chakra-ui/react';
-
-//@ts-ignore
-import { Checkbox } from '@highoutput/hds-checkbox';
+import { Checkbox } from '@highoutput/hds-forms';
 import React, { PropsWithChildren } from 'react';
+
+type Item = {
+  label: string;
+  description: string;
+};
+
+type Size = 'sm' | 'md' | 'lg' | 'xl';
+
+type Orientation = 'horizontal' | 'vertical';
+
 export interface StepperProps {
-  items: {
-    label: string;
-    description: string;
-  }[];
-  value: number;
-  onChange?: (activeStep: number) => void;
-  size?: 'sm' | 'md' | 'lg' | 'xl';
-  orientation?: 'horizontal' | 'vertical';
-  gap: string;
+  size?: Size;
+  items?: Item[];
+  value?: number;
+  onChange?(newValue: number): void;
+  orientation?: Orientation;
+  /**
+   *
+   * Space between icon (step) and label
+   *
+   */
+  spacing?: string;
 }
 
 const Stepper = ({
-  items,
-  value,
-  onChange,
   size = 'lg',
+  items = [],
+  value = 1,
+  onChange,
   children,
   orientation = 'horizontal',
-  gap,
+  spacing,
 }: PropsWithChildren<StepperProps>) => {
   return (
     <Flex
       flexDirection="column"
-      gap={gap}
+      gap={spacing}
       {...(orientation === 'horizontal' && {
         mx: '129px',
       })}
@@ -60,10 +70,8 @@ const Stepper = ({
               >
                 <Flex zIndex={1}>
                   <Checkbox
-                    size={size}
-                    type="radioType"
-                    radio_icon={stepNumber < value ? 'checkIcon' : 'circleIcon'}
-                    variant="primary.solid"
+                    size={size === 'sm' || size === 'md' ? 'sm' : 'md'}
+                    variant="solid"
                     onChange={() => {
                       stepNumber <= value + 1 && onChange?.(stepNumber);
                     }}

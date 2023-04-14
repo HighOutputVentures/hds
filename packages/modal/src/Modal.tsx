@@ -11,7 +11,7 @@ import {
   ModalHeader,
   ModalOverlay,
 } from '@chakra-ui/react';
-import { Button } from '@highoutput/hds-button';
+import { Button } from '@highoutput/hds-forms';
 import * as React from 'react';
 
 type Size = 'lg' | 'md' | 'sm' | 'xs';

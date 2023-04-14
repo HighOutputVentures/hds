@@ -1,5 +1,5 @@
 import { Box, Flex, ThemeProvider } from '@highoutput/hds';
-import { Button } from '@highoutput/hds-button';
+import { Button } from '@highoutput/hds-forms';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React, { useRef } from 'react';
 import SlideoutMenu, { SlideoutMenuRef } from './SlideoutMenu';
