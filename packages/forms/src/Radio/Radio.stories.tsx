@@ -2,20 +2,20 @@ import { Box } from "@chakra-ui/react";
 import { ThemeProvider } from "@highoutput/hds/src";
 import { ComponentStory, Meta } from "@storybook/react";
 import React from "react";
-import Checkbox from "./Checkbox";
+import Radio from "./Radio";
 
-const Story: Meta<typeof Checkbox> = {
-  title: "Components/Forms/Checkbox",
-  component: Checkbox,
+const Story: Meta<typeof Radio> = {
+  title: "Components/Forms/Radio",
+  component: Radio,
 };
 
 export default Story;
 
-const Template: ComponentStory<typeof Checkbox> = (args) => {
+const Template: ComponentStory<typeof Radio> = (args) => {
   return (
     <ThemeProvider>
       <Box p={4}>
-        <Checkbox {...args} />
+        <Radio {...args} />
       </Box>
     </ThemeProvider>
   );
@@ -29,7 +29,6 @@ Default.args = {
   variant: "outline",
   isChecked: false,
   isDisabled: false,
-  isIndeterminate: false,
   label: "Remember me",
   hint: "Save my login details for next time.",
 };

@@ -10,8 +10,8 @@ import {
 import * as React from "react";
 import CheckIcon from "../icons/CheckIcon";
 import MinusIcon from "../icons/MinusIcon";
+import { Size, Variant } from "../types";
 import { useCheckboxStyleConfig } from "./hooks";
-import { Size, Variant } from "./types";
 
 type BaseProps = Omit<
   ChakraCheckboxProps,

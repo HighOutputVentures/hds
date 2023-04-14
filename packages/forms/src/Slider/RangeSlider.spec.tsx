@@ -1,10 +1,12 @@
-import "@testing-library/jest-dom";
 import { cleanup, fireEvent, render, waitFor } from "@testing-library/react";
 import * as React from "react";
 import RangeSlider, { RangeSliderProps } from "./RangeSlider";
 
 jest.mock("./RangeSlider", () => {
-  return function MockedSlider({ onChange, defaultValue = [0, 100] }: RangeSliderProps) {
+  return function MockedSlider({
+    onChange,
+    defaultValue = [0, 100],
+  }: RangeSliderProps) {
     const [value, setValue] = React.useState(defaultValue);
 
     return (
@@ -43,7 +45,9 @@ describe("RangeSlider", () => {
 
   it("Should render controls", () => {
     const { queryAllByRole } = renderTestComponent();
-    expect(queryAllByRole("slider", { name: /^(min|max) value$/i })).toHaveLength(2);
+    expect(
+      queryAllByRole("slider", { name: /^(min|max) value$/i }),
+    ).toHaveLength(2);
   });
 
   it("Should be able to set default value", () => {
@@ -74,7 +78,10 @@ describe("RangeSlider", () => {
 
   it("Should call onChange fn when value changes", async () => {
     const onChange = jest.fn();
-    const { getByRole } = renderTestComponent({ defaultValue: [0, 100], onChange });
+    const { getByRole } = renderTestComponent({
+      defaultValue: [0, 100],
+      onChange,
+    });
 
     const slider = getByRole("checkbox", { name: "Slider" });
     const newValue = [15, 25];

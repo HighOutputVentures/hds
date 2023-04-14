@@ -16,6 +16,7 @@ import OtpField, { OtpFieldProps } from "./OtpField/OtpField";
 import PasswordField, {
   PasswordFieldProps,
 } from "./PasswordField/PasswordField";
+import Radio, { RadioGroup, RadioGroupProps, RadioProps } from "./Radio/Radio";
 import SearchField, { SearchFieldProps } from "./SearchField/SearchField";
 import SelectField, { SelectFieldProps } from "./SelectField/SelectField";
 import RangeSlider, { RangeSliderProps } from "./Slider/RangeSlider";
@@ -54,4 +55,8 @@ export {
   IconButtonProps,
   Switch,
   SwitchProps,
+  Radio,
+  RadioGroup,
+  RadioGroupProps,
+  RadioProps,
 };

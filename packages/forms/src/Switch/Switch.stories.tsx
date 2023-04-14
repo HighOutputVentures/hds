@@ -4,7 +4,7 @@ import React from "react";
 import Switch from "./Switch";
 
 const Story: Meta<typeof Switch> = {
-  title: "Components/Switch",
+  title: "Components/Forms/Switch",
   component: Switch,
 };
 

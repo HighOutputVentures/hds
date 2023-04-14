@@ -1,5 +1,4 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import "@testing-library/jest-dom";
 import { cleanup, fireEvent, render, waitFor } from "@testing-library/react";
 import * as React from "react";
 import Slider, { SliderProps } from "./Slider";

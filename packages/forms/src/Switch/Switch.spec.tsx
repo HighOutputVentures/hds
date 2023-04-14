@@ -1,4 +1,3 @@
-import "@testing-library/jest-dom";
 import { fireEvent, render, waitFor } from "@testing-library/react";
 import * as React from "react";
 import renderer from "react-test-renderer";
@@ -30,7 +29,9 @@ describe("Switch", () => {
   });
 
   it("Should be able to set helper text", () => {
-    const { queryByText } = renderTestComponent({ hint: "Checkbox helper text" });
+    const { queryByText } = renderTestComponent({
+      hint: "Checkbox helper text",
+    });
     expect(queryByText("Checkbox helper text")).toBeDefined();
   });
 
