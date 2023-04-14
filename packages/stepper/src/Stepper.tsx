@@ -1,7 +1,5 @@
 import { Flex, Text, VStack } from '@chakra-ui/react';
-
-//@ts-ignore
-import { Checkbox } from '@highoutput/hds-checkbox';
+import { Checkbox } from '@highoutput/hds-forms';
 import React, { PropsWithChildren } from 'react';
 export interface StepperProps {
   items: {
@@ -60,10 +58,8 @@ const Stepper = ({
               >
                 <Flex zIndex={1}>
                   <Checkbox
-                    size={size}
-                    type="radioType"
-                    radio_icon={stepNumber < value ? 'checkIcon' : 'circleIcon'}
-                    variant="primary.solid"
+                    size={size === 'sm' || size === 'md' ? 'sm' : 'md'}
+                    variant="solid"
                     onChange={() => {
                       stepNumber <= value + 1 && onChange?.(stepNumber);
                     }}

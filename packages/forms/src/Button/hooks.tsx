@@ -13,7 +13,11 @@ type UseStylesReturn = {
   iconButton: SystemStyleObject;
 };
 
-export function useStyles({ size, accent, variant }: UseStylesConfig): UseStylesReturn {
+export function useStyles({
+  size,
+  accent,
+  variant,
+}: UseStylesConfig): UseStylesReturn {
   const button = React.useMemo(
     () => ({
       rounded: "4px",
@@ -87,7 +91,8 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
           },
           _focus: {
             outline: "none",
-            boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F4EBFF",
+            boxShadow:
+              "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F4EBFF",
           },
           _disabled: {
             cursor: "not-allowed",
@@ -108,7 +113,8 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
           },
           _focus: {
             outline: "none",
-            boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #FEE4E2",
+            boxShadow:
+              "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #FEE4E2",
           },
           _disabled: {
             cursor: "not-allowed",
@@ -143,7 +149,8 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
           },
           _focus: {
             color: "brand.primary.900",
-            boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F4EBFF",
+            boxShadow:
+              "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F4EBFF",
           },
           _disabled: {
             cursor: "not-allowed",
@@ -173,7 +180,8 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
           },
           _focus: {
             color: "interface.error.900",
-            boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #FEE4E2",
+            boxShadow:
+              "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #FEE4E2",
           },
           _disabled: {
             cursor: "not-allowed",
@@ -198,7 +206,8 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
             bgColor: "neutrals.100",
           },
           _focus: {
-            boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7",
+            boxShadow:
+              "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7",
           },
           _disabled: {
             color: "neutrals.200",
@@ -310,7 +319,8 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
           },
           _focus: {
             color: "brand.primary.900",
-            boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F4EBFF",
+            boxShadow:
+              "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F4EBFF",
           },
           _disabled: {
             color: "neutrals.100",
@@ -335,7 +345,8 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
           },
           _focus: {
             color: "interface.error.900",
-            boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #FEE4E2",
+            boxShadow:
+              "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #FEE4E2",
           },
           _disabled: {
             color: "rgba(220, 24, 12, 0.3)",
@@ -361,7 +372,8 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
           },
           _focus: {
             color: "interface.error.900",
-            boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #FEE4E2",
+            boxShadow:
+              "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #FEE4E2",
           },
           _disabled: {
             color: "rgba(220, 24, 12, 0.3)",
@@ -474,7 +486,8 @@ export function useStyles({ size, accent, variant }: UseStylesConfig): UseStyles
    * If variant is not "link" or "unstyled"
    *
    */
-  const shouldAdjustIconButtonWidth = variant !== "link" && variant !== "unstyled";
+  const shouldAdjustIconButtonWidth =
+    variant !== "link" && variant !== "unstyled";
 
   const iconButton = React.useMemo(
     () => ({

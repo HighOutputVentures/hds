@@ -1,9 +1,7 @@
 import { Flex } from '@chakra-ui/react';
+import { ThemeProvider } from '@highoutput/hds';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { ThemeProvider } from '~/hds';
-//@ts-ignore
 import React from 'react';
-
 import Stepper from './Stepper';
 
 export default {
@@ -36,6 +34,7 @@ const Template: ComponentStory<typeof Stepper> = (props) => {
     // else
     // display errors
   };
+
   return (
     <ThemeProvider>
       <Flex alignItems="start" flexDir="row" height={'500px'}>

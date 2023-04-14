@@ -1,7 +1,7 @@
 import { EmailIcon, Icon } from '@chakra-ui/icons';
 import { Text } from '@chakra-ui/react';
 import { Box, Flex, ThemeProvider } from '@highoutput/hds';
-import { Button } from '@highoutput/hds-button';
+import { Button } from '@highoutput/hds-forms';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 import CTA from './CTA';

@@ -76,9 +76,19 @@ export default React.forwardRef<HTMLButtonElement, SocialButtonProps>(
             />
           );
         case "figma":
-          return <FigmaIcon isDisabled={others.isDisabled} data-testid={__iconTestId} />;
+          return (
+            <FigmaIcon
+              isDisabled={others.isDisabled}
+              data-testid={__iconTestId}
+            />
+          );
         case "google":
-          return <GoogleIcon isDisabled={others.isDisabled} data-testid={__iconTestId} />;
+          return (
+            <GoogleIcon
+              isDisabled={others.isDisabled}
+              data-testid={__iconTestId}
+            />
+          );
         case "twitter":
           return (
             <TwitterIcon
@@ -151,7 +161,8 @@ function useStyles({ variant }: { variant?: Variant }) {
         _active: {
           bgColor: isOutlineVariant ? "white" : "white",
           border: "1px solid #D0D5DD",
-          boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7",
+          boxShadow:
+            "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7",
         },
       },
       facebook: {
@@ -174,7 +185,8 @@ function useStyles({ variant }: { variant?: Variant }) {
         _active: {
           bgColor: isOutlineVariant ? "white" : "#1877F2",
           border: "1px solid #D0D5DD",
-          boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7",
+          boxShadow:
+            "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7",
         },
       },
       figma: {
@@ -197,7 +209,8 @@ function useStyles({ variant }: { variant?: Variant }) {
         _active: {
           bgColor: isOutlineVariant ? "white" : "#000000",
           border: "1px solid #D0D5DD",
-          boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7",
+          boxShadow:
+            "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7",
           _disabled: {
             bgColor: "none",
             boxShadow: "none",
@@ -224,7 +237,8 @@ function useStyles({ variant }: { variant?: Variant }) {
         _active: {
           bgColor: isOutlineVariant ? "white" : "#000000",
           border: "1px solid #D0D5DD",
-          boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7",
+          boxShadow:
+            "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7",
         },
       },
       dribble: {
@@ -247,7 +261,8 @@ function useStyles({ variant }: { variant?: Variant }) {
         _active: {
           bgColor: isOutlineVariant ? "white" : "#E62872",
           border: "1px solid #D0D5DD",
-          boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7",
+          boxShadow:
+            "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7",
         },
       },
       twitter: {
@@ -269,7 +284,8 @@ function useStyles({ variant }: { variant?: Variant }) {
         },
         _active: {
           bgColor: isOutlineVariant ? "white" : "#0C8BD9",
-          boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7",
+          boxShadow:
+            "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F2F4F7",
         },
       },
     }),

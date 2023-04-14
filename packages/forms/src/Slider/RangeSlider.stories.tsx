@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
+import { ThemeProvider } from "@highoutput/hds";
 import { ComponentStory, Meta } from "@storybook/react";
 import * as React from "react";
-import { ThemeProvider } from "../../hds/src";
 import RangeSlider from "./RangeSlider";
 
 const Story: Meta<typeof RangeSlider> = {

@@ -1,7 +1,7 @@
-import { ThemeProvider } from '@highoutput/hds';
-import { SuccessCircleIcon } from '@highoutput/hds-icons';
 import { Text } from '@chakra-ui/react';
-import { Button } from '@highoutput/hds-button';
+import { ThemeProvider } from '@highoutput/hds';
+import { Button } from '@highoutput/hds-forms';
+import { SuccessCircleIcon } from '@highoutput/hds-icons';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React, { useState } from 'react';
 import Modal from './Modal';

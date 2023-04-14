@@ -40,7 +40,8 @@
   "author": "calvo-jp",
   "module": "dist/hds-table.esm.js",
   "dependencies": {
-    "uuid": "9.0.0"
+    "uuid": "9.0.0",
+    "@highoutput/hds-forms": "*"
   },
   "size-limit": [
     {

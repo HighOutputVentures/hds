@@ -2,7 +2,6 @@ import {
   Box,
   Center,
   chakra,
-  Checkbox,
   Flex,
   HStack,
   Icon,
@@ -22,6 +21,7 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
+import { Checkbox } from "@highoutput/hds-forms";
 import * as React from "react";
 import { v4 as uuid } from "uuid";
 import { useStyles } from "./hooks";
@@ -148,6 +148,10 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                   },
                   index,
                 ) => {
+                  const isCheckedAll = !!checkedItems.at(index)?.every((o) => !!o);
+                  const isIndeterminate =
+                    !isCheckedAll && !!checkedItems.at(index)?.some((o) => !!o);
+
                   return (
                     <Th key={uuid()} width={width} data-testid="hds.table.header.th">
                       <Flex alignItems="center">
@@ -155,7 +159,8 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                           <Checkbox
                             aria-label="Select all"
                             marginRight="12px"
-                            isChecked={checkedItems[index].every((o) => !!o)}
+                            isChecked={isCheckedAll}
+                            isIndeterminate={isIndeterminate}
                             onChange={(e) => {
                               const isChecked = e.target.checked;
 
