@@ -1,11 +1,14 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ThemeProvider } from '@highoutput/hds';
+import { ComponentStory, Meta } from '@storybook/react';
 import * as React from 'react';
-import { ThemeProvider } from '~/hds';
 import ButtonTabs from './ButtonTabs';
 
-export default { title: 'Components/Tabs/ButtonTabs', component: ButtonTabs } as ComponentMeta<
-  typeof ButtonTabs
->;
+const Story: Meta<typeof ButtonTabs> = {
+  title: 'Components/Tabs/ButtonTabs',
+  component: ButtonTabs,
+};
+
+export default Story;
 
 const Template: ComponentStory<typeof ButtonTabs> = (args) => {
   return (
@@ -23,61 +26,61 @@ Default.args = {
     {
       label: 'My details',
       render() {
-        return <div>One</div>;
+        return <div style={{ marginTop: 16 }}>One</div>;
       },
     },
     {
       label: 'Profile',
       render() {
-        return <div>Two</div>;
+        return <div style={{ marginTop: 16 }}>Two</div>;
       },
     },
     {
       label: 'Password',
       render() {
-        return <div>Three</div>;
+        return <div style={{ marginTop: 16 }}>Three</div>;
       },
     },
     {
       label: 'Team',
       render() {
-        return <div>Four</div>;
+        return <div style={{ marginTop: 16 }}>Four</div>;
       },
     },
     {
       label: 'Plan',
       render() {
-        return <div>Five</div>;
+        return <div style={{ marginTop: 16 }}>Five</div>;
       },
     },
     {
       label: 'Billing',
       render() {
-        return <div>Six</div>;
+        return <div style={{ marginTop: 16 }}>Six</div>;
       },
     },
     {
       label: 'Email',
       render() {
-        return <div>Seven</div>;
+        return <div style={{ marginTop: 16 }}>Seven</div>;
       },
     },
     {
       label: 'Notifications',
       render() {
-        return <div>Eight</div>;
+        return <div style={{ marginTop: 16 }}>Eight</div>;
       },
     },
     {
       label: 'Integrations',
       render() {
-        return <div>Nine</div>;
+        return <div style={{ marginTop: 16 }}>Nine</div>;
       },
     },
     {
       label: 'API',
       render() {
-        return <div>Ten</div>;
+        return <div style={{ marginTop: 16 }}>Ten</div>;
       },
     },
   ],

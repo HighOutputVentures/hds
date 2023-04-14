@@ -1,12 +1,13 @@
 import {
+  Box,
   Flex,
+  SystemStyleObject,
   Tab,
+  TabIndicator,
   TabList,
   TabPanel,
   TabPanels,
-  Tabs,
-  Text,
-  useMultiStyleConfig,
+  Tabs as ChakraTabs,
 } from '@chakra-ui/react';
 import * as React from 'react';
 import { v4 as uuid } from 'uuid';
@@ -17,123 +18,214 @@ type Item = {
   badgeCount?: number | string;
 };
 
-type Size = 'sm' | 'md';
-type Variant = 'primary' | 'filled' | 'plain' | 'solid-underlined' | 'underlined';
-type Placement = 'left' | 'right' | 'center';
+type Variant = 'solid' | 'plain' | 'underlined';
+type Placement = 'start' | 'end' | 'center';
 type Orientation = 'vertical' | 'horizontal';
 
 export type TabsProps = {
-  size?: Size;
   items?: Item[];
   variant?: Variant;
+  isFitted?: boolean;
   placement?: Placement;
   orientation?: Orientation;
   preferMounted?: boolean;
 };
 
-/**
- *
- * @example
- * <Tabs
- *  items={[
- *    {
- *      label: 'Label 1',
- *      render(){
- *        return <div>One</div>
- *      }
- *    },
- *    {
- *      label: 'Label 2',
- *      render(){
- *        return <div>Two</div>
- *      }
- *    },
- *    {
- *      label: 'Label 3',
- *      render(){
- *        return <div>Three</div>
- *      }
- *      badgeCount: 4
- *    },
- *  ]}
- * />
- *
- */
-export default function HdsTabs({
-  size,
+export default function Tabs({
   items,
-  variant,
-  placement,
-  orientation,
+  variant = 'underlined',
+  isFitted,
+  placement = 'start',
+  orientation = 'horizontal',
   preferMounted,
 }: TabsProps) {
-  const styles = useMultiStyleConfig('Tabs', { variant, size });
-
   const [selectedIndex, setSelectedIndex] = React.useState(0);
 
-  const doNotVerticalOrient = variant === 'underlined' || variant === 'solid-underlined';
-  const modifiedOrientation = doNotVerticalOrient ? 'horizontal' : orientation;
+  /*
+   * force "horizontal" orientation if variant is "underlined"
+   */
+  orientation = variant === 'underlined' && orientation === 'vertical' ? 'horizontal' : orientation;
+
+  const styles = useStyles({
+    variant,
+    placement,
+    orientation,
+  });
 
   return (
-    <Tabs
+    <ChakraTabs
       orientation={orientation}
-      gap={8}
-      width="full"
-      height="full"
-      margin={0}
-      padding={0}
+      variant="unstyled"
+      isFitted={isFitted}
       index={selectedIndex}
       onChange={setSelectedIndex}
-      data-testid="hds.tabs"
+      /**
+       *
+       * User opts to prerender tab contents
+       *
+       */
       {...(!preferMounted && {
         isLazy: true,
         lazyBehavior: 'unmount',
       })}
+      sx={styles.tabs}
+      data-testid="hds.tabs"
     >
-      <TabList
-        gap={1}
-        flexDir={modifiedOrientation === 'vertical' ? 'column' : 'row'}
-        placeContent={placementToPlaceContent(placement)}
-        sx={styles.tablist}
-        data-testid="hds.tabs.tablist"
-      >
+      <TabList sx={styles.tablist} data-testid="hds.tabs.tablist">
         {items?.map(({ label, badgeCount }, ...args) => (
-          <Tab
-            key={uuid()}
-            height={8}
-            minWidth={modifiedOrientation === 'vertical' ? '142px' : 'auto'}
-            justifyContent={modifiedOrientation === 'vertical' ? 'flex-start' : 'center'}
-            transition="colors 300ms ease-in-out"
-            sx={styles.tab}
-            data-testid="hds.tabs.tab"
-          >
-            <Flex align="center" gap={2}>
-              <Text size="label-xs-default" whiteSpace="nowrap" data-testid="hds.tabs.tab.label">
-                {label}
-              </Text>
+          <Tab key={uuid()} sx={styles.tab} data-testid="hds.tabs.tab">
+            <Box flexGrow={1} textAlign="start">
+              {label}
+            </Box>
 
-              {badgeCount && <Badge count={badgeCount} isSelected={args[0] === selectedIndex} />}
-            </Flex>
+            {badgeCount && (
+              <Badge count={badgeCount} variant={variant} isSelected={args[0] === selectedIndex} />
+            )}
           </Tab>
         ))}
       </TabList>
 
-      <TabPanels width="auto" height="auto" padding={0} data-testid="hds.tabs.panels">
+      {variant === 'underlined' && <TabIndicator sx={styles.tabIndicator} />}
+
+      <TabPanels sx={styles.tabPanels} data-testid="hds.tabs.panels">
         {items?.map(({ render: Component }) => (
           <TabPanel key={uuid()} padding={0} data-testid="hds.tabs.panels.panel">
             <Component />
           </TabPanel>
         ))}
       </TabPanels>
-    </Tabs>
+    </ChakraTabs>
   );
+}
+
+type UseStylesArg = {
+  variant: Variant;
+  placement: Placement;
+  orientation: Orientation;
+};
+
+type UseStylesReturn = {
+  tab: SystemStyleObject;
+  tabs: SystemStyleObject;
+  tablist: SystemStyleObject;
+  tabPanels: SystemStyleObject;
+  tabIndicator: SystemStyleObject;
+};
+
+function useStyles(arg: UseStylesArg) {
+  const styles = React.useMemo<UseStylesReturn>(
+    () => ({
+      tabs: {
+        width: 'full',
+        margin: '0px',
+        padding: '0px',
+      },
+      tablist: {
+        gap: '16px',
+        padding: '0px',
+        placeContent: placementToPlaceContent(arg.placement),
+
+        ...(arg.orientation === 'vertical' && {
+          flexDirection: 'column',
+        }),
+
+        ...(arg.orientation === 'horizontal' && {
+          flexDirection: 'row',
+        }),
+
+        ...(arg.variant === 'underlined' && {
+          borderBottom: '1px',
+          borderColor: 'neutrals.200',
+        }),
+      },
+      tab: {
+        color: 'neutrals.600',
+        fontSize: '14px',
+        lineHeight: '14px',
+        letterSpacing: '0.02em',
+        transition: 'colors 300ms ease-in-out',
+        fontWeight: 'semibold',
+        minWidth: 'auto',
+        justifyContent: 'center',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '8px',
+        whiteSpace: 'nowrap',
+
+        _hover: {
+          color: 'neutrals.700',
+        },
+
+        ...(arg.orientation === 'vertical' && {
+          minWidth: '145px',
+          justifyContent: 'flex-start',
+        }),
+
+        ...(arg.variant === 'plain' && {
+          height: '32px',
+          rounded: '6px',
+          paddingX: '12px',
+          paddingY: '8px',
+          _selected: {
+            color: 'neutrals.800',
+            bgColor: 'neutrals.100',
+          },
+        }),
+
+        ...(arg.variant === 'solid' && {
+          height: '32px',
+          rounded: '6px',
+          paddingX: '12px',
+          paddingY: '8px',
+          _selected: {
+            color: 'brand.primary.700',
+            bgColor: 'brand.primary.500',
+          },
+        }),
+
+        ...(arg.variant === 'underlined' && {
+          paddingX: '4px',
+          paddingTop: '0px',
+          paddingBottom: '16px',
+          _selected: {
+            color: 'brand.primary.700',
+          },
+
+          ...(arg.orientation === 'vertical' && {
+            paddingBottom: '0px',
+          }),
+        }),
+      },
+      tabIndicator: {
+        rounded: 'full',
+        bgColor: 'brand.primary.700',
+
+        ...(arg.orientation === 'horizontal' && {
+          marginTop: '-1px',
+          height: '2px',
+        }),
+
+        ...(arg.orientation === 'vertical' && {
+          width: '2px',
+        }),
+      },
+      tabPanels: {
+        width: 'auto',
+        height: 'auto',
+        padding: '0px',
+      },
+    }),
+    [arg],
+  );
+
+  return styles;
 }
 
 function placementToPlaceContent(placement?: Placement) {
   switch (placement) {
     case 'center':
       return 'center';
-    case 'right':
+    case 'end':
       return 'flex-end';
     default:
       return 'flex-start';
@@ -142,29 +234,47 @@ function placementToPlaceContent(placement?: Placement) {
 
 type BadgeProps = {
   count: string | number;
+  variant: Variant;
   isSelected?: boolean;
 };
 
-function Badge({ count, isSelected }: BadgeProps) {
+function Badge({ count, variant, isSelected }: BadgeProps) {
   return (
     <Flex
-      height={5}
-      minWidth={5}
-      paddingX={1.5}
-      color="neutrals.800"
-      bgColor="neutrals.100"
-      alignItems="center"
-      justifyContent="center"
-      borderRadius="lg"
-      {...(isSelected && {
-        color: '#7224BF',
-        bgColor: '#D5BCEC',
-      })}
-      transition="colors 300ms ease-in-out"
+      sx={{
+        height: 5,
+        minWidth: 5,
+        paddingX: 1.5,
+        color: 'neutrals.800',
+        bgColor: 'neutrals.100',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 'lg',
+        transition: 'colors 300ms ease-in-out',
+        fontSize: '12px',
+        lineHeight: '18px',
+        fontWeight: 'medium',
+
+        ...(isSelected && {
+          ...(variant === 'plain' && {
+            color: 'neutrals.900',
+            bgColor: 'neutrals.200',
+          }),
+
+          ...(variant === 'solid' && {
+            color: 'brand.primary.700',
+            bgColor: 'blackAlpha.100',
+          }),
+
+          ...(variant === 'underlined' && {
+            color: 'brand.primary.700',
+            bgColor: 'brand.primary.500',
+          }),
+        }),
+      }}
+      data-testid="hds.tabs.tab.badge"
     >
-      <Text size="label-xs-default" color="inherit" data-testid="hds.tabs.tab.badge">
-        {count}
-      </Text>
+      {count}
     </Flex>
   );
 }

@@ -1,9 +1,14 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ThemeProvider } from '@highoutput/hds';
+import { ComponentStory, Meta } from '@storybook/react';
 import * as React from 'react';
-import { ThemeProvider } from '~/hds';
 import Tabs from './Tabs';
 
-export default { title: 'Components/Tabs/Tabs', component: Tabs } as ComponentMeta<typeof Tabs>;
+const Story: Meta<typeof Tabs> = {
+  title: 'Components/Tabs/Tabs',
+  component: Tabs,
+};
+
+export default Story;
 
 const Template: ComponentStory<typeof Tabs> = (args) => {
   return (
@@ -19,69 +24,70 @@ const numberFormatter = Intl.NumberFormat('en', { notation: 'compact' });
 
 Default.args = {
   ...Default.args,
+  variant: 'plain',
   items: [
     {
       label: 'My details',
       render() {
-        return <div>One</div>;
+        return <div style={{ padding: 16 }}>One</div>;
       },
       badgeCount: numberFormatter.format(2),
     },
     {
       label: 'Profile',
       render() {
-        return <div>Two</div>;
+        return <div style={{ padding: 16 }}>Two</div>;
       },
     },
     {
       label: 'Password',
       render() {
-        return <div>Three</div>;
+        return <div style={{ padding: 16 }}>Three</div>;
       },
     },
     {
       label: 'Team',
       render() {
-        return <div>Four</div>;
+        return <div style={{ padding: 16 }}>Four</div>;
       },
       badgeCount: numberFormatter.format(4),
     },
     {
       label: 'Plan',
       render() {
-        return <div>Five</div>;
+        return <div style={{ padding: 16 }}>Five</div>;
       },
     },
     {
       label: 'Billing',
       render() {
-        return <div>Six</div>;
+        return <div style={{ padding: 16 }}>Six</div>;
       },
     },
     {
       label: 'Email',
       render() {
-        return <div>Seven</div>;
+        return <div style={{ padding: 16 }}>Seven</div>;
       },
       badgeCount: numberFormatter.format(2150),
     },
     {
       label: 'Notifications',
       render() {
-        return <div>Eight</div>;
+        return <div style={{ padding: 16 }}>Eight</div>;
       },
       badgeCount: numberFormatter.format(1500),
     },
     {
       label: 'Integrations',
       render() {
-        return <div>Nine</div>;
+        return <div style={{ padding: 16 }}>Nine</div>;
       },
     },
     {
       label: 'API',
       render() {
-        return <div>Ten</div>;
+        return <div style={{ padding: 16 }}>Ten</div>;
       },
     },
   ],

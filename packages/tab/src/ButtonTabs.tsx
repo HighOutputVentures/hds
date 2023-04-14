@@ -1,13 +1,4 @@
-import {
-  SystemStyleObject,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
-  Text,
-  useMultiStyleConfig,
-} from '@chakra-ui/react';
+import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react';
 import * as React from 'react';
 import { v4 as uuid } from 'uuid';
 
@@ -16,19 +7,11 @@ type Item = {
   render(): JSX.Element | null;
 };
 
-type Size = 'sm' | 'md';
 type Placement = 'center' | 'end' | 'start';
 
 export interface ButtonTabsProps {
-  size?: Size;
   items?: Item[];
-  /**
-   *
-   * space between label and panel
-   *
-   */
-  spacing?: string | number;
-  fitToBox?: boolean;
+  isFitted?: boolean;
   placement?: Placement;
   /**
    *
@@ -37,68 +20,67 @@ export interface ButtonTabsProps {
    */
   isInverted?: boolean;
   preferMounted?: boolean;
-  _selected?: SystemStyleObject;
 }
 
 export default function ButtonTabs({
-  size = 'sm',
   items = [],
-  spacing,
-  fitToBox,
-  placement,
+  isFitted,
+  placement = 'start',
   isInverted,
   preferMounted,
-  _selected = {
-    color: '#344054',
-    bgColor: '#F9FAFB',
-  },
 }: ButtonTabsProps) {
-  const styles = useMultiStyleConfig('Tabs', { variant: 'unstyled', size });
-
   const [selectedIndex, setSelectedIndex] = React.useState(0);
 
-  const tablist = (
-    <TabList
-      border="1px solid #D0D5DD"
-      borderRadius={2}
-      width={fitToBox ? 'full' : 'fit-content'}
-      overflow="hidden"
-      marginBottom={spacing}
-      sx={styles.tablist}
-      {...(placement === 'end' && { ml: 'auto' })}
-      {...(placement === 'start' && { mr: 'auto' })}
-      data-testid="hds.button-tabs.list"
-    >
-      {items?.map(({ label }, idx) => {
-        return (
-          <Tab
-            key={uuid()}
-            _selected={_selected}
-            data-testid="hds.button-tabs.tab"
-            padding={'10px 16px'}
-            sx={size === 'md' ? styles.tab : undefined}
-            maxW={'auto'}
-            width={fitToBox ? '100%' : 'auto'}
-            borderRight={idx === items.length - 1 ? 'none' : '1px solid #D0D5DD'}
-          >
-            <Text size="label-xs-default" data-testid="hds.button-tabs.tab.label">
+  const tablist = React.useMemo(() => {
+    return (
+      <TabList justifyContent={placement} data-testid="hds.button-tabs.list">
+        {items?.map(({ label }) => {
+          return (
+            <Tab
+              key={uuid()}
+              color="Gray.800"
+              paddingY="10px"
+              paddingX="16px"
+              borderStyle="solid"
+              borderColor="Gray.300"
+              borderTopWidth="1px"
+              borderBottomWidth="1px"
+              borderRightWidth="1px"
+              fontSize="14px"
+              lineHeight="20px"
+              fontWeight="medium"
+              whiteSpace="nowrap"
+              _first={{
+                borderLeftWidth: '1px',
+                roundedLeft: '6px',
+              }}
+              _last={{
+                roundedRight: '6px',
+              }}
+              _selected={{
+                bgColor: 'Gray.50',
+              }}
+              data-testid="hds.button-tabs.tab"
+            >
               {label}
-            </Text>
-          </Tab>
-        );
-      })}
-    </TabList>
-  );
+            </Tab>
+          );
+        })}
+      </TabList>
+    );
+  }, [items, placement]);
 
-  const panels = (
-    <TabPanels padding={0} data-testid="hds.button-tabs.panels">
-      {items.map(({ render: Component }) => (
-        <TabPanel key={uuid()} padding={0} data-testid="hds.button-tabs.panels.panel">
-          <Component />
-        </TabPanel>
-      ))}
-    </TabPanels>
-  );
+  const panels = React.useMemo(() => {
+    return (
+      <TabPanels padding={0} data-testid="hds.button-tabs.panels">
+        {items.map(({ render: Component }) => (
+          <TabPanel key={uuid()} padding={0} data-testid="hds.button-tabs.panels.panel">
+            <Component />
+          </TabPanel>
+        ))}
+      </TabPanels>
+    );
+  }, [items]);
 
   return (
     <Tabs
@@ -107,14 +89,14 @@ export default function ButtonTabs({
       height="full"
       margin={0}
       padding={0}
-      align={placement}
+      isFitted={isFitted}
       index={selectedIndex}
       onChange={setSelectedIndex}
-      data-testid="hds.button-tabs.tabs"
       {...(!preferMounted && {
         isLazy: true,
         lazyBehavior: 'unmount',
       })}
+      data-testid="hds.button-tabs.tabs"
     >
       {!isInverted && (
         <React.Fragment>
