@@ -45,7 +45,7 @@ export type ClickContext<T> = {
 export type Column<T extends UnknownArray> = {
   label: string;
   width?: string;
-  tooltip?: string;
+  tooltip?: React.ReactNode;
   renderRow?: (item: T[number]) => any;
   onSort?(context: SortContext): void;
   onClick?(context: ClickContext<ArrayItem<T>>): void;
