@@ -41,6 +41,7 @@
   "module": "dist/hds-table.esm.js",
   "dependencies": {
     "@highoutput/hds-forms": "^0.2.12",
+    "@highoutput/hds-tooltip": "*",
     "uuid": "9.0.0"
   },
   "size-limit": [

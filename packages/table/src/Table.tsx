@@ -5,11 +5,6 @@ import {
   Flex,
   HStack,
   Icon,
-  Popover,
-  PopoverArrow,
-  PopoverBody,
-  PopoverContent,
-  PopoverTrigger,
   Spinner,
   SystemStyleObject,
   Table,
@@ -22,6 +17,7 @@ import {
   Tr,
 } from "@chakra-ui/react";
 import { Checkbox } from "@highoutput/hds-forms";
+import { Tooltip } from "@highoutput/hds-tooltip";
 import * as React from "react";
 import { v4 as uuid } from "uuid";
 import { useStyles } from "./hooks";
@@ -189,7 +185,18 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                         )}
                         {label}
                         {onSort && <SortButton value={defaultSort} onSort={onSort} />}
-                        {tooltip && <Tooltip>{tooltip}</Tooltip>}
+                        {tooltip && (
+                          <Tooltip label={tooltip} hasArrow>
+                            <chakra.div display="flex" ml="4px">
+                              <Icon
+                                as={HelpCircleIcon}
+                                color="#A3A3A3"
+                                width="16px"
+                                height="16px"
+                              />
+                            </chakra.div>
+                          </Tooltip>
+                        )}
                       </Flex>
                     </Th>
                   );
@@ -324,23 +331,6 @@ function HardLoaderDefault({ numOfCols }: { numOfCols: number }) {
         </Center>
       </Td>
     </Tr>
-  );
-}
-
-function Tooltip({ children }: React.PropsWithChildren<{}>) {
-  return (
-    <Popover>
-      <PopoverTrigger>
-        <chakra.button marginLeft="4px" display="flex" aria-label="Hint">
-          <Icon as={HelpCircleIcon} color="#A3A3A3" width="16px" height="16px" />
-        </chakra.button>
-      </PopoverTrigger>
-
-      <PopoverContent w="fit-content">
-        <PopoverArrow />
-        <PopoverBody>{children}</PopoverBody>
-      </PopoverContent>
-    </Popover>
   );
 }
 

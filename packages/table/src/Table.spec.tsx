@@ -1,7 +1,7 @@
 import { Avatar, HStack, Text } from "@chakra-ui/react";
 import { faker } from "@faker-js/faker";
 import "@testing-library/jest-dom";
-import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import * as React from "react";
 import Table from "./Table";
 
@@ -122,14 +122,6 @@ describe("Table", () => {
   describe("Tooltip", () => {
     it("Should render help icon", () => {
       expect(screen.queryByRole("button", { name: "Hint" })).toBeDefined();
-    });
-
-    it("Should display hint when tooltip button is clicked", async () => {
-      const trigger = screen.getByRole("button", { name: "Hint" });
-      fireEvent.click(trigger);
-      await waitFor(() => {
-        expect(screen.queryByText("Hint: This is your email")).toBeDefined();
-      });
     });
   });
 

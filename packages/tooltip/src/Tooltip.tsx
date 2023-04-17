@@ -10,7 +10,7 @@ import invariant from 'tiny-invariant';
 type ColorScheme = 'dark' | 'light';
 
 export interface TooltipProps {
-  label: string;
+  label: React.ReactNode;
   children: React.ReactNode;
   hasArrow?: boolean;
   placement?: PlacementWithLogical;

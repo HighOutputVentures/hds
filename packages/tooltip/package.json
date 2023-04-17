@@ -37,14 +37,14 @@
   },
   "name": "@highoutput/hds-tooltip",
   "author": "jadekenneth.github.io",
-  "module": "dist/@highoutput/hds-tooltip.esm.js",
+  "module": "dist/hds-tooltip.esm.js",
   "size-limit": [
     {
-      "path": "dist/@highoutput/hds-tooltip.cjs.production.min.js",
+      "path": "dist/hds-tooltip.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/@highoutput/hds-tooltip.esm.js",
+      "path": "dist/hds-tooltip.esm.js",
       "limit": "10 KB"
     }
   ],
