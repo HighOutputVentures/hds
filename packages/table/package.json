@@ -1,5 +1,5 @@
 {
-  "version": "0.2.15",
+  "version": "0.2.16",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -41,7 +41,7 @@
   "module": "dist/hds-table.esm.js",
   "dependencies": {
     "@highoutput/hds-forms": "^0.2.12",
-    "@highoutput/hds-tooltip": "*",
+    "@highoutput/hds-tooltip": "^0.2.9",
     "uuid": "9.0.0"
   },
   "size-limit": [
