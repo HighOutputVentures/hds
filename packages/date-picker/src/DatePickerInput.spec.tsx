@@ -4,7 +4,7 @@ import { format } from "date-fns";
 import * as React from "react";
 import DatePickerInput from "./DatePickerInput";
 
-describe.skip("DatePickerInput", () => {
+describe("DatePickerInput", () => {
   beforeEach(() => {
     render(<TestComponent />);
   });
@@ -92,7 +92,9 @@ describe.skip("DatePickerInput", () => {
     });
 
     await waitFor(() => {
-      expect(screen.getByTestId("hds.datepicker-input.controls.clear")).toBeInTheDocument();
+      expect(
+        screen.getByTestId("hds.datepicker-input.controls.clear"),
+      ).toBeInTheDocument();
     });
 
     await waitFor(async () => {

@@ -113,7 +113,7 @@ export default function DatePickerInput({
           onFocus={onOpen}
           onChange={noop}
           leftIcon={<Icon as={CalendarIcon} width="20px" height="20px" />}
-          {...(isClearable &&
+          {...(!!isClearable &&
             !isDisabled &&
             !isReadOnly &&
             !!value && {
@@ -127,7 +127,7 @@ export default function DatePickerInput({
                 />
               ),
             })}
-          data-testid="hds.datepicker-input.controls.input"
+          __fieldTestId="hds.datepicker-input.controls.input"
         />
       </Box>
 
