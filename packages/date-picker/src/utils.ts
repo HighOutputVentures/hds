@@ -1,110 +1,156 @@
-import { isToday } from 'date-fns';
+import {
+  addDays,
+  compareAsc,
+  compareDesc,
+  endOfMonth,
+  endOfWeek,
+  endOfYear,
+  getDaysInMonth,
+  isToday,
+  startOfMonth,
+  startOfWeek,
+  startOfYear,
+  subDays,
+  subMonths,
+  subWeeks,
+  subYears,
+} from "date-fns";
+import { START_OF_WEEK } from "./constants";
+import { CalendarObject, DateRange, TimeAdverbial } from "./types";
 
-function getMonthTotalDays(year: number, month: number) {
-  return 32 - new Date(year, month, 32).getDate();
-}
+export function getCalendar(date: Date) {
+  const lastDayOfMonth = endOfMonth(date);
+  const firstDayOfMonth = startOfMonth(date);
+  const totalDaysInMonth = getDaysInMonth(date);
 
-function cloneDate(date: Date) {
-  return new Date(date.getTime());
-}
+  let calendar: CalendarObject[] = [];
 
-export type CalendarObject = {
-  value: Date;
-  isNextMonth?: boolean;
-  isPrevMonth?: boolean;
-  isCurrentDay?: boolean;
-  isPlaceholder?: boolean;
-}[];
+  for (let i = 0; i < totalDaysInMonth; i++) {
+    const d = addDays(firstDayOfMonth, i);
 
-type GetCalendarConfig = {
-  shouldAddPrevMonthId?: boolean;
-  shouldAddNextMonthId?: boolean;
-};
-
-export function getCalendar(date: Date, config: GetCalendarConfig = {}) {
-  const { shouldAddNextMonthId, shouldAddPrevMonthId } = config;
-
-  const year = date.getFullYear();
-  const month = date.getMonth();
-
-  const totalDaysInMonth = getMonthTotalDays(year, month);
-
-  const days: CalendarObject = arrOfNulls(totalDaysInMonth).map((_, index) => {
-    const d = new Date(year, month, index + 1);
-
-    return {
+    calendar.push({
       value: d,
-      isCurrentDay: isToday(d),
-      isPlaceholder: false,
-    };
-  });
-
-  const monthFirstDay = days[0];
-  const monthLastDay = days[days.length - 1];
-
-  const startWeekdayIndex = monthFirstDay.value.getDay();
-  const lastWeekdayIndex = monthLastDay.value.getDay();
-  const totalBlankSlotsLeft = getFillableSlotsLeft(startWeekdayIndex);
-  const totalBlankSlotsRight = getFillableSlotsRight(lastWeekdayIndex);
-  const monthFirstDayCopy = cloneDate(monthFirstDay.value);
-  const monthLastDayCopy = cloneDate(monthLastDay.value);
-
-  // fill blank slots with days from previous month
-  if (totalBlankSlotsLeft >= 1) {
-    arrOfNulls(totalBlankSlotsLeft).forEach(() => {
-      const n = monthFirstDayCopy.setDate(monthFirstDayCopy.getDate() - 1);
-      const d = new Date(n);
-
-      days.unshift({
-        value: d,
-        isPrevMonth: !!shouldAddPrevMonthId,
-        isPlaceholder: true,
-      });
+      isToday: isToday(d),
     });
   }
 
-  // fill blank slots with days of next month
-  if (totalBlankSlotsRight >= 1) {
-    arrOfNulls(totalBlankSlotsRight).forEach(() => {
-      const n = monthLastDayCopy.setDate(monthLastDayCopy.getDate() + 1);
-      const d = new Date(n);
+  const daysToPreviousSundayFromFirstDay = firstDayOfMonth.getDay() - 0;
+  const daysToNextSaturdayFromLastDay = 6 - lastDayOfMonth.getDay();
 
-      days.push({
-        value: d,
-        isNextMonth: !!shouldAddNextMonthId,
+  if (daysToPreviousSundayFromFirstDay > 0) {
+    for (let i = 0; i < daysToPreviousSundayFromFirstDay; i++) {
+      calendar.unshift({
+        value: subDays(firstDayOfMonth, i + 1),
         isPlaceholder: true,
+        isPreviousMonthDate: true,
       });
-    });
+    }
   }
 
-  return days;
+  if (daysToNextSaturdayFromLastDay > 0) {
+    for (let i = 0; i < daysToNextSaturdayFromLastDay; i++) {
+      calendar.push({
+        value: addDays(lastDayOfMonth, i + 1),
+        isPlaceholder: true,
+        isNextMonthDate: true,
+      });
+    }
+  }
+
+  return arrayChunk(calendar, 7);
 }
 
-function getFillableSlotsRight(lastWeekdayIndex: number) {
-  switch (lastWeekdayIndex) {
-    case 6:
-      return 0;
-    case 5:
-      return 1;
-    case 4:
-      return 2;
-    case 3:
-      return 3;
-    case 2:
-      return 4;
-    case 1:
-      return 5;
+export function getDateRangeByTimeAdverbial(
+  adverbial: TimeAdverbial,
+  origin?: Date,
+): DateRange {
+  origin = origin ?? new Date();
+
+  switch (adverbial) {
+    case TimeAdverbial.Today:
+      return {
+        start: origin,
+        until: origin,
+      };
+
+    case TimeAdverbial.Yesterday:
+      return {
+        start: subDays(origin, 1),
+        until: origin,
+      };
+
+    case TimeAdverbial.ThisWeek:
+      return {
+        start: startOfWeek(origin, { weekStartsOn: START_OF_WEEK }),
+        until: endOfWeek(origin, { weekStartsOn: START_OF_WEEK }),
+      };
+
+    case TimeAdverbial.LastWeek: {
+      const lastWeekFromOrigin = subWeeks(origin, 1);
+
+      return {
+        start: startOfWeek(lastWeekFromOrigin, { weekStartsOn: START_OF_WEEK }),
+        until: endOfWeek(lastWeekFromOrigin, { weekStartsOn: START_OF_WEEK }),
+      };
+    }
+
+    case TimeAdverbial.ThisMonth:
+      return {
+        start: startOfMonth(origin),
+        until: endOfMonth(origin),
+      };
+
+    case TimeAdverbial.LastMonth: {
+      const lastMonthFromOrigin = subMonths(origin, 1);
+
+      return {
+        start: startOfMonth(lastMonthFromOrigin),
+        until: endOfMonth(lastMonthFromOrigin),
+      };
+    }
+
+    case TimeAdverbial.ThisYear:
+      return {
+        start: startOfYear(origin),
+        until: endOfMonth(origin),
+      };
+
+    case TimeAdverbial.LastYear: {
+      const lastYearFromOrigin = subYears(origin, 1);
+
+      return {
+        start: startOfYear(lastYearFromOrigin),
+        until: endOfYear(lastYearFromOrigin),
+      };
+    }
+
     default:
-      return 6;
+      return {
+        start: origin,
+        until: origin,
+      };
   }
 }
 
-function getFillableSlotsLeft(firstWeekdayIndex: number) {
-  return firstWeekdayIndex;
+export function getRangeCalendar(date: Date) {
+  return {
+    current: getCalendar(date),
+    previous: getCalendar(subMonths(date, 1)),
+  };
 }
 
-function arrOfNulls(length: number) {
-  return new Array(length).fill(null);
+type SortDirection = "asc" | "desc";
+
+export function sortDates(array: Date[], direction?: SortDirection) {
+  const copy = [...array];
+
+  if (direction === "desc") {
+    copy.sort(compareDesc);
+  } else {
+    copy.sort(compareAsc);
+  }
+
+  return copy;
 }
 
 export function arrayChunk<T extends unknown[]>(array: T, size: number) {
