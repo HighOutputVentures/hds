@@ -8,6 +8,10 @@ export interface CalendarObject {
   isPreviousMonthDate?: boolean;
 }
 
+export interface RangeCalendarObject extends CalendarObject {
+  isWithinRange?: boolean;
+}
+
 export type DateRange = {
   start: Nullable<Date>;
   until: Nullable<Date>;

@@ -2,7 +2,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { act, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { format } from "date-fns";
 import * as React from "react";
-import DatePickerInput from "./DatePickerInput";
+import { DatePickerInput } from "./DatePickerInput";
 
 describe("DatePickerInput", () => {
   beforeEach(() => {

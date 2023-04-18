@@ -2,11 +2,15 @@ import {
   addDays,
   compareAsc,
   compareDesc,
+  endOfDay,
   endOfMonth,
   endOfWeek,
   endOfYear,
   getDaysInMonth,
+  isEqual,
   isToday,
+  isWithinInterval,
+  startOfDay,
   startOfMonth,
   startOfWeek,
   startOfYear,
@@ -16,7 +20,7 @@ import {
   subYears,
 } from "date-fns";
 import { START_OF_WEEK } from "./constants";
-import { CalendarObject, DateRange, TimeAdverbial } from "./types";
+import { CalendarObject, DateRange, RangeCalendarObject, TimeAdverbial } from "./types";
 
 export function getCalendar(date: Date) {
   const lastDayOfMonth = endOfMonth(date);
@@ -57,86 +61,124 @@ export function getCalendar(date: Date) {
     }
   }
 
+  /*
+   * must have 6 weeks in a calendar based on HDS Figma
+   */
+  if (calendar.length / 7 < 6) {
+    const lastCalendarDate = calendar[calendar.length - 1].value;
+
+    for (let i = 0; i < 7; i++) {
+      calendar.push({
+        value: addDays(lastCalendarDate, i + 1),
+        isPlaceholder: true,
+        isNextMonthDate: true,
+      });
+    }
+  }
+
   return arrayChunk(calendar, 7);
 }
 
-export function getDateRangeByTimeAdverbial(
-  adverbial: TimeAdverbial,
-  origin?: Date,
-): DateRange {
-  origin = origin ?? new Date();
+export function getDateRangeByTimeAdverbial(adverbial: TimeAdverbial) {
+  const today = new Date();
 
   switch (adverbial) {
     case TimeAdverbial.Today:
       return {
-        start: origin,
-        until: origin,
+        start: startOfDay(today),
+        until: endOfDay(today),
       };
 
     case TimeAdverbial.Yesterday:
+      const yesterday = subDays(today, 1);
+
       return {
-        start: subDays(origin, 1),
-        until: origin,
+        start: startOfDay(yesterday),
+        until: endOfDay(yesterday),
       };
 
     case TimeAdverbial.ThisWeek:
       return {
-        start: startOfWeek(origin, { weekStartsOn: START_OF_WEEK }),
-        until: endOfWeek(origin, { weekStartsOn: START_OF_WEEK }),
+        start: startOfWeek(today, { weekStartsOn: START_OF_WEEK }),
+        until: endOfWeek(today, { weekStartsOn: START_OF_WEEK }),
       };
 
     case TimeAdverbial.LastWeek: {
-      const lastWeekFromOrigin = subWeeks(origin, 1);
+      const lastWeekFromToday = subWeeks(today, 1);
 
       return {
-        start: startOfWeek(lastWeekFromOrigin, { weekStartsOn: START_OF_WEEK }),
-        until: endOfWeek(lastWeekFromOrigin, { weekStartsOn: START_OF_WEEK }),
+        start: startOfWeek(lastWeekFromToday, { weekStartsOn: START_OF_WEEK }),
+        until: endOfWeek(lastWeekFromToday, { weekStartsOn: START_OF_WEEK }),
       };
     }
 
     case TimeAdverbial.ThisMonth:
       return {
-        start: startOfMonth(origin),
-        until: endOfMonth(origin),
+        start: startOfMonth(today),
+        until: endOfMonth(today),
       };
 
     case TimeAdverbial.LastMonth: {
-      const lastMonthFromOrigin = subMonths(origin, 1);
+      const lastMonthFromToday = subMonths(today, 1);
 
       return {
-        start: startOfMonth(lastMonthFromOrigin),
-        until: endOfMonth(lastMonthFromOrigin),
+        start: startOfMonth(lastMonthFromToday),
+        until: endOfMonth(lastMonthFromToday),
       };
     }
 
     case TimeAdverbial.ThisYear:
       return {
-        start: startOfYear(origin),
-        until: endOfMonth(origin),
+        start: startOfYear(today),
+        until: endOfMonth(today),
       };
 
     case TimeAdverbial.LastYear: {
-      const lastYearFromOrigin = subYears(origin, 1);
+      const lastYearFromToday = subYears(today, 1);
 
       return {
-        start: startOfYear(lastYearFromOrigin),
-        until: endOfYear(lastYearFromOrigin),
+        start: startOfYear(lastYearFromToday),
+        until: endOfYear(lastYearFromToday),
       };
     }
 
     default:
       return {
-        start: origin,
-        until: origin,
+        start: null,
+        until: null,
       };
   }
 }
 
-export function getRangeCalendar(date: Date) {
-  return {
-    current: getCalendar(date),
-    previous: getCalendar(subMonths(date, 1)),
-  };
+export function getRangeCalendar(date: Date, config: Partial<DateRange> = {}) {
+  const calendar: RangeCalendarObject[][] = getCalendar(date);
+
+  if (!config.start || !config.until) return calendar;
+
+  const [start, end] = sortDates([config.start, config.until]);
+
+  return calendar.map((chunk) =>
+    chunk.map((subject) => {
+      const isRangeStart =
+        config.start && isEqual(startOfDay(config.start), startOfDay(subject.value));
+
+      const isRangeUntil =
+        config.until && isEqual(startOfDay(config.until), startOfDay(subject.value));
+
+      const isWithinRange =
+        !isRangeStart &&
+        !isRangeUntil &&
+        isWithinInterval(subject.value, {
+          start,
+          end,
+        });
+
+      return {
+        ...subject,
+        isWithinRange,
+      };
+    }),
+  );
 }
 
 type SortDirection = "asc" | "desc";

@@ -2,7 +2,7 @@ import { Box } from "@chakra-ui/react";
 import { ThemeProvider } from "@highoutput/hds";
 import { ComponentStory, Meta } from "@storybook/react";
 import * as React from "react";
-import DatePickerInput from "./DatePickerInput";
+import { DatePickerInput } from "./DatePickerInput";
 
 const Story: Meta<typeof DatePickerInput> = {
   title: "Components/DatePicker/DatePickerInput",

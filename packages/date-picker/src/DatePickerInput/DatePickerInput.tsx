@@ -10,12 +10,11 @@ import { autoPlacement, autoUpdate, flip, useFloating } from "@floating-ui/react
 import { TextField } from "@highoutput/hds-forms";
 import { format } from "date-fns";
 import * as React from "react";
-import Calendar from "./Calendar";
-import { useStyles } from "./hooks";
-import CalendarIcon from "./icons/CalendarIcon";
-import CloseIcon from "./icons/CloseIcon";
-import { Nullable } from "./types";
-import { noop } from "./utils";
+import { Calendar } from "../Calendar/Calendar";
+import CalendarIcon from "../icons/CalendarIcon";
+import CloseIcon from "../icons/CloseIcon";
+import { Nullable } from "../types";
+import { noop } from "../utils";
 
 type Size = "sm" | "md";
 
@@ -35,7 +34,7 @@ export type DatePickerInputProps = {
 
 type StylingProps = Omit<SystemStyleObject, keyof Required<DatePickerInputProps>>;
 
-export default function DatePickerInput({
+export function DatePickerInput({
   id,
   size = "md",
   name,
@@ -50,8 +49,6 @@ export default function DatePickerInput({
   zIndex = 1,
   ...others
 }: DatePickerInputProps & StylingProps) {
-  const styles = useStyles();
-
   const inputRef = React.useRef<HTMLInputElement>(null);
   const containerRef = React.useRef<HTMLDivElement>(null);
 
@@ -135,7 +132,6 @@ export default function DatePickerInput({
         <Box
           ref={refs.setFloating}
           sx={{
-            ...styles.calendar(),
             top: `${y ?? 0}px`,
             left: `${x ?? 0}px`,
             position: strategy,
@@ -148,8 +144,8 @@ export default function DatePickerInput({
           data-testid="hds.datepicker-input.calendar-container"
         >
           <Calendar
-            selected={value ?? null}
-            onSelect={(newValue) => {
+            value={value ?? null}
+            onChange={(newValue) => {
               onChange(newValue);
               onClose();
             }}
