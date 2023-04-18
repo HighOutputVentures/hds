@@ -1,5 +1,5 @@
 {
-  "version": "0.3.26",
+  "version": "0.3.27",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -48,7 +48,7 @@
   ],
   "dependencies": {
     "@highoutput/hds-button": "^0.1.12",
-    "@highoutput/hds-forms": "^0.2.12",
+    "@highoutput/hds-forms": "^0.2.13",
     "@highoutput/hds-icons": "^0.2.3",
     "chakra-react-select": "4.4.2"
   },

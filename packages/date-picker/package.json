@@ -1,5 +1,5 @@
 {
-  "version": "0.2.15",
+  "version": "0.2.16",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -54,7 +54,7 @@
   ],
   "dependencies": {
     "@floating-ui/react": "0.22.3",
-    "@highoutput/hds-forms": "*",
+    "@highoutput/hds-forms": "^0.2.13",
     "date-fns": "2.29.3",
     "moment": "2.29.4",
     "moment-timezone": "0.5.40",

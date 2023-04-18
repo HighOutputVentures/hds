@@ -1,5 +1,5 @@
 {
-  "version": "0.2.19",
+  "version": "0.2.20",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -61,7 +61,7 @@
   },
   "gitHead": "be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef",
   "dependencies": {
-    "@highoutput/hds-forms": "^0.2.12",
+    "@highoutput/hds-forms": "^0.2.13",
     "@hookform/resolvers": "2.9.10",
     "js-cookie": "3.0.1",
     "react-hook-form": "7.38.0",
