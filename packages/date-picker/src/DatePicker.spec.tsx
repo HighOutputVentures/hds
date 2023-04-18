@@ -1,4 +1,4 @@
-import { ThemeProvider } from "@highoutput/hds";
+import { ChakraProvider } from "@chakra-ui/react";
 import { render, screen } from "@testing-library/react";
 import React from "react";
 import renderer from "react-test-renderer";
@@ -17,7 +17,7 @@ const MOCKDATA = [
 describe("Datepicker pre-set range type Component", () => {
   beforeEach(() => {
     render(
-      <ThemeProvider>
+      <ChakraProvider>
         <DatePicker
           dateEvents={MOCKDATA}
           type={"pre-set ranges"}
@@ -26,14 +26,12 @@ describe("Datepicker pre-set range type Component", () => {
           isOpen={true}
           timezone={"Asia/Manila"}
         />
-      </ThemeProvider>,
+      </ChakraProvider>,
     );
   });
 
   it("Should render", async () => {
-    const RangeDatePicker = await screen.findAllByTestId(
-      "hds.range-datepicker",
-    );
+    const RangeDatePicker = await screen.findAllByTestId("hds.range-datepicker");
     expect(RangeDatePicker).toHaveLength(1);
   });
 });
@@ -41,7 +39,7 @@ describe("Datepicker pre-set range type Component", () => {
 describe("Datepicker single date type Component", () => {
   beforeEach(() => {
     render(
-      <ThemeProvider>
+      <ChakraProvider>
         <DatePicker
           dateEvents={MOCKDATA}
           type={"single date"}
@@ -50,14 +48,12 @@ describe("Datepicker single date type Component", () => {
           isOpen={true}
           timezone={"Asia/Manila"}
         />
-      </ThemeProvider>,
+      </ChakraProvider>,
     );
   });
 
   it("Should render", async () => {
-    const SingleDatePicker = await screen.findAllByTestId(
-      "hds.single-datepicker",
-    );
+    const SingleDatePicker = await screen.findAllByTestId("hds.single-datepicker");
     expect(SingleDatePicker).toHaveLength(1);
   });
 });
@@ -65,7 +61,7 @@ describe("Datepicker single date type Component", () => {
 describe("Datepicker dual date type Component", () => {
   beforeEach(() => {
     render(
-      <ThemeProvider>
+      <ChakraProvider>
         <DatePicker
           dateEvents={MOCKDATA}
           type={"dual dates"}
@@ -74,7 +70,7 @@ describe("Datepicker dual date type Component", () => {
           isOpen={true}
           timezone={"Asia/Manila"}
         />
-      </ThemeProvider>,
+      </ChakraProvider>,
     );
   });
 
@@ -87,21 +83,19 @@ describe("Datepicker dual date type Component", () => {
 describe("Datepicker modal Component", () => {
   beforeEach(() => {
     render(
-      <ThemeProvider>
+      <ChakraProvider>
         <DatePickerModal
           dateEvents={MOCKDATA}
           type={"dual dates"}
           userId="1"
           timezone={"Asia/Manila"}
         />
-      </ThemeProvider>,
+      </ChakraProvider>,
     );
   });
 
   it("Should render", async () => {
-    const ModalDatePicker = await screen.findAllByTestId(
-      "hds.modal-datepicker",
-    );
+    const ModalDatePicker = await screen.findAllByTestId("hds.modal-datepicker");
     expect(ModalDatePicker).toHaveLength(1);
   });
 });
@@ -109,7 +103,7 @@ describe("Datepicker modal Component", () => {
 describe("Datepicker dropdown Component", () => {
   beforeEach(() => {
     render(
-      <ThemeProvider>
+      <ChakraProvider>
         <DatePickerDropdown
           dateEvents={MOCKDATA}
           type={"dual dates"}
@@ -118,14 +112,12 @@ describe("Datepicker dropdown Component", () => {
           isOpen={true}
           timezone={"Asia/Manila"}
         />
-      </ThemeProvider>,
+      </ChakraProvider>,
     );
   });
 
   it("Should render", async () => {
-    const DropdownDatePicker = await screen.findAllByTestId(
-      "hds.dropdown-datepicker",
-    );
+    const DropdownDatePicker = await screen.findAllByTestId("hds.dropdown-datepicker");
     expect(DropdownDatePicker).toHaveLength(1);
   });
 });
@@ -149,7 +141,7 @@ describe("Snapshots", () => {
 
   it("(DatePicker Single Date) Should match snapshot", () => {
     const component = renderer.create(
-      <ThemeProvider>
+      <ChakraProvider>
         <DatePicker
           dateEvents={MOCKDATA}
           userId="1"
@@ -158,7 +150,7 @@ describe("Snapshots", () => {
           timezone="Asia/Manila"
           isOpen
         />
-      </ThemeProvider>,
+      </ChakraProvider>,
     );
     const snapshot = component.toJSON();
     expect(snapshot).toMatchSnapshot();
@@ -167,7 +159,7 @@ describe("Snapshots", () => {
 
   it("(DatePicker Dual Date) Should match snapshot", () => {
     const component = renderer.create(
-      <ThemeProvider>
+      <ChakraProvider>
         <DatePicker
           dateEvents={MOCKDATA}
           type="dual dates"
@@ -176,7 +168,7 @@ describe("Snapshots", () => {
           isOpen
           timezone="Asia/Manila"
         />
-      </ThemeProvider>,
+      </ChakraProvider>,
     );
     const snapshot = component.toJSON();
     expect(snapshot).toMatchSnapshot();
@@ -185,14 +177,14 @@ describe("Snapshots", () => {
 
   it("(DatePickerModal) Should match snapshot", () => {
     const component = renderer.create(
-      <ThemeProvider>
+      <ChakraProvider>
         <DatePickerModal
           dateEvents={MOCKDATA}
           type="dual dates"
           userId="1"
           timezone="Asia/Manila"
         />
-      </ThemeProvider>,
+      </ChakraProvider>,
     );
     const snapshot = component.toJSON();
     expect(snapshot).toMatchSnapshot();
@@ -201,7 +193,7 @@ describe("Snapshots", () => {
 
   it("(DatePickerDropdown) Should match snapshot", () => {
     const component = renderer.create(
-      <ThemeProvider>
+      <ChakraProvider>
         <DatePickerDropdown
           dateEvents={MOCKDATA}
           timezone="Asia/Manila"
@@ -210,7 +202,7 @@ describe("Snapshots", () => {
           onClose={noop}
           isOpen
         />
-      </ThemeProvider>,
+      </ChakraProvider>,
     );
     const snapshot = component.toJSON();
     expect(snapshot).toMatchSnapshot();

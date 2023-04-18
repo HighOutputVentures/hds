@@ -30,7 +30,7 @@
     }
   },
   "prettier": {
-    "printWidth": 80,
+    "printWidth": 90,
     "trailingComma": "all"
   },
   "jest": {
@@ -54,6 +54,7 @@
   ],
   "dependencies": {
     "@floating-ui/react": "0.22.3",
+    "@highoutput/hds-forms": "*",
     "date-fns": "2.29.3",
     "moment": "2.29.4",
     "moment-timezone": "0.5.40",
