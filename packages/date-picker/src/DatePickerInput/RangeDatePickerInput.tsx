@@ -16,7 +16,7 @@ import { noop } from "../utils";
 import { ClearButton } from "./ClearButton";
 import { DatePickerInputProps } from "./DatePickerInput";
 
-type BaseProps = Omit<DatePickerInputProps, "value" | "onChange" | "format">;
+type BaseProps = Omit<DatePickerInputProps, "value" | "onChange" | "dateFormat">;
 
 export type RangeDatePickerInputProps = BaseProps & {
   value?: DateRange;

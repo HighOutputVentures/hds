@@ -168,16 +168,24 @@ function TimeAdverbialMenu() {
 function SelectedDates() {
   const context = useRangeDatePickerContext();
 
+  const start = context.dateRange.start
+    ? format(context.dateRange.start, "MMM dd, yyyy")
+    : "Select date";
+
+  const until = context.dateRange.until
+    ? format(context.dateRange.until, "MMM dd, yyyy")
+    : "Select date";
+
   return (
     <chakra.div display="flex" gap="12px" alignItems="center">
-      <SelectedDateItem>
-        {context.dateRange.start && format(context.dateRange.start, "MMM dd, yyyy")}
+      <SelectedDateItem data-placeholder={!context.dateRange.start}>
+        {start}
       </SelectedDateItem>
 
       <chakra.div w="8px" borderTop="2px" borderColor="Gray.500" />
 
-      <SelectedDateItem>
-        {context.dateRange.until && format(context.dateRange.until, "MMM dd, yyyy")}
+      <SelectedDateItem data-placeholder={!context.dateRange.until}>
+        {until}
       </SelectedDateItem>
     </chakra.div>
   );
@@ -189,9 +197,12 @@ const SelectedDateItem = chakra("div", {
     py: "10px",
     px: "14px",
     minW: "125px",
-    rounded: "4px",
     border: "1px",
     borderColor: "neutrals.200",
+    rounded: "4px",
+    '&[data-placeholder="true"]': {
+      color: "neutrals.500",
+    },
   },
 });
 
