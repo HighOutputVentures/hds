@@ -6,6 +6,7 @@ type UseStylesConfig = {
   size?: Size;
   accent?: Accent;
   variant?: Variant;
+  forceAccent?: boolean;
 };
 
 type UseStylesReturn = {
@@ -17,6 +18,7 @@ export function useStyles({
   size,
   accent,
   variant,
+  forceAccent,
 }: UseStylesConfig): UseStylesReturn {
   const button = React.useMemo(
     () => ({
@@ -225,11 +227,15 @@ export function useStyles({
        */
 
       ...(variant === "ghost" && {
+        color: "neutrals.900",
         bgColor: "white",
         boxShadow: "none",
 
         ...(accent === "primary" && {
-          color: "brand.primary.700",
+          ...(forceAccent && {
+            color: "brand.primary.700",
+          }),
+
           _hover: {
             color: "brand.primary.900",
             bgColor: "brand.primary.500",
@@ -253,7 +259,10 @@ export function useStyles({
         }),
 
         ...(accent === "error" && {
-          color: "interface.error.700",
+          ...(forceAccent && {
+            color: "interface.error.700",
+          }),
+
           _hover: {
             color: "interface.error.900",
             bgColor: "interface.error.500",

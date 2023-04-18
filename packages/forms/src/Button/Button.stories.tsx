@@ -60,6 +60,7 @@ Default.args = {
   isActive: false,
   isLoading: false,
   isDisabled: false,
+  forceAccent: false,
   leftIcon: <Icon as={PlaceholderIcon} />,
   rightIcon: <Icon as={PlaceholderIcon} />,
 };
