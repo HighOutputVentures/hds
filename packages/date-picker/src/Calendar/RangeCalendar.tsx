@@ -1,6 +1,6 @@
 import { chakra } from "@chakra-ui/react";
 import { Button } from "@highoutput/hds-forms";
-import { addMonths, format, isEqual, startOfDay, subMonths } from "date-fns";
+import { addMonths, format, isSameDay, subMonths } from "date-fns";
 import * as React from "react";
 import { v4 as uuid } from "uuid";
 import { DAYS } from "../constants";
@@ -238,15 +238,15 @@ function Calendar({ value, onChange = noop, onNext, onPrev }: CalendarProps) {
           {calendar.map((arr) => (
             <chakra.tr key={uuid()}>
               {arr.map(({ isToday, isPlaceholder, isWithinRange, ...obj }) => {
-                const isEqualToRangeStart =
+                const isRangeStart =
                   !!context.dateRange.start &&
-                  isEqual(startOfDay(obj.value), startOfDay(context.dateRange.start));
+                  isSameDay(obj.value, context.dateRange.start);
 
-                const isEqualToRangeUntil =
+                const isRangeUntil =
                   !!context.dateRange.until &&
-                  isEqual(startOfDay(obj.value), startOfDay(context.dateRange.until));
+                  isSameDay(obj.value, context.dateRange.until);
 
-                const isSelected = isEqualToRangeStart || isEqualToRangeUntil;
+                const isSelected = isRangeStart || isRangeUntil;
 
                 return (
                   <chakra.td key={uuid()}>

@@ -7,7 +7,7 @@ import {
   endOfWeek,
   endOfYear,
   getDaysInMonth,
-  isEqual,
+  isSameDay,
   isToday,
   isWithinInterval,
   startOfDay,
@@ -159,11 +159,8 @@ export function getRangeCalendar(date: Date, config: Partial<DateRange> = {}) {
 
   return calendar.map((chunk) =>
     chunk.map((subject) => {
-      const isRangeStart =
-        config.start && isEqual(startOfDay(config.start), startOfDay(subject.value));
-
-      const isRangeUntil =
-        config.until && isEqual(startOfDay(config.until), startOfDay(subject.value));
+      const isRangeStart = config.start && isSameDay(config.start, subject.value);
+      const isRangeUntil = config.until && isSameDay(config.until, subject.value);
 
       const isWithinRange =
         !isRangeStart &&
