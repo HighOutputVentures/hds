@@ -23,12 +23,14 @@ interface Item {
   isSelected?: boolean;
 }
 
+type RenderChildrenContext = UseDisclosureReturn & { hasSelectedItem: boolean };
+
 interface BaseProps {
   placement?: PlacementWithLogical | undefined;
   closeOnSelect?: boolean;
   renderHeader?: JSX.Element;
   renderOption?(item: Item): JSX.Element;
-  children(context: UseDisclosureReturn): JSX.Element;
+  children(context: RenderChildrenContext): JSX.Element;
   __menuTestId?: string;
   __menuItemTestId?: string;
 }
@@ -59,6 +61,9 @@ const Dropdown: React.FC<DropdownProps> = (props) => {
 
   const styles = useStyles();
   const disclosure = useDisclosure();
+  const hasSelectedItem = !others.isGrouped
+    ? others.items.some((o) => !!o.isSelected)
+    : others.items.some((i) => i.some((j) => !!j.isSelected));
 
   return (
     <Menu
@@ -72,7 +77,7 @@ const Dropdown: React.FC<DropdownProps> = (props) => {
       isLazy
       lazyBehavior="keepMounted"
     >
-      <MenuButton as={createRefReciever(children(disclosure))} />
+      <MenuButton as={createRefReciever(children({ ...disclosure, hasSelectedItem }))} />
 
       <Portal appendToParentPortal={false}>
         <MenuList sx={styles.menulist} data-testid={__menuTestId}>

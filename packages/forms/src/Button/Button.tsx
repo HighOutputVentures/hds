@@ -20,6 +20,14 @@ type Base = {
   size?: Size;
   accent?: Accent;
   variant?: Variant;
+  /**
+   *
+   * Only applicable when using `ghost` variant.
+   * If `true`, button will be forced to use the accent in default state.
+   * Otherwise, button's default state color will be neutral
+   *
+   */
+  forceAccent?: boolean;
   __testId?: string;
 };
 
@@ -34,6 +42,7 @@ export default React.forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     accent = "primary",
     variant = "solid",
     children = null,
+    forceAccent = false,
     __testId = "hds.button",
     ...others
   } = props;
@@ -42,6 +51,7 @@ export default React.forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     size,
     accent,
     variant,
+    forceAccent,
   });
 
   return (
