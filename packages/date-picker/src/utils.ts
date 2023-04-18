@@ -130,7 +130,7 @@ export function getDateRangeByTimeAdverbial(adverbial: TimeAdverbial) {
     case TimeAdverbial.ThisYear:
       return {
         start: startOfYear(today),
-        until: endOfMonth(today),
+        until: endOfYear(today),
       };
 
     case TimeAdverbial.LastYear: {
@@ -153,26 +153,28 @@ export function getDateRangeByTimeAdverbial(adverbial: TimeAdverbial) {
 export function getRangeCalendar(date: Date, config: Partial<DateRange> = {}) {
   const calendar: RangeCalendarObject[][] = getCalendar(date);
 
-  if (!config.start || !config.until) return calendar;
-
-  const [start, end] = sortDates([config.start, config.until]);
+  const dateRangeTuple =
+    config.start && config.until ? sortDates([config.start, config.until]) : [];
 
   return calendar.map((chunk) =>
-    chunk.map((subject) => {
-      const isRangeStart = config.start && isSameDay(config.start, subject.value);
-      const isRangeUntil = config.until && isSameDay(config.until, subject.value);
+    chunk.map<RangeCalendarObject>((subject) => {
+      const isRangeStartDate = !!config.start && isSameDay(config.start, subject.value);
+      const isRangeUntilDate = !!config.until && isSameDay(config.until, subject.value);
 
       const isWithinRange =
-        !isRangeStart &&
-        !isRangeUntil &&
+        !isRangeStartDate &&
+        !isRangeUntilDate &&
+        dateRangeTuple.length === 2 &&
         isWithinInterval(subject.value, {
-          start,
-          end,
+          start: dateRangeTuple[0],
+          end: dateRangeTuple[1],
         });
 
       return {
         ...subject,
         isWithinRange,
+        isRangeStartDate,
+        isRangeUntilDate,
       };
     }),
   );
@@ -208,3 +210,10 @@ export function arrayChunk<T extends unknown[]>(array: T, size: number) {
 }
 
 export const noop = (..._: any): any => undefined;
+
+export function invariant(
+  condition: unknown,
+  message = "Invariant violation",
+): asserts condition {
+  if (!condition) throw new Error(message);
+}

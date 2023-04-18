@@ -10,6 +10,8 @@ export interface CalendarObject {
 
 export interface RangeCalendarObject extends CalendarObject {
   isWithinRange?: boolean;
+  isRangeStartDate?: boolean;
+  isRangeUntilDate?: boolean;
 }
 
 export type DateRange = {

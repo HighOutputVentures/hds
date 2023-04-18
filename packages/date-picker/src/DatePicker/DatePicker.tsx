@@ -6,14 +6,14 @@ import { DAYS } from "../constants";
 import { useStyles } from "../hooks";
 import { Nullable } from "../types";
 import { getCalendar, noop } from "../utils";
-import { CalendarControl } from "./CalendarControl";
+import { DatePickerControl } from "./DatePickerControl";
 
-export type CalendarProps = {
+export type DatePickerProps = {
   value?: Nullable<Date>;
   onChange?(selected: Nullable<Date>): void;
 };
 
-export function Calendar({ value, onChange = noop }: CalendarProps) {
+export function DatePicker({ value, onChange = noop }: DatePickerProps) {
   const [baseDate, setBaseDate] = React.useState(value ?? new Date());
 
   const calendar = React.useMemo(() => getCalendar(baseDate), [baseDate]);
@@ -21,7 +21,7 @@ export function Calendar({ value, onChange = noop }: CalendarProps) {
 
   return (
     <chakra.div sx={styles.calendar({ hasBorder: true })}>
-      <CalendarControl
+      <DatePickerControl
         value={baseDate}
         onNext={() => setBaseDate((d) => addMonths(d, 1))}
         onPrev={() => setBaseDate((d) => subMonths(d, 1))}

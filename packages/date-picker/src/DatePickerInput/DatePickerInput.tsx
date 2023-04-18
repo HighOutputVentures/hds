@@ -1,6 +1,5 @@
 import {
   Box,
-  chakra,
   Icon,
   SystemStyleObject,
   useDisclosure,
@@ -10,11 +9,11 @@ import { autoPlacement, autoUpdate, flip, useFloating } from "@floating-ui/react
 import { TextField } from "@highoutput/hds-forms";
 import { format } from "date-fns";
 import * as React from "react";
-import { Calendar } from "../Calendar/Calendar";
+import { DatePicker } from "../DatePicker/DatePicker";
 import CalendarIcon from "../icons/CalendarIcon";
-import CloseIcon from "../icons/CloseIcon";
 import { Nullable } from "../types";
 import { noop } from "../utils";
+import { ClearButton } from "./ClearButton";
 
 type Size = "sm" | "md";
 
@@ -120,6 +119,7 @@ export function DatePickerInput({
                     onChange(null);
                     inputRef.current?.focus();
                   }}
+                  className="HdsDatePickerInputClearButton"
                   data-testid="hds.datepicker-input.controls.clear"
                 />
               ),
@@ -143,7 +143,7 @@ export function DatePickerInput({
           }}
           data-testid="hds.datepicker-input.calendar-container"
         >
-          <Calendar
+          <DatePicker
             value={value ?? null}
             onChange={(newValue) => {
               onChange(newValue);
@@ -155,31 +155,3 @@ export function DatePickerInput({
     </Box>
   );
 }
-
-const ClearButton = React.forwardRef<HTMLButtonElement, React.ComponentProps<"button">>(
-  function ClearButton(props, ref) {
-    return (
-      <chakra.button
-        ref={ref}
-        height={5}
-        width={5}
-        rounded="md"
-        display="none"
-        alignItems="center"
-        justifyContent="center"
-        bgColor="blackAlpha.200"
-        color="blackAlpha.600"
-        transition="colors 300ms ease-in-out"
-        pointerEvents="all"
-        _hover={{
-          color: "blackAlpha.700",
-        }}
-        tabIndex={-1}
-        className="HdsDatePickerInputClearButton"
-        {...props}
-      >
-        <Icon as={CloseIcon} width={4} height={4} />
-      </chakra.button>
-    );
-  },
-);

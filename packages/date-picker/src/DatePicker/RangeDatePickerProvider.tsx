@@ -7,7 +7,7 @@ enum LastUpdated {
   UNTIL,
 }
 
-type RangeCalendarState = {
+type RangeDatePickerState = {
   /**
    *
    * Should be used for getting actual date range
@@ -27,9 +27,10 @@ type RangeCalendarState = {
   updateSelectedRange(startOrUntil: Date): void;
   updateSelectedRangeHard(newValue: DateRange): void;
   lastUpdated: Nullable<LastUpdated>;
+  reset(): void;
 };
 
-const RangeCalendarContext = React.createContext<RangeCalendarState>({
+const RangeDatePickerContext = React.createContext<RangeDatePickerState>({
   dateRange: {
     start: null,
     until: null,
@@ -41,48 +42,37 @@ const RangeCalendarContext = React.createContext<RangeCalendarState>({
   updateSelectedRange: noop,
   updateSelectedRangeHard: noop,
   lastUpdated: null,
+  reset: noop,
 });
 
-function RangeCalendarProvider({ children }: React.PropsWithChildren) {
+function RangeDatePickerProvider({ children }: React.PropsWithChildren) {
   const [selectedRangeStart, setSelectedRangeStart] =
     React.useState<Nullable<Date>>(null);
-
   const [selectedRangeUntil, setSelectedRangeUntil] =
     React.useState<Nullable<Date>>(null);
 
   const [lastUpdated, setLastUpdated] = React.useState<Nullable<LastUpdated>>(null);
   const [currentDate, setCurrentDate] = React.useState(new Date());
 
-  const updateSelectedRange = React.useCallback(
-    (date: Date) => {
-      if (lastUpdated === LastUpdated.START) {
-        setSelectedRangeUntil(date);
-        setLastUpdated(LastUpdated.UNTIL);
-      } else {
-        setSelectedRangeStart(date);
-        setLastUpdated(LastUpdated.START);
-      }
-    },
-    [lastUpdated],
-  );
+  const updateSelectedRange = (date: Date) => {
+    if (lastUpdated === LastUpdated.START) {
+      setSelectedRangeUntil(date);
+      setLastUpdated(LastUpdated.UNTIL);
+    } else {
+      setSelectedRangeStart(date);
+      setLastUpdated(LastUpdated.START);
+    }
+  };
 
-  const updateSelectedRangeHard = React.useCallback((dateRange: DateRange) => {
+  const updateSelectedRangeHard = (dateRange: DateRange) => {
     setSelectedRangeStart(dateRange.start);
     setSelectedRangeUntil(dateRange.until);
-  }, []);
-
-  React.useEffect(() => {
-    return () => {
-      setSelectedRangeStart(null);
-      setSelectedRangeUntil(null);
-      setLastUpdated(null);
-      setCurrentDate(new Date());
-    };
-  }, []);
+  };
 
   const dateRange = React.useMemo(() => {
     if (selectedRangeStart && selectedRangeUntil) {
       const [start, until] = sortDates([selectedRangeStart, selectedRangeUntil]);
+
       return {
         start,
         until,
@@ -93,50 +83,59 @@ function RangeCalendarProvider({ children }: React.PropsWithChildren) {
       start: selectedRangeStart,
       until: selectedRangeUntil,
     };
-  }, [selectedRangeStart, selectedRangeUntil]);
+  }, [
+    //
+    selectedRangeStart,
+    selectedRangeUntil,
+  ]);
 
-  const value = React.useMemo(
-    () => ({
-      dateRange,
-      selectedRangeStart,
-      selectedRangeUntil,
-      updateSelectedRange,
-      updateSelectedRangeHard,
-      lastUpdated,
-      currentDate,
-      setCurrentDate,
-    }),
-    [
-      dateRange,
-      selectedRangeStart,
-      selectedRangeUntil,
-      updateSelectedRange,
-      updateSelectedRangeHard,
-      lastUpdated,
-      currentDate,
-      setCurrentDate,
-    ],
-  );
+  const reset = () => {
+    setSelectedRangeStart(null);
+    setSelectedRangeUntil(null);
+    setLastUpdated(null);
+    setCurrentDate(new Date());
+  };
+
+  React.useEffect(() => {
+    return () => {
+      setSelectedRangeStart(null);
+      setSelectedRangeUntil(null);
+      setLastUpdated(null);
+      setCurrentDate(new Date());
+    };
+  }, []);
 
   return (
-    <RangeCalendarContext.Provider value={value}>
+    <RangeDatePickerContext.Provider
+      value={{
+        reset,
+        dateRange,
+        selectedRangeStart,
+        selectedRangeUntil,
+        updateSelectedRange,
+        updateSelectedRangeHard,
+        lastUpdated,
+        currentDate,
+        setCurrentDate,
+      }}
+    >
       {children}
-    </RangeCalendarContext.Provider>
+    </RangeDatePickerContext.Provider>
   );
 }
 
-export function useRangeCalendarContext() {
-  return React.useContext(RangeCalendarContext);
+export function useRangeDatePickerContext() {
+  return React.useContext(RangeDatePickerContext);
 }
 
-export function withRangeCalendarContext<T extends Record<string, any>>(
+export function withRangeDatePickerContext<T extends Record<string, any>>(
   Component: (props: T) => JSX.Element,
 ) {
   return function Wrapped(props: T) {
     return (
-      <RangeCalendarProvider>
+      <RangeDatePickerProvider>
         <Component {...props} />
-      </RangeCalendarProvider>
+      </RangeDatePickerProvider>
     );
   };
 }

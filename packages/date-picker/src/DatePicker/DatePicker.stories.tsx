@@ -3,23 +3,22 @@ import { ThemeProvider } from "@highoutput/hds";
 import { useArgs } from "@storybook/addons";
 import { ComponentStory, Meta } from "@storybook/react";
 import * as React from "react";
-import { Calendar } from "./Calendar";
+import { DatePicker } from "./DatePicker";
 
-const Story: Meta<typeof Calendar> = {
+const Story: Meta<typeof DatePicker> = {
   title: "Components/DatePicker/Calendar",
-  component: Calendar,
+  component: DatePicker,
 };
 
 export default Story;
 
-const Template: ComponentStory<typeof Calendar> = () => {
+const Template: ComponentStory<typeof DatePicker> = () => {
   const [args, setArgs] = useArgs();
 
   return (
     <ThemeProvider>
       <Box p={4}>
-        <Calendar
-          __bordered
+        <DatePicker
           value={args.selected}
           onChange={(selected) =>
             setArgs({

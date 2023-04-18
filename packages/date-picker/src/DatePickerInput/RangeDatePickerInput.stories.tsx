@@ -3,30 +3,30 @@ import { ThemeProvider } from "@highoutput/hds";
 import { useArgs } from "@storybook/addons";
 import { ComponentStory, Meta } from "@storybook/react";
 import * as React from "react";
-import { DatePickerInput } from "./DatePickerInput";
+import { RangeDatePickerInput } from "./RangeDatePickerInput";
 
-const Story: Meta<typeof DatePickerInput> = {
-  title: "Components/DatePicker/DatePickerInput",
-  component: DatePickerInput,
+const Story: Meta<typeof RangeDatePickerInput> = {
+  title: "Components/DatePicker/RangeDatePickerInput",
+  component: RangeDatePickerInput,
 };
 
 export default Story;
 
-const Template: ComponentStory<typeof DatePickerInput> = () => {
+const Template: ComponentStory<typeof RangeDatePickerInput> = () => {
   const [args, setArgs] = useArgs();
 
   return (
     <ThemeProvider>
       <Box p={4} h="340px">
-        <DatePickerInput
+        <RangeDatePickerInput
           {...args}
           width="340px"
-          onChange={(newValue) =>
+          onChange={(newValue) => {
             setArgs({
               ...args,
               value: newValue,
-            })
-          }
+            });
+          }}
         />
       </Box>
     </ThemeProvider>
@@ -41,6 +41,6 @@ Default.args = {
   isReadOnly: false,
   isDisabled: false,
   isClearable: true,
-  placeholder: "Select Date",
+  placeholder: "Select Dates",
   zIndex: 1,
 };
