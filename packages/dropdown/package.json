@@ -47,6 +47,7 @@
     }
   ],
   "dependencies": {
+    "@floating-ui/react": "0.22.3",
     "@highoutput/hds-button": "^0.1.12",
     "@highoutput/hds-forms": "^0.2.13",
     "@highoutput/hds-icons": "^0.2.3",

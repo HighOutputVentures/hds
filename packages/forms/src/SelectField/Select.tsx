@@ -2,9 +2,9 @@ import { chakra, Icon } from "@chakra-ui/react";
 import {
   autoPlacement,
   autoUpdate,
-  flip,
   size as floatingSize,
   useFloating,
+  useTransitionStyles,
 } from "@floating-ui/react";
 import { useSelect } from "downshift";
 import * as React from "react";
@@ -96,22 +96,24 @@ export default function Select<T extends Option>(props: SelectProps<T>) {
     },
   });
 
-  const { refs, strategy, x, y } = useFloating({
+  const { refs, strategy, x, y, context } = useFloating({
     whileElementsMounted: autoUpdate,
     middleware: [
       floatingSize({
         apply({ rects, elements }) {
           Object.assign(elements.floating.style, {
-            width: `${rects.reference.width}px`,
+            minWidth: `${rects.reference.width}px`,
           });
         },
       }),
       autoPlacement({
         allowedPlacements: ["bottom", "top"],
       }),
-      flip(),
     ],
+    open: isOpen,
   });
+
+  const transition = useTransitionStyles(context);
 
   return (
     <chakra.div
@@ -211,6 +213,7 @@ export default function Select<T extends Option>(props: SelectProps<T>) {
           position: strategy,
           top: `${y ?? 0}px`,
           left: `${x ?? 0}px`,
+          ...transition.styles,
         }}
       >
         <chakra.ul

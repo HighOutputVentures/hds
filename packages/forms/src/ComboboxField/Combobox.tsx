@@ -1,4 +1,4 @@
-import { chakra, Icon, List, ListItem } from "@chakra-ui/react";
+import { chakra, Fade, Icon, List, ListItem } from "@chakra-ui/react";
 import * as combobox from "@zag-js/combobox";
 import { normalizeProps, useMachine } from "@zag-js/react";
 import * as React from "react";
@@ -164,37 +164,39 @@ export default function Combobox<T extends Option[]>(props: ComboboxProps<T>) {
       </chakra.div>
 
       <chakra.nav sx={{ ...styles.menu, zIndex }} {...api.positionerProps}>
-        <List {...api.contentProps} data-testid="hds.combobox.options">
-          {items.map((item, index) => {
-            return (
-              <ListItem
-                key={uuid()}
-                sx={styles.menuitem()}
-                {...api.getOptionProps({
-                  index,
-                  label: item.label,
-                  value: item.value.toString(),
-                })}
-                data-testid="hds.combobox.options.option"
-              >
-                {item.label}
-              </ListItem>
-            );
-          })}
+        <Fade in={api.isOpen}>
+          <List {...api.contentProps} data-testid="hds.combobox.options">
+            {items.map((item, index) => {
+              return (
+                <ListItem
+                  key={uuid()}
+                  sx={styles.menuitem()}
+                  {...api.getOptionProps({
+                    index,
+                    label: item.label,
+                    value: item.value.toString(),
+                  })}
+                  data-testid="hds.combobox.options.option"
+                >
+                  {item.label}
+                </ListItem>
+              );
+            })}
 
-          {!items.length && (
-            <ListItem
-              fontSize="sm"
-              paddingY={3}
-              paddingX={3}
-              color="neutrals.600"
-              textAlign="center"
-              data-testid="hds.combobox.nomatchfound"
-            >
-              No match found
-            </ListItem>
-          )}
-        </List>
+            {!items.length && (
+              <ListItem
+                fontSize="sm"
+                paddingY={3}
+                paddingX={3}
+                color="neutrals.600"
+                textAlign="center"
+                data-testid="hds.combobox.nomatchfound"
+              >
+                No match found
+              </ListItem>
+            )}
+          </List>
+        </Fade>
       </chakra.nav>
     </chakra.div>
   );
