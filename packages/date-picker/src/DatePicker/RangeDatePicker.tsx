@@ -31,8 +31,8 @@ export const RangeDatePicker = withRangeDatePickerContext(function RangeDatePick
   onApply,
   onCancel,
   defaultValue,
-  hasTimeAdverbial,
-  includePreviousMonth,
+  hasTimeAdverbial = true,
+  includePreviousMonth = true,
 }: RangeDatePickerProps) {
   const context = useRangeDatePickerContext();
 
@@ -41,7 +41,13 @@ export const RangeDatePicker = withRangeDatePickerContext(function RangeDatePick
   }, [defaultValue]);
 
   return (
-    <chakra.div width="fit-content" rounded="8px" border="1px" borderColor="gray.100">
+    <chakra.div
+      width="fit-content"
+      rounded="8px"
+      border="1px"
+      borderColor="gray.100"
+      bgColor="white"
+    >
       <chakra.div display="flex">
         {hasTimeAdverbial && (
           <React.Fragment>
