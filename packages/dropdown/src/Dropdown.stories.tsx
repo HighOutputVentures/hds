@@ -53,7 +53,13 @@ const itemsGroup = [
 const Template: ComponentStory<typeof Dropdown> = () => {
   return (
     <ThemeProvider>
-      <Flex justify={"space-around"} alignItems="start" flexDir="row" height={"500px"}>
+      <Flex
+        justify={"space-around"}
+        alignItems="start"
+        justifyContent="flex-end"
+        flexDir="row"
+        height={"500px"}
+      >
         <VStack spacing="20px">
           <Text>Single</Text>
 

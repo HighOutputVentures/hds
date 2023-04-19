@@ -2,6 +2,7 @@ import { chakra, Portal, useDisclosure, UseDisclosureReturn } from "@chakra-ui/r
 import {
   autoPlacement,
   autoUpdate,
+  Placement,
   useDismiss,
   useFloating,
   useInteractions,
@@ -22,6 +23,7 @@ type RenderChildrenContext = UseDisclosureReturn & { hasSelectedItem: boolean };
 
 type BaseProps = {
   items: Item[] | Item[][];
+  placement?: Placement;
   renderHeader?: JSX.Element;
   renderOption?(item: Item): JSX.Element;
   closeOnSelect?: boolean;
@@ -45,6 +47,7 @@ export type DropdownProps = (SingleProps | GroupProps) & BaseProps;
 export const Dropdown: React.FC<DropdownProps> = (props) => {
   const {
     children,
+    placement,
     renderHeader,
     renderOption,
     closeOnSelect,
@@ -71,6 +74,7 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
     middleware: [
       autoPlacement({
         allowedPlacements: [
+          ...(!!placement ? [placement] : []),
           "bottom-start",
           "bottom-end",
           "bottom",
