@@ -11,13 +11,18 @@ import {
   useTransitionStyles,
 } from "@floating-ui/react";
 import * as React from "react";
-import { RangeDatePicker } from "../DatePicker/RangeDatePicker";
+import { RangeDatePicker, RangeDatePickerProps } from "../DatePicker/RangeDatePicker";
 
-export type RangeDatePickerDropdownProps = {
+export type RangeDatePickerDropdownProps = RangeDatePickerProps & {
   children(ctx: UseDisclosureReturn): JSX.Element;
 };
 
-export function RangeDatePickerDropdown({ children }: RangeDatePickerDropdownProps) {
+export function RangeDatePickerDropdown({
+  onApply,
+  onCancel,
+  children,
+  ...others
+}: RangeDatePickerDropdownProps) {
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   const disclosure = useDisclosure();
@@ -85,7 +90,17 @@ export function RangeDatePickerDropdown({ children }: RangeDatePickerDropdownPro
             ...styles,
           }}
         >
-          <RangeDatePicker />
+          <RangeDatePicker
+            onApply={(newValue) => {
+              onApply?.(newValue);
+              disclosure.onClose();
+            }}
+            onCancel={(currentValue) => {
+              onCancel?.(currentValue);
+              disclosure.onClose();
+            }}
+            {...others}
+          />
         </chakra.div>
       )}
     </chakra.div>
