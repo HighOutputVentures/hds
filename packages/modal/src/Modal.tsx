@@ -54,7 +54,11 @@ const Modal: React.FC<ModalProps> = ({
 }) => {
   return (
     <ChakraModal isOpen={isOpen} onClose={onClose} size={sizeMap[size]}>
-      <ModalOverlay />
+      <ModalOverlay
+        bgColor="rgba(52, 64, 84, 0.7)"
+        backdropFilter="blur(8px)"
+      />
+
       <ModalContent textAlign={align} data-testid="hds.modal">
         {icon && (
           <Box
