@@ -17,10 +17,10 @@ const Template: ComponentStory<typeof SlideoutMenu> = (args) => {
         renderTrigger={({ onOpen }) => {
           return <Button onClick={onOpen}>Open</Button>;
         }}
-        renderHeader="Slideout Menu"
+        renderHeader={<Box p={3}>Slideout Menu</Box>}
         renderFooter={({ onClose }) => {
           return (
-            <Flex gap={2}>
+            <Flex gap={2} p={3}>
               <Button accent="gray" variant="outline" onClick={onClose}>
                 Cancel
               </Button>
@@ -29,7 +29,7 @@ const Template: ComponentStory<typeof SlideoutMenu> = (args) => {
           );
         }}
       >
-        <Box>
+        <Box p={3}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc arcu
           lorem, tempor pulvinar lorem sit amet, semper cursus neque. Praesent
           vel imperdiet urna, at venenatis lectus. Suspendisse potenti.
