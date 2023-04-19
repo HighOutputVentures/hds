@@ -1,5 +1,1 @@
-export {
-  default as SlideoutMenu,
-  SlideoutMenuProps,
-  SlideoutMenuRef,
-} from './SlideoutMenu';
+export { SlideoutMenu, SlideoutMenuProps } from './SlideoutMenu';

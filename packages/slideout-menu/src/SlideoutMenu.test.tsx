@@ -1,14 +1,18 @@
-import { render, fireEvent } from '@testing-library/react';
-import SlideoutMenu from './SlideoutMenu';
+import { fireEvent, render } from '@testing-library/react';
 import * as React from 'react';
-
-const props = {
-  triggerContent: 'Open',
-};
+import { SlideoutMenu } from './SlideoutMenu';
 
 describe('SlideoutMenu', () => {
   it('should render', () => {
-    const { getByTestId, getByRole } = render(<SlideoutMenu {...props} />);
+    const { getByTestId, getByRole } = render(
+      <SlideoutMenu
+        renderTrigger={({ onOpen }) => (
+          <button aria-label="Open" onClick={onOpen}>
+            Open
+          </button>
+        )}
+      />
+    );
 
     const triggerBtn = getByRole('button', { name: 'Open' });
 
@@ -18,14 +22,31 @@ describe('SlideoutMenu', () => {
   });
 
   it('should display the trigger button', () => {
-    const { getByRole } = render(<SlideoutMenu {...props} />);
+    const { getByRole } = render(
+      <SlideoutMenu
+        renderTrigger={({ onOpen }) => (
+          <button aria-label="Open" onClick={onOpen}>
+            Open
+          </button>
+        )}
+      />
+    );
     const triggerBtn = getByRole('button', { name: 'Open' });
 
     expect(triggerBtn).toBeTruthy();
   });
 
   it('should show when trigger button is clicked', () => {
-    const { getByTestId, getByRole } = render(<SlideoutMenu {...props} />);
+    const { getByTestId, getByRole } = render(
+      <SlideoutMenu
+        renderTrigger={({ onOpen }) => (
+          <button aria-label="Open" onClick={onOpen}>
+            Open
+          </button>
+        )}
+      />
+    );
+
     const triggerBtn = getByRole('button', { name: 'Open' });
 
     fireEvent.click(triggerBtn);
@@ -35,8 +56,16 @@ describe('SlideoutMenu', () => {
 
   it('should render the header', async () => {
     const headerText = 'Slideout Header Sample';
+
     const { getByRole, getByText } = render(
-      <SlideoutMenu {...props} header={headerText} />
+      <SlideoutMenu
+        renderHeader={headerText}
+        renderTrigger={({ onOpen }) => (
+          <button aria-label="Open" onClick={onOpen}>
+            Open
+          </button>
+        )}
+      />
     );
 
     const triggerBtn = getByRole('button', { name: 'Open' });
@@ -48,9 +77,16 @@ describe('SlideoutMenu', () => {
 
   it('should render the content', async () => {
     const text = 'Slideout Menu Sample';
+
     const { getByRole, getByText } = render(
-      <SlideoutMenu {...props}>
-        <div>{text}</div>
+      <SlideoutMenu
+        renderTrigger={({ onOpen }) => (
+          <button aria-label="Open" onClick={onOpen}>
+            Open
+          </button>
+        )}
+      >
+        {text}
       </SlideoutMenu>
     );
 
@@ -63,8 +99,16 @@ describe('SlideoutMenu', () => {
 
   it('should render the footer', async () => {
     const footerText = 'Slideout Footer Sample';
+
     const { getByRole, getByText } = render(
-      <SlideoutMenu {...props} footer={footerText} />
+      <SlideoutMenu
+        renderTrigger={({ onOpen }) => (
+          <button aria-label="Open" onClick={onOpen}>
+            Open
+          </button>
+        )}
+        renderFooter={footerText}
+      />
     );
 
     const triggerBtn = getByRole('button', { name: 'Open' });

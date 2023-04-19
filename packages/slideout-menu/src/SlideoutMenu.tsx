@@ -1,72 +1,87 @@
-import React, { forwardRef, ReactNode, useImperativeHandle } from 'react';
 import {
   Drawer,
   DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
   DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
   useDisclosure,
-  Button,
-  ButtonProps,
+  UseDisclosureReturn,
 } from '@chakra-ui/react';
+import * as React from 'react';
 
-export interface SlideoutMenuRef {
-  onClose: () => void;
-  onOpen: () => void;
-}
+type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
+
+type RenderComponent = (props: UseDisclosureReturn) => React.ReactNode;
 
 export interface SlideoutMenuProps {
-  children?: ReactNode;
-  triggerContent: ReactNode;
-  triggerProps?: ButtonProps;
-  header?: ReactNode;
-  footer?: ReactNode;
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
+  size?: Size;
+  children?: RenderComponent | React.ReactNode;
+  renderTrigger: RenderComponent;
+  renderHeader?: RenderComponent | React.ReactNode;
+  renderFooter?: RenderComponent | React.ReactNode;
 }
 
-type Ref = SlideoutMenuRef | undefined | null;
+export const SlideoutMenu = ({
+  size,
+  children,
+  renderHeader,
+  renderFooter,
+  renderTrigger,
+}: SlideoutMenuProps) => {
+  const disclosure = useDisclosure();
 
-const SlideoutMenu = forwardRef<Ref, SlideoutMenuProps>(
-  ({ header, children, footer, triggerContent, triggerProps, size }, ref) => {
-    const { isOpen, onOpen, onClose } = useDisclosure();
+  return (
+    <>
+      {renderTrigger(disclosure)}
 
-    useImperativeHandle(
-      ref,
-      () => ({
-        onClose,
-        onOpen,
-      }),
-      []
-    );
+      <Drawer
+        size={size}
+        placement="right"
+        isOpen={disclosure.isOpen}
+        onClose={disclosure.onClose}
+      >
+        <DrawerOverlay
+          bgColor="rgba(52, 64, 84, 0.7)"
+          backdropFilter="blur(8px)"
+        />
 
-    return (
-      <>
-        <Button {...triggerProps} onClick={onOpen}>
-          {triggerContent}
-        </Button>
-        <Drawer isOpen={isOpen} placement="right" onClose={onClose} size={size}>
-          <DrawerOverlay />
-          <DrawerContent data-testid="hds.slideout.content">
-            <DrawerCloseButton size="sm" color="gray.500" />
+        <DrawerContent data-testid="hds.slideout.content">
+          <DrawerCloseButton size="sm" color="gray.500" />
 
-            <DrawerHeader fontSize="md" px={3} data-testid="hds.slideout.header">
-              {header}
+          {renderHeader && (
+            <DrawerHeader
+              fontSize="md"
+              px={3}
+              data-testid="hds.slideout.header"
+            >
+              {typeof renderHeader === 'function'
+                ? renderHeader(disclosure)
+                : renderHeader}
             </DrawerHeader>
+          )}
 
+          {children && (
             <DrawerBody fontSize="sm" px={3} data-testid="hds.slideout.body">
-              {children}
+              {typeof children === 'function' ? children(disclosure) : children}
             </DrawerBody>
+          )}
 
-            <DrawerFooter borderTopWidth={1} borderTopColor="gray.100" data-testid="hds.slideout.footer" px={3}>
-              {footer}
+          {renderFooter && (
+            <DrawerFooter
+              borderTopWidth={1}
+              borderTopColor="gray.100"
+              data-testid="hds.slideout.footer"
+              px={3}
+            >
+              {typeof renderFooter === 'function'
+                ? renderFooter(disclosure)
+                : renderFooter}
             </DrawerFooter>
-          </DrawerContent>
-        </Drawer>
-      </>
-    );
-  }
-);
-
-export default SlideoutMenu;
+          )}
+        </DrawerContent>
+      </Drawer>
+    </>
+  );
+};
