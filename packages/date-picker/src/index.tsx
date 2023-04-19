@@ -1,26 +1,30 @@
+import { DatePicker, DatePickerProps } from "./DatePicker/DatePicker";
+import { RangeDatePicker, RangeDatePickerProps } from "./DatePicker/RangeDatePicker";
 import {
-  dateInfoProps,
-  DatePicker,
-  DatePickerProps,
-  IndividualDateProps,
-  IndividualMainDateProps,
-  IndividualNextDateProps,
-  IndividualPrevDateProps,
-} from "./DatePicker";
-import DatePickerDropdown, { DatePickerDropdownProps } from "./DatePickerDropdown";
-import DatePickerModal, { DatePickerModalProps } from "./DatePickerModal";
+  RangeDatePickerDropdown,
+  RangeDatePickerDropdownProps,
+} from "./DatePickerDropdown/RangeDatePickerDropdown";
+import { DatePickerInput, DatePickerInputProps } from "./DatePickerInput/DatePickerInput";
+import {
+  RangeDatePickerInput,
+  RangeDatePickerInputProps,
+} from "./DatePickerInput/RangeDatePickerInput";
+import {
+  RangeDatePickerModal,
+  RangeDatePickerModalProps,
+} from "./DatePickerModal/RangeDatePickerModal";
 
-export { DatePickerInputProps, default as DatePickerInput } from "./DatePickerInput";
 export {
   DatePicker,
   DatePickerProps,
-  DatePickerDropdown,
-  DatePickerModal,
-  DatePickerDropdownProps,
-  DatePickerModalProps,
-  IndividualDateProps,
-  IndividualMainDateProps,
-  IndividualNextDateProps,
-  IndividualPrevDateProps,
-  dateInfoProps,
+  DatePickerInput,
+  DatePickerInputProps,
+  RangeDatePicker,
+  RangeDatePickerProps,
+  RangeDatePickerInput,
+  RangeDatePickerInputProps,
+  RangeDatePickerModal,
+  RangeDatePickerModalProps,
+  RangeDatePickerDropdown,
+  RangeDatePickerDropdownProps,
 };

@@ -1,8 +1,9 @@
 import { Box } from "@chakra-ui/react";
 import { ThemeProvider } from "@highoutput/hds";
+import { useArgs } from "@storybook/addons";
 import { ComponentStory, Meta } from "@storybook/react";
 import * as React from "react";
-import DatePickerInput from "./DatePickerInput";
+import { DatePickerInput } from "./DatePickerInput";
 
 const Story: Meta<typeof DatePickerInput> = {
   title: "Components/DatePicker/DatePickerInput",
@@ -11,11 +12,22 @@ const Story: Meta<typeof DatePickerInput> = {
 
 export default Story;
 
-const Template: ComponentStory<typeof DatePickerInput> = (args) => {
+const Template: ComponentStory<typeof DatePickerInput> = () => {
+  const [args, setArgs] = useArgs();
+
   return (
     <ThemeProvider>
       <Box p={4} h="340px">
-        <DatePickerInput width="340px" {...args} />
+        <DatePickerInput
+          {...args}
+          width="340px"
+          onChange={(newValue) =>
+            setArgs({
+              ...args,
+              value: newValue,
+            })
+          }
+        />
       </Box>
     </ThemeProvider>
   );

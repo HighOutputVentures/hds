@@ -1,16 +1,19 @@
 import { SystemStyleObject } from "@chakra-ui/react";
 import { useMemo } from "react";
 
-type UseStylesArg = {};
-
 type TableCellButtonArg = {
   isToday?: boolean;
   isSelected?: boolean;
   isPlaceholder?: boolean;
+  isWithinRange?: boolean;
+};
+
+type CalendarArg = {
+  hasBorder?: boolean;
 };
 
 type UseStylesReturn = {
-  calendar(): SystemStyleObject;
+  calendar(arg?: CalendarArg): SystemStyleObject;
   calendarWeek(): SystemStyleObject;
   calendarDate(arg?: TableCellButtonArg): SystemStyleObject;
   calendarMain(): SystemStyleObject;
@@ -34,21 +37,23 @@ type UseStylesReturn = {
   calendarControlIcon(): SystemStyleObject;
 };
 
-export function useStyles(arg: UseStylesArg = {}) {
+export function useStyles() {
   const styles = useMemo<UseStylesReturn>(
     () => ({
-      calendar() {
+      calendar(arg = {}) {
         return {
           width: "fit-content",
           bgColor: "white",
-          border: "1px",
-          borderColor: "gray.100",
           rounded: "8px",
           paddingX: "24px",
           paddingY: "20px",
+          ...(arg.hasBorder && {
+            border: "1px",
+            borderColor: "gray.100",
+          }),
         };
       },
-      calendarDate({ isToday = false, isSelected = false, isPlaceholder = false } = {}) {
+      calendarDate(arg = {}) {
         return {
           width: "40px",
           height: "40px",
@@ -56,24 +61,47 @@ export function useStyles(arg: UseStylesArg = {}) {
           fontSize: "14px",
           lineHeight: "20px",
           rounded: "full",
-          transition: "colors 300ms ease-in-out",
+
           _hover: {
             bgColor: "neutrals.200",
           },
-          ...(isPlaceholder && {
+
+          ...(arg.isPlaceholder && {
             color: "neutrals.600",
             _hover: {
               bgColor: "neutrals.100",
             },
           }),
-          ...(isToday && {
+
+          ...(arg.isToday && {
             bgColor: "neutrals.200",
           }),
-          ...(isSelected && {
-            color: "white",
-            bgColor: "brand.primary.700",
-            _hover: {},
+
+          ...(arg.isSelected && {
+            ...(!arg.isPlaceholder && {
+              color: "white",
+              bgColor: "brand.primary.700",
+              _hover: {},
+            }),
+
+            ...(arg.isPlaceholder && {
+              textDecoration: "line-through",
+            }),
           }),
+
+          ...(arg.isWithinRange && {
+            ...(!arg.isPlaceholder && {
+              bgColor: "brand.primary.100",
+              fontWeight: "medium",
+              _hover: {},
+            }),
+
+            ...(arg.isPlaceholder && {
+              textDecoration: "line-through",
+            }),
+          }),
+
+          transition: "colors 300ms ease-in-out",
         };
       },
       calendarWeek() {
@@ -124,7 +152,7 @@ export function useStyles(arg: UseStylesArg = {}) {
         };
       },
     }),
-    [arg],
+    [],
   );
 
   return styles;

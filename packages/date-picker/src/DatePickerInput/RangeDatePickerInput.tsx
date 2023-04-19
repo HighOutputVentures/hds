@@ -1,41 +1,37 @@
 import {
   Box,
-  chakra,
   Icon,
   SystemStyleObject,
   useDisclosure,
   useOutsideClick,
 } from "@chakra-ui/react";
-import { autoPlacement, autoUpdate, flip, useFloating } from "@floating-ui/react";
+import {
+  autoPlacement,
+  autoUpdate,
+  useFloating,
+  useTransitionStyles,
+} from "@floating-ui/react";
 import { TextField } from "@highoutput/hds-forms";
 import { format } from "date-fns";
 import * as React from "react";
-import Calendar from "./Calendar";
-import { useStyles } from "./hooks";
-import CalendarIcon from "./icons/CalendarIcon";
-import CloseIcon from "./icons/CloseIcon";
-import { Nullable } from "./types";
-import { noop } from "./utils";
+import { RangeDatePicker } from "../DatePicker/RangeDatePicker";
+import CalendarIcon from "../icons/CalendarIcon";
+import { DateRange } from "../types";
+import { noop } from "../utils";
+import { ClearButton } from "./ClearButton";
+import { DatePickerInputProps } from "./DatePickerInput";
 
-type Size = "sm" | "md";
+type BaseProps = Omit<DatePickerInputProps, "value" | "onChange" | "dateFormat">;
 
-export type DatePickerInputProps = {
-  id?: string;
-  size?: Size;
-  name?: string;
-  value?: Nullable<Date>;
-  onChange?(newValue: Nullable<Date>): void;
-  placeholder?: string;
-  isInvalid?: boolean;
-  isDisabled?: boolean;
-  isReadOnly?: boolean;
-  isClearable?: boolean;
-  dateFormat?: ((value: Date) => string) | string;
+export type RangeDatePickerInputProps = BaseProps & {
+  value?: DateRange;
+  onChange?(newValue: DateRange): void;
+  dateFormat?: ((value: DateRange) => string) | string;
 };
 
-type StylingProps = Omit<SystemStyleObject, keyof Required<DatePickerInputProps>>;
+type StylingProps = Omit<SystemStyleObject, keyof Required<RangeDatePickerInputProps>>;
 
-export default function DatePickerInput({
+export function RangeDatePickerInput({
   id,
   size = "md",
   name,
@@ -49,38 +45,48 @@ export default function DatePickerInput({
   isClearable,
   zIndex = 1,
   ...others
-}: DatePickerInputProps & StylingProps) {
-  const styles = useStyles();
-
+}: RangeDatePickerInputProps & StylingProps) {
   const inputRef = React.useRef<HTMLInputElement>(null);
   const containerRef = React.useRef<HTMLDivElement>(null);
 
-  const { refs, strategy, x, y } = useFloating({
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const { refs, strategy, x, y, context } = useFloating({
     whileElementsMounted: autoUpdate,
     middleware: [
       autoPlacement({
         allowedPlacements: [
           /* ⚠️ order matters here */
           "bottom-start",
-          "top-start",
           "bottom-end",
+          "top-start",
           "top-end",
         ],
       }),
-      flip(),
     ],
+    open: isOpen && !isReadOnly,
   });
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isMounted, styles } = useTransitionStyles(context);
 
   useOutsideClick({ ref: containerRef, handler: onClose });
 
   const dateToString = React.useCallback(
-    (d: Date) => {
+    (d: DateRange) => {
       if (!dateFormat) {
-        return format(d, "MMM dd, yyyy");
+        const str: string[] = [];
+
+        if (d.start) str.push(format(d.start, "MMM dd, yyyy"));
+        if (d.until) str.push(format(d.until, "MMM dd, yyyy"));
+
+        return str.join(" - ");
       } else if (typeof dateFormat === "string") {
-        return format(d, dateFormat);
+        let str: string[] = [];
+
+        if (d.start) str.push(format(d.start, dateFormat));
+        if (d.until) str.push(format(d.until, dateFormat));
+
+        return str.join(" - ");
       } else {
         return dateFormat(d);
       }
@@ -94,7 +100,7 @@ export default function DatePickerInput({
         ref={refs.setReference}
         sx={{
           _hover: {
-            "& .HdsDatePickerInputClearButton": {
+            "& .HdsRangeDatePickerInputClearButton": {
               display: "flex!important",
             },
           },
@@ -116,13 +122,20 @@ export default function DatePickerInput({
           {...(!!isClearable &&
             !isDisabled &&
             !isReadOnly &&
-            !!value && {
+            !!value &&
+            !!value.start &&
+            !!value.until && {
               rightIcon: (
                 <ClearButton
                   onClick={() => {
-                    onChange(null);
+                    onChange({
+                      start: null,
+                      until: null,
+                    });
+
                     inputRef.current?.focus();
                   }}
+                  className="HdsRangeDatePickerInputClearButton"
                   data-testid="hds.datepicker-input.controls.clear"
                 />
               ),
@@ -131,11 +144,10 @@ export default function DatePickerInput({
         />
       </Box>
 
-      {isOpen && !isReadOnly && (
+      {isMounted && (
         <Box
           ref={refs.setFloating}
           sx={{
-            ...styles.calendar(),
             top: `${y ?? 0}px`,
             left: `${x ?? 0}px`,
             position: strategy,
@@ -144,46 +156,21 @@ export default function DatePickerInput({
              * only calendar needs the zIndex
              */
             zIndex,
+            ...styles,
           }}
           data-testid="hds.datepicker-input.calendar-container"
         >
-          <Calendar
-            selected={value ?? null}
-            onSelect={(newValue) => {
-              onChange(newValue);
+          <RangeDatePicker
+            onCancel={onClose}
+            onApply={(newValue) => {
+              onChange?.(newValue);
               onClose();
             }}
+            hasTimeAdverbial={false}
+            includePreviousMonth={false}
           />
         </Box>
       )}
     </Box>
   );
 }
-
-const ClearButton = React.forwardRef<HTMLButtonElement, React.ComponentProps<"button">>(
-  function ClearButton(props, ref) {
-    return (
-      <chakra.button
-        ref={ref}
-        height={5}
-        width={5}
-        rounded="md"
-        display="none"
-        alignItems="center"
-        justifyContent="center"
-        bgColor="blackAlpha.200"
-        color="blackAlpha.600"
-        transition="colors 300ms ease-in-out"
-        pointerEvents="all"
-        _hover={{
-          color: "blackAlpha.700",
-        }}
-        tabIndex={-1}
-        className="HdsDatePickerInputClearButton"
-        {...props}
-      >
-        <Icon as={CloseIcon} width={4} height={4} />
-      </chakra.button>
-    );
-  },
-);
