@@ -1,10 +1,6 @@
 import { DatePicker, DatePickerProps } from "./DatePicker/DatePicker";
 import { RangeDatePicker, RangeDatePickerProps } from "./DatePicker/RangeDatePicker";
 import {
-  DatePickerDropdown,
-  DatePickerDropdownProps,
-} from "./DatePickerDropdown/DatePickerDropdown";
-import {
   RangeDatePickerDropdown,
   RangeDatePickerDropdownProps,
 } from "./DatePickerDropdown/RangeDatePickerDropdown";
@@ -13,7 +9,6 @@ import {
   RangeDatePickerInput,
   RangeDatePickerInputProps,
 } from "./DatePickerInput/RangeDatePickerInput";
-import { DatePickerModal, DatePickerModalProps } from "./DatePickerModal/DatePickerModal";
 import {
   RangeDatePickerModal,
   RangeDatePickerModalProps,
@@ -24,10 +19,6 @@ export {
   DatePickerProps,
   DatePickerInput,
   DatePickerInputProps,
-  DatePickerModal,
-  DatePickerModalProps,
-  DatePickerDropdown,
-  DatePickerDropdownProps,
   RangeDatePicker,
   RangeDatePickerProps,
   RangeDatePickerInput,
