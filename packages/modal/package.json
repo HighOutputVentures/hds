@@ -1,5 +1,5 @@
 {
-  "version": "0.2.23",
+  "version": "0.2.24",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -20,7 +20,7 @@
     "analyze": "size-limit --why"
   },
   "dependencies": {
-    "@highoutput/hds": "^0.2.29",
+    "@highoutput/hds": "^0.2.30",
     "@highoutput/hds-button": "^0.1.12"
   },
   "peerDependencies": {
