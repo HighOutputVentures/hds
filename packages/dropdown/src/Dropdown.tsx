@@ -1,19 +1,14 @@
+import { chakra, Portal, useDisclosure, UseDisclosureReturn } from "@chakra-ui/react";
 import {
-  chakra,
-  Divider,
-  Menu,
-  MenuButton,
-  MenuGroup,
-  MenuItem,
-  MenuList,
-  PlacementWithLogical,
-  Portal,
-  useDisclosure,
-  UseDisclosureReturn,
-} from "@chakra-ui/react";
+  autoPlacement,
+  autoUpdate,
+  useDismiss,
+  useFloating,
+  useInteractions,
+  useTransitionStyles,
+} from "@floating-ui/react";
 import * as React from "react";
 import { v4 as uuid } from "uuid";
-import { useStyles } from "./hooks";
 
 interface Item {
   icon?: JSX.Element;
@@ -25,140 +20,236 @@ interface Item {
 
 type RenderChildrenContext = UseDisclosureReturn & { hasSelectedItem: boolean };
 
-interface BaseProps {
-  placement?: PlacementWithLogical | undefined;
-  closeOnSelect?: boolean;
+type BaseProps = {
+  items: Item[] | Item[][];
   renderHeader?: JSX.Element;
   renderOption?(item: Item): JSX.Element;
+  closeOnSelect?: boolean;
   children(context: RenderChildrenContext): JSX.Element;
   __menuTestId?: string;
   __menuItemTestId?: string;
-}
+};
 
-interface GroupProps {
-  items: Item[][];
-  isGrouped: true;
-}
-
-interface SingleProps {
+type SingleProps = {
   items: Item[];
   isGrouped?: false;
-}
+};
 
-export type DropdownProps = (GroupProps | SingleProps) & BaseProps;
+type GroupProps = {
+  items: Item[][];
+  isGrouped: true;
+};
 
-const Dropdown: React.FC<DropdownProps> = (props) => {
+export type DropdownProps = (SingleProps | GroupProps) & BaseProps;
+
+export const Dropdown: React.FC<DropdownProps> = (props) => {
   const {
     children,
-    placement,
     renderHeader,
-    renderOption = (item) => item.label,
+    renderOption,
     closeOnSelect,
     __menuTestId = "hds.dropdown",
     __menuItemTestId = "hds.dropdown.item",
     ...others
   } = props;
 
-  const styles = useStyles();
   const disclosure = useDisclosure();
+
   const hasSelectedItem = !others.isGrouped
     ? others.items.some((o) => !!o.isSelected)
-    : others.items.some((i) => i.some((j) => !!j.isSelected));
+    : others.items.flat().some((o) => !!o.isSelected);
+
+  const items = !others.isGrouped
+    ? others.items.map<ItemInternal>((data) => ({ data }))
+    : others.items
+        .map<ItemInternal[]>((arr) => [...arr.map((data) => ({ data })), { skip: true }])
+        .flat();
+
+  const { refs, x, y, strategy, context } = useFloating({
+    open: disclosure.isOpen,
+    strategy: "fixed",
+    middleware: [
+      autoPlacement({
+        allowedPlacements: [
+          "bottom-start",
+          "bottom-end",
+          "bottom",
+          "top-start",
+          "top-end",
+          "top",
+        ],
+      }),
+    ],
+    whileElementsMounted: autoUpdate,
+    onOpenChange(open) {
+      if (open) {
+        disclosure.onOpen();
+      } else {
+        disclosure.onClose();
+      }
+    },
+  });
+
+  const dismiss = useDismiss(context);
+  const { getFloatingProps, getReferenceProps } = useInteractions([dismiss]);
+  const { isMounted, styles } = useTransitionStyles(context);
 
   return (
-    <Menu
-      variant="unstyled"
-      isOpen={disclosure.isOpen}
-      onOpen={disclosure.onOpen}
-      onClose={disclosure.onClose}
-      placement={placement}
-      closeOnBlur
-      closeOnSelect={closeOnSelect}
-      isLazy
-      lazyBehavior="keepMounted"
-    >
-      <MenuButton as={createRefReciever(children({ ...disclosure, hasSelectedItem }))} />
+    <>
+      {React.cloneElement(children({ ...disclosure, hasSelectedItem }), {
+        ref: refs.setReference,
+        ...getReferenceProps(),
+      })}
 
-      <Portal appendToParentPortal={false}>
-        <MenuList sx={styles.menulist} data-testid={__menuTestId}>
-          {!!renderHeader && (
-            <MenuGroup sx={styles.menugroup}>
-              <chakra.div sx={styles.header}>{renderHeader}</chakra.div>
-              <Divider sx={styles.divider} />
-            </MenuGroup>
-          )}
+      {isMounted && (
+        <Portal>
+          <chakra.nav
+            ref={refs.setFloating}
+            role="menu"
+            sx={{
+              position: strategy,
+              top: `${y ?? 0}px`,
+              left: `${x ?? 0}px`,
+              border: "1px",
+              borderColor: "Gray.100",
+              bgColor: "white",
+              rounded: "8px",
+              marginTop: "8px",
+              boxShadow:
+                "0px 12px 16px -4px rgba(16, 24, 40, 0.08)," +
+                "0px 4px 6px -2px rgba(16, 24, 40, 0.03)",
+              ...styles,
+            }}
+            {...getFloatingProps()}
+            data-testid={__menuTestId}
+          >
+            <chakra.ul
+              sx={{
+                listStyle: "none",
+                padding: "0px",
+                margin: "0px",
+                overflow: "hidden",
+              }}
+            >
+              {!!renderHeader && (
+                <chakra.li
+                  role="menuitem"
+                  sx={{
+                    paddingY: "12px",
+                    paddingX: "16px",
+                    borderBottom: "1px",
+                    borderColor: "neutrals.200",
+                  }}
+                  data-testid={__menuItemTestId}
+                >
+                  {renderHeader}
+                </chakra.li>
+              )}
 
-          {!others.isGrouped && (
-            <MenuGroup sx={styles.menugroup}>
-              {others.items.map((item) => {
+              {items.map((item, index, arr) => {
+                if (item.skip) {
+                  return (
+                    <chakra.li key={uuid()}>
+                      {index + 1 < arr.length && <MenuDivider />}
+                    </chakra.li>
+                  );
+                }
+
+                const { icon, label, command, isSelected, onClick } = item.data;
+
                 return (
-                  <MenuItem
-                    sx={styles.menuitem}
+                  <chakra.li
                     key={uuid()}
-                    onClick={item.onClick}
-                    /**
-                     *
-                     * Only render icon and command if
-                     * user did not provide the "renderOption" prop
-                     *
-                     */
-                    {...(!props.renderOption && {
-                      icon: item.icon,
-                      command: item.command,
-                    })}
+                    role="menuitem"
+                    sx={{
+                      cursor: "pointer",
+                      transition: "colors 300ms ease-in-out",
+                      _hover: {
+                        bgColor: "neutrals.100",
+                      },
+                      ...(isSelected && {
+                        bgColor: "brand.primary.100",
+                        _hover: {},
+                      }),
+                    }}
+                    onClick={() => {
+                      onClick?.();
+
+                      if (closeOnSelect) {
+                        disclosure.onClose();
+                      }
+                    }}
                     data-testid={__menuItemTestId}
                   >
-                    {renderOption(item)}
-                  </MenuItem>
+                    {renderOption?.(item.data)}
+                    {!renderOption && (
+                      <MenuItemInnerWrapper>
+                        {icon && <MenuItemIcon>{icon}</MenuItemIcon>}
+                        {label && <MenuItemLabel>{label}</MenuItemLabel>}
+                        {command && <MenuItemCommand>{command}</MenuItemCommand>}
+                      </MenuItemInnerWrapper>
+                    )}
+                  </chakra.li>
                 );
               })}
-            </MenuGroup>
-          )}
-
-          {props.isGrouped &&
-            props.items.map((items, idx_0, arr_0) => {
-              return (
-                <MenuGroup key={uuid()} sx={styles.menugroup}>
-                  {items.map((item, idx_1, arr_1) => {
-                    const hasDivider =
-                      idx_0 < arr_0.length - 1 && idx_1 === arr_1.length - 1;
-
-                    return (
-                      <React.Fragment key={uuid()}>
-                        <MenuItem
-                          icon={item.icon}
-                          sx={styles.menuitem}
-                          data-testid={__menuItemTestId}
-                          /**
-                           *
-                           * See comment above
-                           *
-                           */
-                          {...(!props.renderOption && {
-                            icon: item.icon,
-                            command: item.command,
-                          })}
-                        >
-                          {renderOption(item)}
-                        </MenuItem>
-
-                        {hasDivider && <Divider sx={styles.divider} />}
-                      </React.Fragment>
-                    );
-                  })}
-                </MenuGroup>
-              );
-            })}
-        </MenuList>
-      </Portal>
-    </Menu>
+            </chakra.ul>
+          </chakra.nav>
+        </Portal>
+      )}
+    </>
   );
 };
 
-function createRefReciever(children: JSX.Element) {
-  return React.forwardRef<any>(function Tunnel(_, ref) {
-    return React.cloneElement(children, { ref });
-  });
-}
+const MenuItemInnerWrapper = chakra("div", {
+  baseStyle: {
+    gap: "12px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingY: "12px",
+    paddingX: "16px",
+  },
+});
 
-export default Dropdown;
+const MenuItemIcon = chakra("div", {
+  baseStyle: {
+    color: "Gray.700",
+    display: "flex",
+    alignItems: "center",
+  },
+});
+
+const MenuItemLabel = chakra("div", {
+  baseStyle: {
+    flexGrow: 1,
+    fontSize: "14px",
+    lineHeight: "14px",
+    letterSpacing: "0.02em",
+  },
+});
+
+const MenuItemCommand = chakra("div", {
+  baseStyle: {
+    color: "neutrals.700",
+    fontSize: "12px",
+    lineHeight: "12px",
+    letterSpacing: "0.02em",
+  },
+});
+
+const MenuDivider = chakra("div", {
+  baseStyle: {
+    borderTop: "1px",
+    borderColor: "neutrals.200",
+  },
+});
+
+type ItemInternal =
+  | {
+      data: Item;
+      skip?: false;
+    }
+  | {
+      skip: true;
+      data?: never;
+    };

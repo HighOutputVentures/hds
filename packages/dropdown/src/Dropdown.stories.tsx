@@ -4,7 +4,7 @@ import { Avatar, AvatarLabel } from "@highoutput/hds-avatar";
 import { ExitIcon, SettingIcon, UserIcon, ZapIcon } from "@highoutput/hds-icons";
 import { ComponentStory, Meta } from "@storybook/react";
 import React from "react";
-import Dropdown from "./Dropdown";
+import { Dropdown } from "./Dropdown";
 
 const Story: Meta<typeof Dropdown> = {
   title: "Components/Dropdown",
@@ -43,6 +43,9 @@ const itemsGroup = [
       label: "Log out",
       icon: <ExitIcon />,
       command: "⌥⇧Q",
+      onClick() {
+        alert("Wiw");
+      },
     },
   ],
 ];
@@ -57,6 +60,7 @@ const Template: ComponentStory<typeof Dropdown> = () => {
           <Box>
             <Dropdown
               items={itemsSingle}
+              closeOnSelect
               renderHeader={
                 <AvatarLabel
                   src="https://i.pravatar.cc/300?u=1"
