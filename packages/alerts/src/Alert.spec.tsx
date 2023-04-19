@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@highoutput/hds';
+import { ChakraProvider } from '@chakra-ui/react';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import renderer from 'react-test-renderer';
@@ -20,9 +20,9 @@ function Component() {
 describe('Alert Component', () => {
   beforeEach(() => {
     render(
-      <ThemeProvider>
+      <ChakraProvider>
         <Component />
-      </ThemeProvider>
+      </ChakraProvider>
     );
   });
 
