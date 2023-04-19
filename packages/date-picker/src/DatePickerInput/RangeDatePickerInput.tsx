@@ -5,7 +5,12 @@ import {
   useDisclosure,
   useOutsideClick,
 } from "@chakra-ui/react";
-import { autoPlacement, autoUpdate, flip, useFloating } from "@floating-ui/react";
+import {
+  autoPlacement,
+  autoUpdate,
+  useFloating,
+  useTransitionStyles,
+} from "@floating-ui/react";
 import { TextField } from "@highoutput/hds-forms";
 import { format } from "date-fns";
 import * as React from "react";
@@ -44,23 +49,25 @@ export function RangeDatePickerInput({
   const inputRef = React.useRef<HTMLInputElement>(null);
   const containerRef = React.useRef<HTMLDivElement>(null);
 
-  const { refs, strategy, x, y } = useFloating({
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const { refs, strategy, x, y, context } = useFloating({
     whileElementsMounted: autoUpdate,
     middleware: [
       autoPlacement({
         allowedPlacements: [
           /* ⚠️ order matters here */
           "bottom-start",
-          "top-start",
           "bottom-end",
+          "top-start",
           "top-end",
         ],
       }),
-      flip(),
     ],
+    open: isOpen && !isReadOnly,
   });
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isMounted, styles } = useTransitionStyles(context);
 
   useOutsideClick({ ref: containerRef, handler: onClose });
 
@@ -137,7 +144,7 @@ export function RangeDatePickerInput({
         />
       </Box>
 
-      {isOpen && !isReadOnly && (
+      {isMounted && (
         <Box
           ref={refs.setFloating}
           sx={{
@@ -149,6 +156,7 @@ export function RangeDatePickerInput({
              * only calendar needs the zIndex
              */
             zIndex,
+            ...styles,
           }}
           data-testid="hds.datepicker-input.calendar-container"
         >
@@ -158,6 +166,8 @@ export function RangeDatePickerInput({
               onChange?.(newValue);
               onClose();
             }}
+            hasTimeAdverbial={false}
+            includePreviousMonth={false}
           />
         </Box>
       )}
