@@ -20,7 +20,7 @@ export const Default = Template.bind({});
 
 Default.args = {
   ...Default.args,
-  onSubmit(data) {
+  onSubmit(data: unknown) {
     alert(JSON.stringify(data));
   },
 };

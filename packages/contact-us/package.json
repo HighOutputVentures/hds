@@ -29,10 +29,8 @@
     }
   },
   "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
+    "printWidth": 90,
+    "trailingComma": "all"
   },
   "name": "@highoutput/hds-contact-us",
   "author": {
@@ -54,22 +52,17 @@
     "size-limit": "7.0.8"
   },
   "dependencies": {
-    "@highoutput/hds": "^0.2.30",
-    "@highoutput/hds-forms": "^0.2.14",
-    "@highoutput/hds-icons": "^0.2.3"
+    "@highoutput/hds-forms": "*",
+    "@highoutput/hds-icons": "*",
+    "@highoutput/hds-toast": "*",
+    "@hookform/resolvers": "2.9.10",
+    "react-hook-form": "7.38.0",
+    "yup": "0.32.11"
   },
   "jest": {
     "verbose": true,
-    "moduleNameMapper": {
-      "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
-      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
-    },
-    "transform": {
-      "^.+\\.[tj]sx?$": "babel-jest",
-      "^.+\\.mdx?$": "@storybook/addon-docs/jest-transform-mdx"
-    },
-    "transformIgnorePatterns": [
-      "<rootDir>/node_modules/(?!(@storybook/addon-docs))"
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest.setup.ts"
     ]
   },
   "publishConfig": {
