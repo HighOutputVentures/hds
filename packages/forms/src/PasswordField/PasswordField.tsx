@@ -5,7 +5,7 @@ import {
   InputLeftElement,
   InputRightElement,
   useBoolean,
-  useMergeRefs
+  useMergeRefs,
 } from "@chakra-ui/react";
 import * as React from "react";
 import FormGroup from "../FormGroup/FormGroup";
@@ -65,6 +65,7 @@ export default React.forwardRef<HTMLInputElement, PasswordFieldProps>(
 
           <InputRightElement
             as="button"
+            type="button"
             tabIndex={-1}
             onClick={setIsVisible.toggle}
             sx={styles.rightIcon({

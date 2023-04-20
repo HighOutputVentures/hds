@@ -44,8 +44,10 @@ Default.args = {
       value: Color.Green,
     },
   ],
-  placeholder: "SelectField Item",
+  placeholder: "Select Item",
+  hint: "This is a hint to help user",
+  label: "Color",
   error: false,
-  isClearable: true,
   isDisabled: false,
+  isClearable: true,
 };

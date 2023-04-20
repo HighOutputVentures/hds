@@ -22,4 +22,7 @@ export const Default = Template.bind({});
 
 Default.args = {
   ...Default.args,
+  error: true,
+  label: "Enter OTP",
+  hint: "This is a text to help user",
 };

@@ -62,6 +62,7 @@ export function RangeDatePickerInput({
           "top-start",
           "top-end",
         ],
+        alignment: "start",
       }),
     ],
     open: isOpen && !isReadOnly,

@@ -108,6 +108,7 @@ export default function Select<T extends Option>(props: SelectProps<T>) {
       }),
       autoPlacement({
         allowedPlacements: ["bottom", "top"],
+        alignment: "start",
       }),
     ],
     open: isOpen,

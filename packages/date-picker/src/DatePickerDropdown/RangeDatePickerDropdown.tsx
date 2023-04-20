@@ -38,6 +38,7 @@ export function RangeDatePickerDropdown({
           "top-start",
           "top-end",
         ],
+        alignment: "start",
       }),
     ],
     open: disclosure.isOpen,
