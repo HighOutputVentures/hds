@@ -1,5 +1,4 @@
-import { chakra, Text } from "@chakra-ui/react";
-import { Box, Center } from "@highoutput/hds";
+import { Box, Center, chakra, Text } from "@chakra-ui/react";
 import { Button, MultilineField, TextField } from "@highoutput/hds-forms";
 import { HovIcon } from "@highoutput/hds-icons";
 import { useToast } from "@highoutput/hds-toast";
