@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "@highoutput/hds": "^0.2.30",
-    "@highoutput/hds-button": "^0.1.12"
+    "@highoutput/hds-button": "^0.1.12",
+    "@highoutput/hds-forms": "*"
   },
   "peerDependencies": {
     "react": ">=16"

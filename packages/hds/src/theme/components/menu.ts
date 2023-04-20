@@ -14,6 +14,7 @@ export const Menu: MultiStyleConfig = {
         '0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)',
     },
     item: {
+      gap: '12px',
       fontSize: '14px',
       lineHeight: '14px',
       letterSpacing: '0.02em',
