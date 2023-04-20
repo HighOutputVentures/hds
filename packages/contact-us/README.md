@@ -35,13 +35,9 @@ yarn add @highoutput/hds @highoutput/hds-forms
 ### Usage
 
 ```tsx
-import { ContactPage } from '@highoutput/hds-contact-us';
+import { ContactUs } from "@highoutput/hds-contact-us";
 
-export const SamplePage = () => {
-  return (
-    <>
-      <ContactPage />
-    </>
-  );
-};
+export function SamplePage() {
+  return <ContactUs url="https://dumm.y/messages" />;
+}
 ```
