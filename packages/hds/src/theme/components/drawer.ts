@@ -6,6 +6,4 @@ export const Drawer = {
       color: 'gray.800',
     },
   },
-}
-
-export default Drawer
+};
