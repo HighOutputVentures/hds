@@ -111,5 +111,3 @@ export const Text = {
     },
   },
 };
-
-export default Text;
