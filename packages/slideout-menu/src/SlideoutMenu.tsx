@@ -15,6 +15,7 @@ import * as React from 'react';
 type BaseProps = Pick<
   DrawerProps,
   | 'size'
+  | 'placement'
   | 'trapFocus'
   | 'closeOnEsc'
   | 'closeOnOverlayClick'
