@@ -7,31 +7,17 @@ import {
 } from "@chakra-ui/react";
 import * as React from "react";
 
-export type FormGroupProps = {
+type StylingProps = SystemStyleObject;
+
+export type FormGroupProps = StylingProps & {
   id?: string;
   hint?: string;
   label?: string;
-  /**
-   *
-   * When set to string,
-   * will display the error message
-   *
-   */
   error?: string | boolean;
   children?: JSX.Element;
   isDisabled?: boolean;
   isReadOnly?: boolean;
   isRequired?: boolean;
-  /**
-   *
-   * Will be passed down to parent or FormControl
-   *
-   */
-  styles?: SystemStyleObject;
-
-  /*
-   * Test IDs
-   */
 
   __hintTestId?: string;
   __errorTestId?: string;
@@ -50,12 +36,13 @@ export default React.forwardRef<HTMLDivElement, FormGroupProps>(
       isDisabled,
       isReadOnly,
       isRequired,
-      styles,
 
       __hintTestId = "hds.form-group.hint",
       __errorTestId = "hds.form-group.error",
       __labelTestId = "hds.form-group.label",
       __groupTestId = "hds.form-group.group",
+
+      ...others
     } = props;
 
     const shouldShowError = typeof error === "string" && !!error.trim().length;
@@ -69,8 +56,8 @@ export default React.forwardRef<HTMLDivElement, FormGroupProps>(
         isDisabled={isDisabled}
         isReadOnly={isReadOnly}
         isRequired={isRequired}
-        sx={styles}
         data-testid={__groupTestId}
+        sx={others}
       >
         {!!label && (
           <FormLabel

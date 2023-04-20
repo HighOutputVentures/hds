@@ -91,14 +91,17 @@ export default function OtpField(props: OtpFieldProps) {
               ...(!isSeparator && {
                 sx: {
                   ...styles.field,
+
                   ...(size === "sm" && {
                     width: "64px",
                     height: "64px",
                   }),
+
                   ...(size === "md" && {
                     width: "80px",
                     height: "80px",
                   }),
+
                   ...(size === "lg" && {
                     width: "96px",
                     height: "96px",
@@ -111,6 +114,10 @@ export default function OtpField(props: OtpFieldProps) {
                   display: "block",
                   rounded: "8px",
                 },
+
+                ...(!!others.error && {
+                  "data-invalid": true,
+                }),
 
                 "data-testid": __fieldTestId,
               }),
