@@ -78,6 +78,7 @@ export default function OtpField(props: OtpFieldProps) {
       <Flex gap={3} alignItems="center" width="fit-content">
         <PinInput
           otp
+          type={type}
           value={value}
           placeholder={placeholder}
           onChange={onChange}

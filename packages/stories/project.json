@@ -31,7 +31,7 @@
     "storybook": {
       "executor": "@nrwl/storybook:storybook",
       "options": {
-        "port": 4400,
+        "port": 3000,
         "configDir": "packages/stories/.storybook"
       },
       "configurations": {

@@ -40,15 +40,12 @@ type UseStylesReturn = {
   menuitem(config?: MenuItemConfig): SystemStyleObject;
 };
 
-export function useStyles(config: UseStylesConfig = {}) {
-  const {
-    //
-    size = 'md',
-    hasLeftIcon,
-    hasRightIcon,
-    hasClearIcon,
-  } = config;
-
+export function useStyles({
+  size = 'md',
+  hasLeftIcon,
+  hasRightIcon,
+  hasClearIcon,
+}: UseStylesConfig = {}) {
   const styles = React.useMemo<UseStylesReturn>(
     function getStyles() {
       return {
@@ -306,13 +303,7 @@ export function useStyles(config: UseStylesConfig = {}) {
         },
       };
     },
-    [
-      //
-      size,
-      hasLeftIcon,
-      hasRightIcon,
-      hasClearIcon,
-    ],
+    [size, hasLeftIcon, hasRightIcon, hasClearIcon],
   );
 
   return styles;
