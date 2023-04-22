@@ -18,9 +18,6 @@ export default defineConfig({
       root: '../../',
     }),
   ],
-  ssr: {
-    noExternal: ['uuid'],
-  },
   build: {
     ssr: true,
     lib: {

@@ -18,9 +18,6 @@ export default defineConfig({
       root: '../../',
     }),
   ],
-  ssr: {
-    noExternal: ['tiny-invariant'],
-  },
   build: {
     ssr: true,
     lib: {
