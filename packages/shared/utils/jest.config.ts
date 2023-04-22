@@ -1,5 +1,6 @@
-/* eslint-disable */
-export default {
+import { Config } from 'jest';
+
+const config: Config = {
   displayName: 'shared-utils',
   preset: '../../../jest.preset.js',
   testEnvironment: 'node',
@@ -9,3 +10,5 @@ export default {
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: '../../../coverage/packages/shared/utils',
 };
+
+export default config;
