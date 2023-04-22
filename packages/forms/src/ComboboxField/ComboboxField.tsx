@@ -1,29 +1,25 @@
-import * as React from "react";
-import FormGroup, { FormGroupProps } from "../FormGroup/FormGroup";
-import { Prettify } from "../types";
-import Combobox, { ComboboxProps, Option } from "./Combobox";
+import * as React from 'react';
+import FormGroup, { FormGroupProps } from '../FormGroup/FormGroup';
+import { Prettify } from '../types';
+import Combobox, { ComboboxProps, Option } from './Combobox';
 
 type Picked<T extends Option[]> = Pick<
   ComboboxProps<T>,
-  | "size"
-  | "name"
-  | "value"
-  | "onChange"
-  | "placeholder"
-  | "autoFocus"
-  | "options"
-  | "leftIcon"
-  | "isClearable"
-  | "zIndex"
+  | 'size'
+  | 'name'
+  | 'value'
+  | 'onChange'
+  | 'placeholder'
+  | 'autoFocus'
+  | 'options'
+  | 'leftIcon'
+  | 'isClearable'
+  | 'zIndex'
 >;
 
-export type ComboboxFieldProps<T extends Option[]> = Prettify<
-  Picked<T> & FormGroupProps
->;
+export type ComboboxFieldProps<T extends Option[]> = Prettify<Picked<T> & FormGroupProps>;
 
-export default function ComboboxField<T extends Option[]>(
-  props: ComboboxFieldProps<T>,
-) {
+export default function ComboboxField<T extends Option[]>(props: ComboboxFieldProps<T>) {
   const {
     size,
     name,

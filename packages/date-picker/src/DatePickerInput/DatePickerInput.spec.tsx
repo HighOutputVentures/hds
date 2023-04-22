@@ -1,24 +1,24 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import { act, fireEvent, render, screen, waitFor } from "@testing-library/react";
-import { format } from "date-fns";
-import * as React from "react";
-import { DatePickerInput } from "./DatePickerInput";
+import { ChakraProvider } from '@chakra-ui/react';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { format } from 'date-fns';
+import * as React from 'react';
+import { DatePickerInput } from './DatePickerInput';
 
-describe("DatePickerInput", () => {
+describe('DatePickerInput', () => {
   beforeEach(() => {
     render(<TestComponent />);
   });
 
   it("Should render 'DatePickerInput'", () => {
-    expect(screen.getByTestId("hds.datepicker-input")).toBeInTheDocument();
+    expect(screen.getByTestId('hds.datepicker-input')).toBeInTheDocument();
   });
 
-  it("Should render datepicker input control", () => {
-    expect(screen.getByTestId("hds.datepicker-input.controls.input")).toBeInTheDocument();
+  it('Should render datepicker input control', () => {
+    expect(screen.getByTestId('hds.datepicker-input.controls.input')).toBeInTheDocument();
   });
 
-  it("Should render datepicker calendar", async () => {
-    const input = screen.getByTestId("hds.datepicker-input.controls.input");
+  it('Should render datepicker calendar', async () => {
+    const input = screen.getByTestId('hds.datepicker-input.controls.input');
 
     expect(input).toBeInTheDocument();
 
@@ -27,12 +27,12 @@ describe("DatePickerInput", () => {
     });
 
     await waitFor(() => {
-      expect(screen.getByTestId("hds.datepicker.calendar")).toBeInTheDocument();
+      expect(screen.getByTestId('hds.datepicker.calendar')).toBeInTheDocument();
     });
   });
 
-  it("Should display selected date in input", async () => {
-    const input = screen.getByTestId("hds.datepicker-input.controls.input");
+  it('Should display selected date in input', async () => {
+    const input = screen.getByTestId('hds.datepicker-input.controls.input');
     const target = new Date();
 
     expect(input).toBeInTheDocument();
@@ -42,11 +42,11 @@ describe("DatePickerInput", () => {
     });
 
     await waitFor(() => {
-      expect(screen.getByTestId("hds.datepicker.calendar")).toBeInTheDocument();
+      expect(screen.getByTestId('hds.datepicker.calendar')).toBeInTheDocument();
     });
 
     const dateButton = screen.getByTestId(
-      `hds.datepicker.calendar.date.${format(target, "yyyy-MM-dd")}`,
+      `hds.datepicker.calendar.date.${format(target, 'yyyy-MM-dd')}`,
     );
     expect(dateButton).toBeInTheDocument();
 
@@ -55,12 +55,12 @@ describe("DatePickerInput", () => {
     });
 
     await waitFor(() => {
-      expect(input).toHaveValue(format(target, "MMM dd, yyyy"));
+      expect(input).toHaveValue(format(target, 'MMM dd, yyyy'));
     });
   });
 
-  it("Should be able to clear selected date", async () => {
-    const input = screen.getByTestId("hds.datepicker-input.controls.input");
+  it('Should be able to clear selected date', async () => {
+    const input = screen.getByTestId('hds.datepicker-input.controls.input');
     const target = new Date();
 
     expect(input).toBeInTheDocument();
@@ -70,11 +70,11 @@ describe("DatePickerInput", () => {
     });
 
     await waitFor(() => {
-      expect(screen.getByTestId("hds.datepicker.calendar")).toBeInTheDocument();
+      expect(screen.getByTestId('hds.datepicker.calendar')).toBeInTheDocument();
     });
 
     const dateButton = screen.getByTestId(
-      `hds.datepicker.calendar.date.${format(target, "yyyy-MM-dd")}`,
+      `hds.datepicker.calendar.date.${format(target, 'yyyy-MM-dd')}`,
     );
 
     expect(dateButton).toBeInTheDocument();
@@ -84,7 +84,7 @@ describe("DatePickerInput", () => {
     });
 
     await waitFor(() => {
-      expect(input).toHaveValue(format(target, "MMM dd, yyyy"));
+      expect(input).toHaveValue(format(target, 'MMM dd, yyyy'));
     });
 
     await act(async () => {
@@ -93,16 +93,16 @@ describe("DatePickerInput", () => {
 
     await waitFor(() => {
       expect(
-        screen.getByTestId("hds.datepicker-input.controls.clear"),
+        screen.getByTestId('hds.datepicker-input.controls.clear'),
       ).toBeInTheDocument();
     });
 
     await waitFor(async () => {
-      fireEvent.click(screen.getByTestId("hds.datepicker-input.controls.clear"));
+      fireEvent.click(screen.getByTestId('hds.datepicker-input.controls.clear'));
     });
 
     await waitFor(() => {
-      expect(input).toHaveValue("");
+      expect(input).toHaveValue('');
     });
   });
 });

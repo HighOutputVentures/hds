@@ -3,15 +3,15 @@ import {
   useDisclosure,
   UseDisclosureReturn,
   useOutsideClick,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 import {
   autoPlacement,
   autoUpdate,
   useFloating,
   useTransitionStyles,
-} from "@floating-ui/react";
-import * as React from "react";
-import { RangeDatePicker, RangeDatePickerProps } from "../DatePicker/RangeDatePicker";
+} from '@floating-ui/react';
+import * as React from 'react';
+import { RangeDatePicker, RangeDatePickerProps } from '../DatePicker/RangeDatePicker';
 
 export type RangeDatePickerDropdownProps = RangeDatePickerProps & {
   children(ctx: UseDisclosureReturn): JSX.Element;
@@ -33,12 +33,12 @@ export function RangeDatePickerDropdown({
       autoPlacement({
         allowedPlacements: [
           /* ⚠️ order matters here */
-          "bottom-start",
-          "bottom-end",
-          "top-start",
-          "top-end",
+          'bottom-start',
+          'bottom-end',
+          'top-start',
+          'top-end',
         ],
-        alignment: "start",
+        alignment: 'start',
       }),
     ],
     open: disclosure.isOpen,
@@ -56,20 +56,20 @@ export function RangeDatePickerDropdown({
     },
     initial: {
       opacity: 0,
-      transform: "scale(0.6)",
+      transform: 'scale(0.6)',
     },
     open: {
       opacity: 1,
-      transform: "scale(1)",
+      transform: 'scale(1)',
     },
     common({ placement }) {
       switch (placement) {
-        case "bottom-start":
-        case "top-start":
-          return { transformOrigin: "top left" };
+        case 'bottom-start':
+        case 'top-start':
+          return { transformOrigin: 'top left' };
 
         default:
-          return { transformOrigin: "top right" };
+          return { transformOrigin: 'top right' };
       }
     },
   });

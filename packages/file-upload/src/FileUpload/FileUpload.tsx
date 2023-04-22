@@ -35,12 +35,7 @@ const FileUpload: FC<FileUpload> = ({
         pos="relative"
         justifyContent="center"
       >
-        <Box
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          mb="0.75rem"
-        >
+        <Box display="flex" justifyContent="center" alignItems="center" mb="0.75rem">
           <Box
             display="flex"
             justifyContent="center"

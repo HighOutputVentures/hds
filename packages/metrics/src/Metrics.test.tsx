@@ -12,7 +12,7 @@ describe('Metrics', () => {
         metricValue="$1,000"
         lastViewedText="Last viewed: 1 hour ago"
         viewDetailsText="View details"
-      />
+      />,
     );
     expect(container).toMatchSnapshot();
     expect(getByText('Revenue')).toBeDefined();
@@ -31,7 +31,7 @@ describe('Metrics', () => {
         metricValue="$1,000"
         lastViewedText="Last viewed: 1 hour ago"
         viewDetailsText="View details"
-      />
+      />,
     );
     expect(container).toMatchSnapshot();
     expect(getByText('Revenue')).toBeDefined();
@@ -52,7 +52,7 @@ describe('Metrics', () => {
         lastViewedText="Last viewed: 1 hour ago"
         viewDetailsText="View details"
         viewDetailsCallback={viewDetailsCallback}
-      />
+      />,
     );
 
     fireEvent.click(getByText('View details'));

@@ -15,7 +15,7 @@ exports[`Snapshot (Tabs) Should match snapshot 1`] = `
     <button
       aria-controls="tabs-:r0:--tabpanel--1"
       aria-selected={false}
-      className="chakra-tabs__tab css-1iawfz1"
+      className="chakra-tabs__tab css-9btmlu"
       data-testid="hds.tabs.tab"
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
@@ -33,7 +33,7 @@ exports[`Snapshot (Tabs) Should match snapshot 1`] = `
     <button
       aria-controls="tabs-:r0:--tabpanel--1"
       aria-selected={false}
-      className="chakra-tabs__tab css-1iawfz1"
+      className="chakra-tabs__tab css-9btmlu"
       data-testid="hds.tabs.tab"
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
@@ -51,7 +51,7 @@ exports[`Snapshot (Tabs) Should match snapshot 1`] = `
     <button
       aria-controls="tabs-:r0:--tabpanel--1"
       aria-selected={false}
-      className="chakra-tabs__tab css-1iawfz1"
+      className="chakra-tabs__tab css-9btmlu"
       data-testid="hds.tabs.tab"
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
@@ -70,7 +70,7 @@ exports[`Snapshot (Tabs) Should match snapshot 1`] = `
   <div
     className="chakra-tabs__tab-indicator css-131u3bt"
     style={
-      Object {
+      {
         "left": 0,
         "position": "absolute",
         "transitionDuration": "0ms",

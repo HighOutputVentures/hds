@@ -1,6 +1,6 @@
-import * as React from "react";
+import * as React from 'react';
 
-export default React.forwardRef<SVGSVGElement, React.ComponentProps<"svg">>(
+export default React.forwardRef<SVGSVGElement, React.ComponentProps<'svg'>>(
   function CloseIcon(props, ref) {
     return (
       <svg

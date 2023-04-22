@@ -1,9 +1,9 @@
-import { ToastId, useToast as _, UseToastOptions } from "@chakra-ui/react";
-import { Toast } from "./Toast";
+import { ToastId, useToast as _, UseToastOptions } from '@chakra-ui/react';
+import { Toast } from './Toast';
 
 export type UseToastFnConfig = Pick<
   UseToastOptions,
-  "duration" | "position" | "isClosable" | "onCloseComplete"
+  'duration' | 'position' | 'isClosable' | 'onCloseComplete'
 >;
 
 export type UseToastFn = (message: string, config?: Partial<UseToastFnConfig>) => ToastId;
@@ -31,12 +31,12 @@ export type UseToastReturn = {
  * ```
  */
 export const defaultToastConfig: UseToastOptions = {
-  position: "top",
+  position: 'top',
   render: Toast,
   isClosable: true,
   duration: 5000,
-  variant: "subtle",
-  status: "success",
+  variant: 'subtle',
+  status: 'success',
 };
 
 export function useToast(): UseToastReturn {
@@ -47,7 +47,7 @@ export function useToast(): UseToastReturn {
       return toast({
         ...defaultToastConfig,
         ...overrides,
-        status: "error",
+        status: 'error',
         description,
       });
     },
@@ -55,7 +55,7 @@ export function useToast(): UseToastReturn {
       return toast({
         ...defaultToastConfig,
         ...overrides,
-        status: "success",
+        status: 'success',
         description,
       });
     },

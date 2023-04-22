@@ -5,14 +5,14 @@ import {
   RadioGroupProps as ChakraRadioGroupProps,
   RadioProps as ChakraRadioProps,
   Text,
-} from "@chakra-ui/react";
-import * as React from "react";
-import { Size, Variant } from "../types";
-import { useRadioStyleConfig } from "./hooks";
+} from '@chakra-ui/react';
+import * as React from 'react';
+import { Size, Variant } from '../types';
+import { useRadioStyleConfig } from './hooks';
 
 type BaseProps = Omit<
   ChakraRadioProps,
-  "sx" | "size" | "variant" | "colorScheme" | "styleConfig" | "inputProps"
+  'sx' | 'size' | 'variant' | 'colorScheme' | 'styleConfig' | 'inputProps'
 >;
 
 export type RadioProps = BaseProps & {
@@ -23,16 +23,13 @@ export type RadioProps = BaseProps & {
   __testId?: string;
 };
 
-export default React.forwardRef<HTMLInputElement, RadioProps>(function Radio(
-  props,
-  ref,
-) {
+export default React.forwardRef<HTMLInputElement, RadioProps>(function Radio(props, ref) {
   const {
-    size = "md",
+    size = 'md',
     hint,
     label,
-    variant = "outline",
-    __testId = "hds.radio.input",
+    variant = 'outline',
+    __testId = 'hds.radio.input',
     ...others
   } = props;
 
@@ -44,21 +41,16 @@ export default React.forwardRef<HTMLInputElement, RadioProps>(function Radio(
   const shouldShowLabelSect = !!label || !!hint;
 
   return (
-    <ChakraRadio
-      ref={ref}
-      styleConfig={styleConfig}
-      data-testid={__testId}
-      {...others}
-    >
+    <ChakraRadio ref={ref} styleConfig={styleConfig} data-testid={__testId} {...others}>
       {shouldShowLabelSect && (
         <Box>
           <Text
             sx={{
-              color: "neutrals.900",
-              margin: "0px",
-              fontSize: "14px",
-              lineHeight: "14px",
-              letterSpacing: "0.02em",
+              color: 'neutrals.900',
+              margin: '0px',
+              fontSize: '14px',
+              lineHeight: '14px',
+              letterSpacing: '0.02em',
             }}
             data-testid="hds.radio.label"
           >
@@ -66,13 +58,13 @@ export default React.forwardRef<HTMLInputElement, RadioProps>(function Radio(
           </Text>
           <Text
             sx={{
-              color: "neutrals.600",
-              fontSize: "14px",
-              lineHeight: "14px",
-              letterSpacing: "0.02em",
+              color: 'neutrals.600',
+              fontSize: '14px',
+              lineHeight: '14px',
+              letterSpacing: '0.02em',
 
-              ...(size === "sm" && { marginTop: "0px" }),
-              ...(size === "md" && { marginTop: "2px" }),
+              ...(size === 'sm' && { marginTop: '0px' }),
+              ...(size === 'md' && { marginTop: '2px' }),
             }}
             data-testid="hds.radio.hint"
           >
@@ -88,7 +80,7 @@ export const RadioGroup = ChakraRadioGroup;
 
 export type RadioGroupProps = Omit<
   ChakraRadioGroupProps,
-  "size" | "variant" | "colorScheme"
+  'size' | 'variant' | 'colorScheme'
 > & {
   size?: Size;
   variant?: Variant;

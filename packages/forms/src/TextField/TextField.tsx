@@ -36,70 +36,67 @@ type Base = {
 
 export type TextFieldProps = Prettify<FormGroupProps & Picked & Base>;
 
-export default React.forwardRef<HTMLInputElement, TextFieldProps>(
-  function TextField(props, ref) {
-    const {
-      size,
-      name,
-      value,
-      defaultValue,
-      placeholder,
-      autoFocus,
-      autoComplete,
-      onChange,
-      onFocus,
-      onBlur,
-      onKeyUp,
-      onKeyDown,
-      onInput,
-      onKeyPress,
-      leftIcon,
-      rightIcon,
-      __fieldTestId = 'hds.text-field.input',
-      ...others
-    } = props;
+export default React.forwardRef<HTMLInputElement, TextFieldProps>(function TextField(
+  props,
+  ref,
+) {
+  const {
+    size,
+    name,
+    value,
+    defaultValue,
+    placeholder,
+    autoFocus,
+    autoComplete,
+    onChange,
+    onFocus,
+    onBlur,
+    onKeyUp,
+    onKeyDown,
+    onInput,
+    onKeyPress,
+    leftIcon,
+    rightIcon,
+    __fieldTestId = 'hds.text-field.input',
+    ...others
+  } = props;
 
-    const styles = useStyles({ size, hasLeftIcon: !!leftIcon });
+  const styles = useStyles({ size, hasLeftIcon: !!leftIcon });
 
-    return (
-      <FormGroup {...others}>
-        <InputGroup>
-          {!!leftIcon && (
-            <InputLeftElement
-              sx={styles.leftIcon({ isDisabled: others.isDisabled })}
-            >
-              {React.cloneElement<any>(leftIcon, { sx: styles.icon() })}
-            </InputLeftElement>
-          )}
+  return (
+    <FormGroup {...others}>
+      <InputGroup>
+        {!!leftIcon && (
+          <InputLeftElement sx={styles.leftIcon({ isDisabled: others.isDisabled })}>
+            {React.cloneElement<any>(leftIcon, { sx: styles.icon() })}
+          </InputLeftElement>
+        )}
 
-          <Input
-            ref={ref}
-            name={name}
-            value={value}
-            defaultValue={defaultValue}
-            placeholder={placeholder}
-            autoFocus={autoFocus}
-            autoComplete={autoComplete}
-            onChange={onChange}
-            onFocus={onFocus}
-            onBlur={onBlur}
-            onKeyUp={onKeyUp}
-            onKeyDown={onKeyDown}
-            onInput={onInput}
-            onKeyPress={onKeyPress}
-            sx={styles.field}
-            data-testid={__fieldTestId}
-          />
+        <Input
+          ref={ref}
+          name={name}
+          value={value}
+          defaultValue={defaultValue}
+          placeholder={placeholder}
+          autoFocus={autoFocus}
+          autoComplete={autoComplete}
+          onChange={onChange}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          onKeyUp={onKeyUp}
+          onKeyDown={onKeyDown}
+          onInput={onInput}
+          onKeyPress={onKeyPress}
+          sx={styles.field}
+          data-testid={__fieldTestId}
+        />
 
-          {!!rightIcon && (
-            <InputRightElement
-              sx={styles.rightIcon({ isDisabled: others.isDisabled })}
-            >
-              {React.cloneElement<any>(rightIcon, { sx: styles.icon() })}
-            </InputRightElement>
-          )}
-        </InputGroup>
-      </FormGroup>
-    );
-  }
-);
+        {!!rightIcon && (
+          <InputRightElement sx={styles.rightIcon({ isDisabled: others.isDisabled })}>
+            {React.cloneElement<any>(rightIcon, { sx: styles.icon() })}
+          </InputRightElement>
+        )}
+      </InputGroup>
+    </FormGroup>
+  );
+});

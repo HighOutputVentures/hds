@@ -19,15 +19,7 @@ const PrimarySearchIcon: React.FC<IconProps> = (props) => {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <rect
-        x="4"
-        y="4"
-        width="48"
-        height="48"
-        rx="24"
-        stroke="#F9F5FF"
-        strokeWidth="8"
-      />
+      <rect x="4" y="4" width="48" height="48" rx="24" stroke="#F9F5FF" strokeWidth="8" />
     </Icon>
   );
 };

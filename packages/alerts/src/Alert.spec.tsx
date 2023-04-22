@@ -22,7 +22,7 @@ describe('Alert Component', () => {
     render(
       <ChakraProvider>
         <Component />
-      </ChakraProvider>
+      </ChakraProvider>,
     );
   });
 

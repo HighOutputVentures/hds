@@ -1,9 +1,9 @@
-import { chakra, Stack, SystemStyleObject } from "@chakra-ui/react";
-import { Button, PasswordField, TextField } from "@highoutput/hds-forms";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as React from "react";
-import { useForm } from "react-hook-form";
-import { TUsernamePasswordLoginSchema, UsernamePasswordLoginSchema } from "./validators";
+import { chakra, Stack, SystemStyleObject } from '@chakra-ui/react';
+import { Button, PasswordField, TextField } from '@highoutput/hds-forms';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as React from 'react';
+import { useForm } from 'react-hook-form';
+import { TUsernamePasswordLoginSchema, UsernamePasswordLoginSchema } from './validators';
 
 type FieldConfig = {
   label?: string;
@@ -33,9 +33,9 @@ export const UsernamePasswordLoginForm: React.FC<UsernamePasswordLoginFormProps>
   renderFooter,
   onSubmit,
 
-  __usernameTestId = "hds.credential-login.input.username",
-  __passwordTestId = "hds.credential-login.input.password",
-  __submitBtnTestId = "hds.credential-login.submit-button",
+  __usernameTestId = 'hds.credential-login.input.username',
+  __passwordTestId = 'hds.credential-login.input.password',
+  __submitBtnTestId = 'hds.credential-login.submit-button',
 
   ...others
 }) => {
@@ -44,15 +44,15 @@ export const UsernamePasswordLoginForm: React.FC<UsernamePasswordLoginFormProps>
     shouldUnregister: true,
     resolver: yupResolver(UsernamePasswordLoginSchema),
     defaultValues: {
-      username: "",
-      password: "",
+      username: '',
+      password: '',
     },
   });
 
   return (
     <chakra.div
       sx={{
-        maxW: "400px",
+        maxW: '400px',
         ...others,
       }}
       data-testid="hds.credential-login"
@@ -67,7 +67,7 @@ export const UsernamePasswordLoginForm: React.FC<UsernamePasswordLoginFormProps>
             error={formState.errors.username?.message}
             isDisabled={formState.isSubmitting}
             __fieldTestId={__usernameTestId}
-            {...register("username")}
+            {...register('username')}
           />
 
           <PasswordField
@@ -77,7 +77,7 @@ export const UsernamePasswordLoginForm: React.FC<UsernamePasswordLoginFormProps>
             error={formState.errors.password?.message}
             isDisabled={formState.isSubmitting}
             __fieldTestId={__passwordTestId}
-            {...register("password")}
+            {...register('password')}
           />
         </Stack>
 
@@ -88,7 +88,7 @@ export const UsernamePasswordLoginForm: React.FC<UsernamePasswordLoginFormProps>
           isLoading={formState.isSubmitting}
           __testId={__submitBtnTestId}
         >
-          {submitBtn?.label ?? "Login"}
+          {submitBtn?.label ?? 'Login'}
         </Button>
       </chakra.form>
 

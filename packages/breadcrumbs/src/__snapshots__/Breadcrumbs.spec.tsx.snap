@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Breadcrumbs Component Should match snapshot 1`] = `
-Array [
+[
   <nav
     aria-label="breadcrumb"
     className="chakra-breadcrumb css-11y8svu"
@@ -14,7 +14,7 @@ Array [
         className="chakra-breadcrumb__list-item css-18biwo"
       >
         <a
-          className="chakra-breadcrumb__link css-1jyui2l"
+          className="chakra-breadcrumb__link css-1ckfhu3"
           href="/settings"
           onClick={[Function]}
         >
@@ -25,7 +25,7 @@ Array [
           role="presentation"
         >
           <svg
-            className="chakra-icon css-u1p2d6"
+            className="chakra-icon css-b3z3x"
             fill="none"
             focusable={false}
             height="17"
@@ -47,7 +47,7 @@ Array [
         className="chakra-breadcrumb__list-item css-18biwo"
       >
         <a
-          className="chakra-breadcrumb__link css-b1nu9m"
+          className="chakra-breadcrumb__link css-1ihow7j"
           href="#"
           onClick={[Function]}
         >
@@ -58,7 +58,7 @@ Array [
           role="presentation"
         >
           <svg
-            className="chakra-icon css-u1p2d6"
+            className="chakra-icon css-b3z3x"
             fill="none"
             focusable={false}
             height="17"
@@ -80,7 +80,7 @@ Array [
         className="chakra-breadcrumb__list-item css-18biwo"
       >
         <a
-          className="chakra-breadcrumb__link css-1jojhgu"
+          className="chakra-breadcrumb__link css-1ihlpp4"
           href="/settings/teams"
           onClick={[Function]}
         >
@@ -90,5 +90,9 @@ Array [
     </ol>
   </nav>,
   <span />,
+  <span
+    hidden={true}
+    id="__chakra_env"
+  />,
 ]
 `;

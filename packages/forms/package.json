@@ -1,59 +1,17 @@
 {
+  "name": "@highoutput/hds-forms",
   "version": "0.2.14",
   "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "engines": {
-    "node": ">=10"
-  },
-  "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "prepublish": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
-    "size": "size-limit",
-    "analyze": "size-limit --why",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
-  "peerDependencies": {
-    "react": ">=16"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
     }
   },
-  "prettier": {
-    "printWidth": 80,
-    "trailingComma": "all"
-  },
-  "name": "@highoutput/hds-forms",
-  "author": "calvo-jp",
-  "module": "dist/hds-forms.esm.js",
-  "size-limit": [
-    {
-      "path": "dist/hds-forms.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/hds-forms.esm.js",
-      "limit": "10 KB"
-    }
-  ],
   "publishConfig": {
     "access": "public"
-  },
-  "jest": {
-    "verbose": true,
-    "setupFilesAfterEnv": [
-      "<rootDir>/jest.setup.ts"
-    ]
   },
   "dependencies": {
     "@floating-ui/react": "0.22.3",

@@ -1,3 +1,3 @@
 import CTA, { CTAProps } from './component/CTA';
 
-export { CTA, CTAProps };
+export { CTA, type CTAProps };

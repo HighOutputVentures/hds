@@ -4,23 +4,23 @@ import {
   SystemStyleObject,
   useDisclosure,
   useOutsideClick,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 import {
   autoPlacement,
   autoUpdate,
   useFloating,
   useTransitionStyles,
-} from "@floating-ui/react";
-import { TextField } from "@highoutput/hds-forms";
-import { format } from "date-fns";
-import * as React from "react";
-import { DatePicker } from "../DatePicker/DatePicker";
-import CalendarIcon from "../icons/CalendarIcon";
-import { Nullable } from "../types";
-import { noop } from "../utils";
-import { ClearButton } from "./ClearButton";
+} from '@floating-ui/react';
+import { TextField } from '@highoutput/hds-forms';
+import { format } from 'date-fns';
+import * as React from 'react';
+import { DatePicker } from '../DatePicker/DatePicker';
+import CalendarIcon from '../icons/CalendarIcon';
+import { Nullable } from '../types';
+import { noop } from '../utils';
+import { ClearButton } from './ClearButton';
 
-type Size = "sm" | "md";
+type Size = 'sm' | 'md';
 
 export type DatePickerInputProps = {
   id?: string;
@@ -40,7 +40,7 @@ type StylingProps = Omit<SystemStyleObject, keyof Required<DatePickerInputProps>
 
 export function DatePickerInput({
   id,
-  size = "md",
+  size = 'md',
   name,
   value,
   onChange = noop,
@@ -64,12 +64,12 @@ export function DatePickerInput({
       autoPlacement({
         allowedPlacements: [
           /* ⚠️ order matters here */
-          "bottom-start",
-          "bottom-end",
-          "top-start",
-          "top-end",
+          'bottom-start',
+          'bottom-end',
+          'top-start',
+          'top-end',
         ],
-        alignment: "start",
+        alignment: 'start',
       }),
     ],
     open: isOpen && !isReadOnly,
@@ -82,8 +82,8 @@ export function DatePickerInput({
   const dateToString = React.useCallback(
     (d: Date) => {
       if (!dateFormat) {
-        return format(d, "MMM dd, yyyy");
-      } else if (typeof dateFormat === "string") {
+        return format(d, 'MMM dd, yyyy');
+      } else if (typeof dateFormat === 'string') {
         return format(d, dateFormat);
       } else {
         return dateFormat(d);
@@ -98,8 +98,8 @@ export function DatePickerInput({
         ref={refs.setReference}
         sx={{
           _hover: {
-            "& .HdsDatePickerInputClearButton": {
-              display: "flex!important",
+            '& .HdsDatePickerInputClearButton': {
+              display: 'flex!important',
             },
           },
         }}
@@ -110,7 +110,7 @@ export function DatePickerInput({
           id={id}
           size={size}
           name={name}
-          value={value ? dateToString(value) : ""}
+          value={value ? dateToString(value) : ''}
           placeholder={placeholder}
           isReadOnly={isReadOnly}
           isDisabled={isDisabled}
@@ -143,7 +143,7 @@ export function DatePickerInput({
             top: `${y ?? 0}px`,
             left: `${x ?? 0}px`,
             position: strategy,
-            marginTop: "1px",
+            marginTop: '1px',
             /*
              * only calendar needs the zIndex
              */

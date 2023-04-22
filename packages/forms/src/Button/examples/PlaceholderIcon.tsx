@@ -1,6 +1,6 @@
-import * as React from "react";
+import * as React from 'react';
 
-export default function PlaceholderIcon(props: React.ComponentProps<"svg">) {
+export default function PlaceholderIcon(props: React.ComponentProps<'svg'>) {
   return (
     <svg
       width="20"

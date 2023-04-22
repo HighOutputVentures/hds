@@ -1,25 +1,25 @@
-import { Textarea, TextareaProps } from "@chakra-ui/react";
-import * as React from "react";
-import ReactTextareaAutosize from "react-textarea-autosize";
-import FormGroup, { FormGroupProps } from "../FormGroup/FormGroup";
-import { useStyles } from "../hooks";
-import { Prettify, Size } from "../types";
+import { Textarea, TextareaProps } from '@chakra-ui/react';
+import * as React from 'react';
+import reactTextareaAutosize from 'react-textarea-autosize';
+import FormGroup, { FormGroupProps } from '../FormGroup/FormGroup';
+import { useStyles } from '../hooks';
+import { Prettify, Size } from '../types';
 
 type Picked = Pick<
   TextareaProps,
-  | "name"
-  | "value"
-  | "defaultValue"
-  | "placeholder"
-  | "onChange"
-  | "onFocus"
-  | "onBlur"
-  | "onKeyUp"
-  | "onKeyDown"
-  | "onInput"
-  | "onKeyPress"
-  | "autoFocus"
-  | "autoComplete"
+  | 'name'
+  | 'value'
+  | 'defaultValue'
+  | 'placeholder'
+  | 'onChange'
+  | 'onFocus'
+  | 'onBlur'
+  | 'onKeyUp'
+  | 'onKeyDown'
+  | 'onInput'
+  | 'onKeyPress'
+  | 'autoFocus'
+  | 'autoComplete'
 >;
 
 type Base = {
@@ -37,8 +37,8 @@ export default React.forwardRef<HTMLTextAreaElement, MultilineFieldProps>(
       size,
       name,
       value,
-      minRows,
-      maxRows,
+      minRows = 3,
+      maxRows = 5,
       defaultValue,
       placeholder,
       autoFocus,
@@ -50,7 +50,7 @@ export default React.forwardRef<HTMLTextAreaElement, MultilineFieldProps>(
       onKeyDown,
       onInput,
       onKeyPress,
-      __fieldTestId = "hds.multiline-field.input",
+      __fieldTestId = 'hds.multiline-field.input',
       ...others
     } = props;
 
@@ -60,11 +60,8 @@ export default React.forwardRef<HTMLTextAreaElement, MultilineFieldProps>(
       <FormGroup {...others}>
         <Textarea
           ref={ref}
-          as={ReactTextareaAutosize}
           name={name}
           value={value}
-          minRows={minRows}
-          maxRows={maxRows}
           defaultValue={defaultValue}
           placeholder={placeholder}
           autoFocus={autoFocus}
@@ -78,10 +75,20 @@ export default React.forwardRef<HTMLTextAreaElement, MultilineFieldProps>(
           onKeyPress={onKeyPress}
           sx={{
             ...styles.field,
-            height: "auto",
-            resize: "none",
+            resize: 'none',
+            height: 'auto',
+            minHeight: 'unset',
           }}
           data-testid={__fieldTestId}
+          /*
+           * ⚠️ This is a temporary workaround for jest issue
+           *
+           */
+          {...(process.env.NODE_ENV !== 'test' && {
+            as: reactTextareaAutosize,
+            minRows,
+            maxRows,
+          })}
         />
       </FormGroup>
     );

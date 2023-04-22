@@ -1,9 +1,9 @@
-import { Avatar, HStack, Text } from "@chakra-ui/react";
-import { faker } from "@faker-js/faker";
-import "@testing-library/jest-dom";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
-import * as React from "react";
-import Table from "./Table";
+import { Avatar, HStack, Text } from '@chakra-ui/react';
+import { faker } from '@faker-js/faker';
+import '@testing-library/jest-dom';
+import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import * as React from 'react';
+import Table from './Table';
 
 const items = new Array(5).fill(null).map(() => {
   return {
@@ -19,7 +19,7 @@ const onCheck = jest.fn();
 const onClick = jest.fn();
 const onCheckAll = jest.fn();
 
-describe("Table", () => {
+describe('Table', () => {
   afterEach(cleanup);
   beforeEach(() => {
     render(
@@ -27,7 +27,7 @@ describe("Table", () => {
         items={items}
         columns={[
           {
-            label: "Name",
+            label: 'Name',
             renderRow({ name, avatar }) {
               return (
                 <HStack spacing={2}>
@@ -41,41 +41,41 @@ describe("Table", () => {
             onClick,
           },
           {
-            label: "Email",
+            label: 'Email',
             renderRow({ email }) {
               return email;
             },
             onSort,
             onClick,
-            defaultSort: "asc",
-            tooltip: "Hint: This is your email",
+            defaultSort: 'asc',
+            tooltip: 'Hint: This is your email',
           },
         ]}
       />,
     );
   });
 
-  describe("Checkbox", () => {
-    it("Should render master checkbox", () => {
+  describe('Checkbox', () => {
+    it('Should render master checkbox', () => {
       expect(
-        screen.queryByRole("checkbox", {
-          name: "Select all",
+        screen.queryByRole('checkbox', {
+          name: 'Select all',
         }),
       ).toBeDefined();
     });
 
-    it("Should render checkboxes", () => {
+    it('Should render checkboxes', () => {
       expect(
-        screen.queryAllByRole("checkbox", {
-          name: "Select item",
+        screen.queryAllByRole('checkbox', {
+          name: 'Select item',
         }),
       ).toHaveLength(items.length);
     });
 
-    it("Should call onCheck callback when a checkbox is toggled", () => {
+    it('Should call onCheck callback when a checkbox is toggled', () => {
       fireEvent.click(
-        screen.getAllByRole("checkbox", {
-          name: "Select item",
+        screen.getAllByRole('checkbox', {
+          name: 'Select item',
         })[0],
       );
 
@@ -87,10 +87,10 @@ describe("Table", () => {
       );
     });
 
-    it("Should call onCheckAll callback when master checkbox is toggled", () => {
+    it('Should call onCheckAll callback when master checkbox is toggled', () => {
       fireEvent.click(
-        screen.getByRole("checkbox", {
-          name: "Select all",
+        screen.getByRole('checkbox', {
+          name: 'Select all',
         }),
       );
 
@@ -103,14 +103,14 @@ describe("Table", () => {
     });
   });
 
-  describe("Sort", () => {
-    it("Should render sort button", () => {
-      expect(screen.queryByRole("button", { name: /Sort (a|de)sc/i })).toBeDefined();
+  describe('Sort', () => {
+    it('Should render sort button', () => {
+      expect(screen.queryByRole('button', { name: /Sort (a|de)sc/i })).toBeDefined();
     });
 
-    it("Should call sort callback when sort button is clicked", () => {
+    it('Should call sort callback when sort button is clicked', () => {
       fireEvent.click(
-        screen.getByRole("button", {
+        screen.getByRole('button', {
           name: /Sort (a|de)sc/i,
         }),
       );
@@ -119,14 +119,14 @@ describe("Table", () => {
     });
   });
 
-  describe("Tooltip", () => {
-    it("Should render help icon", () => {
-      expect(screen.queryByRole("button", { name: "Hint" })).toBeDefined();
+  describe('Tooltip', () => {
+    it('Should render help icon', () => {
+      expect(screen.queryByRole('button', { name: 'Hint' })).toBeDefined();
     });
   });
 
-  it("Should call onClick callback when rows with handlers attached are clicked", () => {
-    const td = document.querySelector("td") as HTMLTableCellElement;
+  it('Should call onClick callback when rows with handlers attached are clicked', () => {
+    const td = document.querySelector('td') as HTMLTableCellElement;
     fireEvent.click(td);
     expect(onClick).toHaveBeenCalled();
   });

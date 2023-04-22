@@ -1,29 +1,27 @@
-import * as React from "react";
-import FormGroup, { FormGroupProps } from "../FormGroup/FormGroup";
-import { Prettify } from "../types";
-import Select, { Option, SelectProps } from "./Select";
+import * as React from 'react';
+import FormGroup, { FormGroupProps } from '../FormGroup/FormGroup';
+import { Prettify } from '../types';
+import Select, { Option, SelectProps } from './Select';
 
 type SelectFieldBaseProps<T extends Option> = Pick<
   SelectProps<T>,
-  | "size"
-  | "value"
-  | "options"
-  | "onChange"
-  | "leftIcon"
-  | "placeholder"
-  | "renderOption"
-  | "isClearable"
-  | "__fieldTestId"
-  | "__optionTestId"
+  | 'size'
+  | 'value'
+  | 'options'
+  | 'onChange'
+  | 'leftIcon'
+  | 'placeholder'
+  | 'renderOption'
+  | 'isClearable'
+  | '__fieldTestId'
+  | '__optionTestId'
 >;
 
 export type SelectFieldProps<T extends Option> = Prettify<
   FormGroupProps & SelectFieldBaseProps<T>
 >;
 
-export default function SelectField<T extends Option>(
-  props: SelectFieldProps<T>,
-) {
+export default function SelectField<T extends Option>(props: SelectFieldProps<T>) {
   const {
     size,
     options,
@@ -33,8 +31,8 @@ export default function SelectField<T extends Option>(
     placeholder,
     renderOption,
     isClearable,
-    __fieldTestId = "hds.select-field.input",
-    __optionTestId = "hds.select-field.option",
+    __fieldTestId = 'hds.select-field.input',
+    __optionTestId = 'hds.select-field.option',
     ...formGroupProps
   } = props;
 

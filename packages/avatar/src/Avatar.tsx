@@ -1,9 +1,9 @@
-import { As, Avatar as ChakraAvatar, AvatarBadge, Box, Icon } from "@chakra-ui/react";
-import * as React from "react";
-import { useStyles } from "./hooks";
-import UserIcon from "./icons/UserIcon";
-import VerifiedIcon from "./icons/VerifiedIcon";
-import { Size } from "./types";
+import { As, Avatar as ChakraAvatar, AvatarBadge, Box, Icon } from '@chakra-ui/react';
+import * as React from 'react';
+import { useStyles } from './hooks';
+import UserIcon from './icons/UserIcon';
+import VerifiedIcon from './icons/VerifiedIcon';
+import { Size } from './types';
 
 export interface AvatarProps {
   src?: string;
@@ -27,7 +27,7 @@ export default React.forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
   const {
     src,
     name,
-    size = "md",
+    size = 'md',
     hasOnlineIndicator,
     isOnline,
     isBordered,
@@ -72,7 +72,7 @@ export default React.forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
        * Clickable avatars
        */
       {...(isClickable && {
-        role: "button",
+        role: 'button',
         tabIndex: 0,
         onClick,
       })}

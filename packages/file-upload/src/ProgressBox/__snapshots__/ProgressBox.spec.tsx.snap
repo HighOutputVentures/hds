@@ -3,7 +3,7 @@
 exports[`FileUpload should render FileUpload 1`] = `
 <div>
   <div
-    class="css-dphcbk"
+    class="css-zg4w2o"
   >
     <div
       class="css-1kxrbkv"
@@ -15,7 +15,7 @@ exports[`FileUpload should render FileUpload 1`] = `
           class="css-70qvj9"
         >
           <svg
-            class="chakra-icon chakra-icon css-1498a95"
+            class="chakra-icon chakra-icon css-1ogxkfj"
             focusable="false"
             viewBox="0 0 46 46"
           >
@@ -64,7 +64,7 @@ exports[`FileUpload should render FileUpload 1`] = `
           data-testid="hds.progress.delete.button"
         >
           <svg
-            class="chakra-icon chakra-icon css-b9f1dm"
+            class="chakra-icon chakra-icon css-3kr7z7"
             focusable="false"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"

@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 export default React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>(
   function SearchIcon(props, ref) {

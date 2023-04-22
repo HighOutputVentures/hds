@@ -1,13 +1,5 @@
 import { FC } from 'react';
-import {
-  Box,
-  Button,
-  Flex,
-  HStack,
-  Icon,
-  Text,
-  VStack,
-} from '@chakra-ui/react';
+import { Box, Button, Flex, HStack, Icon, Text, VStack } from '@chakra-ui/react';
 import * as React from 'react';
 import {
   DotsVerticalIcon,
@@ -69,17 +61,31 @@ const Metrics: FC<MetricsProps> = ({
       <HStack mr={8} w="full" align="start" justify="space-between">
         <HStack>
           {icon}
-          <Text size="label-sm-default" data-testid={__metricLabelTestId ?? 'hds.metrics-card.label'}>{metricLabel}</Text>
+          <Text
+            size="label-sm-default"
+            data-testid={__metricLabelTestId ?? 'hds.metrics-card.label'}
+          >
+            {metricLabel}
+          </Text>
         </HStack>
         <Icon as={DotsVerticalIcon} color="neutrals.500" />
       </HStack>
 
       <HStack w="full" spacing="16px" mt="24px">
         <VStack w="full" align="start" spacing="16px">
-          <Text mt={2} size="header-4" data-testid={__metricValueTestId ?? 'hds.metrics-card.value'}>
+          <Text
+            mt={2}
+            size="header-4"
+            data-testid={__metricValueTestId ?? 'hds.metrics-card.value'}
+          >
             {metricValue}
           </Text>
-          <HStack height="18px" borderRadius="16px" padding="2px 10px 2px 0px" data-testid="hds.metrics-card.text">
+          <HStack
+            height="18px"
+            borderRadius="16px"
+            padding="2px 10px 2px 0px"
+            data-testid="hds.metrics-card.text"
+          >
             {metricChange === 'positive' ? (
               <Icon as={PositiveArrowIcon} />
             ) : (
@@ -99,12 +105,24 @@ const Metrics: FC<MetricsProps> = ({
           </HStack>
         </VStack>
         {showChart && metricChange === 'positive' && (
-          <Box maxW="128px" w="full" maxH="64px" h="full" data-testid={__metricChartTestId ?? 'hds.metrics-card.chart'}>
+          <Box
+            maxW="128px"
+            w="full"
+            maxH="64px"
+            h="full"
+            data-testid={__metricChartTestId ?? 'hds.metrics-card.chart'}
+          >
             <Icon as={PositiveChartIcon} w="full" h="full" />
           </Box>
         )}{' '}
         {showChart && metricChange === 'negative' && (
-          <Box maxW="128px" w="full" maxH="64px" h="full" data-testid={__metricChartTestId ?? 'hds.metrics-card.chart'}>
+          <Box
+            maxW="128px"
+            w="full"
+            maxH="64px"
+            h="full"
+            data-testid={__metricChartTestId ?? 'hds.metrics-card.chart'}
+          >
             <Icon as={NegativeChartIcon} w="full" h="full" />
           </Box>
         )}
@@ -118,7 +136,7 @@ const Metrics: FC<MetricsProps> = ({
             textDecoration: 'none',
             color: 'brand.primary.700',
           }}
-          data-testid={__metricButtonTestId ?? "hds.metrics-card.button"}
+          data-testid={__metricButtonTestId ?? 'hds.metrics-card.button'}
           alignSelf="end"
           onClick={() => {
             if (viewDetailsCallback) viewDetailsCallback();

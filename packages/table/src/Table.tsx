@@ -15,19 +15,19 @@ import {
   Th,
   Thead,
   Tr,
-} from "@chakra-ui/react";
-import { Checkbox } from "@highoutput/hds-forms";
-import { Tooltip } from "@highoutput/hds-tooltip";
-import * as React from "react";
-import { v4 as uuid } from "uuid";
-import { useStyles } from "./hooks";
-import ArrowDownIcon from "./icons/ArrowDownIcon";
-import HelpCircleIcon from "./icons/HelpCircleIcon";
+} from '@chakra-ui/react';
+import { Checkbox } from '@highoutput/hds-forms';
+import { Tooltip } from '@highoutput/hds-tooltip';
+import * as React from 'react';
+import { v4 as uuid } from 'uuid';
+import { useStyles } from './hooks';
+import ArrowDownIcon from './icons/ArrowDownIcon';
+import HelpCircleIcon from './icons/HelpCircleIcon';
 
 export type UnknownArray = unknown[];
 export type ArrayItem<T extends UnknownArray> = T[number];
 
-export type SortDirection = "asc" | "desc";
+export type SortDirection = 'asc' | 'desc';
 
 export type SortContext = {
   direction: SortDirection;
@@ -64,7 +64,7 @@ export type TableBaseProps<T extends UnknownArray> = {
   items: T;
   columns: Column<T>[];
   isLoading?: boolean;
-  renderLoader?: React.ReactNode;
+  renderLoader?: JSX.Element;
   renderHeader?: React.ReactNode;
   renderFooter?: React.ReactNode;
 };
@@ -73,7 +73,15 @@ export type TableProps<T extends UnknownArray> = TableBaseProps<T> &
   Omit<SystemStyleObject, Required<keyof TableBaseProps<T>>>;
 
 export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
-  const { items, columns, isLoading, renderLoader, renderHeader, renderFooter, ...others } = props;
+  const {
+    items,
+    columns,
+    isLoading,
+    renderLoader,
+    renderHeader,
+    renderFooter,
+    ...others
+  } = props;
 
   const styles = useStyles({ hasBottomRowBorder: !!renderFooter });
 
@@ -91,11 +99,12 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
       .filter(({ onCheck }) => !!onCheck)
       .map(({ defaultChecked = false }) => {
         return items.map((item) => {
-          const fn = typeof defaultChecked === "boolean" ? () => defaultChecked : defaultChecked;
+          const fn =
+            typeof defaultChecked === 'boolean' ? () => defaultChecked : defaultChecked;
           return fn(item);
         });
       });
-  }, [items, columns]);
+  }, [columns, items]);
 
   const [checkedItems, setCheckedItems] = React.useState(getCheckStatus);
 
@@ -105,17 +114,17 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
   const shouldHardLoad = items.length <= 0 && !!isLoading;
   const shouldSoftLoad = items.length >= 1 && !!isLoading;
 
-  const SoftLoader = () => (!renderLoader ? <SoftLoaderDefault /> : <>{renderLoader}</>);
+  const SoftLoader = () => (!renderLoader ? <SoftLoaderDefault /> : renderLoader);
   const HardLoader = () =>
-    !renderLoader ? <HardLoaderDefault numOfCols={totalColumns} /> : <>{renderLoader}</>;
+    !renderLoader ? <HardLoaderDefault numOfCols={totalColumns} /> : renderLoader;
 
   return (
     <Box
       sx={{
         ...others,
-        border: "1px solid #EAECF0",
-        rounded: "md",
-        position: "relative",
+        border: '1px solid #EAECF0',
+        rounded: 'md',
+        position: 'relative',
       }}
     >
       {!!renderHeader && (
@@ -126,7 +135,11 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
 
       {shouldSoftLoad && <SoftLoader />}
 
-      <TableContainer data-testid="hds.table.container" aria-busy={isLoading} sx={styles.container}>
+      <TableContainer
+        data-testid="hds.table.container"
+        aria-busy={isLoading}
+        sx={styles.container}
+      >
         <Table data-testid="hds.table" sx={styles.table}>
           <Thead data-testid="hds.table.header">
             <Tr data-testid="hds.table.header.tr">
@@ -140,7 +153,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                     onSort,
                     onCheck,
                     onCheckAll,
-                    defaultSort = "desc",
+                    defaultSort = 'desc',
                   },
                   index,
                 ) => {
@@ -214,7 +227,10 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                 return (
                   <Tr key={uuid()} data-testid="hds.table.body.tr">
                     {columns.map(
-                      ({ onSort, onCheck, onClick, defaultChecked, ...others }, index_1) => {
+                      (
+                        { onSort, onCheck, onClick, defaultChecked, ...others },
+                        index_1,
+                      ) => {
                         const renderRow = others.renderRow ?? ((obj) => String(obj));
 
                         return (
@@ -237,7 +253,9 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                                     setCheckedItems((i) => {
                                       return i.map((j, idx_0) => {
                                         return idx_0 === index_1
-                                          ? j.map((k, idx_1) => (idx_1 === index_0 ? isChecked : k))
+                                          ? j.map((k, idx_1) =>
+                                              idx_1 === index_0 ? isChecked : k,
+                                            )
                                           : j;
                                       });
                                     });
@@ -344,7 +362,7 @@ function SortButton({
 }) {
   const [currentSort, setCurrentSort] = React.useState(value);
   // next sort value
-  const direction = currentSort === "asc" ? "desc" : "asc";
+  const direction = currentSort === 'asc' ? 'desc' : 'asc';
 
   return (
     <chakra.button
@@ -353,7 +371,7 @@ function SortButton({
       display="flex"
       marginLeft="4px"
       transition="transform 300ms ease-in-out"
-      transform={currentSort === "asc" ? "rotate(180deg)" : undefined}
+      transform={currentSort === 'asc' ? 'rotate(180deg)' : undefined}
       onClick={() => {
         setCurrentSort(direction);
         onSort({ direction });

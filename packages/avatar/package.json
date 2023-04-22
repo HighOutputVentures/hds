@@ -1,57 +1,20 @@
 {
-  "version": "0.2.8",
-  "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "engines": {
-    "node": ">=10"
-  },
-  "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "prepublish": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
-    "size": "size-limit",
-    "analyze": "size-limit --why",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
-  "peerDependencies": {
-    "react": ">=16"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
-  "prettier": {
-    "printWidth": 90,
-    "trailingComma": "all"
-  },
   "name": "@highoutput/hds-avatar",
-  "author": "calvo-jp",
-  "module": "dist/hds-avatar.esm.js",
-  "size-limit": [
-    {
-      "path": "dist/hds-avatar.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/hds-avatar.esm.js",
-      "limit": "10 KB"
+  "version": "0.2.8",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
     }
-  ],
-  "jest": {
-    "verbose": true
   },
   "dependencies": {
-    "@highoutput/hds-tooltip": "^0.2.9",
+    "@highoutput/hds-tooltip": "*",
     "uuid": "9.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "gitHead": "be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef"
 }

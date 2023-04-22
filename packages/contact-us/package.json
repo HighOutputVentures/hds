@@ -1,69 +1,22 @@
 {
+  "name": "@highoutput/hds-contact-us",
   "version": "0.2.32",
   "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "engines": {
-    "node": ">=10"
-  },
-  "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "prepublish": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
-    "size": "size-limit",
-    "analyze": "size-limit --why",
-    "generate:types": "chakra-cli tokens ./src/theme/index.ts"
-  },
-  "peerDependencies": {
-    "react": ">=16"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
     }
-  },
-  "prettier": {
-    "printWidth": 90,
-    "trailingComma": "all"
-  },
-  "name": "@highoutput/hds-contact-us",
-  "author": {
-    "name": "Niel Berongoy"
-  },
-  "module": "dist/hds-contact-us.esm.js",
-  "size-limit": [
-    {
-      "path": "dist/hds-contact-us.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/hds-contact-us.esm.js",
-      "limit": "10 KB"
-    }
-  ],
-  "devDependencies": {
-    "@size-limit/preset-small-lib": "7.0.8",
-    "size-limit": "7.0.8"
   },
   "dependencies": {
     "@highoutput/hds-forms": "*",
     "@highoutput/hds-icons": "*",
     "@highoutput/hds-toast": "*",
-    "@hookform/resolvers": "2.9.10",
-    "react-hook-form": "7.38.0",
-    "yup": "0.32.11"
-  },
-  "jest": {
-    "verbose": true,
-    "setupFilesAfterEnv": [
-      "<rootDir>/jest.setup.ts"
-    ]
+    "@hookform/resolvers": "3.1.0",
+    "react-hook-form": "7.43.9",
+    "yup": "1.1.1"
   },
   "publishConfig": {
     "access": "public"

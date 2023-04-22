@@ -1,18 +1,18 @@
-import { chakra, Icon } from "@chakra-ui/react";
+import { chakra, Icon } from '@chakra-ui/react';
 import {
   autoPlacement,
   autoUpdate,
   size as floatingSize,
   useFloating,
   useTransitionStyles,
-} from "@floating-ui/react";
-import { useSelect } from "downshift";
-import * as React from "react";
-import { v4 as uuid } from "uuid";
-import { useStyles } from "../hooks";
-import ChevronDownIcon from "../icons/ChevronDownIcon";
-import CloseIcon from "../icons/CloseIcon";
-import { Nullable, Size } from "../types";
+} from '@floating-ui/react';
+import { useSelect } from 'downshift';
+import * as React from 'react';
+import { v4 as uuid } from 'uuid';
+import { useStyles } from '../hooks';
+import ChevronDownIcon from '../icons/ChevronDownIcon';
+import CloseIcon from '../icons/CloseIcon';
+import { Nullable, Size } from '../types';
 
 export type Option = {
   label: string;
@@ -23,8 +23,8 @@ type RenderOption<T extends Option> = (item: T) => JSX.Element;
 
 export type SelectProps<T extends Option> = {
   size?: Size;
-  value?: Nullable<T["value"]>;
-  onChange?(newValue: Nullable<T["value"]>): void;
+  value?: Nullable<T['value']>;
+  onChange?(newValue: Nullable<T['value']>): void;
   options?: T[];
   placeholder?: string;
   leftIcon?: JSX.Element;
@@ -68,8 +68,8 @@ export default function Select<T extends Option>(props: SelectProps<T>) {
      */
     size,
     leftIcon,
-    __fieldTestId = "hds.select-field.input",
-    __optionTestId = "hds.select-field.option",
+    __fieldTestId = 'hds.select-field.input',
+    __optionTestId = 'hds.select-field.option',
   } = props;
 
   const styles = useStyles({
@@ -107,8 +107,8 @@ export default function Select<T extends Option>(props: SelectProps<T>) {
         },
       }),
       autoPlacement({
-        allowedPlacements: ["bottom", "top"],
-        alignment: "start",
+        allowedPlacements: ['bottom', 'top'],
+        alignment: 'start',
       }),
     ],
     open: isOpen,
@@ -120,8 +120,8 @@ export default function Select<T extends Option>(props: SelectProps<T>) {
     <chakra.div
       sx={{
         _hover: {
-          "& .HdsSelectClearButton": {
-            display: "flex",
+          '& .HdsSelectClearButton': {
+            display: 'flex',
           },
         },
       }}
@@ -129,17 +129,17 @@ export default function Select<T extends Option>(props: SelectProps<T>) {
       <chakra.button
         sx={{
           ...styles.field,
-          width: "full",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          userSelect: "none",
-          textAlign: "left",
-          position: "relative",
+          width: 'full',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          userSelect: 'none',
+          textAlign: 'left',
+          position: 'relative',
           _placeholder: {},
         }}
         {...(isInvalid && {
-          "aria-invalid": true,
+          'aria-invalid': true,
         })}
         {...(isDisabled && {
           disabled: true,
@@ -156,14 +156,14 @@ export default function Select<T extends Option>(props: SelectProps<T>) {
         <chakra.div
           sx={{
             flexGrow: 1,
-            color: "neutrals.500",
+            color: 'neutrals.500',
             ...(isDisabled && {
-              color: "neutrals.300",
+              color: 'neutrals.300',
             }),
             ...(selectedItem && {
-              color: "neutrals.900",
+              color: 'neutrals.900',
               ...(isDisabled && {
-                color: "neutrals.300",
+                color: 'neutrals.300',
               }),
             }),
           }}
@@ -178,7 +178,7 @@ export default function Select<T extends Option>(props: SelectProps<T>) {
             className="HdsSelectClearButton"
             sx={{
               ...styles.clearIcon,
-              display: "none",
+              display: 'none',
             }}
             onClick={(e) => {
               e.preventDefault();
@@ -220,9 +220,9 @@ export default function Select<T extends Option>(props: SelectProps<T>) {
         <chakra.ul
           sx={{
             ...styles.menu,
-            listStyleType: "none",
+            listStyleType: 'none',
             ...(!isOpen && {
-              display: "none",
+              display: 'none',
             }),
           }}
           {...getMenuProps()}

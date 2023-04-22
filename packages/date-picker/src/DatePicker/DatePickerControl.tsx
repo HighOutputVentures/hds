@@ -1,10 +1,10 @@
-import { Icon } from "@chakra-ui/icons";
-import { chakra } from "@chakra-ui/react";
-import { format } from "date-fns";
-import * as React from "react";
-import { useStyles } from "../hooks";
-import ChevronLeftIcon from "../icons/ChevronLeftIcon";
-import ChevronRightIcon from "../icons/ChevronRightIcon";
+import { Icon } from '@chakra-ui/icons';
+import { chakra } from '@chakra-ui/react';
+import { format } from 'date-fns';
+import * as React from 'react';
+import { useStyles } from '../hooks';
+import ChevronLeftIcon from '../icons/ChevronLeftIcon';
+import ChevronRightIcon from '../icons/ChevronRightIcon';
 
 export type DatePickerControl = {
   value: Date;
@@ -21,7 +21,7 @@ export function DatePickerControl({ value, onNext, onPrev }: DatePickerControl) 
         <Icon as={ChevronLeftIcon} sx={styles.calendarControlIcon()} />
       </chakra.button>
 
-      <chakra.p sx={styles.calendarControlLabel()}>{format(value, "MMMM")}</chakra.p>
+      <chakra.p sx={styles.calendarControlLabel()}>{format(value, 'MMMM')}</chakra.p>
 
       <chakra.button onClick={onNext} tabIndex={-1} sx={styles.calendarControlButton()}>
         <Icon as={ChevronRightIcon} sx={styles.calendarControlIcon()} />

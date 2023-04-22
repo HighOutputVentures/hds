@@ -4,14 +4,14 @@ import {
   RangeSliderThumb,
   RangeSliderTrack,
   Tooltip,
-} from "@chakra-ui/react";
-import * as React from "react";
-import { useStyles } from "./hooks";
-import type { SliderProps } from "./Slider";
+} from '@chakra-ui/react';
+import * as React from 'react';
+import { useStyles } from './hooks';
+import type { SliderProps } from './Slider';
 
 type RangeSliderValue = [number, number];
 
-type InheritedSliderProps = Omit<SliderProps, "onChange" | "defaultValue">;
+type InheritedSliderProps = Omit<SliderProps, 'onChange' | 'defaultValue'>;
 
 type RangeBaseProps = {
   onChange?: (newValue: RangeSliderValue) => void;
@@ -45,7 +45,7 @@ export default React.forwardRef<HTMLDivElement, RangeSliderProps>(function HdsRa
       min={min}
       max={max}
       step={step}
-      aria-label={["Min value", "Max value"]}
+      aria-label={['Min value', 'Max value']}
       orientation="horizontal"
       defaultValue={defaultValue}
       data-testid="hds.range-slider"

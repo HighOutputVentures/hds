@@ -26,80 +26,79 @@ export type BreadcrumbProps = {
   withAccent?: boolean;
 };
 
-export default React.forwardRef<
-  HTMLDivElement,
-  BreadcrumbProps & SystemStyleObject
->(function HdsBreadcrumbs(props, ref) {
-  const {
-    as,
-    items,
-    homeHref,
-    withAccent,
-    separator = (
-      <Icon
-        as={ChevronRightIcon}
-        width={5}
-        height={5}
-        color="#D6D6D6"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-      />
-    ),
-    ...others
-  } = props;
+export default React.forwardRef<HTMLDivElement, BreadcrumbProps & SystemStyleObject>(
+  function HdsBreadcrumbs(props, ref) {
+    const {
+      as,
+      items,
+      homeHref,
+      withAccent,
+      separator = (
+        <Icon
+          as={ChevronRightIcon}
+          width={5}
+          height={5}
+          color="#D6D6D6"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        />
+      ),
+      ...others
+    } = props;
 
-  const styles = useStyles({ withAccent });
-  const shouldShowHome = !!homeHref;
-  const shouldSelectHome = !items?.some((o) => !!o.isActive);
+    const styles = useStyles({ withAccent });
+    const shouldShowHome = !!homeHref;
+    const shouldSelectHome = !items?.some((o) => !!o.isActive);
 
-  return (
-    <Breadcrumb
-      ref={ref}
-      spacing="14px"
-      fontSize="14px"
-      lineHeight="14px"
-      color="#7A7A7A"
-      separator={separator}
-      data-testid="hds.breadcrumb"
-      sx={others}
-    >
-      {shouldShowHome && (
-        <BreadcrumbItem>
-          <BreadcrumbLink
-            as={as}
-            href={homeHref}
-            isCurrentPage={shouldSelectHome}
-            sx={styles.link()}
-          >
-            <Icon as={HomeIcon} w={4} h={4} />
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-      )}
+    return (
+      <Breadcrumb
+        ref={ref}
+        spacing="14px"
+        fontSize="14px"
+        lineHeight="14px"
+        color="#7A7A7A"
+        separator={separator}
+        data-testid="hds.breadcrumb"
+        sx={others}
+      >
+        {shouldShowHome && (
+          <BreadcrumbItem>
+            <BreadcrumbLink
+              as={as}
+              href={homeHref}
+              isCurrentPage={shouldSelectHome}
+              sx={styles.link()}
+            >
+              <Icon as={HomeIcon} w={4} h={4} />
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+        )}
 
-      {items?.map(({ label, href, isActive, isDisabled }) => (
-        <BreadcrumbItem key={uuid()}>
-          <BreadcrumbLink
-            as={as}
-            href={href}
-            isCurrentPage={isActive}
-            onClick={(e) => {
-              if (isDisabled) {
-                e.preventDefault();
-              }
-            }}
-            sx={styles.link({
-              isActive,
-              isDisabled,
-            })}
-          >
-            {label}
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-      ))}
-    </Breadcrumb>
-  );
-});
+        {items?.map(({ label, href, isActive, isDisabled }) => (
+          <BreadcrumbItem key={uuid()}>
+            <BreadcrumbLink
+              as={as}
+              href={href}
+              isCurrentPage={isActive}
+              onClick={(e) => {
+                if (isDisabled) {
+                  e.preventDefault();
+                }
+              }}
+              sx={styles.link({
+                isActive,
+                isDisabled,
+              })}
+            >
+              {label}
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+        ))}
+      </Breadcrumb>
+    );
+  },
+);
 
 function useStyles({ withAccent }: { withAccent?: boolean } = {}) {
   return {

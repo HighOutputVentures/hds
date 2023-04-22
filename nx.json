@@ -1,30 +1,34 @@
 {
-  "extends": "nx/presets/npm.json",
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/nx-cloud",
+      "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "test",
-          "lint",
-          "size",
-          "analyze",
-          "storybook",
-          "build-storybook",
-          "chromatic",
-          "generate:types"
-        ],
-        "accessToken": "NDg5YjM1ZTEtMTNlYS00MjI5LWJjZjYtZTI0NmE2MmM3NDU4fHJlYWQtd3JpdGU="
+        "cacheableOperations": ["build", "lint", "test", "build-storybook"]
+      }
+    }
+  },
+  "extends": "nx/presets/npm.json",
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      },
+      "library": {
+        "unitTestRunner": "jest"
       }
     }
   },
   "targetDefaults": {
-    "build": {
-      "dependsOn": ["^build"]
+    "lint": {
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/.eslintignore"
+      ]
+    },
+    "test": {
+      "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"]
     }
-  },
-  "affected": {
-    "defaultBase": "master"
   }
 }

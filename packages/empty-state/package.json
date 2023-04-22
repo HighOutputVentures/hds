@@ -1,50 +1,20 @@
 {
+  "name": "@highoutput/hds-empty-state",
   "version": "0.1.13",
   "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "engines": {
-    "node": ">=10"
-  },
-  "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test",
-    "prepublish": "tsdx build",
-    "lint": "tsdx lint",
-    "size": "size-limit",
-    "analyze": "size-limit --why"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
     }
   },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "name": "@highoutput/hds-empty-state",
-  "author": "jadekenneth.github.io",
-  "module": "dist/hds-empty-state.esm.js",
-  "size-limit": [
-    {
-      "path": "dist/hds-empty-state.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/hds-empty-state.esm.js",
-      "limit": "10 KB"
-    }
-  ],
   "dependencies": {
-    "@highoutput/hds-icons": "^0.2.3"
+    "@highoutput/hds-icons": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "gitHead": "be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef"
 }

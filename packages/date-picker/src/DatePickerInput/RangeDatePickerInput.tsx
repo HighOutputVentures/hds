@@ -4,24 +4,24 @@ import {
   SystemStyleObject,
   useDisclosure,
   useOutsideClick,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 import {
   autoPlacement,
   autoUpdate,
   useFloating,
   useTransitionStyles,
-} from "@floating-ui/react";
-import { TextField } from "@highoutput/hds-forms";
-import { format } from "date-fns";
-import * as React from "react";
-import { RangeDatePicker } from "../DatePicker/RangeDatePicker";
-import CalendarIcon from "../icons/CalendarIcon";
-import { DateRange } from "../types";
-import { noop } from "../utils";
-import { ClearButton } from "./ClearButton";
-import { DatePickerInputProps } from "./DatePickerInput";
+} from '@floating-ui/react';
+import { TextField } from '@highoutput/hds-forms';
+import { format } from 'date-fns';
+import * as React from 'react';
+import { RangeDatePicker } from '../DatePicker/RangeDatePicker';
+import CalendarIcon from '../icons/CalendarIcon';
+import { DateRange } from '../types';
+import { noop } from '../utils';
+import { ClearButton } from './ClearButton';
+import { DatePickerInputProps } from './DatePickerInput';
 
-type BaseProps = Omit<DatePickerInputProps, "value" | "onChange" | "dateFormat">;
+type BaseProps = Omit<DatePickerInputProps, 'value' | 'onChange' | 'dateFormat'>;
 
 export type RangeDatePickerInputProps = BaseProps & {
   value?: DateRange;
@@ -33,7 +33,7 @@ type StylingProps = Omit<SystemStyleObject, keyof Required<RangeDatePickerInputP
 
 export function RangeDatePickerInput({
   id,
-  size = "md",
+  size = 'md',
   name,
   value,
   onChange = noop,
@@ -57,12 +57,12 @@ export function RangeDatePickerInput({
       autoPlacement({
         allowedPlacements: [
           /* ⚠️ order matters here */
-          "bottom-start",
-          "bottom-end",
-          "top-start",
-          "top-end",
+          'bottom-start',
+          'bottom-end',
+          'top-start',
+          'top-end',
         ],
-        alignment: "start",
+        alignment: 'start',
       }),
     ],
     open: isOpen && !isReadOnly,
@@ -77,17 +77,17 @@ export function RangeDatePickerInput({
       if (!dateFormat) {
         const str: string[] = [];
 
-        if (d.start) str.push(format(d.start, "MMM dd, yyyy"));
-        if (d.until) str.push(format(d.until, "MMM dd, yyyy"));
+        if (d.start) str.push(format(d.start, 'MMM dd, yyyy'));
+        if (d.until) str.push(format(d.until, 'MMM dd, yyyy'));
 
-        return str.join(" - ");
-      } else if (typeof dateFormat === "string") {
+        return str.join(' - ');
+      } else if (typeof dateFormat === 'string') {
         let str: string[] = [];
 
         if (d.start) str.push(format(d.start, dateFormat));
         if (d.until) str.push(format(d.until, dateFormat));
 
-        return str.join(" - ");
+        return str.join(' - ');
       } else {
         return dateFormat(d);
       }
@@ -101,8 +101,8 @@ export function RangeDatePickerInput({
         ref={refs.setReference}
         sx={{
           _hover: {
-            "& .HdsRangeDatePickerInputClearButton": {
-              display: "flex!important",
+            '& .HdsRangeDatePickerInputClearButton': {
+              display: 'flex!important',
             },
           },
         }}
@@ -113,7 +113,7 @@ export function RangeDatePickerInput({
           id={id}
           size={size}
           name={name}
-          value={value ? dateToString(value) : ""}
+          value={value ? dateToString(value) : ''}
           placeholder={placeholder}
           isReadOnly={isReadOnly}
           isDisabled={isDisabled}
@@ -152,7 +152,7 @@ export function RangeDatePickerInput({
             top: `${y ?? 0}px`,
             left: `${x ?? 0}px`,
             position: strategy,
-            marginTop: "1px",
+            marginTop: '1px',
             /*
              * only calendar needs the zIndex
              */

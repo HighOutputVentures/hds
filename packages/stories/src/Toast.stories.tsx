@@ -1,0 +1,47 @@
+import { HStack } from '@chakra-ui/react';
+import { ThemeProvider } from '@highoutput/hds';
+import { Button } from '@highoutput/hds-forms';
+import { useToast } from '@highoutput/hds-toast';
+import { Meta, StoryFn } from '@storybook/react';
+
+const Story: Meta = {
+  title: 'Components/Toast',
+  argTypes: {},
+};
+
+export default Story;
+
+const Template: StoryFn<any> = () => {
+  const toast = useToast();
+
+  return (
+    <ThemeProvider>
+      <HStack align="start" spacing={4}>
+        <Button
+          variant="outline"
+          accent="gray"
+          width="100px"
+          onClick={() => {
+            toast.success('This is a success toast');
+          }}
+        >
+          Success
+        </Button>
+        <Button
+          variant="outline"
+          accent="gray"
+          width="100px"
+          onClick={() => {
+            toast.error('This is an error toast.');
+          }}
+        >
+          Error
+        </Button>
+      </HStack>
+    </ThemeProvider>
+  );
+};
+
+export const Default = Template.bind({});
+
+Default.args = {};

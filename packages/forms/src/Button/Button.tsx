@@ -1,10 +1,10 @@
 import {
   Button as ChakraButton,
   ButtonProps as ChakraButtonProps,
-} from "@chakra-ui/react";
-import * as React from "react";
-import { useStyles } from "./hooks";
-import { Accent, Prettify, Size, Variant } from "./types";
+} from '@chakra-ui/react';
+import * as React from 'react';
+import { useStyles } from './hooks';
+import { Accent, Prettify, Size, Variant } from './types';
 
 /* prettier-ignore */
 type Picked = Omit<
@@ -38,12 +38,12 @@ export default React.forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   ref,
 ) {
   const {
-    size = "md",
-    accent = "primary",
-    variant = "solid",
+    size = 'md',
+    accent = 'primary',
+    variant = 'solid',
     children = null,
     forceAccent = false,
-    __testId = "hds.button",
+    __testId = 'hds.button',
     ...others
   } = props;
 
@@ -55,12 +55,7 @@ export default React.forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   });
 
   return (
-    <ChakraButton
-      ref={ref}
-      {...others}
-      sx={styles.button}
-      data-testid={__testId}
-    >
+    <ChakraButton ref={ref} {...others} sx={styles.button} data-testid={__testId}>
       {props.children}
     </ChakraButton>
   );

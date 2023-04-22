@@ -1,24 +1,23 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import { act, fireEvent, render, waitFor } from "@testing-library/react";
-import * as React from "react";
-import SelectField, { SelectFieldProps } from "./SelectField";
+import { ChakraProvider } from '@chakra-ui/react';
+import { act, fireEvent, render, waitFor } from '@testing-library/react';
+import SelectField, { SelectFieldProps } from './SelectField';
 
 const options = [
   {
-    label: "One",
+    label: 'One',
     value: 1,
   },
   {
-    label: "Two",
+    label: 'Two',
     value: 2,
   },
   {
-    label: "Three",
+    label: 'Three',
     value: 3,
   },
 ];
 
-describe("SelectField", () => {
+describe('SelectField', () => {
   const renderComponent = (props: SelectFieldProps<any> = {}) => {
     return render(
       <ChakraProvider>
@@ -30,19 +29,17 @@ describe("SelectField", () => {
   it("Should render 'SelectField'", () => {
     const { getByTestId } = renderComponent({ options });
 
-    expect(getByTestId("hds.select-field.input")).toBeInTheDocument();
+    expect(getByTestId('hds.select-field.input')).toBeInTheDocument();
   });
 
-  it("Should render options", async () => {
+  it('Should render options', async () => {
     const { getByTestId, getAllByTestId } = renderComponent({ options });
 
     await act(async () => {
-      fireEvent.click(getByTestId("hds.select-field.input"));
+      fireEvent.click(getByTestId('hds.select-field.input'));
     });
 
-    expect(getAllByTestId("hds.select-field.option")).toHaveLength(
-      options.length,
-    );
+    expect(getAllByTestId('hds.select-field.option')).toHaveLength(options.length);
   });
 
   it("'onChange' event", async () => {
@@ -53,18 +50,16 @@ describe("SelectField", () => {
       onChange,
     });
 
-    const field = getByTestId("hds.select-field.input");
+    const field = getByTestId('hds.select-field.input');
 
     await act(async () => {
       fireEvent.click(field);
     });
 
-    expect(getAllByTestId("hds.select-field.option")).toHaveLength(
-      options.length,
-    );
+    expect(getAllByTestId('hds.select-field.option')).toHaveLength(options.length);
 
     await act(async () => {
-      fireEvent.click(getAllByTestId("hds.select-field.option")[0]);
+      fireEvent.click(getAllByTestId('hds.select-field.option')[0]);
     });
 
     await waitFor(() => {

@@ -61,16 +61,17 @@ export interface UploadNotificationProps extends MainNotificationsProps {
   createdAt?: never;
   type: 'upload';
 }
-export type NotificationsProps =
-  ( PrimaryNotificationProps
+export type NotificationsProps = (
+  | PrimaryNotificationProps
   | AvatarNotificationProps
   | ImageNotificationProps
-  | UploadNotificationProps) & {
-    __notificationContainerTestId?: string;
-    __notificationLinkTestId?: string;
-    __notificationMessageTestId?: string;
-    __notificationTitleTestId?: string;
-  };
+  | UploadNotificationProps
+) & {
+  __notificationContainerTestId?: string;
+  __notificationLinkTestId?: string;
+  __notificationMessageTestId?: string;
+  __notificationTitleTestId?: string;
+};
 const Notification = (props: NotificationsProps) => {
   const {
     alertLabel,
@@ -88,7 +89,7 @@ const Notification = (props: NotificationsProps) => {
     __notificationContainerTestId,
     __notificationLinkTestId,
     __notificationMessageTestId,
-    __notificationTitleTestId
+    __notificationTitleTestId,
   } = props;
   if (!isOpen) return null;
   return (
@@ -106,7 +107,7 @@ const Notification = (props: NotificationsProps) => {
       gap={'16px'}
       borderRadius={'8px'}
       overflow="hidden"
-      data-testid={__notificationContainerTestId ?? "hds.notification.container"}
+      data-testid={__notificationContainerTestId ?? 'hds.notification.container'}
     >
       {type === 'avatar' && (
         <Avatar src={avatar} width="40px" height="40px">
@@ -114,9 +115,7 @@ const Notification = (props: NotificationsProps) => {
         </Avatar>
       )}
       {icon && <Icon as={icon} width="40px" height="40px" />}
-      {type === 'upload' && (
-        <Icon as={UploadIcon} width={'46px'} height={'46px'} />
-      )}
+      {type === 'upload' && <Icon as={UploadIcon} width={'46px'} height={'46px'} />}
       <Flex direction="column" ml={['0', type === 'image' ? '100px' : '0']}>
         <HStack spacing={'8px'} alignContent="center" mb="4px">
           <Text
@@ -125,13 +124,18 @@ const Notification = (props: NotificationsProps) => {
             lineHeight={' 14px'}
             letterSpacing={'0.02em '}
             color="neutrals.900"
-            data-testid={__notificationTitleTestId ?? "hds.notification.title"}
+            data-testid={__notificationTitleTestId ?? 'hds.notification.title'}
           >
             {title}
           </Text>
           {createdAt && <Text size="paragraph-xs-default">{createdAt}</Text>}
         </HStack>
-        <Text size="paragraph-xs-default" data-testid={__notificationMessageTestId ?? 'hds.notification.message'} mb="16px" color="neutrals.600">
+        <Text
+          size="paragraph-xs-default"
+          data-testid={__notificationMessageTestId ?? 'hds.notification.message'}
+          mb="16px"
+          color="neutrals.600"
+        >
           {supportingDetail}
         </Text>
         {type === 'upload' && (

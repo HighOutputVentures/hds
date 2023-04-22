@@ -8,12 +8,12 @@ import {
   Spacer,
   SystemStyleObject,
   Text,
-} from "@chakra-ui/react";
-import { ArrowLeftIcon, ArrowRightIcon, ChevronDownIcon } from "@highoutput/hds-icons";
-import * as React from "react";
-import { v4 as uuid } from "uuid";
-import { useStyles } from "./hooks";
-import { decrement, increment } from "./utils";
+} from '@chakra-ui/react';
+import { ArrowLeftIcon, ArrowRightIcon, ChevronDownIcon } from '@highoutput/hds-icons';
+import * as React from 'react';
+import { v4 as uuid } from 'uuid';
+import { useStyles } from './hooks';
+import { decrement, increment } from './utils';
 
 type Value = {
   page: number;
@@ -49,7 +49,7 @@ export default function RelayPagination({
   isPreviousLoading,
   ...others
 }: RelayPaginationProps) {
-  const styles = useStyles("relay");
+  const styles = useStyles('relay');
 
   const remainder = count % pageSize;
   const indexFrom = count <= 0 ? 0 : (page - 1) * pageSize + 1;
@@ -92,7 +92,8 @@ export default function RelayPagination({
           role="status"
           aria-live="polite"
         >
-          Page {indexFrom} - {indexTo > count ? indexFrom - 1 + remainder : indexTo} of {count}
+          Page {indexFrom} - {indexTo > count ? indexFrom - 1 + remainder : indexTo} of{' '}
+          {count}
         </Text>
 
         <Spacer />

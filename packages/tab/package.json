@@ -1,59 +1,20 @@
 {
+  "name": "@highoutput/hds-tab",
   "version": "0.2.14",
   "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "engines": {
-    "node": ">=10"
-  },
-  "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "prepublish": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
-    "size": "size-limit",
-    "analyze": "size-limit --why",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
-  "peerDependencies": {
-    "react": ">=16"
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
   },
   "dependencies": {
     "uuid": "9.0.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": true,
-    "trailingComma": "all"
-  },
-  "name": "@highoutput/hds-tab",
-  "author": "John Christopher Go",
-  "module": "dist/hds-tab.esm.js",
-  "size-limit": [
-    {
-      "path": "dist/hds-tab.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/hds-tab.esm.js",
-      "limit": "10 KB"
-    }
-  ],
-  "jest": {
-    "setupFilesAfterEnv": [
-      "@testing-library/jest-dom/extend-expect"
-    ]
+  "publishConfig": {
+    "access": "public"
   },
   "gitHead": "be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef"
 }

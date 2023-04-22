@@ -1,20 +1,20 @@
-import * as React from "react";
-import GroupPagination, { GroupPaginationProps } from "./GroupPagination";
-import MinimalPagination, { MinimalPaginationProps } from "./MinimalPagination";
-import RelayPagination, { RelayPaginationProps } from "./RelayPagination";
+import * as React from 'react';
+import GroupPagination, { GroupPaginationProps } from './GroupPagination';
+import MinimalPagination, { MinimalPaginationProps } from './MinimalPagination';
+import RelayPagination, { RelayPaginationProps } from './RelayPagination';
 
 export type PaginationProps =
-  | ({ variant: "minimal" } & MinimalPaginationProps)
-  | ({ variant: "relay" } & RelayPaginationProps)
-  | ({ variant: "group" } & GroupPaginationProps);
+  | ({ variant: 'minimal' } & MinimalPaginationProps)
+  | ({ variant: 'relay' } & RelayPaginationProps)
+  | ({ variant: 'group' } & GroupPaginationProps);
 
 export default function Pagination(props: PaginationProps) {
   switch (props.variant) {
-    case "minimal":
+    case 'minimal':
       return <MinimalPagination {...props} />;
-    case "group":
+    case 'group':
       return <GroupPagination {...props} />;
-    case "relay":
+    case 'relay':
       return <RelayPagination {...props} />;
     default:
       throw new Error("Unsupported pagination 'variant'");

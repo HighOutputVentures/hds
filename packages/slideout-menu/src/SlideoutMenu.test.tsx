@@ -11,7 +11,7 @@ describe('SlideoutMenu', () => {
             Open
           </button>
         )}
-      />
+      />,
     );
 
     const triggerBtn = getByRole('button', { name: 'Open' });
@@ -29,7 +29,7 @@ describe('SlideoutMenu', () => {
             Open
           </button>
         )}
-      />
+      />,
     );
     const triggerBtn = getByRole('button', { name: 'Open' });
 
@@ -44,7 +44,7 @@ describe('SlideoutMenu', () => {
             Open
           </button>
         )}
-      />
+      />,
     );
 
     const triggerBtn = getByRole('button', { name: 'Open' });
@@ -65,7 +65,7 @@ describe('SlideoutMenu', () => {
             Open
           </button>
         )}
-      />
+      />,
     );
 
     const triggerBtn = getByRole('button', { name: 'Open' });
@@ -87,7 +87,7 @@ describe('SlideoutMenu', () => {
         )}
       >
         {text}
-      </SlideoutMenu>
+      </SlideoutMenu>,
     );
 
     const triggerBtn = getByRole('button', { name: 'Open' });
@@ -108,7 +108,7 @@ describe('SlideoutMenu', () => {
           </button>
         )}
         renderFooter={footerText}
-      />
+      />,
     );
 
     const triggerBtn = getByRole('button', { name: 'Open' });

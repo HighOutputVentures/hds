@@ -1,9 +1,9 @@
-import { chakra, Stack, SystemStyleObject } from "@chakra-ui/react";
-import { Button, PasswordField, TextField } from "@highoutput/hds-forms";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as React from "react";
-import { useForm } from "react-hook-form";
-import { EmailPasswordLoginSchema, TEmailPasswordLoginSchema } from "./validators";
+import { chakra, Stack, SystemStyleObject } from '@chakra-ui/react';
+import { Button, PasswordField, TextField } from '@highoutput/hds-forms';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as React from 'react';
+import { useForm } from 'react-hook-form';
+import { EmailPasswordLoginSchema, TEmailPasswordLoginSchema } from './validators';
 
 type FieldConfig = {
   label?: string;
@@ -33,9 +33,9 @@ export const EmailPasswordLoginForm: React.FC<EmailPasswordLoginFormProps> = ({
   renderFooter,
   onSubmit,
 
-  __emailAddTestId = "hds.credential-login.input.email",
-  __passwordTestId = "hds.credential-login.input.password",
-  __submitBtnTestId = "hds.credential-login.submit-button",
+  __emailAddTestId = 'hds.credential-login.input.email',
+  __passwordTestId = 'hds.credential-login.input.password',
+  __submitBtnTestId = 'hds.credential-login.submit-button',
 
   ...others
 }) => {
@@ -44,15 +44,15 @@ export const EmailPasswordLoginForm: React.FC<EmailPasswordLoginFormProps> = ({
     shouldUnregister: true,
     resolver: yupResolver(EmailPasswordLoginSchema),
     defaultValues: {
-      password: "",
-      emailAddress: "",
+      password: '',
+      emailAddress: '',
     },
   });
 
   return (
     <chakra.div
       sx={{
-        maxW: "400px",
+        maxW: '400px',
         ...others,
       }}
       data-testid="hds.credential-login"
@@ -67,7 +67,7 @@ export const EmailPasswordLoginForm: React.FC<EmailPasswordLoginFormProps> = ({
             error={formState.errors.emailAddress?.message}
             isDisabled={formState.isSubmitting}
             __fieldTestId={__emailAddTestId}
-            {...register("emailAddress")}
+            {...register('emailAddress')}
           />
 
           <PasswordField
@@ -77,7 +77,7 @@ export const EmailPasswordLoginForm: React.FC<EmailPasswordLoginFormProps> = ({
             error={formState.errors.password?.message}
             isDisabled={formState.isSubmitting}
             __fieldTestId={__passwordTestId}
-            {...register("password")}
+            {...register('password')}
           />
         </Stack>
 
@@ -88,7 +88,7 @@ export const EmailPasswordLoginForm: React.FC<EmailPasswordLoginFormProps> = ({
           isLoading={formState.isSubmitting}
           __testId={__submitBtnTestId}
         >
-          {submitBtn?.label ?? "Login"}
+          {submitBtn?.label ?? 'Login'}
         </Button>
       </chakra.form>
 

@@ -1,12 +1,12 @@
-import { Box, Center, chakra, Text } from "@chakra-ui/react";
-import { Button, MultilineField, TextField } from "@highoutput/hds-forms";
-import { HovIcon } from "@highoutput/hds-icons";
-import { useToast } from "@highoutput/hds-toast";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as React from "react";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { postJson } from "./utils";
+import { Box, Center, chakra, Text } from '@chakra-ui/react';
+import { Button, MultilineField, TextField } from '@highoutput/hds-forms';
+import { HovIcon } from '@highoutput/hds-icons';
+import { useToast } from '@highoutput/hds-toast';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as React from 'react';
+import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import { postJson } from './utils';
 
 export interface ContactUsProps {
   /**
@@ -23,10 +23,10 @@ export const ContactUs: React.FC<ContactUsProps> = ({ url }) => {
     shouldUnregister: true,
     resolver: yupResolver(schema),
     defaultValues: {
-      emailAddress: "",
-      message: "",
+      emailAddress: '',
+      message: '',
       details: {
-        name: "",
+        name: '',
       },
     },
   });
@@ -34,10 +34,10 @@ export const ContactUs: React.FC<ContactUsProps> = ({ url }) => {
   const onSubmit = handleSubmit(async (data) => {
     try {
       await postJson(url, data);
-      toast.success("Message successfully sent!");
+      toast.success('Message successfully sent!');
       reset();
     } catch (error) {
-      toast.error("Oops, Something went wrong.");
+      toast.error('Oops, Something went wrong.');
     }
   });
 
@@ -120,7 +120,7 @@ export const ContactUs: React.FC<ContactUsProps> = ({ url }) => {
             error={formState.errors.details?.name?.message}
             placeholder="Input your name"
             __fieldTestId="hds.contact-us.form.input.name"
-            {...register("details.name")}
+            {...register('details.name')}
           />
 
           <TextField
@@ -128,7 +128,7 @@ export const ContactUs: React.FC<ContactUsProps> = ({ url }) => {
             error={formState.errors.emailAddress?.message}
             placeholder="Input your email address"
             __fieldTestId="hds.contact-us.form.input.email"
-            {...register("emailAddress")}
+            {...register('emailAddress')}
           />
 
           <MultilineField
@@ -136,7 +136,7 @@ export const ContactUs: React.FC<ContactUsProps> = ({ url }) => {
             error={formState.errors.message?.message}
             placeholder="Enter description"
             __fieldTestId="hds.contact-us.form.input.message"
-            {...register("message")}
+            {...register('message')}
           />
 
           <Button
@@ -157,12 +157,12 @@ const schema = yup
   .object({
     emailAddress: yup
       .string()
-      .email("Please enter a valid email address.")
-      .required("Email is required."),
-    message: yup.string().required("Description is required."),
+      .email('Please enter a valid email address.')
+      .required('Email is required.'),
+    message: yup.string().required('Description is required.'),
     details: yup
       .object({
-        name: yup.string().required("Name is required."),
+        name: yup.string().required('Name is required.'),
       })
       .required(),
   })

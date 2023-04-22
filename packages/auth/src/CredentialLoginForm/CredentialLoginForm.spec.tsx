@@ -1,8 +1,8 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import { faker } from "@faker-js/faker";
-import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
-import * as React from "react";
-import CredentialLoginForm from "./CredentialLoginForm";
+import { ChakraProvider } from '@chakra-ui/react';
+import { faker } from '@faker-js/faker';
+import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import * as React from 'react';
+import CredentialLoginForm from './CredentialLoginForm';
 
 const onSubmit1 = jest.fn();
 const onSubmit2 = jest.fn();
@@ -17,7 +17,7 @@ const input2 = {
   password: faker.lorem.word({ length: { min: 8, max: 16 } }),
 };
 
-describe("CredentialLoginForm (email-password)", () => {
+describe('CredentialLoginForm (email-password)', () => {
   afterEach(cleanup);
   beforeEach(() => {
     render(
@@ -27,35 +27,35 @@ describe("CredentialLoginForm (email-password)", () => {
     );
   });
 
-  it("Should render email field", () => {
-    expect(screen.getByTestId("hds.credential-login.input.email")).toBeInTheDocument();
+  it('Should render email field', () => {
+    expect(screen.getByTestId('hds.credential-login.input.email')).toBeInTheDocument();
   });
 
-  it("Should render password field", () => {
-    expect(screen.getByTestId("hds.credential-login.input.password")).toBeInTheDocument();
+  it('Should render password field', () => {
+    expect(screen.getByTestId('hds.credential-login.input.password')).toBeInTheDocument();
   });
 
-  it("Should render button", () => {
-    expect(screen.getByTestId("hds.credential-login.submit-button")).toBeInTheDocument();
+  it('Should render button', () => {
+    expect(screen.getByTestId('hds.credential-login.submit-button')).toBeInTheDocument();
   });
 
-  it("Should validate fields", async () => {
+  it('Should validate fields', async () => {
     await act(async () => {
-      fireEvent.click(screen.getByTestId("hds.credential-login.submit-button"));
+      fireEvent.click(screen.getByTestId('hds.credential-login.submit-button'));
     });
 
     await waitFor(() => {
-      const email = screen.getByTestId("hds.credential-login.input.email");
-      const password = screen.getByTestId("hds.credential-login.input.password");
+      const email = screen.getByTestId('hds.credential-login.input.email');
+      const password = screen.getByTestId('hds.credential-login.input.password');
 
-      expect(email).toHaveAttribute("aria-invalid");
-      expect(password).toHaveAttribute("aria-invalid");
+      expect(email).toHaveAttribute('aria-invalid');
+      expect(password).toHaveAttribute('aria-invalid');
     });
   });
 
   test("'onSubmit'", async () => {
     await act(async () => {
-      fireEvent.change(screen.getByTestId("hds.credential-login.input.email"), {
+      fireEvent.change(screen.getByTestId('hds.credential-login.input.email'), {
         target: {
           value: input1.emailAddress,
         },
@@ -63,7 +63,7 @@ describe("CredentialLoginForm (email-password)", () => {
     });
 
     await act(async () => {
-      fireEvent.change(screen.getByTestId("hds.credential-login.input.password"), {
+      fireEvent.change(screen.getByTestId('hds.credential-login.input.password'), {
         target: {
           value: input1.password,
         },
@@ -71,7 +71,7 @@ describe("CredentialLoginForm (email-password)", () => {
     });
 
     await act(async () => {
-      fireEvent.click(screen.getByTestId("hds.credential-login.submit-button"));
+      fireEvent.click(screen.getByTestId('hds.credential-login.submit-button'));
     });
 
     await waitFor(() => {
@@ -80,7 +80,7 @@ describe("CredentialLoginForm (email-password)", () => {
   });
 });
 
-describe("CredentialLoginForm (name-password)", () => {
+describe('CredentialLoginForm (name-password)', () => {
   afterEach(cleanup);
   beforeEach(() => {
     render(
@@ -90,35 +90,35 @@ describe("CredentialLoginForm (name-password)", () => {
     );
   });
 
-  it("Should render username field", () => {
-    expect(screen.getByTestId("hds.credential-login.input.username")).toBeInTheDocument();
+  it('Should render username field', () => {
+    expect(screen.getByTestId('hds.credential-login.input.username')).toBeInTheDocument();
   });
 
-  it("Should render password field", () => {
-    expect(screen.getByTestId("hds.credential-login.input.password")).toBeInTheDocument();
+  it('Should render password field', () => {
+    expect(screen.getByTestId('hds.credential-login.input.password')).toBeInTheDocument();
   });
 
-  it("Should render button", () => {
-    expect(screen.getByTestId("hds.credential-login.submit-button")).toBeInTheDocument();
+  it('Should render button', () => {
+    expect(screen.getByTestId('hds.credential-login.submit-button')).toBeInTheDocument();
   });
 
-  it("Should validate fields", async () => {
+  it('Should validate fields', async () => {
     await act(async () => {
-      fireEvent.click(screen.getByTestId("hds.credential-login.submit-button"));
+      fireEvent.click(screen.getByTestId('hds.credential-login.submit-button'));
     });
 
     await waitFor(() => {
-      const username = screen.getByTestId("hds.credential-login.input.username");
-      const password = screen.getByTestId("hds.credential-login.input.password");
+      const username = screen.getByTestId('hds.credential-login.input.username');
+      const password = screen.getByTestId('hds.credential-login.input.password');
 
-      expect(username).toHaveAttribute("aria-invalid");
-      expect(password).toHaveAttribute("aria-invalid");
+      expect(username).toHaveAttribute('aria-invalid');
+      expect(password).toHaveAttribute('aria-invalid');
     });
   });
 
   test("'onSubmit'", async () => {
     await act(async () => {
-      fireEvent.change(screen.getByTestId("hds.credential-login.input.username"), {
+      fireEvent.change(screen.getByTestId('hds.credential-login.input.username'), {
         target: {
           value: input2.username,
         },
@@ -126,7 +126,7 @@ describe("CredentialLoginForm (name-password)", () => {
     });
 
     await act(async () => {
-      fireEvent.change(screen.getByTestId("hds.credential-login.input.password"), {
+      fireEvent.change(screen.getByTestId('hds.credential-login.input.password'), {
         target: {
           value: input2.password,
         },
@@ -134,7 +134,7 @@ describe("CredentialLoginForm (name-password)", () => {
     });
 
     await act(async () => {
-      fireEvent.click(screen.getByTestId("hds.credential-login.submit-button"));
+      fireEvent.click(screen.getByTestId('hds.credential-login.submit-button'));
     });
 
     await waitFor(() => {

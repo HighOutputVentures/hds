@@ -1,54 +1,18 @@
 {
+  "name": "@highoutput/hds-modal",
   "version": "0.2.24",
   "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "engines": {
-    "node": ">=10"
-  },
-  "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "prepublish": "tsdx build",
-    "test": "tsdx test",
-    "lint": "tsdx lint",
-    "size": "size-limit",
-    "analyze": "size-limit --why"
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
   },
   "dependencies": {
     "@highoutput/hds-forms": "*"
   },
-  "peerDependencies": {
-    "react": ">=16"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "name": "@highoutput/hds-modal",
-  "author": "Milfren John dela Vega",
-  "module": "dist/hds-modal.esm.js",
-  "size-limit": [
-    {
-      "path": "dist/hds-modal.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/hds-modal.esm.js",
-      "limit": "10 KB"
-    }
-  ],
   "publishConfig": {
     "access": "public"
   },

@@ -5,16 +5,16 @@ import {
   IconButton,
   SystemStyleObject,
   useMultiStyleConfig,
-} from "@chakra-ui/react";
-import * as React from "react";
-import { Carousel as ReactResponsiveCarousel } from "react-responsive-carousel";
-import CarouselStyle from "./CarouselStyle.generated";
-import ChevronLeftIcon from "./ChevronLeftIcon";
-import ChevronRightIcon from "./ChevronRightIcon";
+} from '@chakra-ui/react';
+import * as React from 'react';
+import { Carousel as ReactResponsiveCarousel } from 'react-responsive-carousel';
+import CarouselStyle from './CarouselStyle.generated';
+import ChevronLeftIcon from './ChevronLeftIcon';
+import ChevronRightIcon from './ChevronRightIcon';
 
-type CarouselSize = "md" | "lg";
+type CarouselSize = 'md' | 'lg';
 
-type CarouselVariant = "dot" | "dash";
+type CarouselVariant = 'dot' | 'dash';
 
 export type CarouselProps<T extends unknown[]> = SystemStyleObject & {
   items: T;
@@ -30,8 +30,8 @@ export type CarouselProps<T extends unknown[]> = SystemStyleObject & {
 };
 
 export default function Carousel<T extends unknown[]>({
-  variant = "dot",
-  size = "md",
+  variant = 'dot',
+  size = 'md',
   items,
   loop,
   autoPlay,
@@ -42,8 +42,8 @@ export default function Carousel<T extends unknown[]>({
   children,
   ...props
 }: CarouselProps<T>) {
-  const styles = useMultiStyleConfig("Carousel", {
-    variant: "hds",
+  const styles = useMultiStyleConfig('Carousel', {
+    variant: 'hds',
     __size: size,
     __variant: variant,
     __wrapped: wrapIndicator,
@@ -54,9 +54,9 @@ export default function Carousel<T extends unknown[]>({
       sx={{
         ...props,
         ...styles.container,
-        ".control-dots": styles.dots,
+        '.control-dots': styles.dots,
       }}
-      data-testid={__carouselContainerTestId ?? "hds.carousel.container"}
+      data-testid={__carouselContainerTestId ?? 'hds.carousel.container'}
     >
       <CarouselStyle />
       <ReactResponsiveCarousel
@@ -104,9 +104,9 @@ export default function Carousel<T extends unknown[]>({
           );
         }}
         labels={{
-          item: "Slide",
-          leftArrow: "previous slide",
-          rightArrow: "next slide",
+          item: 'Slide',
+          leftArrow: 'previous slide',
+          rightArrow: 'next slide',
         }}
       >
         {items.map((item, index) => (

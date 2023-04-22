@@ -1,6 +1,6 @@
-import * as React from "react";
-import { DateRange, Nullable } from "../types";
-import { noop, sortDates } from "../utils";
+import * as React from 'react';
+import { DateRange, Nullable } from '../types';
+import { noop, sortDates } from '../utils';
 
 enum LastUpdated {
   START,

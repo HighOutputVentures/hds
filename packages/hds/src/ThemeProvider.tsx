@@ -3,9 +3,13 @@ import * as React from 'react';
 import Fonts from './Fonts';
 import hdsTheme from './theme';
 
-export interface ThemeProviderProps extends ChakraProviderProps {}
+export type ThemeProviderProps = ChakraProviderProps & {};
 
-const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, theme = {}, ...props }) => {
+const ThemeProvider: React.FC<ThemeProviderProps> = ({
+  children,
+  theme = {},
+  ...props
+}) => {
   return (
     <ChakraProvider theme={extendTheme(hdsTheme, theme)} {...props}>
       <Fonts />

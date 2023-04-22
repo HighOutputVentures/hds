@@ -5,9 +5,9 @@ import {
   SliderTrack,
   SystemStyleObject,
   Tooltip,
-} from "@chakra-ui/react";
-import * as React from "react";
-import { useStyles } from "./hooks";
+} from '@chakra-ui/react';
+import * as React from 'react';
+import { useStyles } from './hooks';
 
 type SliderBaseProps = {
   min?: number;
@@ -19,7 +19,7 @@ type SliderBaseProps = {
   keepLabelOpened?: boolean;
 };
 
-export type SliderProps = SliderBaseProps & Omit<SystemStyleObject, "value">;
+export type SliderProps = SliderBaseProps & Omit<SystemStyleObject, 'value'>;
 
 export default React.forwardRef<HTMLDivElement, SliderProps>(function HdsSlider(
   props,

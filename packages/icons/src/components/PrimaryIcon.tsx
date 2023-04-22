@@ -13,23 +13,10 @@ const PrimaryIcon: FC<IconProps> = (props) => (
         strokeLinejoin="round"
       />
     </g>
-    <rect
-      x="3"
-      y="3"
-      width="40"
-      height="40"
-      rx="20"
-      stroke="#EDE8FC"
-      strokeWidth="6"
-    />
+    <rect x="3" y="3" width="40" height="40" rx="20" stroke="#EDE8FC" strokeWidth="6" />
     <defs>
       <clipPath id="clip0_1135_510">
-        <rect
-          width="20"
-          height="20"
-          fill="white"
-          transform="translate(13 13)"
-        />
+        <rect width="20" height="20" fill="white" transform="translate(13 13)" />
       </clipPath>
     </defs>
   </Icon>

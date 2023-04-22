@@ -24,14 +24,12 @@ describe('Notification Component', () => {
     render(
       <ChakraProvider>
         <Component />
-      </ChakraProvider>
+      </ChakraProvider>,
     );
   });
 
   it('Should render', async () => {
-    const NotificationBox = await screen.findAllByTestId(
-      'hds.notification.container'
-    );
+    const NotificationBox = await screen.findAllByTestId('hds.notification.container');
     expect(NotificationBox).toHaveLength(1);
   });
 
@@ -41,16 +39,12 @@ describe('Notification Component', () => {
   });
 
   it('should render supporting detail', async () => {
-    const supportingDetail = await screen.findAllByTestId(
-      'hds.notification.message'
-    );
+    const supportingDetail = await screen.findAllByTestId('hds.notification.message');
     expect(supportingDetail).toHaveLength(1);
   });
 
   it('should render notification links', async () => {
-    const notificationLinks = await screen.findAllByTestId(
-      'hds.notification.link'
-    );
+    const notificationLinks = await screen.findAllByTestId('hds.notification.link');
     expect(notificationLinks).toHaveLength(2);
   });
 

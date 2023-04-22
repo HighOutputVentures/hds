@@ -1,10 +1,18 @@
-import { Box, Button, ButtonGroup, Flex, Icon, Select, SystemStyleObject } from "@chakra-ui/react";
-import { ArrowLeftIcon, ArrowRightIcon } from "@highoutput/hds-icons";
-import * as pagination from "@zag-js/pagination";
-import { normalizeProps, useMachine } from "@zag-js/react";
-import * as React from "react";
-import { v4 as uuid } from "uuid";
-import { useStyles } from "./hooks";
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Flex,
+  Icon,
+  Select,
+  SystemStyleObject,
+} from '@chakra-ui/react';
+import { ArrowLeftIcon, ArrowRightIcon } from '@highoutput/hds-icons';
+import * as pagination from '@zag-js/pagination';
+import { normalizeProps, useMachine } from '@zag-js/react';
+import * as React from 'react';
+import { v4 as uuid } from 'uuid';
+import { useStyles } from './hooks';
 
 export type GroupPaginationProps = {
   id?: string;
@@ -24,7 +32,7 @@ export default function GroupPagination({
   ...props
 }: GroupPaginationProps & SystemStyleObject) {
   const id = props.id ?? React.useId();
-  const styles = useStyles("group");
+  const styles = useStyles('group');
 
   const [state, send] = useMachine(
     pagination.machine({
@@ -80,12 +88,12 @@ export default function GroupPagination({
           </Button>
 
           {api.pages.map((page, index) => {
-            if (page.type === "page") {
+            if (page.type === 'page') {
               return (
                 <Button
                   key={uuid()}
                   variant="unstyled"
-                  data-testid={"hds.group-pagination.page.control"}
+                  data-testid={'hds.group-pagination.page.control'}
                   _disabled={{}}
                   {...api.getPageTriggerProps(page)}
                 >
@@ -99,7 +107,7 @@ export default function GroupPagination({
                 key={uuid()}
                 isDisabled
                 variant="unstyled"
-                data-testid={"hds.group-pagination.ellipsis"}
+                data-testid={'hds.group-pagination.ellipsis'}
                 {...api.getEllipsisProps({ index })}
               >
                 ...

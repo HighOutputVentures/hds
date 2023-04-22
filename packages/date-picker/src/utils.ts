@@ -18,9 +18,9 @@ import {
   subMonths,
   subWeeks,
   subYears,
-} from "date-fns";
-import { START_OF_WEEK } from "./constants";
-import { CalendarObject, DateRange, RangeCalendarObject, TimeAdverbial } from "./types";
+} from 'date-fns';
+import { START_OF_WEEK } from './constants';
+import { CalendarObject, DateRange, RangeCalendarObject, TimeAdverbial } from './types';
 
 export function getCalendar(date: Date) {
   const lastDayOfMonth = endOfMonth(date);
@@ -180,12 +180,12 @@ export function getRangeCalendar(date: Date, config: Partial<DateRange> = {}) {
   );
 }
 
-type SortDirection = "asc" | "desc";
+type SortDirection = 'asc' | 'desc';
 
 export function sortDates(array: Date[], direction?: SortDirection) {
   const copy = [...array];
 
-  if (direction === "desc") {
+  if (direction === 'desc') {
     copy.sort(compareDesc);
   } else {
     copy.sort(compareAsc);
@@ -213,7 +213,7 @@ export const noop = (..._: any): any => undefined;
 
 export function invariant(
   condition: unknown,
-  message = "Invariant violation",
+  message = 'Invariant violation',
 ): asserts condition {
   if (!condition) throw new Error(message);
 }

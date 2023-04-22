@@ -58,15 +58,10 @@ export function SlideoutMenu(props: SlideoutMenuProps) {
       preserveScrollBarGap: true,
       lockFocusAcrossFrames: true,
     },
-    props
+    props,
   );
 
-  const {
-    top = 0,
-    left = 0,
-    right = 0,
-    bottom = 0,
-  } = Object.assign({}, gutter);
+  const { top = 0, left = 0, right = 0, bottom = 0 } = Object.assign({}, gutter);
 
   const disclosure = useDisclosure();
 
