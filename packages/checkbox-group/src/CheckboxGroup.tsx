@@ -1,8 +1,8 @@
 import { Box, Icon, SystemStyleObject } from '@chakra-ui/react';
 import * as React from 'react';
+import { omit } from 'shared/utils';
 import CheckIcon from './CheckIcon';
 import CircleIcon from './CircleIcon';
-import { omit } from './utils';
 
 type GetPropsArgs = {
   disabled?: boolean;
@@ -87,7 +87,7 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
         />
       );
     },
-    [variant],
+    [size, variant],
   );
 
   return (
@@ -100,7 +100,6 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
       }}
       role="group"
       aria-label="Checkbox Group"
-      aria-multiselectable={props.multiple}
     >
       {items.map((item, index) => {
         const selected = !others.multiple

@@ -5,7 +5,7 @@ import {
   Tooltip as ChakraTooltip,
 } from '@chakra-ui/react';
 import * as React from 'react';
-import invariant from 'tiny-invariant';
+import { invariant } from 'shared/utils';
 
 type ColorScheme = 'dark' | 'light';
 

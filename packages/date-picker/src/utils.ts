@@ -211,10 +211,3 @@ export function arrayChunk<T extends unknown[]>(array: T, size: number) {
 }
 
 export const noop = (..._: any): any => undefined;
-
-export function invariant(
-  condition: unknown,
-  message = 'Invariant violation',
-): asserts condition {
-  if (!condition) throw new Error(message);
-}

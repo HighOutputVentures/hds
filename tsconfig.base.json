@@ -41,6 +41,7 @@
       "@highoutput/hds-tag": ["packages/tag/src/index.ts"],
       "@highoutput/hds-toast": ["packages/toast/src/index.ts"],
       "@highoutput/hds-tooltip": ["packages/tooltip/src/index.ts"],
+      "shared/utils": ["packages/shared/utils/src/index.ts"],
       "stories": ["packages/stories/src/index.ts"]
     }
   },

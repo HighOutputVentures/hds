@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { omit } from '../utils';
+import { omit } from 'shared/utils';
 import { OtpLoginFormStep1, OtpLoginFormStep1Props } from './OtpLoginFormStep1';
 import { OtpLoginFormStep2, OtpLoginFormStep2Props } from './OtpLoginFormStep2';
 

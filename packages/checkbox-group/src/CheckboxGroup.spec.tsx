@@ -1,5 +1,4 @@
 import { Box } from '@chakra-ui/react';
-import '@testing-library/jest-dom';
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import * as React from 'react';
 import renderer from 'react-test-renderer';
@@ -198,7 +197,7 @@ function ActualComponentTest({ afterware }: { afterware: Function }) {
 
   React.useEffect(() => {
     afterware(value);
-  }, [value]);
+  }, [afterware, value]);
 
   return (
     <CheckboxGroup

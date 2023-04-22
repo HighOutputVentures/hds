@@ -1,6 +1,5 @@
-import * as React from 'react';
 import { FC } from 'react';
-import { omit } from '../utils';
+import { omit } from 'shared/utils';
 import {
   EmailPasswordLoginForm,
   EmailPasswordLoginFormProps,

@@ -3,7 +3,6 @@
 exports[`CheckboxGroup Snapshot Should match snapshot 1`] = `
 <div
   aria-label="Checkbox Group"
-  aria-multiselectable={true}
   className="css-1kkt86i"
   role="group"
 >
