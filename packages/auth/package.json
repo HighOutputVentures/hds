@@ -1,6 +1,6 @@
 {
   "name": "@highoutput/hds-auth",
-  "version": "0.2.21",
+  "version": "0.2.22",
   "license": "MIT",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -11,7 +11,7 @@
     }
   },
   "dependencies": {
-    "@highoutput/hds-forms": "*",
+    "@highoutput/hds-forms": "^0.2.15",
     "@hookform/resolvers": "2.9.10",
     "react-hook-form": "7.38.0",
     "yup": "0.32.11"
