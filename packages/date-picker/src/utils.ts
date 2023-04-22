@@ -27,7 +27,7 @@ export function getCalendar(date: Date) {
   const firstDayOfMonth = startOfMonth(date);
   const totalDaysInMonth = getDaysInMonth(date);
 
-  let calendar: CalendarObject[] = [];
+  const calendar: CalendarObject[] = [];
 
   for (let i = 0; i < totalDaysInMonth; i++) {
     const d = addDays(firstDayOfMonth, i);
@@ -89,13 +89,14 @@ export function getDateRangeByTimeAdverbial(adverbial: TimeAdverbial) {
         until: endOfDay(today),
       };
 
-    case TimeAdverbial.Yesterday:
+    case TimeAdverbial.Yesterday: {
       const yesterday = subDays(today, 1);
 
       return {
         start: startOfDay(yesterday),
         until: endOfDay(yesterday),
       };
+    }
 
     case TimeAdverbial.ThisWeek:
       return {

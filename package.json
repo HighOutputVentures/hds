@@ -5,8 +5,9 @@
   "private": false,
   "scripts": {
     "start": "nx serve stories:storybook",
-    "build": "nx run-many --target=build --all --exclude=stories --parallel --maxParallel=5 --skip-nx-cache",
-    "test": "nx run-many --target=test --all --exclude=stories --parallel --maxParallel=5 --skip-nx-cache",
+    "build": "nx run-many --target=build --all --exclude=stories --parallel --maxParallel=50% --skip-nx-cache",
+    "lint": "nx run-many --target=lint --all --parallel --maxParallel=50% --skip-nx-cache",
+    "test": "nx run-many --target=test --all --exclude=stories --parallel --maxParallel=50% --skip-nx-cache",
     "format": "prettier --write ."
   },
   "devDependencies": {

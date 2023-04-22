@@ -67,9 +67,8 @@ export default function MinimalPagination(
     ...props,
   };
 
+  const id = React.useId();
   const styles = useStyles('minimal');
-
-  const id = others.id ?? React.useId();
 
   const [state, send] = useMachine(
     pagination.machine({

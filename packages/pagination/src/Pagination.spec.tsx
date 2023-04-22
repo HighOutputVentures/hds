@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom';
 import { act, fireEvent, render } from '@testing-library/react';
-import * as React from 'react';
 import renderer from 'react-test-renderer';
 import Pagination from './Pagination';
 

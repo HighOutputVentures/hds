@@ -1,4 +1,3 @@
-import * as React from 'react';
 import GroupPagination, { GroupPaginationProps } from './GroupPagination';
 import MinimalPagination, { MinimalPaginationProps } from './MinimalPagination';
 import RelayPagination, { RelayPaginationProps } from './RelayPagination';

@@ -38,7 +38,7 @@ export const RangeDatePicker = withRangeDatePickerContext(function RangeDatePick
 
   React.useEffect(() => {
     if (defaultValue) context.updateSelectedRangeHard(defaultValue);
-  }, [defaultValue]);
+  }, [context, defaultValue]);
 
   return (
     <chakra.div

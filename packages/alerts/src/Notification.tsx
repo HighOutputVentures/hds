@@ -13,7 +13,6 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { UploadIcon } from '@highoutput/hds-icons';
-import React from 'react';
 export interface MainNotificationsProps {
   title: string;
   supportingDetail: string;
@@ -47,7 +46,7 @@ export interface AvatarNotificationProps extends MainNotificationsProps {
 }
 export interface PrimaryNotificationProps extends MainNotificationsProps {
   type: 'primary';
-  icon: As<any> | undefined;
+  icon: As | undefined;
   progressValue?: never;
   previewImage?: never;
   avatar?: never;

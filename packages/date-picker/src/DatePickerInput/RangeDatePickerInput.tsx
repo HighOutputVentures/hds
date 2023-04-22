@@ -82,7 +82,7 @@ export function RangeDatePickerInput({
 
         return str.join(' - ');
       } else if (typeof dateFormat === 'string') {
-        let str: string[] = [];
+        const str: string[] = [];
 
         if (d.start) str.push(format(d.start, dateFormat));
         if (d.until) str.push(format(d.until, dateFormat));

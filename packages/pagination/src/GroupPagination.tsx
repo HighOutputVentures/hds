@@ -31,7 +31,7 @@ export default function GroupPagination({
   sizes,
   ...props
 }: GroupPaginationProps & SystemStyleObject) {
-  const id = props.id ?? React.useId();
+  const id = React.useId();
   const styles = useStyles('group');
 
   const [state, send] = useMachine(
