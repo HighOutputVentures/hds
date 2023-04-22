@@ -1,5 +1,4 @@
 import { fireEvent, render } from '@testing-library/react';
-import * as React from 'react';
 import { SlideoutMenu } from './SlideoutMenu';
 
 describe('SlideoutMenu', () => {

@@ -12,6 +12,7 @@ function MockedSlider({ onChange, defaultValue = [0, 100] }: RangeSliderProps) {
 
       <input
         role="checkbox"
+        aria-checked
         aria-label="Slider"
         value={value.join()}
         onChange={(e) => {

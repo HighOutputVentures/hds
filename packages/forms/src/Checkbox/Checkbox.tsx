@@ -58,7 +58,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props, ref) 
     } else {
       return CheckIcon;
     }
-  }, []);
+  }, [others.isIndeterminate]);
 
   return (
     <ChakraCheckbox

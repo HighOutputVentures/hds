@@ -1,6 +1,5 @@
-import { render, fireEvent } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import Metrics from './Metrics';
-import * as React from 'react';
 
 describe('Metrics', () => {
   it('renders correctly with positive metric change', () => {

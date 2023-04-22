@@ -1,8 +1,6 @@
 import { Avatar, HStack, Text } from '@chakra-ui/react';
 import { faker } from '@faker-js/faker';
-import '@testing-library/jest-dom';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
-import * as React from 'react';
 import Table from './Table';
 
 const items = new Array(5).fill(null).map(() => {

@@ -60,7 +60,10 @@ export default function Combobox<T extends Option[]>(props: ComboboxProps<T>) {
 
   const id = React.useId();
   const [items, setItems] = React.useState<T[number][]>(options);
-  const selected = React.useMemo(() => options.find((o) => o.value === value), [value]);
+  const selected = React.useMemo(
+    () => options.find((o) => o.value === value),
+    [options, value],
+  );
 
   const [state, send] = useMachine(
     combobox.machine({

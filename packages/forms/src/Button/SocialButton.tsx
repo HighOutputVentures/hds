@@ -88,12 +88,7 @@ export default React.forwardRef<HTMLButtonElement, SocialButtonProps>(
             />
           );
       }
-    }, [
-      //
-      icon,
-      variant,
-      others.isDisabled,
-    ]);
+    }, [__iconTestId, icon, others.isDisabled, variant]);
 
     if (!label) {
       return (
@@ -273,7 +268,7 @@ function useStyles({ variant }: { variant?: Variant }) {
         },
       },
     }),
-    [variant],
+    [isOutlineVariant],
   );
 
   return styles;

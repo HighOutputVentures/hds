@@ -15,7 +15,6 @@ function MockedSlider({
   return (
     <React.Fragment>
       <input
-        role="slider"
         type="range"
         min={min}
         max={max}

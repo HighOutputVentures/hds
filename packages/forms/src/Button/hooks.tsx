@@ -473,12 +473,7 @@ export function useStyles({
         },
       }),
     }),
-    [
-      //
-      size,
-      accent,
-      variant,
-    ],
+    [accent, forceAccent, size, variant],
   );
 
   /**
@@ -507,7 +502,7 @@ export function useStyles({
         ...(size === '2xl' && { width: '56px' }),
       }),
     }),
-    [size, accent, variant],
+    [button, shouldAdjustIconButtonWidth, size],
   );
 
   const styles = {

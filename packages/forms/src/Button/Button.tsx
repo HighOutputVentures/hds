@@ -56,7 +56,7 @@ export default React.forwardRef<HTMLButtonElement, ButtonProps>(function Button(
 
   return (
     <ChakraButton ref={ref} {...others} sx={styles.button} data-testid={__testId}>
-      {props.children}
+      {children}
     </ChakraButton>
   );
 });
