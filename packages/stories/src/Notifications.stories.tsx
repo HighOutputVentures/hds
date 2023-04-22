@@ -35,7 +35,7 @@ const Template: StoryFn<typeof Notification> = () => {
         />
         <Notification
           type={'avatar'}
-          avatar={'/public/alerts-assets/Avatar.png'}
+          avatar={'/alerts-assets/Avatar.png'}
           createdAt={'2 mins ago'}
           supportingDetail="I’ve finished adding my notes. Happy for us to review whenever you’re ready!"
           alertLabel={{ label1: 'Dismiss', label2: 'Changelog' }}
@@ -45,7 +45,7 @@ const Template: StoryFn<typeof Notification> = () => {
         />
         <Notification
           type={'image'}
-          previewImage="/public/previewImage.png"
+          previewImage="/previewImage.png"
           supportingDetail="Check out the all new dashboard view. Pages and exports now load faster."
           alertLabel={{ label1: 'Dismiss', label2: 'Changelog' }}
           alertLinks={{ link1: '#', link2: '#' }}
