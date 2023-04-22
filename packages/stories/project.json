@@ -64,6 +64,13 @@
           "buildTarget": "stories:build-storybook:ci"
         }
       }
+    },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public",
+        "buildTarget": "production"
+      }
     }
   }
 }
