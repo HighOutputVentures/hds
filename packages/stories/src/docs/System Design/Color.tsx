@@ -166,26 +166,25 @@ const Color = () => {
           gap={'40px'}
           mb={'64px'}
         >
-          {colors.map((c) => {
+          {colors.map((c, idx) => {
             return (
-              <>
-                <HStack
-                  padding={'12px 20px 12px 12px'}
-                  boxShadow={
-                    ' 0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)'
-                  }
-                  borderRadius="48px"
-                  spacing="20px"
-                >
-                  <Box
-                    background={c.color}
-                    borderRadius="50%"
-                    height={'56px'}
-                    width={'56px'}
-                  />
-                  <Text size="paragraph-xxl-default">{c.name}</Text>
-                </HStack>
-              </>
+              <HStack
+                key={idx}
+                padding={'12px 20px 12px 12px'}
+                boxShadow={
+                  '0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)'
+                }
+                borderRadius="48px"
+                spacing="20px"
+              >
+                <Box
+                  background={c.color}
+                  borderRadius="50%"
+                  height={'56px'}
+                  width={'56px'}
+                />
+                <Text size="paragraph-xxl-default">{c.name}</Text>
+              </HStack>
             );
           })}
           <HStack
@@ -218,26 +217,25 @@ const Color = () => {
         >
           {colors.map((c, idx) => {
             return (
-              <>
-                <HStack
-                  padding={'12px 20px 12px 12px'}
-                  boxShadow={
-                    ' 0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)'
-                  }
-                  background="#000000"
-                  borderRadius="48px"
-                  color={'white'}
-                  spacing="20px"
-                >
-                  <Box
-                    background={idx === 2 ? '#FCFCFC' : c.color}
-                    borderRadius="50%"
-                    height={'56px'}
-                    width={'56px'}
-                  />
-                  <Text size="paragraph-xxl-default">{c.name}</Text>
-                </HStack>
-              </>
+              <HStack
+                key={idx}
+                padding={'12px 20px 12px 12px'}
+                boxShadow={
+                  ' 0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)'
+                }
+                background="#000000"
+                borderRadius="48px"
+                color={'white'}
+                spacing="20px"
+              >
+                <Box
+                  background={idx === 2 ? '#FCFCFC' : c.color}
+                  borderRadius="50%"
+                  height={'56px'}
+                  width={'56px'}
+                />
+                <Text size="paragraph-xxl-default">{c.name}</Text>
+              </HStack>
             );
           })}
           <HStack
@@ -275,21 +273,19 @@ const Color = () => {
         </Text>
         <Center w="full">
           <Flex flexWrap={'wrap'} gap={'75px'} mb={'150px'}>
-            {brandColors.map((c) => {
+            {brandColors.map((c, idx) => {
               return (
-                <>
-                  <VStack spacing="12px">
-                    <Box
-                      background={`#${c.hex}`}
-                      borderRadius="8px"
-                      height={'140px'}
-                      width={'140px'}
-                    />
-                    <Text>{c.rgb}</Text>
-                    <Text>{c.hex}</Text>
-                    <Text>{c.alpha}</Text>
-                  </VStack>
-                </>
+                <VStack spacing="12px" key={idx}>
+                  <Box
+                    background={`#${c.hex}`}
+                    borderRadius="8px"
+                    height={'140px'}
+                    width={'140px'}
+                  />
+                  <Text>{c.rgb}</Text>
+                  <Text>{c.hex}</Text>
+                  <Text>{c.alpha}</Text>
+                </VStack>
               );
             })}
           </Flex>
@@ -320,21 +316,19 @@ const Color = () => {
         <VStack w="full" mb="150px">
           <HStack>
             <Flex flexWrap={'wrap'} gap={'75px'} mb={'150px'}>
-              {neutralColors.map((c) => {
+              {neutralColors.map((c, idx) => {
                 return (
-                  <>
-                    <VStack spacing="12px">
-                      <Box
-                        background={`#${c.hex}`}
-                        borderRadius="8px"
-                        height={'140px'}
-                        width={'140px'}
-                      />
-                      <Text>{c.rgb}</Text>
-                      <Text>{c.hex}</Text>
-                      <Text>{c.alpha}</Text>
-                    </VStack>
-                  </>
+                  <VStack spacing="12px" key={idx}>
+                    <Box
+                      background={`#${c.hex}`}
+                      borderRadius="8px"
+                      height={'140px'}
+                      width={'140px'}
+                    />
+                    <Text>{c.rgb}</Text>
+                    <Text>{c.hex}</Text>
+                    <Text>{c.alpha}</Text>
+                  </VStack>
                 );
               })}
             </Flex>
@@ -426,21 +420,19 @@ const Color = () => {
         </Text>
         <Center w="full">
           <Flex flexWrap={'wrap'} gap={'75px'} mb={'150px'}>
-            {accentColors.map((c) => {
+            {accentColors.map((c, idx) => {
               return (
-                <>
-                  <VStack spacing="12px">
-                    <Box
-                      background={c.color}
-                      borderRadius="8px"
-                      height={'140px'}
-                      width={'140px'}
-                    />
-                    <Text>{c.rgb}</Text>
-                    <Text>{c.hex}</Text>
-                    <Text>{c.alpha}</Text>
-                  </VStack>
-                </>
+                <VStack spacing="12px" key={idx}>
+                  <Box
+                    background={c.color}
+                    borderRadius="8px"
+                    height={'140px'}
+                    width={'140px'}
+                  />
+                  <Text>{c.rgb}</Text>
+                  <Text>{c.hex}</Text>
+                  <Text>{c.alpha}</Text>
+                </VStack>
               );
             })}
           </Flex>
@@ -479,21 +471,19 @@ const Color = () => {
         </UnorderedList>
         <Center w="full">
           <Flex flexWrap={'wrap'} gap={'75px'} mb={'250px'}>
-            {interfaceStateColors.map((c) => {
+            {interfaceStateColors.map((c, idx) => {
               return (
-                <>
-                  <VStack spacing="12px">
-                    <Box
-                      background={c.color}
-                      borderRadius="8px"
-                      height={'140px'}
-                      width={'140px'}
-                    />
-                    <Text color={c.alpha === '700' ? c.color : 'black'}>{c.rgb}</Text>
-                    <Text color={c.alpha === '700' ? c.color : 'black'}>{c.hex}</Text>
-                    <Text color={c.alpha === '700' ? c.color : 'black'}>{c.alpha}</Text>
-                  </VStack>
-                </>
+                <VStack spacing="12px" key={idx}>
+                  <Box
+                    background={c.color}
+                    borderRadius="8px"
+                    height={'140px'}
+                    width={'140px'}
+                  />
+                  <Text color={c.alpha === '700' ? c.color : 'black'}>{c.rgb}</Text>
+                  <Text color={c.alpha === '700' ? c.color : 'black'}>{c.hex}</Text>
+                  <Text color={c.alpha === '700' ? c.color : 'black'}>{c.alpha}</Text>
+                </VStack>
               );
             })}
           </Flex>

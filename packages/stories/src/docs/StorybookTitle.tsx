@@ -1,5 +1,4 @@
 import { Text } from '@chakra-ui/react';
-import { ThemeProvider } from '@highoutput/hds';
 import React from 'react';
 
 interface StorybookTitleProps {
@@ -7,11 +6,7 @@ interface StorybookTitleProps {
 }
 
 const StorybookTitle: React.FC<StorybookTitleProps> = ({ title }) => {
-  return (
-    <ThemeProvider>
-      <Text size="header-4">{title}</Text>
-    </ThemeProvider>
-  );
+  return <Text size="header-4">{title}</Text>;
 };
 
 export default StorybookTitle;

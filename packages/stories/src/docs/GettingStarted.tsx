@@ -55,10 +55,6 @@ const packageList = [
     packageName: ' @highoutput/hds-autocomplete-input',
   },
   {
-    packageLink: 'https://www.npmjs.com/package/@highoutput/hds-utilities',
-    packageName: ' @highoutput/hds-utilities',
-  },
-  {
     packageLink: 'https://www.npmjs.com/package/@highoutput/hds-tag',
     packageName: ' @highoutput/hds-tag',
   },
@@ -99,10 +95,6 @@ const packageList = [
     packageName: ' @highoutput/hds-date-picker',
   },
   {
-    packageLink: 'https://www.npmjs.com/package/@highoutput/hds-experimental',
-    packageName: ' @highoutput/hds-experimental',
-  },
-  {
     packageLink: 'https://www.npmjs.com/package/@highoutput/hds-metrics',
     packageName: ' @highoutput/hds-metrics',
   },
@@ -112,11 +104,7 @@ const packageList = [
   },
   {
     packageLink: 'https://www.npmjs.com/package/@highoutput/hds-table',
-    packageName: ' @highoutput/hds-tabs',
-  },
-  {
-    packageLink: 'https://www.npmjs.com/package/@highoutput/hds-tabs',
-    packageName: ' @highoutput/hds-tabs',
+    packageName: ' @highoutput/hds-tab',
   },
   {
     packageLink: 'https://www.npmjs.com/package/@highoutput/hds-modal',
@@ -125,10 +113,6 @@ const packageList = [
   {
     packageLink: 'https://www.npmjs.com/package/@highoutput/hds-badge',
     packageName: ' @highoutput/hds-badge',
-  },
-  {
-    packageLink: 'https://www.npmjs.com/package/@highoutput/hds-loading-indicator',
-    packageName: ' @highoutput/hds-loading-indicator',
   },
   {
     packageLink: 'https://www.npmjs.com/package/@highoutput/hds-toast',

@@ -10,8 +10,7 @@ import {
   Th,
   Thead,
   Tr,
-} from "@chakra-ui/react";
-import * as React from "react";
+} from '@chakra-ui/react';
 
 export default function Accessibility() {
   return (
@@ -19,16 +18,17 @@ export default function Accessibility() {
       <Heading size="header-2">Accessibility</Heading>
 
       <Text size="paragraph-xxl-default" mt="64px" color="neutrals.700">
-        Headers and subheaders have typically tighter letter spacing compared to the paragraph.
+        Headers and subheaders have typically tighter letter spacing compared to the
+        paragraph.
       </Text>
 
       <TableContainer mt="64px">
         <Table
           variant="unstyled"
           sx={{
-            tableLayout: "fixed",
+            tableLayout: 'fixed',
             th: {
-              textTransform: "none",
+              textTransform: 'none',
             },
           }}
         >
@@ -36,11 +36,11 @@ export default function Accessibility() {
             <Tr
               sx={{
                 th: {
-                  textAlign: "center",
-                  fontSize: "32px",
-                  fontWeight: "normal",
-                  lineHeight: "32px",
-                  color: "#8A68EF",
+                  textAlign: 'center',
+                  fontSize: '32px',
+                  fontWeight: 'normal',
+                  lineHeight: '32px',
+                  color: '#8A68EF',
                 },
               }}
             >
@@ -56,25 +56,26 @@ export default function Accessibility() {
                 padding: 0,
                 td: {
                   _notFirst: {
-                    textAlign: "center",
-                    color: "neutrals.700",
+                    textAlign: 'center',
+                    color: 'neutrals.700',
                   },
                 },
               },
             }}
           >
-            {headers.map(({ scale, weight, letterSpace, lineHeight, __size }) => {
+            {headers.map(({ scale, weight, letterSpace, lineHeight, __size }, idx) => {
               return (
                 <Tr
+                  key={idx}
                   sx={{
                     td: {
-                      paddingY: "32px",
-                      paddingRight: "48px",
+                      paddingY: '32px',
+                      paddingRight: '48px',
                       paddingLeft: 0,
                       _notFirst: {
-                        paddingLeft: "48px",
-                        fontSize: "32px",
-                        lineHeight: "32px",
+                        paddingLeft: '48px',
+                        fontSize: '32px',
+                        lineHeight: '32px',
                       },
                     },
                   }}
@@ -95,18 +96,19 @@ export default function Accessibility() {
               <Td colSpan={4} />
             </Tr>
 
-            {paragraphs.map(({ scale, weight, letterSpace, lineHeight, __size }) => {
+            {paragraphs.map(({ scale, weight, letterSpace, lineHeight, __size }, idx) => {
               return (
                 <Tr
+                  key={idx}
                   sx={{
                     td: {
-                      paddingY: "18px",
-                      paddingRight: "48px",
+                      paddingY: '18px',
+                      paddingRight: '48px',
                       paddingLeft: 0,
                       _notFirst: {
-                        paddingLeft: "48px",
-                        fontSize: "32px",
-                        lineHeight: "32px",
+                        paddingLeft: '48px',
+                        fontSize: '32px',
+                        lineHeight: '32px',
                       },
                     },
                   }}
@@ -130,15 +132,16 @@ export default function Accessibility() {
             {labels.map(({ scale, weight, letterSpace, lineHeight, __size }, idx) => {
               return (
                 <Tr
+                  key={idx}
                   sx={{
                     td: {
-                      paddingY: "12px",
-                      paddingRight: "48px",
+                      paddingY: '12px',
+                      paddingRight: '48px',
                       paddingLeft: 0,
                       _notFirst: {
-                        paddingLeft: "48px",
-                        fontSize: "20px",
-                        lineHeight: "20px",
+                        paddingLeft: '48px',
+                        fontSize: '20px',
+                        lineHeight: '20px',
                       },
                     },
                   }}
@@ -179,135 +182,135 @@ export default function Accessibility() {
 
 const headers = [
   {
-    scale: "Header 1",
-    weight: "Bold",
-    lineHeight: "88px",
-    letterSpace: "-2%",
-    __size: "header-1",
+    scale: 'Header 1',
+    weight: 'Bold',
+    lineHeight: '88px',
+    letterSpace: '-2%',
+    __size: 'header-1',
   },
   {
-    scale: "Header 2",
-    weight: "Bold",
-    lineHeight: "64px",
-    letterSpace: "-2%",
-    __size: "header-2",
+    scale: 'Header 2',
+    weight: 'Bold',
+    lineHeight: '64px',
+    letterSpace: '-2%',
+    __size: 'header-2',
   },
   {
-    scale: "Header 3",
-    weight: "Bold",
-    lineHeight: "44px",
-    letterSpace: "-2%",
-    __size: "header-3",
+    scale: 'Header 3',
+    weight: 'Bold',
+    lineHeight: '44px',
+    letterSpace: '-2%',
+    __size: 'header-3',
   },
   {
-    scale: "Header 4",
-    weight: "Medium",
-    lineHeight: "36px",
-    letterSpace: "-1.5%",
-    __size: "header-4",
+    scale: 'Header 4',
+    weight: 'Medium',
+    lineHeight: '36px',
+    letterSpace: '-1.5%',
+    __size: 'header-4',
   },
   {
-    scale: "Header 5",
-    weight: "Medium",
-    lineHeight: "28px",
-    letterSpace: "-1.5%",
-    __size: "header-5",
+    scale: 'Header 5',
+    weight: 'Medium',
+    lineHeight: '28px',
+    letterSpace: '-1.5%',
+    __size: 'header-5',
   },
   {
-    scale: "Header 6",
-    weight: "Medium",
-    lineHeight: "24px",
-    letterSpace: "-1.5%",
-    __size: "header-6",
+    scale: 'Header 6',
+    weight: 'Medium',
+    lineHeight: '24px',
+    letterSpace: '-1.5%',
+    __size: 'header-6',
   },
 ];
 
 const paragraphs = [
   {
-    scale: "Paragraph is usually multi-line so add more breathability.",
-    weight: "Regular",
-    lineHeight: "48px",
-    letterSpace: "0%",
-    __size: "paragraph-xxl-default",
+    scale: 'Paragraph is usually multi-line so add more breathability.',
+    weight: 'Regular',
+    lineHeight: '48px',
+    letterSpace: '0%',
+    __size: 'paragraph-xxl-default',
   },
   {
-    scale: "Paragraph is usually multi-line so add more breathability.",
-    weight: "Regular",
-    lineHeight: "36px",
-    letterSpace: "0%",
-    __size: "paragraph-xl-default",
+    scale: 'Paragraph is usually multi-line so add more breathability.',
+    weight: 'Regular',
+    lineHeight: '36px',
+    letterSpace: '0%',
+    __size: 'paragraph-xl-default',
   },
   {
-    scale: "Paragraph is usually multi-line so add more breathability.",
-    weight: "Regular",
-    lineHeight: "32px",
-    letterSpace: "0%",
-    __size: "paragraph-lg-default",
+    scale: 'Paragraph is usually multi-line so add more breathability.',
+    weight: 'Regular',
+    lineHeight: '32px',
+    letterSpace: '0%',
+    __size: 'paragraph-lg-default',
   },
   {
-    scale: "Paragraph is usually multi-line so add more breathability.",
-    weight: "Regular",
-    lineHeight: "28px",
-    letterSpace: "2%",
-    __size: "paragraph-md-default",
+    scale: 'Paragraph is usually multi-line so add more breathability.',
+    weight: 'Regular',
+    lineHeight: '28px',
+    letterSpace: '2%',
+    __size: 'paragraph-md-default',
   },
   {
-    scale: "Paragraph is usually multi-line so add more breathability.",
-    weight: "Regular",
-    lineHeight: "24px",
-    letterSpace: "2%",
-    __size: "paragraph-sm-default",
+    scale: 'Paragraph is usually multi-line so add more breathability.',
+    weight: 'Regular',
+    lineHeight: '24px',
+    letterSpace: '2%',
+    __size: 'paragraph-sm-default',
   },
   {
-    scale: "Paragraph is usually multi-line so add more breathability.",
-    weight: "Regular",
-    lineHeight: "20px",
-    letterSpace: "2%",
-    __size: "paragraph-xs-default",
+    scale: 'Paragraph is usually multi-line so add more breathability.',
+    weight: 'Regular',
+    lineHeight: '20px',
+    letterSpace: '2%',
+    __size: 'paragraph-xs-default',
   },
 ];
 
 const labels = [
   {
-    scale: "label.xl.default",
-    weight: "Regular",
-    lineHeight: "32px",
-    letterSpace: "0%",
-    __size: "label-xl-default",
+    scale: 'label.xl.default',
+    weight: 'Regular',
+    lineHeight: '32px',
+    letterSpace: '0%',
+    __size: 'label-xl-default',
   },
   {
-    scale: "label.lg.default",
-    weight: "Regular",
-    lineHeight: "28px",
-    letterSpace: "0%",
-    __size: "label-lg-default",
+    scale: 'label.lg.default',
+    weight: 'Regular',
+    lineHeight: '28px',
+    letterSpace: '0%',
+    __size: 'label-lg-default',
   },
   {
-    scale: "label.md.default",
-    weight: "Regular",
-    lineHeight: "20px",
-    letterSpace: "0%",
-    __size: "label-md-default",
+    scale: 'label.md.default',
+    weight: 'Regular',
+    lineHeight: '20px',
+    letterSpace: '0%',
+    __size: 'label-md-default',
   },
   {
-    scale: "label.sm.default",
-    weight: "Regular",
-    lineHeight: "18px",
-    letterSpace: "0%",
-    __size: "label-sm-default",
+    scale: 'label.sm.default',
+    weight: 'Regular',
+    lineHeight: '18px',
+    letterSpace: '0%',
+    __size: 'label-sm-default',
   },
   {
-    scale: "label.xs.default",
-    weight: "Regular",
-    lineHeight: "14px",
-    letterSpace: "2%",
-    __size: "label-xs-default",
+    scale: 'label.xs.default',
+    weight: 'Regular',
+    lineHeight: '14px',
+    letterSpace: '2%',
+    __size: 'label-xs-default',
   },
   {
-    scale: "label.xxs.default",
-    weight: "Regular",
-    lineHeight: "12px",
-    letterSpace: "2%",
-    __size: "label-xxs-default",
+    scale: 'label.xxs.default',
+    weight: 'Regular',
+    lineHeight: '12px',
+    letterSpace: '2%',
+    __size: 'label-xxs-default',
   },
 ];

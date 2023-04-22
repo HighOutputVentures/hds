@@ -1,13 +1,22 @@
-import { Box, Heading, Icon, Image, Link, ListItem, Text, UnorderedList } from "@chakra-ui/react";
-import * as React from "react";
+import {
+  Box,
+  Heading,
+  Icon,
+  Image,
+  Link,
+  ListItem,
+  Text,
+  UnorderedList,
+} from '@chakra-ui/react';
+import * as React from 'react';
 
 export default function Hero() {
   return (
     <Box maxWidth="full">
       <Heading size="header-1">Type system</Heading>
       <Text mt={5} size="paragraph-xxl-default" color="neutrals.700">
-        Building a robust responsive set of typescale system for designing real products for both
-        web and mobile platforms.{" "}
+        Building a robust responsive set of typescale system for designing real products
+        for both web and mobile platforms.{' '}
         <Link
           href="https://www.playbook.com/s/hovdesign/CxvyNG1btuHMzu9W5GAFX7a5"
           target="_blank"
@@ -16,15 +25,15 @@ export default function Hero() {
           fontWeight="bold"
         >
           Download font
-        </Link>{" "}
+        </Link>{' '}
         here.
       </Text>
 
       <Heading mt="200px" size="header-2">
         Responsive type system
       </Heading>
-      <Box as={Text} size="paragraph-xxl-default" mt="64px" color="neutrals.700">
-        <Text>Common use case of type scaling:</Text>
+      <Box mt="64px" color="neutrals.700">
+        <Text as="span">Common use case of type scaling:</Text>
 
         <UnorderedList mt={4}>
           <ListItem>Headers</ListItem>
@@ -33,7 +42,9 @@ export default function Hero() {
           <ListItem>Buttons</ListItem>
         </UnorderedList>
 
-        <Text mt={16}>Breakpoints - We need to create sets of breakpoints for web and mobile.</Text>
+        <Text mt={16} as="span">
+          Breakpoints - We need to create sets of breakpoints for web and mobile.
+        </Text>
       </Box>
 
       <Box mt="67px" px="100px" position="relative">
@@ -63,7 +74,7 @@ export default function Hero() {
   );
 }
 
-function ArrowIcon(props: React.ComponentProps<"svg">) {
+function ArrowIcon(props: React.ComponentProps<'svg'>) {
   return (
     <svg
       width="375"

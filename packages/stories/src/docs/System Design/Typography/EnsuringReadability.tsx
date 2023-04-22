@@ -1,18 +1,18 @@
-import { Box, BoxProps, Flex, Heading, Text, TextProps } from "@chakra-ui/react";
-import * as React from "react";
+import { Box, BoxProps, Flex, Heading, Text, TextProps } from '@chakra-ui/react';
 
 export default function EnsuringReadability() {
   return (
     <Box mt="250px">
       <Heading size="header-2">Ensuring readability</Heading>
       <Text size="paragraph-xxl-default" mt="64px" color="neutrals.700">
-        Make sure that we do not put restraints on the viewers and readers eyes by limiting the
-        line length. Line length is the minimum and maximum width of a paragraph content.
+        Make sure that we do not put restraints on the viewers and readers eyes by
+        limiting the line length. Line length is the minimum and maximum width of a
+        paragraph content.
       </Text>
       <Text size="paragraph-xxl-default" mt={8} color="neutrals.700">
         Ideally, the ideal width contains 60-100 characters per line but we want to limit
-        according to container width instead. It is rather convenient when it comes to creating
-        breakpoints of our interface.
+        according to container width instead. It is rather convenient when it comes to
+        creating breakpoints of our interface.
       </Text>
 
       <Box py="60px">
@@ -26,26 +26,27 @@ export default function EnsuringReadability() {
         >
           <Overlay1 />
 
-          {data1.map(({ label, width }) => {
+          {data1.map(({ label, width }, idx) => {
             return (
-              <Flex gap="100px" color="neutrals.700">
+              <Flex key={idx} gap="100px" color="neutrals.700">
                 <Text size="label-lg-default" fontWeight="bold" width="170px">
                   {label}
                 </Text>
-                <Text size="paragraph-xl-default" width={width + "px"}>
-                  Far far away, behind the word mountains, far from the countries Vokalia and
-                  Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-                  right at the coast of the Semantics, a large language ocean. A small river
-                  named Duden flows by their place and supplies it with the necessary
-                  regelialia. It is a paradisematic country, in which roasted parts of sentences
-                  fly into your mouth.
+                <Text size="paragraph-xl-default" width={width + 'px'}>
+                  Far far away, behind the word mountains, far from the countries Vokalia
+                  and Consonantia, there live the blind texts. Separated they live in
+                  Bookmarksgrove right at the coast of the Semantics, a large language
+                  ocean. A small river named Duden flows by their place and supplies it
+                  with the necessary regelialia. It is a paradisematic country, in which
+                  roasted parts of sentences fly into your mouth.
                 </Text>
               </Flex>
             );
           })}
         </Flex>
         <Text ml="206px" mt="32px" size="paragraph-xxl-default" color="neutrals.700">
-          For longer lines, the ideal line length for smallest desktop screen dimension is 960px
+          For longer lines, the ideal line length for smallest desktop screen dimension is
+          960px
         </Text>
       </Box>
 
@@ -60,15 +61,15 @@ export default function EnsuringReadability() {
         >
           <Overlay2 />
 
-          {data2.map(({ label, width }) => {
+          {data2.map(({ label, width }, idx) => {
             return (
-              <Flex gap="100px" color="neutrals.700">
+              <Flex key={idx} gap="100px" color="neutrals.700">
                 <Text size="label-lg-default" fontWeight="bold" width="170px">
                   {label}
                 </Text>
-                <Text size="paragraph-xl-default" width={width + "px"}>
-                  Far far away, behind the word mountains, far from the countries Vokalia and
-                  Consonantia, there live.
+                <Text size="paragraph-xl-default" width={width + 'px'}>
+                  Far far away, behind the word mountains, far from the countries Vokalia
+                  and Consonantia, there live.
                 </Text>
               </Flex>
             );
@@ -76,8 +77,8 @@ export default function EnsuringReadability() {
         </Flex>
 
         <Text ml="206px" mt="32px" size="paragraph-xxl-default" color="neutrals.700">
-          For shorter lines, the ideal line length for smallest desktop screen dimension is 500
-          px.
+          For shorter lines, the ideal line length for smallest desktop screen dimension
+          is 500 px.
         </Text>
       </Box>
     </Box>
@@ -124,7 +125,12 @@ function Overlay1() {
       >
         <OverlayItemLabel>500px</OverlayItemLabel>
       </OverlayItem>
-      <OverlayItem w="160px" left="800px" borderRight="1px solid #00C408" bgColor="#E8FCE9">
+      <OverlayItem
+        w="160px"
+        left="800px"
+        borderRight="1px solid #00C408"
+        bgColor="#E8FCE9"
+      >
         <OverlayItemLabel>800px</OverlayItemLabel>
       </OverlayItem>
       <OverlayItem w="226px" left="960px" borderRight="1px solid #DC180C">
@@ -177,25 +183,25 @@ function OverlayItemLabel({ children, ...props }: TextProps) {
 
 const data1 = [
   {
-    label: "Too narrow",
+    label: 'Too narrow',
     width: 500,
   },
   {
-    label: "Okay range",
+    label: 'Okay range',
     width: 800,
   },
   {
-    label: "Ideal range",
+    label: 'Ideal range',
     width: 960,
   },
   {
-    label: "Too wide",
+    label: 'Too wide',
     width: 1186,
   },
 ];
 
 const data2 = [
-  { label: "Too narrow", width: 250 },
-  { label: "Ideal range", width: 500 },
-  { label: "Too wide", width: 800 },
+  { label: 'Too narrow', width: 250 },
+  { label: 'Ideal range', width: 500 },
+  { label: 'Too wide', width: 800 },
 ];

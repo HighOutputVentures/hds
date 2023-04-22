@@ -1,17 +1,32 @@
-import { Box, Flex, Heading, Icon, Image, ListItem, Text, UnorderedList } from "@chakra-ui/react";
-import * as React from "react";
-import ArrowIcon from "./icons/ArrowIcon";
+import {
+  Box,
+  Flex,
+  Heading,
+  Icon,
+  Image,
+  ListItem,
+  Text,
+  UnorderedList,
+} from '@chakra-ui/react';
+import ArrowIcon from './icons/ArrowIcon';
 
 export default function ApplyingColors() {
   return (
     <Box mt="318px">
       <Heading size="header-2">Applying colors to type</Heading>
       <Text size="paragraph-xxl-default" mt="64px" color="neutrals.700">
-        Our colors and type needs to work well together according to heirarchy, similarity, and
-        common region allowing our UI to communicate with the end-users better at glance.
+        Our colors and type needs to work well together according to heirarchy,
+        similarity, and common region allowing our UI to communicate with the end-users
+        better at glance.
       </Text>
 
-      <Flex justifyContent="center" mt="64px" columnGap="72px" rowGap="60px" flexWrap="wrap">
+      <Flex
+        justifyContent="center"
+        mt="64px"
+        columnGap="72px"
+        rowGap="60px"
+        flexWrap="wrap"
+      >
         <Recipe />
         <HowToCookLumpia />
         <LoginForm />
@@ -39,12 +54,11 @@ function Email() {
               transform="translateX(-50%)"
               marginTop="-90px"
             />
-            <UnorderedList>
-              <ListItem>Hint text</ListItem>
-              <ListItem>error/700</ListItem>
-            </UnorderedList>
           </Text>
-
+          <UnorderedList>
+            <ListItem>Hint text</ListItem>
+            <ListItem>error/700</ListItem>
+          </UnorderedList>
           <Text size="label-xs-default" position="relative">
             <Icon
               as={ArrowIcon}
@@ -56,11 +70,11 @@ function Email() {
               transform="translateX(-50%)"
               marginTop="-126px"
             />
-            <UnorderedList>
-              <ListItem>Input text</ListItem>
-              <ListItem>neutrals/900</ListItem>
-            </UnorderedList>
           </Text>
+          <UnorderedList>
+            <ListItem>Input text</ListItem>
+            <ListItem>neutrals/900</ListItem>
+          </UnorderedList>
         </Flex>
       </Box>
     </Box>
@@ -89,12 +103,11 @@ function HowToCookLumpia() {
               transform="translateX(-50%)"
               marginTop="-120px"
             />
-            <UnorderedList>
-              <ListItem>paragraphs mobile base</ListItem>
-              <ListItem>neutrals/700</ListItem>
-            </UnorderedList>
           </Text>
-
+          <UnorderedList>
+            <ListItem>paragraphs mobile base</ListItem>
+            <ListItem>neutrals/700</ListItem>
+          </UnorderedList>
           <Text size="label-xs-default" position="relative">
             <Icon
               as={ArrowIcon}
@@ -106,11 +119,11 @@ function HowToCookLumpia() {
               transform="translateX(-50%)"
               marginTop="-180px"
             />
-            <UnorderedList>
-              <ListItem>Header 1</ListItem>
-              <ListItem>neutrals/900</ListItem>
-            </UnorderedList>
           </Text>
+          <UnorderedList>
+            <ListItem>Header 1</ListItem>
+            <ListItem>neutrals/900</ListItem>
+          </UnorderedList>
         </Flex>
       </Box>
     </Box>
@@ -135,11 +148,12 @@ function Recipe() {
               transform="translateX(-50%)"
               marginTop="-110px"
             />
-            <UnorderedList>
-              <ListItem>paragraphs web base</ListItem>
-              <ListItem>neutrals/700</ListItem>
-            </UnorderedList>
           </Text>
+
+          <UnorderedList>
+            <ListItem>paragraphs web base</ListItem>
+            <ListItem>neutrals/700</ListItem>
+          </UnorderedList>
 
           <Text size="label-xs-default" position="relative">
             <Icon
@@ -152,11 +166,11 @@ function Recipe() {
               transform="translateX(-50%)"
               marginTop="-195px"
             />
-            <UnorderedList>
-              <ListItem>Header 1</ListItem>
-              <ListItem>neutrals/900</ListItem>
-            </UnorderedList>
           </Text>
+          <UnorderedList>
+            <ListItem>Header 1</ListItem>
+            <ListItem>neutrals/900</ListItem>
+          </UnorderedList>
         </Flex>
       </Box>
     </Box>

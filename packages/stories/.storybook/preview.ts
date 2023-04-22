@@ -1,5 +1,3 @@
-import '../styles/global.css';
-
 export const parameters = {
   actions: {
     argTypesRegex: '^on.*',
@@ -16,10 +14,8 @@ export const parameters = {
         'Getting Started',
         'Contribution Guide',
         'System Design',
-        'Provider and Hooks',
-        'Layouts',
         'Components',
-        'Utilities',
+        'Templates',
         'Releases',
       ],
     },
