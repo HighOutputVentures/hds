@@ -11,7 +11,7 @@
     }
   },
   "dependencies": {
-    "react-responsive-carousel": "^3.2.23"
+    "react-responsive-carousel": "3.2.23"
   },
   "publishConfig": {
     "access": "public"

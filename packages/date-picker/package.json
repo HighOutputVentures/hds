@@ -10,7 +10,7 @@
     }
   },
   "dependencies": {
-    "@floating-ui/react": "0.22.3",
+    "@floating-ui/react": "0.23.1",
     "@highoutput/hds-forms": "*",
     "date-fns": "2.29.3",
     "uuid": "9.0.0"

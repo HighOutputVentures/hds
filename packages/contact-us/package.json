@@ -11,7 +11,7 @@
     }
   },
   "dependencies": {
-    "@highoutput/hds-forms": "^0.2.15",
+    "@highoutput/hds-forms": "*",
     "@highoutput/hds-icons": "*",
     "@highoutput/hds-toast": "*",
     "@hookform/resolvers": "3.1.0",
