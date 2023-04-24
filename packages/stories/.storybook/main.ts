@@ -29,15 +29,20 @@ const config: StorybookConfig = {
               replacement: join(process.cwd(), `packages/${packageName}/src/index.ts`),
             };
           }),
-          {
-            find: 'shared/utils',
-            replacement: join(process.cwd(), 'packages/shared/utils/src/index.ts'),
-          },
+          ...shared.map((packageName) => ({
+            find: `shared/${packageName}`,
+            replacement: join(
+              process.cwd(),
+              `packages/shared/${packageName}/src/index.ts`,
+            ),
+          })),
         ],
       },
     });
   },
 };
+
+const shared = ['utils'];
 
 const packages = [
   'alerts',
