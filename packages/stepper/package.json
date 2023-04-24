@@ -14,7 +14,8 @@
     "@highoutput/hds-forms": "*"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "directory": "../../dist/packages/stepper"
   },
   "gitHead": "be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef"
 }

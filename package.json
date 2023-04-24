@@ -9,6 +9,8 @@
     "lint": "nx run-many --target=lint --all --parallel --maxParallel=100% --skip-nx-cache",
     "test": "nx run-many --target=test --all --exclude=stories --parallel --maxParallel=100% --skip-nx-cache",
     "format": "prettier --write .",
+    "prepublish": "npm run build",
+    "publish": "lerna publish",
     "sync-deps": "node ./scripts/sync-deps.js"
   },
   "devDependencies": {
@@ -66,6 +68,7 @@
     "jest-environment-node": "^29.4.1",
     "jsdom": "20.0.3",
     "jsdom-testing-mocks": "1.7.0",
+    "lerna": "^6.6.1",
     "ngx-deploy-npm": "5.2.0",
     "nx": "15.9.2",
     "prettier": "2.6.2",

@@ -1,6 +1,6 @@
 {
   "name": "stories",
-  "version": "1.0.0-next",
+  "private": true,
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
