@@ -11,7 +11,7 @@ const Story: Meta<typeof Slider> = {
 const Template: StoryFn<typeof Slider> = (args) => {
   return (
     <ThemeProvider>
-      <Box p={12}>
+      <Box>
         <Slider {...args} />
       </Box>
     </ThemeProvider>
