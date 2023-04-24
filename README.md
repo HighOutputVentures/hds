@@ -6,7 +6,7 @@ Components based on HighOutput's design system
 
 ```bash
 npm install
-npm start
+npm run dev
 ```
 
 ## Publishing a package
