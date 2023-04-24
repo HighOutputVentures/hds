@@ -6,7 +6,7 @@ Components based on HighOutput's design system
 
 ```bash
 npm install
-npm run dev
+npm run storybook
 ```
 
 ## Publishing a package

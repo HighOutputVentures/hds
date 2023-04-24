@@ -4,8 +4,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "dev": "nx serve stories:storybook",
-    "start": "nx serve stories:static-storybook",
+    "storybook": "nx serve stories:storybook",
     "build": "nx run-many --target=build --all --exclude=stories --parallel --maxParallel=100% --skip-nx-cache",
     "lint": "nx run-many --target=lint --all --parallel --maxParallel=100% --skip-nx-cache",
     "test": "nx run-many --target=test --all --exclude=stories --parallel --maxParallel=100% --skip-nx-cache",
