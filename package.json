@@ -11,7 +11,7 @@
     "format": "prettier --write .",
     "sync-deps": "node ./scripts/sync-deps.js",
     "predeploy": "node ./scripts/predeploy.js",
-    "deploy": "lerna publish",
+    "deploy": "lerna publish --no-private",
     "generate:theme-typings": "npx @chakra-ui/cli tokens packages/hds/src/theme/index.ts"
   },
   "devDependencies": {
