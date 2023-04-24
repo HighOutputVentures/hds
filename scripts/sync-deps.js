@@ -1,8 +1,13 @@
+// @ts-check
+
 const { glob } = require('glob');
 const path = require('path');
 const fs = require('fs');
 const prettier = require('prettier');
 
+/**
+ * @returns {{ [key: string]: any }}
+ */
 function getRootPackageJsonDeps() {
   const filepath = path.join(process.cwd(), 'package.json');
   const contents = fs.readFileSync(filepath, { encoding: 'utf-8' });
@@ -10,6 +15,9 @@ function getRootPackageJsonDeps() {
   return JSON.parse(contents).dependencies ?? {};
 }
 
+/**
+ * syncs packages' deps to root deps
+ */
 async function syncDeps() {
   const packageJsonFiles = await glob('packages/**/package.json');
   const rootDependencies = getRootPackageJsonDeps();
