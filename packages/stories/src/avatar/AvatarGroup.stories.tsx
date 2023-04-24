@@ -1,7 +1,7 @@
 import { VStack } from '@chakra-ui/react';
+import { ThemeProvider } from '@highoutput/hds';
 import { AvatarGroup } from '@highoutput/hds-avatar';
 import { Meta, StoryFn } from '@storybook/react';
-import { ThemeProvider } from '../../hds/src';
 
 const Story: Meta<typeof AvatarGroup> = {
   title: 'Components/Avatar/AvatarGroup',
