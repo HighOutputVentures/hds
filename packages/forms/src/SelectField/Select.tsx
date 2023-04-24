@@ -4,7 +4,6 @@ import {
   autoUpdate,
   size as floatingSize,
   useFloating,
-  useTransitionStyles,
 } from '@floating-ui/react';
 import { useSelect } from 'downshift';
 import * as React from 'react';
@@ -96,7 +95,8 @@ export default function Select<T extends Option>(props: SelectProps<T>) {
     },
   });
 
-  const { refs, strategy, x, y, context } = useFloating({
+  const { refs, strategy, x, y } = useFloating({
+    open: isOpen,
     whileElementsMounted: autoUpdate,
     middleware: [
       floatingSize({
@@ -111,10 +111,7 @@ export default function Select<T extends Option>(props: SelectProps<T>) {
         alignment: 'start',
       }),
     ],
-    open: isOpen,
   });
-
-  const transition = useTransitionStyles(context);
 
   return (
     <chakra.div
@@ -214,7 +211,6 @@ export default function Select<T extends Option>(props: SelectProps<T>) {
           position: strategy,
           top: `${y ?? 0}px`,
           left: `${x ?? 0}px`,
-          ...transition.styles,
         }}
       >
         <chakra.ul
