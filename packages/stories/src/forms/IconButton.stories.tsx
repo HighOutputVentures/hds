@@ -2,7 +2,7 @@ import { Icon, VStack } from '@chakra-ui/react';
 import { ThemeProvider } from '@highoutput/hds';
 import { IconButton } from '@highoutput/hds-forms';
 import { Meta, StoryFn } from '@storybook/react';
-import PlaceholderIcon from './examples/PlaceholderIcon';
+import PlaceholderIcon from '../examples/PlaceholderIcon';
 
 const Story: Meta<typeof IconButton> = {
   title: 'Components/Button/IconButton',
