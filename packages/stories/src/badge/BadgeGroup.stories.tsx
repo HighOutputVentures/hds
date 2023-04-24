@@ -2,7 +2,7 @@ import { Icon } from '@chakra-ui/icons';
 import { ChakraProvider } from '@chakra-ui/react';
 import { BadgeGroup } from '@highoutput/hds-badge';
 import { Meta, StoryFn } from '@storybook/react';
-import Example2Icon from './examples/Example2Icon';
+import Example2Icon from '../examples/Example2Icon';
 
 const meta: Meta = {
   title: 'Components/Badge/BadgeGroup',

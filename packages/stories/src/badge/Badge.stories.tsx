@@ -2,8 +2,8 @@ import { Icon } from '@chakra-ui/icons';
 import { ChakraProvider, VStack } from '@chakra-ui/react';
 import { Badge } from '@highoutput/hds-badge';
 import { Meta, StoryFn } from '@storybook/react';
-import AUIcon from './examples/AUIcon';
-import ExampleIcon from './examples/ExampleIcon';
+import AUIcon from '../examples/AUIcon';
+import ExampleIcon from '../examples/ExampleIcon';
 
 const meta: Meta = {
   title: 'Components/Badge/Badge',
