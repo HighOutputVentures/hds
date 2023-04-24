@@ -20,7 +20,7 @@ const Template: StoryFn<typeof FileUpload> = (args) => {
         />
       </Flex>
 
-      {(files as File[])?.length && (
+      {!!(files as File[])?.length && (
         <Flex justify="center">
           <ProgressBox file={files} onDelete={(): void => setFiles([])} value={80} />
         </Flex>
