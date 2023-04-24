@@ -41,7 +41,10 @@ export interface ComboboxProps<T extends Option[]> {
  * @link https://zagjs.com/components/react/combobox
  *
  */
-export default function Combobox<T extends Option[]>(props: ComboboxProps<T>) {
+function Combobox<T extends Option[]>(
+  props: ComboboxProps<T>,
+  ref: React.ForwardedRef<HTMLInputElement>,
+) {
   const {
     options = [],
     leftIcon,
@@ -129,6 +132,7 @@ export default function Combobox<T extends Option[]>(props: ComboboxProps<T>) {
           )}
 
           <chakra.input
+            ref={ref}
             {...api.inputProps}
             sx={styles.field}
             data-testid="hds.combobox.controls.input"
@@ -198,3 +202,7 @@ export default function Combobox<T extends Option[]>(props: ComboboxProps<T>) {
     </chakra.div>
   );
 }
+
+export default React.forwardRef(Combobox) as <T extends Option[]>(
+  props: ComboboxProps<T> & { ref: React.ForwardedRef<HTMLInputElement> },
+) => JSX.Element;

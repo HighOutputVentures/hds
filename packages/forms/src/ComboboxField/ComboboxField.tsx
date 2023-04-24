@@ -19,7 +19,10 @@ type Picked<T extends Option[]> = Pick<
 
 export type ComboboxFieldProps<T extends Option[]> = Prettify<Picked<T> & FormGroupProps>;
 
-export default function ComboboxField<T extends Option[]>(props: ComboboxFieldProps<T>) {
+function ComboboxField<T extends Option[]>(
+  props: ComboboxFieldProps<T>,
+  ref: React.ForwardedRef<HTMLInputElement>,
+) {
   const {
     size,
     name,
@@ -37,6 +40,7 @@ export default function ComboboxField<T extends Option[]>(props: ComboboxFieldPr
   return (
     <FormGroup {...others}>
       <Combobox
+        ref={ref}
         size={size}
         name={name}
         value={value}
@@ -54,3 +58,7 @@ export default function ComboboxField<T extends Option[]>(props: ComboboxFieldPr
     </FormGroup>
   );
 }
+
+export default React.forwardRef(ComboboxField) as <T extends Option[]>(
+  props: ComboboxFieldProps<T> & { ref: React.ForwardedRef<HTMLInputElement> },
+) => JSX.Element;
