@@ -21,7 +21,10 @@ export type SelectFieldProps<T extends Option> = Prettify<
   FormGroupProps & SelectFieldBaseProps<T>
 >;
 
-export default function SelectField<T extends Option>(props: SelectFieldProps<T>) {
+function SelectField<T extends Option>(
+  props: SelectFieldProps<T>,
+  ref: React.ForwardedRef<HTMLButtonElement>,
+) {
   const {
     size,
     options,
@@ -39,6 +42,7 @@ export default function SelectField<T extends Option>(props: SelectFieldProps<T>
   return (
     <FormGroup {...formGroupProps}>
       <Select
+        ref={ref}
         size={size}
         options={options}
         value={value}
@@ -56,3 +60,7 @@ export default function SelectField<T extends Option>(props: SelectFieldProps<T>
     </FormGroup>
   );
 }
+
+export default React.forwardRef(SelectField) as <T extends Option>(
+  props: SelectFieldProps<T> & { ref: React.ForwardedRef<HTMLButtonElement> },
+) => JSX.Element;

@@ -42,7 +42,10 @@ export type SelectProps<T extends Option> = {
   __optionTestId?: string;
 };
 
-export default function Select<T extends Option>(props: SelectProps<T>) {
+function Select<T extends Option>(
+  props: SelectProps<T>,
+  ref: React.ForwardedRef<HTMLButtonElement>,
+) {
   const id = React.useId();
 
   const {
@@ -124,6 +127,7 @@ export default function Select<T extends Option>(props: SelectProps<T>) {
       }}
     >
       <chakra.button
+        ref={ref}
         sx={{
           ...styles.field,
           width: 'full',
@@ -244,3 +248,7 @@ export default function Select<T extends Option>(props: SelectProps<T>) {
     </chakra.div>
   );
 }
+
+export default React.forwardRef(Select) as <T extends Option>(
+  props: SelectProps<T> & { ref: React.ForwardedRef<HTMLButtonElement> },
+) => JSX.Element;
