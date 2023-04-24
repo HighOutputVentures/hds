@@ -30,8 +30,8 @@ const config: StorybookConfig = {
             };
           }),
           {
-            find: 'shared',
-            replacement: join(process.cwd(), 'packages/shared/src/index.ts'),
+            find: 'shared/utils',
+            replacement: join(process.cwd(), 'packages/shared/utils/src/index.ts'),
           },
         ],
       },
