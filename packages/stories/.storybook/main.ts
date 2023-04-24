@@ -14,6 +14,9 @@ const config: StorybookConfig = {
     },
   },
   staticDirs: [resolve(__dirname, '../public')],
+  features: {
+    storyStoreV7: true,
+  },
   viteFinal(config) {
     return mergeConfig(config, {
       resolve: {

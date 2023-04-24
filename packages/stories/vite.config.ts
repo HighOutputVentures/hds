@@ -19,6 +19,7 @@ export default defineConfig({
     }),
   ],
   build: {
+    ssr: true,
     lib: {
       entry: 'src/index.ts',
       name: 'stories',
