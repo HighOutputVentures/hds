@@ -117,7 +117,7 @@ export function Modal(props: ModalProps) {
     __okayButtonTestId = 'hds.modal.controls.okay',
 
     ...others
-  } = Object.assign({}, props);
+  } = props;
 
   const cancelButtonRef = useRef<HTMLButtonElement>(null);
   const styles = useStyles({ size });
