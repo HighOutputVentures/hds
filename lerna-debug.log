@@ -1,0 +1,2903 @@
+0 verbose rootPath /home/niel/hov-repo/hds
+1 silly argv {
+1 silly argv   _: [ 'publish' ],
+1 silly argv   composed: 'publish',
+1 silly argv   lernaVersion: '5.1.1',
+1 silly argv   '$0': 'lerna'
+1 silly argv }
+2 notice cli v5.1.1
+3 verbose rootPath /home/niel/hov-repo/hds
+4 info versioning independent
+5 verbose session efd4fa5670b82eb1
+6 verbose user-agent lerna/5.1.1/node@v18.14.2+x64 (linux)
+7 silly argv { _: [ 'publish' ], composed: 'publish', lernaVersion: '5.1.1' }
+8 verbose rootPath /home/niel/hov-repo/hds
+9 silly isAnythingCommitted
+10 verbose isAnythingCommitted 1
+11 silly getCurrentBranch
+12 verbose currentBranch master
+13 silly remoteBranchExists
+14 silly isBehindUpstream
+15 silly isBehindUpstream master is behind origin/master by 0 commit(s) and ahead by 1
+16 silly hasTags
+17 verbose hasTags true
+18 silly git-describe.sync "@highoutput/hds-alerts@0.2.5-1-gcd715cc" => {"lastTagName":"@highoutput/hds-alerts@0.2.5","lastVersion":"0.2.5","refCount":"1","sha":"cd715cc","isDirty":false}
+19 info Looking for changed packages since @highoutput/hds-alerts@0.2.5
+20 silly checking diff packages/accordion
+21 silly found diff in packages/accordion/package.json
+22 verbose filtered diff [ 'packages/accordion/package.json' ]
+23 silly checking diff packages/alerts
+24 silly found diff in packages/alerts/package.json
+25 verbose filtered diff [ 'packages/alerts/package.json' ]
+26 silly checking diff packages/array-field
+27 silly found diff in packages/array-field/package.json
+28 verbose filtered diff [ 'packages/array-field/package.json' ]
+29 silly checking diff packages/auth
+30 silly found diff in packages/auth/package.json
+31 verbose filtered diff [ 'packages/auth/package.json' ]
+32 silly checking diff packages/auto-form
+33 silly found diff in packages/auto-form/package.json
+34 verbose filtered diff [ 'packages/auto-form/package.json' ]
+35 silly checking diff packages/autocomplete-input
+36 silly found diff in packages/autocomplete-input/package.json
+37 verbose filtered diff [ 'packages/autocomplete-input/package.json' ]
+38 silly checking diff packages/avatar
+39 silly found diff in packages/avatar/package.json
+40 verbose filtered diff [ 'packages/avatar/package.json' ]
+41 silly checking diff packages/badge
+42 silly found diff in packages/badge/package.json
+43 verbose filtered diff [ 'packages/badge/package.json' ]
+44 silly checking diff packages/breadcrumbs
+45 silly found diff in packages/breadcrumbs/package.json
+46 verbose filtered diff [ 'packages/breadcrumbs/package.json' ]
+47 silly checking diff packages/button
+48 silly found diff in packages/button/package.json
+49 verbose filtered diff [ 'packages/button/package.json' ]
+50 silly checking diff packages/carousel
+51 silly found diff in packages/carousel/package.json
+52 verbose filtered diff [ 'packages/carousel/package.json' ]
+53 silly checking diff packages/checkbox-group
+54 silly found diff in packages/checkbox-group/package.json
+55 verbose filtered diff [ 'packages/checkbox-group/package.json' ]
+56 silly checking diff packages/checkbox
+57 silly found diff in packages/checkbox/package.json
+58 verbose filtered diff [ 'packages/checkbox/package.json' ]
+59 silly checking diff packages/contact-us
+60 silly found diff in packages/contact-us/package.json
+61 verbose filtered diff [ 'packages/contact-us/package.json' ]
+62 silly checking diff packages/cta
+63 silly found diff in packages/cta/package.json
+64 verbose filtered diff [ 'packages/cta/package.json' ]
+65 silly checking diff packages/date-picker
+66 silly found diff in packages/date-picker/package.json
+67 verbose filtered diff [ 'packages/date-picker/package.json' ]
+68 silly checking diff packages/drawer
+69 silly found diff in packages/drawer/package.json
+70 verbose filtered diff [ 'packages/drawer/package.json' ]
+71 silly checking diff packages/dropdown
+72 silly found diff in packages/dropdown/package.json
+73 verbose filtered diff [ 'packages/dropdown/package.json' ]
+74 silly checking diff packages/empty-state
+75 silly found diff in packages/empty-state/package.json
+76 verbose filtered diff [ 'packages/empty-state/package.json' ]
+77 silly checking diff packages/experimental
+78 silly found diff in packages/experimental/package.json
+79 verbose filtered diff [ 'packages/experimental/package.json' ]
+80 silly checking diff packages/extras
+81 silly found diff in packages/extras/package.json
+82 verbose filtered diff [ 'packages/extras/package.json' ]
+83 silly checking diff packages/file-upload
+84 silly found diff in packages/file-upload/package.json
+85 verbose filtered diff [ 'packages/file-upload/package.json' ]
+86 silly checking diff packages/forms
+87 silly found diff in packages/forms/package.json
+88 verbose filtered diff [ 'packages/forms/package.json' ]
+89 silly checking diff packages/hds
+90 silly found diff in packages/hds/package.json
+91 verbose filtered diff [ 'packages/hds/package.json' ]
+92 silly checking diff packages/hooks
+93 silly found diff in packages/hooks/package.json
+94 verbose filtered diff [ 'packages/hooks/package.json' ]
+95 silly checking diff packages/icons
+96 silly found diff in packages/icons/package.json
+97 verbose filtered diff [ 'packages/icons/package.json' ]
+98 silly checking diff packages/loading-indicator
+99 silly found diff in packages/loading-indicator/package.json
+100 verbose filtered diff [ 'packages/loading-indicator/package.json' ]
+101 silly checking diff packages/metrics
+102 silly found diff in packages/metrics/package.json
+103 verbose filtered diff [ 'packages/metrics/package.json' ]
+104 silly checking diff packages/modal
+105 silly found diff in packages/modal/package.json
+106 verbose filtered diff [ 'packages/modal/package.json' ]
+107 silly checking diff packages/pagination
+108 silly found diff in packages/pagination/package.json
+109 verbose filtered diff [ 'packages/pagination/package.json' ]
+110 silly checking diff packages/popover
+111 silly found diff in packages/popover/package.json
+112 verbose filtered diff [ 'packages/popover/package.json' ]
+113 silly checking diff packages/slideout-menu
+114 silly found diff in packages/slideout-menu/package.json
+115 verbose filtered diff [ 'packages/slideout-menu/package.json' ]
+116 silly checking diff packages/slider
+117 silly found diff in packages/slider/package.json
+118 verbose filtered diff [ 'packages/slider/package.json' ]
+119 silly checking diff packages/spinner
+120 silly found diff in packages/spinner/package.json
+121 verbose filtered diff [ 'packages/spinner/package.json' ]
+122 silly checking diff packages/stepper
+123 silly found diff in packages/stepper/package.json
+124 verbose filtered diff [ 'packages/stepper/package.json' ]
+125 silly checking diff packages/switch
+126 silly found diff in packages/switch/package.json
+127 verbose filtered diff [ 'packages/switch/package.json' ]
+128 silly checking diff packages/tab
+129 silly found diff in packages/tab/package.json
+130 verbose filtered diff [ 'packages/tab/package.json' ]
+131 silly checking diff packages/table
+132 silly found diff in packages/table/package.json
+133 verbose filtered diff [ 'packages/table/package.json' ]
+134 silly checking diff packages/tag
+135 silly found diff in packages/tag/package.json
+136 verbose filtered diff [ 'packages/tag/package.json' ]
+137 silly checking diff packages/toast
+138 silly found diff in packages/toast/package.json
+139 verbose filtered diff [ 'packages/toast/package.json' ]
+140 silly checking diff packages/tooltip
+141 silly found diff in packages/tooltip/package.json
+142 verbose filtered diff [ 'packages/tooltip/package.json' ]
+143 silly checking diff packages/utilities
+144 silly found diff in packages/utilities/package.json
+145 verbose filtered diff [ 'packages/utilities/package.json' ]
+146 verbose updated @highoutput/hds-accordion
+147 verbose updated @highoutput/hds-alerts
+148 verbose updated @highoutput/hds-array-field
+149 verbose updated @highoutput/hds-auth
+150 verbose updated @highoutput/hds-auto-form
+151 verbose updated @highoutput/hds-autocomplete-input
+152 verbose updated @highoutput/hds-avatar
+153 verbose updated @highoutput/hds-badge
+154 verbose updated @highoutput/hds-breadcrumbs
+155 verbose updated @highoutput/hds-button
+156 verbose updated @highoutput/hds-carousel
+157 verbose updated @highoutput/hds-checkbox-group
+158 verbose updated @highoutput/hds-checkbox
+159 verbose updated @highoutput/hds-contact-us
+160 verbose updated @highoutput/hds-cta
+161 verbose updated @highoutput/hds-date-picker
+162 verbose updated @highoutput/hds-drawer
+163 verbose updated @highoutput/hds-dropdown
+164 verbose updated @highoutput/hds-empty-state
+165 verbose updated @highoutput/hds-experimental
+166 verbose updated @highoutput/hds-extras
+167 verbose updated @highoutput/hds-file-upload
+168 verbose updated @highoutput/hds-forms
+169 verbose updated @highoutput/hds
+170 verbose updated @highoutput/hds-hooks
+171 verbose updated @highoutput/hds-icons
+172 verbose updated @highoutput/hds-loading-indicator
+173 verbose updated @highoutput/hds-metrics
+174 verbose updated @highoutput/hds-modal
+175 verbose updated @highoutput/hds-pagination
+176 verbose updated @highoutput/hds-popover
+177 verbose updated @highoutput/hds-slideout-menu
+178 verbose updated @highoutput/hds-slider
+179 verbose updated @highoutput/hds-spinner
+180 verbose updated @highoutput/hds-stepper
+181 verbose updated @highoutput/hds-switch
+182 verbose updated @highoutput/hds-tab
+183 verbose updated @highoutput/hds-table
+184 verbose updated @highoutput/hds-tag
+185 verbose updated @highoutput/hds-toast
+186 verbose updated @highoutput/hds-tooltip
+187 verbose updated @highoutput/hds-utilities
+188 verbose git-describe undefined => "@highoutput/hds-alerts@0.2.5-1-gcd715cc"
+189 silly git-describe parsed => {"lastTagName":"@highoutput/hds-alerts@0.2.5","lastVersion":"0.2.5","refCount":"1","sha":"cd715cc","isDirty":false}
+190 info execute Skipping releases
+191 silly lifecycle No script for "preversion" in "highoutput-hds", continuing
+192 silly lifecycle No script for "preversion" in "@highoutput/hds-accordion", continuing
+193 silly lifecycle No script for "preversion" in "@highoutput/hds-alerts", continuing
+194 silly lifecycle No script for "version" in "@highoutput/hds-alerts", continuing
+195 silly lifecycle No script for "preversion" in "@highoutput/hds-badge", continuing
+196 silly lifecycle No script for "version" in "@highoutput/hds-accordion", continuing
+197 silly lifecycle No script for "preversion" in "@highoutput/hds-breadcrumbs", continuing
+198 silly lifecycle No script for "version" in "@highoutput/hds-breadcrumbs", continuing
+199 silly lifecycle No script for "preversion" in "@highoutput/hds-carousel", continuing
+200 silly lifecycle No script for "version" in "@highoutput/hds-badge", continuing
+201 silly lifecycle No script for "preversion" in "@highoutput/hds-checkbox-group", continuing
+202 silly lifecycle No script for "version" in "@highoutput/hds-checkbox-group", continuing
+203 silly lifecycle No script for "preversion" in "@highoutput/hds-checkbox", continuing
+204 silly lifecycle No script for "version" in "@highoutput/hds-carousel", continuing
+205 silly lifecycle No script for "preversion" in "@highoutput/hds-cta", continuing
+206 silly lifecycle No script for "version" in "@highoutput/hds-checkbox", continuing
+207 silly lifecycle No script for "preversion" in "@highoutput/hds-date-picker", continuing
+208 silly lifecycle No script for "version" in "@highoutput/hds-cta", continuing
+209 silly lifecycle No script for "preversion" in "@highoutput/hds-drawer", continuing
+210 silly lifecycle No script for "version" in "@highoutput/hds-date-picker", continuing
+211 silly lifecycle No script for "preversion" in "@highoutput/hds-empty-state", continuing
+212 silly lifecycle No script for "version" in "@highoutput/hds-drawer", continuing
+213 silly lifecycle No script for "preversion" in "@highoutput/hds-experimental", continuing
+214 silly lifecycle No script for "version" in "@highoutput/hds-experimental", continuing
+215 silly lifecycle No script for "preversion" in "@highoutput/hds-extras", continuing
+216 silly lifecycle No script for "version" in "@highoutput/hds-extras", continuing
+217 silly lifecycle No script for "preversion" in "@highoutput/hds-file-upload", continuing
+218 silly lifecycle No script for "version" in "@highoutput/hds-file-upload", continuing
+219 silly lifecycle No script for "preversion" in "@highoutput/hds-forms", continuing
+220 silly lifecycle No script for "version" in "@highoutput/hds-empty-state", continuing
+221 silly lifecycle No script for "preversion" in "@highoutput/hds", continuing
+222 silly lifecycle No script for "version" in "@highoutput/hds-forms", continuing
+223 silly lifecycle No script for "preversion" in "@highoutput/hds-hooks", continuing
+224 silly lifecycle No script for "version" in "@highoutput/hds", continuing
+225 silly lifecycle No script for "preversion" in "@highoutput/hds-icons", continuing
+226 silly lifecycle No script for "version" in "@highoutput/hds-hooks", continuing
+227 silly lifecycle No script for "preversion" in "@highoutput/hds-loading-indicator", continuing
+228 silly lifecycle No script for "version" in "@highoutput/hds-icons", continuing
+229 silly lifecycle No script for "preversion" in "@highoutput/hds-metrics", continuing
+230 silly lifecycle No script for "version" in "@highoutput/hds-loading-indicator", continuing
+231 silly lifecycle No script for "preversion" in "@highoutput/hds-pagination", continuing
+232 silly lifecycle No script for "version" in "@highoutput/hds-metrics", continuing
+233 silly lifecycle No script for "preversion" in "@highoutput/hds-popover", continuing
+234 silly lifecycle No script for "version" in "@highoutput/hds-pagination", continuing
+235 silly lifecycle No script for "preversion" in "@highoutput/hds-slideout-menu", continuing
+236 silly lifecycle No script for "version" in "@highoutput/hds-popover", continuing
+237 silly lifecycle No script for "preversion" in "@highoutput/hds-slider", continuing
+238 silly lifecycle No script for "version" in "@highoutput/hds-slideout-menu", continuing
+239 silly lifecycle No script for "preversion" in "@highoutput/hds-spinner", continuing
+240 silly lifecycle No script for "version" in "@highoutput/hds-slider", continuing
+241 silly lifecycle No script for "preversion" in "@highoutput/hds-switch", continuing
+242 silly lifecycle No script for "version" in "@highoutput/hds-spinner", continuing
+243 silly lifecycle No script for "preversion" in "@highoutput/hds-tab", continuing
+244 silly lifecycle No script for "version" in "@highoutput/hds-switch", continuing
+245 silly lifecycle No script for "preversion" in "@highoutput/hds-table", continuing
+246 silly lifecycle No script for "version" in "@highoutput/hds-tab", continuing
+247 silly lifecycle No script for "preversion" in "@highoutput/hds-tag", continuing
+248 silly lifecycle No script for "version" in "@highoutput/hds-table", continuing
+249 silly lifecycle No script for "preversion" in "@highoutput/hds-toast", continuing
+250 silly lifecycle No script for "version" in "@highoutput/hds-tag", continuing
+251 silly lifecycle No script for "preversion" in "@highoutput/hds-tooltip", continuing
+252 silly lifecycle No script for "version" in "@highoutput/hds-toast", continuing
+253 silly lifecycle No script for "preversion" in "@highoutput/hds-utilities", continuing
+254 silly lifecycle No script for "version" in "@highoutput/hds-tooltip", continuing
+255 silly lifecycle No script for "preversion" in "@highoutput/hds-stepper", continuing
+256 silly lifecycle No script for "version" in "@highoutput/hds-utilities", continuing
+257 silly lifecycle No script for "preversion" in "@highoutput/hds-array-field", continuing
+258 silly lifecycle No script for "version" in "@highoutput/hds-stepper", continuing
+259 silly lifecycle No script for "preversion" in "@highoutput/hds-auth", continuing
+260 silly lifecycle No script for "version" in "@highoutput/hds-array-field", continuing
+261 silly lifecycle No script for "preversion" in "@highoutput/hds-auto-form", continuing
+262 silly lifecycle No script for "version" in "@highoutput/hds-auth", continuing
+263 silly lifecycle No script for "preversion" in "@highoutput/hds-autocomplete-input", continuing
+264 silly lifecycle No script for "version" in "@highoutput/hds-auto-form", continuing
+265 silly lifecycle No script for "preversion" in "@highoutput/hds-contact-us", continuing
+266 silly lifecycle No script for "version" in "@highoutput/hds-contact-us", continuing
+267 silly lifecycle No script for "preversion" in "@highoutput/hds-button", continuing
+268 silly lifecycle No script for "version" in "@highoutput/hds-autocomplete-input", continuing
+269 silly lifecycle No script for "preversion" in "@highoutput/hds-avatar", continuing
+270 silly lifecycle No script for "version" in "@highoutput/hds-avatar", continuing
+271 silly lifecycle No script for "version" in "@highoutput/hds-button", continuing
+272 silly lifecycle No script for "preversion" in "@highoutput/hds-dropdown", continuing
+273 silly lifecycle No script for "preversion" in "@highoutput/hds-modal", continuing
+274 silly lifecycle No script for "version" in "@highoutput/hds-dropdown", continuing
+275 silly lifecycle No script for "version" in "@highoutput/hds-modal", continuing
+276 silly lifecycle No script for "version" in "highoutput-hds", continuing
+277 silly gitAdd [
+277 silly gitAdd   'packages/alerts/package.json',
+277 silly gitAdd   'packages/accordion/package.json',
+277 silly gitAdd   'packages/breadcrumbs/package.json',
+277 silly gitAdd   'packages/badge/package.json',
+277 silly gitAdd   'packages/checkbox-group/package.json',
+277 silly gitAdd   'packages/carousel/package.json',
+277 silly gitAdd   'packages/checkbox/package.json',
+277 silly gitAdd   'packages/cta/package.json',
+277 silly gitAdd   'packages/date-picker/package.json',
+277 silly gitAdd   'packages/drawer/package.json',
+277 silly gitAdd   'packages/experimental/package.json',
+277 silly gitAdd   'packages/extras/package.json',
+277 silly gitAdd   'packages/file-upload/package.json',
+277 silly gitAdd   'packages/file-upload/package-lock.json',
+277 silly gitAdd   'packages/empty-state/package.json',
+277 silly gitAdd   'packages/empty-state/package-lock.json',
+277 silly gitAdd   'packages/forms/package.json',
+277 silly gitAdd   'packages/hds/package.json',
+277 silly gitAdd   'packages/hooks/package.json',
+277 silly gitAdd   'packages/icons/package.json',
+277 silly gitAdd   'packages/loading-indicator/package.json',
+277 silly gitAdd   'packages/metrics/package.json',
+277 silly gitAdd   'packages/pagination/package.json',
+277 silly gitAdd   'packages/popover/package.json',
+277 silly gitAdd   'packages/slideout-menu/package.json',
+277 silly gitAdd   'packages/slider/package.json',
+277 silly gitAdd   'packages/spinner/package.json',
+277 silly gitAdd   'packages/switch/package.json',
+277 silly gitAdd   'packages/tab/package.json',
+277 silly gitAdd   'packages/table/package.json',
+277 silly gitAdd   'packages/tag/package.json',
+277 silly gitAdd   'packages/toast/package.json',
+277 silly gitAdd   'packages/tooltip/package.json',
+277 silly gitAdd   'packages/utilities/package.json',
+277 silly gitAdd   'packages/stepper/package.json',
+277 silly gitAdd   'packages/array-field/package.json',
+277 silly gitAdd   'packages/auth/package.json',
+277 silly gitAdd   'packages/auto-form/package.json',
+277 silly gitAdd   'packages/contact-us/package.json',
+277 silly gitAdd   'packages/autocomplete-input/package.json',
+277 silly gitAdd   'packages/avatar/package.json',
+277 silly gitAdd   'packages/button/package.json',
+277 silly gitAdd   'packages/dropdown/package.json',
+277 silly gitAdd   'packages/modal/package.json'
+277 silly gitAdd ]
+278 silly gitCommit Publish
+278 silly gitCommit
+278 silly gitCommit  - @highoutput/hds-accordion@0.1.5
+278 silly gitCommit  - @highoutput/hds-alerts@0.2.7
+278 silly gitCommit  - @highoutput/hds-array-field@0.2.12
+278 silly gitCommit  - @highoutput/hds-auth@0.2.16
+278 silly gitCommit  - @highoutput/hds-auto-form@0.2.11
+278 silly gitCommit  - @highoutput/hds-autocomplete-input@0.2.11
+278 silly gitCommit  - @highoutput/hds-avatar@0.2.5
+278 silly gitCommit  - @highoutput/hds-badge@0.2.6
+278 silly gitCommit  - @highoutput/hds-breadcrumbs@0.2.6
+278 silly gitCommit  - @highoutput/hds-button@0.1.10
+278 silly gitCommit  - @highoutput/hds-carousel@0.2.4
+278 silly gitCommit  - @highoutput/hds-checkbox-group@0.2.5
+278 silly gitCommit  - @highoutput/hds-checkbox@0.1.5
+278 silly gitCommit  - @highoutput/hds-contact-us@0.2.27
+278 silly gitCommit  - @highoutput/hds-cta@0.1.11
+278 silly gitCommit  - @highoutput/hds-date-picker@0.2.11
+278 silly gitCommit  - @highoutput/hds-drawer@0.1.4
+278 silly gitCommit  - @highoutput/hds-dropdown@0.3.23
+278 silly gitCommit  - @highoutput/hds-empty-state@0.1.11
+278 silly gitCommit  - @highoutput/hds-experimental@0.1.8
+278 silly gitCommit  - @highoutput/hds-extras@0.1.6
+278 silly gitCommit  - @highoutput/hds-file-upload@0.1.12
+278 silly gitCommit  - @highoutput/hds-forms@0.2.9
+278 silly gitCommit  - @highoutput/hds@0.2.26
+278 silly gitCommit  - @highoutput/hds-hooks@0.1.3
+278 silly gitCommit  - @highoutput/hds-icons@0.2.1
+278 silly gitCommit  - @highoutput/hds-loading-indicator@0.1.13
+278 silly gitCommit  - @highoutput/hds-metrics@0.2.9
+278 silly gitCommit  - @highoutput/hds-modal@0.2.20
+278 silly gitCommit  - @highoutput/hds-pagination@0.2.19
+278 silly gitCommit  - @highoutput/hds-popover@0.1.5
+278 silly gitCommit  - @highoutput/hds-slideout-menu@0.2.6
+278 silly gitCommit  - @highoutput/hds-slider@0.2.4
+278 silly gitCommit  - @highoutput/hds-spinner@0.2.4
+278 silly gitCommit  - @highoutput/hds-stepper@0.1.3
+278 silly gitCommit  - @highoutput/hds-switch@0.2.4
+278 silly gitCommit  - @highoutput/hds-tab@0.2.11
+278 silly gitCommit  - @highoutput/hds-table@0.2.12
+278 silly gitCommit  - @highoutput/hds-tag@0.2.6
+278 silly gitCommit  - @highoutput/hds-toast@0.2.9
+278 silly gitCommit  - @highoutput/hds-tooltip@0.2.6
+278 silly gitCommit  - @highoutput/hds-utilities@0.1.15
+279 verbose git [
+279 verbose git   'commit',
+279 verbose git   '-F',
+279 verbose git   '/tmp/8fe19b91-15b2-4c83-a77f-0de9e268506f/lerna-commit.txt'
+279 verbose git ]
+280 silly gitTag @highoutput/hds-accordion@0.1.5
+281 verbose git [
+281 verbose git   'tag',
+281 verbose git   '@highoutput/hds-accordion@0.1.5',
+281 verbose git   '-m',
+281 verbose git   '@highoutput/hds-accordion@0.1.5'
+281 verbose git ]
+282 silly gitTag @highoutput/hds-alerts@0.2.7
+283 verbose git [
+283 verbose git   'tag',
+283 verbose git   '@highoutput/hds-alerts@0.2.7',
+283 verbose git   '-m',
+283 verbose git   '@highoutput/hds-alerts@0.2.7'
+283 verbose git ]
+284 silly gitTag @highoutput/hds-array-field@0.2.12
+285 verbose git [
+285 verbose git   'tag',
+285 verbose git   '@highoutput/hds-array-field@0.2.12',
+285 verbose git   '-m',
+285 verbose git   '@highoutput/hds-array-field@0.2.12'
+285 verbose git ]
+286 silly gitTag @highoutput/hds-auth@0.2.16
+287 verbose git [
+287 verbose git   'tag',
+287 verbose git   '@highoutput/hds-auth@0.2.16',
+287 verbose git   '-m',
+287 verbose git   '@highoutput/hds-auth@0.2.16'
+287 verbose git ]
+288 silly gitTag @highoutput/hds-auto-form@0.2.11
+289 verbose git [
+289 verbose git   'tag',
+289 verbose git   '@highoutput/hds-auto-form@0.2.11',
+289 verbose git   '-m',
+289 verbose git   '@highoutput/hds-auto-form@0.2.11'
+289 verbose git ]
+290 silly gitTag @highoutput/hds-autocomplete-input@0.2.11
+291 verbose git [
+291 verbose git   'tag',
+291 verbose git   '@highoutput/hds-autocomplete-input@0.2.11',
+291 verbose git   '-m',
+291 verbose git   '@highoutput/hds-autocomplete-input@0.2.11'
+291 verbose git ]
+292 silly gitTag @highoutput/hds-avatar@0.2.5
+293 verbose git [
+293 verbose git   'tag',
+293 verbose git   '@highoutput/hds-avatar@0.2.5',
+293 verbose git   '-m',
+293 verbose git   '@highoutput/hds-avatar@0.2.5'
+293 verbose git ]
+294 silly gitTag @highoutput/hds-badge@0.2.6
+295 verbose git [
+295 verbose git   'tag',
+295 verbose git   '@highoutput/hds-badge@0.2.6',
+295 verbose git   '-m',
+295 verbose git   '@highoutput/hds-badge@0.2.6'
+295 verbose git ]
+296 silly gitTag @highoutput/hds-breadcrumbs@0.2.6
+297 verbose git [
+297 verbose git   'tag',
+297 verbose git   '@highoutput/hds-breadcrumbs@0.2.6',
+297 verbose git   '-m',
+297 verbose git   '@highoutput/hds-breadcrumbs@0.2.6'
+297 verbose git ]
+298 silly gitTag @highoutput/hds-button@0.1.10
+299 verbose git [
+299 verbose git   'tag',
+299 verbose git   '@highoutput/hds-button@0.1.10',
+299 verbose git   '-m',
+299 verbose git   '@highoutput/hds-button@0.1.10'
+299 verbose git ]
+300 silly gitTag @highoutput/hds-carousel@0.2.4
+301 verbose git [
+301 verbose git   'tag',
+301 verbose git   '@highoutput/hds-carousel@0.2.4',
+301 verbose git   '-m',
+301 verbose git   '@highoutput/hds-carousel@0.2.4'
+301 verbose git ]
+302 silly gitTag @highoutput/hds-checkbox-group@0.2.5
+303 verbose git [
+303 verbose git   'tag',
+303 verbose git   '@highoutput/hds-checkbox-group@0.2.5',
+303 verbose git   '-m',
+303 verbose git   '@highoutput/hds-checkbox-group@0.2.5'
+303 verbose git ]
+304 silly gitTag @highoutput/hds-checkbox@0.1.5
+305 verbose git [
+305 verbose git   'tag',
+305 verbose git   '@highoutput/hds-checkbox@0.1.5',
+305 verbose git   '-m',
+305 verbose git   '@highoutput/hds-checkbox@0.1.5'
+305 verbose git ]
+306 silly gitTag @highoutput/hds-contact-us@0.2.27
+307 verbose git [
+307 verbose git   'tag',
+307 verbose git   '@highoutput/hds-contact-us@0.2.27',
+307 verbose git   '-m',
+307 verbose git   '@highoutput/hds-contact-us@0.2.27'
+307 verbose git ]
+308 silly gitTag @highoutput/hds-cta@0.1.11
+309 verbose git [
+309 verbose git   'tag',
+309 verbose git   '@highoutput/hds-cta@0.1.11',
+309 verbose git   '-m',
+309 verbose git   '@highoutput/hds-cta@0.1.11'
+309 verbose git ]
+310 silly gitTag @highoutput/hds-date-picker@0.2.11
+311 verbose git [
+311 verbose git   'tag',
+311 verbose git   '@highoutput/hds-date-picker@0.2.11',
+311 verbose git   '-m',
+311 verbose git   '@highoutput/hds-date-picker@0.2.11'
+311 verbose git ]
+312 silly gitTag @highoutput/hds-drawer@0.1.4
+313 verbose git [
+313 verbose git   'tag',
+313 verbose git   '@highoutput/hds-drawer@0.1.4',
+313 verbose git   '-m',
+313 verbose git   '@highoutput/hds-drawer@0.1.4'
+313 verbose git ]
+314 silly gitTag @highoutput/hds-dropdown@0.3.23
+315 verbose git [
+315 verbose git   'tag',
+315 verbose git   '@highoutput/hds-dropdown@0.3.23',
+315 verbose git   '-m',
+315 verbose git   '@highoutput/hds-dropdown@0.3.23'
+315 verbose git ]
+316 silly gitTag @highoutput/hds-empty-state@0.1.11
+317 verbose git [
+317 verbose git   'tag',
+317 verbose git   '@highoutput/hds-empty-state@0.1.11',
+317 verbose git   '-m',
+317 verbose git   '@highoutput/hds-empty-state@0.1.11'
+317 verbose git ]
+318 silly gitTag @highoutput/hds-experimental@0.1.8
+319 verbose git [
+319 verbose git   'tag',
+319 verbose git   '@highoutput/hds-experimental@0.1.8',
+319 verbose git   '-m',
+319 verbose git   '@highoutput/hds-experimental@0.1.8'
+319 verbose git ]
+320 silly gitTag @highoutput/hds-extras@0.1.6
+321 verbose git [
+321 verbose git   'tag',
+321 verbose git   '@highoutput/hds-extras@0.1.6',
+321 verbose git   '-m',
+321 verbose git   '@highoutput/hds-extras@0.1.6'
+321 verbose git ]
+322 silly gitTag @highoutput/hds-file-upload@0.1.12
+323 verbose git [
+323 verbose git   'tag',
+323 verbose git   '@highoutput/hds-file-upload@0.1.12',
+323 verbose git   '-m',
+323 verbose git   '@highoutput/hds-file-upload@0.1.12'
+323 verbose git ]
+324 silly gitTag @highoutput/hds-forms@0.2.9
+325 verbose git [
+325 verbose git   'tag',
+325 verbose git   '@highoutput/hds-forms@0.2.9',
+325 verbose git   '-m',
+325 verbose git   '@highoutput/hds-forms@0.2.9'
+325 verbose git ]
+326 silly gitTag @highoutput/hds@0.2.26
+327 verbose git [ 'tag', '@highoutput/hds@0.2.26', '-m', '@highoutput/hds@0.2.26' ]
+328 silly gitTag @highoutput/hds-hooks@0.1.3
+329 verbose git [
+329 verbose git   'tag',
+329 verbose git   '@highoutput/hds-hooks@0.1.3',
+329 verbose git   '-m',
+329 verbose git   '@highoutput/hds-hooks@0.1.3'
+329 verbose git ]
+330 silly gitTag @highoutput/hds-icons@0.2.1
+331 verbose git [
+331 verbose git   'tag',
+331 verbose git   '@highoutput/hds-icons@0.2.1',
+331 verbose git   '-m',
+331 verbose git   '@highoutput/hds-icons@0.2.1'
+331 verbose git ]
+332 silly gitTag @highoutput/hds-loading-indicator@0.1.13
+333 verbose git [
+333 verbose git   'tag',
+333 verbose git   '@highoutput/hds-loading-indicator@0.1.13',
+333 verbose git   '-m',
+333 verbose git   '@highoutput/hds-loading-indicator@0.1.13'
+333 verbose git ]
+334 silly gitTag @highoutput/hds-metrics@0.2.9
+335 verbose git [
+335 verbose git   'tag',
+335 verbose git   '@highoutput/hds-metrics@0.2.9',
+335 verbose git   '-m',
+335 verbose git   '@highoutput/hds-metrics@0.2.9'
+335 verbose git ]
+336 silly gitTag @highoutput/hds-modal@0.2.20
+337 verbose git [
+337 verbose git   'tag',
+337 verbose git   '@highoutput/hds-modal@0.2.20',
+337 verbose git   '-m',
+337 verbose git   '@highoutput/hds-modal@0.2.20'
+337 verbose git ]
+338 silly gitTag @highoutput/hds-pagination@0.2.19
+339 verbose git [
+339 verbose git   'tag',
+339 verbose git   '@highoutput/hds-pagination@0.2.19',
+339 verbose git   '-m',
+339 verbose git   '@highoutput/hds-pagination@0.2.19'
+339 verbose git ]
+340 silly gitTag @highoutput/hds-popover@0.1.5
+341 verbose git [
+341 verbose git   'tag',
+341 verbose git   '@highoutput/hds-popover@0.1.5',
+341 verbose git   '-m',
+341 verbose git   '@highoutput/hds-popover@0.1.5'
+341 verbose git ]
+342 silly gitTag @highoutput/hds-slideout-menu@0.2.6
+343 verbose git [
+343 verbose git   'tag',
+343 verbose git   '@highoutput/hds-slideout-menu@0.2.6',
+343 verbose git   '-m',
+343 verbose git   '@highoutput/hds-slideout-menu@0.2.6'
+343 verbose git ]
+344 silly gitTag @highoutput/hds-slider@0.2.4
+345 verbose git [
+345 verbose git   'tag',
+345 verbose git   '@highoutput/hds-slider@0.2.4',
+345 verbose git   '-m',
+345 verbose git   '@highoutput/hds-slider@0.2.4'
+345 verbose git ]
+346 silly gitTag @highoutput/hds-spinner@0.2.4
+347 verbose git [
+347 verbose git   'tag',
+347 verbose git   '@highoutput/hds-spinner@0.2.4',
+347 verbose git   '-m',
+347 verbose git   '@highoutput/hds-spinner@0.2.4'
+347 verbose git ]
+348 silly gitTag @highoutput/hds-stepper@0.1.3
+349 verbose git [
+349 verbose git   'tag',
+349 verbose git   '@highoutput/hds-stepper@0.1.3',
+349 verbose git   '-m',
+349 verbose git   '@highoutput/hds-stepper@0.1.3'
+349 verbose git ]
+350 silly gitTag @highoutput/hds-switch@0.2.4
+351 verbose git [
+351 verbose git   'tag',
+351 verbose git   '@highoutput/hds-switch@0.2.4',
+351 verbose git   '-m',
+351 verbose git   '@highoutput/hds-switch@0.2.4'
+351 verbose git ]
+352 silly gitTag @highoutput/hds-tab@0.2.11
+353 verbose git [
+353 verbose git   'tag',
+353 verbose git   '@highoutput/hds-tab@0.2.11',
+353 verbose git   '-m',
+353 verbose git   '@highoutput/hds-tab@0.2.11'
+353 verbose git ]
+354 silly gitTag @highoutput/hds-table@0.2.12
+355 verbose git [
+355 verbose git   'tag',
+355 verbose git   '@highoutput/hds-table@0.2.12',
+355 verbose git   '-m',
+355 verbose git   '@highoutput/hds-table@0.2.12'
+355 verbose git ]
+356 silly gitTag @highoutput/hds-tag@0.2.6
+357 verbose git [
+357 verbose git   'tag',
+357 verbose git   '@highoutput/hds-tag@0.2.6',
+357 verbose git   '-m',
+357 verbose git   '@highoutput/hds-tag@0.2.6'
+357 verbose git ]
+358 silly gitTag @highoutput/hds-toast@0.2.9
+359 verbose git [
+359 verbose git   'tag',
+359 verbose git   '@highoutput/hds-toast@0.2.9',
+359 verbose git   '-m',
+359 verbose git   '@highoutput/hds-toast@0.2.9'
+359 verbose git ]
+360 silly gitTag @highoutput/hds-tooltip@0.2.6
+361 verbose git [
+361 verbose git   'tag',
+361 verbose git   '@highoutput/hds-tooltip@0.2.6',
+361 verbose git   '-m',
+361 verbose git   '@highoutput/hds-tooltip@0.2.6'
+361 verbose git ]
+362 silly gitTag @highoutput/hds-utilities@0.1.15
+363 verbose git [
+363 verbose git   'tag',
+363 verbose git   '@highoutput/hds-utilities@0.1.15',
+363 verbose git   '-m',
+363 verbose git   '@highoutput/hds-utilities@0.1.15'
+363 verbose git ]
+364 silly lifecycle No script for "postversion" in "@highoutput/hds-accordion", continuing
+365 silly lifecycle No script for "postversion" in "@highoutput/hds-alerts", continuing
+366 silly lifecycle No script for "postversion" in "@highoutput/hds-array-field", continuing
+367 silly lifecycle No script for "postversion" in "@highoutput/hds-auth", continuing
+368 silly lifecycle No script for "postversion" in "@highoutput/hds-auto-form", continuing
+369 silly lifecycle No script for "postversion" in "@highoutput/hds-autocomplete-input", continuing
+370 silly lifecycle No script for "postversion" in "@highoutput/hds-avatar", continuing
+371 silly lifecycle No script for "postversion" in "@highoutput/hds-badge", continuing
+372 silly lifecycle No script for "postversion" in "@highoutput/hds-breadcrumbs", continuing
+373 silly lifecycle No script for "postversion" in "@highoutput/hds-button", continuing
+374 silly lifecycle No script for "postversion" in "@highoutput/hds-carousel", continuing
+375 silly lifecycle No script for "postversion" in "@highoutput/hds-checkbox-group", continuing
+376 silly lifecycle No script for "postversion" in "@highoutput/hds-checkbox", continuing
+377 silly lifecycle No script for "postversion" in "@highoutput/hds-contact-us", continuing
+378 silly lifecycle No script for "postversion" in "@highoutput/hds-cta", continuing
+379 silly lifecycle No script for "postversion" in "@highoutput/hds-date-picker", continuing
+380 silly lifecycle No script for "postversion" in "@highoutput/hds-drawer", continuing
+381 silly lifecycle No script for "postversion" in "@highoutput/hds-dropdown", continuing
+382 silly lifecycle No script for "postversion" in "@highoutput/hds-empty-state", continuing
+383 silly lifecycle No script for "postversion" in "@highoutput/hds-experimental", continuing
+384 silly lifecycle No script for "postversion" in "@highoutput/hds-extras", continuing
+385 silly lifecycle No script for "postversion" in "@highoutput/hds-file-upload", continuing
+386 silly lifecycle No script for "postversion" in "@highoutput/hds-forms", continuing
+387 silly lifecycle No script for "postversion" in "@highoutput/hds", continuing
+388 silly lifecycle No script for "postversion" in "@highoutput/hds-hooks", continuing
+389 silly lifecycle No script for "postversion" in "@highoutput/hds-icons", continuing
+390 silly lifecycle No script for "postversion" in "@highoutput/hds-loading-indicator", continuing
+391 silly lifecycle No script for "postversion" in "@highoutput/hds-metrics", continuing
+392 silly lifecycle No script for "postversion" in "@highoutput/hds-modal", continuing
+393 silly lifecycle No script for "postversion" in "@highoutput/hds-pagination", continuing
+394 silly lifecycle No script for "postversion" in "@highoutput/hds-popover", continuing
+395 silly lifecycle No script for "postversion" in "@highoutput/hds-slideout-menu", continuing
+396 silly lifecycle No script for "postversion" in "@highoutput/hds-slider", continuing
+397 silly lifecycle No script for "postversion" in "@highoutput/hds-spinner", continuing
+398 silly lifecycle No script for "postversion" in "@highoutput/hds-stepper", continuing
+399 silly lifecycle No script for "postversion" in "@highoutput/hds-switch", continuing
+400 silly lifecycle No script for "postversion" in "@highoutput/hds-tab", continuing
+401 silly lifecycle No script for "postversion" in "@highoutput/hds-table", continuing
+402 silly lifecycle No script for "postversion" in "@highoutput/hds-tag", continuing
+403 silly lifecycle No script for "postversion" in "@highoutput/hds-toast", continuing
+404 silly lifecycle No script for "postversion" in "@highoutput/hds-tooltip", continuing
+405 silly lifecycle No script for "postversion" in "@highoutput/hds-utilities", continuing
+406 silly lifecycle No script for "postversion" in "highoutput-hds", continuing
+407 info git Pushing tags...
+408 silly gitPush origin master
+409 info publish Publishing packages to npm...
+410 info Verifying npm credentials
+411 verbose Retrieving npm user profile
+412 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 1158ms
+413 silly npm profile get received {"tfa":false,"name":"nberongoy","email":"niel_berongoy@yahoo.com","email_verified":true,"created":"2021-08-18T05:43:31.720Z","updated":"2022-11-23T02:20:13.914Z","cidr_whitelist":null}
+414 silly get npm username received {"username":"nberongoy","tfa":false,"name":"nberongoy","email":"niel_berongoy@yahoo.com","email_verified":true,"created":"2021-08-18T05:43:31.720Z","updated":"2022-11-23T02:20:13.914Z","cidr_whitelist":null}
+415 silly verifyNpmPackageAccess
+416 http fetch GET 200 https://registry.npmjs.org/-/org/nberongoy/package?format=cli 1045ms (cache updated)
+417 info Checking two-factor auth mode
+418 verbose Retrieving npm user profile
+419 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 575ms
+420 silly npm profile get received {"tfa":false,"name":"nberongoy","email":"niel_berongoy@yahoo.com","email_verified":true,"created":"2021-08-18T05:43:31.720Z","updated":"2022-11-23T02:20:13.914Z","cidr_whitelist":null}
+421 silly 2FA false
+422 silly getCurrentSHA
+423 verbose getCurrentSHA be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef
+424 silly lifecycle No script for "prepublish" in "highoutput-hds", continuing
+425 silly lifecycle No script for "prepare" in "highoutput-hds", continuing
+426 silly lifecycle No script for "prepublishOnly" in "highoutput-hds", continuing
+427 silly lifecycle No script for "prepack" in "highoutput-hds", continuing
+428 verbose pack-directory packages/accordion
+429 verbose pack-directory packages/alerts
+430 silly lifecycle "prepublish" starting in "@highoutput/hds-accordion"
+431 info lifecycle @highoutput/hds-accordion@0.1.5~prepublish: @highoutput/hds-accordion@0.1.5
+432 silly lifecycle "prepublish" starting in "@highoutput/hds-alerts"
+433 info lifecycle @highoutput/hds-alerts@0.2.7~prepublish: @highoutput/hds-alerts@0.2.7
+434 verbose lifecycle @highoutput/hds-accordion@0.1.5~prepublish: unsafe-perm in lifecycle true
+435 verbose lifecycle @highoutput/hds-accordion@0.1.5~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/accordion/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+436 verbose lifecycle @highoutput/hds-accordion@0.1.5~prepublish: CWD: /home/niel/hov-repo/hds/packages/accordion
+437 silly lifecycle @highoutput/hds-accordion@0.1.5~prepublish: Args: [ '-c', 'tsdx build' ]
+438 silly lifecycle @highoutput/hds-accordion@0.1.5~prepublish: Returned: code: 0  signal: null
+439 verbose lifecycle @highoutput/hds-alerts@0.2.7~prepublish: unsafe-perm in lifecycle true
+440 verbose lifecycle @highoutput/hds-alerts@0.2.7~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/alerts/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+441 verbose lifecycle @highoutput/hds-alerts@0.2.7~prepublish: CWD: /home/niel/hov-repo/hds/packages/alerts
+442 silly lifecycle @highoutput/hds-alerts@0.2.7~prepublish: Args: [ '-c', 'tsdx build' ]
+443 silly lifecycle "prepublish" finished in "@highoutput/hds-accordion"
+444 silly lifecycle No script for "prepare" in "@highoutput/hds-accordion", continuing
+445 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-accordion", continuing
+446 silly lifecycle No script for "prepack" in "@highoutput/hds-accordion", continuing
+447 silly lifecycle No script for "postpack" in "@highoutput/hds-accordion", continuing
+448 verbose packed packages/accordion
+449 verbose pack-directory packages/badge
+450 silly lifecycle "prepublish" starting in "@highoutput/hds-badge"
+451 info lifecycle @highoutput/hds-badge@0.2.6~prepublish: @highoutput/hds-badge@0.2.6
+452 silly lifecycle @highoutput/hds-alerts@0.2.7~prepublish: Returned: code: 0  signal: null
+453 verbose lifecycle @highoutput/hds-badge@0.2.6~prepublish: unsafe-perm in lifecycle true
+454 verbose lifecycle @highoutput/hds-badge@0.2.6~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/badge/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+455 verbose lifecycle @highoutput/hds-badge@0.2.6~prepublish: CWD: /home/niel/hov-repo/hds/packages/badge
+456 silly lifecycle @highoutput/hds-badge@0.2.6~prepublish: Args: [ '-c', 'tsdx build' ]
+457 silly lifecycle "prepublish" finished in "@highoutput/hds-alerts"
+458 silly lifecycle No script for "prepare" in "@highoutput/hds-alerts", continuing
+459 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-alerts", continuing
+460 silly lifecycle No script for "prepack" in "@highoutput/hds-alerts", continuing
+461 silly lifecycle No script for "postpack" in "@highoutput/hds-alerts", continuing
+462 verbose packed packages/alerts
+463 verbose pack-directory packages/breadcrumbs
+464 silly lifecycle "prepublish" starting in "@highoutput/hds-breadcrumbs"
+465 info lifecycle @highoutput/hds-breadcrumbs@0.2.6~prepublish: @highoutput/hds-breadcrumbs@0.2.6
+466 silly lifecycle @highoutput/hds-badge@0.2.6~prepublish: Returned: code: 0  signal: null
+467 verbose lifecycle @highoutput/hds-breadcrumbs@0.2.6~prepublish: unsafe-perm in lifecycle true
+468 verbose lifecycle @highoutput/hds-breadcrumbs@0.2.6~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/breadcrumbs/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+469 verbose lifecycle @highoutput/hds-breadcrumbs@0.2.6~prepublish: CWD: /home/niel/hov-repo/hds/packages/breadcrumbs
+470 silly lifecycle @highoutput/hds-breadcrumbs@0.2.6~prepublish: Args: [ '-c', 'tsdx build' ]
+471 silly lifecycle "prepublish" finished in "@highoutput/hds-badge"
+472 silly lifecycle No script for "prepare" in "@highoutput/hds-badge", continuing
+473 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-badge", continuing
+474 silly lifecycle No script for "prepack" in "@highoutput/hds-badge", continuing
+475 silly lifecycle No script for "postpack" in "@highoutput/hds-badge", continuing
+476 verbose packed packages/badge
+477 verbose pack-directory packages/carousel
+478 silly lifecycle "prepublish" starting in "@highoutput/hds-carousel"
+479 info lifecycle @highoutput/hds-carousel@0.2.4~prepublish: @highoutput/hds-carousel@0.2.4
+480 silly lifecycle @highoutput/hds-breadcrumbs@0.2.6~prepublish: Returned: code: 0  signal: null
+481 verbose lifecycle @highoutput/hds-carousel@0.2.4~prepublish: unsafe-perm in lifecycle true
+482 verbose lifecycle @highoutput/hds-carousel@0.2.4~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/carousel/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+483 verbose lifecycle @highoutput/hds-carousel@0.2.4~prepublish: CWD: /home/niel/hov-repo/hds/packages/carousel
+484 silly lifecycle @highoutput/hds-carousel@0.2.4~prepublish: Args: [ '-c', 'tsdx build' ]
+485 silly lifecycle "prepublish" finished in "@highoutput/hds-breadcrumbs"
+486 silly lifecycle No script for "prepare" in "@highoutput/hds-breadcrumbs", continuing
+487 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-breadcrumbs", continuing
+488 silly lifecycle No script for "prepack" in "@highoutput/hds-breadcrumbs", continuing
+489 silly lifecycle No script for "postpack" in "@highoutput/hds-breadcrumbs", continuing
+490 verbose packed packages/breadcrumbs
+491 verbose pack-directory packages/checkbox-group
+492 silly lifecycle "prepublish" starting in "@highoutput/hds-checkbox-group"
+493 info lifecycle @highoutput/hds-checkbox-group@0.2.5~prepublish: @highoutput/hds-checkbox-group@0.2.5
+494 silly lifecycle @highoutput/hds-carousel@0.2.4~prepublish: Returned: code: 0  signal: null
+495 verbose lifecycle @highoutput/hds-checkbox-group@0.2.5~prepublish: unsafe-perm in lifecycle true
+496 verbose lifecycle @highoutput/hds-checkbox-group@0.2.5~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/checkbox-group/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+497 verbose lifecycle @highoutput/hds-checkbox-group@0.2.5~prepublish: CWD: /home/niel/hov-repo/hds/packages/checkbox-group
+498 silly lifecycle @highoutput/hds-checkbox-group@0.2.5~prepublish: Args: [ '-c', 'tsdx build' ]
+499 silly lifecycle "prepublish" finished in "@highoutput/hds-carousel"
+500 silly lifecycle No script for "prepare" in "@highoutput/hds-carousel", continuing
+501 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-carousel", continuing
+502 silly lifecycle No script for "prepack" in "@highoutput/hds-carousel", continuing
+503 silly lifecycle No script for "postpack" in "@highoutput/hds-carousel", continuing
+504 verbose packed packages/carousel
+505 verbose pack-directory packages/checkbox
+506 silly lifecycle "prepublish" starting in "@highoutput/hds-checkbox"
+507 info lifecycle @highoutput/hds-checkbox@0.1.5~prepublish: @highoutput/hds-checkbox@0.1.5
+508 silly lifecycle @highoutput/hds-checkbox-group@0.2.5~prepublish: Returned: code: 0  signal: null
+509 verbose lifecycle @highoutput/hds-checkbox@0.1.5~prepublish: unsafe-perm in lifecycle true
+510 verbose lifecycle @highoutput/hds-checkbox@0.1.5~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/checkbox/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+511 verbose lifecycle @highoutput/hds-checkbox@0.1.5~prepublish: CWD: /home/niel/hov-repo/hds/packages/checkbox
+512 silly lifecycle @highoutput/hds-checkbox@0.1.5~prepublish: Args: [ '-c', 'tsdx build' ]
+513 silly lifecycle "prepublish" finished in "@highoutput/hds-checkbox-group"
+514 silly lifecycle No script for "prepare" in "@highoutput/hds-checkbox-group", continuing
+515 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-checkbox-group", continuing
+516 silly lifecycle No script for "prepack" in "@highoutput/hds-checkbox-group", continuing
+517 silly lifecycle No script for "postpack" in "@highoutput/hds-checkbox-group", continuing
+518 verbose packed packages/checkbox-group
+519 verbose pack-directory packages/cta
+520 silly lifecycle "prepublish" starting in "@highoutput/hds-cta"
+521 info lifecycle @highoutput/hds-cta@0.1.11~prepublish: @highoutput/hds-cta@0.1.11
+522 silly lifecycle @highoutput/hds-checkbox@0.1.5~prepublish: Returned: code: 0  signal: null
+523 verbose lifecycle @highoutput/hds-cta@0.1.11~prepublish: unsafe-perm in lifecycle true
+524 verbose lifecycle @highoutput/hds-cta@0.1.11~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/cta/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+525 verbose lifecycle @highoutput/hds-cta@0.1.11~prepublish: CWD: /home/niel/hov-repo/hds/packages/cta
+526 silly lifecycle @highoutput/hds-cta@0.1.11~prepublish: Args: [ '-c', 'tsdx build' ]
+527 silly lifecycle "prepublish" finished in "@highoutput/hds-checkbox"
+528 silly lifecycle No script for "prepare" in "@highoutput/hds-checkbox", continuing
+529 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-checkbox", continuing
+530 silly lifecycle No script for "prepack" in "@highoutput/hds-checkbox", continuing
+531 silly lifecycle No script for "postpack" in "@highoutput/hds-checkbox", continuing
+532 verbose packed packages/checkbox
+533 verbose pack-directory packages/date-picker
+534 silly lifecycle "prepublish" starting in "@highoutput/hds-date-picker"
+535 info lifecycle @highoutput/hds-date-picker@0.2.11~prepublish: @highoutput/hds-date-picker@0.2.11
+536 silly lifecycle @highoutput/hds-cta@0.1.11~prepublish: Returned: code: 0  signal: null
+537 verbose lifecycle @highoutput/hds-date-picker@0.2.11~prepublish: unsafe-perm in lifecycle true
+538 verbose lifecycle @highoutput/hds-date-picker@0.2.11~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/date-picker/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+539 verbose lifecycle @highoutput/hds-date-picker@0.2.11~prepublish: CWD: /home/niel/hov-repo/hds/packages/date-picker
+540 silly lifecycle @highoutput/hds-date-picker@0.2.11~prepublish: Args: [ '-c', 'tsdx build' ]
+541 silly lifecycle "prepublish" finished in "@highoutput/hds-cta"
+542 silly lifecycle No script for "prepare" in "@highoutput/hds-cta", continuing
+543 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-cta", continuing
+544 silly lifecycle No script for "prepack" in "@highoutput/hds-cta", continuing
+545 silly lifecycle No script for "postpack" in "@highoutput/hds-cta", continuing
+546 verbose packed packages/cta
+547 verbose pack-directory packages/drawer
+548 silly lifecycle "prepublish" starting in "@highoutput/hds-drawer"
+549 info lifecycle @highoutput/hds-drawer@0.1.4~prepublish: @highoutput/hds-drawer@0.1.4
+550 silly lifecycle @highoutput/hds-date-picker@0.2.11~prepublish: Returned: code: 0  signal: null
+551 verbose lifecycle @highoutput/hds-drawer@0.1.4~prepublish: unsafe-perm in lifecycle true
+552 verbose lifecycle @highoutput/hds-drawer@0.1.4~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/drawer/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+553 verbose lifecycle @highoutput/hds-drawer@0.1.4~prepublish: CWD: /home/niel/hov-repo/hds/packages/drawer
+554 silly lifecycle @highoutput/hds-drawer@0.1.4~prepublish: Args: [ '-c', 'tsdx build' ]
+555 silly lifecycle "prepublish" finished in "@highoutput/hds-date-picker"
+556 silly lifecycle No script for "prepare" in "@highoutput/hds-date-picker", continuing
+557 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-date-picker", continuing
+558 silly lifecycle No script for "prepack" in "@highoutput/hds-date-picker", continuing
+559 silly lifecycle No script for "postpack" in "@highoutput/hds-date-picker", continuing
+560 verbose packed packages/date-picker
+561 verbose pack-directory packages/empty-state
+562 silly lifecycle "prepublish" starting in "@highoutput/hds-empty-state"
+563 info lifecycle @highoutput/hds-empty-state@0.1.11~prepublish: @highoutput/hds-empty-state@0.1.11
+564 silly lifecycle @highoutput/hds-drawer@0.1.4~prepublish: Returned: code: 0  signal: null
+565 verbose lifecycle @highoutput/hds-empty-state@0.1.11~prepublish: unsafe-perm in lifecycle true
+566 verbose lifecycle @highoutput/hds-empty-state@0.1.11~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/empty-state/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+567 verbose lifecycle @highoutput/hds-empty-state@0.1.11~prepublish: CWD: /home/niel/hov-repo/hds/packages/empty-state
+568 silly lifecycle @highoutput/hds-empty-state@0.1.11~prepublish: Args: [ '-c', 'tsdx build' ]
+569 silly lifecycle "prepublish" finished in "@highoutput/hds-drawer"
+570 silly lifecycle No script for "prepare" in "@highoutput/hds-drawer", continuing
+571 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-drawer", continuing
+572 silly lifecycle No script for "prepack" in "@highoutput/hds-drawer", continuing
+573 silly lifecycle No script for "postpack" in "@highoutput/hds-drawer", continuing
+574 verbose packed packages/drawer
+575 verbose pack-directory packages/experimental
+576 silly lifecycle "prepublish" starting in "@highoutput/hds-experimental"
+577 info lifecycle @highoutput/hds-experimental@0.1.8~prepublish: @highoutput/hds-experimental@0.1.8
+578 silly lifecycle @highoutput/hds-empty-state@0.1.11~prepublish: Returned: code: 0  signal: null
+579 verbose lifecycle @highoutput/hds-experimental@0.1.8~prepublish: unsafe-perm in lifecycle true
+580 verbose lifecycle @highoutput/hds-experimental@0.1.8~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/experimental/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+581 verbose lifecycle @highoutput/hds-experimental@0.1.8~prepublish: CWD: /home/niel/hov-repo/hds/packages/experimental
+582 silly lifecycle @highoutput/hds-experimental@0.1.8~prepublish: Args: [ '-c', 'tsdx build' ]
+583 silly lifecycle "prepublish" finished in "@highoutput/hds-empty-state"
+584 silly lifecycle No script for "prepare" in "@highoutput/hds-empty-state", continuing
+585 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-empty-state", continuing
+586 silly lifecycle No script for "prepack" in "@highoutput/hds-empty-state", continuing
+587 silly lifecycle No script for "postpack" in "@highoutput/hds-empty-state", continuing
+588 verbose packed packages/empty-state
+589 verbose pack-directory packages/extras
+590 silly lifecycle "prepublish" starting in "@highoutput/hds-extras"
+591 info lifecycle @highoutput/hds-extras@0.1.6~prepublish: @highoutput/hds-extras@0.1.6
+592 silly lifecycle @highoutput/hds-experimental@0.1.8~prepublish: Returned: code: 0  signal: null
+593 verbose lifecycle @highoutput/hds-extras@0.1.6~prepublish: unsafe-perm in lifecycle true
+594 verbose lifecycle @highoutput/hds-extras@0.1.6~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/extras/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+595 verbose lifecycle @highoutput/hds-extras@0.1.6~prepublish: CWD: /home/niel/hov-repo/hds/packages/extras
+596 silly lifecycle @highoutput/hds-extras@0.1.6~prepublish: Args: [ '-c', 'tsdx build' ]
+597 silly lifecycle "prepublish" finished in "@highoutput/hds-experimental"
+598 silly lifecycle No script for "prepare" in "@highoutput/hds-experimental", continuing
+599 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-experimental", continuing
+600 silly lifecycle No script for "prepack" in "@highoutput/hds-experimental", continuing
+601 silly lifecycle No script for "postpack" in "@highoutput/hds-experimental", continuing
+602 verbose packed packages/experimental
+603 verbose pack-directory packages/file-upload
+604 silly lifecycle "prepublish" starting in "@highoutput/hds-file-upload"
+605 info lifecycle @highoutput/hds-file-upload@0.1.12~prepublish: @highoutput/hds-file-upload@0.1.12
+606 silly lifecycle @highoutput/hds-extras@0.1.6~prepublish: Returned: code: 0  signal: null
+607 verbose lifecycle @highoutput/hds-file-upload@0.1.12~prepublish: unsafe-perm in lifecycle true
+608 verbose lifecycle @highoutput/hds-file-upload@0.1.12~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/file-upload/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+609 verbose lifecycle @highoutput/hds-file-upload@0.1.12~prepublish: CWD: /home/niel/hov-repo/hds/packages/file-upload
+610 silly lifecycle @highoutput/hds-file-upload@0.1.12~prepublish: Args: [ '-c', 'tsdx build' ]
+611 silly lifecycle "prepublish" finished in "@highoutput/hds-extras"
+612 silly lifecycle No script for "prepare" in "@highoutput/hds-extras", continuing
+613 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-extras", continuing
+614 silly lifecycle No script for "prepack" in "@highoutput/hds-extras", continuing
+615 silly lifecycle No script for "postpack" in "@highoutput/hds-extras", continuing
+616 verbose packed packages/extras
+617 verbose pack-directory packages/forms
+618 silly lifecycle "prepublish" starting in "@highoutput/hds-forms"
+619 info lifecycle @highoutput/hds-forms@0.2.9~prepublish: @highoutput/hds-forms@0.2.9
+620 silly lifecycle @highoutput/hds-file-upload@0.1.12~prepublish: Returned: code: 0  signal: null
+621 verbose lifecycle @highoutput/hds-forms@0.2.9~prepublish: unsafe-perm in lifecycle true
+622 verbose lifecycle @highoutput/hds-forms@0.2.9~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/forms/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+623 verbose lifecycle @highoutput/hds-forms@0.2.9~prepublish: CWD: /home/niel/hov-repo/hds/packages/forms
+624 silly lifecycle @highoutput/hds-forms@0.2.9~prepublish: Args: [ '-c', 'tsdx build' ]
+625 silly lifecycle "prepublish" finished in "@highoutput/hds-file-upload"
+626 silly lifecycle No script for "prepare" in "@highoutput/hds-file-upload", continuing
+627 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-file-upload", continuing
+628 silly lifecycle No script for "prepack" in "@highoutput/hds-file-upload", continuing
+629 silly lifecycle No script for "postpack" in "@highoutput/hds-file-upload", continuing
+630 verbose packed packages/file-upload
+631 verbose pack-directory packages/hds
+632 silly lifecycle "prepublish" starting in "@highoutput/hds"
+633 info lifecycle @highoutput/hds@0.2.26~prepublish: @highoutput/hds@0.2.26
+634 silly lifecycle @highoutput/hds-forms@0.2.9~prepublish: Returned: code: 0  signal: null
+635 verbose lifecycle @highoutput/hds@0.2.26~prepublish: unsafe-perm in lifecycle true
+636 verbose lifecycle @highoutput/hds@0.2.26~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/hds/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+637 verbose lifecycle @highoutput/hds@0.2.26~prepublish: CWD: /home/niel/hov-repo/hds/packages/hds
+638 silly lifecycle @highoutput/hds@0.2.26~prepublish: Args: [ '-c', 'tsdx build' ]
+639 silly lifecycle "prepublish" finished in "@highoutput/hds-forms"
+640 silly lifecycle No script for "prepare" in "@highoutput/hds-forms", continuing
+641 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-forms", continuing
+642 silly lifecycle No script for "prepack" in "@highoutput/hds-forms", continuing
+643 silly lifecycle No script for "postpack" in "@highoutput/hds-forms", continuing
+644 verbose packed packages/forms
+645 verbose pack-directory packages/hooks
+646 silly lifecycle No script for "prepublish" in "@highoutput/hds-hooks", continuing
+647 silly lifecycle "prepare" starting in "@highoutput/hds-hooks"
+648 info lifecycle @highoutput/hds-hooks@0.1.3~prepare: @highoutput/hds-hooks@0.1.3
+649 silly lifecycle @highoutput/hds@0.2.26~prepublish: Returned: code: 0  signal: null
+650 verbose lifecycle @highoutput/hds-hooks@0.1.3~prepare: unsafe-perm in lifecycle true
+651 verbose lifecycle @highoutput/hds-hooks@0.1.3~prepare: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/hooks/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+652 verbose lifecycle @highoutput/hds-hooks@0.1.3~prepare: CWD: /home/niel/hov-repo/hds/packages/hooks
+653 silly lifecycle @highoutput/hds-hooks@0.1.3~prepare: Args: [ '-c', 'tsdx build' ]
+654 silly lifecycle "prepublish" finished in "@highoutput/hds"
+655 silly lifecycle No script for "prepare" in "@highoutput/hds", continuing
+656 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds", continuing
+657 silly lifecycle No script for "prepack" in "@highoutput/hds", continuing
+658 silly lifecycle No script for "postpack" in "@highoutput/hds", continuing
+659 verbose packed packages/hds
+660 verbose pack-directory packages/icons
+661 silly lifecycle "prepublish" starting in "@highoutput/hds-icons"
+662 info lifecycle @highoutput/hds-icons@0.2.1~prepublish: @highoutput/hds-icons@0.2.1
+663 silly lifecycle @highoutput/hds-hooks@0.1.3~prepare: Returned: code: 0  signal: null
+664 verbose lifecycle @highoutput/hds-icons@0.2.1~prepublish: unsafe-perm in lifecycle true
+665 verbose lifecycle @highoutput/hds-icons@0.2.1~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/icons/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+666 verbose lifecycle @highoutput/hds-icons@0.2.1~prepublish: CWD: /home/niel/hov-repo/hds/packages/icons
+667 silly lifecycle @highoutput/hds-icons@0.2.1~prepublish: Args: [ '-c', 'tsdx build' ]
+668 silly lifecycle "prepare" finished in "@highoutput/hds-hooks"
+669 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-hooks", continuing
+670 silly lifecycle No script for "prepack" in "@highoutput/hds-hooks", continuing
+671 silly lifecycle No script for "postpack" in "@highoutput/hds-hooks", continuing
+672 verbose packed packages/hooks
+673 verbose pack-directory packages/loading-indicator
+674 silly lifecycle "prepublish" starting in "@highoutput/hds-loading-indicator"
+675 info lifecycle @highoutput/hds-loading-indicator@0.1.13~prepublish: @highoutput/hds-loading-indicator@0.1.13
+676 silly lifecycle @highoutput/hds-icons@0.2.1~prepublish: Returned: code: 0  signal: null
+677 verbose lifecycle @highoutput/hds-loading-indicator@0.1.13~prepublish: unsafe-perm in lifecycle true
+678 verbose lifecycle @highoutput/hds-loading-indicator@0.1.13~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/loading-indicator/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+679 verbose lifecycle @highoutput/hds-loading-indicator@0.1.13~prepublish: CWD: /home/niel/hov-repo/hds/packages/loading-indicator
+680 silly lifecycle @highoutput/hds-loading-indicator@0.1.13~prepublish: Args: [ '-c', 'tsdx build' ]
+681 silly lifecycle "prepublish" finished in "@highoutput/hds-icons"
+682 silly lifecycle No script for "prepare" in "@highoutput/hds-icons", continuing
+683 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-icons", continuing
+684 silly lifecycle No script for "prepack" in "@highoutput/hds-icons", continuing
+685 silly lifecycle No script for "postpack" in "@highoutput/hds-icons", continuing
+686 verbose packed packages/icons
+687 verbose pack-directory packages/metrics
+688 silly lifecycle "prepublish" starting in "@highoutput/hds-metrics"
+689 info lifecycle @highoutput/hds-metrics@0.2.9~prepublish: @highoutput/hds-metrics@0.2.9
+690 silly lifecycle @highoutput/hds-loading-indicator@0.1.13~prepublish: Returned: code: 0  signal: null
+691 verbose lifecycle @highoutput/hds-metrics@0.2.9~prepublish: unsafe-perm in lifecycle true
+692 verbose lifecycle @highoutput/hds-metrics@0.2.9~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/metrics/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+693 verbose lifecycle @highoutput/hds-metrics@0.2.9~prepublish: CWD: /home/niel/hov-repo/hds/packages/metrics
+694 silly lifecycle @highoutput/hds-metrics@0.2.9~prepublish: Args: [ '-c', 'tsdx build' ]
+695 silly lifecycle "prepublish" finished in "@highoutput/hds-loading-indicator"
+696 silly lifecycle No script for "prepare" in "@highoutput/hds-loading-indicator", continuing
+697 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-loading-indicator", continuing
+698 silly lifecycle No script for "prepack" in "@highoutput/hds-loading-indicator", continuing
+699 silly lifecycle No script for "postpack" in "@highoutput/hds-loading-indicator", continuing
+700 verbose packed packages/loading-indicator
+701 verbose pack-directory packages/pagination
+702 silly lifecycle "prepublish" starting in "@highoutput/hds-pagination"
+703 info lifecycle @highoutput/hds-pagination@0.2.19~prepublish: @highoutput/hds-pagination@0.2.19
+704 silly lifecycle @highoutput/hds-metrics@0.2.9~prepublish: Returned: code: 0  signal: null
+705 verbose lifecycle @highoutput/hds-pagination@0.2.19~prepublish: unsafe-perm in lifecycle true
+706 verbose lifecycle @highoutput/hds-pagination@0.2.19~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/pagination/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+707 verbose lifecycle @highoutput/hds-pagination@0.2.19~prepublish: CWD: /home/niel/hov-repo/hds/packages/pagination
+708 silly lifecycle @highoutput/hds-pagination@0.2.19~prepublish: Args: [ '-c', 'tsdx build' ]
+709 silly lifecycle "prepublish" finished in "@highoutput/hds-metrics"
+710 silly lifecycle No script for "prepare" in "@highoutput/hds-metrics", continuing
+711 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-metrics", continuing
+712 silly lifecycle No script for "prepack" in "@highoutput/hds-metrics", continuing
+713 silly lifecycle No script for "postpack" in "@highoutput/hds-metrics", continuing
+714 verbose packed packages/metrics
+715 verbose pack-directory packages/popover
+716 silly lifecycle "prepublish" starting in "@highoutput/hds-popover"
+717 info lifecycle @highoutput/hds-popover@0.1.5~prepublish: @highoutput/hds-popover@0.1.5
+718 silly lifecycle @highoutput/hds-pagination@0.2.19~prepublish: Returned: code: 0  signal: null
+719 verbose lifecycle @highoutput/hds-popover@0.1.5~prepublish: unsafe-perm in lifecycle true
+720 verbose lifecycle @highoutput/hds-popover@0.1.5~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/popover/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+721 verbose lifecycle @highoutput/hds-popover@0.1.5~prepublish: CWD: /home/niel/hov-repo/hds/packages/popover
+722 silly lifecycle @highoutput/hds-popover@0.1.5~prepublish: Args: [ '-c', 'tsdx build' ]
+723 silly lifecycle "prepublish" finished in "@highoutput/hds-pagination"
+724 silly lifecycle No script for "prepare" in "@highoutput/hds-pagination", continuing
+725 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-pagination", continuing
+726 silly lifecycle No script for "prepack" in "@highoutput/hds-pagination", continuing
+727 silly lifecycle No script for "postpack" in "@highoutput/hds-pagination", continuing
+728 verbose packed packages/pagination
+729 verbose pack-directory packages/slideout-menu
+730 silly lifecycle "prepublish" starting in "@highoutput/hds-slideout-menu"
+731 info lifecycle @highoutput/hds-slideout-menu@0.2.6~prepublish: @highoutput/hds-slideout-menu@0.2.6
+732 silly lifecycle @highoutput/hds-popover@0.1.5~prepublish: Returned: code: 0  signal: null
+733 verbose lifecycle @highoutput/hds-slideout-menu@0.2.6~prepublish: unsafe-perm in lifecycle true
+734 verbose lifecycle @highoutput/hds-slideout-menu@0.2.6~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/slideout-menu/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+735 verbose lifecycle @highoutput/hds-slideout-menu@0.2.6~prepublish: CWD: /home/niel/hov-repo/hds/packages/slideout-menu
+736 silly lifecycle @highoutput/hds-slideout-menu@0.2.6~prepublish: Args: [ '-c', 'tsdx build' ]
+737 silly lifecycle "prepublish" finished in "@highoutput/hds-popover"
+738 silly lifecycle No script for "prepare" in "@highoutput/hds-popover", continuing
+739 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-popover", continuing
+740 silly lifecycle No script for "prepack" in "@highoutput/hds-popover", continuing
+741 silly lifecycle No script for "postpack" in "@highoutput/hds-popover", continuing
+742 verbose packed packages/popover
+743 verbose pack-directory packages/slider
+744 silly lifecycle "prepublish" starting in "@highoutput/hds-slider"
+745 info lifecycle @highoutput/hds-slider@0.2.4~prepublish: @highoutput/hds-slider@0.2.4
+746 silly lifecycle @highoutput/hds-slideout-menu@0.2.6~prepublish: Returned: code: 0  signal: null
+747 verbose lifecycle @highoutput/hds-slider@0.2.4~prepublish: unsafe-perm in lifecycle true
+748 verbose lifecycle @highoutput/hds-slider@0.2.4~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/slider/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+749 verbose lifecycle @highoutput/hds-slider@0.2.4~prepublish: CWD: /home/niel/hov-repo/hds/packages/slider
+750 silly lifecycle @highoutput/hds-slider@0.2.4~prepublish: Args: [ '-c', 'tsdx build' ]
+751 silly lifecycle "prepublish" finished in "@highoutput/hds-slideout-menu"
+752 silly lifecycle No script for "prepare" in "@highoutput/hds-slideout-menu", continuing
+753 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-slideout-menu", continuing
+754 silly lifecycle No script for "prepack" in "@highoutput/hds-slideout-menu", continuing
+755 silly lifecycle No script for "postpack" in "@highoutput/hds-slideout-menu", continuing
+756 verbose packed packages/slideout-menu
+757 verbose pack-directory packages/spinner
+758 silly lifecycle "prepublish" starting in "@highoutput/hds-spinner"
+759 info lifecycle @highoutput/hds-spinner@0.2.4~prepublish: @highoutput/hds-spinner@0.2.4
+760 silly lifecycle @highoutput/hds-slider@0.2.4~prepublish: Returned: code: 0  signal: null
+761 verbose lifecycle @highoutput/hds-spinner@0.2.4~prepublish: unsafe-perm in lifecycle true
+762 verbose lifecycle @highoutput/hds-spinner@0.2.4~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/spinner/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+763 verbose lifecycle @highoutput/hds-spinner@0.2.4~prepublish: CWD: /home/niel/hov-repo/hds/packages/spinner
+764 silly lifecycle @highoutput/hds-spinner@0.2.4~prepublish: Args: [ '-c', 'tsdx build' ]
+765 silly lifecycle "prepublish" finished in "@highoutput/hds-slider"
+766 silly lifecycle No script for "prepare" in "@highoutput/hds-slider", continuing
+767 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-slider", continuing
+768 silly lifecycle No script for "prepack" in "@highoutput/hds-slider", continuing
+769 silly lifecycle No script for "postpack" in "@highoutput/hds-slider", continuing
+770 verbose packed packages/slider
+771 verbose pack-directory packages/switch
+772 silly lifecycle "prepublish" starting in "@highoutput/hds-switch"
+773 info lifecycle @highoutput/hds-switch@0.2.4~prepublish: @highoutput/hds-switch@0.2.4
+774 silly lifecycle @highoutput/hds-spinner@0.2.4~prepublish: Returned: code: 0  signal: null
+775 verbose lifecycle @highoutput/hds-switch@0.2.4~prepublish: unsafe-perm in lifecycle true
+776 verbose lifecycle @highoutput/hds-switch@0.2.4~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/switch/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+777 verbose lifecycle @highoutput/hds-switch@0.2.4~prepublish: CWD: /home/niel/hov-repo/hds/packages/switch
+778 silly lifecycle @highoutput/hds-switch@0.2.4~prepublish: Args: [ '-c', 'tsdx build' ]
+779 silly lifecycle "prepublish" finished in "@highoutput/hds-spinner"
+780 silly lifecycle No script for "prepare" in "@highoutput/hds-spinner", continuing
+781 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-spinner", continuing
+782 silly lifecycle No script for "prepack" in "@highoutput/hds-spinner", continuing
+783 silly lifecycle No script for "postpack" in "@highoutput/hds-spinner", continuing
+784 verbose packed packages/spinner
+785 verbose pack-directory packages/tab
+786 silly lifecycle "prepublish" starting in "@highoutput/hds-tab"
+787 info lifecycle @highoutput/hds-tab@0.2.11~prepublish: @highoutput/hds-tab@0.2.11
+788 silly lifecycle @highoutput/hds-switch@0.2.4~prepublish: Returned: code: 0  signal: null
+789 verbose lifecycle @highoutput/hds-tab@0.2.11~prepublish: unsafe-perm in lifecycle true
+790 verbose lifecycle @highoutput/hds-tab@0.2.11~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/tab/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+791 verbose lifecycle @highoutput/hds-tab@0.2.11~prepublish: CWD: /home/niel/hov-repo/hds/packages/tab
+792 silly lifecycle @highoutput/hds-tab@0.2.11~prepublish: Args: [ '-c', 'tsdx build' ]
+793 silly lifecycle "prepublish" finished in "@highoutput/hds-switch"
+794 silly lifecycle No script for "prepare" in "@highoutput/hds-switch", continuing
+795 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-switch", continuing
+796 silly lifecycle No script for "prepack" in "@highoutput/hds-switch", continuing
+797 silly lifecycle No script for "postpack" in "@highoutput/hds-switch", continuing
+798 verbose packed packages/switch
+799 verbose pack-directory packages/table
+800 silly lifecycle "prepublish" starting in "@highoutput/hds-table"
+801 info lifecycle @highoutput/hds-table@0.2.12~prepublish: @highoutput/hds-table@0.2.12
+802 silly lifecycle @highoutput/hds-tab@0.2.11~prepublish: Returned: code: 0  signal: null
+803 verbose lifecycle @highoutput/hds-table@0.2.12~prepublish: unsafe-perm in lifecycle true
+804 verbose lifecycle @highoutput/hds-table@0.2.12~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/table/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+805 verbose lifecycle @highoutput/hds-table@0.2.12~prepublish: CWD: /home/niel/hov-repo/hds/packages/table
+806 silly lifecycle @highoutput/hds-table@0.2.12~prepublish: Args: [ '-c', 'tsdx build' ]
+807 silly lifecycle "prepublish" finished in "@highoutput/hds-tab"
+808 silly lifecycle No script for "prepare" in "@highoutput/hds-tab", continuing
+809 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-tab", continuing
+810 silly lifecycle No script for "prepack" in "@highoutput/hds-tab", continuing
+811 silly lifecycle No script for "postpack" in "@highoutput/hds-tab", continuing
+812 verbose packed packages/tab
+813 verbose pack-directory packages/tag
+814 silly lifecycle "prepublish" starting in "@highoutput/hds-tag"
+815 info lifecycle @highoutput/hds-tag@0.2.6~prepublish: @highoutput/hds-tag@0.2.6
+816 silly lifecycle @highoutput/hds-table@0.2.12~prepublish: Returned: code: 0  signal: null
+817 verbose lifecycle @highoutput/hds-tag@0.2.6~prepublish: unsafe-perm in lifecycle true
+818 verbose lifecycle @highoutput/hds-tag@0.2.6~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/tag/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+819 verbose lifecycle @highoutput/hds-tag@0.2.6~prepublish: CWD: /home/niel/hov-repo/hds/packages/tag
+820 silly lifecycle @highoutput/hds-tag@0.2.6~prepublish: Args: [ '-c', 'tsdx build' ]
+821 silly lifecycle "prepublish" finished in "@highoutput/hds-table"
+822 silly lifecycle No script for "prepare" in "@highoutput/hds-table", continuing
+823 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-table", continuing
+824 silly lifecycle No script for "prepack" in "@highoutput/hds-table", continuing
+825 silly lifecycle No script for "postpack" in "@highoutput/hds-table", continuing
+826 verbose packed packages/table
+827 verbose pack-directory packages/toast
+828 silly lifecycle "prepublish" starting in "@highoutput/hds-toast"
+829 info lifecycle @highoutput/hds-toast@0.2.9~prepublish: @highoutput/hds-toast@0.2.9
+830 silly lifecycle @highoutput/hds-tag@0.2.6~prepublish: Returned: code: 0  signal: null
+831 verbose lifecycle @highoutput/hds-toast@0.2.9~prepublish: unsafe-perm in lifecycle true
+832 verbose lifecycle @highoutput/hds-toast@0.2.9~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/toast/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+833 verbose lifecycle @highoutput/hds-toast@0.2.9~prepublish: CWD: /home/niel/hov-repo/hds/packages/toast
+834 silly lifecycle @highoutput/hds-toast@0.2.9~prepublish: Args: [ '-c', 'tsdx build' ]
+835 silly lifecycle "prepublish" finished in "@highoutput/hds-tag"
+836 silly lifecycle No script for "prepare" in "@highoutput/hds-tag", continuing
+837 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-tag", continuing
+838 silly lifecycle No script for "prepack" in "@highoutput/hds-tag", continuing
+839 silly lifecycle No script for "postpack" in "@highoutput/hds-tag", continuing
+840 verbose packed packages/tag
+841 verbose pack-directory packages/tooltip
+842 silly lifecycle "prepublish" starting in "@highoutput/hds-tooltip"
+843 info lifecycle @highoutput/hds-tooltip@0.2.6~prepublish: @highoutput/hds-tooltip@0.2.6
+844 silly lifecycle @highoutput/hds-toast@0.2.9~prepublish: Returned: code: 0  signal: null
+845 verbose lifecycle @highoutput/hds-tooltip@0.2.6~prepublish: unsafe-perm in lifecycle true
+846 verbose lifecycle @highoutput/hds-tooltip@0.2.6~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/tooltip/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+847 verbose lifecycle @highoutput/hds-tooltip@0.2.6~prepublish: CWD: /home/niel/hov-repo/hds/packages/tooltip
+848 silly lifecycle @highoutput/hds-tooltip@0.2.6~prepublish: Args: [ '-c', 'tsdx build' ]
+849 silly lifecycle "prepublish" finished in "@highoutput/hds-toast"
+850 silly lifecycle No script for "prepare" in "@highoutput/hds-toast", continuing
+851 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-toast", continuing
+852 silly lifecycle No script for "prepack" in "@highoutput/hds-toast", continuing
+853 silly lifecycle No script for "postpack" in "@highoutput/hds-toast", continuing
+854 verbose packed packages/toast
+855 verbose pack-directory packages/utilities
+856 silly lifecycle "prepublish" starting in "@highoutput/hds-utilities"
+857 info lifecycle @highoutput/hds-utilities@0.1.15~prepublish: @highoutput/hds-utilities@0.1.15
+858 silly lifecycle @highoutput/hds-tooltip@0.2.6~prepublish: Returned: code: 0  signal: null
+859 verbose lifecycle @highoutput/hds-utilities@0.1.15~prepublish: unsafe-perm in lifecycle true
+860 verbose lifecycle @highoutput/hds-utilities@0.1.15~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/utilities/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+861 verbose lifecycle @highoutput/hds-utilities@0.1.15~prepublish: CWD: /home/niel/hov-repo/hds/packages/utilities
+862 silly lifecycle @highoutput/hds-utilities@0.1.15~prepublish: Args: [ '-c', 'tsdx build' ]
+863 silly lifecycle "prepublish" finished in "@highoutput/hds-tooltip"
+864 silly lifecycle No script for "prepare" in "@highoutput/hds-tooltip", continuing
+865 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-tooltip", continuing
+866 silly lifecycle No script for "prepack" in "@highoutput/hds-tooltip", continuing
+867 silly lifecycle No script for "postpack" in "@highoutput/hds-tooltip", continuing
+868 verbose packed packages/tooltip
+869 verbose pack-directory packages/stepper
+870 silly lifecycle No script for "prepublish" in "@highoutput/hds-stepper", continuing
+871 silly lifecycle "prepare" starting in "@highoutput/hds-stepper"
+872 info lifecycle @highoutput/hds-stepper@0.1.3~prepare: @highoutput/hds-stepper@0.1.3
+873 silly lifecycle @highoutput/hds-utilities@0.1.15~prepublish: Returned: code: 0  signal: null
+874 verbose lifecycle @highoutput/hds-stepper@0.1.3~prepare: unsafe-perm in lifecycle true
+875 verbose lifecycle @highoutput/hds-stepper@0.1.3~prepare: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/stepper/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+876 verbose lifecycle @highoutput/hds-stepper@0.1.3~prepare: CWD: /home/niel/hov-repo/hds/packages/stepper
+877 silly lifecycle @highoutput/hds-stepper@0.1.3~prepare: Args: [ '-c', 'tsdx build' ]
+878 silly lifecycle "prepublish" finished in "@highoutput/hds-utilities"
+879 silly lifecycle No script for "prepare" in "@highoutput/hds-utilities", continuing
+880 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-utilities", continuing
+881 silly lifecycle No script for "prepack" in "@highoutput/hds-utilities", continuing
+882 silly lifecycle No script for "postpack" in "@highoutput/hds-utilities", continuing
+883 verbose packed packages/utilities
+884 verbose pack-directory packages/array-field
+885 silly lifecycle "prepublish" starting in "@highoutput/hds-array-field"
+886 info lifecycle @highoutput/hds-array-field@0.2.12~prepublish: @highoutput/hds-array-field@0.2.12
+887 silly lifecycle @highoutput/hds-stepper@0.1.3~prepare: Returned: code: 0  signal: null
+888 verbose lifecycle @highoutput/hds-array-field@0.2.12~prepublish: unsafe-perm in lifecycle true
+889 verbose lifecycle @highoutput/hds-array-field@0.2.12~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/array-field/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+890 verbose lifecycle @highoutput/hds-array-field@0.2.12~prepublish: CWD: /home/niel/hov-repo/hds/packages/array-field
+891 silly lifecycle @highoutput/hds-array-field@0.2.12~prepublish: Args: [ '-c', 'tsdx build' ]
+892 silly lifecycle "prepare" finished in "@highoutput/hds-stepper"
+893 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-stepper", continuing
+894 silly lifecycle No script for "prepack" in "@highoutput/hds-stepper", continuing
+895 silly lifecycle No script for "postpack" in "@highoutput/hds-stepper", continuing
+896 verbose packed packages/stepper
+897 verbose pack-directory packages/auth
+898 silly lifecycle "prepublish" starting in "@highoutput/hds-auth"
+899 info lifecycle @highoutput/hds-auth@0.2.16~prepublish: @highoutput/hds-auth@0.2.16
+900 silly lifecycle @highoutput/hds-array-field@0.2.12~prepublish: Returned: code: 0  signal: null
+901 verbose lifecycle @highoutput/hds-auth@0.2.16~prepublish: unsafe-perm in lifecycle true
+902 verbose lifecycle @highoutput/hds-auth@0.2.16~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/auth/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+903 verbose lifecycle @highoutput/hds-auth@0.2.16~prepublish: CWD: /home/niel/hov-repo/hds/packages/auth
+904 silly lifecycle @highoutput/hds-auth@0.2.16~prepublish: Args: [ '-c', 'tsdx build' ]
+905 silly lifecycle "prepublish" finished in "@highoutput/hds-array-field"
+906 silly lifecycle No script for "prepare" in "@highoutput/hds-array-field", continuing
+907 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-array-field", continuing
+908 silly lifecycle No script for "prepack" in "@highoutput/hds-array-field", continuing
+909 silly lifecycle No script for "postpack" in "@highoutput/hds-array-field", continuing
+910 verbose packed packages/array-field
+911 verbose pack-directory packages/auto-form
+912 silly lifecycle "prepublish" starting in "@highoutput/hds-auto-form"
+913 info lifecycle @highoutput/hds-auto-form@0.2.11~prepublish: @highoutput/hds-auto-form@0.2.11
+914 silly lifecycle @highoutput/hds-auth@0.2.16~prepublish: Returned: code: 0  signal: null
+915 verbose lifecycle @highoutput/hds-auto-form@0.2.11~prepublish: unsafe-perm in lifecycle true
+916 verbose lifecycle @highoutput/hds-auto-form@0.2.11~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/auto-form/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+917 verbose lifecycle @highoutput/hds-auto-form@0.2.11~prepublish: CWD: /home/niel/hov-repo/hds/packages/auto-form
+918 silly lifecycle @highoutput/hds-auto-form@0.2.11~prepublish: Args: [ '-c', 'tsdx build' ]
+919 silly lifecycle "prepublish" finished in "@highoutput/hds-auth"
+920 silly lifecycle No script for "prepare" in "@highoutput/hds-auth", continuing
+921 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-auth", continuing
+922 silly lifecycle No script for "prepack" in "@highoutput/hds-auth", continuing
+923 silly lifecycle No script for "postpack" in "@highoutput/hds-auth", continuing
+924 verbose packed packages/auth
+925 verbose pack-directory packages/autocomplete-input
+926 silly lifecycle "prepublish" starting in "@highoutput/hds-autocomplete-input"
+927 info lifecycle @highoutput/hds-autocomplete-input@0.2.11~prepublish: @highoutput/hds-autocomplete-input@0.2.11
+928 silly lifecycle @highoutput/hds-auto-form@0.2.11~prepublish: Returned: code: 0  signal: null
+929 verbose lifecycle @highoutput/hds-autocomplete-input@0.2.11~prepublish: unsafe-perm in lifecycle true
+930 verbose lifecycle @highoutput/hds-autocomplete-input@0.2.11~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/autocomplete-input/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+931 verbose lifecycle @highoutput/hds-autocomplete-input@0.2.11~prepublish: CWD: /home/niel/hov-repo/hds/packages/autocomplete-input
+932 silly lifecycle @highoutput/hds-autocomplete-input@0.2.11~prepublish: Args: [ '-c', 'tsdx build' ]
+933 silly lifecycle "prepublish" finished in "@highoutput/hds-auto-form"
+934 silly lifecycle No script for "prepare" in "@highoutput/hds-auto-form", continuing
+935 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-auto-form", continuing
+936 silly lifecycle No script for "prepack" in "@highoutput/hds-auto-form", continuing
+937 silly lifecycle No script for "postpack" in "@highoutput/hds-auto-form", continuing
+938 verbose packed packages/auto-form
+939 verbose pack-directory packages/contact-us
+940 silly lifecycle "prepublish" starting in "@highoutput/hds-contact-us"
+941 info lifecycle @highoutput/hds-contact-us@0.2.27~prepublish: @highoutput/hds-contact-us@0.2.27
+942 silly lifecycle @highoutput/hds-autocomplete-input@0.2.11~prepublish: Returned: code: 0  signal: null
+943 verbose lifecycle @highoutput/hds-contact-us@0.2.27~prepublish: unsafe-perm in lifecycle true
+944 verbose lifecycle @highoutput/hds-contact-us@0.2.27~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/contact-us/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+945 verbose lifecycle @highoutput/hds-contact-us@0.2.27~prepublish: CWD: /home/niel/hov-repo/hds/packages/contact-us
+946 silly lifecycle @highoutput/hds-contact-us@0.2.27~prepublish: Args: [ '-c', 'tsdx build' ]
+947 silly lifecycle "prepublish" finished in "@highoutput/hds-autocomplete-input"
+948 silly lifecycle No script for "prepare" in "@highoutput/hds-autocomplete-input", continuing
+949 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-autocomplete-input", continuing
+950 silly lifecycle No script for "prepack" in "@highoutput/hds-autocomplete-input", continuing
+951 silly lifecycle No script for "postpack" in "@highoutput/hds-autocomplete-input", continuing
+952 verbose packed packages/autocomplete-input
+953 verbose pack-directory packages/button
+954 silly lifecycle "prepublish" starting in "@highoutput/hds-button"
+955 info lifecycle @highoutput/hds-button@0.1.10~prepublish: @highoutput/hds-button@0.1.10
+956 silly lifecycle @highoutput/hds-contact-us@0.2.27~prepublish: Returned: code: 0  signal: null
+957 verbose lifecycle @highoutput/hds-button@0.1.10~prepublish: unsafe-perm in lifecycle true
+958 verbose lifecycle @highoutput/hds-button@0.1.10~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/button/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+959 verbose lifecycle @highoutput/hds-button@0.1.10~prepublish: CWD: /home/niel/hov-repo/hds/packages/button
+960 silly lifecycle @highoutput/hds-button@0.1.10~prepublish: Args: [ '-c', 'tsdx build' ]
+961 silly lifecycle "prepublish" finished in "@highoutput/hds-contact-us"
+962 silly lifecycle No script for "prepare" in "@highoutput/hds-contact-us", continuing
+963 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-contact-us", continuing
+964 silly lifecycle No script for "prepack" in "@highoutput/hds-contact-us", continuing
+965 silly lifecycle No script for "postpack" in "@highoutput/hds-contact-us", continuing
+966 verbose packed packages/contact-us
+967 verbose pack-directory packages/avatar
+968 silly lifecycle "prepublish" starting in "@highoutput/hds-avatar"
+969 info lifecycle @highoutput/hds-avatar@0.2.5~prepublish: @highoutput/hds-avatar@0.2.5
+970 silly lifecycle @highoutput/hds-button@0.1.10~prepublish: Returned: code: 0  signal: null
+971 verbose lifecycle @highoutput/hds-avatar@0.2.5~prepublish: unsafe-perm in lifecycle true
+972 verbose lifecycle @highoutput/hds-avatar@0.2.5~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/avatar/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+973 verbose lifecycle @highoutput/hds-avatar@0.2.5~prepublish: CWD: /home/niel/hov-repo/hds/packages/avatar
+974 silly lifecycle @highoutput/hds-avatar@0.2.5~prepublish: Args: [ '-c', 'tsdx build' ]
+975 silly lifecycle "prepublish" finished in "@highoutput/hds-button"
+976 silly lifecycle No script for "prepare" in "@highoutput/hds-button", continuing
+977 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-button", continuing
+978 silly lifecycle No script for "prepack" in "@highoutput/hds-button", continuing
+979 silly lifecycle No script for "postpack" in "@highoutput/hds-button", continuing
+980 verbose packed packages/button
+981 verbose pack-directory packages/dropdown
+982 silly lifecycle "prepublish" starting in "@highoutput/hds-dropdown"
+983 info lifecycle @highoutput/hds-dropdown@0.3.23~prepublish: @highoutput/hds-dropdown@0.3.23
+984 silly lifecycle @highoutput/hds-avatar@0.2.5~prepublish: Returned: code: 0  signal: null
+985 verbose lifecycle @highoutput/hds-dropdown@0.3.23~prepublish: unsafe-perm in lifecycle true
+986 verbose lifecycle @highoutput/hds-dropdown@0.3.23~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/dropdown/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+987 verbose lifecycle @highoutput/hds-dropdown@0.3.23~prepublish: CWD: /home/niel/hov-repo/hds/packages/dropdown
+988 silly lifecycle @highoutput/hds-dropdown@0.3.23~prepublish: Args: [ '-c', 'tsdx build' ]
+989 silly lifecycle "prepublish" finished in "@highoutput/hds-avatar"
+990 silly lifecycle No script for "prepare" in "@highoutput/hds-avatar", continuing
+991 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-avatar", continuing
+992 silly lifecycle No script for "prepack" in "@highoutput/hds-avatar", continuing
+993 silly lifecycle No script for "postpack" in "@highoutput/hds-avatar", continuing
+994 verbose packed packages/avatar
+995 verbose pack-directory packages/modal
+996 silly lifecycle "prepublish" starting in "@highoutput/hds-modal"
+997 info lifecycle @highoutput/hds-modal@0.2.20~prepublish: @highoutput/hds-modal@0.2.20
+998 silly lifecycle @highoutput/hds-dropdown@0.3.23~prepublish: Returned: code: 0  signal: null
+999 verbose lifecycle @highoutput/hds-modal@0.2.20~prepublish: unsafe-perm in lifecycle true
+1000 verbose lifecycle @highoutput/hds-modal@0.2.20~prepublish: PATH: /home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/npm-lifecycle/node-gyp-bin:/home/niel/hov-repo/hds/packages/modal/node_modules/.bin:/home/niel/.console-ninja/.bin:/home/niel/.vscode-server/bin/704ed70d4fd1c6bd6342c436f1ede30d1cff4710/bin/remote-cli:/home/niel/.console-ninja/.bin:/home/niel/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+1001 verbose lifecycle @highoutput/hds-modal@0.2.20~prepublish: CWD: /home/niel/hov-repo/hds/packages/modal
+1002 silly lifecycle @highoutput/hds-modal@0.2.20~prepublish: Args: [ '-c', 'tsdx build' ]
+1003 silly lifecycle "prepublish" finished in "@highoutput/hds-dropdown"
+1004 silly lifecycle No script for "prepare" in "@highoutput/hds-dropdown", continuing
+1005 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-dropdown", continuing
+1006 silly lifecycle No script for "prepack" in "@highoutput/hds-dropdown", continuing
+1007 silly lifecycle No script for "postpack" in "@highoutput/hds-dropdown", continuing
+1008 verbose packed packages/dropdown
+1009 silly lifecycle @highoutput/hds-modal@0.2.20~prepublish: Returned: code: 0  signal: null
+1010 silly lifecycle "prepublish" finished in "@highoutput/hds-modal"
+1011 silly lifecycle No script for "prepare" in "@highoutput/hds-modal", continuing
+1012 silly lifecycle No script for "prepublishOnly" in "@highoutput/hds-modal", continuing
+1013 silly lifecycle No script for "prepack" in "@highoutput/hds-modal", continuing
+1014 silly lifecycle No script for "postpack" in "@highoutput/hds-modal", continuing
+1015 verbose packed packages/modal
+1016 silly lifecycle No script for "postpack" in "highoutput-hds", continuing
+1017 verbose publish @highoutput/hds-accordion
+1018 verbose publish @highoutput/hds-alerts
+1019 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-accordion 1401ms
+1020 silly lifecycle No script for "publish" in "@highoutput/hds-accordion", continuing
+1021 silly lifecycle No script for "postpublish" in "@highoutput/hds-accordion", continuing
+1022 success published @highoutput/hds-accordion 0.1.5
+1023 notice
+1024 notice 📦  @highoutput/hds-accordion@0.1.5
+1025 notice === Tarball Contents ===
+1026 notice 1.1kB LICENSE
+1026 notice 973B  dist/hds-accordion.cjs.development.js
+1026 notice 782B  dist/hds-accordion.cjs.production.min.js
+1026 notice 174B  dist/hds-accordion.esm.js
+1026 notice 204B  dist/index.js
+1026 notice 1.1kB package.json
+1026 notice 156B  dist/hds-accordion.cjs.development.js.map
+1026 notice 116B  dist/hds-accordion.cjs.production.min.js.map
+1026 notice 101B  dist/hds-accordion.esm.js.map
+1026 notice 209B  dist/index.d.ts
+1026 notice 228B  src/index.tsx
+1027 notice === Tarball Details ===
+1028 notice name:          @highoutput/hds-accordion
+1028 notice version:       0.1.5
+1028 notice filename:      highoutput-hds-accordion-0.1.5.tgz
+1028 notice package size:  2.1 kB
+1028 notice unpacked size: 5.1 kB
+1028 notice shasum:        ab5b48794894b3f17e836d420d007ebc7fd0443a
+1028 notice integrity:     sha512-L7avkY+cnNNBS[...]EwenkiS6y3mhw==
+1028 notice total files:   11
+1029 notice
+1030 verbose publish @highoutput/hds-badge
+1031 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-alerts 1570ms
+1032 silly lifecycle No script for "publish" in "@highoutput/hds-alerts", continuing
+1033 silly lifecycle No script for "postpublish" in "@highoutput/hds-alerts", continuing
+1034 success published @highoutput/hds-alerts 0.2.7
+1035 notice
+1036 notice 📦  @highoutput/hds-alerts@0.2.7
+1037 notice === Tarball Contents ===
+1038 notice 1.1kB  LICENSE
+1038 notice 10.4kB dist/hds-alerts.cjs.development.js
+1038 notice 5.8kB  dist/hds-alerts.cjs.production.min.js
+1038 notice 10.1kB dist/hds-alerts.esm.js
+1038 notice 198B   dist/index.js
+1038 notice 2.5kB  package.json
+1038 notice 21.3kB dist/hds-alerts.cjs.development.js.map
+1038 notice 17.7kB dist/hds-alerts.cjs.production.min.js.map
+1038 notice 21.2kB dist/hds-alerts.esm.js.map
+1038 notice 1.2kB  README.md
+1038 notice 2.5kB  src/__snapshots__/Alert.test.tsx.snap
+1038 notice 2.2kB  src/__snapshots__/Notification.test.tsx.snap
+1038 notice 728B   dist/Alert.d.ts
+1038 notice 907B   dist/Alerts.stories.d.ts
+1038 notice 430B   dist/index.d.ts
+1038 notice 1.7kB  dist/Notification.d.ts
+1038 notice 348B   dist/Notifications.stories.d.ts
+1038 notice 1.7kB  src/Alert.test.tsx
+1038 notice 5.6kB  src/Alert.tsx
+1038 notice 2.6kB  src/Alerts.stories.tsx
+1038 notice 459B   src/index.tsx
+1038 notice 1.9kB  src/Notification.test.tsx
+1038 notice 6.1kB  src/Notification.tsx
+1038 notice 3.6kB  src/Notifications.stories.tsx
+1039 notice === Tarball Details ===
+1040 notice name:          @highoutput/hds-alerts
+1040 notice version:       0.2.7
+1040 notice filename:      highoutput-hds-alerts-0.2.7.tgz
+1040 notice package size:  21.6 kB
+1040 notice unpacked size: 122.3 kB
+1040 notice shasum:        e75ec12965506ede36d25b60abf2be4cd003f200
+1040 notice integrity:     sha512-mER4tYtHBJLkg[...]CXKexm+gYkoPA==
+1040 notice total files:   24
+1041 notice
+1042 verbose publish @highoutput/hds-breadcrumbs
+1043 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-badge 1174ms
+1044 silly lifecycle No script for "publish" in "@highoutput/hds-badge", continuing
+1045 silly lifecycle No script for "postpublish" in "@highoutput/hds-badge", continuing
+1046 success published @highoutput/hds-badge 0.2.6
+1047 notice
+1048 notice 📦  @highoutput/hds-badge@0.2.6
+1049 notice === Tarball Contents ===
+1050 notice 1.1kB  LICENSE
+1050 notice 12.3kB dist/hds-badge.cjs.development.js
+1050 notice 6.6kB  dist/hds-badge.cjs.production.min.js
+1050 notice 12.0kB dist/hds-badge.esm.js
+1050 notice 196B   dist/index.js
+1050 notice 1.7kB  package.json
+1050 notice 25.8kB dist/hds-badge.cjs.development.js.map
+1050 notice 21.3kB dist/hds-badge.cjs.production.min.js.map
+1050 notice 25.8kB dist/hds-badge.esm.js.map
+1050 notice 606B   README.md
+1050 notice 292B   src/__snapshots__/Badge.spec.tsx.snap
+1050 notice 959B   src/__snapshots__/BadgeGroup.spec.tsx.snap
+1050 notice 115B   dist/examples/AUIcon.d.ts
+1050 notice 518B   dist/Badge.d.ts
+1050 notice 859B   dist/BadgeGroup.d.ts
+1050 notice 121B   dist/examples/Example2Icon.d.ts
+1050 notice 120B   dist/examples/ExampleIcon.d.ts
+1050 notice 167B   dist/index.d.ts
+1050 notice 447B   dist/types.d.ts
+1050 notice 450B   src/types.ts
+1050 notice 637B   dist/useBadgeGroupStyle.d.ts
+1050 notice 677B   dist/useBadgeStyle.d.ts
+1050 notice 256B   dist/utils.d.ts
+1050 notice 3.4kB  src/examples/AUIcon.tsx
+1050 notice 1.5kB  src/Badge.spec.tsx
+1050 notice 2.4kB  src/Badge.stories.tsx
+1050 notice 2.2kB  src/Badge.tsx
+1050 notice 1.8kB  src/BadgeGroup.spec.tsx
+1050 notice 868B   src/BadgeGroup.stories.tsx
+1050 notice 2.2kB  src/BadgeGroup.tsx
+1050 notice 516B   src/examples/Example2Icon.tsx
+1050 notice 391B   src/examples/ExampleIcon.tsx
+1050 notice 185B   src/index.tsx
+1050 notice 4.3kB  src/useBadgeGroupStyle.tsx
+1050 notice 4.6kB  src/useBadgeStyle.tsx
+1050 notice 239B   src/utils.tsx
+1051 notice === Tarball Details ===
+1052 notice name:          @highoutput/hds-badge
+1052 notice version:       0.2.6
+1052 notice filename:      highoutput-hds-badge-0.2.6.tgz
+1052 notice package size:  24.2 kB
+1052 notice unpacked size: 137.5 kB
+1052 notice shasum:        f593edc5a61ecb8cff32014443322543b1dda7ac
+1052 notice integrity:     sha512-29fNa2okSKsLI[...]E/yyzZppcVTuw==
+1052 notice total files:   36
+1053 notice
+1054 verbose publish @highoutput/hds-carousel
+1055 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-breadcrumbs 1285ms
+1056 silly lifecycle No script for "publish" in "@highoutput/hds-breadcrumbs", continuing
+1057 silly lifecycle No script for "postpublish" in "@highoutput/hds-breadcrumbs", continuing
+1058 success published @highoutput/hds-breadcrumbs 0.2.6
+1059 notice
+1060 notice 📦  @highoutput/hds-breadcrumbs@0.2.6
+1061 notice === Tarball Contents ===
+1062 notice 1.1kB LICENSE
+1062 notice 5.2kB dist/hds-breadcrumbs.cjs.development.js
+1062 notice 3.2kB dist/hds-breadcrumbs.cjs.production.min.js
+1062 notice 5.1kB dist/hds-breadcrumbs.esm.js
+1062 notice 208B  dist/index.js
+1062 notice 2.0kB package.json
+1062 notice 8.6kB dist/hds-breadcrumbs.cjs.development.js.map
+1062 notice 7.3kB dist/hds-breadcrumbs.cjs.production.min.js.map
+1062 notice 8.6kB dist/hds-breadcrumbs.esm.js.map
+1062 notice 833B  README.md
+1062 notice 2.3kB src/__snapshots__/Breadcrumbs.spec.tsx.snap
+1062 notice 1.0kB dist/Breadcrumbs.d.ts
+1062 notice 125B  dist/icons/ChevronRightIcon.d.ts
+1062 notice 117B  dist/icons/HomeIcon.d.ts
+1062 notice 74B   dist/index.d.ts
+1062 notice 1.6kB src/Breadcrumbs.spec.tsx
+1062 notice 793B  src/Breadcrumbs.stories.tsx
+1062 notice 2.8kB src/Breadcrumbs.tsx
+1062 notice 518B  src/icons/ChevronRightIcon.tsx
+1062 notice 1.3kB src/icons/HomeIcon.tsx
+1062 notice 73B   src/index.tsx
+1063 notice === Tarball Details ===
+1064 notice name:          @highoutput/hds-breadcrumbs
+1064 notice version:       0.2.6
+1064 notice filename:      highoutput-hds-breadcrumbs-0.2.6.tgz
+1064 notice package size:  10.4 kB
+1064 notice unpacked size: 52.9 kB
+1064 notice shasum:        786734028e2290f39d6d0fc45b394fddefbe66f7
+1064 notice integrity:     sha512-lemi25p8JH+nw[...]t4nn+xjgIA66Q==
+1064 notice total files:   21
+1065 notice
+1066 verbose publish @highoutput/hds-checkbox-group
+1067 silly lifecycle No script for "publish" in "@highoutput/hds-carousel", continuing
+1068 silly lifecycle No script for "postpublish" in "@highoutput/hds-carousel", continuing
+1069 success published @highoutput/hds-carousel 0.2.4
+1070 notice
+1071 notice 📦  @highoutput/hds-carousel@0.2.4
+1072 notice === Tarball Contents ===
+1073 notice 1.1kB  LICENSE
+1073 notice 12.6kB dist/hds-carousel.cjs.development.js
+1073 notice 9.1kB  dist/hds-carousel.cjs.production.min.js
+1073 notice 12.3kB dist/hds-carousel.esm.js
+1073 notice 202B   dist/index.js
+1073 notice 2.3kB  package.json
+1073 notice 18.0kB dist/hds-carousel.cjs.development.js.map
+1073 notice 16.1kB dist/hds-carousel.cjs.production.min.js.map
+1073 notice 18.0kB dist/hds-carousel.esm.js.map
+1073 notice 1.1kB  README.md
+1073 notice 5.7kB  src/__snapshots__/Carousel.spec.tsx.snap
+1073 notice 816B   dist/Carousel.d.ts
+1073 notice 1.7kB  dist/Carousel.stories.d.ts
+1073 notice 88B    dist/CarouselStyle.generated.d.ts
+1073 notice 124B   dist/ChevronLeftIcon.d.ts
+1073 notice 125B   dist/ChevronRightIcon.d.ts
+1073 notice 125B   dist/index.d.ts
+1073 notice 208B   dist/withCarousel.d.ts
+1073 notice 2.4kB  src/Carousel.spec.tsx
+1073 notice 2.7kB  src/Carousel.stories.tsx
+1073 notice 3.2kB  src/Carousel.tsx
+1073 notice 5.4kB  src/CarouselStyle.generated.tsx
+1073 notice 401B   src/ChevronLeftIcon.tsx
+1073 notice 400B   src/ChevronRightIcon.tsx
+1073 notice 123B   src/index.tsx
+1073 notice 292B   src/withCarousel.spec.tsx
+1073 notice 2.5kB  src/withCarousel.tsx
+1074 notice === Tarball Details ===
+1075 notice name:          @highoutput/hds-carousel
+1075 notice version:       0.2.4
+1075 notice filename:      highoutput-hds-carousel-0.2.4.tgz
+1075 notice package size:  18.8 kB
+1075 notice unpacked size: 117.1 kB
+1075 notice shasum:        62fff5a5c45004773a2ef52491949bba32a8f9bf
+1075 notice integrity:     sha512-PkndvDIrGXetx[...]7uuS9uBH/Wqdw==
+1075 notice total files:   27
+1076 notice
+1077 verbose publish @highoutput/hds-checkbox
+1078 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-carousel 1241ms
+1079 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-checkbox-group 1270ms
+1080 silly lifecycle No script for "publish" in "@highoutput/hds-checkbox-group", continuing
+1081 silly lifecycle No script for "postpublish" in "@highoutput/hds-checkbox-group", continuing
+1082 success published @highoutput/hds-checkbox-group 0.2.5
+1083 notice
+1084 notice 📦  @highoutput/hds-checkbox-group@0.2.5
+1085 notice === Tarball Contents ===
+1086 notice 1.1kB  LICENSE
+1086 notice 9.7kB  dist/hds-checkbox-group.cjs.development.js
+1086 notice 5.1kB  dist/hds-checkbox-group.cjs.production.min.js
+1086 notice 9.6kB  dist/hds-checkbox-group.esm.js
+1086 notice 214B   dist/index.js
+1086 notice 2.8kB  package.json
+1086 notice 19.0kB dist/hds-checkbox-group.cjs.development.js.map
+1086 notice 16.1kB dist/hds-checkbox-group.cjs.production.min.js.map
+1086 notice 19.0kB dist/hds-checkbox-group.esm.js.map
+1086 notice 1.7kB  README.md
+1086 notice 2.4kB  src/__snapshots__/CheckboxGroup.spec.tsx.snap
+1086 notice 1.3kB  dist/CheckboxGroup.d.ts
+1086 notice 296B   dist/CheckboxGroup.stories.d.ts
+1086 notice 118B   dist/CheckIcon.d.ts
+1086 notice 119B   dist/CircleIcon.d.ts
+1086 notice 81B    dist/index.d.ts
+1086 notice 80B    src/index.ts
+1086 notice 129B   dist/utils.d.ts
+1086 notice 262B   src/utils.ts
+1086 notice 5.6kB  src/CheckboxGroup.spec.tsx
+1086 notice 9.9kB  src/CheckboxGroup.stories.tsx
+1086 notice 9.6kB  src/CheckboxGroup.tsx
+1086 notice 479B   src/CheckIcon.tsx
+1086 notice 340B   src/CircleIcon.tsx
+1086 notice 1.5kB  src/examples/CogIcon.tsx
+1086 notice 548B   src/utils.spec.tsx
+1087 notice === Tarball Details ===
+1088 notice name:          @highoutput/hds-checkbox-group
+1088 notice version:       0.2.5
+1088 notice filename:      highoutput-hds-checkbox-group-0.2.5.tgz
+1088 notice package size:  21.0 kB
+1088 notice unpacked size: 117.1 kB
+1088 notice shasum:        48dbe26a07c25793a68774e65da190624ffd1818
+1088 notice integrity:     sha512-eBYbpmLg03Zuv[...]tRq41aa/MUsKQ==
+1088 notice total files:   26
+1089 notice
+1090 verbose publish @highoutput/hds-cta
+1091 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-checkbox 1308ms
+1092 silly lifecycle No script for "publish" in "@highoutput/hds-checkbox", continuing
+1093 silly lifecycle No script for "postpublish" in "@highoutput/hds-checkbox", continuing
+1094 success published @highoutput/hds-checkbox 0.1.5
+1095 notice
+1096 notice 📦  @highoutput/hds-checkbox@0.1.5
+1097 notice === Tarball Contents ===
+1098 notice 1.1kB  LICENSE
+1098 notice 6.2kB  dist/hds-checkbox.cjs.development.js
+1098 notice 3.5kB  dist/hds-checkbox.cjs.production.min.js
+1098 notice 5.9kB  dist/hds-checkbox.esm.js
+1098 notice 202B   dist/index.js
+1098 notice 1.8kB  package.json
+1098 notice 11.2kB dist/hds-checkbox.cjs.development.js.map
+1098 notice 9.3kB  dist/hds-checkbox.cjs.production.min.js.map
+1098 notice 11.2kB dist/hds-checkbox.esm.js.map
+1098 notice 693B   README.md
+1098 notice 1.9kB  dist/checkbox.d.ts
+1098 notice 2.4kB  dist/checkbox.stories.d.ts
+1098 notice 269B   dist/index.d.ts
+1098 notice 129B   dist/utils.d.ts
+1098 notice 328B   src/utils.ts
+1098 notice 4.5kB  src/checkbox.stories.tsx
+1098 notice 1.1kB  src/checkbox.test.tsx
+1098 notice 5.7kB  src/checkbox.tsx
+1098 notice 289B   src/index.tsx
+1099 notice === Tarball Details ===
+1100 notice name:          @highoutput/hds-checkbox
+1100 notice version:       0.1.5
+1100 notice filename:      highoutput-hds-checkbox-0.1.5.tgz
+1100 notice package size:  12.3 kB
+1100 notice unpacked size: 67.7 kB
+1100 notice shasum:        af208be6e1b19d2df3e5c0d058452916da0e2dc5
+1100 notice integrity:     sha512-Fml0vxyoUTr9z[...]e3IM3rtlcrcrg==
+1100 notice total files:   19
+1101 notice
+1102 verbose publish @highoutput/hds-date-picker
+1103 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-cta 1472ms
+1104 silly lifecycle No script for "publish" in "@highoutput/hds-cta", continuing
+1105 silly lifecycle No script for "postpublish" in "@highoutput/hds-cta", continuing
+1106 success published @highoutput/hds-cta 0.1.11
+1107 notice
+1108 notice 📦  @highoutput/hds-cta@0.1.11
+1109 notice === Tarball Contents ===
+1110 notice 1.1kB LICENSE
+1110 notice 2.9kB dist/hds-cta.cjs.development.js
+1110 notice 1.8kB dist/hds-cta.cjs.production.min.js
+1110 notice 2.6kB dist/hds-cta.esm.js
+1110 notice 192B  dist/index.js
+1110 notice 2.0kB package.json
+1110 notice 5.6kB dist/hds-cta.cjs.development.js.map
+1110 notice 4.7kB dist/hds-cta.cjs.production.min.js.map
+1110 notice 5.6kB dist/hds-cta.esm.js.map
+1110 notice 772B  README.md
+1110 notice 969B  src/component/__snapshots__/CTA.spec.tsx.snap
+1110 notice 350B  dist/component/CTA.d.ts
+1110 notice 607B  dist/component/CTA.stories.d.ts
+1110 notice 77B   dist/index.d.ts
+1110 notice 76B   src/index.ts
+1110 notice 142B  dist/component/exampale/VisaIcon.d.ts
+1110 notice 1.1kB src/component/CTA.spec.tsx
+1110 notice 3.1kB src/component/CTA.stories.tsx
+1110 notice 2.8kB src/component/CTA.tsx
+1110 notice 1.6kB src/component/exampale/VisaIcon.tsx
+1111 notice === Tarball Details ===
+1112 notice name:          @highoutput/hds-cta
+1112 notice version:       0.1.11
+1112 notice filename:      highoutput-hds-cta-0.1.11.tgz
+1112 notice package size:  8.7 kB
+1112 notice unpacked size: 38.0 kB
+1112 notice shasum:        cd65a78d8de228b8091d395ef8305e875e3c669e
+1112 notice integrity:     sha512-S12m5PLd/V7R6[...]scCpjPPs+vTNA==
+1112 notice total files:   20
+1113 notice
+1114 verbose publish @highoutput/hds-drawer
+1115 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-date-picker 1572ms
+1116 silly lifecycle No script for "publish" in "@highoutput/hds-date-picker", continuing
+1117 silly lifecycle No script for "postpublish" in "@highoutput/hds-date-picker", continuing
+1118 success published @highoutput/hds-date-picker 0.2.11
+1119 notice
+1120 notice 📦  @highoutput/hds-date-picker@0.2.11
+1121 notice === Tarball Contents ===
+1122 notice 1.1kB  LICENSE
+1122 notice 40.9kB dist/hds-date-picker.cjs.development.js
+1122 notice 22.0kB dist/hds-date-picker.cjs.production.min.js
+1122 notice 40.2kB dist/hds-date-picker.esm.js
+1122 notice 208B   dist/index.js
+1122 notice 3.4kB  package.json
+1122 notice 92.7kB dist/hds-date-picker.cjs.development.js.map
+1122 notice 74.4kB dist/hds-date-picker.cjs.production.min.js.map
+1122 notice 92.6kB dist/hds-date-picker.esm.js.map
+1122 notice 1.9kB  README.md
+1122 notice 20.3kB src/__snapshots__/DatePicker.test.tsx.snap
+1122 notice 285B   dist/Calendar.d.ts
+1122 notice 121B   dist/icons/CalendarIcon.d.ts
+1122 notice 124B   dist/icons/ChevronLeftIcon.d.ts
+1122 notice 125B   dist/icons/ChevronRightIcon.d.ts
+1122 notice 118B   dist/icons/CloseIcon.d.ts
+1122 notice 78B    dist/constants.d.ts
+1122 notice 1.5kB  dist/DatePicker.d.ts
+1122 notice 561B   dist/DatePickerDropdown.d.ts
+1122 notice 921B   dist/DatePickerInput.d.ts
+1122 notice 721B   dist/DatePickerModal.d.ts
+1122 notice 658B   dist/index.d.ts
+1122 notice 182B   dist/types.d.ts
+1122 notice 158B   src/types.ts
+1122 notice 544B   dist/utils.d.ts
+1122 notice 3.1kB  src/utils.ts
+1122 notice 4.4kB  src/Calendar.tsx
+1122 notice 1.1kB  src/icons/CalendarIcon.tsx
+1122 notice 469B   src/icons/ChevronLeftIcon.tsx
+1122 notice 469B   src/icons/ChevronRightIcon.tsx
+1122 notice 483B   src/icons/CloseIcon.tsx
+1122 notice 247B   src/constants.tsx
+1122 notice 2.2kB  src/DatePicker.stories.tsx
+1122 notice 5.5kB  src/DatePicker.test.tsx
+1122 notice 25.8kB src/DatePicker.tsx
+1122 notice 2.4kB  src/DatePickerDropdown.tsx
+1122 notice 3.3kB  src/DatePickerInput.spec.tsx
+1122 notice 1.7kB  src/DatePickerInput.stories.tsx
+1122 notice 6.0kB  src/DatePickerInput.tsx
+1122 notice 3.4kB  src/DatePickerModal.tsx
+1122 notice 697B   src/index.tsx
+1123 notice === Tarball Details ===
+1124 notice name:          @highoutput/hds-date-picker
+1124 notice version:       0.2.11
+1124 notice filename:      highoutput-hds-date-picker-0.2.11.tgz
+1124 notice package size:  103.2 kB
+1124 notice unpacked size: 457.0 kB
+1124 notice shasum:        5503016b83417579fe651a8996d1fea5dbf4b76e
+1124 notice integrity:     sha512-sxZLuQ0aV0Pse[...]G99w9TrDA2o5A==
+1124 notice total files:   41
+1125 notice
+1126 verbose publish @highoutput/hds-empty-state
+1127 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-drawer 1355ms
+1128 silly lifecycle No script for "publish" in "@highoutput/hds-drawer", continuing
+1129 silly lifecycle No script for "postpublish" in "@highoutput/hds-drawer", continuing
+1130 success published @highoutput/hds-drawer 0.1.4
+1131 notice
+1132 notice 📦  @highoutput/hds-drawer@0.1.4
+1133 notice === Tarball Contents ===
+1134 notice 1.1kB LICENSE
+1134 notice 1.1kB dist/hds-drawer.cjs.development.js
+1134 notice 859B  dist/hds-drawer.cjs.production.min.js
+1134 notice 175B  dist/hds-drawer.esm.js
+1134 notice 198B  dist/index.js
+1134 notice 8.0kB package.json
+1134 notice 159B  dist/hds-drawer.cjs.development.js.map
+1134 notice 113B  dist/hds-drawer.cjs.production.min.js.map
+1134 notice 98B   dist/hds-drawer.esm.js.map
+1134 notice 6.7kB README.md
+1134 notice 243B  dist/index.d.ts
+1135 notice === Tarball Details ===
+1136 notice name:          @highoutput/hds-drawer
+1136 notice version:       0.1.4
+1136 notice filename:      highoutput-hds-drawer-0.1.4.tgz
+1136 notice package size:  5.5 kB
+1136 notice unpacked size: 18.7 kB
+1136 notice shasum:        b9dbe0334485db0cb5410233fad6bf212eb4e97b
+1136 notice integrity:     sha512-PROg8FsABsluI[...]RW857tlIqYqQg==
+1136 notice total files:   11
+1137 notice
+1138 verbose publish @highoutput/hds-experimental
+1139 silly lifecycle No script for "publish" in "@highoutput/hds-empty-state", continuing
+1140 silly lifecycle No script for "postpublish" in "@highoutput/hds-empty-state", continuing
+1141 success published @highoutput/hds-empty-state 0.1.11
+1142 notice
+1143 notice 📦  @highoutput/hds-empty-state@0.1.11
+1144 notice === Tarball Contents ===
+1145 notice 1.1kB LICENSE
+1145 notice 1.7kB dist/hds-empty-state.cjs.development.js
+1145 notice 1.0kB dist/hds-empty-state.cjs.production.min.js
+1145 notice 1.5kB dist/hds-empty-state.esm.js
+1145 notice 208B  dist/index.js
+1145 notice 2.2kB package.json
+1145 notice 3.2kB dist/hds-empty-state.cjs.development.js.map
+1145 notice 2.7kB dist/hds-empty-state.cjs.production.min.js.map
+1145 notice 3.2kB dist/hds-empty-state.esm.js.map
+1145 notice 937B  README.md
+1145 notice 1.4kB src/component/__snapshots__/EmptyState.test.tsx.snap
+1145 notice 340B  dist/component/EmptyState.d.ts
+1145 notice 338B  dist/component/EmptyState.stories.d.ts
+1145 notice 74B   dist/index.d.ts
+1145 notice 73B   src/index.ts
+1145 notice 978B  src/component/EmptyState.stories.tsx
+1145 notice 1.1kB src/component/EmptyState.test.tsx
+1145 notice 1.5kB src/component/EmptyState.tsx
+1146 notice === Tarball Details ===
+1147 notice name:          @highoutput/hds-empty-state
+1147 notice version:       0.1.11
+1147 notice filename:      highoutput-hds-empty-state-0.1.11.tgz
+1147 notice package size:  6.2 kB
+1147 notice unpacked size: 23.5 kB
+1147 notice shasum:        53919781c4fd46eda0fde3d3601ef5b8b3567742
+1147 notice integrity:     sha512-900I5kTlKfIQ6[...]z5RXdk/ozllzQ==
+1147 notice total files:   18
+1148 notice
+1149 verbose publish @highoutput/hds-extras
+1150 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-empty-state 1490ms
+1151 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-experimental 1312ms
+1152 silly lifecycle No script for "publish" in "@highoutput/hds-experimental", continuing
+1153 silly lifecycle No script for "postpublish" in "@highoutput/hds-experimental", continuing
+1154 success published @highoutput/hds-experimental 0.1.8
+1155 notice
+1156 notice 📦  @highoutput/hds-experimental@0.1.8
+1157 notice === Tarball Contents ===
+1158 notice 1.1kB LICENSE
+1158 notice 1.2kB dist/hds-experimental.cjs.development.js
+1158 notice 702B  dist/hds-experimental.cjs.production.min.js
+1158 notice 1.1kB dist/hds-experimental.esm.js
+1158 notice 210B  dist/index.js
+1158 notice 2.5kB package.json
+1158 notice 1.5kB dist/hds-experimental.cjs.development.js.map
+1158 notice 1.3kB dist/hds-experimental.cjs.production.min.js.map
+1158 notice 1.5kB dist/hds-experimental.esm.js.map
+1158 notice 1.3kB README.md
+1158 notice 47B   dist/index.d.ts
+1158 notice 120B  dist/examples/Logo.d.ts
+1158 notice 159B  dist/Navbar.d.ts
+1158 notice 329B  dist/Navbar.stories.d.ts
+1158 notice 46B   src/index.tsx
+1158 notice 5.5kB src/examples/Logo.tsx
+1158 notice 561B  src/Navbar.spec.tsx
+1158 notice 2.8kB src/Navbar.stories.tsx
+1158 notice 589B  src/Navbar.tsx
+1159 notice === Tarball Details ===
+1160 notice name:          @highoutput/hds-experimental
+1160 notice version:       0.1.8
+1160 notice filename:      highoutput-hds-experimental-0.1.8.tgz
+1160 notice package size:  7.3 kB
+1160 notice unpacked size: 22.3 kB
+1160 notice shasum:        0aa20aa5d62fac0129e1173c09275b448ee988ed
+1160 notice integrity:     sha512-7YiUCfLwhvusX[...]Nxw33BaOMux6A==
+1160 notice total files:   19
+1161 notice
+1162 verbose publish @highoutput/hds-file-upload
+1163 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-extras 1494ms
+1164 silly lifecycle No script for "publish" in "@highoutput/hds-extras", continuing
+1165 silly lifecycle No script for "postpublish" in "@highoutput/hds-extras", continuing
+1166 success published @highoutput/hds-extras 0.1.6
+1167 notice
+1168 notice 📦  @highoutput/hds-extras@0.1.6
+1169 notice === Tarball Contents ===
+1170 notice 1.1kB LICENSE
+1170 notice 1.9kB dist/hds-extras.cjs.development.js
+1170 notice 1.5kB dist/hds-extras.cjs.production.min.js
+1170 notice 266B  dist/hds-extras.esm.js
+1170 notice 198B  dist/index.js
+1170 notice 8.0kB package.json
+1170 notice 203B  dist/hds-extras.cjs.development.js.map
+1170 notice 113B  dist/hds-extras.cjs.production.min.js.map
+1170 notice 100B  dist/hds-extras.esm.js.map
+1170 notice 6.7kB README.md
+1170 notice 375B  dist/index.d.ts
+1170 notice 416B  src/index.tsx
+1171 notice === Tarball Details ===
+1172 notice name:          @highoutput/hds-extras
+1172 notice version:       0.1.6
+1172 notice filename:      highoutput-hds-extras-0.1.6.tgz
+1172 notice package size:  5.9 kB
+1172 notice unpacked size: 20.8 kB
+1172 notice shasum:        dbca15c61b1d7c4f77903e73561debfb6cf4b269
+1172 notice integrity:     sha512-63G31CdQ/IG2y[...]zFGPrRpqT8yZg==
+1172 notice total files:   12
+1173 notice
+1174 verbose publish @highoutput/hds-forms
+1175 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-file-upload 1552ms
+1176 silly lifecycle No script for "publish" in "@highoutput/hds-file-upload", continuing
+1177 silly lifecycle No script for "postpublish" in "@highoutput/hds-file-upload", continuing
+1178 success published @highoutput/hds-file-upload 0.1.12
+1179 notice
+1180 notice 📦  @highoutput/hds-file-upload@0.1.12
+1181 notice === Tarball Contents ===
+1182 notice 1.1kB  LICENSE
+1182 notice 5.9kB  dist/hds-file-upload.cjs.development.js
+1182 notice 3.6kB  dist/hds-file-upload.cjs.production.min.js
+1182 notice 5.5kB  dist/hds-file-upload.esm.js
+1182 notice 208B   dist/index.js
+1182 notice 2.3kB  package.json
+1182 notice 12.4kB dist/hds-file-upload.cjs.development.js.map
+1182 notice 10.1kB dist/hds-file-upload.cjs.production.min.js.map
+1182 notice 12.4kB dist/hds-file-upload.esm.js.map
+1182 notice 1.0kB  README.md
+1182 notice 1.4kB  src/FileUpload/__snapshots__/FileUpload.spec.tsx.snap
+1182 notice 3.6kB  src/ProgressBox/__snapshots__/ProgressBox.spec.tsx.snap
+1182 notice 316B   dist/FileUpload/FileUpload.d.ts
+1182 notice 328B   dist/FileUpload/FileUpload.stories.d.ts
+1182 notice 142B   dist/index.d.ts
+1182 notice 140B   src/index.ts
+1182 notice 351B   dist/ProgressBox/ProgressBox.d.ts
+1182 notice 484B   dist/ProgressBox/ProgressBox.stories.d.ts
+1182 notice 548B   src/FileUpload/FileUpload.spec.tsx
+1182 notice 1.1kB  src/FileUpload/FileUpload.stories.tsx
+1182 notice 2.5kB  src/FileUpload/FileUpload.tsx
+1182 notice 815B   src/ProgressBox/ProgressBox.spec.tsx
+1182 notice 690B   src/ProgressBox/ProgressBox.stories.tsx
+1182 notice 3.9kB  src/ProgressBox/ProgressBox.tsx
+1183 notice === Tarball Details ===
+1184 notice name:          @highoutput/hds-file-upload
+1184 notice version:       0.1.12
+1184 notice filename:      highoutput-hds-file-upload-0.1.12.tgz
+1184 notice package size:  14.2 kB
+1184 notice unpacked size: 70.7 kB
+1184 notice shasum:        73348de3a267d7a6cb71745c463a94de8e469785
+1184 notice integrity:     sha512-WduuTm1VL9cHk[...]H6X1zxnhRRmGg==
+1184 notice total files:   24
+1185 notice
+1186 verbose publish @highoutput/hds
+1187 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-forms 1549ms
+1188 silly lifecycle No script for "publish" in "@highoutput/hds-forms", continuing
+1189 silly lifecycle No script for "postpublish" in "@highoutput/hds-forms", continuing
+1190 success published @highoutput/hds-forms 0.2.9
+1191 notice
+1192 notice 📦  @highoutput/hds-forms@0.2.9
+1193 notice === Tarball Contents ===
+1194 notice 1.1kB  LICENSE
+1194 notice 37.0kB dist/hds-forms.cjs.development.js
+1194 notice 19.7kB dist/hds-forms.cjs.production.min.js
+1194 notice 36.0kB dist/hds-forms.esm.js
+1194 notice 196B   dist/index.js
+1194 notice 3.4kB  package.json
+1194 notice 78.2kB dist/hds-forms.cjs.development.js.map
+1194 notice 65.8kB dist/hds-forms.cjs.production.min.js.map
+1194 notice 78.1kB dist/hds-forms.esm.js.map
+1194 notice 1.7kB  README.md
+1194 notice 7.8kB  dist/icons/ChevronDownIcon.d.ts
+1194 notice 7.8kB  dist/icons/CloseIcon.d.ts
+1194 notice 853B   dist/ComboboxField/Combobox.d.ts
+1194 notice 586B   dist/ComboboxField/ComboboxField.d.ts
+1194 notice 807B   dist/ComboboxField/ComboboxField.stories.d.ts
+1194 notice 7.8kB  dist/icons/CopyIcon.d.ts
+1194 notice 7.8kB  dist/icons/EyeClosedIcon.d.ts
+1194 notice 7.8kB  dist/icons/EyeLightIcon.d.ts
+1194 notice 806B   dist/FormGroup/FormGroup.d.ts
+1194 notice 980B   dist/hooks.d.ts
+1194 notice 869B   dist/index.d.ts
+1194 notice 1.4kB  dist/MultilineField/MultilineField.d.ts
+1194 notice 1.2kB  dist/MultilineField/MultilineField.stories.d.ts
+1194 notice 618B   dist/OtpField/OtpField.d.ts
+1194 notice 884B   dist/OtpField/OtpField.stories.d.ts
+1194 notice 1.5kB  dist/PasswordField/PasswordField.d.ts
+1194 notice 1.6kB  dist/PasswordField/PasswordField.stories.d.ts
+1194 notice 1.5kB  dist/SearchField/SearchField.d.ts
+1194 notice 1.6kB  dist/SearchField/SearchField.stories.d.ts
+1194 notice 7.8kB  dist/icons/SearchIcon.d.ts
+1194 notice 872B   dist/SelectField/Select.d.ts
+1194 notice 616B   dist/SelectField/SelectField.d.ts
+1194 notice 833B   dist/SelectField/SelectField.stories.d.ts
+1194 notice 1.4kB  dist/TextField/TextField.d.ts
+1194 notice 1.2kB  dist/TextField/TextField.stories.d.ts
+1194 notice 167B   dist/types.d.ts
+1194 notice 147B   src/types.ts
+1194 notice 593B   src/icons/ChevronDownIcon.tsx
+1194 notice 586B   src/icons/CloseIcon.tsx
+1194 notice 5.3kB  src/ComboboxField/Combobox.tsx
+1194 notice 2.5kB  src/ComboboxField/ComboboxField.spec.tsx
+1194 notice 1.2kB  src/ComboboxField/ComboboxField.stories.tsx
+1194 notice 1.3kB  src/ComboboxField/ComboboxField.tsx
+1194 notice 616B   src/icons/CopyIcon.tsx
+1194 notice 948B   src/icons/EyeClosedIcon.tsx
+1194 notice 1.0kB  src/icons/EyeLightIcon.tsx
+1194 notice 1.7kB  src/FormGroup/FormGroup.spec.tsx
+1194 notice 2.7kB  src/FormGroup/FormGroup.tsx
+1194 notice 8.7kB  src/hooks.tsx
+1194 notice 935B   src/index.tsx
+1194 notice 1.3kB  src/MultilineField/MultilineField.spec.tsx
+1194 notice 726B   src/MultilineField/MultilineField.stories.tsx
+1194 notice 2.1kB  src/MultilineField/MultilineField.tsx
+1194 notice 1.7kB  src/OtpField/OtpField.spec.tsx
+1194 notice 560B   src/OtpField/OtpField.stories.tsx
+1194 notice 3.5kB  src/OtpField/OtpField.tsx
+1194 notice 2.0kB  src/PasswordField/Password.spec.tsx
+1194 notice 708B   src/PasswordField/PasswordField.stories.tsx
+1194 notice 3.0kB  src/PasswordField/PasswordField.tsx
+1194 notice 1.2kB  src/SearchField/SearchField.spec.tsx
+1194 notice 719B   src/SearchField/SearchField.stories.tsx
+1194 notice 2.2kB  src/SearchField/SearchField.tsx
+1194 notice 778B   src/icons/SearchIcon.tsx
+1194 notice 6.0kB  src/SelectField/Select.tsx
+1194 notice 1.8kB  src/SelectField/SelectField.spec.tsx
+1194 notice 977B   src/SelectField/SelectField.stories.tsx
+1194 notice 1.5kB  src/SelectField/SelectField.tsx
+1194 notice 970B   src/TextField/TextField.spec.tsx
+1194 notice 668B   src/TextField/TextField.stories.tsx
+1194 notice 2.5kB  src/TextField/TextField.tsx
+1195 notice === Tarball Details ===
+1196 notice name:          @highoutput/hds-forms
+1196 notice version:       0.2.9
+1196 notice filename:      highoutput-hds-forms-0.2.9.tgz
+1196 notice package size:  87.2 kB
+1196 notice unpacked size: 451.5 kB
+1196 notice shasum:        c792234e622f9b64bcdff623f14497c9259986df
+1196 notice integrity:     sha512-5EafmZby5cA+P[...]YBrlVwY62ECcw==
+1196 notice total files:   70
+1197 notice
+1198 verbose publish @highoutput/hds-hooks
+1199 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds 1644ms
+1200 silly lifecycle No script for "publish" in "@highoutput/hds", continuing
+1201 silly lifecycle No script for "postpublish" in "@highoutput/hds", continuing
+1202 success published @highoutput/hds 0.2.26
+1203 notice
+1204 notice 📦  @highoutput/hds@0.2.26
+1205 notice === Tarball Contents ===
+1206 notice 1.1kB  LICENSE
+1206 notice 12.2kB dist/hds.cjs.development.js
+1206 notice 8.1kB  dist/hds.cjs.production.min.js
+1206 notice 8.1kB  dist/hds.esm.js
+1206 notice 184B   dist/index.js
+1206 notice 3.9kB  package.json
+1206 notice 16.3kB dist/hds.cjs.development.js.map
+1206 notice 13.9kB dist/hds.cjs.production.min.js.map
+1206 notice 16.1kB dist/hds.esm.js.map
+1206 notice 2.3kB  README.md
+1206 notice 151B   dist/theme/breakpoints.d.ts
+1206 notice 136B   src/theme/breakpoints.ts
+1206 notice 1.8kB  dist/theme/components/checkbox.d.ts
+1206 notice 1.5kB  src/theme/components/checkbox.ts
+1206 notice 1.9kB  dist/theme/colors.d.ts
+1206 notice 1.7kB  src/theme/colors.ts
+1206 notice 109B   dist/theme/config.d.ts
+1206 notice 172B   src/theme/config.ts
+1206 notice 247B   dist/theme/components/drawer.d.ts
+1206 notice 183B   src/theme/components/drawer.ts
+1206 notice 97B    dist/Fonts.d.ts
+1206 notice 92B    dist/theme/fonts.d.ts
+1206 notice 113B   src/theme/fonts.ts
+1206 notice 139B   dist/theme/fontSizes.d.ts
+1206 notice 124B   src/theme/fontSizes.ts
+1206 notice 3.0kB  dist/theme/components/heading.d.ts
+1206 notice 109B   src/theme/components/heading.ts
+1206 notice 852B   dist/index.d.ts
+1206 notice 9.3kB  dist/theme/components/index.d.ts
+1206 notice 66B    dist/theme/index.d.ts
+1206 notice 220B   src/theme/components/index.ts
+1206 notice 493B   src/theme/index.ts
+1206 notice 105B   dist/theme/styles.d.ts
+1206 notice 295B   src/theme/styles.ts
+1206 notice 3.0kB  dist/theme/components/text.d.ts
+1206 notice 2.5kB  src/theme/components/text.ts
+1206 notice 251B   dist/ThemeProvider.d.ts
+1206 notice 55B    dist/theme/zIndices.d.ts
+1206 notice 50B    src/theme/zIndices.ts
+1206 notice 276B   src/Fonts.tsx
+1206 notice 971B   src/index.tsx
+1206 notice 516B   src/ThemeProvider.tsx
+1207 notice === Tarball Details ===
+1208 notice name:          @highoutput/hds
+1208 notice version:       0.2.26
+1208 notice filename:      highoutput-hds-0.2.26.tgz
+1208 notice package size:  17.2 kB
+1208 notice unpacked size: 112.6 kB
+1208 notice shasum:        a26118f022f0e9b8c3bbd38037757a5ab8595636
+1208 notice integrity:     sha512-8p4brtAgZOK1k[...]uPXgrFz/w5xsg==
+1208 notice total files:   42
+1209 notice
+1210 verbose publish @highoutput/hds-icons
+1211 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-hooks 1155ms
+1212 silly lifecycle No script for "publish" in "@highoutput/hds-hooks", continuing
+1213 silly lifecycle No script for "postpublish" in "@highoutput/hds-hooks", continuing
+1214 success published @highoutput/hds-hooks 0.1.3
+1215 notice
+1216 notice 📦  @highoutput/hds-hooks@0.1.3
+1217 notice === Tarball Contents ===
+1218 notice 1.1kB LICENSE
+1218 notice 2.4kB dist/hds-hooks.cjs.development.js
+1218 notice 1.9kB dist/hds-hooks.cjs.production.min.js
+1218 notice 345B  dist/hds-hooks.esm.js
+1218 notice 196B  dist/index.js
+1218 notice 927B  package.json
+1218 notice 218B  dist/hds-hooks.cjs.development.js.map
+1218 notice 112B  dist/hds-hooks.cjs.production.min.js.map
+1218 notice 97B   dist/hds-hooks.esm.js.map
+1218 notice 305B  dist/index.d.ts
+1218 notice 338B  src/index.tsx
+1219 notice === Tarball Details ===
+1220 notice name:          @highoutput/hds-hooks
+1220 notice version:       0.1.3
+1220 notice filename:      highoutput-hds-hooks-0.1.3.tgz
+1220 notice package size:  2.3 kB
+1220 notice unpacked size: 8.0 kB
+1220 notice shasum:        155c783a4ff2efa3014788d2a91ee25e4a27ab8d
+1220 notice integrity:     sha512-bR5NGTwMufjNa[...]mB8AIawA0EijA==
+1220 notice total files:   11
+1221 notice
+1222 verbose publish @highoutput/hds-loading-indicator
+1223 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-icons 1864ms
+1224 silly lifecycle No script for "publish" in "@highoutput/hds-icons", continuing
+1225 silly lifecycle No script for "postpublish" in "@highoutput/hds-icons", continuing
+1226 success published @highoutput/hds-icons 0.2.1
+1227 notice
+1228 notice 📦  @highoutput/hds-icons@0.2.1
+1229 notice === Tarball Contents ===
+1230 notice 1.1kB   LICENSE
+1230 notice 77.5kB  dist/hds-icons.cjs.development.js
+1230 notice 62.5kB  dist/hds-icons.cjs.production.min.js
+1230 notice 75.2kB  dist/hds-icons.esm.js
+1230 notice 196B    dist/index.js
+1230 notice 2.3kB   package.json
+1230 notice 110.9kB dist/hds-icons.cjs.development.js.map
+1230 notice 96.1kB  dist/hds-icons.cjs.production.min.js.map
+1230 notice 110.8kB dist/hds-icons.esm.js.map
+1230 notice 736B    README.md
+1230 notice 727B    src/story/Icons.mdx
+1230 notice 150B    dist/components/ActivityIcon.d.ts
+1230 notice 337B    dist/components/social/AppleIcon.d.ts
+1230 notice 162B    dist/components/arrow/ArrowDownIcon.d.ts
+1230 notice 162B    dist/components/arrow/ArrowLeftIcon.d.ts
+1230 notice 174B    dist/components/arrow/ArrowPositiveChange.d.ts
+1230 notice 164B    dist/components/arrow/ArrowRightIcon.d.ts
+1230 notice 142B    dist/components/BellIcon.d.ts
+1230 notice 160B    dist/components/BoxCircularBGIcon.d.ts
+1230 notice 140B    dist/components/BoxIcon.d.ts
+1230 notice 156B    dist/components/CheckCircleIcon.d.ts
+1230 notice 144B    dist/components/CheckIcon.d.ts
+1230 notice 166B    dist/components/arrow/ChevronDownIcon.d.ts
+1230 notice 156B    dist/components/arrow/ChevronLeftIcon.d.ts
+1230 notice 158B    dist/components/arrow/ChevronRightIcon.d.ts
+1230 notice 162B    dist/components/arrow/ChevronUpIcon.d.ts
+1230 notice 144B    dist/components/CoinsIcon.d.ts
+1230 notice 168B    dist/components/DotsVerticalIcon.d.ts
+1230 notice 345B    dist/components/social/DribbleIcon.d.ts
+1230 notice 144B    dist/components/EmialIcon.d.ts
+1230 notice 152B    dist/components/ErrorFileIcon.d.ts
+1230 notice 152B    dist/components/ErrorFilmIcon.d.ts
+1230 notice 156B    dist/components/ErrorFolderIcon.d.ts
+1230 notice 154B    dist/components/ErrorImageIcon.d.ts
+1230 notice 156B    dist/components/ErrorUploadIcon.d.ts
+1230 notice 142B    dist/components/ExitIcon.d.ts
+1230 notice 349B    dist/components/social/FacebookIcon.d.ts
+1230 notice 289B    dist/components/social/FigmaIcon.d.ts
+1230 notice 142B    dist/components/FileIcon.d.ts
+1230 notice 164B    dist/components/FileUploadIcon.d.ts
+1230 notice 142B    dist/components/FilmIcon.d.ts
+1230 notice 293B    dist/components/social/GoogleIcon.d.ts
+1230 notice 242B    dist/story/GridView.d.ts
+1230 notice 164B    dist/components/HelpCircleIcon.d.ts
+1230 notice 142B    dist/components/HelpIcon.d.ts
+1230 notice 142B    dist/components/HomeIcon.d.ts
+1230 notice 140B    dist/components/company/HovIcon.d.ts
+1230 notice 286B    dist/story/Icons.stories.d.ts
+1230 notice 144B    dist/components/ImageIcon.d.ts
+1230 notice 4.7kB   dist/index.d.ts
+1230 notice 164B    dist/components/InfoCircleIcon.d.ts
+1230 notice 152B    dist/components/LayersTwoIcon.d.ts
+1230 notice 158B    dist/components/MessageSmileIcon.d.ts
+1230 notice 170B    dist/components/arrow/NegativeArrowIcon.d.ts
+1230 notice 160B    dist/components/chart/NegativeChartIcon.d.ts
+1230 notice 156B    dist/components/PencilIcon.d.ts
+1230 notice 170B    dist/components/arrow/PositiveArrowIcon.d.ts
+1230 notice 160B    dist/components/chart/PositiveChartIcon.d.ts
+1230 notice 148B    dist/components/PrimaryIcon.d.ts
+1230 notice 170B    dist/components/PrimarySearchIcon.d.ts
+1230 notice 164B    dist/components/SearchIcon.d.ts
+1230 notice 148B    dist/components/SettingIcon.d.ts
+1230 notice 160B    dist/components/SuccessCircleIcon.d.ts
+1230 notice 166B    dist/components/SwitchHorizontalIcon.d.ts
+1230 notice 144B    dist/components/ThreeDots.d.ts
+1230 notice 164B    dist/components/TrashErrorIcon.d.ts
+1230 notice 154B    dist/components/TrashIcon.d.ts
+1230 notice 152B    dist/components/chart/TrendNegative.d.ts
+1230 notice 152B    dist/components/chart/TrendPositive.d.ts
+1230 notice 345B    dist/components/social/TwitterIcon.d.ts
+1230 notice 146B    dist/components/UploadIcon.d.ts
+1230 notice 142B    dist/components/UserIcon.d.ts
+1230 notice 150B    dist/components/UserPlusIcon.d.ts
+1230 notice 144B    dist/components/UsersIcon.d.ts
+1230 notice 98B     dist/story/utils.d.ts
+1230 notice 250B    src/story/utils.ts
+1230 notice 142B    dist/components/payment-method-icon/VisaIcon.d.ts
+1230 notice 160B    dist/components/WarningFolderIcon.d.ts
+1230 notice 148B    dist/components/WarningIcon.d.ts
+1230 notice 140B    dist/components/ZapIcon.d.ts
+1230 notice 511B    src/components/ActivityIcon.tsx
+1230 notice 2.1kB   src/components/social/AppleIcon.tsx
+1230 notice 597B    src/components/arrow/ArrowDownIcon.tsx
+1230 notice 597B    src/components/arrow/ArrowLeftIcon.tsx
+1230 notice 902B    src/components/arrow/ArrowPositiveChange.tsx
+1230 notice 599B    src/components/arrow/ArrowRightIcon.tsx
+1230 notice 760B    src/components/BellIcon.tsx
+1230 notice 2.3kB   src/components/BoxCircularBGIcon.tsx
+1230 notice 1.3kB   src/components/BoxIcon.tsx
+1230 notice 654B    src/components/CheckCircleIcon.tsx
+1230 notice 424B    src/components/CheckIcon.tsx
+1230 notice 532B    src/components/arrow/ChevronDownIcon.tsx
+1230 notice 481B    src/components/arrow/ChevronLeftIcon.tsx
+1230 notice 481B    src/components/arrow/ChevronRightIcon.tsx
+1230 notice 527B    src/components/arrow/ChevronUpIcon.tsx
+1230 notice 869B    src/components/CoinsIcon.tsx
+1230 notice 1.4kB   src/components/DotsVerticalIcon.tsx
+1230 notice 2.1kB   src/components/social/DribbleIcon.tsx
+1230 notice 1.2kB   src/components/EmialIcon.tsx
+1230 notice 1.5kB   src/components/ErrorFileIcon.tsx
+1230 notice 1.7kB   src/components/ErrorFilmIcon.tsx
+1230 notice 1.4kB   src/components/ErrorFolderIcon.tsx
+1230 notice 1.6kB   src/components/ErrorImageIcon.tsx
+1230 notice 929B    src/components/ErrorUploadIcon.tsx
+1230 notice 664B    src/components/ExitIcon.tsx
+1230 notice 1.4kB   src/components/social/FacebookIcon.tsx
+1230 notice 1.5kB   src/components/social/FigmaIcon.tsx
+1230 notice 1.5kB   src/components/FileIcon.tsx
+1230 notice 788B    src/components/FileUploadIcon.tsx
+1230 notice 1.7kB   src/components/FilmIcon.tsx
+1230 notice 1.6kB   src/components/social/GoogleIcon.tsx
+1230 notice 1.0kB   src/story/GridView.tsx
+1230 notice 1.2kB   src/components/HelpCircleIcon.tsx
+1230 notice 870B    src/components/HelpIcon.tsx
+1230 notice 1.1kB   src/components/HomeIcon.tsx
+1230 notice 675B    src/components/company/HovIcon.tsx
+1230 notice 8.5kB   src/story/Icons.stories.tsx
+1230 notice 1.6kB   src/components/ImageIcon.tsx
+1230 notice 4.6kB   src/index.tsx
+1230 notice 960B    src/components/InfoCircleIcon.tsx
+1230 notice 943B    src/components/LayersTwoIcon.tsx
+1230 notice 1.6kB   src/components/MessageSmileIcon.tsx
+1230 notice 569B    src/components/arrow/NegativeArrowIcon.tsx
+1230 notice 1.2kB   src/components/chart/NegativeChartIcon.tsx
+1230 notice 969B    src/components/PencilIcon.tsx
+1230 notice 569B    src/components/arrow/PositiveArrowIcon.tsx
+1230 notice 1.2kB   src/components/chart/PositiveChartIcon.tsx
+1230 notice 1.6kB   src/components/PrimaryIcon.tsx
+1230 notice 949B    src/components/PrimarySearchIcon.tsx
+1230 notice 619B    src/components/SearchIcon.tsx
+1230 notice 4.7kB   src/components/SettingIcon.tsx
+1230 notice 1.7kB   src/components/SuccessCircleIcon.tsx
+1230 notice 632B    src/components/SwitchHorizontalIcon.tsx
+1230 notice 1.3kB   src/components/ThreeDots.tsx
+1230 notice 1.4kB   src/components/TrashErrorIcon.tsx
+1230 notice 1.2kB   src/components/TrashIcon.tsx
+1230 notice 1.2kB   src/components/chart/TrendNegative.tsx
+1230 notice 1.2kB   src/components/chart/TrendPositive.tsx
+1230 notice 1.8kB   src/components/social/TwitterIcon.tsx
+1230 notice 936B    src/components/UploadIcon.tsx
+1230 notice 839B    src/components/UserIcon.tsx
+1230 notice 747B    src/components/UserPlusIcon.tsx
+1230 notice 1.0kB   src/components/UsersIcon.tsx
+1230 notice 1.6kB   src/components/payment-method-icon/VisaIcon.tsx
+1230 notice 1.4kB   src/components/WarningFolderIcon.tsx
+1230 notice 920B    src/components/WarningIcon.tsx
+1230 notice 760B    src/components/ZapIcon.tsx
+1231 notice === Tarball Details ===
+1232 notice name:          @highoutput/hds-icons
+1232 notice version:       0.2.1
+1232 notice filename:      highoutput-hds-icons-0.2.1.tgz
+1232 notice package size:  143.9 kB
+1232 notice unpacked size: 643.4 kB
+1232 notice shasum:        2af421659fc34576239a697a5fdee950408883a8
+1232 notice integrity:     sha512-UbisIyq/42XJ2[...]9W9XpiA51Zgeg==
+1232 notice total files:   147
+1233 notice
+1234 verbose publish @highoutput/hds-metrics
+1235 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-loading-indicator 1530ms
+1236 silly lifecycle No script for "publish" in "@highoutput/hds-loading-indicator", continuing
+1237 silly lifecycle No script for "postpublish" in "@highoutput/hds-loading-indicator", continuing
+1238 success published @highoutput/hds-loading-indicator 0.1.13
+1239 notice
+1240 notice 📦  @highoutput/hds-loading-indicator@0.1.13
+1241 notice === Tarball Contents ===
+1242 notice 1.1kB   LICENSE
+1242 notice 74.7kB  dist/hds-loading-indicator.cjs.development.js
+1242 notice 48.3kB  dist/hds-loading-indicator.cjs.production.min.js
+1242 notice 74.5kB  dist/hds-loading-indicator.esm.js
+1242 notice 220B    dist/index.js
+1242 notice 1.9kB   package.json
+1242 notice 126.8kB dist/hds-loading-indicator.cjs.development.js.map
+1242 notice 103.2kB dist/hds-loading-indicator.cjs.production.min.js.map
+1242 notice 126.8kB dist/hds-loading-indicator.esm.js.map
+1242 notice 608B    README.md
+1242 notice 336B    src/LoadingIndicator.mdx
+1242 notice 1.9kB   src/__snapshots__/LoadingIndicator.test.tsx.snap
+1242 notice 3.1kB   dist/indicators/dotted.d.ts
+1242 notice 50.4kB  src/indicators/dotted.ts
+1242 notice 5.4kB   dist/indicators/ellipsis.d.ts
+1242 notice 11.1kB  src/indicators/ellipsis.ts
+1242 notice 91B     dist/index.d.ts
+1242 notice 110B    dist/indicators/index.d.ts
+1242 notice 94B     src/index.ts
+1242 notice 106B    src/indicators/index.ts
+1242 notice 325B    dist/LoadingIndicator.d.ts
+1242 notice 362B    dist/LoadingIndicator.stories.d.ts
+1242 notice 7.4kB   dist/indicators/solid.d.ts
+1242 notice 3.5kB   src/indicators/solid.ts
+1242 notice 11.6kB  dist/indicators/twotone.d.ts
+1242 notice 5.3kB   src/indicators/twotone.ts
+1242 notice 578B    src/LoadingIndicator.stories.tsx
+1242 notice 858B    src/LoadingIndicator.test.tsx
+1242 notice 1.4kB   src/LoadingIndicator.tsx
+1243 notice === Tarball Details ===
+1244 notice name:          @highoutput/hds-loading-indicator
+1244 notice version:       0.1.13
+1244 notice filename:      highoutput-hds-loading-indicator-0.1.13.tgz
+1244 notice package size:  198.7 kB
+1244 notice unpacked size: 662.0 kB
+1244 notice shasum:        604ef1a134d9c1e5651f905a453091da5d6d8764
+1244 notice integrity:     sha512-a8LY+FKGd3ZBX[...]J8a7eZwMHJ1Ng==
+1244 notice total files:   29
+1245 notice
+1246 verbose publish @highoutput/hds-pagination
+1247 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-metrics 1346ms
+1248 silly lifecycle No script for "publish" in "@highoutput/hds-metrics", continuing
+1249 silly lifecycle No script for "postpublish" in "@highoutput/hds-metrics", continuing
+1250 success published @highoutput/hds-metrics 0.2.9
+1251 notice
+1252 notice 📦  @highoutput/hds-metrics@0.2.9
+1253 notice === Tarball Contents ===
+1254 notice 1.1kB LICENSE
+1254 notice 3.8kB dist/hds-metrics.cjs.development.js
+1254 notice 2.3kB dist/hds-metrics.cjs.production.min.js
+1254 notice 3.6kB dist/hds-metrics.esm.js
+1254 notice 200B  dist/index.js
+1254 notice 2.4kB package.json
+1254 notice 7.6kB dist/hds-metrics.cjs.development.js.map
+1254 notice 6.4kB dist/hds-metrics.cjs.production.min.js.map
+1254 notice 7.5kB dist/hds-metrics.esm.js.map
+1254 notice 1.1kB README.md
+1254 notice 6.1kB src/__snapshots__/Metrics.test.tsx.snap
+1254 notice 63B   dist/index.d.ts
+1254 notice 929B  dist/Metrics.d.ts
+1254 notice 325B  dist/Metrics.stories.d.ts
+1254 notice 62B   src/index.tsx
+1254 notice 897B  src/Metrics.stories.tsx
+1254 notice 2.0kB src/Metrics.test.tsx
+1254 notice 4.0kB src/Metrics.tsx
+1255 notice === Tarball Details ===
+1256 notice name:          @highoutput/hds-metrics
+1256 notice version:       0.2.9
+1256 notice filename:      highoutput-hds-metrics-0.2.9.tgz
+1256 notice package size:  9.6 kB
+1256 notice unpacked size: 50.4 kB
+1256 notice shasum:        02afc5d912025e515acb422cc5a151aa69c744b3
+1256 notice integrity:     sha512-gz+neacP87Ba0[...]MktUOINdLQY6A==
+1256 notice total files:   18
+1257 notice
+1258 verbose publish @highoutput/hds-popover
+1259 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-pagination 1503ms
+1260 silly lifecycle No script for "publish" in "@highoutput/hds-pagination", continuing
+1261 silly lifecycle No script for "postpublish" in "@highoutput/hds-pagination", continuing
+1262 success published @highoutput/hds-pagination 0.2.19
+1263 notice
+1264 notice 📦  @highoutput/hds-pagination@0.2.19
+1265 notice === Tarball Contents ===
+1266 notice 1.1kB  LICENSE
+1266 notice 15.4kB dist/hds-pagination.cjs.development.js
+1266 notice 8.9kB  dist/hds-pagination.cjs.production.min.js
+1266 notice 14.6kB dist/hds-pagination.esm.js
+1266 notice 206B   dist/index.js
+1266 notice 2.8kB  package.json
+1266 notice 31.8kB dist/hds-pagination.cjs.development.js.map
+1266 notice 26.4kB dist/hds-pagination.cjs.production.min.js.map
+1266 notice 31.7kB dist/hds-pagination.esm.js.map
+1266 notice 1.3kB  README.md
+1266 notice 485B   dist/GroupPagination.d.ts
+1266 notice 332B   dist/GroupPagination.stories.d.ts
+1266 notice 5.7kB  dist/hooks.d.ts
+1266 notice 339B   dist/index.d.ts
+1266 notice 1.1kB  dist/MinimalPagination.d.ts
+1266 notice 332B   dist/MinimalPagination.stories.d.ts
+1266 notice 495B   dist/Pagination.d.ts
+1266 notice 869B   dist/RelayPagination.d.ts
+1266 notice 332B   dist/RelayPagination.stories.d.ts
+1266 notice 110B   dist/utils.d.ts
+1266 notice 2.7kB  src/GroupPagination.stories.tsx
+1266 notice 3.4kB  src/GroupPagination.tsx
+1266 notice 3.3kB  src/hooks.tsx
+1266 notice 358B   src/index.tsx
+1266 notice 2.9kB  src/MinimalPagination.stories.tsx
+1266 notice 5.0kB  src/MinimalPagination.tsx
+1266 notice 2.0kB  src/Pagination.spec.tsx
+1266 notice 831B   src/Pagination.tsx
+1266 notice 2.4kB  src/RelayPagination.stories.tsx
+1266 notice 4.5kB  src/RelayPagination.tsx
+1266 notice 122B   src/utils.tsx
+1267 notice === Tarball Details ===
+1268 notice name:          @highoutput/hds-pagination
+1268 notice version:       0.2.19
+1268 notice filename:      highoutput-hds-pagination-0.2.19.tgz
+1268 notice package size:  32.0 kB
+1268 notice unpacked size: 171.7 kB
+1268 notice shasum:        c114e2de1c976fdff21619578bc0c23d7c27dfac
+1268 notice integrity:     sha512-tiCLjB9DmARw2[...]idWWO0pq1eCyg==
+1268 notice total files:   31
+1269 notice
+1270 verbose publish @highoutput/hds-slideout-menu
+1271 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-popover 1169ms
+1272 silly lifecycle No script for "publish" in "@highoutput/hds-popover", continuing
+1273 silly lifecycle No script for "postpublish" in "@highoutput/hds-popover", continuing
+1274 success published @highoutput/hds-popover 0.1.5
+1275 notice
+1276 notice 📦  @highoutput/hds-popover@0.1.5
+1277 notice === Tarball Contents ===
+1278 notice 1.1kB LICENSE
+1278 notice 1.4kB dist/hds-popover.cjs.development.js
+1278 notice 1.1kB dist/hds-popover.cjs.production.min.js
+1278 notice 212B  dist/hds-popover.esm.js
+1278 notice 200B  dist/index.js
+1278 notice 2.3kB package.json
+1278 notice 172B  dist/hds-popover.cjs.development.js.map
+1278 notice 114B  dist/hds-popover.cjs.production.min.js.map
+1278 notice 99B   dist/hds-popover.esm.js.map
+1278 notice 1.2kB README.md
+1278 notice 315B  dist/index.d.ts
+1278 notice 351B  src/index.tsx
+1279 notice === Tarball Details ===
+1280 notice name:          @highoutput/hds-popover
+1280 notice version:       0.1.5
+1280 notice filename:      highoutput-hds-popover-0.1.5.tgz
+1280 notice package size:  2.8 kB
+1280 notice unpacked size: 8.5 kB
+1280 notice shasum:        4b6d4d73a343a5213babdac71a81b1502ddd4fc7
+1280 notice integrity:     sha512-3Lnxx6TBm1+ht[...]Hhk3GJ5eSjB5A==
+1280 notice total files:   12
+1281 notice
+1282 verbose publish @highoutput/hds-slider
+1283 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-slideout-menu 1254ms
+1284 silly lifecycle No script for "publish" in "@highoutput/hds-slideout-menu", continuing
+1285 silly lifecycle No script for "postpublish" in "@highoutput/hds-slideout-menu", continuing
+1286 success published @highoutput/hds-slideout-menu 0.2.6
+1287 notice
+1288 notice 📦  @highoutput/hds-slideout-menu@0.2.6
+1289 notice === Tarball Contents ===
+1290 notice 1.1kB LICENSE
+1290 notice 2.0kB dist/hds-slideout-menu.cjs.development.js
+1290 notice 1.1kB dist/hds-slideout-menu.cjs.production.min.js
+1290 notice 1.7kB dist/hds-slideout-menu.esm.js
+1290 notice 212B  dist/index.js
+1290 notice 2.8kB package.json
+1290 notice 3.5kB dist/hds-slideout-menu.cjs.development.js.map
+1290 notice 3.0kB dist/hds-slideout-menu.cjs.production.min.js.map
+1290 notice 3.5kB dist/hds-slideout-menu.esm.js.map
+1290 notice 1.7kB README.md
+1290 notice 372B  src/SlideoutMenu.mdx
+1290 notice 96B   dist/index.d.ts
+1290 notice 101B  src/index.ts
+1290 notice 614B  dist/SlideoutMenu.d.ts
+1290 notice 541B  dist/SlideoutMenu.stories.d.ts
+1290 notice 2.2kB src/SlideoutMenu.stories.tsx
+1290 notice 2.1kB src/SlideoutMenu.test.tsx
+1290 notice 1.8kB src/SlideoutMenu.tsx
+1291 notice === Tarball Details ===
+1292 notice name:          @highoutput/hds-slideout-menu
+1292 notice version:       0.2.6
+1292 notice filename:      highoutput-hds-slideout-menu-0.2.6.tgz
+1292 notice package size:  7.2 kB
+1292 notice unpacked size: 28.6 kB
+1292 notice shasum:        b26e604a5ec8004dda7cfb56c4278b1e612c2c11
+1292 notice integrity:     sha512-GTw2cR3heBeBU[...]38ZH/+m+09t2Q==
+1292 notice total files:   18
+1293 notice
+1294 verbose publish @highoutput/hds-spinner
+1295 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-slider 1553ms
+1296 silly lifecycle No script for "publish" in "@highoutput/hds-slider", continuing
+1297 silly lifecycle No script for "postpublish" in "@highoutput/hds-slider", continuing
+1298 success published @highoutput/hds-slider 0.2.4
+1299 notice
+1300 notice 📦  @highoutput/hds-slider@0.2.4
+1301 notice === Tarball Contents ===
+1302 notice 1.1kB  LICENSE
+1302 notice 10.1kB dist/hds-slider.cjs.development.js
+1302 notice 5.4kB  dist/hds-slider.cjs.production.min.js
+1302 notice 10.0kB dist/hds-slider.esm.js
+1302 notice 198B   dist/index.js
+1302 notice 2.2kB  package.json
+1302 notice 13.5kB dist/hds-slider.cjs.development.js.map
+1302 notice 11.0kB dist/hds-slider.cjs.production.min.js.map
+1302 notice 13.5kB dist/hds-slider.esm.js.map
+1302 notice 969B   README.md
+1302 notice 190B   dist/index.d.ts
+1302 notice 18.3kB dist/RangeSlider.d.ts
+1302 notice 18.4kB dist/Slider.d.ts
+1302 notice 93B    dist/utils.d.ts
+1302 notice 639B   src/utils.spec.ts
+1302 notice 187B   src/utils.ts
+1302 notice 204B   dist/withSlider.d.ts
+1302 notice 187B   src/index.tsx
+1302 notice 2.7kB  src/RangeSlider.spec.tsx
+1302 notice 983B   src/RangeSlider.stories.tsx
+1302 notice 2.6kB  src/RangeSlider.tsx
+1302 notice 2.1kB  src/Slider.spec.tsx
+1302 notice 947B   src/Slider.stories.tsx
+1302 notice 1.9kB  src/Slider.tsx
+1302 notice 294B   src/widthSlider.spec.tsx
+1302 notice 2.0kB  src/withSlider.tsx
+1303 notice === Tarball Details ===
+1304 notice name:          @highoutput/hds-slider
+1304 notice version:       0.2.4
+1304 notice filename:      highoutput-hds-slider-0.2.4.tgz
+1304 notice package size:  19.7 kB
+1304 notice unpacked size: 119.8 kB
+1304 notice shasum:        47902e7c1809f6ba038466692756c9a49277c53c
+1304 notice integrity:     sha512-N6gD9ESHK4vmq[...]WqoFl9ETfUU2w==
+1304 notice total files:   26
+1305 notice
+1306 verbose publish @highoutput/hds-switch
+1307 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-spinner 1529ms
+1308 silly lifecycle No script for "publish" in "@highoutput/hds-spinner", continuing
+1309 silly lifecycle No script for "postpublish" in "@highoutput/hds-spinner", continuing
+1310 success published @highoutput/hds-spinner 0.2.4
+1311 notice
+1312 notice 📦  @highoutput/hds-spinner@0.2.4
+1313 notice === Tarball Contents ===
+1314 notice 1.1kB LICENSE
+1314 notice 4.2kB dist/hds-spinner.cjs.development.js
+1314 notice 2.5kB dist/hds-spinner.cjs.production.min.js
+1314 notice 4.1kB dist/hds-spinner.esm.js
+1314 notice 200B  dist/index.js
+1314 notice 2.0kB package.json
+1314 notice 7.4kB dist/hds-spinner.cjs.development.js.map
+1314 notice 6.2kB dist/hds-spinner.cjs.production.min.js.map
+1314 notice 7.4kB dist/hds-spinner.esm.js.map
+1314 notice 577B  README.md
+1314 notice 381B  src/components/LogoSpinner.mdx
+1314 notice 144B  src/components/__snapshots__/LogoSpinner.test.tsx.snap
+1314 notice 118B  dist/index.d.ts
+1314 notice 838B  dist/components/LogoSpinner.d.ts
+1314 notice 420B  dist/components/LogoSpinner.stories.d.ts
+1314 notice 117B  src/index.tsx
+1314 notice 601B  src/components/LogoSpinner.stories.tsx
+1314 notice 944B  src/components/LogoSpinner.test.tsx
+1314 notice 3.8kB src/components/LogoSpinner.tsx
+1315 notice === Tarball Details ===
+1316 notice name:          @highoutput/hds-spinner
+1316 notice version:       0.2.4
+1316 notice filename:      highoutput-hds-spinner-0.2.4.tgz
+1316 notice package size:  8.8 kB
+1316 notice unpacked size: 43.0 kB
+1316 notice shasum:        4c74a7df9fae58e08cc536997bc4d859f5697d3b
+1316 notice integrity:     sha512-KGgsxbedTlPYB[...]11DK1q3YW8WyA==
+1316 notice total files:   19
+1317 notice
+1318 verbose publish @highoutput/hds-tab
+1319 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-switch 1549ms
+1320 silly lifecycle No script for "publish" in "@highoutput/hds-switch", continuing
+1321 silly lifecycle No script for "postpublish" in "@highoutput/hds-switch", continuing
+1322 success published @highoutput/hds-switch 0.2.4
+1323 notice
+1324 notice 📦  @highoutput/hds-switch@0.2.4
+1325 notice === Tarball Contents ===
+1326 notice 1.1kB  LICENSE
+1326 notice 5.6kB  dist/hds-switch.cjs.development.js
+1326 notice 2.9kB  dist/hds-switch.cjs.production.min.js
+1326 notice 5.6kB  dist/hds-switch.esm.js
+1326 notice 198B   dist/index.js
+1326 notice 1.8kB  package.json
+1326 notice 9.4kB  dist/hds-switch.cjs.development.js.map
+1326 notice 7.9kB  dist/hds-switch.cjs.production.min.js.map
+1326 notice 9.4kB  dist/hds-switch.esm.js.map
+1326 notice 715B   README.md
+1326 notice 1.8kB  src/__snapshots__/Switch.spec.tsx.snap
+1326 notice 115B   dist/index.d.ts
+1326 notice 18.5kB dist/Switch.d.ts
+1326 notice 36.0kB dist/Switch.stories.d.ts
+1326 notice 204B   dist/withSwitch.d.ts
+1326 notice 12B    dist/withSwitch.spec.d.ts
+1326 notice 284B   src/withSwitch.spec.ts
+1326 notice 3.1kB  src/withSwitch.ts
+1326 notice 113B   src/index.tsx
+1326 notice 1.8kB  src/Switch.spec.tsx
+1326 notice 1.5kB  src/Switch.stories.tsx
+1326 notice 1.8kB  src/Switch.tsx
+1327 notice === Tarball Details ===
+1328 notice name:          @highoutput/hds-switch
+1328 notice version:       0.2.4
+1328 notice filename:      highoutput-hds-switch-0.2.4.tgz
+1328 notice package size:  16.5 kB
+1328 notice unpacked size: 109.8 kB
+1328 notice shasum:        4d0a8a79948e966310853172deb961f75cfbb4a6
+1328 notice integrity:     sha512-UUhNYICZjlI9U[...]qwLlqOk8S7Njw==
+1328 notice total files:   22
+1329 notice
+1330 verbose publish @highoutput/hds-table
+1331 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-tab 1436ms
+1332 silly lifecycle No script for "publish" in "@highoutput/hds-tab", continuing
+1333 silly lifecycle No script for "postpublish" in "@highoutput/hds-tab", continuing
+1334 success published @highoutput/hds-tab 0.2.11
+1335 notice
+1336 notice 📦  @highoutput/hds-tab@0.2.11
+1337 notice === Tarball Contents ===
+1338 notice 1.1kB  LICENSE
+1338 notice 6.9kB  dist/hds-tab.cjs.development.js
+1338 notice 3.8kB  dist/hds-tab.cjs.production.min.js
+1338 notice 6.3kB  dist/hds-tab.esm.js
+1338 notice 192B   dist/index.js
+1338 notice 2.3kB  package.json
+1338 notice 13.4kB dist/hds-tab.cjs.development.js.map
+1338 notice 11.2kB dist/hds-tab.cjs.production.min.js.map
+1338 notice 13.4kB dist/hds-tab.esm.js.map
+1338 notice 996B   README.md
+1338 notice 2.7kB  src/__snapshots__/ButtonTabs.spec.tsx.snap
+1338 notice 2.8kB  src/__snapshots__/Tabs.spec.tsx.snap
+1338 notice 813B   dist/ButtonTabs.d.ts
+1338 notice 338B   dist/ButtonTabs.stories.d.ts
+1338 notice 349B   dist/index.d.ts
+1338 notice 379B   src/index.ts
+1338 notice 1.1kB  dist/Tabs.d.ts
+1338 notice 314B   dist/Tabs.stories.d.ts
+1338 notice 784B   src/ButtonTabs.spec.tsx
+1338 notice 1.6kB  src/ButtonTabs.stories.tsx
+1338 notice 2.9kB  src/ButtonTabs.tsx
+1338 notice 760B   src/Tabs.spec.tsx
+1338 notice 1.7kB  src/Tabs.stories.tsx
+1338 notice 4.1kB  src/Tabs.tsx
+1339 notice === Tarball Details ===
+1340 notice name:          @highoutput/hds-tab
+1340 notice version:       0.2.11
+1340 notice filename:      highoutput-hds-tab-0.2.11.tgz
+1340 notice package size:  14.5 kB
+1340 notice unpacked size: 80.4 kB
+1340 notice shasum:        672cb203a4ac4c5131d4df7a9d36a5f73846747f
+1340 notice integrity:     sha512-sse9Y7CWg1r0I[...]oXoYkfvLKCWKA==
+1340 notice total files:   24
+1341 notice
+1342 verbose publish @highoutput/hds-tag
+1343 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-table 1812ms
+1344 silly lifecycle No script for "publish" in "@highoutput/hds-table", continuing
+1345 silly lifecycle No script for "postpublish" in "@highoutput/hds-table", continuing
+1346 success published @highoutput/hds-table 0.2.12
+1347 notice
+1348 notice 📦  @highoutput/hds-table@0.2.12
+1349 notice === Tarball Contents ===
+1350 notice 1.1kB  LICENSE
+1350 notice 13.2kB dist/hds-table.cjs.development.js
+1350 notice 7.4kB  dist/hds-table.cjs.production.min.js
+1350 notice 12.7kB dist/hds-table.esm.js
+1350 notice 196B   dist/index.js
+1350 notice 3.1kB  package.json
+1350 notice 25.8kB dist/hds-table.cjs.development.js.map
+1350 notice 21.8kB dist/hds-table.cjs.production.min.js.map
+1350 notice 25.8kB dist/hds-table.esm.js.map
+1350 notice 1.9kB  README.md
+1350 notice 122B   dist/icons/ArrowDownIcon.d.ts
+1350 notice 123B   dist/icons/HelpCircleIcon.d.ts
+1350 notice 1.1kB  dist/hooks.d.ts
+1350 notice 1.5kB  src/hooks.ts
+1350 notice 180B   dist/index.d.ts
+1350 notice 1.6kB  dist/Table.d.ts
+1350 notice 544B   dist/Table.stories.d.ts
+1350 notice 533B   src/icons/ArrowDownIcon.tsx
+1350 notice 1.1kB  src/icons/HelpCircleIcon.tsx
+1350 notice 201B   src/index.tsx
+1350 notice 3.7kB  src/Table.spec.tsx
+1350 notice 4.9kB  src/Table.stories.tsx
+1350 notice 10.9kB src/Table.tsx
+1351 notice === Tarball Details ===
+1352 notice name:          @highoutput/hds-table
+1352 notice version:       0.2.12
+1352 notice filename:      highoutput-hds-table-0.2.12.tgz
+1352 notice package size:  27.7 kB
+1352 notice unpacked size: 139.3 kB
+1352 notice shasum:        764a208c392c8da142127cb4840c9ed739edb23a
+1352 notice integrity:     sha512-tBVj6nF06DBiG[...]ahwENw4/h0lvA==
+1352 notice total files:   23
+1353 notice
+1354 verbose publish @highoutput/hds-toast
+1355 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-tag 1344ms
+1356 silly lifecycle No script for "publish" in "@highoutput/hds-tag", continuing
+1357 silly lifecycle No script for "postpublish" in "@highoutput/hds-tag", continuing
+1358 success published @highoutput/hds-tag 0.2.6
+1359 notice
+1360 notice 📦  @highoutput/hds-tag@0.2.6
+1361 notice === Tarball Contents ===
+1362 notice 1.1kB  LICENSE
+1362 notice 10.9kB dist/hds-tag.cjs.development.js
+1362 notice 5.4kB  dist/hds-tag.cjs.production.min.js
+1362 notice 10.7kB dist/hds-tag.esm.js
+1362 notice 192B   dist/index.js
+1362 notice 2.0kB  package.json
+1362 notice 21.2kB dist/hds-tag.cjs.development.js.map
+1362 notice 17.3kB dist/hds-tag.cjs.production.min.js.map
+1362 notice 21.2kB dist/hds-tag.esm.js.map
+1362 notice 800B   README.md
+1362 notice 966B   src/__snapshots__/Checkbox.spec.tsx.snap
+1362 notice 13.3kB src/__snapshots__/Tag.spec.tsx.snap
+1362 notice 115B   dist/examples/AUIcon.d.ts
+1362 notice 223B   dist/Checkbox.d.ts
+1362 notice 100B   dist/index.d.ts
+1362 notice 9.3kB  dist/Tag.d.ts
+1362 notice 32.5kB dist/Tag.stories.d.ts
+1362 notice 298B   dist/utils.d.ts
+1362 notice 278B   dist/withTag.d.ts
+1362 notice 306B   src/withTag.spec.ts
+1362 notice 4.2kB  src/withTag.ts
+1362 notice 3.4kB  src/examples/AUIcon.tsx
+1362 notice 587B   src/Checkbox.spec.tsx
+1362 notice 311B   src/Checkbox.tsx
+1362 notice 98B    src/index.tsx
+1362 notice 4.0kB  src/Tag.spec.tsx
+1362 notice 1.5kB  src/Tag.stories.tsx
+1362 notice 6.0kB  src/Tag.tsx
+1362 notice 1.3kB  src/utils.spec.tsx
+1362 notice 514B   src/utils.tsx
+1363 notice === Tarball Details ===
+1364 notice name:          @highoutput/hds-tag
+1364 notice version:       0.2.6
+1364 notice filename:      highoutput-hds-tag-0.2.6.tgz
+1364 notice package size:  26.3 kB
+1364 notice unpacked size: 170.0 kB
+1364 notice shasum:        b17dc4c4f2d72df8a385c8667b118de8e4fba9ae
+1364 notice integrity:     sha512-of36LqYWD4RGU[...]nCNdGOwI6gekg==
+1364 notice total files:   30
+1365 notice
+1366 verbose publish @highoutput/hds-tooltip
+1367 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-toast 1843ms
+1368 silly lifecycle No script for "publish" in "@highoutput/hds-toast", continuing
+1369 silly lifecycle No script for "postpublish" in "@highoutput/hds-toast", continuing
+1370 success published @highoutput/hds-toast 0.2.9
+1371 notice
+1372 notice 📦  @highoutput/hds-toast@0.2.9
+1373 notice === Tarball Contents ===
+1374 notice 1.1kB LICENSE
+1374 notice 4.1kB dist/hds-toast.cjs.development.js
+1374 notice 2.3kB dist/hds-toast.cjs.production.min.js
+1374 notice 3.9kB dist/hds-toast.esm.js
+1374 notice 196B  dist/index.js
+1374 notice 2.0kB package.json
+1374 notice 8.0kB dist/hds-toast.cjs.development.js.map
+1374 notice 6.8kB dist/hds-toast.cjs.production.min.js.map
+1374 notice 8.0kB dist/hds-toast.esm.js.map
+1374 notice 740B  README.md
+1374 notice 154B  dist/index.d.ts
+1374 notice 170B  dist/Toast.d.ts
+1374 notice 278B  dist/Toast.stories.d.ts
+1374 notice 801B  dist/useToast.d.ts
+1374 notice 114B  dist/XIcon.d.ts
+1374 notice 170B  src/index.tsx
+1374 notice 576B  src/Toast.example.tsx
+1374 notice 2.0kB src/Toast.spec.tsx
+1374 notice 816B  src/Toast.stories.tsx
+1374 notice 2.2kB src/Toast.tsx
+1374 notice 1.4kB src/useToast.tsx
+1374 notice 461B  src/XIcon.tsx
+1375 notice === Tarball Details ===
+1376 notice name:          @highoutput/hds-toast
+1376 notice version:       0.2.9
+1376 notice filename:      highoutput-hds-toast-0.2.9.tgz
+1376 notice package size:  9.7 kB
+1376 notice unpacked size: 46.3 kB
+1376 notice shasum:        27c820c8ba99d54e9740590b2178e3ab4dabe7e2
+1376 notice integrity:     sha512-9SPqLYAyBh1uv[...]Il3Ggs0jQfw5Q==
+1376 notice total files:   22
+1377 notice
+1378 verbose publish @highoutput/hds-utilities
+1379 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-tooltip 1755ms
+1380 silly lifecycle No script for "publish" in "@highoutput/hds-tooltip", continuing
+1381 silly lifecycle No script for "postpublish" in "@highoutput/hds-tooltip", continuing
+1382 success published @highoutput/hds-tooltip 0.2.6
+1383 notice
+1384 notice 📦  @highoutput/hds-tooltip@0.2.6
+1385 notice === Tarball Contents ===
+1386 notice 1.1kB LICENSE
+1386 notice 2.4kB dist/hds-tooltip.cjs.development.js
+1386 notice 1.4kB dist/hds-tooltip.cjs.production.min.js
+1386 notice 2.3kB dist/hds-tooltip.esm.js
+1386 notice 200B  dist/index.js
+1386 notice 1.8kB package.json
+1386 notice 4.1kB dist/hds-tooltip.cjs.development.js.map
+1386 notice 3.5kB dist/hds-tooltip.cjs.production.min.js.map
+1386 notice 4.2kB dist/hds-tooltip.esm.js.map
+1386 notice 578B  README.md
+1386 notice 890B  src/__snapshots__/Tooltip.spec.tsx.snap
+1386 notice 63B   dist/index.d.ts
+1386 notice 431B  dist/Tooltip.d.ts
+1386 notice 62B   src/index.tsx
+1386 notice 1.5kB src/Tooltip.spec.tsx
+1386 notice 830B  src/Tooltip.stories.tsx
+1386 notice 2.2kB src/Tooltip.tsx
+1387 notice === Tarball Details ===
+1388 notice name:          @highoutput/hds-tooltip
+1388 notice version:       0.2.6
+1388 notice filename:      highoutput-hds-tooltip-0.2.6.tgz
+1388 notice package size:  6.9 kB
+1388 notice unpacked size: 27.5 kB
+1388 notice shasum:        cc49505ccce5b05fc1891bc2c83b1d542e89f940
+1388 notice integrity:     sha512-YsyWz4K2f/FgS[...]5EIP/oXvpY/iQ==
+1388 notice total files:   17
+1389 notice
+1390 verbose publish @highoutput/hds-stepper
+1391 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-utilities 1163ms
+1392 silly lifecycle No script for "publish" in "@highoutput/hds-utilities", continuing
+1393 silly lifecycle No script for "postpublish" in "@highoutput/hds-utilities", continuing
+1394 success published @highoutput/hds-utilities 0.1.15
+1395 notice
+1396 notice 📦  @highoutput/hds-utilities@0.1.15
+1397 notice === Tarball Contents ===
+1398 notice 1.1kB LICENSE
+1398 notice 5.8kB dist/hds-utilities.cjs.development.js
+1398 notice 2.8kB dist/hds-utilities.cjs.production.min.js
+1398 notice 5.6kB dist/hds-utilities.esm.js
+1398 notice 204B  dist/index.js
+1398 notice 1.5kB package.json
+1398 notice 6.3kB dist/hds-utilities.cjs.development.js.map
+1398 notice 4.7kB dist/hds-utilities.cjs.production.min.js.map
+1398 notice 6.3kB dist/hds-utilities.esm.js.map
+1398 notice 353B  README.md
+1398 notice 93B   dist/arrayChunk.d.ts
+1398 notice 670B  src/arrayChunk.spec.ts
+1398 notice 314B  src/arrayChunk.ts
+1398 notice 78B   dist/arrayRandom.d.ts
+1398 notice 376B  src/arrayRandom.spec.ts
+1398 notice 142B  src/arrayRandom.ts
+1398 notice 358B  dist/arrayUnique.d.ts
+1398 notice 542B  src/arrayUnique.spec.ts
+1398 notice 509B  src/arrayUnique.ts
+1398 notice 353B  dist/index.d.ts
+1398 notice 93B   dist/invariant.d.ts
+1398 notice 577B  src/invariant.spec.ts
+1398 notice 192B  src/invariant.ts
+1398 notice 178B  dist/merge.d.ts
+1398 notice 598B  src/merge.spec.ts
+1398 notice 706B  src/merge.ts
+1398 notice 126B  dist/omit.d.ts
+1398 notice 473B  src/omit.spec.ts
+1398 notice 267B  src/omit.ts
+1398 notice 133B  dist/pick.d.ts
+1398 notice 310B  src/pick.spec.ts
+1398 notice 304B  src/pick.ts
+1398 notice 346B  src/index.tsx
+1399 notice === Tarball Details ===
+1400 notice name:          @highoutput/hds-utilities
+1400 notice version:       0.1.15
+1400 notice filename:      highoutput-hds-utilities-0.1.15.tgz
+1400 notice package size:  9.1 kB
+1400 notice unpacked size: 42.4 kB
+1400 notice shasum:        742d2b85111d33692f809100470878f730754636
+1400 notice integrity:     sha512-M+1XWu4n5pT1+[...]gaGIsPeLln5ng==
+1400 notice total files:   33
+1401 notice
+1402 verbose publish @highoutput/hds-array-field
+1403 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-stepper 1539ms
+1404 silly lifecycle No script for "publish" in "@highoutput/hds-stepper", continuing
+1405 silly lifecycle No script for "postpublish" in "@highoutput/hds-stepper", continuing
+1406 success published @highoutput/hds-stepper 0.1.3
+1407 notice
+1408 notice 📦  @highoutput/hds-stepper@0.1.3
+1409 notice === Tarball Contents ===
+1410 notice 1.1kB LICENSE
+1410 notice 3.8kB dist/hds-stepper.cjs.development.js
+1410 notice 2.3kB dist/hds-stepper.cjs.production.min.js
+1410 notice 3.5kB dist/hds-stepper.esm.js
+1410 notice 200B  dist/index.js
+1410 notice 2.4kB package.json
+1410 notice 9.0kB dist/hds-stepper.cjs.development.js.map
+1410 notice 7.8kB dist/hds-stepper.cjs.production.min.js.map
+1410 notice 9.0kB dist/hds-stepper.esm.js.map
+1410 notice 1.2kB README.md
+1410 notice 87B   dist/index.d.ts
+1410 notice 489B  dist/Stepper.d.ts
+1410 notice 404B  dist/Stepper.stories.d.ts
+1410 notice 86B   src/index.tsx
+1410 notice 1.3kB src/Stepper.stories.tsx
+1410 notice 5.3kB src/Stepper.tsx
+1411 notice === Tarball Details ===
+1412 notice name:          @highoutput/hds-stepper
+1412 notice version:       0.1.3
+1412 notice filename:      highoutput-hds-stepper-0.1.3.tgz
+1412 notice package size:  8.9 kB
+1412 notice unpacked size: 48.0 kB
+1412 notice shasum:        b687ae4167b50dc831e45b4e2b9345a5f5990014
+1412 notice integrity:     sha512-fFqwD0ksz3LKn[...]RF/wb9/X66hOg==
+1412 notice total files:   16
+1413 notice
+1414 verbose publish @highoutput/hds-auth
+1415 http fetch PUT 200 https://registry.npmjs.org/@highoutput%2fhds-array-field 1338ms
+1416 silly lifecycle No script for "publish" in "@highoutput/hds-array-field", continuing
+1417 silly lifecycle No script for "postpublish" in "@highoutput/hds-array-field", continuing
+1418 success published @highoutput/hds-array-field 0.2.12
+1419 notice
+1420 notice 📦  @highoutput/hds-array-field@0.2.12
+1421 notice === Tarball Contents ===
+1422 notice 1.1kB  LICENSE
+1422 notice 20.4kB dist/hds-array-field.cjs.development.js
+1422 notice 9.7kB  dist/hds-array-field.cjs.production.min.js
+1422 notice 20.1kB dist/hds-array-field.esm.js
+1422 notice 208B   dist/index.js
+1422 notice 2.3kB  package.json
+1422 notice 9.9kB  dist/hds-array-field.cjs.development.js.map
+1422 notice 7.7kB  dist/hds-array-field.cjs.production.min.js.map
+1422 notice 9.9kB  dist/hds-array-field.esm.js.map
+1422 notice 860B   README.md
+1422 notice 367B   src/components/ArrayField.mdx
+1422 notice 2.5kB  src/components/__snapshots__/ArrayField.test.tsx.snap
+1422 notice 731B   dist/components/ArrayField.d.ts
+1422 notice 338B   dist/components/ArrayField.stories.d.ts
+1422 notice 113B   dist/index.d.ts
+1422 notice 260B   dist/components/validation.d.ts
+1422 notice 415B   src/components/validation.ts
+1422 notice 757B   src/components/ArrayField.stories.tsx
+1422 notice 1.6kB  src/components/ArrayField.test.tsx
+1422 notice 3.6kB  src/components/ArrayField.tsx
+1422 notice 112B   src/index.tsx
+1423 notice === Tarball Details ===
+1424 notice name:          @highoutput/hds-array-field
+1424 notice version:       0.2.12
+1424 notice filename:      highoutput-hds-array-field-0.2.12.tgz
+1424 notice package size:  17.4 kB
+1424 notice unpacked size: 92.8 kB
+1424 notice shasum:        867069ae0fba27dc7d506edb968149cdaf89da27
+1424 notice integrity:     sha512-HAxdfxOvi84N3[...]z7FUnlG8zdCBg==
+1424 notice total files:   21
+1425 notice
+1426 verbose publish @highoutput/hds-auto-form
+1427 silly FetchError: request to https://registry.npmjs.org/@highoutput%2fhds-auto-form failed, reason: read ECONNRESET
+1427 silly     at ClientRequest.<anonymous> (/home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/minipass-fetch/lib/index.js:110:14)
+1427 silly     at ClientRequest.emit (node:events:513:28)
+1427 silly     at TLSSocket.socketErrorListener (node:_http_client:502:9)
+1427 silly     at TLSSocket.emit (node:events:525:35)
+1427 silly     at emitErrorNT (node:internal/streams/destroy:151:8)
+1427 silly     at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+1427 silly     at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+1427 silly  FetchError: request to https://registry.npmjs.org/@highoutput%2fhds-auto-form failed, reason: read ECONNRESET
+1427 silly     at ClientRequest.<anonymous> (/home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/minipass-fetch/lib/index.js:110:14)
+1427 silly     at ClientRequest.emit (node:events:513:28)
+1427 silly     at TLSSocket.socketErrorListener (node:_http_client:502:9)
+1427 silly     at TLSSocket.emit (node:events:525:35)
+1427 silly     at emitErrorNT (node:internal/streams/destroy:151:8)
+1427 silly     at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+1427 silly     at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+1427 silly   code: 'ECONNRESET',
+1427 silly   errno: 'ECONNRESET',
+1427 silly   syscall: 'read',
+1427 silly   type: 'system'
+1427 silly }
+1428 error ECONNRESET request to https://registry.npmjs.org/@highoutput%2fhds-auto-form failed, reason: read ECONNRESET
+1429 verbose publish @highoutput/hds-autocomplete-input
+1430 error FetchError: request to https://registry.npmjs.org/@highoutput%2fhds-auto-form failed, reason: read ECONNRESET
+1430 error     at ClientRequest.<anonymous> (/home/niel/.nvm/versions/node/v18.14.2/lib/node_modules/lerna-cli/node_modules/minipass-fetch/lib/index.js:110:14)
+1430 error     at ClientRequest.emit (node:events:513:28)
+1430 error     at TLSSocket.socketErrorListener (node:_http_client:502:9)
+1430 error     at TLSSocket.emit (node:events:525:35)
+1430 error     at emitErrorNT (node:internal/streams/destroy:151:8)
+1430 error     at emitErrorCloseNT (node:internal/streams/destroy:116:3)
