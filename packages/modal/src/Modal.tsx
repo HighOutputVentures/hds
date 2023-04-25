@@ -50,9 +50,9 @@ export type ModalProps = {
   isOpen?: boolean;
   /** Changes okay button's `accent` to error */
   isDanger?: boolean;
-  /** applies `loading` and `disabled` state to buttons */
+  /** applies `loading` and `disabled` states to buttons */
   isLoading?: boolean;
-  /** Centers icon, title and message. only applies if size is `sm` or `md` */
+  /** Centers icon, title and message. only applies if size is `xs` or `sm` */
   isCenterAligned?: boolean;
   onOkay?(): void;
   onCancel?(): void;
