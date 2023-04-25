@@ -1,6 +1,6 @@
 {
   "name": "@highoutput/hds-contact-us",
-  "version": "0.2.34",
+  "version": "0.3.0",
   "license": "MIT",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -11,9 +11,9 @@
     }
   },
   "dependencies": {
-    "@highoutput/hds-forms": "^0.2.16",
-    "@highoutput/hds-icons": "^0.2.4",
-    "@highoutput/hds-toast": "^0.2.12",
+    "@highoutput/hds-forms": "^0.3.0",
+    "@highoutput/hds-icons": "^0.3.0",
+    "@highoutput/hds-toast": "^0.3.0",
     "@hookform/resolvers": "3.1.0",
     "react-hook-form": "7.43.9",
     "yup": "1.1.1"
