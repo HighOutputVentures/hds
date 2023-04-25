@@ -209,6 +209,7 @@ export function useStyles({
           _disabled: {
             color: 'neutrals.200',
             cursor: 'not-allowed',
+            borderColor: 'neutrals.200',
             _hover: {
               color: 'neutrals.200',
               bgColor: 'white',
