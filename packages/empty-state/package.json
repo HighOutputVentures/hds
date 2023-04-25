@@ -1,6 +1,6 @@
 {
   "name": "@highoutput/hds-empty-state",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "license": "MIT",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -11,7 +11,7 @@
     }
   },
   "dependencies": {
-    "@highoutput/hds-icons": "*"
+    "@highoutput/hds-icons": "^0.2.4"
   },
   "publishConfig": {
     "access": "public",

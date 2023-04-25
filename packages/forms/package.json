@@ -1,6 +1,6 @@
 {
   "name": "@highoutput/hds-forms",
-  "version": "0.2.15",
+  "version": "0.2.16",
   "license": "MIT",
   "main": "./index.js",
   "types": "./index.d.ts",

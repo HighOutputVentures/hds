@@ -1,6 +1,6 @@
 {
   "name": "@highoutput/hds-stepper",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "license": "MIT",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -11,7 +11,7 @@
     }
   },
   "dependencies": {
-    "@highoutput/hds-forms": "*"
+    "@highoutput/hds-forms": "^0.2.16"
   },
   "publishConfig": {
     "access": "public",

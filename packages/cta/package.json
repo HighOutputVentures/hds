@@ -1,6 +1,6 @@
 {
   "name": "@highoutput/hds-cta",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "license": "MIT",
   "main": "./index.js",
   "types": "./index.d.ts",

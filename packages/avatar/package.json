@@ -1,6 +1,6 @@
 {
   "name": "@highoutput/hds-avatar",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -10,7 +10,7 @@
     }
   },
   "dependencies": {
-    "@highoutput/hds-tooltip": "*",
+    "@highoutput/hds-tooltip": "^0.2.10",
     "uuid": "9.0.0"
   },
   "publishConfig": {
