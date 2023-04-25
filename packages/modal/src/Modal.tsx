@@ -122,8 +122,12 @@ export function Modal(props: ModalProps) {
   const cancelButtonRef = useRef<HTMLButtonElement>(null);
   const styles = useStyles({ size });
 
-  const isSmall = size === 'sm' || size === 'md';
-  const isMedium = size === 'lg' || size === 'xl';
+  /*
+   * styles applied to "xs" and "sm" are the same except width
+   * styles applied to "md" and "lg" are the same except width
+   */
+  const isSmall = size === 'xs' || size === 'sm';
+  const isMedium = size === 'md' || size === 'lg';
 
   const hasIcon = !!icon;
   const hasTitle = !!title;

@@ -23,19 +23,19 @@ export function useStyles({ size }: UseStylesArg) {
           rounded: '12px',
           maxWidth: 'full',
 
-          ...(size === 'sm' && {
+          ...(size === 'xs' && {
             width: '400px',
           }),
 
-          ...(size === 'md' && {
+          ...(size === 'sm' && {
             width: '475px',
           }),
 
-          ...(size === 'lg' && {
+          ...(size === 'md' && {
             width: '550px',
           }),
 
-          ...(size === 'xl' && {
+          ...(size === 'lg' && {
             width: '625px',
           }),
         },
