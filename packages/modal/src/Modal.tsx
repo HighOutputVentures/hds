@@ -19,10 +19,12 @@ import { useStyles } from './useStyles';
 
 type BaseProps = Pick<
   ChakraModalProps,
+  | 'children'
   | 'trapFocus'
+  | 'isCentered'
   | 'closeOnEsc'
-  | 'blockScrollOnMount'
   | 'closeOnOverlayClick'
+  | 'blockScrollOnMount'
   | 'lockFocusAcrossFrames'
   | 'preserveScrollBarGap'
 >;
@@ -39,29 +41,29 @@ type TestingProps = {
   __okayButtonTestId?: string;
 };
 
-export type ModalProps = BaseProps &
-  TestingProps & {
-    size?: Size;
-    icon?: JSX.Element;
-    title?: ReactNode;
-    /** aka. subtitle */
-    message?: ReactNode;
-    isOpen?: boolean;
-    /** Changes okay button's `accent` to error */
-    isDanger?: boolean;
-    /** applies `loading` and `disabled` state to buttons */
-    isLoading?: boolean;
-    /** Centers icon, title and message. only applies if size is `sm` or `md` */
-    isCentered?: boolean;
-    onOkay?(): void;
-    onCancel?(): void;
-    hasOkayButton?: boolean;
-    hasCancelButton?: boolean;
-    okayButtonLabel?: string;
-    cancelButtonLabel?: string;
-    hasCloseButton?: boolean;
-    children?: ReactNode;
-  };
+export type ModalProps = {
+  size?: Size;
+  icon?: JSX.Element;
+  title?: ReactNode;
+  /** aka. subtitle */
+  message?: ReactNode;
+  isOpen?: boolean;
+  /** Changes okay button's `accent` to error */
+  isDanger?: boolean;
+  /** applies `loading` and `disabled` state to buttons */
+  isLoading?: boolean;
+  /** Centers icon, title and message. only applies if size is `sm` or `md` */
+  isCenterAligned?: boolean;
+  onOkay?(): void;
+  onCancel?(): void;
+  hasOkayButton?: boolean;
+  hasCancelButton?: boolean;
+  okayButtonLabel?: string;
+  cancelButtonLabel?: string;
+  hasCloseButton?: boolean;
+} & BaseProps &
+  TestingProps &
+  SystemStyleObject;
 
 /**
  *
@@ -77,7 +79,7 @@ export type ModalProps = BaseProps &
  *   This is a custom children
  * </Modal>
  */
-export function Modal(props: ModalProps & SystemStyleObject) {
+export function Modal(props: ModalProps) {
   const {
     size = 'md',
     icon,
@@ -86,7 +88,7 @@ export function Modal(props: ModalProps & SystemStyleObject) {
     isOpen = false,
     isDanger = false,
     isLoading = false,
-    isCentered = false,
+    isCenterAligned = false,
     onOkay = function noop() {},
     onCancel = function noop() {},
     children,
@@ -95,6 +97,14 @@ export function Modal(props: ModalProps & SystemStyleObject) {
     hasCloseButton = true,
     okayButtonLabel = 'Okay',
     cancelButtonLabel = 'Cancel',
+
+    trapFocus = true,
+    closeOnEsc = false,
+    isCentered = false,
+    closeOnOverlayClick = false,
+    blockScrollOnMount = true,
+    preserveScrollBarGap = true,
+    lockFocusAcrossFrames = true,
 
     __modalTestId = 'hds.modal',
     __iconTestId = 'hds.modal.icon',
@@ -105,13 +115,6 @@ export function Modal(props: ModalProps & SystemStyleObject) {
     __closeButtonTestId = 'hds.modal.controls.close',
     __cancelButtonTestId = 'hds.modal.controls.cancel',
     __okayButtonTestId = 'hds.modal.controls.okay',
-
-    trapFocus = true,
-    closeOnEsc = false,
-    closeOnOverlayClick = false,
-    blockScrollOnMount = true,
-    preserveScrollBarGap = true,
-    lockFocusAcrossFrames = true,
 
     ...others
   } = Object.assign({}, props);
@@ -134,6 +137,7 @@ export function Modal(props: ModalProps & SystemStyleObject) {
       isOpen={isOpen}
       onClose={onCancel}
       trapFocus={trapFocus}
+      isCentered={isCentered}
       closeOnEsc={closeOnEsc}
       closeOnOverlayClick={closeOnOverlayClick}
       initialFocusRef={cancelButtonRef}
@@ -173,7 +177,7 @@ export function Modal(props: ModalProps & SystemStyleObject) {
                   }),
                 }}
               >
-                {isSmall && isCentered && <Box w="24px" />}
+                {isSmall && isCenterAligned && <Box w="24px" />}
                 {isSmall && hasIcon && <Box data-testid={__iconTestId}>{icon}</Box>}
                 {isMedium && hasTitle && (
                   <Heading
@@ -204,11 +208,11 @@ export function Modal(props: ModalProps & SystemStyleObject) {
                       marginTop: '20px',
                     }),
 
-                    ...(isCentered && {
+                    ...(isCenterAligned && {
                       textAlign: 'center',
                     }),
 
-                    ...(!isCentered && {
+                    ...(!isCenterAligned && {
                       textAlign: 'left',
                     }),
                   }}
@@ -231,7 +235,7 @@ export function Modal(props: ModalProps & SystemStyleObject) {
                       marginTop: '8px',
                       textAlign: 'left',
 
-                      ...(isCentered && { textAlign: 'center' }),
+                      ...(isCenterAligned && { textAlign: 'center' }),
                     }),
                   }}
                   data-testid={__messageTestId}

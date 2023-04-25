@@ -36,7 +36,7 @@ Default.args = {
   size: 'lg',
   isDanger: false,
   isLoading: false,
-  isCentered: false,
+  isCenterAligned: false,
   hasCloseButton: true,
   hasOkayButton: true,
   hasCancelButton: true,
