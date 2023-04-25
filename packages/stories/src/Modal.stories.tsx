@@ -1,35 +1,31 @@
-import { Text, useBoolean } from '@chakra-ui/react';
-import { ThemeProvider } from '@highoutput/hds';
+import { Icon } from '@chakra-ui/react';
+import { ThemeProvider, useDisclosure } from '@highoutput/hds';
 import { Button } from '@highoutput/hds-forms';
-import { SuccessCircleIcon } from '@highoutput/hds-icons';
 import { Modal } from '@highoutput/hds-modal';
 import { Meta, StoryFn } from '@storybook/react';
+import { Fragment } from 'react';
+import FeaturedCheckIcon from './examples/FeaturedCheckIcon';
 
-export default {
+const Story: Meta<typeof Modal> = {
   title: 'Components/Modal',
   component: Modal,
-} as Meta<typeof Modal>;
+};
+
+export default Story;
 
 const Template: StoryFn<typeof Modal> = (args) => {
-  const [flag, setFlag] = useBoolean();
+  const disclosure = useDisclosure();
 
   return (
     <ThemeProvider>
-      <Button onClick={setFlag.on}>Open Modal</Button>
+      <Button onClick={disclosure.onOpen}>Open</Button>
 
       <Modal
         {...args}
-        isOpen={flag}
-        onClose={setFlag.off}
-        onConfirm={setFlag.off}
-        closeButton="Okay"
-        confirmButton
-      >
-        <Text fontSize="sm">
-          This blog post has been published. Team members will be able to edit this post
-          and republish changes.
-        </Text>
-      </Modal>
+        isOpen={disclosure.isOpen}
+        onOkay={disclosure.onClose}
+        onCancel={disclosure.onClose}
+      ></Modal>
     </ThemeProvider>
   );
 };
@@ -37,7 +33,19 @@ const Template: StoryFn<typeof Modal> = (args) => {
 export const Default = Template.bind({});
 
 Default.args = {
-  ...Default.args,
-  icon: SuccessCircleIcon,
+  size: 'lg',
+  isDanger: false,
+  isLoading: false,
+  isCenterAligned: false,
+  hasCloseButton: true,
+  hasOkayButton: true,
+  hasCancelButton: true,
+  icon: <Icon as={FeaturedCheckIcon} w="48px" h="48px" />,
   title: 'Blog post published',
+  message: (
+    <Fragment>
+      This blog post has been published. Team members will be able&nbsp;to edit this post
+      and republish changes.
+    </Fragment>
+  ),
 };
