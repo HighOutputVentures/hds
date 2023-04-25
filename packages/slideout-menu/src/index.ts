@@ -1,1 +1,1 @@
-export { SlideoutMenu, SlideoutMenuProps } from './SlideoutMenu';
+export { SlideoutMenu, type SlideoutMenuProps } from './SlideoutMenu';

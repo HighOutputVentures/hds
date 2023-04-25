@@ -1,1 +1,1 @@
-export { CheckboxGroupProps, default as CheckboxGroup } from "./CheckboxGroup";
+export { default as CheckboxGroup, type CheckboxGroupProps } from './CheckboxGroup';

@@ -3,7 +3,7 @@
 exports[`FileUpload should render FileUpload 1`] = `
 <div>
   <div
-    class="css-1sa52zb"
+    class="css-n1dzwc"
   >
     <div
       class="css-11cup7y"
@@ -12,7 +12,7 @@ exports[`FileUpload should render FileUpload 1`] = `
         class="css-19thdhd"
       >
         <svg
-          class="chakra-icon chakra-icon css-o1kc1s"
+          class="chakra-icon chakra-icon css-wfawus"
           focusable="false"
           viewBox="0 0 20 20"
         >

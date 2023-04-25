@@ -1,10 +1,19 @@
-import { Box, Button, Flex, HStack, Icon, Spacer, SystemStyleObject, Text } from "@chakra-ui/react";
-import { ArrowLeftIcon, ArrowRightIcon } from "@highoutput/hds-icons";
-import * as pagination from "@zag-js/pagination";
-import { normalizeProps, useMachine } from "@zag-js/react";
-import * as React from "react";
-import { v4 as uuid } from "uuid";
-import { useStyles } from "./hooks";
+import {
+  Box,
+  Button,
+  Flex,
+  HStack,
+  Icon,
+  Spacer,
+  SystemStyleObject,
+  Text,
+} from '@chakra-ui/react';
+import { ArrowLeftIcon, ArrowRightIcon } from '@highoutput/hds-icons';
+import * as pagination from '@zag-js/pagination';
+import { normalizeProps, useMachine } from '@zag-js/react';
+import * as React from 'react';
+import { v4 as uuid } from 'uuid';
+import { useStyles } from './hooks';
 
 type MinimalPaginationBaseProps = {
   /** toggle legend. eg `Page 1 of 10` */
@@ -38,7 +47,9 @@ const defaultProps: Required<MinimalPaginationBaseProps> = {
   hasButtonOutline: true,
 };
 
-export default function MinimalPagination(props: MinimalPaginationProps & SystemStyleObject) {
+export default function MinimalPagination(
+  props: MinimalPaginationProps & SystemStyleObject,
+) {
   const {
     page,
     pageSize,
@@ -56,9 +67,8 @@ export default function MinimalPagination(props: MinimalPaginationProps & System
     ...props,
   };
 
-  const styles = useStyles("minimal");
-
-  const id = others.id ?? React.useId();
+  const id = React.useId();
+  const styles = useStyles('minimal');
 
   const [state, send] = useMachine(
     pagination.machine({
@@ -90,7 +100,9 @@ export default function MinimalPagination(props: MinimalPaginationProps & System
           justifyContent="space-between"
           alignItems="center"
           flexGrow={
-            (!!hasLegend && !!isLegendCentered) || (!hasLegend && hasPageControls) ? 1 : undefined
+            (!!hasLegend && !!isLegendCentered) || (!hasLegend && hasPageControls)
+              ? 1
+              : undefined
           }
         >
           {/* <!-- BUTTON (previous) --> */}
@@ -115,7 +127,7 @@ export default function MinimalPagination(props: MinimalPaginationProps & System
           {!!hasPageControls && !hasLegend && (
             <HStack spacing="2px">
               {api.pages.map((page_, index) => {
-                if (page_.type === "page") {
+                if (page_.type === 'page') {
                   return (
                     <Button
                       key={uuid()}

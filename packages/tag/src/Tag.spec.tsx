@@ -1,16 +1,13 @@
-import "@testing-library/jest-dom/extend-expect";
-import * as React from "react";
-import renderer from "react-test-renderer";
-import AUIcon from "./examples/AUIcon";
-import Tag from "./Tag";
+import '@testing-library/jest-dom/extend-expect';
+import renderer from 'react-test-renderer';
+import Tag from './Tag';
 
-describe("Snapshot", () => {
-  it("Should match snapshot", () => {
+describe('Snapshot', () => {
+  it('Should match snapshot', () => {
     const component = renderer.create(
       <Tag
         label="Tag Label"
         hasOnlineIndicator
-        icon={AUIcon}
         avatar="https://i.pravatar.cc/25"
         hasCheckbox
         isChecked

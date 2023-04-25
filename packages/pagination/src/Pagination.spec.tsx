@@ -1,13 +1,12 @@
-import "@testing-library/jest-dom";
-import { act, fireEvent, render } from "@testing-library/react";
-import * as React from "react";
-import renderer from "react-test-renderer";
-import Pagination from "./Pagination";
+import '@testing-library/jest-dom';
+import { act, fireEvent, render } from '@testing-library/react';
+import renderer from 'react-test-renderer';
+import Pagination from './Pagination';
 
 // Heads up! we're only gonna test "minimal" variant
 // since "group" variant's API is just a copy of "minimal"
 // but "minimal" is a bit complex
-describe("Pagination", () => {
+describe('Pagination', () => {
   const renderPagination = (
     props: Partial<{
       page: number;
@@ -28,12 +27,12 @@ describe("Pagination", () => {
     );
   };
 
-  it.skip("Should be able to go to next page", async () => {
+  it.skip('Should be able to go to next page', async () => {
     const onChange = jest.fn();
     const { getByRole } = renderPagination({ page: 1, onChange });
 
     await act(async () => {
-      fireEvent.click(getByRole("button", { name: "Go to next page" }));
+      fireEvent.click(getByRole('button', { name: 'Go to next page' }));
     });
 
     expect(onChange).toHaveBeenCalledWith(
@@ -44,12 +43,12 @@ describe("Pagination", () => {
     );
   });
 
-  it("Should be able to go to previous page", async () => {
+  it('Should be able to go to previous page', async () => {
     const onChange = jest.fn();
     const { getByRole } = renderPagination({ page: 2, onChange });
 
     await act(async () => {
-      fireEvent.click(getByRole("button", { name: "Go to previous page" }));
+      fireEvent.click(getByRole('button', { name: 'Go to previous page' }));
     });
 
     expect(onChange).toHaveBeenCalledWith(
@@ -60,7 +59,7 @@ describe("Pagination", () => {
     );
   });
 
-  it.skip("Should match snapshot", () => {
+  it.skip('Should match snapshot', () => {
     const component = renderer.create(
       <Pagination
         variant="minimal"

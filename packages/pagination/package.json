@@ -1,67 +1,24 @@
 {
+  "name": "@highoutput/hds-pagination",
   "version": "0.2.21",
   "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "engines": {
-    "node": ">=10"
-  },
-  "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "prepublish": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
-    "size": "size-limit",
-    "analyze": "size-limit --why"
-  },
-  "peerDependencies": {
-    "react": ">=16"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
     }
-  },
-  "prettier": {
-    "printWidth": 100,
-    "trailingComma": "all"
-  },
-  "name": "@highoutput/hds-pagination",
-  "author": {
-    "name": "Niel Berongoy"
-  },
-  "module": "dist/hds-pagination.esm.js",
-  "size-limit": [
-    {
-      "path": "dist/hds-pagination.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/hds-pagination.esm.js",
-      "limit": "10 KB"
-    }
-  ],
-  "devDependencies": {
-    "@size-limit/preset-small-lib": "7.0.8",
-    "@types/uuid": "9.0.0",
-    "size-limit": "7.0.8"
   },
   "dependencies": {
-    "@highoutput/hds-icons": "^0.2.3",
-    "@zag-js/pagination": "0.1.14",
-    "@zag-js/react": "0.3.10",
+    "@highoutput/hds-icons": "*",
+    "@zag-js/pagination": "0.5.0",
+    "@zag-js/react": "0.5.0",
     "uuid": "9.0.0"
   },
-  "jest": {
-    "verbose": true
-  },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "directory": "../../dist/packages/pagination"
   },
   "gitHead": "be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef"
 }

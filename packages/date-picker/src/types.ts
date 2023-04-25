@@ -20,13 +20,13 @@ export type DateRange = {
 };
 
 export enum TimeAdverbial {
-  Today = "Today",
-  Yesterday = "Yesterday",
-  ThisWeek = "This week",
-  LastWeek = "Last week",
-  ThisMonth = "This month",
-  LastMonth = "Last month",
-  ThisYear = "This year",
-  LastYear = "Last year",
-  AllTime = "All time",
+  Today = 'Today',
+  Yesterday = 'Yesterday',
+  ThisWeek = 'This week',
+  LastWeek = 'Last week',
+  ThisMonth = 'This month',
+  LastMonth = 'Last month',
+  ThisYear = 'This year',
+  LastYear = 'Last year',
+  AllTime = 'All time',
 }

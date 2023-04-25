@@ -35,10 +35,7 @@ const EmptyState: FC<EmptyStateProps> = ({
           {icon}
         </Box>
       )}
-      <Text
-        fontWeight={500}
-        size={{ base: 'label-sm-default', lg: 'label-md-default' }}
-      >
+      <Text fontWeight={500} size={{ base: 'label-sm-default', lg: 'label-md-default' }}>
         {header}
       </Text>
       <Text

@@ -11,7 +11,7 @@ describe('CTA', () => {
         subHeader="Check out the all new dashboard view. Pages and now load faster."
         primaryLabel="Changelog"
         secondaryLabel="Dismiss"
-      />
+      />,
     );
 
     expect(container).toMatchSnapshot();
@@ -24,14 +24,12 @@ describe('CTA', () => {
         subHeader="Check out the all new dashboard view. Pages and now load faster."
         primaryLabel="Changelog"
         secondaryLabel="Dismiss"
-      />
+      />,
     );
 
     expect(getByText(`We've just released a new update!`)).toBeInTheDocument();
     expect(
-      getByText(
-        `Check out the all new dashboard view. Pages and now load faster.`
-      )
+      getByText(`Check out the all new dashboard view. Pages and now load faster.`),
     ).toBeInTheDocument();
   });
 });

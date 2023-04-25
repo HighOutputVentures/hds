@@ -44,7 +44,8 @@ export default function Tabs({
   /*
    * force "horizontal" orientation if variant is "underlined"
    */
-  orientation = variant === 'underlined' && orientation === 'vertical' ? 'horizontal' : orientation;
+  orientation =
+    variant === 'underlined' && orientation === 'vertical' ? 'horizontal' : orientation;
 
   const styles = useStyles({
     variant,
@@ -79,7 +80,11 @@ export default function Tabs({
             </Box>
 
             {badgeCount && (
-              <Badge count={badgeCount} variant={variant} isSelected={args[0] === selectedIndex} />
+              <Badge
+                count={badgeCount}
+                variant={variant}
+                isSelected={args[0] === selectedIndex}
+              />
             )}
           </Tab>
         ))}

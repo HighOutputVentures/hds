@@ -1,57 +1,21 @@
 {
+  "name": "@highoutput/hds-carousel",
   "version": "0.2.6",
   "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "engines": {
-    "node": ">=10"
-  },
-  "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "prepublish": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
-    "size": "size-limit",
-    "analyze": "size-limit --why",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "copy-css": "node scripts/copyCarouselStyles.mjs"
-  },
-  "peerDependencies": {
-    "react": ">=16"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
     }
-  },
-  "prettier": {
-    "printWidth": 100,
-    "trailingComma": "all"
-  },
-  "name": "@highoutput/hds-carousel",
-  "author": "calvo-jp",
-  "module": "dist/hds-carousel.esm.js",
-  "size-limit": [
-    {
-      "path": "dist/hds-carousel.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/hds-carousel.esm.js",
-      "limit": "10 KB"
-    }
-  ],
-  "jest": {
-    "verbose": true
   },
   "dependencies": {
-    "react-responsive-carousel": "^3.2.23"
+    "react-responsive-carousel": "3.2.23"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "../../dist/packages/carousel"
   },
   "gitHead": "be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef"
 }

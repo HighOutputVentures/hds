@@ -1,13 +1,13 @@
-import { Flex, Icon, Text, UseToastOptions } from "@chakra-ui/react";
-import { CheckCircleIcon, InfoCircleIcon } from "@highoutput/hds-icons";
-import * as React from "react";
-import XIcon from "./XIcon";
+import { Flex, Icon, Text, UseToastOptions } from '@chakra-ui/react';
+import { CheckCircleIcon, InfoCircleIcon } from '@highoutput/hds-icons';
+import * as React from 'react';
+import XIcon from './XIcon';
 
-export type RenderToast = NonNullable<UseToastOptions["render"]>;
+export type RenderToast = NonNullable<UseToastOptions['render']>;
 
 const defaultProps = {
-  status: "success",
-  description: "",
+  status: 'success',
+  description: '',
 };
 
 export const Toast: RenderToast = (props) => {
@@ -45,44 +45,50 @@ export const Toast: RenderToast = (props) => {
         {description}
       </Text>
 
-      <Flex as="button" role="button"  data-testid="hds.toast.close.button" aria-label="Close alert" onClick={onClose}>
+      <Flex
+        as="button"
+        role="button"
+        data-testid="hds.toast.close.button"
+        aria-label="Close alert"
+        onClick={onClose}
+      >
         <Icon width={9} height={9} as={XIcon} color={colors.xmark} />
       </Flex>
     </Flex>
   );
 };
 
-function getIcon(key: UseToastOptions["status"]) {
+function getIcon(key: UseToastOptions['status']) {
   switch (key) {
-    case "error":
+    case 'error':
       return InfoCircleIcon;
     default:
       return CheckCircleIcon;
   }
 }
 
-function useColors(key: UseToastOptions["status"]) {
+function useColors(key: UseToastOptions['status']) {
   const colorsMap = {
     error: {
-      containerBg: "#FCEAE8",
-      containerBorder: "#FCD2CF",
-      icon: "#9E241C",
-      text: "#800C05",
-      xmark: "#F04438",
+      containerBg: '#FCEAE8',
+      containerBorder: '#FCD2CF',
+      icon: '#9E241C',
+      text: '#800C05',
+      xmark: '#F04438',
     },
     success: {
-      containerBg: "#E8FCE9",
-      containerBorder: "#A3F0A7",
-      icon: "#139E19",
-      text: "#008005",
-      xmark: "#00C408",
+      containerBg: '#E8FCE9',
+      containerBorder: '#A3F0A7',
+      icon: '#139E19',
+      text: '#008005',
+      xmark: '#00C408',
     },
   };
 
   switch (key) {
-    case "error":
-      return colorsMap["error"];
+    case 'error':
+      return colorsMap['error'];
     default:
-      return colorsMap["success"];
+      return colorsMap['success'];
   }
 }

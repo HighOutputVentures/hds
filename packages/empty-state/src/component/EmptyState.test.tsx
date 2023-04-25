@@ -11,7 +11,7 @@ describe('EmptyState', () => {
         subHeader="Your search “Landing page design” did not match any projects. Please try again."
         primaryLabel="Changelog"
         secondaryLabel="Dismiss"
-      />
+      />,
     );
 
     expect(container).toMatchSnapshot();
@@ -24,14 +24,14 @@ describe('EmptyState', () => {
         subHeader="Your search “Landing page design” did not match any projects. Please try again."
         primaryLabel="Changelog"
         secondaryLabel="Dismiss"
-      />
+      />,
     );
 
     expect(getByText(`No projects found`)).toBeInTheDocument();
     expect(
       getByText(
-        `Your search “Landing page design” did not match any projects. Please try again.`
-      )
+        `Your search “Landing page design” did not match any projects. Please try again.`,
+      ),
     ).toBeInTheDocument();
   });
 });

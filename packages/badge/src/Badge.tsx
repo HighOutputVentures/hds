@@ -1,8 +1,8 @@
-import { Avatar, chakra } from "@chakra-ui/react";
-import * as React from "react";
-import { BadgeAccent, BadgeSize } from "./types";
-import useBadgeStyle from "./useBadgeStyle";
-import { clone } from "./utils";
+import { Avatar, chakra } from '@chakra-ui/react';
+import * as React from 'react';
+import { BadgeAccent, BadgeSize } from './types';
+import useBadgeStyle from './useBadgeStyle';
+import { clone } from './utils';
 
 export interface BadgeProps {
   size?: BadgeSize;
@@ -16,7 +16,7 @@ export interface BadgeProps {
   __badgeLabelTestId?: string;
 }
 
-export default React.forwardRef<HTMLDivElement, BadgeProps>(function Badge(
+export const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(function Badge(
   {
     label,
     avatar,
@@ -25,8 +25,8 @@ export default React.forwardRef<HTMLDivElement, BadgeProps>(function Badge(
     __badgeContainerTestId,
     __badgeLabelTestId,
     hasIndicator,
-    size = "md",
-    accent = "primary",
+    size = 'md',
+    accent = 'primary',
     // capture non-jsx passed props
     // like aria-label, etc.
     ...props
@@ -43,15 +43,26 @@ export default React.forwardRef<HTMLDivElement, BadgeProps>(function Badge(
   });
 
   return (
-    <chakra.div ref={ref} role="status" {...props} sx={styles.container} data-testid={__badgeContainerTestId ?? 'hds.badge.container'}>
+    <chakra.div
+      ref={ref}
+      role="status"
+      {...props}
+      sx={styles.container}
+      data-testid={__badgeContainerTestId ?? 'hds.badge.container'}
+    >
       {/* <!-- Dot --> */}
       {!!hasIndicator && (
-        <chakra.div role="status" aria-label="Online" aria-live="polite" sx={styles.dot} />
+        <chakra.div
+          role="status"
+          aria-label="Online"
+          aria-live="polite"
+          sx={styles.dot}
+        />
       )}
 
       {/* <!-- Avatar --> */}
-      {!!avatar && typeof avatar !== "string" && <>{clone(avatar, styles.icon)}</>}
-      {!!avatar && typeof avatar === "string" && (
+      {!!avatar && typeof avatar !== 'string' && <>{clone(avatar, styles.icon)}</>}
+      {!!avatar && typeof avatar === 'string' && (
         <Avatar src={avatar} role="img" aria-label="Avatar" sx={styles.icon} />
       )}
 
@@ -60,20 +71,22 @@ export default React.forwardRef<HTMLDivElement, BadgeProps>(function Badge(
         <>
           {clone(leftIcon, {
             ...styles.icon,
-            role: "button",
+            role: 'button',
           })}
         </>
       )}
 
       {/* <!-- Label --> */}
-      <chakra.p sx={styles.label} data-testid={__badgeLabelTestId ?? "hds.badge-label"}>{label}</chakra.p>
+      <chakra.p sx={styles.label} data-testid={__badgeLabelTestId ?? 'hds.badge-label'}>
+        {label}
+      </chakra.p>
 
       {/* <!-- Right Icon --> */}
       {!!rightIcon && (
         <>
           {clone(rightIcon, {
             ...styles.icon,
-            role: "button",
+            role: 'button',
           })}
         </>
       )}

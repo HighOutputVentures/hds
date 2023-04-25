@@ -19,15 +19,7 @@ const TrashErrorIcon: React.FC<IconProps> = (props) => {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <rect
-        x="4"
-        y="4"
-        width="48"
-        height="48"
-        rx="24"
-        stroke="#FEF3F2"
-        strokeWidth="8"
-      />
+      <rect x="4" y="4" width="48" height="48" rx="24" stroke="#FEF3F2" strokeWidth="8" />
     </Icon>
   );
 };

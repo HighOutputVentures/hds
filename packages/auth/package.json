@@ -1,70 +1,24 @@
 {
+  "name": "@highoutput/hds-auth",
   "version": "0.2.22",
   "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "engines": {
-    "node": ">=10"
-  },
-  "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "prepublish": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
-    "size": "size-limit",
-    "analyze": "size-limit --why",
-    "generate:types": "chakra-cli tokens ./src/theme/index.ts"
-  },
-  "peerDependencies": {
-    "react": ">=16"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
     }
   },
-  "prettier": {
-    "printWidth": 90,
-    "trailingComma": "all"
-  },
-  "name": "@highoutput/hds-auth",
-  "author": {
-    "name": "Niel Berongoy"
-  },
-  "module": "dist/hds-auth.esm.js",
-  "size-limit": [
-    {
-      "path": "dist/hds-auth.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/hds-auth.esm.js",
-      "limit": "10 KB"
-    }
-  ],
-  "devDependencies": {
-    "@size-limit/preset-small-lib": "7.0.8",
-    "size-limit": "7.0.8"
-  },
-  "jest": {
-    "verbose": true,
-    "setupFilesAfterEnv": [
-      "<rootDir>/jest.setup.ts"
-    ]
+  "dependencies": {
+    "@highoutput/hds-forms": "*",
+    "@hookform/resolvers": "3.1.0",
+    "react-hook-form": "7.43.9",
+    "yup": "1.1.1"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "directory": "../../dist/packages/auth"
   },
-  "gitHead": "be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef",
-  "dependencies": {
-    "@highoutput/hds-forms": "^0.2.15",
-    "@hookform/resolvers": "2.9.10",
-    "react-hook-form": "7.38.0",
-    "yup": "0.32.11"
-  }
+  "gitHead": "be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef"
 }

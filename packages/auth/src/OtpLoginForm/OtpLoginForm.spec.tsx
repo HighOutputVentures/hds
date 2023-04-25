@@ -1,8 +1,8 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import { faker } from "@faker-js/faker";
-import { act, fireEvent, render, screen, waitFor } from "@testing-library/react";
-import * as React from "react";
-import { OtpLoginForm } from "./OtpLoginForm";
+import { ChakraProvider } from '@chakra-ui/react';
+import { faker } from '@faker-js/faker';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import * as React from 'react';
+import { OtpLoginForm } from './OtpLoginForm';
 
 const onSubmit1 = jest.fn();
 const onSubmit2 = jest.fn();
@@ -12,10 +12,10 @@ const input1 = {
 };
 
 const input2 = {
-  otp: "1234",
+  otp: '1234',
 };
 
-describe("OtpLoginForm (step 1)", () => {
+describe('OtpLoginForm (step 1)', () => {
   beforeEach(() => {
     render(
       <ChakraProvider>
@@ -24,29 +24,29 @@ describe("OtpLoginForm (step 1)", () => {
     );
   });
 
-  it("Should render username field", () => {
-    expect(screen.getByTestId("hds.otp-login.input.email")).toBeInTheDocument();
+  it('Should render username field', () => {
+    expect(screen.getByTestId('hds.otp-login.input.email')).toBeInTheDocument();
   });
 
-  it("Should render button", () => {
-    expect(screen.getByTestId("hds.otp-login.submit-button")).toBeInTheDocument();
+  it('Should render button', () => {
+    expect(screen.getByTestId('hds.otp-login.submit-button')).toBeInTheDocument();
   });
 
-  it("Should validate fields", async () => {
+  it('Should validate fields', async () => {
     await act(async () => {
-      fireEvent.click(screen.getByTestId("hds.otp-login.submit-button"));
+      fireEvent.click(screen.getByTestId('hds.otp-login.submit-button'));
     });
 
     await waitFor(() => {
-      expect(screen.getByTestId("hds.otp-login.input.email")).toHaveAttribute(
-        "aria-invalid",
+      expect(screen.getByTestId('hds.otp-login.input.email')).toHaveAttribute(
+        'aria-invalid',
       );
     });
   });
 
   test("'onSubmit'", async () => {
     await act(async () => {
-      fireEvent.change(screen.getByTestId("hds.otp-login.input.email"), {
+      fireEvent.change(screen.getByTestId('hds.otp-login.input.email'), {
         target: {
           value: input1.emailAddress,
         },
@@ -54,7 +54,7 @@ describe("OtpLoginForm (step 1)", () => {
     });
 
     await act(async () => {
-      fireEvent.click(screen.getByTestId("hds.otp-login.submit-button"));
+      fireEvent.click(screen.getByTestId('hds.otp-login.submit-button'));
     });
 
     await waitFor(() => {
@@ -63,7 +63,7 @@ describe("OtpLoginForm (step 1)", () => {
   });
 });
 
-describe("OtpLoginForm (step 2)", () => {
+describe('OtpLoginForm (step 2)', () => {
   beforeEach(() => {
     render(
       <ChakraProvider>
@@ -72,42 +72,42 @@ describe("OtpLoginForm (step 2)", () => {
     );
   });
 
-  it("Should render field", () => {
-    expect(screen.getAllByTestId("hds.otp-login.input.otp")).toHaveLength(4);
+  it('Should render field', () => {
+    expect(screen.getAllByTestId('hds.otp-login.input.otp')).toHaveLength(4);
   });
 
-  it("Should render button", () => {
-    expect(screen.getByTestId("hds.otp-login.submit-button")).toBeInTheDocument();
+  it('Should render button', () => {
+    expect(screen.getByTestId('hds.otp-login.submit-button')).toBeInTheDocument();
   });
 
-  it("Should validate fields", async () => {
+  it('Should validate fields', async () => {
     await act(async () => {
-      fireEvent.click(screen.getByTestId("hds.otp-login.submit-button"));
+      fireEvent.click(screen.getByTestId('hds.otp-login.submit-button'));
     });
 
-    const fields = screen.getAllByTestId("hds.otp-login.input.otp");
+    const fields = screen.getAllByTestId('hds.otp-login.input.otp');
 
     for (const field of fields) {
       await waitFor(() => {
-        expect(field).toHaveAttribute("data-invalid");
+        expect(field).toHaveAttribute('data-invalid');
       });
     }
   });
 
   test.skip("'onSubmit'", async () => {
-    const fields = screen.getAllByTestId("hds.otp-login.input.otp");
+    const fields = screen.getAllByTestId('hds.otp-login.input.otp');
 
     expect(fields).toHaveLength(4);
 
     await act(async () => {
-      fireEvent.change(fields[0], { target: { value: "1" } });
-      fireEvent.change(fields[1], { target: { value: "2" } });
-      fireEvent.change(fields[2], { target: { value: "3" } });
-      fireEvent.change(fields[3], { target: { value: "4" } });
+      fireEvent.change(fields[0], { target: { value: '1' } });
+      fireEvent.change(fields[1], { target: { value: '2' } });
+      fireEvent.change(fields[2], { target: { value: '3' } });
+      fireEvent.change(fields[3], { target: { value: '4' } });
     });
 
     await act(async () => {
-      fireEvent.click(screen.getByTestId("hds.otp-login.submit-button"));
+      fireEvent.click(screen.getByTestId('hds.otp-login.submit-button'));
     });
 
     await waitFor(() => {

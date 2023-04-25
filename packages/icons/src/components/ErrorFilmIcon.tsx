@@ -13,23 +13,10 @@ const ErrorFilmIcon: FC<IconProps> = (props) => (
         strokeLinejoin="round"
       />
     </g>
-    <rect
-      x="2"
-      y="2"
-      width="32"
-      height="32"
-      rx="16"
-      stroke="#FCEAE8"
-      strokeWidth="4"
-    />
+    <rect x="2" y="2" width="32" height="32" rx="16" stroke="#FCEAE8" strokeWidth="4" />
     <defs>
       <clipPath id="clip0_1175_100240">
-        <rect
-          width="16"
-          height="16"
-          fill="white"
-          transform="translate(10 10)"
-        />
+        <rect width="16" height="16" fill="white" transform="translate(10 10)" />
       </clipPath>
     </defs>
   </Icon>

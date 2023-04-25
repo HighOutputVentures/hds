@@ -41,18 +41,10 @@ const CTA: FC<CTAProps> = ({
       justifyContent="center"
       p="24px"
     >
-      <Text
-        fontWeight={500}
-        size={{ base: 'label-sm-default', lg: 'label-md-default' }}
-      >
+      <Text fontWeight={500} size={{ base: 'label-sm-default', lg: 'label-md-default' }}>
         {header}
       </Text>
-      <Text
-        color="neutrals.600"
-        fontSize={14}
-        lineHeight="20px"
-        letterSpacing="0.02em"
-      >
+      <Text color="neutrals.600" fontSize={14} lineHeight="20px" letterSpacing="0.02em">
         {subHeader}
       </Text>
 
@@ -68,10 +60,7 @@ const CTA: FC<CTAProps> = ({
             <Text size="label-xs-default" fontWeight={500}>
               Subscribe to updates
             </Text>
-            <Flex
-              direction={{ base: 'column', lg: 'row' }}
-              gap={{ base: 2, lg: 4 }}
-            >
+            <Flex direction={{ base: 'column', lg: 'row' }} gap={{ base: 2, lg: 4 }}>
               <InputGroup>
                 <InputLeftElement
                   pointerEvents="none"
@@ -79,11 +68,7 @@ const CTA: FC<CTAProps> = ({
                 />
                 <Input type="email" placeholder="you@untitledui.com" />
               </InputGroup>
-              <Button
-                onClick={onSubmit}
-                px="2rem"
-                width={{ base: '100%', lg: 'auto' }}
-              >
+              <Button onClick={onSubmit} px="2rem" width={{ base: '100%', lg: 'auto' }}>
                 <Text size="button-default">{primaryLabel}</Text>
               </Button>
             </Flex>

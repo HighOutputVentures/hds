@@ -9,17 +9,17 @@ import {
   TagLabel,
   TagLeftIcon,
   Text,
-} from "@chakra-ui/react";
-import * as React from "react";
-import CheckIcon from "./CheckIcon";
-import { useCheckboxStyleConfig, useStyles } from "./hooks";
+} from '@chakra-ui/react';
+import * as React from 'react';
+import CheckIcon from './CheckIcon';
+import { useCheckboxStyleConfig, useStyles } from './hooks';
 
-type Size = "sm" | "md" | "lg";
+type Size = 'sm' | 'md' | 'lg';
 
 export type TagProps = {
   label: string;
   size?: Size;
-  icon?: (props: React.ComponentProps<"svg">) => JSX.Element;
+  icon?: (props: React.ComponentProps<'svg'>) => JSX.Element;
   hasAvatar?: boolean;
   avatar?: string;
   hasOnlineIndicator?: boolean;
@@ -37,7 +37,7 @@ export type TagProps = {
 export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(props, ref) {
   const {
     icon,
-    size = "md",
+    size = 'md',
     label,
     avatar,
     badgeCount = 0,
@@ -58,16 +58,16 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(props,
   const hasIcon = !!icon;
 
   return (
-    <Tag ref={ref} sx={styles.tag()} data-testid={__testId ?? "hds.tag"}>
+    <Tag ref={ref} sx={styles.tag()} data-testid={__testId ?? 'hds.tag'}>
       {hasCheckbox && (
         <>
           {addSpace(
             true,
             getSpaceWidth(
               {
-                sm: "5px",
-                md: "4px",
-                lg: "5px",
+                sm: '5px',
+                md: '4px',
+                lg: '5px',
               },
               size,
             ),
@@ -86,9 +86,9 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(props,
             !hasAvatar && !hasIcon,
             getSpaceWidth(
               {
-                sm: "4px",
-                md: "5px",
-                lg: "6px",
+                sm: '4px',
+                md: '5px',
+                lg: '6px',
               },
               size,
             ),
@@ -102,9 +102,9 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(props,
             true,
             getSpaceWidth(
               {
-                sm: "4px",
-                md: "5px",
-                lg: "6px",
+                sm: '4px',
+                md: '5px',
+                lg: '6px',
               },
               size,
             ),
@@ -122,9 +122,9 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(props,
             true,
             getSpaceWidth(
               {
-                sm: "4px",
-                md: "5px",
-                lg: "6px",
+                sm: '4px',
+                md: '5px',
+                lg: '6px',
               },
               size,
             ),
@@ -138,9 +138,9 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(props,
             true,
             getSpaceWidth(
               {
-                sm: "4px",
-                md: "5px",
-                lg: "6px",
+                sm: '4px',
+                md: '5px',
+                lg: '6px',
               },
               size,
             ),
@@ -158,9 +158,9 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(props,
             true,
             getSpaceWidth(
               {
-                sm: "4px",
-                md: "5px",
-                lg: "6px",
+                sm: '4px',
+                md: '5px',
+                lg: '6px',
               },
               size,
             ),
@@ -174,9 +174,9 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(props,
             true,
             getSpaceWidth(
               {
-                sm: "7px",
-                md: "8px",
-                lg: "10px",
+                sm: '7px',
+                md: '8px',
+                lg: '10px',
               },
               size,
             ),
@@ -193,9 +193,9 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(props,
             true,
             getSpaceWidth(
               {
-                sm: "5px",
-                md: "6px",
-                lg: "7px",
+                sm: '5px',
+                md: '6px',
+                lg: '7px',
               },
               size,
             ),
@@ -208,9 +208,9 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(props,
           !hasIcon && !hasAvatar && !hasOnlineIndicator && !hasCheckbox,
           getSpaceWidth(
             {
-              sm: "8px",
-              md: "9px",
-              lg: "10px",
+              sm: '8px',
+              md: '9px',
+              lg: '10px',
             },
             size,
           ),
@@ -224,9 +224,9 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(props,
           !isClosable && !hasBadge,
           getSpaceWidth(
             {
-              sm: "8px",
-              md: "9px",
-              lg: "10px",
+              sm: '8px',
+              md: '9px',
+              lg: '10px',
             },
             size,
           ),
@@ -239,9 +239,9 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(props,
             true,
             getSpaceWidth(
               {
-                sm: "8px",
-                md: "10px",
-                lg: "12px",
+                sm: '8px',
+                md: '10px',
+                lg: '12px',
               },
               size,
             ),
@@ -253,9 +253,9 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(props,
             true,
             getSpaceWidth(
               {
-                sm: "8px",
-                md: "8px",
-                lg: "10px",
+                sm: '8px',
+                md: '8px',
+                lg: '10px',
               },
               size,
             ),
@@ -269,9 +269,9 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(props,
             !hasBadge,
             getSpaceWidth(
               {
-                sm: "5px",
-                md: "5px",
-                lg: "6px",
+                sm: '5px',
+                md: '5px',
+                lg: '6px',
               },
               size,
             ),
@@ -288,9 +288,9 @@ export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(props,
             true,
             getSpaceWidth(
               {
-                sm: "7px",
-                md: "6px",
-                lg: "7px",
+                sm: '7px',
+                md: '6px',
+                lg: '7px',
               },
               size,
             ),
@@ -306,5 +306,5 @@ function getSpaceWidth(obj: Record<Size, string>, size: Size): string {
 }
 
 function addSpace(when: boolean, width: number | string) {
-  return !when ? null : <Spacer sx={{ width, height: "1px" }} />;
+  return !when ? null : <Spacer sx={{ width, height: '1px' }} />;
 }

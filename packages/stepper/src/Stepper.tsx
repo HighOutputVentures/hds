@@ -63,11 +63,7 @@ const Stepper = ({
                   bgColor={stepNumber <= value ? '#7F56D9' : '#EAECF0'}
                 />
               )}
-              <Flex
-                position={'relative'}
-                justifyContent="center"
-                align={'start'}
-              >
+              <Flex position={'relative'} justifyContent="center" align={'start'}>
                 <Flex zIndex={1}>
                   <Checkbox
                     size={size === 'sm' || size === 'md' ? 'sm' : 'md'}
@@ -95,11 +91,7 @@ const Stepper = ({
                 >
                   <Text
                     size="label-sm-default"
-                    color={
-                      value === stepNumber
-                        ? 'brand.primary.900'
-                        : 'neutrals.900'
-                    }
+                    color={value === stepNumber ? 'brand.primary.900' : 'neutrals.900'}
                     width={'100%'}
                     fontWeight={600}
                     fontSize={size}
@@ -111,20 +103,14 @@ const Stepper = ({
                       size !== 'md' && {
                         pt: '4px',
                       })}
-                    textAlign={
-                      orientation === 'horizontal' ? 'center' : 'start'
-                    }
+                    textAlign={orientation === 'horizontal' ? 'center' : 'start'}
                     data-testid={`hds.stepper.label.${idx}`}
                   >
                     {step.label}
                   </Text>
                   <Text
                     size="paragraph-md-default"
-                    color={
-                      value === stepNumber
-                        ? 'brand.primary.700'
-                        : 'neutrals.600'
-                    }
+                    color={value === stepNumber ? 'brand.primary.700' : 'neutrals.600'}
                     fontWeight="400"
                     fontSize={size}
                     width={'full'}
@@ -154,9 +140,7 @@ const Stepper = ({
                           ? '10px'
                           : '18px',
                     })}
-                    textAlign={
-                      orientation === 'horizontal' ? 'center' : 'start'
-                    }
+                    textAlign={orientation === 'horizontal' ? 'center' : 'start'}
                   >
                     {step.description}
                   </Text>

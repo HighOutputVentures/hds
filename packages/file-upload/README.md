@@ -28,11 +28,7 @@ export const FileUploadSample = () => {
 
       {(files as File[])?.length ? (
         <Flex justify="center">
-          <ProgressBox
-            file={files}
-            onDelete={(): void => setFiles([])}
-            value={80}
-          />
+          <ProgressBox file={files} onDelete={(): void => setFiles([])} value={80} />
         </Flex>
       ) : (
         <></>

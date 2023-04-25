@@ -5,25 +5,25 @@ import {
   PinInputField,
   PinInputFieldProps,
   PinInputProps,
-} from "@chakra-ui/react";
-import * as React from "react";
-import { v4 as uuid } from "uuid";
-import FormGroup, { FormGroupProps } from "../FormGroup/FormGroup";
-import { useStyles } from "../hooks";
-import { Prettify } from "../types";
+} from '@chakra-ui/react';
+import * as React from 'react';
+import { v4 as uuid } from 'uuid';
+import FormGroup, { FormGroupProps } from '../FormGroup/FormGroup';
+import { useStyles } from '../hooks';
+import { Prettify } from '../types';
 
 type Picked = Pick<
   PinInputProps,
-  | "type"
-  | "value"
-  | "onChange"
-  | "onComplete"
-  | "defaultValue"
-  | "autoFocus"
-  | "placeholder"
+  | 'type'
+  | 'value'
+  | 'onChange'
+  | 'onComplete'
+  | 'defaultValue'
+  | 'autoFocus'
+  | 'placeholder'
 >;
 
-type Size = "sm" | "md" | "lg";
+type Size = 'sm' | 'md' | 'lg';
 
 type Base = {
   size?: Size;
@@ -35,15 +35,15 @@ export type OtpFieldProps = Prettify<Picked & Base & FormGroupProps>;
 
 export default function OtpField(props: OtpFieldProps) {
   const {
-    type = "number",
-    size = "sm",
+    type = 'number',
+    size = 'sm',
     value,
     onChange,
     onComplete,
     defaultValue,
-    placeholder = "0",
+    placeholder = '0',
     fieldCount = 4,
-    __fieldTestId = "hds.otp-field.input",
+    __fieldTestId = 'hds.otp-field.input',
     ...others
   } = props;
 
@@ -78,6 +78,7 @@ export default function OtpField(props: OtpFieldProps) {
       <Flex gap={3} alignItems="center" width="fit-content">
         <PinInput
           otp
+          type={type}
           value={value}
           placeholder={placeholder}
           onChange={onChange}
@@ -92,34 +93,34 @@ export default function OtpField(props: OtpFieldProps) {
                 sx: {
                   ...styles.field,
 
-                  ...(size === "sm" && {
-                    width: "64px",
-                    height: "64px",
+                  ...(size === 'sm' && {
+                    width: '64px',
+                    height: '64px',
                   }),
 
-                  ...(size === "md" && {
-                    width: "80px",
-                    height: "80px",
+                  ...(size === 'md' && {
+                    width: '80px',
+                    height: '80px',
                   }),
 
-                  ...(size === "lg" && {
-                    width: "96px",
-                    height: "96px",
+                  ...(size === 'lg' && {
+                    width: '96px',
+                    height: '96px',
                   }),
 
-                  color: "brand.primary.700",
-                  fontSize: "44px",
-                  fontWeight: "semibold",
-                  textAlign: "center",
-                  display: "block",
-                  rounded: "8px",
+                  color: 'brand.primary.700',
+                  fontSize: '44px',
+                  fontWeight: 'semibold',
+                  textAlign: 'center',
+                  display: 'block',
+                  rounded: '8px',
                 },
 
                 ...(!!others.error && {
-                  "data-invalid": true,
+                  'data-invalid': true,
                 }),
 
-                "data-testid": __fieldTestId,
+                'data-testid': __fieldTestId,
               }),
             }),
           )}

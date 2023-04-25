@@ -5,7 +5,7 @@ import {
   Tooltip as ChakraTooltip,
 } from '@chakra-ui/react';
 import * as React from 'react';
-import invariant from 'tiny-invariant';
+import { invariant } from 'shared/utils';
 
 type ColorScheme = 'dark' | 'light';
 
@@ -18,7 +18,7 @@ export interface TooltipProps {
   supportingText?: string;
 }
 
-export default function Tooltip(props: TooltipProps) {
+export function Tooltip(props: TooltipProps) {
   const {
     label,
     hasArrow,
@@ -29,13 +29,7 @@ export default function Tooltip(props: TooltipProps) {
   } = props;
 
   const LabelWithSupportingText = () => (
-    <Box
-      maxWidth="320px"
-      minHeight="34px"
-      padding="12px"
-      rounded="8px"
-      width="full"
-    >
+    <Box maxWidth="320px" minHeight="34px" padding="12px" rounded="8px" width="full">
       <Text
         fontWeight="500"
         fontSize="12px"
@@ -65,10 +59,7 @@ export default function Tooltip(props: TooltipProps) {
     </Box>
   );
 
-  invariant(
-    React.isValidElement(children),
-    "'Children' must be a valid React element"
-  );
+  invariant(React.isValidElement(children), "'Children' must be a valid React element");
 
   return (
     <ChakraTooltip

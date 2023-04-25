@@ -1,6 +1,6 @@
-import * as React from "react";
+import * as React from 'react';
 
-export default function VerifiedIcon(props: React.ComponentProps<"svg">) {
+export default function VerifiedIcon(props: React.ComponentProps<'svg'>) {
   return (
     <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <g clipPath="url(#clip0_3302_419216)">

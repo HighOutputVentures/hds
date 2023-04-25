@@ -11,7 +11,7 @@ exports[`Carousel Snapshot Should match snapshot 1`] = `
     <div
       className="carousel carousel-slider"
       style={
-        Object {
+        {
           "width": "100%",
         }
       }
@@ -96,7 +96,7 @@ exports[`Carousel Snapshot Should match snapshot 1`] = `
       </button>
       <div
         className="slider-wrapper axis-horizontal"
-        style={Object {}}
+        style={{}}
       >
         <ul
           className="slider animated"
@@ -104,7 +104,7 @@ exports[`Carousel Snapshot Should match snapshot 1`] = `
           onTouchEnd={[Function]}
           onTouchStart={[Function]}
           style={
-            Object {
+            {
               "MozTransitionDuration": "350ms",
               "OTransform": "translate3d(-100%,0,0)",
               "OTransitionDuration": "350ms",
@@ -120,7 +120,7 @@ exports[`Carousel Snapshot Should match snapshot 1`] = `
           <li
             className="slide"
             onClick={[Function]}
-            style={Object {}}
+            style={{}}
           >
             <img
               alt=""
@@ -130,7 +130,7 @@ exports[`Carousel Snapshot Should match snapshot 1`] = `
           <li
             className="slide selected previous"
             onClick={[Function]}
-            style={Object {}}
+            style={{}}
           >
             <img
               alt=""
@@ -140,7 +140,7 @@ exports[`Carousel Snapshot Should match snapshot 1`] = `
           <li
             className="slide"
             onClick={[Function]}
-            style={Object {}}
+            style={{}}
           >
             <img
               alt=""
@@ -150,7 +150,7 @@ exports[`Carousel Snapshot Should match snapshot 1`] = `
           <li
             className="slide"
             onClick={[Function]}
-            style={Object {}}
+            style={{}}
           >
             <img
               alt=""
@@ -160,7 +160,7 @@ exports[`Carousel Snapshot Should match snapshot 1`] = `
           <li
             className="slide"
             onClick={[Function]}
-            style={Object {}}
+            style={{}}
           >
             <img
               alt=""
@@ -170,7 +170,7 @@ exports[`Carousel Snapshot Should match snapshot 1`] = `
           <li
             className="slide"
             onClick={[Function]}
-            style={Object {}}
+            style={{}}
           >
             <img
               alt=""
@@ -180,7 +180,7 @@ exports[`Carousel Snapshot Should match snapshot 1`] = `
           <li
             className="slide selected previous"
             onClick={[Function]}
-            style={Object {}}
+            style={{}}
           >
             <img
               alt=""

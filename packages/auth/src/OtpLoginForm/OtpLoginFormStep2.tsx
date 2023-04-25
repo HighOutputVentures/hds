@@ -1,9 +1,9 @@
-import { chakra, SystemStyleObject } from "@chakra-ui/react";
-import { Button, OtpField } from "@highoutput/hds-forms";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as React from "react";
-import { Controller, useForm } from "react-hook-form";
-import { ILoginOtpSchema, LoginOtpSchema } from "./validators";
+import { chakra, SystemStyleObject } from '@chakra-ui/react';
+import { Button, OtpField } from '@highoutput/hds-forms';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as React from 'react';
+import { Controller, useForm } from 'react-hook-form';
+import { ILoginOtpSchema, LoginOtpSchema } from './validators';
 
 type OtpConfig = {
   label?: string;
@@ -30,8 +30,8 @@ export const OtpLoginFormStep2: React.FC<OtpLoginFormStep2Props> = ({
   submitBtn,
   renderHeader,
   renderFooter,
-  __otpTestId = "hds.otp-login.input.otp",
-  __submitBtnTestId = "hds.otp-login.submit-button",
+  __otpTestId = 'hds.otp-login.input.otp',
+  __submitBtnTestId = 'hds.otp-login.submit-button',
   ...others
 }) => {
   const buttonRef = React.useRef<HTMLButtonElement>(null);
@@ -41,7 +41,7 @@ export const OtpLoginFormStep2: React.FC<OtpLoginFormStep2Props> = ({
     shouldUnregister: true,
     shouldFocusError: true,
     defaultValues: {
-      otp: "",
+      otp: '',
     },
     context: {
       numberOfFields: otp?.fieldCount ?? 4,
@@ -51,7 +51,7 @@ export const OtpLoginFormStep2: React.FC<OtpLoginFormStep2Props> = ({
   return (
     <chakra.div
       sx={{
-        width: "fit-content",
+        width: 'fit-content',
         ...others,
       }}
       data-testid="hds.otp-login.step-2"
@@ -91,7 +91,7 @@ export const OtpLoginFormStep2: React.FC<OtpLoginFormStep2Props> = ({
           isLoading={formState.isSubmitting}
           __testId={__submitBtnTestId}
         >
-          {submitBtn?.label ?? "Sign In"}
+          {submitBtn?.label ?? 'Sign In'}
         </Button>
       </chakra.form>
 

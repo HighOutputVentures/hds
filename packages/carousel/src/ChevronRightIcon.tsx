@@ -1,6 +1,6 @@
-import * as React from "react";
+import * as React from 'react';
 
-export default function ChevronRightIcon(props: React.ComponentProps<"svg">) {
+export default function ChevronRightIcon(props: React.ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

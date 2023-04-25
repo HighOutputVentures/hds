@@ -1,8 +1,8 @@
-import { Box, Icon, SystemStyleObject } from "@chakra-ui/react";
-import * as React from "react";
-import CheckIcon from "./CheckIcon";
-import CircleIcon from "./CircleIcon";
-import { omit } from "./utils";
+import { Box, Icon, SystemStyleObject } from '@chakra-ui/react';
+import * as React from 'react';
+import { omit } from 'shared/utils';
+import CheckIcon from './CheckIcon';
+import CircleIcon from './CircleIcon';
 
 type GetPropsArgs = {
   disabled?: boolean;
@@ -19,9 +19,9 @@ type RenderChildrenContext<T> = {
   };
 };
 
-type CheckboxGroupSize = "sm" | "md";
+type CheckboxGroupSize = 'sm' | 'md';
 
-type CheckboxGroupVariant = "circle" | "square" | "dot";
+type CheckboxGroupVariant = 'circle' | 'square' | 'dot';
 
 type CheckboxGroupBaseProps<T extends unknown[]> = {
   size?: CheckboxGroupSize;
@@ -44,14 +44,15 @@ type CheckboxGroupBaseProps<T extends unknown[]> = {
     }
 );
 
-export type CheckboxGroupProps<T extends unknown[]> = SystemStyleObject & CheckboxGroupBaseProps<T>;
+export type CheckboxGroupProps<T extends unknown[]> = SystemStyleObject &
+  CheckboxGroupBaseProps<T>;
 
 export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupProps<T>) {
   const {
-    variant = "circle",
+    variant = 'circle',
     __checkboxGroupTestId,
     __checkboxTestId,
-    size = "md",
+    size = 'md',
     items,
     children,
     compareFn = (o) => o,
@@ -60,15 +61,15 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
 
   const getCheckboxIcon = React.useCallback(
     function getCheckboxIconBaseOnVariant({ disabled }: { disabled?: boolean }) {
-      if (variant === "dot") {
+      if (variant === 'dot') {
         return (
           <Icon
             as={CircleIcon}
-            width={{ sm: "6px", md: "8px" }[size]}
-            height={{ sm: "6px", md: "8px" }[size]}
+            width={{ sm: '6px', md: '8px' }[size]}
+            height={{ sm: '6px', md: '8px' }[size]}
             color="#8A68EF"
             {...(disabled && {
-              color: "#F0F0F0",
+              color: '#F0F0F0',
             })}
           />
         );
@@ -77,29 +78,28 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
       return (
         <Icon
           as={CheckIcon}
-          width={{ sm: "8px", md: "10px" }[size]}
-          height={{ sm: "8px", md: "10px" }[size]}
-          color={variant === "square" ? "#8A68EF" : "#FFFFFF"}
+          width={{ sm: '8px', md: '10px' }[size]}
+          height={{ sm: '8px', md: '10px' }[size]}
+          color={variant === 'square' ? '#8A68EF' : '#FFFFFF'}
           {...(disabled && {
-            color: variant === "square" ? "#F0F0F0" : "#FFFFFF",
+            color: variant === 'square' ? '#F0F0F0' : '#FFFFFF',
           })}
         />
       );
     },
-    [variant],
+    [size, variant],
   );
 
   return (
     <Box
       sx={{
-        display: "flex",
-        flexDirection: "column",
+        display: 'flex',
+        flexDirection: 'column',
         gap: 4,
-        ...omit(others, "onChange", "value", "multiple"),
+        ...omit(others, 'onChange', 'value', 'multiple'),
       }}
       role="group"
       aria-label="Checkbox Group"
-      aria-multiselectable={props.multiple}
     >
       {items.map((item, index) => {
         const selected = !others.multiple
@@ -116,23 +116,23 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
                 'data-testid': __checkboxTestId ?? 'hds.checkbox-group.checkbox',
                 ...(!disabled && {
                   ...(!selected && {
-                    border: "1px solid #D6D6D6",
-                    bgColor: "#FFFFFF",
+                    border: '1px solid #D6D6D6',
+                    bgColor: '#FFFFFF',
                   }),
                   ...(selected && {
-                    border: "1px solid #8A68EF",
-                    bgColor: variant === "circle" ? "#8A68EF" : "#EDE8FC",
+                    border: '1px solid #8A68EF',
+                    bgColor: variant === 'circle' ? '#8A68EF' : '#EDE8FC',
                     children: getCheckboxIcon({ disabled }),
                   }),
                 }),
                 ...(disabled && {
                   ...(!selected && {
-                    border: "1px solid #F0F0F0",
-                    bgColor: "#FCFCFC",
+                    border: '1px solid #F0F0F0',
+                    bgColor: '#FCFCFC',
                   }),
                   ...(selected && {
-                    border: "1px solid #D6D6D6",
-                    bgColor: variant === "circle" ? "#D6D6D6" : "#FCFCFC",
+                    border: '1px solid #D6D6D6',
+                    bgColor: variant === 'circle' ? '#D6D6D6' : '#FCFCFC',
                     children: getCheckboxIcon({ disabled }),
                   }),
                 }),
@@ -140,118 +140,121 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
                 tabIndex: -1,
                 flexGrow: 0,
                 flexShrink: 0,
-                className: "CheckboxGroup__Checkbox",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                rounded: variant === "square" ? "4px" : "full",
-                width: size === "sm" ? "16px" : "20px",
-                height: size === "sm" ? "16px" : "20px",
+                className: 'CheckboxGroup__Checkbox',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                rounded: variant === 'square' ? '4px' : 'full',
+                width: size === 'sm' ? '16px' : '20px',
+                height: size === 'sm' ? '16px' : '20px',
                 transition: [
-                  "background-color 300ms ease-in-out",
-                  "box-shadow 300ms ease-in-out",
-                  "border-color 300ms ease-in-out",
+                  'background-color 300ms ease-in-out',
+                  'box-shadow 300ms ease-in-out',
+                  'border-color 300ms ease-in-out',
                 ].join(),
               },
               icon: {
-                'data-testid':'hds.checkbox-group.icon',
-                className: "CheckboxGroup__Icon",
+                'data-testid': 'hds.checkbox-group.icon',
+                className: 'CheckboxGroup__Icon',
                 ...(disabled && {
-                  color: "#D0D5DD",
-                  bgColor: "#F2F4F7",
-                  borderColor: "#F9FAFB",
+                  color: '#D0D5DD',
+                  bgColor: '#F2F4F7',
+                  borderColor: '#F9FAFB',
                 }),
                 ...(!disabled && {
-                  color: "#8A68EF",
-                  bgColor: "#EDE8FC",
-                  borderColor: "#F9F5FF",
+                  color: '#8A68EF',
+                  bgColor: '#EDE8FC',
+                  borderColor: '#F9F5FF',
                 }),
                 flexGrow: 0,
                 flexShrink: 0,
-                width: size === "sm" ? "32px" : "40px",
-                height: size === "sm" ? "32px" : "40px",
-                borderWidth: size === "sm" ? "4px" : "6px",
-                borderStyle: "solid",
-                rounded: "full",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                width: size === 'sm' ? '32px' : '40px',
+                height: size === 'sm' ? '32px' : '40px',
+                borderWidth: size === 'sm' ? '4px' : '6px',
+                borderStyle: 'solid',
+                rounded: 'full',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
                 transition: [
-                  "color 300ms ease-in-out",
-                  "box-shadow 300ms ease-in-out",
-                  "border-color 300ms ease-in-out",
-                  "background-color 300ms ease-in-out",
+                  'color 300ms ease-in-out',
+                  'box-shadow 300ms ease-in-out',
+                  'border-color 300ms ease-in-out',
+                  'background-color 300ms ease-in-out',
                 ].join(),
-                role: "img",
-                "aria-role": "Checkbox Icon",
+                role: 'img',
+                'aria-role': 'Checkbox Icon',
               },
               container: {
                 'data-testid': __checkboxGroupTestId ?? 'hds.checkbox-group.container',
                 ...(!disabled && {
                   ...(!selected && {
-                    border: "1px solid #EAECF0",
-                    bgColor: "#FFFFFF",
+                    border: '1px solid #EAECF0',
+                    bgColor: '#FFFFFF',
                     _hover: {
-                      border: "1px solid #D6BBFB",
+                      border: '1px solid #D6BBFB',
 
                       // radio
-                      "& .CheckboxGroup__Checkbox": {
-                        border: "1px solid #8A68EF",
-                        bgColor: "#EDE8FC",
+                      '& .CheckboxGroup__Checkbox': {
+                        border: '1px solid #8A68EF',
+                        bgColor: '#EDE8FC',
                       },
                     },
                     _focus: {
-                      border: "1px solid #D6BBFB",
-                      boxShadow: "0px 0px 0px 4px #E3E3FC",
+                      border: '1px solid #D6BBFB',
+                      boxShadow: '0px 0px 0px 4px #E3E3FC',
 
                       // radio
-                      "& .CheckboxGroup__Checkbox": {
-                        border: "1px solid #EDE8FC",
-                        bgColor: "#FFFFFF",
-                        boxShadow: "0px 0px 0px 4px #F4EBFF",
+                      '& .CheckboxGroup__Checkbox': {
+                        border: '1px solid #EDE8FC',
+                        bgColor: '#FFFFFF',
+                        boxShadow: '0px 0px 0px 4px #F4EBFF',
                       },
                     },
                   }),
                   ...(selected && {
-                    border: "1px solid #8A68EF",
-                    bgColor: "#F9F5FF",
+                    border: '1px solid #8A68EF',
+                    bgColor: '#F9F5FF',
                     _hover: {
-                      border: "1px solid #8A68EF",
+                      border: '1px solid #8A68EF',
 
                       // radio
-                      "& .CheckboxGroup__Checkbox": {
-                        border: variant === "circle" ? "1px solid #4A3880" : "1px solid #8A68EF",
-                        bgColor: variant === "circle" ? "#4A3880" : "#EDE8FC",
+                      '& .CheckboxGroup__Checkbox': {
+                        border:
+                          variant === 'circle'
+                            ? '1px solid #4A3880'
+                            : '1px solid #8A68EF',
+                        bgColor: variant === 'circle' ? '#4A3880' : '#EDE8FC',
                       },
                     },
                     _focus: {
-                      border: "1px solid #8A68EF",
-                      boxShadow: "0px 0px 0px 4px #E3E3FC",
+                      border: '1px solid #8A68EF',
+                      boxShadow: '0px 0px 0px 4px #E3E3FC',
 
                       // radio
-                      "& .CheckboxGroup__Checkbox": {
-                        border: "1px solid #8A68EF",
-                        bgColor: variant === "circle" ? "#8A68EF" : "#EDE8FC",
-                        boxShadow: "0px 0px 0px 4px #F4EBFF",
+                      '& .CheckboxGroup__Checkbox': {
+                        border: '1px solid #8A68EF',
+                        bgColor: variant === 'circle' ? '#8A68EF' : '#EDE8FC',
+                        boxShadow: '0px 0px 0px 4px #F4EBFF',
                       },
                     },
                   }),
                 }),
                 ...(disabled && {
-                  border: "1px solid #EAECF0",
-                  bgColor: "#F9FAFB",
+                  border: '1px solid #EAECF0',
+                  bgColor: '#F9FAFB',
                 }),
                 // common
-                rounded: "8px",
-                position: "relative",
-                padding: "16px",
-                cursor: disabled ? "not-allowed" : "pointer",
-                outline: "none",
+                rounded: '8px',
+                position: 'relative',
+                padding: '16px',
+                cursor: disabled ? 'not-allowed' : 'pointer',
+                outline: 'none',
                 tabIndex: disabled ? -1 : 0,
                 transition: [
-                  "background-color 300ms ease-in-out",
-                  "box-shadow 300ms ease-in-out",
-                  "border-color 300ms ease-in-out",
+                  'background-color 300ms ease-in-out',
+                  'box-shadow 300ms ease-in-out',
+                  'border-color 300ms ease-in-out',
                 ].join(),
                 onClick: disabled
                   ? function () {}
@@ -270,11 +273,11 @@ export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupP
                     },
 
                 /* Accessibility 👌 */
-                role: "checkbox",
-                "aria-label": "Select item " + (index + 1),
-                "aria-rowindex": index,
-                "aria-checked": selected,
-                "aria-disabled": disabled,
+                role: 'checkbox',
+                'aria-label': 'Select item ' + (index + 1),
+                'aria-rowindex': index,
+                'aria-checked': selected,
+                'aria-disabled': disabled,
               },
             };
           },

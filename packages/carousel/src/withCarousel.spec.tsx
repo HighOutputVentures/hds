@@ -1,6 +1,6 @@
-import withCarousel from "./withCarousel";
+import withCarousel from './withCarousel';
 
-describe("withSwitch", () => {
+describe('withSwitch', () => {
   it("Should return theme for 'Switch'", () => {
     expect(withCarousel()).toEqual(
       expect.objectContaining({

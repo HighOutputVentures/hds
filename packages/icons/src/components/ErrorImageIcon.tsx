@@ -11,15 +11,7 @@ const ErrorImageIcon: FC<IconProps> = (props) => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-    <rect
-      x="2"
-      y="2"
-      width="32"
-      height="32"
-      rx="16"
-      stroke="#FCEAE8"
-      strokeWidth="4"
-    />
+    <rect x="2" y="2" width="32" height="32" rx="16" stroke="#FCEAE8" strokeWidth="4" />
   </Icon>
 );
 

@@ -3,8 +3,8 @@ import breakpoints from './breakpoints';
 import colors from './colors';
 import components from './components';
 import config from './config';
-import fontSizes from './fontSizes';
 import fonts from './fonts';
+import fontSizes from './fontSizes';
 import styles from './styles';
 import zIndices from './zIndices';
 

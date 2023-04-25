@@ -1,10 +1,10 @@
-import { chakra, Icon } from "@chakra-ui/react";
-import * as React from "react";
-import CloseIcon from "../icons/CloseIcon";
+import { chakra, Icon } from '@chakra-ui/react';
+import * as React from 'react';
+import CloseIcon from '../icons/CloseIcon';
 
 export const ClearButton = React.forwardRef<
   HTMLButtonElement,
-  React.ComponentProps<"button">
+  React.ComponentProps<'button'>
 >(function ClearButton(props, ref) {
   return (
     <chakra.button
@@ -20,7 +20,7 @@ export const ClearButton = React.forwardRef<
       transition="colors 300ms ease-in-out"
       pointerEvents="all"
       _hover={{
-        color: "blackAlpha.700",
+        color: 'blackAlpha.700',
       }}
       tabIndex={-1}
       {...props}

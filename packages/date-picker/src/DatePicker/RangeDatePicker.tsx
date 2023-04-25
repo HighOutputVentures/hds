@@ -1,17 +1,18 @@
-import { chakra } from "@chakra-ui/react";
-import { Button } from "@highoutput/hds-forms";
-import { addMonths, format, subMonths } from "date-fns";
-import * as React from "react";
-import { v4 as uuid } from "uuid";
-import { DAYS } from "../constants";
-import { useStyles } from "../hooks";
-import { DateRange, Nullable, TimeAdverbial } from "../types";
-import { getDateRangeByTimeAdverbial, getRangeCalendar, invariant, noop } from "../utils";
-import { DatePickerControl } from "./DatePickerControl";
+import { chakra } from '@chakra-ui/react';
+import { Button } from '@highoutput/hds-forms';
+import { addMonths, format, subMonths } from 'date-fns';
+import * as React from 'react';
+import { invariant } from 'shared/utils';
+import { v4 as uuid } from 'uuid';
+import { DAYS } from '../constants';
+import { useStyles } from '../hooks';
+import { DateRange, Nullable, TimeAdverbial } from '../types';
+import { getDateRangeByTimeAdverbial, getRangeCalendar, noop } from '../utils';
+import { DatePickerControl } from './DatePickerControl';
 import {
   useRangeDatePickerContext,
   withRangeDatePickerContext,
-} from "./RangeDatePickerProvider";
+} from './RangeDatePickerProvider';
 
 export type RangeDatePickerProps = {
   /**
@@ -38,7 +39,7 @@ export const RangeDatePicker = withRangeDatePickerContext(function RangeDatePick
 
   React.useEffect(() => {
     if (defaultValue) context.updateSelectedRangeHard(defaultValue);
-  }, [defaultValue]);
+  }, [context, defaultValue]);
 
   return (
     <chakra.div
@@ -127,24 +128,24 @@ function TimeAdverbialMenu() {
         <chakra.button
           key={uuid()}
           sx={{
-            width: "150px",
-            paddingX: "16px",
-            paddingY: "10px",
-            textAlign: "left",
-            rounded: "6px",
-            color: "neutrals.700",
-            fontSize: "14px",
-            lineHeight: "20px",
-            transition: "all 300ms ease-in-out",
+            width: '150px',
+            paddingX: '16px',
+            paddingY: '10px',
+            textAlign: 'left',
+            rounded: '6px',
+            color: 'neutrals.700',
+            fontSize: '14px',
+            lineHeight: '20px',
+            transition: 'all 300ms ease-in-out',
             _hover: {
-              color: "neutrals.900",
-              fontWeight: "medium",
+              color: 'neutrals.900',
+              fontWeight: 'medium',
             },
 
             ...(selected === value && {
-              color: "neutrals.900",
-              bgColor: "neutrals.100",
-              fontWeight: "medium",
+              color: 'neutrals.900',
+              bgColor: 'neutrals.100',
+              fontWeight: 'medium',
               _hover: {},
             }),
           }}
@@ -175,12 +176,12 @@ function SelectedDates() {
   const context = useRangeDatePickerContext();
 
   const start = context.dateRange.start
-    ? format(context.dateRange.start, "MMM dd, yyyy")
-    : "Select date";
+    ? format(context.dateRange.start, 'MMM dd, yyyy')
+    : 'Select date';
 
   const until = context.dateRange.until
-    ? format(context.dateRange.until, "MMM dd, yyyy")
-    : "Select date";
+    ? format(context.dateRange.until, 'MMM dd, yyyy')
+    : 'Select date';
 
   return (
     <chakra.div display="flex" gap="12px" alignItems="center">
@@ -197,17 +198,17 @@ function SelectedDates() {
   );
 }
 
-const SelectedDateItem = chakra("div", {
+const SelectedDateItem = chakra('div', {
   baseStyle: {
-    h: "44px",
-    py: "10px",
-    px: "14px",
-    minW: "125px",
-    border: "1px",
-    borderColor: "neutrals.200",
-    rounded: "4px",
+    h: '44px',
+    py: '10px',
+    px: '14px',
+    minW: '125px',
+    border: '1px',
+    borderColor: 'neutrals.200',
+    rounded: '4px',
     '&[data-placeholder="true"]': {
-      color: "neutrals.500",
+      color: 'neutrals.500',
     },
   },
 });
@@ -216,17 +217,17 @@ function Divider({ isHorizontal }: { isHorizontal?: boolean }) {
   return (
     <chakra.div
       sx={{
-        borderStyle: "solid",
-        borderColor: "gray.100",
+        borderStyle: 'solid',
+        borderColor: 'gray.100',
 
         ...(isHorizontal && {
-          width: "full",
-          borderTopWidth: "1px",
+          width: 'full',
+          borderTopWidth: '1px',
         }),
 
         ...(!isHorizontal && {
-          alignSelf: "stretch",
-          borderLeftWidth: "1px",
+          alignSelf: 'stretch',
+          borderLeftWidth: '1px',
         }),
       }}
     />

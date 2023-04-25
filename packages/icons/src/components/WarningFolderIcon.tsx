@@ -11,15 +11,7 @@ const WarningFolderIcon: FC<IconProps> = (props) => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-    <rect
-      x="3"
-      y="3"
-      width="40"
-      height="40"
-      rx="20"
-      stroke="#FCEFD4"
-      strokeWidth="6"
-    />
+    <rect x="3" y="3" width="40" height="40" rx="20" stroke="#FCEFD4" strokeWidth="6" />
   </Icon>
 );
 

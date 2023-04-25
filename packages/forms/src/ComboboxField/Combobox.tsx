@@ -1,12 +1,12 @@
-import { chakra, Fade, Icon, List, ListItem } from "@chakra-ui/react";
-import * as combobox from "@zag-js/combobox";
-import { normalizeProps, useMachine } from "@zag-js/react";
-import * as React from "react";
-import { v4 as uuid } from "uuid";
-import { useStyles } from "../hooks";
-import ChevronDownIcon from "../icons/ChevronDownIcon";
-import CloseIcon from "../icons/CloseIcon";
-import { Nullable, Size } from "../types";
+import { chakra, Fade, Icon, List, ListItem } from '@chakra-ui/react';
+import * as combobox from '@zag-js/combobox';
+import { normalizeProps, useMachine } from '@zag-js/react';
+import * as React from 'react';
+import { v4 as uuid } from 'uuid';
+import { useStyles } from '../hooks';
+import ChevronDownIcon from '../icons/ChevronDownIcon';
+import CloseIcon from '../icons/CloseIcon';
+import { Nullable, Size } from '../types';
 
 export type Option = {
   label: string;
@@ -16,9 +16,9 @@ export type Option = {
 export interface ComboboxProps<T extends Option[]> {
   size?: Size;
   name?: string;
-  value?: T[number]["value"];
+  value?: T[number]['value'];
   options?: T;
-  onChange?(newValue: Nullable<T[number]["value"]>): void;
+  onChange?(newValue: Nullable<T[number]['value']>): void;
   leftIcon?: JSX.Element;
   placeholder?: string;
   autoFocus?: boolean;
@@ -41,7 +41,10 @@ export interface ComboboxProps<T extends Option[]> {
  * @link https://zagjs.com/components/react/combobox
  *
  */
-export default function Combobox<T extends Option[]>(props: ComboboxProps<T>) {
+function Combobox<T extends Option[]>(
+  props: ComboboxProps<T>,
+  ref: React.ForwardedRef<HTMLInputElement>,
+) {
   const {
     options = [],
     leftIcon,
@@ -62,7 +65,7 @@ export default function Combobox<T extends Option[]>(props: ComboboxProps<T>) {
   const [items, setItems] = React.useState<T[number][]>(options);
   const selected = React.useMemo(
     () => options.find((o) => o.value === value),
-    [value],
+    [options, value],
   );
 
   const [state, send] = useMachine(
@@ -91,7 +94,7 @@ export default function Combobox<T extends Option[]>(props: ComboboxProps<T>) {
         gutter: 1,
       },
       allowCustomValue: false,
-      inputBehavior: "autohighlight",
+      inputBehavior: 'autohighlight',
       selectInputOnFocus: true,
       ...(!!selected && {
         selectionData: {
@@ -129,6 +132,7 @@ export default function Combobox<T extends Option[]>(props: ComboboxProps<T>) {
           )}
 
           <chakra.input
+            ref={ref}
             {...api.inputProps}
             sx={styles.field}
             data-testid="hds.combobox.controls.input"
@@ -155,10 +159,7 @@ export default function Combobox<T extends Option[]>(props: ComboboxProps<T>) {
             {...api.triggerProps}
             data-testid="hds.combobox.controls.toggle"
           >
-            <Icon
-              as={ChevronDownIcon}
-              sx={styles.icon({ isRotated: api.isOpen })}
-            />
+            <Icon as={ChevronDownIcon} sx={styles.icon({ isRotated: api.isOpen })} />
           </chakra.button>
         </chakra.div>
       </chakra.div>
@@ -201,3 +202,7 @@ export default function Combobox<T extends Option[]>(props: ComboboxProps<T>) {
     </chakra.div>
   );
 }
+
+export default React.forwardRef(Combobox) as <T extends Option[]>(
+  props: ComboboxProps<T> & { ref: React.ForwardedRef<HTMLInputElement> },
+) => JSX.Element;
