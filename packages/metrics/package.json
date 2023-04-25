@@ -1,6 +1,6 @@
 {
   "name": "@highoutput/hds-metrics",
-  "version": "0.2.11",
+  "version": "0.3.0",
   "license": "MIT",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -11,11 +11,11 @@
     }
   },
   "dependencies": {
-    "@highoutput/hds-icons": "*"
+    "@highoutput/hds-icons": "^0.3.0"
   },
   "publishConfig": {
     "access": "public",
     "directory": "../../dist/packages/metrics"
   },
-  "gitHead": "be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef"
+  "gitHead": "2b6871f517dd97247a559c58ce69524365953220"
 }

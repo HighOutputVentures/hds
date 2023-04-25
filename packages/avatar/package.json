@@ -1,6 +1,6 @@
 {
   "name": "@highoutput/hds-avatar",
-  "version": "0.2.8",
+  "version": "0.3.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -10,12 +10,12 @@
     }
   },
   "dependencies": {
-    "@highoutput/hds-tooltip": "*",
+    "@highoutput/hds-tooltip": "^0.3.0",
     "uuid": "9.0.0"
   },
   "publishConfig": {
     "access": "public",
     "directory": "../../dist/packages/avatar"
   },
-  "gitHead": "be3148de1143a4a0bc63fa6c7a3a9c4d16ffafef"
+  "gitHead": "2b6871f517dd97247a559c58ce69524365953220"
 }

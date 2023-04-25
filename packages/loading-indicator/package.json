@@ -1,6 +1,6 @@
 {
   "name": "@highoutput/hds-loading-indicator",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -12,5 +12,6 @@
   "publishConfig": {
     "access": "public",
     "directory": "../../dist/packages/loading-indicator"
-  }
+  },
+  "gitHead": "2b6871f517dd97247a559c58ce69524365953220"
 }
