@@ -1,168 +1,307 @@
 import {
-  As,
   Box,
-  Icon,
+  Flex,
+  Heading,
   Modal as ChakraModal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalFooter,
-  ModalHeader,
   ModalOverlay,
   ModalProps as ChakraModalProps,
+  Spacer,
+  SystemStyleObject,
+  Text,
 } from '@chakra-ui/react';
 import { Button } from '@highoutput/hds-forms';
-import * as React from 'react';
-
-type Size = 'lg' | 'md' | 'sm' | 'xs';
-
-type Align = 'left' | 'center' | 'right';
+import { ReactNode, useRef } from 'react';
+import { Size } from './types';
+import { useStyles } from './useStyles';
 
 type BaseProps = Pick<
   ChakraModalProps,
-  | 'children'
-  | 'isCentered'
+  | 'trapFocus'
   | 'closeOnEsc'
-  | 'closeOnOverlayClick'
   | 'blockScrollOnMount'
+  | 'closeOnOverlayClick'
   | 'lockFocusAcrossFrames'
   | 'preserveScrollBarGap'
 >;
 
-export interface ModalProps extends BaseProps {
-  size?: Size;
-  icon?: As;
-  title?: React.ReactNode;
-  align?: Align;
-  isOpen?: boolean;
-  onClose?(): void;
-  onConfirm?(): void;
-  isLoading?: boolean;
-  /**
-   *
-   * If set to `false`, button will be hidden.
-   * If set to `string`, it will be used as label.
-   * If set to `true`, will show the button with the default label
-   *
-   * @default
-   * "Okay"
-   *
-   */
-  closeButton?: string | boolean;
-  /**
-   *
-   * If set to `false`, button will be hidden.
-   * If set to `string`, it will be used as label.
-   * If set to `true`, will show the button with the default label
-   *
-   * @default
-   * false
-   *
-   */
-  confirmButton?: string | boolean;
-}
-
-const sizeMap = {
-  xs: 'sm',
-  sm: 'lg',
-  md: '3xl',
-  lg: '6xl',
+type TestingProps = {
+  __iconTestId?: string;
+  __titleTestId?: string;
+  __modalTestId?: string;
+  __messageTestId?: string;
+  __contentTestId?: string;
+  __childrenTestId?: string;
+  __closeButtonTestId?: string;
+  __cancelButtonTestId?: string;
+  __okayButtonTestId?: string;
 };
 
-export const Modal: React.FC<ModalProps> = (props) => {
+export type ModalProps = BaseProps &
+  TestingProps & {
+    size?: Size;
+    icon?: JSX.Element;
+    title?: ReactNode;
+    /** aka. subtitle */
+    message?: ReactNode;
+    isOpen?: boolean;
+    /** Changes okay button's `accent` to error */
+    isDanger?: boolean;
+    /** applies `loading` and `disabled` state to buttons */
+    isLoading?: boolean;
+    /** Centers icon, title and message. only applies if size is `sm` or `md` */
+    isCentered?: boolean;
+    onOkay?(): void;
+    onCancel?(): void;
+    hasOkayButton?: boolean;
+    hasCancelButton?: boolean;
+    okayButtonLabel?: string;
+    cancelButtonLabel?: string;
+    hasCloseButton?: boolean;
+    children?: ReactNode;
+  };
+
+/**
+ *
+ * @example
+ * <Modal
+ *   isOpen={disclosure.isOpen}
+ *   onClose={disclosure.onClose}
+ *   onConfirm={handleConfirm}
+ *   icon={<Icon as={AwesomeIcon} w={12} h={12} />}
+ *   title="This is a title"
+ *   message="This is a message aka subtitle"
+ * >
+ *   This is a custom children
+ * </Modal>
+ */
+export function Modal(props: ModalProps & SystemStyleObject) {
   const {
-    size = 'sm',
-    align,
+    size = 'md',
     icon,
     title,
+    message,
     isOpen = false,
+    isDanger = false,
     isLoading = false,
-    onClose = noop,
-    onConfirm = noop,
+    isCentered = false,
+    onOkay = function noop() {},
+    onCancel = function noop() {},
     children,
-    closeButton = 'Close',
-    confirmButton = false,
+    hasOkayButton = true,
+    hasCancelButton = true,
+    hasCloseButton = true,
+    okayButtonLabel = 'Okay',
+    cancelButtonLabel = 'Cancel',
+
+    __modalTestId = 'hds.modal',
+    __iconTestId = 'hds.modal.icon',
+    __titleTestId = 'hds.modal.title',
+    __messageTestId = 'hds.modal.message',
+    __contentTestId = 'hds.modal.content',
+    __childrenTestId = 'hds.modal.children',
+    __closeButtonTestId = 'hds.modal.controls.close',
+    __cancelButtonTestId = 'hds.modal.controls.cancel',
+    __okayButtonTestId = 'hds.modal.controls.okay',
+
+    trapFocus = true,
+    closeOnEsc = false,
+    closeOnOverlayClick = false,
+    blockScrollOnMount = true,
+    preserveScrollBarGap = true,
+    lockFocusAcrossFrames = true,
+
     ...others
-  } = Object.assign(
-    {
-      closeOnEsc: false,
-      closeOnOverlayClick: false,
-      blockScrollOnMount: true,
-      preserveScrollBarGap: true,
-      lockFocusAcrossFrames: true,
-    },
-    props,
-  );
+  } = Object.assign({}, props);
 
-  const closeButtonRef = React.useRef<HTMLButtonElement>(null);
+  const cancelButtonRef = useRef<HTMLButtonElement>(null);
+  const styles = useStyles({ size });
 
-  const shouldShowFooter = !!closeButton || !!confirmButton;
+  const isSmall = size === 'sm' || size === 'md';
+  const isMedium = size === 'lg' || size === 'xl';
+
+  const hasIcon = !!icon;
+  const hasTitle = !!title;
+  const hasMessage = !!message;
+  const hasChildren = !!children;
+  const hasButtons = hasOkayButton || hasCancelButton;
+  const hasHeader = hasIcon || hasTitle || hasMessage;
 
   return (
     <ChakraModal
-      size={sizeMap[size]}
       isOpen={isOpen}
-      onClose={onClose}
-      initialFocusRef={closeButtonRef}
-      {...others}
+      onClose={onCancel}
+      trapFocus={trapFocus}
+      closeOnEsc={closeOnEsc}
+      closeOnOverlayClick={closeOnOverlayClick}
+      initialFocusRef={cancelButtonRef}
+      blockScrollOnMount={blockScrollOnMount}
+      preserveScrollBarGap={preserveScrollBarGap}
+      lockFocusAcrossFrames={lockFocusAcrossFrames}
     >
-      <ModalOverlay bgColor="rgba(52, 64, 84, 0.7)" backdropFilter="blur(8px)" />
+      <ModalOverlay
+        sx={{
+          bgColor: 'rgba(52, 64, 84, 0.7)',
+          backdropFilter: 'blur(8px)',
+        }}
+      />
 
-      <ModalContent textAlign={align} data-testid="hds.modal">
-        <ModalCloseButton />
-        <ModalHeader>
-          {!!icon && (
+      <ModalContent sx={{ ...styles.container, ...others }} data-testid={__modalTestId}>
+        <ModalBody
+          sx={{
+            width: 'full',
+            padding: '24px',
+          }}
+          data-testid={__contentTestId}
+        >
+          <Flex gap="24px">
+            {hasIcon && isMedium && <Box data-testid={__iconTestId}>{icon}</Box>}
+
+            <Box>
+              <Flex
+                sx={{
+                  gap: '24px',
+
+                  ...(isSmall && {
+                    justifyContent: 'space-between',
+                  }),
+
+                  ...(isMedium && {
+                    alignItems: 'center',
+                  }),
+                }}
+              >
+                {isSmall && isCentered && <Box w="24px" />}
+                {isSmall && hasIcon && <Box data-testid={__iconTestId}>{icon}</Box>}
+                {isMedium && hasTitle && (
+                  <Heading
+                    sx={{
+                      ...styles.title,
+                      flexGrow: 1,
+                    }}
+                    data-testid={__titleTestId}
+                  >
+                    {title}
+                  </Heading>
+                )}
+
+                {hasCloseButton && (
+                  <ModalCloseButton
+                    sx={styles.closeButton}
+                    data-testid={__closeButtonTestId}
+                  />
+                )}
+              </Flex>
+
+              {isSmall && hasTitle && (
+                <Heading
+                  sx={{
+                    ...styles.title,
+
+                    ...(hasIcon && {
+                      marginTop: '20px',
+                    }),
+
+                    ...(isCentered && {
+                      textAlign: 'center',
+                    }),
+
+                    ...(!isCentered && {
+                      textAlign: 'left',
+                    }),
+                  }}
+                  data-testid={__titleTestId}
+                >
+                  {title}
+                </Heading>
+              )}
+
+              {hasMessage && (
+                <Text
+                  sx={{
+                    ...styles.message,
+
+                    ...(isMedium && {
+                      marginTop: '4px',
+                    }),
+
+                    ...(isSmall && {
+                      marginTop: '8px',
+                      textAlign: 'left',
+
+                      ...(isCentered && { textAlign: 'center' }),
+                    }),
+                  }}
+                  data-testid={__messageTestId}
+                >
+                  {message}
+                </Text>
+              )}
+            </Box>
+          </Flex>
+
+          {hasChildren && (
             <Box
               sx={{
-                pl: '4',
-                pt: '4',
-                ...(align === 'right' && {
-                  mr: 5,
-                  mt: 7,
+                ...(hasHeader && {
+                  marginTop: '20px',
                 }),
               }}
-              data-testid="hds.modal.icon"
+              data-testid={__childrenTestId}
             >
-              <Icon as={icon} width="48px" height="48px" />
+              {children}
             </Box>
           )}
 
-          <Box data-testid="hds.modal.title">{title}</Box>
-        </ModalHeader>
+          {hasButtons && (
+            <Flex marginTop="32px">
+              {isMedium && <Spacer />}
 
-        <ModalBody data-testid="hds.modal.body">{children}</ModalBody>
+              <Flex
+                sx={{
+                  gap: '12px',
 
-        {shouldShowFooter && (
-          <ModalFooter display="flex" width="full" justifyContent="flex-end" gap={4}>
-            {!!closeButton && (
-              <Button
-                ref={closeButtonRef}
-                onClick={onClose}
-                flexGrow={1}
-                accent="gray"
-                variant="outline"
-                isDisabled={isLoading}
-                __testId="hds.modal.close-button"
+                  ...(isSmall && {
+                    width: 'full',
+                  }),
+
+                  ...(isMedium && {
+                    width: 'auto',
+                  }),
+                }}
               >
-                {typeof closeButton === 'string' ? closeButton : 'Okay'}
-              </Button>
-            )}
+                {hasCancelButton && (
+                  <Button
+                    ref={cancelButtonRef}
+                    variant="outline"
+                    accent="gray"
+                    onClick={onCancel}
+                    flexGrow={1}
+                    isDisabled={isLoading}
+                    __testId={__cancelButtonTestId}
+                  >
+                    {cancelButtonLabel}
+                  </Button>
+                )}
 
-            {!!confirmButton && (
-              <Button
-                flexGrow={1}
-                onClick={onConfirm}
-                isLoading={isLoading}
-                __testId="hds.modal.submit-button"
-              >
-                {typeof confirmButton === 'string' ? confirmButton : 'Confirm'}
-              </Button>
-            )}
-          </ModalFooter>
-        )}
+                {hasOkayButton && (
+                  <Button
+                    onClick={onOkay}
+                    flexGrow={1}
+                    isLoading={isLoading}
+                    __testId={__okayButtonTestId}
+                    {...(isDanger && { accent: 'error' })}
+                  >
+                    {okayButtonLabel}
+                  </Button>
+                )}
+              </Flex>
+            </Flex>
+          )}
+        </ModalBody>
       </ModalContent>
     </ChakraModal>
   );
-};
-
-function noop() {}
+}

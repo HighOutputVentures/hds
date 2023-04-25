@@ -1,128 +1,169 @@
 import { faker } from '@faker-js/faker';
-import { ThemeProvider } from '@highoutput/hds';
-import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { Modal } from './Modal';
 
-const title = faker.lorem.word();
-const body = faker.lorem.paragraph(2);
-
-const onClose = jest.fn();
-const onConfirm = jest.fn();
-
-const closeButtonLabel = faker.lorem.word();
-const confirmButtonLabel = faker.lorem.word();
+const mockedTitle = faker.random.word();
+const mockedMessage = faker.lorem.paragraph();
+const mockedOnOkay = jest.fn();
+const mockedOnCancel = jest.fn();
+const mockedChildren = faker.random.word();
 
 describe('Modal', () => {
-  it('should render modal', async () => {
-    render(<TestComponent />);
-
-    await userEvent.click(screen.getByTestId('trigger'));
-
-    await waitFor(() => {
-      expect(screen.getByTestId('hds.modal')).toBeInTheDocument();
-    });
-  });
-
-  it('should render the correct title passed', async () => {
-    render(<TestComponent />);
-
-    await userEvent.click(screen.getByTestId('trigger'));
-
-    await waitFor(() => {
-      expect(screen.getByTestId('hds.modal')).toBeInTheDocument();
-    });
-
-    expect(screen.getByTestId('hds.modal.title')).toHaveTextContent(title);
-  });
-
-  it('should render the correct body content', async () => {
-    render(<TestComponent />);
-
-    await userEvent.click(screen.getByTestId('trigger'));
-
-    await waitFor(() => {
-      expect(screen.getByTestId('hds.modal')).toBeInTheDocument();
-    });
-
-    expect(screen.getByTestId('hds.modal.body')).toHaveTextContent(body);
-  });
-
-  it("should render the correct text passed in 'close' and 'confirm' button", async () => {
-    render(<TestComponent />);
-
-    await userEvent.click(screen.getByTestId('trigger'));
-
-    await waitFor(() => {
-      expect(screen.getByTestId('hds.modal')).toBeInTheDocument();
-    });
-
-    expect(screen.getByTestId('hds.modal.close-button')).toHaveTextContent(
-      closeButtonLabel,
+  beforeEach(() => {
+    render(
+      <TestComponent
+        title={mockedTitle}
+        message={mockedMessage}
+        onOkay={mockedOnOkay}
+        onCancel={mockedOnCancel}
+      >
+        {mockedChildren}
+      </TestComponent>,
     );
-    expect(screen.getByTestId('hds.modal.submit-button')).toHaveTextContent(
-      confirmButtonLabel,
-    );
+  });
+
+  it('Should render modal', async () => {
+    expect(screen.getByTestId('trigger')).toBeInTheDocument();
+
+    await userEvent.click(screen.getByTestId('trigger'));
+    await waitFor(() => {
+      expect(screen.getByTestId('hds.modal')).toBeInTheDocument();
+    });
+  });
+
+  it('Should render icon', async () => {
+    expect(screen.getByTestId('trigger')).toBeInTheDocument();
+
+    await userEvent.click(screen.getByTestId('trigger'));
+    await waitFor(() => {
+      expect(screen.getByTestId('hds.modal.icon')).toBeInTheDocument();
+    });
+  });
+
+  it('Should render title', async () => {
+    expect(screen.getByTestId('trigger')).toBeInTheDocument();
+
+    await userEvent.click(screen.getByTestId('trigger'));
+    await waitFor(() => {
+      expect(screen.getByTestId('hds.modal.title')).toBeInTheDocument();
+    });
+  });
+
+  it('Should render message', async () => {
+    expect(screen.getByTestId('trigger')).toBeInTheDocument();
+
+    await userEvent.click(screen.getByTestId('trigger'));
+    await waitFor(() => {
+      expect(screen.getByTestId('hds.modal.children')).toBeInTheDocument();
+    });
+  });
+
+  it('Should render children', async () => {
+    expect(screen.getByTestId('trigger')).toBeInTheDocument();
+
+    await userEvent.click(screen.getByTestId('trigger'));
+    await waitFor(() => {
+      expect(screen.getByTestId('hds.modal.message')).toBeInTheDocument();
+    });
+  });
+
+  it('Should render cancel button', async () => {
+    expect(screen.getByTestId('trigger')).toBeInTheDocument();
+
+    await userEvent.click(screen.getByTestId('trigger'));
+    await waitFor(() => {
+      expect(screen.getByTestId('hds.modal.controls.close')).toBeInTheDocument();
+      expect(screen.getByTestId('hds.modal.controls.cancel')).toBeInTheDocument();
+    });
+  });
+
+  it('Should render okay button', async () => {
+    expect(screen.getByTestId('trigger')).toBeInTheDocument();
+
+    await userEvent.click(screen.getByTestId('trigger'));
+    await waitFor(() => {
+      expect(screen.getByTestId('hds.modal.controls.okay')).toBeInTheDocument();
+    });
+  });
+
+  test("'children'", async () => {
+    expect(screen.getByTestId('trigger')).toBeInTheDocument();
+
+    await userEvent.click(screen.getByTestId('trigger'));
+    await waitFor(() => {
+      expect(screen.getByTestId('hds.modal.children')).toBeInTheDocument();
+      expect(screen.getByTestId('hds.modal.children')).toHaveTextContent(mockedChildren);
+    });
   });
 
   test("'onCancel'", async () => {
-    render(<TestComponent />);
+    expect(screen.getByTestId('trigger')).toBeInTheDocument();
 
     await userEvent.click(screen.getByTestId('trigger'));
-
     await waitFor(() => {
-      expect(screen.getByTestId('hds.modal')).toBeInTheDocument();
+      expect(screen.getByTestId('hds.modal.controls.cancel')).toBeInTheDocument();
     });
 
-    await act(async () => {
-      fireEvent.click(screen.getByTestId('hds.modal.close-button'));
-    });
-
+    await userEvent.click(screen.getByTestId('hds.modal.controls.cancel'));
     await waitFor(() => {
-      expect(onClose).toHaveBeenCalled();
+      expect(mockedOnCancel).toHaveBeenCalled();
     });
   });
 
-  test("'onConfirm'", async () => {
-    render(<TestComponent />);
+  test("'onOkay'", async () => {
+    expect(screen.getByTestId('trigger')).toBeInTheDocument();
 
     await userEvent.click(screen.getByTestId('trigger'));
-
     await waitFor(() => {
-      expect(screen.getByTestId('hds.modal')).toBeInTheDocument();
+      expect(screen.getByTestId('hds.modal.controls.okay')).toBeInTheDocument();
     });
 
-    await act(async () => {
-      fireEvent.click(screen.getByTestId('hds.modal.submit-button'));
-    });
-
+    await userEvent.click(screen.getByTestId('hds.modal.controls.okay'));
     await waitFor(() => {
-      expect(onConfirm).toHaveBeenCalled();
+      expect(mockedOnOkay).toHaveBeenCalled();
     });
   });
 });
 
-function TestComponent() {
+function TestComponent({
+  title,
+  message,
+  onOkay,
+  onCancel,
+  children,
+}: {
+  title: string;
+  message: string;
+  onOkay(): void;
+  onCancel(): void;
+  children: ReactNode;
+}) {
   const [isOpen, setOpen] = useState(false);
 
   return (
-    <ThemeProvider>
+    <div>
       <button data-testid="trigger" onClick={() => setOpen(true)}>
-        Click me
+        Click
       </button>
 
       <Modal
-        size="sm"
-        isOpen={isOpen}
+        icon={<div />}
         title={title}
-        closeButton={closeButtonLabel}
-        confirmButton={confirmButtonLabel}
-        onClose={onClose}
-        onConfirm={onConfirm}
+        message={message}
+        isOpen={isOpen}
+        onCancel={() => {
+          onCancel();
+          setOpen(false);
+        }}
+        onOkay={() => {
+          onOkay();
+          setOpen(false);
+        }}
       >
-        {body}
+        {children}
       </Modal>
-    </ThemeProvider>
+    </div>
   );
 }
