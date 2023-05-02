@@ -72,8 +72,10 @@ export default React.forwardRef<HTMLDivElement, BreadcrumbProps & SystemStyleObj
               isCurrentPage={shouldSelectHome}
               sx={styles.link}
             >
-              <Icon as={HomeIcon} w={4} h={4} />
-              <VisuallyHidden>Go to Homepage</VisuallyHidden>
+              <React.Fragment>
+                <Icon as={HomeIcon} w={4} h={4} />
+                <VisuallyHidden>Go to Homepage</VisuallyHidden>
+              </React.Fragment>
             </BreadcrumbLink>
           </BreadcrumbItem>
         )}
