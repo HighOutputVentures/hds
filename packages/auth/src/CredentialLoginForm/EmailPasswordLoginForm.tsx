@@ -13,7 +13,7 @@ type ButtonConfig = {
   label?: string;
 };
 
-export type EmailPasswordLoginFormProps = SystemStyleObject & {
+export type EmailPasswordLoginFormProps = Omit<SystemStyleObject, 'onSubmit'> & {
   emailAdd?: FieldConfig;
   password?: FieldConfig;
   submitBtn?: ButtonConfig;

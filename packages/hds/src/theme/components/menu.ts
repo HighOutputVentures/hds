@@ -9,7 +9,7 @@ export const Menu: MultiStyleConfig = {
       borderColor: 'Gray.100',
       rounded: '8px',
       overflow: 'hidden',
-      minWidth: '150px',
+      minWidth: '175px',
       boxShadow:
         '0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)',
     },
@@ -24,6 +24,9 @@ export const Menu: MultiStyleConfig = {
       color: 'neutrals.900',
       '& svg': {
         color: 'Gray.700',
+      },
+      '& .chakra-menu__icon-wrapper': {
+        margin: '0px',
       },
       _hover: {
         bgColor: 'neutrals.100',

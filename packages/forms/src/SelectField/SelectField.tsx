@@ -52,6 +52,7 @@ function SelectField<T extends Option>(
     onChange,
     leftIcon,
     placeholder,
+    zIndex = 'modal',
     renderOption = (item) => <chakra.div>{String(item.label)}</chakra.div>,
     __fieldTestId = 'hds.select-field.input',
     __optionTestId = 'hds.select-field.option',
@@ -194,6 +195,7 @@ function SelectField<T extends Option>(
                 position: strategy,
                 top: `${y ?? 0}px`,
                 left: `${x ?? 0}px`,
+                zIndex,
               }}
             >
               <chakra.ul
