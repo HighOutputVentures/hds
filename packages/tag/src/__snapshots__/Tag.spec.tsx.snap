@@ -45,11 +45,10 @@ exports[`Snapshot Should match snapshot 1`] = `
       onMouseUp={[Function]}
     >
       <svg
-        className="chakra-icon css-5g75q4"
+        className="chakra-icon css-125z2g9"
         fill="none"
         focusable={false}
         height="10"
-        isChecked={false}
         viewBox="0 0 10 10"
         width="10"
         xmlns="http://www.w3.org/2000/svg"

@@ -1,5 +1,3 @@
-export type Nullable<T> = T | null;
-
 export interface CalendarObject {
   value: Date;
   isToday?: boolean;
@@ -15,8 +13,8 @@ export interface RangeCalendarObject extends CalendarObject {
 }
 
 export type DateRange = {
-  start: Nullable<Date>;
-  until: Nullable<Date>;
+  start: Date;
+  until: Date;
 };
 
 export enum TimeAdverbial {

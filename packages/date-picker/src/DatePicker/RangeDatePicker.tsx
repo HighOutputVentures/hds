@@ -6,7 +6,7 @@ import { invariant } from 'shared/utils';
 import { v4 as uuid } from 'uuid';
 import { DAYS } from '../constants';
 import { useStyles } from '../hooks';
-import { DateRange, Nullable, TimeAdverbial } from '../types';
+import { DateRange, TimeAdverbial } from '../types';
 import { getDateRangeByTimeAdverbial, getRangeCalendar, noop } from '../utils';
 import { DatePickerControl } from './DatePickerControl';
 import {
@@ -21,8 +21,8 @@ export type RangeDatePickerProps = {
    *
    */
   events?: Date[];
-  onApply?(value: { [P in keyof DateRange]: NonNullable<DateRange[P]> }): void;
-  onCancel?(currentValue: DateRange): void;
+  onApply?(value: DateRange): void;
+  onCancel?(currentValue: Partial<DateRange>): void;
   defaultValue?: DateRange;
   hasTimeAdverbial?: boolean;
   includePreviousMonth?: boolean;
@@ -114,11 +114,11 @@ export const RangeDatePicker = withRangeDatePickerContext(function RangeDatePick
 function TimeAdverbialMenu() {
   const context = useRangeDatePickerContext();
 
-  const [selected, setSelected] = React.useState<Nullable<TimeAdverbial>>(null);
+  const [selected, setSelected] = React.useState<TimeAdverbial | undefined>();
 
   React.useEffect(() => {
     return () => {
-      setSelected(null);
+      setSelected(undefined);
     };
   }, []);
 

@@ -1,83 +1,72 @@
+import { Box, chakra, Icon, useDisclosure } from '@chakra-ui/react';
 import {
-  Box,
-  Icon,
-  SystemStyleObject,
-  useDisclosure,
-  useOutsideClick,
-} from '@chakra-ui/react';
-import {
-  autoPlacement,
   autoUpdate,
+  flip,
+  FloatingPortal,
+  useDismiss,
   useFloating,
+  useInteractions,
+  useMergeRefs,
   useTransitionStyles,
 } from '@floating-ui/react';
-import { TextField } from '@highoutput/hds-forms';
+import { FormGroup, FormGroupProps } from '@highoutput/hds-forms';
 import { format } from 'date-fns';
 import * as React from 'react';
 import { DatePicker } from '../DatePicker/DatePicker';
 import CalendarIcon from '../icons/CalendarIcon';
-import { Nullable } from '../types';
 import { noop } from '../utils';
-import { ClearButton } from './ClearButton';
+import { Field } from './components';
 
 type Size = 'sm' | 'md';
 
-export type DatePickerInputProps = {
-  id?: string;
+export type DatePickerInputProps = FormGroupProps & {
   size?: Size;
-  name?: string;
-  value?: Nullable<Date>;
-  onChange?(newValue: Nullable<Date>): void;
+  value?: Date;
+  onChange?(newValue: Date): void;
   placeholder?: string;
-  isInvalid?: boolean;
-  isDisabled?: boolean;
-  isReadOnly?: boolean;
-  isClearable?: boolean;
   dateFormat?: ((value: Date) => string) | string;
 };
 
-type StylingProps = Omit<SystemStyleObject, keyof Required<DatePickerInputProps>>;
-
-export function DatePickerInput({
-  id,
-  size = 'md',
-  name,
-  value,
-  onChange = noop,
-  placeholder,
-  isInvalid,
-  isDisabled,
-  isReadOnly,
-  dateFormat,
-  isClearable,
-  zIndex = 1,
-  ...others
-}: DatePickerInputProps & StylingProps) {
-  const inputRef = React.useRef<HTMLInputElement>(null);
-  const containerRef = React.useRef<HTMLDivElement>(null);
-
-  const { isOpen, onOpen, onClose } = useDisclosure();
+const DatePickerInput$ = function DatePickerInput(
+  {
+    size = 'md',
+    value,
+    onChange = noop,
+    dateFormat,
+    placeholder,
+    zIndex = 1,
+    ...formGroupProps
+  }: DatePickerInputProps,
+  ref: React.ForwardedRef<HTMLButtonElement>,
+) {
+  const { isOpen, onOpen, onClose, onToggle } = useDisclosure();
 
   const { refs, strategy, x, y, context } = useFloating({
+    open: isOpen,
+    onOpenChange(v) {
+      if (v) {
+        onOpen();
+      } else {
+        onClose();
+      }
+    },
+    strategy: 'fixed',
+    placement: 'bottom-start',
     whileElementsMounted: autoUpdate,
-    middleware: [
-      autoPlacement({
-        allowedPlacements: [
-          /* ⚠️ order matters here */
-          'bottom-start',
-          'bottom-end',
-          'top-start',
-          'top-end',
-        ],
-        alignment: 'start',
-      }),
-    ],
-    open: isOpen && !isReadOnly,
+    middleware: [flip()],
   });
 
-  const { isMounted, styles } = useTransitionStyles(context);
+  const fieldRef = useMergeRefs([ref, refs.setReference]);
 
-  useOutsideClick({ ref: containerRef, handler: onClose });
+  const { isMounted, styles } = useTransitionStyles(context, {
+    duration: {
+      open: 150,
+      close: 100,
+    },
+  });
+
+  const dismiss = useDismiss(context);
+  const { getFloatingProps, getReferenceProps } = useInteractions([dismiss]);
 
   const dateToString = React.useCallback(
     (d: Date) => {
@@ -93,74 +82,80 @@ export function DatePickerInput({
   );
 
   return (
-    <Box ref={containerRef} sx={others} data-testid="hds.datepicker-input">
-      <Box
-        ref={refs.setReference}
-        sx={{
-          _hover: {
-            '& .HdsDatePickerInputClearButton': {
-              display: 'flex!important',
-            },
-          },
-        }}
-        data-testid="hds.datepicker-input.controls"
-      >
-        <TextField
-          ref={inputRef}
-          id={id}
-          size={size}
-          name={name}
-          value={value ? dateToString(value) : ''}
-          placeholder={placeholder}
-          isReadOnly={isReadOnly}
-          isDisabled={isDisabled}
-          onFocus={onOpen}
-          onChange={noop}
-          leftIcon={<Icon as={CalendarIcon} width="20px" height="20px" />}
-          {...(!!isClearable &&
-            !isDisabled &&
-            !isReadOnly &&
-            !!value && {
-              rightIcon: (
-                <ClearButton
-                  onClick={() => {
-                    onChange(null);
-                    inputRef.current?.focus();
-                  }}
-                  className="HdsDatePickerInputClearButton"
-                  data-testid="hds.datepicker-input.controls.clear"
-                />
-              ),
-            })}
-          __fieldTestId="hds.datepicker-input.controls.input"
-        />
-      </Box>
+    <>
+      <FormGroup {...formGroupProps}>
+        {({ errorId, errorMsg, isInvalid, isDisabled, hintId, id }) => (
+          <Field
+            id={id}
+            ref={fieldRef}
+            size={size}
+            onClick={onToggle}
+            sx={{
+              ...(size === 'sm' && { h: '40px', py: '8px', px: '12px' }),
+              ...(size === 'md' && { h: '44px', py: '10px', px: '14px' }),
+            }}
+            {...{
+              'aria-describedby': hintId,
+              ...(isInvalid && {
+                'aria-invalid': true,
+                'aria-describedby': errorId,
+                'aria-errormessage': errorMsg,
+              }),
+              ...(isDisabled && {
+                disabled: true,
+              }),
+              ...(isOpen && {
+                'data-active': true,
+              }),
+              'data-testid': 'hds.datepicker-input',
+            }}
+            {...getReferenceProps()}
+          >
+            <Icon as={CalendarIcon} width="20px" height="20px" color="neutrals.500" />
+
+            <chakra.span
+              sx={{
+                ...(!value /* placeholder */ && {
+                  color: 'neutrals.500',
+                  ...(isDisabled && {
+                    color: 'neutrals.300',
+                  }),
+                }),
+              }}
+            >
+              {value ? dateToString(value) : placeholder}
+            </chakra.span>
+          </Field>
+        )}
+      </FormGroup>
 
       {isMounted && (
-        <Box
-          ref={refs.setFloating}
-          sx={{
-            top: `${y ?? 0}px`,
-            left: `${x ?? 0}px`,
-            position: strategy,
-            marginTop: '1px',
-            /*
-             * only calendar needs the zIndex
-             */
-            zIndex,
-            ...styles,
-          }}
-          data-testid="hds.datepicker-input.calendar-container"
-        >
-          <DatePicker
-            value={value ?? null}
-            onChange={(newValue) => {
-              onChange(newValue);
-              onClose();
+        <FloatingPortal>
+          <Box
+            ref={refs.setFloating}
+            sx={{
+              top: `${y ?? 0}px`,
+              left: `${x ?? 0}px`,
+              position: strategy,
+              zIndex,
+              ...styles,
             }}
-          />
-        </Box>
+            {...getFloatingProps()}
+          >
+            <DatePicker
+              value={value}
+              onChange={(newValue) => {
+                onChange(newValue);
+                onClose();
+              }}
+            />
+          </Box>
+        </FloatingPortal>
       )}
-    </Box>
+    </>
   );
-}
+};
+
+export const DatePickerInput = React.forwardRef(DatePickerInput$) as (
+  props: DatePickerInputProps & { ref?: React.ForwardedRef<HTMLButtonElement> },
+) => JSX.Element;

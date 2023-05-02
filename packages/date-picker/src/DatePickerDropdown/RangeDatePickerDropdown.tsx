@@ -1,16 +1,15 @@
+import { chakra, useDisclosure, UseDisclosureReturn } from '@chakra-ui/react';
 import {
-  chakra,
-  useDisclosure,
-  UseDisclosureReturn,
-  useOutsideClick,
-} from '@chakra-ui/react';
-import {
-  autoPlacement,
   autoUpdate,
+  flip,
+  FloatingPortal,
+  offset,
+  useDismiss,
   useFloating,
+  useInteractions,
   useTransitionStyles,
 } from '@floating-ui/react';
-import * as React from 'react';
+import { cloneElement } from 'react';
 import { RangeDatePicker, RangeDatePickerProps } from '../DatePicker/RangeDatePicker';
 
 export type RangeDatePickerDropdownProps = RangeDatePickerProps & {
@@ -23,30 +22,21 @@ export function RangeDatePickerDropdown({
   children,
   ...others
 }: RangeDatePickerDropdownProps) {
-  const containerRef = React.useRef<HTMLDivElement>(null);
-
   const disclosure = useDisclosure();
 
   const { refs, strategy, x, y, context } = useFloating({
-    whileElementsMounted: autoUpdate,
-    middleware: [
-      autoPlacement({
-        allowedPlacements: [
-          /* ⚠️ order matters here */
-          'bottom-start',
-          'bottom-end',
-          'top-start',
-          'top-end',
-        ],
-        alignment: 'start',
-      }),
-    ],
     open: disclosure.isOpen,
-  });
-
-  useOutsideClick({
-    ref: containerRef,
-    handler: disclosure.onClose,
+    onOpenChange(v) {
+      if (v) {
+        disclosure.onOpen();
+      } else {
+        disclosure.onClose();
+      }
+    },
+    strategy: 'fixed',
+    placement: 'bottom-start',
+    whileElementsMounted: autoUpdate,
+    middleware: [flip(), offset(8)],
   });
 
   const { isMounted, styles } = useTransitionStyles(context, {
@@ -74,36 +64,42 @@ export function RangeDatePickerDropdown({
     },
   });
 
+  const dismiss = useDismiss(context);
+  const { getFloatingProps, getReferenceProps } = useInteractions([dismiss]);
+
   return (
-    <chakra.div ref={containerRef} width="fit-content">
-      <chakra.div ref={refs.setReference} width="fit-content">
-        {children(disclosure)}
-      </chakra.div>
+    <>
+      {cloneElement(children(disclosure), {
+        ref: refs.setReference,
+        ...getReferenceProps(),
+      })}
 
       {isMounted && (
-        <chakra.div
-          ref={refs.setFloating}
-          sx={{
-            mt: 3,
-            pos: strategy,
-            top: `${y ?? 0}px`,
-            left: `${x ?? 0}px`,
-            ...styles,
-          }}
-        >
-          <RangeDatePicker
-            onApply={(newValue) => {
-              onApply?.(newValue);
-              disclosure.onClose();
+        <FloatingPortal>
+          <chakra.div
+            ref={refs.setFloating}
+            sx={{
+              pos: strategy,
+              top: `${y ?? 0}px`,
+              left: `${x ?? 0}px`,
+              ...styles,
             }}
-            onCancel={(currentValue) => {
-              onCancel?.(currentValue);
-              disclosure.onClose();
-            }}
-            {...others}
-          />
-        </chakra.div>
+            {...getFloatingProps()}
+          >
+            <RangeDatePicker
+              onApply={(newValue) => {
+                onApply?.(newValue);
+                disclosure.onClose();
+              }}
+              onCancel={(currentValue) => {
+                onCancel?.(currentValue);
+                disclosure.onClose();
+              }}
+              {...others}
+            />
+          </chakra.div>
+        </FloatingPortal>
       )}
-    </chakra.div>
+    </>
   );
 }

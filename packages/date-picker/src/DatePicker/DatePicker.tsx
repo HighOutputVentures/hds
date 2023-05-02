@@ -4,13 +4,12 @@ import * as React from 'react';
 import { v4 as uuid } from 'uuid';
 import { DAYS } from '../constants';
 import { useStyles } from '../hooks';
-import { Nullable } from '../types';
 import { getCalendar, noop } from '../utils';
 import { DatePickerControl } from './DatePickerControl';
 
 export type DatePickerProps = {
-  value?: Nullable<Date>;
-  onChange?(selected: Nullable<Date>): void;
+  value?: Date;
+  onChange?(selected: Date): void;
 };
 
 export function DatePicker({ value, onChange = noop }: DatePickerProps) {

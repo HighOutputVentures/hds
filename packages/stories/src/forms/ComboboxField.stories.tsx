@@ -1,6 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import { ThemeProvider } from '@highoutput/hds';
 import { ComboboxField } from '@highoutput/hds-forms';
+import { useState } from '@storybook/addons';
 import { Meta, StoryFn } from '@storybook/react';
 
 const Story: Meta<typeof ComboboxField> = {
@@ -10,19 +11,29 @@ const Story: Meta<typeof ComboboxField> = {
 
 export default Story;
 
-enum IdEnum {
-  One = 'One',
-  Two = 'Two',
-  Three = 'Three',
-  Four = 'Four',
-  Five = 'Five',
-}
+const options = [
+  { value: 1, label: 'John' },
+  { value: 2, label: 'Paul' },
+  { value: 3, label: 'Mark' },
+  { value: 4, label: 'Mary' },
+  { value: 5, label: 'Jake' },
+];
 
 const Template: StoryFn<typeof ComboboxField> = (args) => {
+  const [state, setState] = useState<number | null>(options[0].value);
+
   return (
     <ThemeProvider>
       <Box height="500px">
-        <ComboboxField {...args} />
+        <ComboboxField<{
+          label: string;
+          value: number;
+        }>
+          {...args}
+          options={options}
+          value={state}
+          onChange={setState}
+        />
       </Box>
     </ThemeProvider>
   );
@@ -31,17 +42,9 @@ const Template: StoryFn<typeof ComboboxField> = (args) => {
 export const Default = Template.bind({});
 
 Default.args = {
-  ...Default.args,
   error: false,
   label: 'Label',
   hint: 'This is a hint',
-  options: [
-    { value: IdEnum.One, label: 'John' },
-    { value: IdEnum.Two, label: 'Paul' },
-    { value: IdEnum.Three, label: 'Mark' },
-    { value: IdEnum.Four, label: 'Mary' },
-    { value: IdEnum.Five, label: 'Jake' },
-  ],
   placeholder: 'Please Select',
   isClearable: true,
   isDisabled: false,

@@ -4,7 +4,9 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   Icon,
+  Skeleton,
   SystemStyleObject,
+  VisuallyHidden,
 } from '@chakra-ui/react';
 import * as React from 'react';
 import { v4 as uuid } from 'uuid';
@@ -15,6 +17,7 @@ type Item = {
   href: string;
   label: string | JSX.Element;
   isActive?: boolean;
+  isLoading?: boolean;
   isDisabled?: boolean;
 };
 
@@ -32,13 +35,13 @@ export default React.forwardRef<HTMLDivElement, BreadcrumbProps & SystemStyleObj
       as,
       items,
       homeHref,
-      withAccent,
+      withAccent = true,
       separator = (
         <Icon
           as={ChevronRightIcon}
           width={5}
           height={5}
-          color="#D6D6D6"
+          color="neutrals.300"
           display="flex"
           alignItems="center"
           justifyContent="center"
@@ -57,7 +60,6 @@ export default React.forwardRef<HTMLDivElement, BreadcrumbProps & SystemStyleObj
         spacing="14px"
         fontSize="14px"
         lineHeight="14px"
-        color="#7A7A7A"
         separator={separator}
         data-testid="hds.breadcrumb"
         sx={others}
@@ -68,30 +70,37 @@ export default React.forwardRef<HTMLDivElement, BreadcrumbProps & SystemStyleObj
               as={as}
               href={homeHref}
               isCurrentPage={shouldSelectHome}
-              sx={styles.link()}
+              sx={styles.link}
             >
               <Icon as={HomeIcon} w={4} h={4} />
+              <VisuallyHidden>Go to Homepage</VisuallyHidden>
             </BreadcrumbLink>
           </BreadcrumbItem>
         )}
 
-        {items?.map(({ label, href, isActive, isDisabled }) => (
+        {items?.map(({ label, href, isActive, isDisabled, isLoading }) => (
           <BreadcrumbItem key={uuid()}>
             <BreadcrumbLink
               as={as}
               href={href}
               isCurrentPage={isActive}
               onClick={(e) => {
-                if (isDisabled) {
+                if (isLoading || isDisabled) {
                   e.preventDefault();
                 }
               }}
-              sx={styles.link({
-                isActive,
-                isDisabled,
+              {...(isDisabled && {
+                'data-disabled': true,
               })}
+              {...(isLoading && {
+                'data-loading': true,
+              })}
+              {...(isActive && {
+                'data-active': true,
+              })}
+              sx={styles.link}
             >
-              {label}
+              {isLoading ? <Skeleton w="64px" h="10px" /> : label}
             </BreadcrumbLink>
           </BreadcrumbItem>
         ))}
@@ -102,26 +111,26 @@ export default React.forwardRef<HTMLDivElement, BreadcrumbProps & SystemStyleObj
 
 function useStyles({ withAccent }: { withAccent?: boolean } = {}) {
   return {
-    link({
-      isActive,
-      isDisabled,
-    }: { isActive?: boolean; isDisabled?: boolean } = {}): SystemStyleObject {
-      return {
-        letterSpacing: '0.02em',
-        ...(isActive && {
-          color: withAccent ? '#520187' : '#0F0F0F',
-        }),
-        _hover: {
-          textDecoration: 'none',
-          ...(!isActive && {
-            color: 'neutrals.800',
-          }),
-        },
-        ...(isDisabled && {
-          cursor: 'not-allowed',
-          _hover: {},
-        }),
-      };
+    link: {
+      color: 'neutrals.600',
+      letterSpacing: '0.02em',
+      textDecoration: 'none',
+      _hover: {
+        color: 'neutrals.800',
+      },
+      _disabled: {
+        color: 'neutrals.600',
+        cursor: 'not-allowed',
+        _hover: {},
+      },
+      _loading: {
+        color: 'neutrals.600',
+        cursor: 'not-allowed',
+        _hover: {},
+      },
+      _active: {
+        color: withAccent ? 'brand.primary.900' : 'neutrals.900',
+      },
     },
   };
 }

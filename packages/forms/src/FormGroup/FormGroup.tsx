@@ -4,17 +4,29 @@ import {
   FormHelperText,
   FormLabel,
   SystemStyleObject,
+  useId,
 } from '@chakra-ui/react';
 import * as React from 'react';
 
 type StylingProps = SystemStyleObject;
+
+type RenderChildrenContext = {
+  id?: string;
+  hintId?: string;
+  errorId?: string;
+  labelId?: string;
+  isInvalid?: boolean;
+  isDisabled?: boolean;
+  isReadOnly?: boolean;
+  errorMsg?: string;
+};
 
 export type FormGroupProps = StylingProps & {
   id?: string;
   hint?: string;
   label?: string;
   error?: string | boolean;
-  children?: JSX.Element;
+  children?: JSX.Element | ((context: RenderChildrenContext) => JSX.Element);
   isDisabled?: boolean;
   isReadOnly?: boolean;
   isRequired?: boolean;
@@ -47,12 +59,18 @@ export default React.forwardRef<HTMLDivElement, FormGroupProps>(function FormGro
     ...others
   } = props;
 
+  const fallbackId = useId();
+  const formId = id ?? fallbackId;
+  const labelId = 'label-' + formId;
+  const errorId = 'error-' + formId;
+  const hintId = 'hint-' + formId;
+
   const shouldShowError = typeof error === 'string' && !!error.trim().length;
   const shouldShowHint = !shouldShowError && !!hint;
 
   return (
     <FormControl
-      id={id}
+      id={formId}
       ref={ref}
       isInvalid={!!error}
       isDisabled={isDisabled}
@@ -63,12 +81,15 @@ export default React.forwardRef<HTMLDivElement, FormGroupProps>(function FormGro
     >
       {!!label && (
         <FormLabel
+          id={labelId}
+          htmlFor={formId}
           color="neutrals.900"
           fontSize="14px"
           fontWeight="600"
           lineHeight="14px"
           letterSpacing="0.02em"
           marginBottom="6px"
+          userSelect="none"
           data-testid={__labelTestId}
           _disabled={{}}
         >
@@ -76,10 +97,24 @@ export default React.forwardRef<HTMLDivElement, FormGroupProps>(function FormGro
         </FormLabel>
       )}
 
-      {children}
+      {typeof children === 'function'
+        ? children({
+            id: formId,
+            isInvalid: !!error,
+            isDisabled,
+            isReadOnly,
+            errorId,
+            labelId,
+            hintId,
+            ...(shouldShowError && {
+              errorMsg: error,
+            }),
+          })
+        : children}
 
       {shouldShowHint && (
         <FormHelperText
+          id={hintId}
           color="neutrals.700"
           fontSize="14px"
           lineHeight="14px"
@@ -93,6 +128,7 @@ export default React.forwardRef<HTMLDivElement, FormGroupProps>(function FormGro
 
       {shouldShowError && (
         <FormErrorMessage
+          id={errorId}
           color="interface.error.700"
           fontSize="14px"
           lineHeight="14px"

@@ -23,4 +23,6 @@ Default.args = {
   ...Default.args,
   label: 'Enter OTP',
   hint: 'This is a text to help user',
+  error: false,
+  isDisabled: false,
 };
