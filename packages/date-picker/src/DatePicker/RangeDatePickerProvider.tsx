@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DateRange, Nullable } from '../types';
+import { DateRange } from '../types';
 import { noop, sortDates } from '../utils';
 
 enum LastUpdated {
@@ -15,43 +15,35 @@ type RangeDatePickerState = {
    * `selectedRange(Start|Until)` which is only used internally
    *
    */
-  dateRange: DateRange;
+  dateRange: Partial<DateRange>;
   /**
    * base current date
    */
   currentDate: Date;
   setCurrentDate(newValue: Date): void;
   setCurrentDate(date: Date): void;
-  selectedRangeStart: Nullable<Date>;
-  selectedRangeUntil: Nullable<Date>;
+  selectedRangeStart?: Date;
+  selectedRangeUntil?: Date;
   updateSelectedRange(startOrUntil: Date): void;
   updateSelectedRangeHard(newValue: DateRange): void;
-  lastUpdated: Nullable<LastUpdated>;
+  lastUpdated?: LastUpdated;
   reset(): void;
 };
 
 const RangeDatePickerContext = React.createContext<RangeDatePickerState>({
-  dateRange: {
-    start: null,
-    until: null,
-  },
+  dateRange: {},
   currentDate: new Date(),
   setCurrentDate: noop,
-  selectedRangeStart: null,
-  selectedRangeUntil: null,
   updateSelectedRange: noop,
   updateSelectedRangeHard: noop,
-  lastUpdated: null,
   reset: noop,
 });
 
 function RangeDatePickerProvider({ children }: React.PropsWithChildren) {
-  const [selectedRangeStart, setSelectedRangeStart] =
-    React.useState<Nullable<Date>>(null);
-  const [selectedRangeUntil, setSelectedRangeUntil] =
-    React.useState<Nullable<Date>>(null);
+  const [selectedRangeStart, setSelectedRangeStart] = React.useState<Date | undefined>();
+  const [selectedRangeUntil, setSelectedRangeUntil] = React.useState<Date | undefined>();
 
-  const [lastUpdated, setLastUpdated] = React.useState<Nullable<LastUpdated>>(null);
+  const [lastUpdated, setLastUpdated] = React.useState<LastUpdated | undefined>();
   const [currentDate, setCurrentDate] = React.useState(new Date());
 
   const updateSelectedRange = (date: Date) => {
@@ -90,17 +82,17 @@ function RangeDatePickerProvider({ children }: React.PropsWithChildren) {
   ]);
 
   const reset = () => {
-    setSelectedRangeStart(null);
-    setSelectedRangeUntil(null);
-    setLastUpdated(null);
+    setSelectedRangeStart(undefined);
+    setSelectedRangeUntil(undefined);
+    setLastUpdated(undefined);
     setCurrentDate(new Date());
   };
 
   React.useEffect(() => {
     return () => {
-      setSelectedRangeStart(null);
-      setSelectedRangeUntil(null);
-      setLastUpdated(null);
+      setSelectedRangeStart(undefined);
+      setSelectedRangeUntil(undefined);
+      setLastUpdated(undefined);
       setCurrentDate(new Date());
     };
   }, []);

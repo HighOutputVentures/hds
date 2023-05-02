@@ -145,8 +145,8 @@ export function getDateRangeByTimeAdverbial(adverbial: TimeAdverbial) {
 
     default:
       return {
-        start: null,
-        until: null,
+        start: new Date(0),
+        until: today,
       };
   }
 }

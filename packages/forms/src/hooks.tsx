@@ -51,6 +51,7 @@ export function useStyles({
       return {
         field: {
           width: 'full',
+          display: 'block',
           color: 'neutrals.900',
           fontSize: '16px',
           lineHeight: '24px',
@@ -281,6 +282,7 @@ export function useStyles({
           borderColor: 'neutrals.200',
           bgColor: 'white',
           rounded: '8px',
+          outline: 'none',
           overflow: 'hidden',
         },
 

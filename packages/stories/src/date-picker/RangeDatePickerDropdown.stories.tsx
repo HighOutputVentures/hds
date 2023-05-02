@@ -1,4 +1,3 @@
-import { Box } from '@chakra-ui/react';
 import { ThemeProvider } from '@highoutput/hds';
 import { RangeDatePickerDropdown } from '@highoutput/hds-date-picker';
 import { Button } from '@highoutput/hds-forms';
@@ -14,13 +13,9 @@ export default Story;
 const Template: StoryFn<typeof RangeDatePickerDropdown> = (args) => {
   return (
     <ThemeProvider>
-      <Box height="400px" padding={4}>
-        <RangeDatePickerDropdown {...args}>
-          {({ onToggle }) => <Button onClick={onToggle}>Open</Button>}
-        </RangeDatePickerDropdown>
-
-        <Box mt={4}>Hello</Box>
-      </Box>
+      <RangeDatePickerDropdown {...args}>
+        {({ onToggle }) => <Button onClick={onToggle}>Open</Button>}
+      </RangeDatePickerDropdown>
     </ThemeProvider>
   );
 };

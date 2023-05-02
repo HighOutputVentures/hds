@@ -5,6 +5,8 @@
   "private": false,
   "scripts": {
     "storybook": "nx serve stories:storybook",
+    "build:storybook": "nx build-storybook stories",
+    "start:storybook": "nx static-storybook stories",
     "build": "nx run-many --target=build --all --exclude=stories --parallel --maxParallel=100% --skip-nx-cache",
     "lint": "nx run-many --target=lint --all --parallel --maxParallel=100% --skip-nx-cache",
     "test": "nx run-many --target=test --all --exclude=stories --parallel --maxParallel=100% --skip-nx-cache",
@@ -88,12 +90,11 @@
   ],
   "dependencies": {
     "@chakra-ui/icons": "2.0.18",
-    "@chakra-ui/react": "2.5.5",
+    "@chakra-ui/react": "2.6.0",
     "@emotion/react": "11.10.6",
     "@emotion/styled": "11.10.6",
     "@floating-ui/react": "0.23.1",
     "@hookform/resolvers": "3.1.0",
-    "@zag-js/combobox": "0.6.0",
     "@zag-js/pagination": "0.5.0",
     "@zag-js/react": "0.5.0",
     "date-fns": "2.29.3",

@@ -1,6 +1,13 @@
 import * as React from 'react';
 
-export default function MinusIcon(props: React.ComponentProps<'svg'>) {
+export default function MinusIcon({
+  isChecked,
+  isIndeterminate,
+  ...props
+}: React.ComponentProps<'svg'> & {
+  isChecked?: boolean;
+  isIndeterminate?: boolean;
+}) {
   return (
     <svg
       width="12"

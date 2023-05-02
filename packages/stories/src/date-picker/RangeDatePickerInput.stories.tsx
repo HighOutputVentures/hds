@@ -1,6 +1,6 @@
-import { Box } from '@chakra-ui/react';
 import { ThemeProvider } from '@highoutput/hds';
 import { RangeDatePickerInput } from '@highoutput/hds-date-picker';
+import { useState } from '@storybook/addons';
 import { Meta, StoryFn } from '@storybook/react';
 
 const Story: Meta<typeof RangeDatePickerInput> = {
@@ -11,11 +11,17 @@ const Story: Meta<typeof RangeDatePickerInput> = {
 export default Story;
 
 const Template: StoryFn<typeof RangeDatePickerInput> = (args) => {
+  const [value, setValue] = useState<
+    | {
+        start: Date;
+        until: Date;
+      }
+    | undefined
+  >(undefined);
+
   return (
     <ThemeProvider>
-      <Box p={4} h="340px">
-        <RangeDatePickerInput width="340px" {...args} />
-      </Box>
+      <RangeDatePickerInput {...args} value={value} onChange={setValue} />
     </ThemeProvider>
   );
 };
@@ -23,10 +29,10 @@ const Template: StoryFn<typeof RangeDatePickerInput> = (args) => {
 export const Default = Template.bind({});
 
 Default.args = {
-  ...Default.args,
-  isInvalid: false,
+  error: false,
   isReadOnly: false,
   isDisabled: false,
-  isClearable: true,
   placeholder: 'Select Dates',
+  label: 'Select Range',
+  hint: 'This is a hint to help user',
 };

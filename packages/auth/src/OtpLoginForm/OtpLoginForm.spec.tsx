@@ -1,7 +1,6 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { faker } from '@faker-js/faker';
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
-import * as React from 'react';
 import { OtpLoginForm } from './OtpLoginForm';
 
 const onSubmit1 = jest.fn();
@@ -89,7 +88,7 @@ describe('OtpLoginForm (step 2)', () => {
 
     for (const field of fields) {
       await waitFor(() => {
-        expect(field).toHaveAttribute('data-invalid');
+        expect(field).toHaveAttribute('aria-invalid');
       });
     }
   });

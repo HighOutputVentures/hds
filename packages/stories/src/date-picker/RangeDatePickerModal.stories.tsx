@@ -1,4 +1,3 @@
-import { Box } from '@chakra-ui/react';
 import { ThemeProvider } from '@highoutput/hds';
 import { RangeDatePickerModal } from '@highoutput/hds-date-picker';
 import { Button } from '@highoutput/hds-forms';
@@ -14,17 +13,13 @@ export default Story;
 const Template: StoryFn<typeof RangeDatePickerModal> = (args) => {
   return (
     <ThemeProvider>
-      <Box p={4}>
-        <RangeDatePickerModal {...args}>
-          {({ onOpen }) => <Button onClick={onOpen}>Open</Button>}
-        </RangeDatePickerModal>
-      </Box>
+      <RangeDatePickerModal {...args}>
+        {({ onOpen }) => <Button onClick={onOpen}>Open</Button>}
+      </RangeDatePickerModal>
     </ThemeProvider>
   );
 };
 
 export const Default = Template.bind({});
 
-Default.args = {
-  ...Default.args,
-};
+Default.args = {};

@@ -1,6 +1,13 @@
 import * as React from 'react';
 
-export default function CheckIcon(props: React.ComponentProps<'svg'>) {
+export default function CheckIcon({
+  isChecked,
+  isIndeterminate,
+  ...props
+}: React.ComponentProps<'svg'> & {
+  isChecked?: boolean;
+  isIndeterminate?: boolean;
+}) {
   return (
     <svg
       width="10"

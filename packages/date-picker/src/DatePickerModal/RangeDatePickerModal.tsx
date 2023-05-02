@@ -5,7 +5,6 @@ import {
   useDisclosure,
   UseDisclosureReturn,
 } from '@chakra-ui/react';
-import * as React from 'react';
 import { RangeDatePicker, RangeDatePickerProps } from '../DatePicker/RangeDatePicker';
 
 export type RangeDatePickerModalProps = RangeDatePickerProps & {

@@ -1,6 +1,5 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { act, cleanup, fireEvent, render, waitFor } from '@testing-library/react';
-import * as React from 'react';
 import ComboboxField, { ComboboxFieldProps } from './ComboboxField';
 
 const options = [
@@ -84,7 +83,7 @@ describe('ComboboxField', () => {
     });
 
     await waitFor(() => {
-      expect(onChange).toHaveBeenCalledWith(options[0].value.toString());
+      expect(onChange).toHaveBeenCalledWith(options[0].value);
       expect(getByTestId('hds.combobox.controls.input')).toHaveValue(options[0].label);
     });
   });
