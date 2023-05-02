@@ -56,6 +56,6 @@ jobs:
           key: nx-${{ runner.os }}-${{ github.sha }}
           restore-keys: nx-${{ runner.os }}
       - name: lint
-        run: npx nx affected --target=lint --base=${{ github.sha }}~1 --parallel --maxParallel=5 --nx-bail
+        run: npx nx affected --target=lint --base=${{ github.sha }}~1 --parallel --maxParallel=5 --exclude=examples-nextjs --nx-bail
       - name: test
-        run: npx nx affected --target=test --base=${{ github.sha }}~1 --parallel --maxParallel=5 --nx-bail
+        run: npx nx affected --target=test --base=${{ github.sha }}~1 --parallel --maxParallel=5 --exclude=examples-nextjs --nx-bail

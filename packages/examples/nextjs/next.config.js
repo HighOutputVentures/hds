@@ -26,6 +26,16 @@ const packages = [
   'tooltip',
 ];
 
+const transpilePackages = packages.map((packageName) => {
+  const prefix = '@highoutput/hds';
+
+  if (packageName === 'hds') {
+    return prefix;
+  } else {
+    return `${prefix}-${packageName}`;
+  }
+});
+
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
  **/
@@ -33,7 +43,7 @@ const nextConfig = {
   nx: {
     svgr: false,
   },
-  transpilePackages: ['@highoutput/hds', '@highoutput/hds-forms', ''],
+  transpilePackages,
 };
 
 const plugins = [withNx];
