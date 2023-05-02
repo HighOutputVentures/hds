@@ -77,7 +77,7 @@ type Props = {
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
-  const users = new Array(5).fill(null).map((_) => {
+  const users = new Array(3).fill(null).map((_) => {
     return mockUser();
   });
 
@@ -116,6 +116,7 @@ function Index({ users }: Props) {
                 </HStack>
               );
             },
+            onCheck() {},
           },
           {
             label: 'Email',
