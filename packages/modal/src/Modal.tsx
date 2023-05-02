@@ -19,7 +19,6 @@ import { useStyles } from './useStyles';
 
 type BaseProps = Pick<
   ChakraModalProps,
-  | 'children'
   | 'trapFocus'
   | 'isCentered'
   | 'closeOnEsc'
@@ -61,6 +60,7 @@ export type ModalProps = {
   okayButtonLabel?: string;
   cancelButtonLabel?: string;
   hasCloseButton?: boolean;
+  children?: ReactNode;
 } & BaseProps &
   TestingProps &
   SystemStyleObject;
