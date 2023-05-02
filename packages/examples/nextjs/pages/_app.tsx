@@ -1,9 +1,19 @@
 import { ThemeProvider } from '@highoutput/hds';
+import { NextPage } from "next";
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { Header } from '../components/Header';
+import { ReactElement, ReactNode } from "react";
 
-export default function App({ Component, pageProps }: AppProps) {
+type AppPropsWithLayout = AppProps<{ dehydratedState: unknown }> & {
+  Component: NextPage<{ [key: string]: unknown }> & {
+    getLayout?: (page: ReactElement) => ReactNode;
+  };
+};
+
+
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
+  const withLayout = Component.getLayout ?? ((page) => page);
+
   return (
     <>
       <Head>
@@ -11,8 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
 
       <ThemeProvider>
-        <Header />
-        <Component {...pageProps} />
+        {withLayout(<Component {...pageProps} />)}
       </ThemeProvider>
     </>
   );

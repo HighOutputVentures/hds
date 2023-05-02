@@ -10,19 +10,31 @@ import {
   MenuList,
   Text,
   useDisclosure,
+  VStack,
 } from '@highoutput/hds';
 import { AvatarLabel } from '@highoutput/hds-avatar';
 import { Badge } from '@highoutput/hds-badge';
 import { Breadcrumbs } from '@highoutput/hds-breadcrumbs';
-import { RangeDatePickerDropdown } from '@highoutput/hds-date-picker';
-import { Button, IconButton } from '@highoutput/hds-forms';
+import { DatePickerInput, RangeDatePickerDropdown } from '@highoutput/hds-date-picker';
+import {
+  Button,
+  IconButton,
+  PasswordField,
+  SelectField,
+  TextField,
+} from '@highoutput/hds-forms';
 import { DotsVerticalIcon, TrashErrorIcon } from '@highoutput/hds-icons';
 import { Modal } from '@highoutput/hds-modal';
 import { Pagination } from '@highoutput/hds-pagination';
 import { Table } from '@highoutput/hds-table';
 import { useToast } from '@highoutput/hds-toast';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { GetServerSideProps } from 'next';
 import Link from 'next/link';
+import { Controller, useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import AddIcon from '../components/AddIcon';
+import { withLayout } from '../components/Layout';
 
 type User = {
   id: string;
@@ -65,7 +77,7 @@ type Props = {
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
-  const users = new Array(5).fill(null).map((_) => {
+  const users = new Array(3).fill(null).map((_) => {
     return mockUser();
   });
 
@@ -76,9 +88,9 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
   };
 };
 
-export default function Index({ users }: Props) {
+function Index({ users }: Props) {
   return (
-    <Box p={16}>
+    <>
       <Breadcrumbs
         as={Link}
         homeHref="/"
@@ -104,6 +116,7 @@ export default function Index({ users }: Props) {
                 </HStack>
               );
             },
+            onCheck() {},
           },
           {
             label: 'Email',
@@ -155,13 +168,17 @@ export default function Index({ users }: Props) {
 
             <Box flexGrow={1} />
 
-            <RangeDatePickerDropdown>
-              {({ onToggle }) => (
-                <Button accent="gray" variant="outline" onClick={onToggle}>
-                  Select Dates
-                </Button>
-              )}
-            </RangeDatePickerDropdown>
+            <HStack spacing={3}>
+              <RangeDatePickerDropdown>
+                {({ onToggle }) => (
+                  <Button accent="gray" variant="outline" onClick={onToggle}>
+                    Select Dates
+                  </Button>
+                )}
+              </RangeDatePickerDropdown>
+
+              <CreateUser />
+            </HStack>
           </Flex>
         }
         renderFooter={
@@ -175,7 +192,134 @@ export default function Index({ users }: Props) {
           />
         }
       />
-    </Box>
+    </>
+  );
+}
+
+const schema = yup.object({
+  name: yup.string().required(),
+  username: yup.string().required(),
+  password: yup.string().required(),
+  dateOfBirth: yup.string().required(),
+  gender: yup.string().oneOf(['male', 'female']).required(),
+});
+
+function CreateUser() {
+  const toast = useToast();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const { register, control, formState, reset, handleSubmit } = useForm<
+    yup.InferType<typeof schema>
+  >({
+    shouldFocusError: true,
+    shouldUnregister: true,
+    resolver: yupResolver(schema),
+    defaultValues: {
+      name: '',
+      username: '',
+      password: '',
+      dateOfBirth: '',
+      gender: 'male',
+    },
+  });
+
+  const onSubmit = handleSubmit(async (data) => {
+    await new Promise((resolve) => {
+      setTimeout(resolve, 5000);
+    });
+
+    toast.success('New user has been added');
+    onClose();
+    reset();
+  });
+
+  return (
+    <>
+      <Button onClick={onOpen}>Create User</Button>
+
+      <Modal
+        isOpen={isOpen}
+        onCancel={onClose}
+        icon={<AddIcon />}
+        title="Add new user"
+        message="Fill out the form to add new members to your platform."
+        okayButtonLabel="Continue"
+        onOkay={onSubmit}
+        isLoading={formState.isSubmitting}
+        width="475px"
+        padding="12px"
+      >
+        <VStack spacing={4} pt={4}>
+          <TextField
+            label="Name"
+            placeholder="Name"
+            error={formState.errors.name?.message}
+            {...register('name')}
+          />
+          <TextField
+            label="Username"
+            placeholder="Username"
+            error={formState.errors.username?.message}
+            {...register('username')}
+          />
+          <PasswordField
+            label="Password"
+            placeholder="Password"
+            error={formState.errors.password?.message}
+            {...register('password')}
+          />
+          <Controller
+            name="dateOfBirth"
+            control={control}
+            render={({ field, fieldState }) => (
+              <DatePickerInput
+                error={fieldState.error?.message}
+                label="Birthday"
+                placeholder="Birthday"
+                value={field.value ? new Date(field.value) : undefined}
+                onChange={(newValue) =>
+                  field.onChange({
+                    target: {
+                      value: newValue.toISOString(),
+                    },
+                  })
+                }
+              />
+            )}
+          />
+
+          <Controller
+            name="gender"
+            control={control}
+            render={({ field, fieldState }) => (
+              <SelectField
+                value={field.value}
+                error={fieldState.error?.message}
+                label="Gender"
+                placeholder="Gender"
+                options={[
+                  {
+                    label: 'Male',
+                    value: 'male',
+                  },
+                  {
+                    label: 'Female',
+                    value: 'female',
+                  },
+                ]}
+                onChange={(newValue) => {
+                  field.onChange({
+                    target: {
+                      value: newValue,
+                    },
+                  });
+                }}
+              />
+            )}
+          />
+        </VStack>
+      </Modal>
+    </>
   );
 }
 
@@ -202,3 +346,5 @@ function DeleteItem() {
     </>
   );
 }
+
+export default withLayout(Index);

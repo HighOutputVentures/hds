@@ -34,7 +34,7 @@ const DatePickerInput$ = function DatePickerInput(
     onChange = noop,
     dateFormat,
     placeholder,
-    zIndex = 1,
+    zIndex = 'modal',
     ...formGroupProps
   }: DatePickerInputProps,
   ref: React.ForwardedRef<HTMLButtonElement>,

@@ -80,7 +80,7 @@ function ComboboxField<T extends Option>(
     leftIcon,
     isClearable,
     blurOnSelect,
-    zIndex,
+    zIndex = 'modal',
 
     __fieldTestId = 'hds.combobox.controls.input',
     __clearBtnTestId = 'hds.combobox.controls.clear',
@@ -233,6 +233,7 @@ function ComboboxField<T extends Option>(
                 position: strategy,
                 top: `${y ?? 0}px`,
                 left: `${x ?? 0}px`,
+                zIndex,
               }}
             >
               <chakra.ul

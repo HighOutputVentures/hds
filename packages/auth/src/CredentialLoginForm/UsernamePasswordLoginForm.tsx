@@ -13,7 +13,7 @@ type ButtonConfig = {
   label?: string;
 };
 
-export type UsernamePasswordLoginFormProps = SystemStyleObject & {
+export type UsernamePasswordLoginFormProps = Omit<SystemStyleObject, 'onSubmit'> & {
   username?: FieldConfig;
   password?: FieldConfig;
   submitBtn?: ButtonConfig;
