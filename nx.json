@@ -17,6 +17,17 @@
       "library": {
         "unitTestRunner": "jest"
       }
+    },
+    "@nx/react": {
+      "application": {
+        "babel": true
+      }
+    },
+    "@nx/next": {
+      "application": {
+        "style": "none",
+        "linter": "eslint"
+      }
     }
   },
   "targetDefaults": {
