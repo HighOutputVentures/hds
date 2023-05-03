@@ -31,6 +31,7 @@ import { useToast } from '@highoutput/hds-toast';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { GetServerSideProps } from 'next';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Controller, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import AddIcon from '../components/AddIcon';
@@ -89,6 +90,8 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
 };
 
 function Index({ users }: Props) {
+  const router = useRouter();
+
   return (
     <>
       <Breadcrumbs
@@ -109,17 +112,24 @@ function Index({ users }: Props) {
         columns={[
           {
             label: 'Name',
-            renderRow({ avatar, name, username }) {
+            renderRow({ id, avatar, name, username }) {
               return (
-                <HStack>
-                  <AvatarLabel src={avatar} name={name} supportText={`@${username}`} />
-                </HStack>
+                <AvatarLabel
+                  src={avatar}
+                  name={name}
+                  supportText={`@${username}`}
+                  onClick={() => {
+                    router.push(`/users/${id}`);
+                  }}
+                />
               );
             },
             onCheck() {},
+            onSort() {},
           },
           {
             label: 'Email',
+            tooltip: 'This is a hint',
             renderRow({ email }) {
               return <Text>{email}</Text>;
             },

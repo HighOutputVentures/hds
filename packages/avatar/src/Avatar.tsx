@@ -11,7 +11,7 @@ export interface AvatarProps {
   size?: Size;
   isOnline?: boolean;
   hasOnlineIndicator?: boolean;
-  badgeIcon?: As<any>;
+  badgeIcon?: As;
   isVerified?: boolean;
   isElevated?: boolean;
   isBordered?: boolean;

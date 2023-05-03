@@ -99,6 +99,7 @@ const colors = {
     300: '#D0D5DD',
     100: '#F2F4F7',
     50: '#F9FAFB',
+    25: '#FCFCFD',
   },
 };
 

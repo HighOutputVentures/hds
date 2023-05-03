@@ -1,56 +1,75 @@
 import { SearchIcon } from '@chakra-ui/icons';
 import { ChakraProvider } from '@chakra-ui/react';
 import { render, screen } from '@testing-library/react';
-import React from 'react';
+import userEvent from '@testing-library/user-event';
 import renderer from 'react-test-renderer';
-import Notification from './Notification';
+import { Notification } from './Notification';
 
-function Component() {
-  return (
-    <Notification
-      alertLabel={{ label1: 'Learn More', label2: 'View Changes' }}
-      alertLinks={{ link1: '#', link2: '#' }}
-      supportingDetail="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam."
-      title="We’ve just released a new feature"
-      isOpen={true}
-      type="primary"
-      icon={SearchIcon}
-    />
-  );
-}
+const onClose = jest.fn();
+const onOkay = jest.fn();
 
-describe('Notification Component', () => {
+describe('Notification', () => {
   beforeEach(() => {
     render(
       <ChakraProvider>
-        <Component />
+        <Notification
+          icon={<SearchIcon />}
+          title="We&rsquo;ve just released a new feature"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam."
+          closeButton="Dismiss"
+          okayButton="View Changes"
+          onClose={onClose}
+          onOkay={onOkay}
+        >
+          <p>Hello world</p>
+        </Notification>
       </ChakraProvider>,
     );
   });
 
-  it('Should render', async () => {
-    const NotificationBox = await screen.findAllByTestId('hds.notification.container');
-    expect(NotificationBox).toHaveLength(1);
+  it('Should render', () => {
+    expect(screen.getByTestId('hds.notification')).toBeInTheDocument();
   });
 
-  it('should render title', async () => {
-    const title = await screen.findAllByTestId('hds.notification.title');
-    expect(title).toHaveLength(1);
+  it('should render title', () => {
+    expect(screen.getByTestId('hds.notification.title')).toBeInTheDocument();
   });
 
-  it('should render supporting detail', async () => {
-    const supportingDetail = await screen.findAllByTestId('hds.notification.message');
-    expect(supportingDetail).toHaveLength(1);
+  it('should render description', () => {
+    expect(screen.getByTestId('hds.notification.description')).toBeInTheDocument();
   });
 
-  it('should render notification links', async () => {
-    const notificationLinks = await screen.findAllByTestId('hds.notification.link');
-    expect(notificationLinks).toHaveLength(2);
+  it('should render okay button', async () => {
+    expect(screen.getByTestId('hds.notification.okay-btn')).toBeInTheDocument();
+  });
+
+  it('should render close button', async () => {
+    expect(screen.getByTestId('hds.notification.close-btn')).toBeInTheDocument();
+  });
+
+  it('should render children', async () => {
+    expect(screen.getByTestId('hds.notification.children')).toBeInTheDocument();
+  });
+
+  test("'onClose'", async () => {
+    await userEvent.click(screen.getByTestId('hds.notification.close-btn'));
+    expect(onClose).toHaveBeenCalled();
   });
 
   describe('Snapshot', () => {
     it('Should match snapshot', () => {
-      const component = renderer.create(<Component />);
+      const component = renderer.create(
+        <Notification
+          icon={<SearchIcon />}
+          title="We&rsquo;ve just released a new feature"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam."
+          closeButton="Dismiss"
+          okayButton="View Changes"
+        >
+          <p>Hello world</p>
+        </Notification>,
+      );
+
       const tree = component.toJSON();
       expect(tree).toMatchSnapshot();
       component.unmount();
