@@ -1,112 +1,113 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Alert Component Snapshot Should match snapshot 1`] = `
+exports[`Alert Snapshot Should match snapshot 1`] = `
 <div
-  className="css-1ac0ctp"
-  data-testid="hds.alert.container"
+  className="chakra-fade"
+  style={
+    {
+      "opacity": 0,
+    }
+  }
 >
-  <svg
-    className="chakra-icon chakra-icon css-hnz1ry"
-    focusable={false}
-    viewBox="0 0 24 24"
-  >
-    <g
-      fill="currentColor"
-      stroke="currentColor"
-      strokeLinecap="square"
-      strokeWidth="2"
-    >
-      <circle
-        cx="12"
-        cy="12"
-        fill="none"
-        r="11"
-        stroke="currentColor"
-      />
-      <line
-        fill="none"
-        x1="11.959"
-        x2="11.959"
-        y1="11"
-        y2="17"
-      />
-      <circle
-        cx="11.959"
-        cy="7"
-        r="1"
-        stroke="none"
-      />
-    </g>
-  </svg>
   <div
-    className="css-ohugnc"
-  >
-    <p
-      className="chakra-text css-88nnmw"
-      data-testid="hds.alert.title"
-    >
-      We’ve just released a new feature
-    </p>
-    <p
-      className="chakra-text css-1g8kskj"
-      data-testid="hds.alert.message"
-    >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.
-    </p>
-    <div
-      className="chakra-stack css-he6z7n"
-    >
-      <a
-        className="chakra-text css-17o29vu"
-        data-testid="hds.alert.link"
-        href="#"
-        target="_blank"
-      >
-        Learn More
-      </a>
-      <a
-        className="chakra-text css-4g6ai3"
-        data-testid="hds.alert.link"
-        href="#"
-        target="_blank"
-      >
-        <span
-          className="chakra-text css-1ljeq08"
-        >
-          View Changes
-        </span>
-        <svg
-          className="chakra-icon chakra-icon css-14adh8d"
-          focusable={false}
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-            fill="currentColor"
-          />
-        </svg>
-      </a>
-    </div>
-  </div>
-  <div
-    className="css-1t9pz9x"
-  />
-  <button
-    aria-label="Close"
-    className="css-1vcoxy9"
-    type="button"
+    className="chakra-alert css-f4qb0s"
+    data-status="info"
+    data-testid="hds.alert"
+    role="alert"
   >
     <svg
-      aria-hidden={true}
-      className="chakra-icon css-onkibi"
-      focusable="false"
-      viewBox="0 0 24 24"
+      className="chakra-alert__icon css-1g1jahg"
+      data-status="info"
+      data-testid="hds.alert.icon"
+      fill="none"
+      height="20"
+      viewBox="0 0 20 20"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <path
-        d="M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z"
-        fill="currentColor"
-      />
+      <g
+        clipPath="url(#clip0_1130_82786)"
+      >
+        <path
+          d="M10.0001 13.3334V10M10.0001 6.66669H10.0084M18.3334 10C18.3334 14.6024 14.6025 18.3334 10.0001 18.3334C5.39771 18.3334 1.66675 14.6024 1.66675 10C1.66675 5.39765 5.39771 1.66669 10.0001 1.66669C14.6025 1.66669 18.3334 5.39765 18.3334 10Z"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.66667"
+        />
+      </g>
+      <defs>
+        <clipPath
+          id="clip0_1130_82786"
+        >
+          <rect
+            fill="white"
+            height="20"
+            width="20"
+          />
+        </clipPath>
+      </defs>
     </svg>
-  </button>
+    <div
+      className="css-i9gxme"
+    >
+      <div
+        className="chakra-alert__title css-v7ucr"
+        data-status="info"
+        data-testid="hds.alert.title"
+      >
+        We’ve just released a new feature
+      </div>
+      <div
+        className="chakra-alert__desc css-1t3j939"
+        data-status="info"
+        data-testid="hds.alert.description"
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.
+      </div>
+      <div
+        className="css-13aw5n7"
+      >
+        <button
+          className="css-49mbms"
+          data-testid="hds.alert.secondary-btn"
+        >
+          Learn More
+        </button>
+        <button
+          className="css-1sdfhj1"
+          data-testid="hds.alert.primary-btn"
+        >
+          View Changes
+        </button>
+      </div>
+    </div>
+    <div
+      className="css-0"
+    >
+      <button
+        className="css-14sm3cc"
+        data-testid="hds.alert.close-btn"
+      >
+        <svg
+          className="chakra-icon css-gkivye"
+          fill="none"
+          focusable={false}
+          height="20"
+          viewBox="0 0 20 20"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15 5L5 15M5 5L15 15"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1.66667"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
 </div>
 `;

@@ -9,8 +9,8 @@ export type IGenerateOtpSchema = yup.InferType<typeof GenerateOtpSchema>;
 export const LoginOtpSchema = yup.object({
   otp: yup
     .string()
-    .when('$numberOfFields', (numberOfFields: number, authenticateSchema: any) => {
-      return authenticateSchema.length(numberOfFields, 'OTP code is incomplete');
+    .when('$numberOfFields', (len, schema) => {
+      return schema.length(len.at(0) ?? 4, 'OTP code is incomplete');
     })
     .required('OTP code is required'),
 });

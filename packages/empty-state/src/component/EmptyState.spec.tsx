@@ -1,6 +1,4 @@
-import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
-import React from 'react';
 import EmptyState from './EmptyState';
 
 describe('EmptyState', () => {
@@ -9,8 +7,6 @@ describe('EmptyState', () => {
       <EmptyState
         header={`No projects found`}
         subHeader="Your search “Landing page design” did not match any projects. Please try again."
-        primaryLabel="Changelog"
-        secondaryLabel="Dismiss"
       />,
     );
 
@@ -22,8 +18,6 @@ describe('EmptyState', () => {
       <EmptyState
         header={`No projects found`}
         subHeader="Your search “Landing page design” did not match any projects. Please try again."
-        primaryLabel="Changelog"
-        secondaryLabel="Dismiss"
       />,
     );
 

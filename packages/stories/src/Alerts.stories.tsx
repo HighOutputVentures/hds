@@ -1,107 +1,35 @@
-import { Flex } from '@chakra-ui/react';
 import { ThemeProvider } from '@highoutput/hds';
 import { Alert } from '@highoutput/hds-alerts';
+import { Button } from '@highoutput/hds-forms';
+import { useState } from '@storybook/addons';
 import { Meta, StoryFn } from '@storybook/react';
 
-export default {
+const Story: Meta<typeof Alert> = {
   title: 'Components/Alert',
   component: Alert,
-} as Meta<typeof Alert>;
+};
 
-const Template: StoryFn<typeof Alert> = (props) => {
+export default Story;
+
+const Template: StoryFn<typeof Alert> = (args) => {
+  const [isOpen, setOpen] = useState(false);
+
   return (
     <ThemeProvider>
-      <Flex
-        gap={'50px'}
-        flexDir="column"
-        width="full"
-        justify={'center'}
-        align={'center'}
-      >
-        <Alert {...props} isOpen={true} />
-      </Flex>
+      <Button onClick={() => setOpen((n) => !n)}>Show/Hide</Button>
+
+      <Alert {...args} mt={4} isOpen={isOpen} onClose={() => setOpen(false)} />
     </ThemeProvider>
   );
 };
 
-export const Info = Template.bind({});
 export const Default = Template.bind({});
-export const Error = Template.bind({});
-export const Warning = Template.bind({});
-export const Success = Template.bind({});
-Default.args = {
-  ...Default.args,
-  supportingDetail:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.',
-  status: 'default',
 
-  alertLabel: {
-    label1: 'Learn More',
-    label2: 'View Changes',
-  },
-  alertLinks: {
-    link1: '#',
-    link2: '#',
-  },
-  title: 'We’ve just released a new feature',
-};
-Info.args = {
-  ...Default.args,
-  supportingDetail:
+Default.args = {
+  accent: 'primary',
+  title: <>We&rsquo;ve just released a new feature</>,
+  description:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.',
-  status: 'info',
-  alertLabel: {
-    label1: 'Learn More',
-    label2: 'View Changes',
-  },
-  alertLinks: {
-    link1: '#',
-    link2: '#',
-  },
-  title: 'We’ve just released a new feature',
-};
-Error.args = {
-  ...Default.args,
-  supportingDetail:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.',
-  status: 'error',
-  alertLabel: {
-    label1: 'Learn More',
-    label2: 'View Changes',
-  },
-  alertLinks: {
-    link1: '#',
-    link2: '#',
-  },
-  title: 'There was a problem with that action',
-};
-Warning.args = {
-  ...Default.args,
-  supportingDetail:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.',
-  status: 'warning',
-  alertLabel: {
-    label1: 'Learn More',
-    label2: 'View Changes',
-  },
-  alertLinks: {
-    link1: '#',
-    link2: '#',
-  },
-  title: 'Just to let you know this might be a problem',
-};
-Success.args = {
-  ...Default.args,
-  supportingDetail:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.',
-  status: 'success',
-  alertLabel: {
-    label1: 'Learn More',
-    label2: 'View Changes',
-  },
-  alertLinks: {
-    link1: '#',
-    link2: '#',
-  },
-  title: ' Successfully updated profile',
+  primaryButton: 'View changes',
+  secondaryButton: 'Learn more',
 };
