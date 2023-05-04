@@ -11,8 +11,8 @@
     }
   },
   "dependencies": {
-    "@highoutput/hds-forms": "^0.3.5",
-    "@highoutput/hds-tooltip": "^0.3.2",
+    "@highoutput/hds-forms": "*",
+    "@highoutput/hds-tooltip": "*",
     "uuid": "9.0.0"
   },
   "publishConfig": {

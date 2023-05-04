@@ -11,7 +11,7 @@
     }
   },
   "dependencies": {
-    "@highoutput/hds-icons": "^0.3.0"
+    "@highoutput/hds-icons": "*"
   },
   "publishConfig": {
     "access": "public",

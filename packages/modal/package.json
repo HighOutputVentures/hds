@@ -11,7 +11,7 @@
     }
   },
   "dependencies": {
-    "@highoutput/hds-forms": "^0.3.5"
+    "@highoutput/hds-forms": "*"
   },
   "publishConfig": {
     "access": "public",
