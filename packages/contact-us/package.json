@@ -11,9 +11,9 @@
     }
   },
   "dependencies": {
-    "@highoutput/hds-forms": "^0.3.5",
-    "@highoutput/hds-icons": "^0.3.0",
-    "@highoutput/hds-toast": "^0.3.0",
+    "@highoutput/hds-forms": "*",
+    "@highoutput/hds-icons": "*",
+    "@highoutput/hds-toast": "*",
     "@hookform/resolvers": "3.1.0",
     "react-hook-form": "7.43.9",
     "yup": "1.1.1"

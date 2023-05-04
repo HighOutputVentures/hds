@@ -12,7 +12,7 @@
     "test": "nx run-many --target=test --all --exclude=stories,examples-nextjs --parallel --maxParallel=100% --skip-nx-cache",
     "format": "prettier --write .",
     "sync-deps": "node ./scripts/sync-deps.js",
-    "postversion": "nx affected:build --base=origin/master~1 --head=origin/master --exclude=stories,examples-nextjs",
+    "postversion": "npm run build",
     "deploy": "lerna publish --no-private",
     "generate:theme-typings": "npx @chakra-ui/cli tokens packages/hds/src/theme/index.ts"
   },
