@@ -244,7 +244,7 @@ function ComboboxField<T extends Option>(
                     display: 'none',
                   }),
                 }}
-                {...getMenuProps()}
+                {...getMenuProps({}, { suppressRefError: true })}
                 data-testid="hds.combobox.options"
               >
                 {filteredOptions.map((item, index) => {
