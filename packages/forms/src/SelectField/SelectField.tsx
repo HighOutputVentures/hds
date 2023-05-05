@@ -206,7 +206,7 @@ function SelectField<T extends Option>(
                     display: 'none',
                   }),
                 }}
-                {...getMenuProps()}
+                {...getMenuProps({}, { suppressRefError: true })}
               >
                 {options.map((item, index) => (
                   <chakra.li
