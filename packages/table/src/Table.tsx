@@ -122,13 +122,19 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
     <Box
       sx={{
         ...others,
-        border: '1px solid #EAECF0',
+        border: '1px solid',
+        borderColor: 'Gray.200',
         rounded: 'md',
         position: 'relative',
       }}
     >
       {!!renderHeader && (
-        <Box borderBottom="1px solid #EAECF0" paddingX="24px" paddingY="20px">
+        <Box
+          borderBottom="1px solid"
+          borderColor="Gray.200"
+          paddingX="24px"
+          paddingY="20px"
+        >
           {renderHeader}
         </Box>
       )}
@@ -203,7 +209,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                             <chakra.div display="flex" ml="4px">
                               <Icon
                                 as={HelpCircleIcon}
-                                color="#A3A3A3"
+                                color="neutrals.500"
                                 width="16px"
                                 height="16px"
                               />
@@ -320,7 +326,7 @@ function SoftLoaderOverlay() {
     <Tr
       position="absolute"
       zIndex="2"
-      bgColor="#ffffffab"
+      bgColor="whiteAlpha.700"
       top={0}
       left={0}
       width="full"
@@ -377,7 +383,7 @@ function SortButton({
         onSort({ direction });
       }}
     >
-      <Icon as={ArrowDownIcon} color="#667085" width="16px" height="16px" />
+      <Icon as={ArrowDownIcon} color="Gray.500" width="16px" height="16px" />
     </chakra.button>
   );
 }

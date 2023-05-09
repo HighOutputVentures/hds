@@ -70,18 +70,18 @@ function getIcon(key: UseToastOptions['status']) {
 function useColors(key: UseToastOptions['status']) {
   const colorsMap = {
     error: {
-      containerBg: '#FCEAE8',
-      containerBorder: '#FCD2CF',
-      icon: '#9E241C',
-      text: '#800C05',
-      xmark: '#F04438',
+      containerBg: 'interface.error.500',
+      containerBorder: 'interface.error.600',
+      icon: 'interface.error.800',
+      text: 'interface.error.900',
+      xmark: 'interface.error.700',
     },
     success: {
-      containerBg: '#E8FCE9',
-      containerBorder: '#A3F0A7',
-      icon: '#139E19',
-      text: '#008005',
-      xmark: '#00C408',
+      containerBg: 'interface.success.500',
+      containerBorder: 'interface.success.600',
+      icon: 'interface.success.800',
+      text: 'interface.success.900',
+      xmark: 'interface.success.700',
     },
   };
 

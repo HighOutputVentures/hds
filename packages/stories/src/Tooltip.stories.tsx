@@ -1,4 +1,4 @@
-import { Flex, Icon } from '@chakra-ui/react';
+import { Icon } from '@chakra-ui/react';
 import { ThemeProvider } from '@highoutput/hds';
 import { Tooltip } from '@highoutput/hds-tooltip';
 import { Meta, StoryFn } from '@storybook/react';
@@ -13,18 +13,9 @@ export default Story;
 const Template: StoryFn<typeof Tooltip> = (props) => {
   return (
     <ThemeProvider>
-      <Flex
-        gap={'50px'}
-        flexDir="column"
-        width="full"
-        justify={'center'}
-        align={'center'}
-        height={'400px'}
-      >
-        <Tooltip {...props}>
-          <Icon />
-        </Tooltip>
-      </Flex>
+      <Tooltip {...props}>
+        <Icon />
+      </Tooltip>
     </ThemeProvider>
   );
 };

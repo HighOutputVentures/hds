@@ -2,6 +2,7 @@ import { faker } from '@faker-js/faker';
 import {
   Box,
   HStack,
+  Icon,
   Menu,
   MenuButton,
   MenuDivider,
@@ -9,14 +10,27 @@ import {
   MenuList,
 } from '@highoutput/hds';
 import { Avatar, AvatarLabel } from '@highoutput/hds-avatar';
-import { IconButton } from '@highoutput/hds-forms';
-import { BellIcon, ExitIcon, SettingIcon, UserIcon } from '@highoutput/hds-icons';
+import { Button, IconButton } from '@highoutput/hds-forms';
+import {
+  BellIcon,
+  ChevronDownIcon,
+  ErrorFilmIcon,
+  ErrorFolderIcon,
+  ExitIcon,
+  SettingIcon,
+  UserIcon,
+  WarningFolderIcon,
+} from '@highoutput/hds-icons';
 import { SlideoutMenu } from '@highoutput/hds-slideout-menu';
 import { Tabs } from '@highoutput/hds-tab';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import Logo from './Logo';
 
 export function Header() {
+  const router = useRouter();
+
   return (
     <Box
       as="header"
@@ -28,6 +42,50 @@ export function Header() {
       borderBottom="1px"
       borderColor="neutrals.200"
     >
+      <Icon
+        as={Logo}
+        h="30px"
+        w="160px"
+        mr={{
+          base: 8,
+          md: 12,
+          lg: 16,
+        }}
+      />
+
+      <HStack spacing={4}>
+        <Button as={Link} href="/" variant="ghost" isActive={router.pathname === '/'}>
+          Dashboard
+        </Button>
+
+        <Menu placement="bottom">
+          <MenuButton
+            as={Button}
+            variant="ghost"
+            rightIcon={<ChevronDownIcon w={4} h={4} />}
+            isActive={router.pathname.startsWith('/users')}
+          >
+            Users
+          </MenuButton>
+
+          <MenuList w="200px">
+            <MenuItem icon={<ErrorFolderIcon w={6} h={6} />}>Menu option 1</MenuItem>
+            <MenuItem icon={<WarningFolderIcon w={6} h={6} />}>Menu option 2</MenuItem>
+            <MenuDivider />
+            <MenuItem icon={<ErrorFilmIcon w={6} h={6} />}>Menu option 3</MenuItem>
+          </MenuList>
+        </Menu>
+
+        <Button
+          as={Link}
+          href="/orders"
+          variant="ghost"
+          isActive={router.pathname === '/orders'}
+        >
+          Orders
+        </Button>
+      </HStack>
+
       <Box flexGrow={1} />
 
       <HStack spacing={4}>
@@ -58,7 +116,7 @@ function UserMenu() {
     <Menu>
       <MenuButton as={Avatar} size="sm" src={user.avatar} />
 
-      <MenuList>
+      <MenuList w="250px">
         <MenuItem>
           <AvatarLabel
             src={user.avatar}

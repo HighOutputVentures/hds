@@ -1,4 +1,4 @@
-import { Button, ButtonProps, IconButton } from '@chakra-ui/react';
+import { Button, ButtonProps, forwardRef, IconButton } from '@chakra-ui/react';
 import {
   AppleIcon,
   DribbleIcon,
@@ -36,90 +36,88 @@ type Base = {
 
 export type SocialButtonProps = Prettify<Picked & Base>;
 
-export default React.forwardRef<HTMLButtonElement, SocialButtonProps>(
-  function SocialButton(props, ref) {
-    const {
-      icon,
-      label,
-      variant = 'outline',
-      __iconTestId = 'hds.social-button.icon',
-      __buttonTestId = 'hds.social-button.group',
-      ...others
-    } = props;
+export default forwardRef<SocialButtonProps, 'button'>(function SocialButton(props, ref) {
+  const {
+    icon,
+    label,
+    variant = 'outline',
+    __iconTestId = 'hds.social-button.icon',
+    __buttonTestId = 'hds.social-button.group',
+    ...others
+  } = props;
 
-    const styles = useStyles({ variant });
+  const styles = useStyles({ variant });
 
-    const getSocialIcon = React.useCallback(() => {
-      switch (icon) {
-        case 'apple':
-          return (
-            <AppleIcon
-              isDisabled={others.isDisabled}
-              variant={variant}
-              data-testid={__iconTestId}
-            />
-          );
-        case 'dribble':
-          return (
-            <DribbleIcon
-              isDisabled={others.isDisabled}
-              variant={variant}
-              data-testid={__iconTestId}
-            />
-          );
-        case 'facebook':
-          return (
-            <FacebookIcon
-              isDisabled={others.isDisabled}
-              variant={variant}
-              data-testid={__iconTestId}
-            />
-          );
-        case 'figma':
-          return <FigmaIcon isDisabled={others.isDisabled} data-testid={__iconTestId} />;
-        case 'google':
-          return <GoogleIcon isDisabled={others.isDisabled} data-testid={__iconTestId} />;
-        case 'twitter':
-          return (
-            <TwitterIcon
-              isDisabled={others.isDisabled}
-              variant={variant}
-              data-testid={__iconTestId}
-            />
-          );
-      }
-    }, [__iconTestId, icon, others.isDisabled, variant]);
-
-    if (!label) {
-      return (
-        <IconButton
-          ref={ref}
-          aria-label=""
-          icon={getSocialIcon()}
-          height="44px"
-          paddingY="10px"
-          paddingX="16px"
-          sx={styles[icon]}
-        />
-      );
+  const getSocialIcon = React.useCallback(() => {
+    switch (icon) {
+      case 'apple':
+        return (
+          <AppleIcon
+            isDisabled={others.isDisabled}
+            variant={variant}
+            data-testid={__iconTestId}
+          />
+        );
+      case 'dribble':
+        return (
+          <DribbleIcon
+            isDisabled={others.isDisabled}
+            variant={variant}
+            data-testid={__iconTestId}
+          />
+        );
+      case 'facebook':
+        return (
+          <FacebookIcon
+            isDisabled={others.isDisabled}
+            variant={variant}
+            data-testid={__iconTestId}
+          />
+        );
+      case 'figma':
+        return <FigmaIcon isDisabled={others.isDisabled} data-testid={__iconTestId} />;
+      case 'google':
+        return <GoogleIcon isDisabled={others.isDisabled} data-testid={__iconTestId} />;
+      case 'twitter':
+        return (
+          <TwitterIcon
+            isDisabled={others.isDisabled}
+            variant={variant}
+            data-testid={__iconTestId}
+          />
+        );
     }
+  }, [__iconTestId, icon, others.isDisabled, variant]);
 
+  if (!label) {
     return (
-      <Button
+      <IconButton
         ref={ref}
+        aria-label=""
+        icon={getSocialIcon()}
         height="44px"
         paddingY="10px"
         paddingX="16px"
-        leftIcon={getSocialIcon()}
         sx={styles[icon]}
-        data-testid={__buttonTestId}
-        {...props}
-      >
-        {label}
-      </Button>
+      />
     );
-  },
-);
+  }
+
+  return (
+    <Button
+      ref={ref}
+      height="44px"
+      paddingY="10px"
+      paddingX="16px"
+      leftIcon={getSocialIcon()}
+      sx={styles[icon]}
+      data-testid={__buttonTestId}
+      {...props}
+    >
+      {label}
+    </Button>
+  );
+});
 
 function useStyles({ variant }: { variant?: Variant }) {
   const isOutlineVariant = variant === 'outline';

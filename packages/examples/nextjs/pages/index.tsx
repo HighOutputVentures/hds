@@ -12,6 +12,7 @@ import {
   useDisclosure,
   VStack,
 } from '@highoutput/hds';
+import { useNotification } from '@highoutput/hds-alerts';
 import { AvatarLabel } from '@highoutput/hds-avatar';
 import { Badge } from '@highoutput/hds-badge';
 import { Breadcrumbs } from '@highoutput/hds-breadcrumbs';
@@ -23,15 +24,17 @@ import {
   SelectField,
   TextField,
 } from '@highoutput/hds-forms';
-import { DotsVerticalIcon, TrashErrorIcon } from '@highoutput/hds-icons';
+import { DotsVerticalIcon, PrimaryIcon, TrashErrorIcon } from '@highoutput/hds-icons';
 import { Modal } from '@highoutput/hds-modal';
 import { Pagination } from '@highoutput/hds-pagination';
 import { Table } from '@highoutput/hds-table';
 import { useToast } from '@highoutput/hds-toast';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { format } from 'date-fns';
 import { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import AddIcon from '../components/AddIcon';
@@ -91,6 +94,29 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
 
 function Index({ users }: Props) {
   const router = useRouter();
+  const notify = useNotification();
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+
+    timeout = setTimeout(() => {
+      notify({
+        icon: <PrimaryIcon />,
+        title: <>We&rsquo;ve just released a new update!</>,
+        okayButton: 'Changelog',
+        description: (
+          <>Check out the all new dashboard view. Pages and exports now load faster.</>
+        ),
+        closeButton: 'Dismiss',
+      });
+    }, 1500);
+
+    return () => {
+      if (timeout) clearTimeout(timeout);
+    };
+  }, []);
+
+  const [dateRange, setDateRange] = useState<{ start: Date; until: Date } | undefined>();
 
   return (
     <>
@@ -100,7 +126,7 @@ function Index({ users }: Props) {
         items={[
           {
             href: '/',
-            label: 'Users',
+            label: 'Dashboard',
             isActive: true,
           },
         ]}
@@ -179,10 +205,15 @@ function Index({ users }: Props) {
             <Box flexGrow={1} />
 
             <HStack spacing={3}>
-              <RangeDatePickerDropdown>
+              <RangeDatePickerDropdown onApply={setDateRange}>
                 {({ onToggle }) => (
                   <Button accent="gray" variant="outline" onClick={onToggle}>
-                    Select Dates
+                    {dateRange
+                      ? `
+                      ${format(dateRange.start, 'MMM dd')} - 
+                      ${format(dateRange.until, 'MMM dd')}
+                      `.trim()
+                      : 'Select Dates'}
                   </Button>
                 )}
               </RangeDatePickerDropdown>

@@ -27,16 +27,16 @@ export function useStyles({ hasBottomRowBorder }: { hasBottomRowBorder: boolean 
 
   const table = {
     thead: {
-      bgColor: '#F9FAFB',
+      bgColor: 'Gray.50',
     },
     'th, td': {
-      borderColor: '#EAECF0',
+      borderColor: 'Gray.200',
     },
     th: {
       paddingY: '12px',
       paddingX: '24px',
       textTransform: 'unset',
-      color: '#667085',
+      color: 'Gray.500',
       fontSize: '12px',
       lineHeight: '18px',
       fontWeight: 'medium',
@@ -44,7 +44,7 @@ export function useStyles({ hasBottomRowBorder }: { hasBottomRowBorder: boolean 
     td: {
       paddingY: '16px',
       paddingX: '24px',
-      color: '#7A7A7A',
+      color: 'neutrals.600',
       fontSize: '14px',
       lineHeight: '20px',
       letterSpacing: '0.02em',
