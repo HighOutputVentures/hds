@@ -1,8 +1,8 @@
 import {
+  forwardRef,
   IconButton as ChakraIconButton,
   IconButtonProps as ChakraIconButtonProps,
 } from '@chakra-ui/react';
-import * as React from 'react';
 import { useStyles } from './hooks';
 import { Accent, Prettify, Size, Variant } from './types';
 
@@ -26,10 +26,7 @@ type Base = {
 
 export type IconButtonProps = Prettify<Picked & Base>;
 
-export default React.forwardRef<HTMLButtonElement, IconButtonProps>(function IconButton(
-  props,
-  ref,
-) {
+export default forwardRef<IconButtonProps, 'button'>(function IconButton(props, ref) {
   const {
     size = 'md',
     accent = 'primary',

@@ -1,5 +1,5 @@
 import { Icon } from '@chakra-ui/icons';
-import { ChakraProvider } from '@chakra-ui/react';
+import { ThemeProvider } from '@highoutput/hds';
 import { BadgeGroup } from '@highoutput/hds-badge';
 import { Meta, StoryFn } from '@storybook/react';
 import Example2Icon from '../examples/Example2Icon';
@@ -13,9 +13,9 @@ export default meta;
 
 const Template: StoryFn<typeof BadgeGroup> = (args) => {
   return (
-    <ChakraProvider>
+    <ThemeProvider>
       <BadgeGroup {...args} />
-    </ChakraProvider>
+    </ThemeProvider>
   );
 };
 

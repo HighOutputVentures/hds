@@ -1,8 +1,8 @@
 import {
   Button as ChakraButton,
   ButtonProps as ChakraButtonProps,
+  forwardRef,
 } from '@chakra-ui/react';
-import * as React from 'react';
 import { useStyles } from './hooks';
 import { Accent, Prettify, Size, Variant } from './types';
 
@@ -33,10 +33,7 @@ type Base = {
 
 export type ButtonProps = Prettify<Picked & Base>;
 
-export default React.forwardRef<HTMLButtonElement, ButtonProps>(function Button(
-  props,
-  ref,
-) {
+export default forwardRef<ButtonProps, 'button'>(function Button(props, ref) {
   const {
     size = 'md',
     accent = 'primary',

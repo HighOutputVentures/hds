@@ -1,5 +1,6 @@
 import { Icon } from '@chakra-ui/icons';
-import { ChakraProvider, VStack } from '@chakra-ui/react';
+import { VStack } from '@chakra-ui/react';
+import { ThemeProvider } from '@highoutput/hds';
 import { Badge } from '@highoutput/hds-badge';
 import { Meta, StoryFn } from '@storybook/react';
 import AUIcon from '../examples/AUIcon';
@@ -50,7 +51,7 @@ export default meta;
 
 const Template: StoryFn<typeof Badge> = (args) => {
   return (
-    <ChakraProvider>
+    <ThemeProvider>
       <VStack align="start" gap={2}>
         <Badge label="Label" size={args.size} accent={args.accent} />
         <Badge label="Label" hasIndicator size={args.size} accent={args.accent} />
@@ -93,7 +94,7 @@ const Template: StoryFn<typeof Badge> = (args) => {
           accent={args.accent}
         />
       </VStack>
-    </ChakraProvider>
+    </ThemeProvider>
   );
 };
 

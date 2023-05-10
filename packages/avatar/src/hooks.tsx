@@ -32,8 +32,8 @@ export function useStyles({ size }: UseStylesArg) {
     () => ({
       avatar(arg) {
         return {
-          color: '#475467',
-          bgColor: '#F9FAFB',
+          color: 'Gray.600',
+          bgColor: 'Gray.50',
           fontWeight: 'medium',
           padding: '0px',
 
@@ -163,8 +163,8 @@ export function useStyles({ size }: UseStylesArg) {
 
       badge(arg) {
         return {
-          color: '#00C408',
-          bgColor: arg?.isOnline ? '#00C408' : '#F0F0F0',
+          color: 'interface.success.700',
+          bgColor: arg?.isOnline ? 'interface.success.700' : 'neutrals.200',
           border: '1.5px solid',
           borderColor: 'white',
           right: 'unset',
@@ -215,8 +215,8 @@ export function useStyles({ size }: UseStylesArg) {
         return {
           position: 'absolute',
           rounded: 'full',
-          border: '1.5px solid #FFFFFF',
-          bgColor: '#F4EBFF',
+          border: '1.5px solid white',
+          bgColor: 'brand.primary.100',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
