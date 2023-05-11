@@ -2,6 +2,8 @@ import { Box, chakra, Icon, useDisclosure } from '@chakra-ui/react';
 import {
   autoUpdate,
   flip,
+  offset,
+  shift,
   useDismiss,
   useFloating,
   useInteractions,
@@ -39,7 +41,7 @@ export const RangeDatePickerInput$ = function RangeDatePickerInput(
     onChange = noop,
     dateFormat,
     placeholder,
-    zIndex = 1,
+    zIndex = 'modal',
     ...formGroupProps
   }: RangeDatePickerInputProps,
   ref: React.ForwardedRef<HTMLButtonElement>,
@@ -58,7 +60,13 @@ export const RangeDatePickerInput$ = function RangeDatePickerInput(
     strategy: 'fixed',
     placement: 'bottom-start',
     whileElementsMounted: autoUpdate,
-    middleware: [flip()],
+    middleware: [
+      offset(4),
+      flip(),
+      shift({
+        padding: 6,
+      }),
+    ],
   });
 
   const fieldRef = useMergeRefs([ref, refs.setReference]);
@@ -104,6 +112,7 @@ export const RangeDatePickerInput$ = function RangeDatePickerInput(
             id={id}
             ref={fieldRef}
             size={size}
+            type="button"
             onClick={onToggle}
             sx={{
               ...(size === 'sm' && { h: '40px', py: '8px', px: '12px' }),

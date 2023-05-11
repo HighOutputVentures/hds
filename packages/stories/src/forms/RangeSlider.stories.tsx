@@ -1,4 +1,3 @@
-import { Box } from '@chakra-ui/react';
 import { ThemeProvider } from '@highoutput/hds';
 import { RangeSlider } from '@highoutput/hds-forms';
 import { Meta, StoryFn } from '@storybook/react';
@@ -11,9 +10,7 @@ const Story: Meta<typeof RangeSlider> = {
 const Template: StoryFn<typeof RangeSlider> = (args) => {
   return (
     <ThemeProvider>
-      <Box py={16} px={8}>
-        <RangeSlider {...args} />
-      </Box>
+      <RangeSlider {...args} />
     </ThemeProvider>
   );
 };

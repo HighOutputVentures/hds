@@ -3,6 +3,8 @@ import {
   autoUpdate,
   flip,
   FloatingPortal,
+  offset,
+  shift,
   useDismiss,
   useFloating,
   useInteractions,
@@ -53,7 +55,13 @@ const DatePickerInput$ = function DatePickerInput(
     strategy: 'fixed',
     placement: 'bottom-start',
     whileElementsMounted: autoUpdate,
-    middleware: [flip()],
+    middleware: [
+      offset(4),
+      flip(),
+      shift({
+        padding: 6,
+      }),
+    ],
   });
 
   const fieldRef = useMergeRefs([ref, refs.setReference]);
@@ -89,6 +97,7 @@ const DatePickerInput$ = function DatePickerInput(
             id={id}
             ref={fieldRef}
             size={size}
+            type="button"
             onClick={onToggle}
             sx={{
               ...(size === 'sm' && { h: '40px', py: '8px', px: '12px' }),

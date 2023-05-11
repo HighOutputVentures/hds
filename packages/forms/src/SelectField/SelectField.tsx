@@ -3,6 +3,8 @@ import {
   autoUpdate,
   flip,
   FloatingPortal,
+  offset,
+  shift,
   size as floatingSize,
   useFloating,
 } from '@floating-ui/react';
@@ -97,7 +99,11 @@ function SelectField<T extends Option>(
     placement: 'bottom-start',
     whileElementsMounted: autoUpdate,
     middleware: [
+      offset(4),
       flip(),
+      shift({
+        padding: 6,
+      }),
       floatingSize({
         apply({ rects, elements }) {
           Object.assign(elements.floating.style, {
@@ -114,6 +120,7 @@ function SelectField<T extends Option>(
         <chakra.div>
           <chakra.button
             ref={ref}
+            type="button"
             sx={{
               ...styles.field,
               width: 'full',

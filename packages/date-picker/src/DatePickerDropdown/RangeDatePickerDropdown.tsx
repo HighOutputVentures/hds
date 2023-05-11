@@ -4,6 +4,7 @@ import {
   flip,
   FloatingPortal,
   offset,
+  shift,
   useDismiss,
   useFloating,
   useInteractions,
@@ -36,7 +37,13 @@ export function RangeDatePickerDropdown({
     strategy: 'fixed',
     placement: 'bottom-start',
     whileElementsMounted: autoUpdate,
-    middleware: [flip(), offset(8)],
+    middleware: [
+      offset(4),
+      flip(),
+      shift({
+        padding: 6,
+      }),
+    ],
   });
 
   const { isMounted, styles } = useTransitionStyles(context, {

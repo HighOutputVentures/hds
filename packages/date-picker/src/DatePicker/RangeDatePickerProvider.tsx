@@ -39,9 +39,16 @@ const RangeDatePickerContext = React.createContext<RangeDatePickerState>({
   reset: noop,
 });
 
-function RangeDatePickerProvider({ children }: React.PropsWithChildren) {
-  const [selectedRangeStart, setSelectedRangeStart] = React.useState<Date | undefined>();
-  const [selectedRangeUntil, setSelectedRangeUntil] = React.useState<Date | undefined>();
+type RangeDatePickerProps = React.PropsWithChildren<{
+  value?: DateRange;
+}>;
+
+export function RangeDatePickerProvider({
+  value,
+  children,
+}: React.PropsWithChildren<RangeDatePickerProps>) {
+  const [selectedRangeStart, setSelectedRangeStart] = React.useState(value?.start);
+  const [selectedRangeUntil, setSelectedRangeUntil] = React.useState(value?.until);
 
   const [lastUpdated, setLastUpdated] = React.useState<LastUpdated | undefined>();
   const [currentDate, setCurrentDate] = React.useState(new Date());
@@ -118,16 +125,4 @@ function RangeDatePickerProvider({ children }: React.PropsWithChildren) {
 
 export function useRangeDatePickerContext() {
   return React.useContext(RangeDatePickerContext);
-}
-
-export function withRangeDatePickerContext<T extends Record<string, any>>(
-  Component: (props: T) => JSX.Element,
-) {
-  return function Wrapped(props: T) {
-    return (
-      <RangeDatePickerProvider>
-        <Component {...props} />
-      </RangeDatePickerProvider>
-    );
-  };
 }

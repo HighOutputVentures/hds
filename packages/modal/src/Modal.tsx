@@ -171,6 +171,7 @@ export function Modal(props: ModalProps) {
               <Flex
                 sx={{
                   gap: '24px',
+                  flexGrow: 1,
 
                   ...(isSmall && {
                     justifyContent: 'space-between',
