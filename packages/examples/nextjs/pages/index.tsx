@@ -205,7 +205,7 @@ function Index({ users }: Props) {
             <Box flexGrow={1} />
 
             <HStack spacing={3}>
-              <RangeDatePickerDropdown onApply={setDateRange}>
+              <RangeDatePickerDropdown value={dateRange} onApply={setDateRange}>
                 {({ onToggle }) => (
                   <Button accent="gray" variant="outline" onClick={onToggle}>
                     {dateRange
