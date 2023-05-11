@@ -27,6 +27,7 @@ export type DatePickerInputProps = FormGroupProps & {
   onChange?(newValue: Date): void;
   placeholder?: string;
   dateFormat?: ((value: Date) => string) | string;
+  __fieldTestId?: string;
 };
 
 const DatePickerInput$ = function DatePickerInput(
@@ -37,6 +38,7 @@ const DatePickerInput$ = function DatePickerInput(
     dateFormat,
     placeholder,
     zIndex = 'modal',
+    __fieldTestId = 'hds.datepicker-input',
     ...formGroupProps
   }: DatePickerInputProps,
   ref: React.ForwardedRef<HTMLButtonElement>,
@@ -116,7 +118,7 @@ const DatePickerInput$ = function DatePickerInput(
               ...(isOpen && {
                 'data-active': true,
               }),
-              'data-testid': 'hds.datepicker-input',
+              'data-testid': __fieldTestId,
             }}
             {...getReferenceProps()}
           >

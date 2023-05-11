@@ -32,6 +32,7 @@ export type RangeDatePickerInputProps = FormGroupProps & {
   onChange?(newValue?: Value): void;
   dateFormat?: ((value?: Value) => string) | string;
   placeholder?: string;
+  __fieldTestId?: string;
 };
 
 export const RangeDatePickerInput$ = function RangeDatePickerInput(
@@ -42,6 +43,7 @@ export const RangeDatePickerInput$ = function RangeDatePickerInput(
     dateFormat,
     placeholder,
     zIndex = 'modal',
+    __fieldTestId = 'hds.range-datepicker-input',
     ...formGroupProps
   }: RangeDatePickerInputProps,
   ref: React.ForwardedRef<HTMLButtonElement>,
@@ -131,7 +133,7 @@ export const RangeDatePickerInput$ = function RangeDatePickerInput(
               ...(isOpen && {
                 'data-active': true,
               }),
-              'data-testid': 'hds.datepicker-input',
+              'data-testid': __fieldTestId,
             }}
             {...getReferenceProps()}
           >

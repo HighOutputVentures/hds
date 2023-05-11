@@ -321,7 +321,7 @@ function Calendar({ baseDate, onSelect = noop, onNext, onPrev }: CalendarProps) 
                           isPlaceholder,
                           isWithinRange,
                         })}
-                        data-testid="hds.datepicker.calendar.date"
+                        data-testid={`hds.datepicker.calendar.date.${value.toDateString()}`}
                       >
                         {value.getDate()}
                       </chakra.button>
