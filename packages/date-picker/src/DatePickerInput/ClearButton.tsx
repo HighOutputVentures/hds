@@ -8,6 +8,7 @@ export const ClearButton = React.forwardRef<
 >(function ClearButton(props, ref) {
   return (
     <chakra.button
+      type="button"
       ref={ref}
       height={5}
       width={5}

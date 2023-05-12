@@ -3,6 +3,8 @@ import {
   autoUpdate,
   flip,
   FloatingPortal,
+  offset,
+  shift,
   useDismiss,
   useFloating,
   useInteractions,
@@ -25,6 +27,7 @@ export type DatePickerInputProps = FormGroupProps & {
   onChange?(newValue: Date): void;
   placeholder?: string;
   dateFormat?: ((value: Date) => string) | string;
+  __fieldTestId?: string;
 };
 
 const DatePickerInput$ = function DatePickerInput(
@@ -35,6 +38,7 @@ const DatePickerInput$ = function DatePickerInput(
     dateFormat,
     placeholder,
     zIndex = 'modal',
+    __fieldTestId = 'hds.datepicker-input',
     ...formGroupProps
   }: DatePickerInputProps,
   ref: React.ForwardedRef<HTMLButtonElement>,
@@ -53,7 +57,13 @@ const DatePickerInput$ = function DatePickerInput(
     strategy: 'fixed',
     placement: 'bottom-start',
     whileElementsMounted: autoUpdate,
-    middleware: [flip()],
+    middleware: [
+      offset(4),
+      flip(),
+      shift({
+        padding: 6,
+      }),
+    ],
   });
 
   const fieldRef = useMergeRefs([ref, refs.setReference]);
@@ -89,6 +99,7 @@ const DatePickerInput$ = function DatePickerInput(
             id={id}
             ref={fieldRef}
             size={size}
+            type="button"
             onClick={onToggle}
             sx={{
               ...(size === 'sm' && { h: '40px', py: '8px', px: '12px' }),
@@ -107,7 +118,7 @@ const DatePickerInput$ = function DatePickerInput(
               ...(isOpen && {
                 'data-active': true,
               }),
-              'data-testid': 'hds.datepicker-input',
+              'data-testid': __fieldTestId,
             }}
             {...getReferenceProps()}
           >

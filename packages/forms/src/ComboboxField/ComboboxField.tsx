@@ -3,6 +3,8 @@ import {
   autoUpdate,
   flip,
   FloatingPortal,
+  offset,
+  shift,
   size as floatingSize,
   useFloating,
 } from '@floating-ui/react';
@@ -138,7 +140,11 @@ function ComboboxField<T extends Option>(
     placement: 'bottom-start',
     whileElementsMounted: autoUpdate,
     middleware: [
+      offset(4),
       flip(),
+      shift({
+        padding: 6,
+      }),
       floatingSize({
         apply({ rects, elements }) {
           Object.assign(elements.floating.style, {

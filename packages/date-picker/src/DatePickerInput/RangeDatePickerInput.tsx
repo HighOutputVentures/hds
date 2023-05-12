@@ -2,6 +2,8 @@ import { Box, chakra, Icon, useDisclosure } from '@chakra-ui/react';
 import {
   autoUpdate,
   flip,
+  offset,
+  shift,
   useDismiss,
   useFloating,
   useInteractions,
@@ -30,6 +32,7 @@ export type RangeDatePickerInputProps = FormGroupProps & {
   onChange?(newValue?: Value): void;
   dateFormat?: ((value?: Value) => string) | string;
   placeholder?: string;
+  __fieldTestId?: string;
 };
 
 export const RangeDatePickerInput$ = function RangeDatePickerInput(
@@ -39,7 +42,8 @@ export const RangeDatePickerInput$ = function RangeDatePickerInput(
     onChange = noop,
     dateFormat,
     placeholder,
-    zIndex = 1,
+    zIndex = 'modal',
+    __fieldTestId = 'hds.range-datepicker-input',
     ...formGroupProps
   }: RangeDatePickerInputProps,
   ref: React.ForwardedRef<HTMLButtonElement>,
@@ -58,7 +62,13 @@ export const RangeDatePickerInput$ = function RangeDatePickerInput(
     strategy: 'fixed',
     placement: 'bottom-start',
     whileElementsMounted: autoUpdate,
-    middleware: [flip()],
+    middleware: [
+      offset(4),
+      flip(),
+      shift({
+        padding: 6,
+      }),
+    ],
   });
 
   const fieldRef = useMergeRefs([ref, refs.setReference]);
@@ -104,6 +114,7 @@ export const RangeDatePickerInput$ = function RangeDatePickerInput(
             id={id}
             ref={fieldRef}
             size={size}
+            type="button"
             onClick={onToggle}
             sx={{
               ...(size === 'sm' && { h: '40px', py: '8px', px: '12px' }),
@@ -122,7 +133,7 @@ export const RangeDatePickerInput$ = function RangeDatePickerInput(
               ...(isOpen && {
                 'data-active': true,
               }),
-              'data-testid': 'hds.datepicker-input',
+              'data-testid': __fieldTestId,
             }}
             {...getReferenceProps()}
           >

@@ -1,6 +1,6 @@
 import { chakra } from '@chakra-ui/react';
 import { Button } from '@highoutput/hds-forms';
-import { addMonths, format, subMonths } from 'date-fns';
+import { addMonths, endOfDay, format, startOfDay, subMonths } from 'date-fns';
 import * as React from 'react';
 import { invariant } from 'shared/utils';
 import { v4 as uuid } from 'uuid';
@@ -10,36 +10,26 @@ import { DateRange, TimeAdverbial } from '../types';
 import { getDateRangeByTimeAdverbial, getRangeCalendar, noop } from '../utils';
 import { DatePickerControl } from './DatePickerControl';
 import {
+  RangeDatePickerProvider,
   useRangeDatePickerContext,
-  withRangeDatePickerContext,
 } from './RangeDatePickerProvider';
 
 export type RangeDatePickerProps = {
-  /**
-   *
-   * Not implemented yet
-   *
-   */
+  value?: DateRange;
   events?: Date[];
   onApply?(value: DateRange): void;
   onCancel?(currentValue: Partial<DateRange>): void;
-  defaultValue?: DateRange;
   hasTimeAdverbial?: boolean;
   includePreviousMonth?: boolean;
 };
 
-export const RangeDatePicker = withRangeDatePickerContext(function RangeDatePicker({
+function RangeDatePickerInternal({
   onApply,
   onCancel,
-  defaultValue,
   hasTimeAdverbial = true,
   includePreviousMonth = true,
 }: RangeDatePickerProps) {
   const context = useRangeDatePickerContext();
-
-  React.useEffect(() => {
-    if (defaultValue) context.updateSelectedRangeHard(defaultValue);
-  }, [context, defaultValue]);
 
   return (
     <chakra.div
@@ -81,7 +71,15 @@ export const RangeDatePicker = withRangeDatePickerContext(function RangeDatePick
                 variant="outline"
                 accent="gray"
                 onClick={() => {
-                  onCancel?.(context.dateRange);
+                  onCancel?.({
+                    start: context.dateRange.start
+                      ? startOfDay(context.dateRange.start)
+                      : undefined,
+                    until: context.dateRange.until
+                      ? endOfDay(context.dateRange.until)
+                      : undefined,
+                  });
+
                   context.reset();
                 }}
               >
@@ -96,8 +94,8 @@ export const RangeDatePicker = withRangeDatePickerContext(function RangeDatePick
 
                   context.reset();
                   onApply?.({
-                    start,
-                    until,
+                    start: startOfDay(start),
+                    until: endOfDay(until),
                   });
                 }}
               >
@@ -109,7 +107,7 @@ export const RangeDatePicker = withRangeDatePickerContext(function RangeDatePick
       </chakra.div>
     </chakra.div>
   );
-});
+}
 
 function TimeAdverbialMenu() {
   const context = useRangeDatePickerContext();
@@ -323,7 +321,7 @@ function Calendar({ baseDate, onSelect = noop, onNext, onPrev }: CalendarProps) 
                           isPlaceholder,
                           isWithinRange,
                         })}
-                        data-testid="hds.datepicker.calendar.date"
+                        data-testid={`hds.datepicker.calendar.date.${value.toDateString()}`}
                       >
                         {value.getDate()}
                       </chakra.button>
@@ -338,3 +336,11 @@ function Calendar({ baseDate, onSelect = noop, onNext, onPrev }: CalendarProps) 
     </chakra.div>
   );
 }
+
+export const RangeDatePicker = (props: RangeDatePickerProps) => {
+  return (
+    <RangeDatePickerProvider value={props.value}>
+      <RangeDatePickerInternal {...props} />
+    </RangeDatePickerProvider>
+  );
+};
