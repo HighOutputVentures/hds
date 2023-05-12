@@ -1,4 +1,5 @@
 import { ToastId, useToast as _, UseToastOptions } from '@chakra-ui/react';
+import { ReactNode } from 'react';
 import { Toast } from './Toast';
 
 export type UseToastFnConfig = Pick<
@@ -6,11 +7,15 @@ export type UseToastFnConfig = Pick<
   'duration' | 'position' | 'isClosable' | 'onCloseComplete'
 >;
 
-export type UseToastFn = (message: string, config?: Partial<UseToastFnConfig>) => ToastId;
+export type UseToastFn = (
+  message: string | ReactNode,
+  config?: Partial<UseToastFnConfig>,
+) => ToastId;
 
 export type UseToastReturn = {
   error: UseToastFn;
   success: UseToastFn;
+  custom: UseToastFn;
 };
 
 /**
@@ -57,6 +62,14 @@ export function useToast(): UseToastReturn {
         ...overrides,
         status: 'success',
         description,
+      });
+    },
+    custom(JSXElement, overrides) {
+      return toast({
+        render() {
+          return JSXElement;
+        },
+        ...overrides,
       });
     },
   };

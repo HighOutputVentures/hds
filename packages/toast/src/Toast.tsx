@@ -24,9 +24,10 @@ export const Toast: RenderToast = (props) => {
       border="1px solid"
       borderColor={colors.containerBorder}
       rounded="8px"
-      width="550px"
+      width="full"
       data-testid="hds.toast.container"
-      maxWidth="full"
+      minWidth="400px"
+      maxWidth="550px"
       alignItems="center"
       padding={2}
       paddingLeft={4}

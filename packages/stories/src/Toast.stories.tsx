@@ -1,4 +1,4 @@
-import { HStack } from '@chakra-ui/react';
+import { Box, HStack } from '@chakra-ui/react';
 import { ThemeProvider } from '@highoutput/hds';
 import { Button } from '@highoutput/hds-forms';
 import { useToast } from '@highoutput/hds-toast';
@@ -36,6 +36,20 @@ const Template: StoryFn<any> = () => {
           }}
         >
           Error
+        </Button>
+        <Button
+          variant="outline"
+          accent="gray"
+          width="100px"
+          onClick={() => {
+            toast.custom(
+              <Box p={4} borderWidth="1px" rounded="4px" borderColor="neutrals.200">
+                This is an error toast.
+              </Box>,
+            );
+          }}
+        >
+          Custom
         </Button>
       </HStack>
     </ThemeProvider>

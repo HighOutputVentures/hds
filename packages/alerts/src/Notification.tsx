@@ -1,4 +1,10 @@
-import { chakra, Icon, SystemStyleObject, useToast } from '@chakra-ui/react';
+import {
+  chakra,
+  Icon,
+  SystemStyleObject,
+  ToastPosition,
+  useToast,
+} from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import CloseIcon from './CloseIcon';
 
@@ -55,8 +61,8 @@ export function Notification({
         border: '1px solid',
         borderColor: 'Gray.100',
         rounded: '8px',
-        width: '400px',
-        maxWidth: 'full',
+        width: 'full',
+        maxWidth: '400px',
         bgColor: 'white',
         boxShadow:
           '0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)',
@@ -66,10 +72,15 @@ export function Notification({
     >
       {icon && <chakra.div data-testid={__iconTestId}>{icon}</chakra.div>}
 
-      <chakra.div>
+      <chakra.div
+        sx={{
+          flexGrow: 1,
+        }}
+      >
         {!!title && (
           <chakra.div
             sx={{
+              flexGrow: 1,
               fontSize: '14px',
               fontWeight: 'semibold',
               lineHeight: '14px',
@@ -84,6 +95,7 @@ export function Notification({
         {!!description && (
           <chakra.div
             sx={{
+              flexGrow: 1,
               marginTop: '4px',
               fontSize: '14px',
               lineHeight: '20px',
@@ -165,12 +177,21 @@ export function Notification({
   );
 }
 
+type ToastNotificationArgs = NotificationProps & {
+  position?: ToastPosition;
+};
+
 export function useNotification() {
   const toast = useToast();
 
-  return function notify({ onOkay, onClose, ...others }: NotificationProps = {}) {
+  return function notify({
+    position = 'bottom-right',
+    onOkay,
+    onClose,
+    ...others
+  }: ToastNotificationArgs = {}) {
     return toast({
-      position: 'bottom-right',
+      position,
       duration: 5000,
       render(args) {
         return (
