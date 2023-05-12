@@ -2,7 +2,7 @@
 
 exports[`Notification Snapshot Should match snapshot 1`] = `
 <div
-  className="css-lffdce"
+  className="css-25ygp5"
   data-testid="hds.notification"
 >
   <div
@@ -21,16 +21,16 @@ exports[`Notification Snapshot Should match snapshot 1`] = `
     </svg>
   </div>
   <div
-    className="css-0"
+    className="css-i9gxme"
   >
     <div
-      className="css-19kvaz5"
+      className="css-1lmd7sd"
       data-testid="hds.notification.title"
     >
       We’ve just released a new feature
     </div>
     <div
-      className="css-17iag2u"
+      className="css-1po9cmj"
       data-testid="hds.notification.description"
     >
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.
