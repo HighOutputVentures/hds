@@ -2,6 +2,7 @@ import { Box, chakra, Icon, useDisclosure } from '@chakra-ui/react';
 import {
   autoUpdate,
   flip,
+  FloatingPortal,
   offset,
   shift,
   useDismiss,
@@ -156,27 +157,30 @@ export const RangeDatePickerInput$ = function RangeDatePickerInput(
       </FormGroup>
 
       {isMounted && (
-        <Box
-          ref={refs.setFloating}
-          sx={{
-            pos: strategy,
-            top: `${y ?? 0}px`,
-            left: `${x ?? 0}px`,
-            zIndex,
-            ...styles,
-          }}
-          {...getFloatingProps()}
-        >
-          <RangeDatePicker
-            onCancel={onClose}
-            onApply={(newValue) => {
-              onChange?.(newValue);
-              onClose();
+        <FloatingPortal>
+          <Box
+            ref={refs.setFloating}
+            data-testid="hds.range-datepicker-input.calendar-container"
+            sx={{
+              pos: strategy,
+              top: `${y ?? 0}px`,
+              left: `${x ?? 0}px`,
+              zIndex,
+              ...styles,
             }}
-            hasTimeAdverbial={false}
-            includePreviousMonth={false}
-          />
-        </Box>
+            {...getFloatingProps()}
+          >
+            <RangeDatePicker
+              onCancel={onClose}
+              onApply={(newValue) => {
+                onChange?.(newValue);
+                onClose();
+              }}
+              hasTimeAdverbial={false}
+              includePreviousMonth={false}
+            />
+          </Box>
+        </FloatingPortal>
       )}
     </>
   );

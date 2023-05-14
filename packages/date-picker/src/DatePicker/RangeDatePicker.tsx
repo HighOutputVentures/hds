@@ -82,6 +82,7 @@ function RangeDatePickerInternal({
 
                   context.reset();
                 }}
+                data-testid="hds.range-datepicker.controls.cancel"
               >
                 Cancel
               </Button>
@@ -98,6 +99,7 @@ function RangeDatePickerInternal({
                     until: endOfDay(until),
                   });
                 }}
+                data-testid="hds.range-datepicker.controls.apply"
               >
                 Apply
               </Button>
@@ -162,6 +164,7 @@ function TimeAdverbialMenu() {
 
             if (value === TimeAdverbial.AllTime) context.reset();
           }}
+          data-testid={`hds.range-datepicker.controls.time-adverb.${TimeAdverbial}`}
         >
           {value}
         </chakra.button>
@@ -182,14 +185,25 @@ function SelectedDates() {
     : 'Select date';
 
   return (
-    <chakra.div display="flex" gap="12px" alignItems="center">
-      <SelectedDateItem data-placeholder={!context.dateRange.start}>
+    <chakra.div
+      display="flex"
+      gap="12px"
+      alignItems="center"
+      data-testid="hds.range-datepicker.selected-dates"
+    >
+      <SelectedDateItem
+        data-placeholder={!context.dateRange.start}
+        date-testid="hds.range-datepicker.selected-date.start"
+      >
         {start}
       </SelectedDateItem>
 
       <chakra.div w="8px" borderTop="2px" borderColor="Gray.500" />
 
-      <SelectedDateItem data-placeholder={!context.dateRange.until}>
+      <SelectedDateItem
+        data-placeholder={!context.dateRange.until}
+        date-testid="hds.range-datepicker.selected-date.until"
+      >
         {until}
       </SelectedDateItem>
     </chakra.div>
@@ -277,16 +291,26 @@ function Calendar({ baseDate, onSelect = noop, onNext, onPrev }: CalendarProps) 
 
   return (
     <chakra.div sx={styles.calendar()}>
-      <DatePickerControl value={baseDate} onNext={onNext} onPrev={onPrev} />
+      <DatePickerControl
+        value={baseDate}
+        onNext={onNext}
+        onPrev={onPrev}
+        __nextButtonTestId="hds.range-datepicker.controls.next-month"
+        __prevButtonTestId="hds.range-datepicker.controls.prev-month"
+        __selectedMonthTestId="hds.range-datepicker.selected-month"
+      />
 
-      <chakra.table sx={styles.calendarMain()} data-testid="hds.datepicker.calendar">
+      <chakra.table
+        sx={styles.calendarMain()}
+        data-testid="hds.range-datepicker.calendar"
+      >
         <chakra.thead>
           <chakra.tr>
             {DAYS.map((d) => (
               <chakra.th
                 key={uuid()}
                 sx={styles.calendarWeek()}
-                data-testid="hds.datepicker.calendar.weekday"
+                data-testid="hds.range-datepicker.calendar.weekday"
               >
                 {d}
               </chakra.th>
@@ -306,6 +330,7 @@ function Calendar({ baseDate, onSelect = noop, onNext, onPrev }: CalendarProps) 
                   isRangeStartDate,
                   isRangeUntilDate,
                 }) => {
+                  const formatted = format(value, 'yyyy-MM-dd');
                   const isSelected = isRangeStartDate || isRangeUntilDate;
 
                   return (
@@ -321,7 +346,7 @@ function Calendar({ baseDate, onSelect = noop, onNext, onPrev }: CalendarProps) 
                           isPlaceholder,
                           isWithinRange,
                         })}
-                        data-testid={`hds.datepicker.calendar.date.${value.toDateString()}`}
+                        data-testid={`hds.datepicker.calendar.date.${formatted}`}
                       >
                         {value.getDate()}
                       </chakra.button>

@@ -91,6 +91,7 @@ export function RangeDatePickerDropdown({
               left: `${x ?? 0}px`,
               ...styles,
             }}
+            data-testid="hds.range-datepicker-dropdown.calendar-container"
             {...getFloatingProps()}
           >
             <RangeDatePicker

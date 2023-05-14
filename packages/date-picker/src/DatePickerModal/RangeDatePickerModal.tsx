@@ -38,6 +38,7 @@ export const RangeDatePickerModal = function RangeDatePickerModal({
           width="auto"
           minWidth="unset"
           maxWidth="unset"
+          data-testid="hds.range-datepicker-modal.calendar-container"
         >
           <RangeDatePicker
             onApply={(newValue) => {

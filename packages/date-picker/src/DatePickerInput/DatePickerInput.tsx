@@ -151,6 +151,7 @@ const DatePickerInput$ = function DatePickerInput(
               zIndex,
               ...styles,
             }}
+            data-testid="hds.range-datepicker-input.calendar-container"
             {...getFloatingProps()}
           >
             <DatePicker
