@@ -2,7 +2,7 @@ import { chakra } from '@chakra-ui/react';
 import { Button } from '@highoutput/hds-forms';
 import { addMonths, endOfDay, format, startOfDay, subMonths } from 'date-fns';
 import * as React from 'react';
-import { invariant } from 'shared/utils';
+import { invariant, slugify } from 'shared/utils';
 import { v4 as uuid } from 'uuid';
 import { DAYS } from '../constants';
 import { useStyles } from '../hooks';
@@ -164,7 +164,7 @@ function TimeAdverbialMenu() {
 
             if (value === TimeAdverbial.AllTime) context.reset();
           }}
-          data-testid={`hds.range-datepicker.controls.time-adverb.${TimeAdverbial}`}
+          data-testid={`hds.range-datepicker.controls.time-adverb.${slugify(value)}`}
         >
           {value}
         </chakra.button>
