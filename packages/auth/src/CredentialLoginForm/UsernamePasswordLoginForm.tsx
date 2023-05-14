@@ -62,6 +62,7 @@ export const UsernamePasswordLoginForm: React.FC<UsernamePasswordLoginFormProps>
       <chakra.form onSubmit={handleSubmit(onSubmit ?? function noop() {})}>
         <Stack spacing={4}>
           <TextField
+            id="username"
             label={username?.label}
             placeholder="Input your username"
             error={formState.errors.username?.message}

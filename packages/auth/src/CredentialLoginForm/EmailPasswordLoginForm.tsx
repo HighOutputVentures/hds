@@ -62,6 +62,7 @@ export const EmailPasswordLoginForm: React.FC<EmailPasswordLoginFormProps> = ({
       <chakra.form onSubmit={handleSubmit(onSubmit ?? function noop() {})}>
         <Stack spacing={4}>
           <TextField
+            id="email"
             label={emailAdd?.label}
             placeholder="Input your email"
             error={formState.errors.emailAddress?.message}
