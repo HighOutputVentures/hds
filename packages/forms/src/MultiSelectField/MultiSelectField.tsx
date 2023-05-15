@@ -338,7 +338,16 @@ const MultiSelectFieldInternal = function MultiSelectFieldInternal<
                   );
                 })}
 
-                {filteredOptions.length === 0 && <chakra.li>No more options</chakra.li>}
+                {filteredOptions.length === 0 && (
+                  <Option
+                    fontSize="sm"
+                    color="neutrals.600"
+                    justifyContent="center"
+                    data-testid="hds.multi-select.nomatchfound"
+                  >
+                    No match found
+                  </Option>
+                )}
               </MenuList>
             </Menu>
           </FloatingFocusManager>
