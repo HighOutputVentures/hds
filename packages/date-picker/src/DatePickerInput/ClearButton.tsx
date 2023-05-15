@@ -24,6 +24,7 @@ export const ClearButton = React.forwardRef<
         color: 'blackAlpha.700',
       }}
       tabIndex={-1}
+      data-testid="hds.datepicker.shared.controls.clear-button"
       {...props}
     >
       <Icon as={CloseIcon} width={4} height={4} />

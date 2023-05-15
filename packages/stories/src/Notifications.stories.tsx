@@ -19,13 +19,13 @@ const Template: StoryFn<typeof Notification> = () => {
           notify({
             icon: <PrimaryIcon w="40px" h="40px" />,
             title: <>We&rsquo;ve just released a new update!</>,
-            okayButton: 'Changelog',
+            position: 'top',
             description: (
               <>
                 Check out the all new dashboard view. Pages and exports now load faster.
               </>
             ),
-            closeButton: 'Dismiss',
+            okayButton: 'Dismiss',
           });
         }}
       >

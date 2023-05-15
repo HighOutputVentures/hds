@@ -167,11 +167,10 @@ export function Modal(props: ModalProps) {
           <Flex gap="24px">
             {hasIcon && isMedium && <Box data-testid={__iconTestId}>{icon}</Box>}
 
-            <Box>
+            <Box flexGrow={1}>
               <Flex
                 sx={{
                   gap: '24px',
-                  flexGrow: 1,
 
                   ...(isSmall && {
                     justifyContent: 'space-between',

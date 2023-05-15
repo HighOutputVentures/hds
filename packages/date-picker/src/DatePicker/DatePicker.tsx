@@ -24,6 +24,9 @@ export function DatePicker({ value, onChange = noop }: DatePickerProps) {
         value={baseDate}
         onNext={() => setBaseDate((d) => addMonths(d, 1))}
         onPrev={() => setBaseDate((d) => subMonths(d, 1))}
+        __nextButtonTestId="hds.datepicker.controls.next-month"
+        __prevButtonTestId="hds.datepicker.controls.prev-month"
+        __selectedMonthTestId="hds.datepicker.selected-month"
       />
 
       <chakra.table sx={styles.calendarMain()} data-testid="hds.datepicker.calendar">
@@ -33,7 +36,7 @@ export function DatePicker({ value, onChange = noop }: DatePickerProps) {
               <chakra.th
                 key={uuid()}
                 sx={styles.calendarWeek()}
-                data-testid={`hds.datepicker.calendar.weekday.${d}`}
+                data-testid="hds.datepicker.calendar.weekday"
               >
                 {d}
               </chakra.th>

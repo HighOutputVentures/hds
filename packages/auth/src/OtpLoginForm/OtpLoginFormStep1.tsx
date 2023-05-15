@@ -54,6 +54,7 @@ export const OtpLoginFormStep1: React.FC<OtpLoginFormStep1Props> = ({
 
       <chakra.form onSubmit={handleSubmit(onSubmit ?? function noop() {})}>
         <TextField
+          id="email"
           label={email?.label}
           error={formState.errors.emailAddress?.message}
           placeholder="Enter your email address"

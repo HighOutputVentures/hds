@@ -42,10 +42,5 @@ Default.args = {
   hasCancelButton: true,
   icon: <Icon as={FeaturedCheckIcon} w="48px" h="48px" />,
   title: 'Blog post published',
-  message: (
-    <Fragment>
-      This blog post has been published. Team members will be able&nbsp;to edit this post
-      and republish changes.
-    </Fragment>
-  ),
+  message: <Fragment>This blog post has been published.</Fragment>,
 };
