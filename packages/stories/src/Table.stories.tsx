@@ -2,15 +2,19 @@ import {
   Avatar,
   Badge,
   Box,
-  chakra,
   Flex,
   Heading,
   HStack,
   Icon,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   Text,
 } from '@chakra-ui/react';
 import { faker } from '@faker-js/faker';
 import { ThemeProvider } from '@highoutput/hds';
+import { IconButton } from '@highoutput/hds-forms';
 import { DotsVerticalIcon } from '@highoutput/hds-icons';
 import { Pagination } from '@highoutput/hds-pagination';
 import { Table, TableProps } from '@highoutput/hds-table';
@@ -77,9 +81,19 @@ function Header() {
         </Badge>
       </HStack>
 
-      <chakra.button display="flex">
-        <Icon as={DotsVerticalIcon} w="20px" h="20px" color="#A3A3A3" />
-      </chakra.button>
+      <Menu>
+        <MenuButton
+          as={IconButton}
+          variant="unstyled"
+          icon={<Icon as={DotsVerticalIcon} w="20px" h="20px" color="#A3A3A3" />}
+        />
+
+        <MenuList>
+          <MenuItem>Option 1</MenuItem>
+          <MenuItem>Option 2</MenuItem>
+          <MenuItem>Option 3</MenuItem>
+        </MenuList>
+      </Menu>
     </Flex>
   );
 }

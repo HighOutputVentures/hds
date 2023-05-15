@@ -53,6 +53,7 @@ export type Column<T extends UnknownArray> = {
   onCheckAll?(context: CheckAllContext<T>): void;
   defaultSort?: SortDirection;
   defaultChecked?: ((item: ArrayItem<T>) => boolean) | boolean;
+  isHidden?: boolean;
 };
 
 export type CheckAllContext<T extends UnknownArray> = {
@@ -149,78 +150,79 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
         <Table data-testid="hds.table" sx={styles.table}>
           <Thead data-testid="hds.table.header">
             <Tr data-testid="hds.table.header.tr">
-              {columns.map(
-                (
-                  {
-                    //
-                    label,
-                    tooltip,
-                    width,
-                    onSort,
-                    onCheck,
-                    onCheckAll,
-                    defaultSort = 'desc',
-                  },
-                  index,
-                ) => {
-                  const isCheckedAll = !!checkedItems.at(index)?.every((o) => !!o);
-                  const isIndeterminate =
-                    !isCheckedAll && !!checkedItems.at(index)?.some((o) => !!o);
+              {columns
+                .filter((col) => !col.isHidden)
+                .map(
+                  (
+                    {
+                      //
+                      label,
+                      tooltip,
+                      width,
+                      onSort,
+                      onCheck,
+                      onCheckAll,
+                      defaultSort = 'desc',
+                    },
+                    index,
+                  ) => {
+                    const isCheckedAll = !!checkedItems.at(index)?.every((o) => !!o);
+                    const isIndeterminate =
+                      !isCheckedAll && !!checkedItems.at(index)?.some((o) => !!o);
 
-                  return (
-                    <Th key={uuid()} width={width} data-testid="hds.table.header.th">
-                      <Flex alignItems="center">
-                        {!!onCheck && (
-                          <Checkbox
-                            aria-label="Select all"
-                            marginRight="12px"
-                            size="sm"
-                            isChecked={isCheckedAll}
-                            isIndeterminate={isIndeterminate}
-                            onChange={(e) => {
-                              const isChecked = e.target.checked;
+                    return (
+                      <Th key={uuid()} width={width} data-testid="hds.table.header.th">
+                        <Flex alignItems="center">
+                          {!!onCheck && (
+                            <Checkbox
+                              aria-label="Select all"
+                              marginRight="12px"
+                              size="sm"
+                              isChecked={isCheckedAll}
+                              isIndeterminate={isIndeterminate}
+                              onChange={(e) => {
+                                const isChecked = e.target.checked;
 
-                              const selected = checkedItems[index].reduce<ArrayItem<T>[]>(
-                                (arr, bool, index_1) => {
+                                const selected = checkedItems[index].reduce<
+                                  ArrayItem<T>[]
+                                >((arr, bool, index_1) => {
                                   /*
                                    * false will still be set to true,
                                    * so we need to reverse the logic
                                    */
                                   return !bool ? [...arr, items[index_1]] : arr;
-                                },
-                                [],
-                              );
+                                }, []);
 
-                              onCheckAll?.({ isChecked, selected });
-                              setCheckedItems((i) => {
-                                return i.map((j) => {
-                                  return j.map(() => {
-                                    return isChecked;
+                                onCheckAll?.({ isChecked, selected });
+                                setCheckedItems((i) => {
+                                  return i.map((j) => {
+                                    return j.map(() => {
+                                      return isChecked;
+                                    });
                                   });
                                 });
-                              });
-                            }}
-                          />
-                        )}
-                        {label}
-                        {onSort && <SortButton value={defaultSort} onSort={onSort} />}
-                        {tooltip && (
-                          <Tooltip label={tooltip} hasArrow>
-                            <chakra.div display="flex" ml="4px">
-                              <Icon
-                                as={HelpCircleIcon}
-                                color="neutrals.500"
-                                width="16px"
-                                height="16px"
-                              />
-                            </chakra.div>
-                          </Tooltip>
-                        )}
-                      </Flex>
-                    </Th>
-                  );
-                },
-              )}
+                              }}
+                            />
+                          )}
+                          {label}
+                          {onSort && <SortButton value={defaultSort} onSort={onSort} />}
+                          {tooltip && (
+                            <Tooltip label={tooltip} hasArrow>
+                              <chakra.div display="flex" ml="4px">
+                                <Icon
+                                  as={HelpCircleIcon}
+                                  color="neutrals.500"
+                                  width="16px"
+                                  height="16px"
+                                />
+                              </chakra.div>
+                            </Tooltip>
+                          )}
+                        </Flex>
+                      </Th>
+                    );
+                  },
+                )}
             </Tr>
           </Thead>
 
@@ -232,49 +234,51 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
               items.map((item, index_0) => {
                 return (
                   <Tr key={uuid()} data-testid="hds.table.body.tr">
-                    {columns.map(
-                      (
-                        { onSort, onCheck, onClick, defaultChecked, ...others },
-                        index_1,
-                      ) => {
-                        const renderRow = others.renderRow ?? ((obj) => String(obj));
+                    {columns
+                      .filter((col) => !col.isHidden)
+                      .map(
+                        (
+                          { onSort, onCheck, onClick, defaultChecked, ...others },
+                          index_1,
+                        ) => {
+                          const renderRow = others.renderRow ?? ((obj) => String(obj));
 
-                        return (
-                          <Td
-                            key={uuid()}
-                            onClick={() => {
-                              onClick?.({ item });
-                            }}
-                            data-testid="hds.table.body.td"
-                          >
-                            <Flex alignItems="center" gap="12px">
-                              {onCheck && (
-                                <Checkbox
-                                  aria-label="Select item"
-                                  size="sm"
-                                  isChecked={checkedItems[index_1][index_0]}
-                                  onChange={(e) => {
-                                    const isChecked = e.target.checked;
-                                    onCheck({ isChecked, item });
-                                    setCheckedItems((i) => {
-                                      return i.map((j, idx_0) => {
-                                        return idx_0 === index_1
-                                          ? j.map((k, idx_1) =>
-                                              idx_1 === index_0 ? isChecked : k,
-                                            )
-                                          : j;
+                          return (
+                            <Td
+                              key={uuid()}
+                              onClick={() => {
+                                onClick?.({ item });
+                              }}
+                              data-testid="hds.table.body.td"
+                            >
+                              <Flex alignItems="center" gap="12px">
+                                {onCheck && (
+                                  <Checkbox
+                                    aria-label="Select item"
+                                    size="sm"
+                                    isChecked={checkedItems[index_1][index_0]}
+                                    onChange={(e) => {
+                                      const isChecked = e.target.checked;
+                                      onCheck({ isChecked, item });
+                                      setCheckedItems((i) => {
+                                        return i.map((j, idx_0) => {
+                                          return idx_0 === index_1
+                                            ? j.map((k, idx_1) =>
+                                                idx_1 === index_0 ? isChecked : k,
+                                              )
+                                            : j;
+                                        });
                                       });
-                                    });
-                                  }}
-                                />
-                              )}
+                                    }}
+                                  />
+                                )}
 
-                              <Box>{renderRow(item)}</Box>
-                            </Flex>
-                          </Td>
-                        );
-                      },
-                    )}
+                                <Box>{renderRow(item)}</Box>
+                              </Flex>
+                            </Td>
+                          );
+                        },
+                      )}
                   </Tr>
                 );
               })}
