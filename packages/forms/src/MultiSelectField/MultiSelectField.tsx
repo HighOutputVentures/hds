@@ -118,10 +118,10 @@ const MultiSelectFieldInternal = function MultiSelectFieldInternal<
   const listRef = useRef<HTMLLIElement[]>([]);
   const listNavigation = useListNavigation(context, {
     listRef,
+    loop: true,
     activeIndex,
     onNavigate: setActiveIndex,
     virtual: true,
-    loop: true,
   });
 
   const { isMounted, styles } = useTransitionStyles(context);
@@ -201,8 +201,6 @@ const MultiSelectFieldInternal = function MultiSelectFieldInternal<
                 >
                   <TagLabel>{option.label}</TagLabel>
                   <TagCloseButton
-                    type="button"
-                    tabIndex={-1}
                     onClick={(e) => {
                       e.preventDefault();
                       e.stopPropagation();
@@ -403,7 +401,9 @@ const MenuList = chakra('ul', {
 });
 
 const MenuItem = chakra('li', {
-  cursor: 'pointer',
+  baseStyle: {
+    cursor: 'pointer',
+  },
 });
 
 const Option = chakra('div', {
@@ -444,8 +444,9 @@ const TagLabel = chakra('span', {
   },
 });
 
-const TagCloseButton = chakra('button', {
+const TagCloseButton = chakra('div', {
   baseStyle: {
+    cursor: 'pointer',
     display: 'flex',
     padding: '2px',
     rounded: '4px',
