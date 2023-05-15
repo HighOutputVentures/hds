@@ -84,6 +84,7 @@ export default React.forwardRef<HTMLDivElement, FormGroupProps>(function FormGro
           id={labelId}
           htmlFor={formId}
           color="neutrals.900"
+          width="fit-content"
           fontSize="14px"
           fontWeight="600"
           lineHeight="14px"
