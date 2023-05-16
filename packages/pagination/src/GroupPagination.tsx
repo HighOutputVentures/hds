@@ -4,7 +4,6 @@ import {
   ButtonGroup,
   Flex,
   Icon,
-  Select,
   SystemStyleObject,
 } from '@chakra-ui/react';
 import { ArrowLeftIcon, ArrowRightIcon } from '@highoutput/hds-icons';
@@ -12,6 +11,7 @@ import * as pagination from '@zag-js/pagination';
 import { normalizeProps, useMachine } from '@zag-js/react';
 import * as React from 'react';
 import { v4 as uuid } from 'uuid';
+import { Select } from './Select';
 import { useStyles } from './hooks';
 
 export type GroupPaginationProps = {
@@ -52,19 +52,18 @@ export default function GroupPagination({
         {!!sizes && (
           <Box width="130px" flexShrink={0} flexGrow={0}>
             <Select
-              variant="unstyled"
-              sx={styles.select}
               value={pageSize}
-              onChange={({ target }) => {
-                api.setPageSize(parseInt(target.value));
+              options={sizes.map((n) => ({
+                label: `${n} entries`,
+                value: n,
+              }))}
+              onChange={(newValue) => {
+                api.setPageSize(newValue ?? sizes[0]);
               }}
-            >
-              {sizes.map((size) => (
-                <option key={size} value={size}>
-                  {size} Entries
-                </option>
-              ))}
-            </Select>
+              __fieldTestId="hds.group-pagination.select"
+              __optionTestId={(o) => `hds.group-pagination.select.${o.value}`}
+              __optionsTestId="hds.group-pagination.options"
+            />
           </Box>
         )}
 

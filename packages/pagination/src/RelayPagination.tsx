@@ -4,14 +4,12 @@ import {
   ButtonGroup,
   Flex,
   Icon,
-  Select,
   Spacer,
   SystemStyleObject,
   Text,
 } from '@chakra-ui/react';
-import { ArrowLeftIcon, ArrowRightIcon, ChevronDownIcon } from '@highoutput/hds-icons';
-import * as React from 'react';
-import { v4 as uuid } from 'uuid';
+import { ArrowLeftIcon, ArrowRightIcon } from '@highoutput/hds-icons';
+import { Select } from './Select';
 import { useStyles } from './hooks';
 import { decrement, increment } from './utils';
 
@@ -102,32 +100,21 @@ export default function RelayPagination({
           {sizes && (
             <Box width="130px" flexShrink={0} flexGrow={0}>
               <Select
-                variant="unstyled"
-                sx={styles.select}
                 value={pageSize}
-                onChange={(e) => {
-                  const newSize = parseInt(e.target.value);
-
-                  if (!newSize || Number.isNaN(newSize)) return;
-
+                options={sizes.map((n) => ({
+                  label: `${n} entries`,
+                  value: n,
+                }))}
+                onChange={(newSize = sizes[0]) => {
                   onChange({
                     page: 1,
                     pageSize: newSize,
                   });
                 }}
-                icon={<ChevronDownIcon sx={styles.selectIcon} />}
-                data-testid="hds.relay-pagination.select"
-              >
-                {sizes.map((size) => (
-                  <option
-                    key={uuid()}
-                    value={size}
-                    data-testid={`hds.relay-pagination.select.${size}`}
-                  >
-                    {size} entries
-                  </option>
-                ))}
-              </Select>
+                __fieldTestId="hds.relay-pagination.select"
+                __optionTestId={(o) => `hds.relay-pagination.select.${o.value}`}
+                __optionsTestId="hds.relay-pagination.options"
+              />
             </Box>
           )}
 

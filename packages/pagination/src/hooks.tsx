@@ -2,7 +2,6 @@ export function useStyles(variant: 'group' | 'minimal' | 'relay') {
   if (variant === 'group') {
     return {
       group: buttonGroupStyles,
-      select: selectStyles,
     };
   }
 
@@ -10,8 +9,6 @@ export function useStyles(variant: 'group' | 'minimal' | 'relay') {
     return {
       icon: iconStyles,
       legend: legendStyles,
-      select: selectStyles,
-      selectIcon: selectIconStyles,
       group: buttonGroupStyles,
     };
   }
@@ -75,24 +72,6 @@ const iconStyles = {
   color: 'neutrals.600',
   width: '20px',
   height: '20px',
-};
-
-const selectStyles = {
-  fontSize: '14px',
-  height: '40px',
-  width: 'full',
-  color: '#525252!important',
-  rounded: 'lg',
-  border: '1px solid',
-  borderColor: 'neutrals.300',
-  paddingX: 2.5,
-};
-
-const selectIconStyles = {
-  width: '14px!important',
-  height: '14px!important',
-  stroke: 'neutrals.600',
-  strokeWidth: 2.5,
 };
 
 const buttonGroupStyles = {

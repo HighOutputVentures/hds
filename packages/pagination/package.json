@@ -11,6 +11,7 @@
     }
   },
   "dependencies": {
+    "@floating-ui/react": "0.23.1",
     "@highoutput/hds-icons": "*",
     "@zag-js/pagination": "0.5.0",
     "@zag-js/react": "0.5.0",
