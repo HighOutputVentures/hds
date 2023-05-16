@@ -8,6 +8,9 @@ import Checkbox, {
 } from './Checkbox/Checkbox';
 import ComboboxField, { ComboboxFieldProps } from './ComboboxField/ComboboxField';
 import FormGroup, { FormGroupProps } from './FormGroup/FormGroup';
+import MultiSelectField, {
+  MultiSelectFieldProps,
+} from './MultiSelectField/MultiSelectField';
 import MultilineField, { MultilineFieldProps } from './MultilineField/MultilineField';
 import NumberField, { NumberFieldProps } from './NumberField/NumberField';
 import OtpField, { OtpFieldProps } from './OtpField/OtpField';
@@ -40,6 +43,7 @@ export {
   Radio,
   RadioGroup,
   NumberField,
+  MultiSelectField,
   type CheckboxProps,
   type CheckboxGroupProps,
   type ComboboxFieldProps,
@@ -59,4 +63,5 @@ export {
   type RadioGroupProps,
   type RadioProps,
   type NumberFieldProps,
+  type MultiSelectFieldProps,
 };
