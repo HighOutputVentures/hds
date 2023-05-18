@@ -19,6 +19,7 @@ import { DotsVerticalIcon } from '@highoutput/hds-icons';
 import { Pagination } from '@highoutput/hds-pagination';
 import { Table, TableProps } from '@highoutput/hds-table';
 import { Meta, StoryFn } from '@storybook/react';
+import { v4 as uuid } from 'uuid';
 
 type TUser = {
   id: string;
@@ -113,11 +114,11 @@ function Footer() {
 
 Default.args = {
   isLoading: false,
+  isBordered: false,
   items,
   columns: [
     {
       label: 'Name',
-      width: '300px',
       renderRow({ name, avatar, username }) {
         return (
           <Flex alignItems="center" gap="12px">
@@ -131,15 +132,18 @@ Default.args = {
           </Flex>
         );
       },
-      onCheck(/* { isChecked, item } */) {},
-      onCheckAll(/* { isChecked, selected } */) {},
-      defaultChecked() {
-        return false;
+      onSort({ direction }) {
+        alert(direction);
+      },
+      onCheck({ isChecked, item }) {
+        alert(item.name + ' ' + (isChecked ? 'Checked' : 'Unchecked'));
+      },
+      onCheckAll() {
+        alert('All users (Checked)');
       },
     },
     {
       label: 'Status',
-      width: '120px',
       renderRow({ isActive }) {
         return (
           <Badge
@@ -161,11 +165,21 @@ Default.args = {
           </Badge>
         );
       },
-      onSort(/* { direction } */) {},
+      onSort({ direction }) {
+        alert(direction);
+      },
+      onCheck({ isChecked }) {
+        alert(isChecked ? 'Status Checked' : 'Status Unchecked');
+      },
+      onCheckAll() {
+        alert('All Status (Checked)');
+      },
+      defaultChecked() {
+        return false;
+      },
     },
     {
       label: 'Role',
-      width: '175px',
       renderRow({ role }) {
         return role;
       },
@@ -173,14 +187,12 @@ Default.args = {
     },
     {
       label: 'Email address',
-      width: '225px',
       renderRow({ email }) {
         return email.toLowerCase().replace(/[_.]/g, '');
       },
     },
     {
       label: 'Team',
-      width: '290px',
       renderRow({ teams }) {
         const scheme = [
           { bgColor: '#EDE8FC', color: '#8A68EF' },
@@ -193,6 +205,7 @@ Default.args = {
           <HStack>
             {[...teams, '+4'].map((team, idx) => (
               <Badge
+                key={uuid()}
                 paddingY="2px"
                 paddingX="8px"
                 rounded="full"
@@ -207,6 +220,27 @@ Default.args = {
               </Badge>
             ))}
           </HStack>
+        );
+      },
+    },
+    {
+      label: 'Actions',
+      isSticky: true,
+      renderRow() {
+        return (
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              variant="unstyled"
+              icon={<Icon as={DotsVerticalIcon} w="20px" h="20px" color="#A3A3A3" />}
+            />
+
+            <MenuList>
+              <MenuItem>Option 1</MenuItem>
+              <MenuItem>Option 2</MenuItem>
+              <MenuItem>Option 3</MenuItem>
+            </MenuList>
+          </Menu>
         );
       },
     },
