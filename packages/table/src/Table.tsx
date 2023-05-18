@@ -109,6 +109,8 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
     });
   });
 
+  console.log(checkedItems);
+
   const totalColumns = columns.length;
   const shouldShowTable = items.length >= 1;
   const shouldShowEmpty = items.length <= 0 && !isLoading;
@@ -197,10 +199,12 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
 
                                 onCheckAll?.({ isChecked, selected });
                                 setCheckedItems((i) => {
-                                  return i.map((j) => {
-                                    return j.map(() => {
-                                      return isChecked;
-                                    });
+                                  return i.map((j, i) => {
+                                    return i !== index
+                                      ? j
+                                      : j.map(() => {
+                                          return isChecked;
+                                        });
                                   });
                                 });
                               }}
