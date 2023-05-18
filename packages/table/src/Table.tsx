@@ -54,6 +54,12 @@ export type Column<T extends UnknownArray> = {
   defaultSort?: SortDirection;
   defaultChecked?: ((item: ArrayItem<T>) => boolean) | boolean;
   isHidden?: boolean;
+  /**
+   *
+   * NOT IMPLEMENTED
+   *
+   */
+  isSticky?: boolean;
 };
 
 export type CheckAllContext<T extends UnknownArray> = {
@@ -68,6 +74,7 @@ export type TableBaseProps<T extends UnknownArray> = {
   renderLoader?: JSX.Element;
   renderHeader?: React.ReactNode;
   renderFooter?: React.ReactNode;
+  isBordered?: boolean;
 };
 
 export type TableProps<T extends UnknownArray> = TableBaseProps<T> &
@@ -81,33 +88,26 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
     renderLoader,
     renderHeader,
     renderFooter,
+    isBordered,
+    borderColor = 'Gray.200',
     ...others
   } = props;
 
-  const styles = useStyles({ hasBottomRowBorder: !!renderFooter });
+  const styles = useStyles({
+    isBordered,
+    borderColor,
+    hasBottomRowBorder: !!renderFooter,
+  });
 
-  /*
-
-  [
-    [true,false,false], // col 1
-    [false,true,false], // col 2
-    [false,false,true], // col 3
-  ]
-   
-   */
-  const getCheckStatus = React.useCallback(() => {
-    return columns
-      .filter(({ onCheck }) => !!onCheck)
-      .map(({ defaultChecked = false }) => {
-        return items.map((item) => {
-          const fn =
-            typeof defaultChecked === 'boolean' ? () => defaultChecked : defaultChecked;
-          return fn(item);
-        });
+  const [checkedItems, setCheckedItems] = React.useState(() => {
+    return columns.map(({ defaultChecked = false }) => {
+      return items.map((item) => {
+        const fn =
+          typeof defaultChecked === 'boolean' ? () => defaultChecked : defaultChecked;
+        return fn(item);
       });
-  }, [columns, items]);
-
-  const [checkedItems, setCheckedItems] = React.useState(getCheckStatus);
+    });
+  });
 
   const totalColumns = columns.length;
   const shouldShowTable = items.length >= 1;
@@ -124,17 +124,19 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
       sx={{
         ...others,
         border: '1px solid',
-        borderColor: 'Gray.200',
+        borderColor,
         rounded: 'md',
         position: 'relative',
       }}
     >
       {!!renderHeader && (
         <Box
-          borderBottom="1px solid"
-          borderColor="Gray.200"
-          paddingX="24px"
-          paddingY="20px"
+          sx={{
+            borderBottom: '1px solid',
+            borderColor,
+            paddingX: '24px',
+            paddingY: '20px',
+          }}
         >
           {renderHeader}
         </Box>
@@ -147,7 +149,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
         aria-busy={isLoading}
         sx={styles.container}
       >
-        <Table data-testid="hds.table" sx={styles.table}>
+        <Table data-testid="hds.table" suppressHydrationWarning sx={styles.table}>
           <Thead data-testid="hds.table.header">
             <Tr data-testid="hds.table.header.tr">
               {columns
@@ -227,9 +229,6 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
           </Thead>
 
           <Tbody position="relative" data-testid="hds.table.body">
-            {shouldSoftLoad && <SoftLoaderOverlay />}
-            {shouldHardLoad && <HardLoader />}
-            {shouldShowEmpty && <Empty numOfCols={totalColumns} />}
             {shouldShowTable &&
               items.map((item, index_0) => {
                 return (
@@ -282,6 +281,10 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                   </Tr>
                 );
               })}
+
+            {shouldHardLoad && <HardLoader />}
+            {shouldSoftLoad && <SoftLoaderOverlay />}
+            {shouldShowEmpty && <Empty numOfCols={totalColumns} />}
           </Tbody>
         </Table>
       </TableContainer>
