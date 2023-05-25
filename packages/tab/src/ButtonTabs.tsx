@@ -38,7 +38,7 @@ export default function ButtonTabs({
           return (
             <Tab
               key={uuid()}
-              color="Gray.800"
+              color="neutrals.600"
               paddingY="10px"
               paddingX="16px"
               borderStyle="solid"
@@ -59,6 +59,7 @@ export default function ButtonTabs({
               }}
               _selected={{
                 bgColor: 'Gray.50',
+                color: 'neutrals.900',
               }}
               data-testid="hds.button-tabs.tab"
             >
