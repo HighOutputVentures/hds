@@ -141,6 +141,7 @@ Default.args = {
       onCheckAll() {
         alert('All users (Checked)');
       },
+      isSticky: true,
     },
     {
       label: 'Status',
@@ -223,6 +224,7 @@ Default.args = {
         );
       },
     },
+
     {
       label: 'Actions',
       isSticky: true,

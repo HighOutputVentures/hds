@@ -18,7 +18,7 @@ import {
 } from '@chakra-ui/react';
 import { Checkbox } from '@highoutput/hds-forms';
 import { Tooltip } from '@highoutput/hds-tooltip';
-import * as React from 'react';
+import React from 'react';
 import { v4 as uuid } from 'uuid';
 import { useStyles } from './hooks';
 import ArrowDownIcon from './icons/ArrowDownIcon';
@@ -43,7 +43,7 @@ export type ClickContext<T> = {
 };
 
 export type Column<T extends UnknownArray> = {
-  label: string;
+  label: React.ReactNode;
   width?: string;
   tooltip?: React.ReactNode;
   renderRow?: (item: T[number]) => any;
@@ -114,7 +114,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
   const shouldShowEmpty = items.length <= 0 && !isLoading;
   const shouldHardLoad = items.length <= 0 && !!isLoading;
   const shouldSoftLoad = items.length >= 1 && !!isLoading;
-
+  const hasStickyCols = columns.map((col) => col.isSticky);
   const SoftLoader = () => (!renderLoader ? <SoftLoaderDefault /> : renderLoader);
   const HardLoader = () =>
     !renderLoader ? <HardLoaderDefault numOfCols={totalColumns} /> : renderLoader;
@@ -149,7 +149,16 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
         aria-busy={isLoading}
         sx={styles.container}
       >
-        <Table data-testid="hds.table" suppressHydrationWarning sx={styles.table}>
+        <Table
+          data-testid="hds.table"
+          suppressHydrationWarning
+          sx={styles.table}
+          {...(hasStickyCols && {
+            position: 'sticky',
+            left: 0,
+            right: 0,
+          })}
+        >
           <Thead data-testid="hds.table.header">
             <Tr data-testid="hds.table.header.tr">
               {columns
@@ -163,6 +172,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                       width,
                       onSort,
                       onCheck,
+                      isSticky,
                       onCheckAll,
                       defaultSort = 'desc',
                     },
@@ -173,7 +183,19 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                       !isCheckedAll && !!checkedItems.at(index)?.some((o) => !!o);
 
                     return (
-                      <Th key={uuid()} width={width} data-testid="hds.table.header.th">
+                      <Th
+                        key={uuid()}
+                        width={width}
+                        {...(isSticky && {
+                          position: 'sticky',
+                          zIndex: columns.length - index,
+                          bgColor: '#F9FAFB',
+                          filter: 'drop-shadow(-4px 0px 8px rgba(0, 0, 0, 0.04))',
+                          right: index !== 0 ? 0 : 'unset',
+                          left: index === 0 ? 0 : 'unset',
+                        })}
+                        data-testid="hds.table.header.th"
+                      >
                         <Flex alignItems="center">
                           {!!onCheck && (
                             <Checkbox
@@ -239,7 +261,14 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                       .filter((col) => !col.isHidden)
                       .map(
                         (
-                          { onSort, onCheck, onClick, defaultChecked, ...others },
+                          {
+                            onSort,
+                            onCheck,
+                            onClick,
+                            isSticky,
+                            defaultChecked,
+                            ...others
+                          },
                           index_1,
                         ) => {
                           const renderRow = others.renderRow ?? ((obj) => String(obj));
@@ -250,6 +279,14 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                               onClick={() => {
                                 onClick?.({ item });
                               }}
+                              {...(isSticky && {
+                                position: 'sticky',
+                                zIndex: columns.length - index_1,
+                                bgColor: 'white',
+                                filter: 'drop-shadow(-4px 0px 8px rgba(0, 0, 0, 0.04))',
+                                right: index_1 !== 0 ? 0 : 'unset',
+                                left: index_1 === 0 ? 0 : 'unset',
+                              })}
                               data-testid="hds.table.body.td"
                             >
                               <Flex alignItems="center" gap="12px">
