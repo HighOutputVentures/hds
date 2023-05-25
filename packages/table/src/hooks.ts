@@ -1,6 +1,16 @@
 import { SystemStyleObject } from '@chakra-ui/react';
 
-export function useStyles({ hasBottomRowBorder }: { hasBottomRowBorder: boolean }) {
+type UseStylesArg = {
+  isBordered?: boolean;
+  borderColor: any;
+  hasBottomRowBorder: boolean;
+};
+
+export function useStyles({
+  isBordered,
+  borderColor = 'Gray.200',
+  hasBottomRowBorder,
+}: UseStylesArg) {
   const container: SystemStyleObject = {
     position: 'relative',
     '&::-webkit-scrollbar': {
@@ -30,7 +40,19 @@ export function useStyles({ hasBottomRowBorder }: { hasBottomRowBorder: boolean 
       bgColor: 'Gray.50',
     },
     'th, td': {
-      borderColor: 'Gray.200',
+      ...(isBordered && {
+        borderWidth: '1px ',
+        borderStyle: 'solid',
+
+        _first: {
+          borderLeft: 'none',
+        },
+        _last: {
+          borderRight: 'none',
+        },
+      }),
+
+      borderColor,
     },
     th: {
       paddingY: '12px',
@@ -50,6 +72,13 @@ export function useStyles({ hasBottomRowBorder }: { hasBottomRowBorder: boolean 
       letterSpacing: '0.02em',
     },
     tr: {
+      ...(isBordered && {
+        _first: {
+          th: {
+            borderTop: 'none',
+          },
+        },
+      }),
       ...(!hasBottomRowBorder && {
         _last: {
           td: {
