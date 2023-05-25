@@ -149,7 +149,14 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
         aria-busy={isLoading}
         sx={styles.container}
       >
-        <Table data-testid="hds.table" suppressHydrationWarning sx={styles.table}>
+        <Table
+          data-testid="hds.table"
+          suppressHydrationWarning
+          sx={styles.table}
+          position={'sticky'}
+          left={0}
+          right={0}
+        >
           <Thead data-testid="hds.table.header">
             <Tr data-testid="hds.table.header.tr">
               {columns
@@ -177,7 +184,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                       <Th
                         key={uuid()}
                         width={width}
-                        position={isSticky ? 'sticky' : 'relative'}
+                        position={'sticky'}
                         {...(index !== 0 &&
                           isSticky && {
                             right: 0,
@@ -186,7 +193,6 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                           isSticky && {
                             left: 0,
                           })}
-                        top={0}
                         zIndex={isSticky ? columns.length - index : 0}
                         data-testid="hds.table.header.th"
                         bgColor={isSticky ? '#F9FAFB' : 'unset'}
@@ -275,17 +281,15 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                               onClick={() => {
                                 onClick?.({ item });
                               }}
-                              position={isSticky ? 'sticky' : 'relative'}
+                              position={'sticky'}
                               {...(index_1 !== 0 &&
                                 isSticky && {
-                                  left: '0px',
-                                  right: '0px',
+                                  right: 0,
                                 })}
                               {...(index_1 === 0 &&
                                 isSticky && {
                                   left: 0,
                                 })}
-                              top={0}
                               zIndex={isSticky ? columns.length - index_1 : 0}
                               bgColor={isSticky ? 'white' : 'unset'}
                               data-testid="hds.table.body.td"
