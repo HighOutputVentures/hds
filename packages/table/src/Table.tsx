@@ -186,6 +186,9 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                         width={width}
                         {...(isSticky && {
                           position: 'sticky',
+                          zIndex: columns.length - index,
+                          bgColor: '#F9FAFB',
+                          filter: 'drop-shadow(-4px 0px 8px rgba(0, 0, 0, 0.04))',
                         })}
                         {...(index !== 0 &&
                           isSticky && {
@@ -195,10 +198,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                           isSticky && {
                             left: 0,
                           })}
-                        zIndex={isSticky ? columns.length - index : 0}
                         data-testid="hds.table.header.th"
-                        bgColor={isSticky ? '#F9FAFB' : 'unset'}
-                        filter={'drop-shadow(-4px 0px 8px rgba(0, 0, 0, 0.04))'}
                       >
                         <Flex alignItems="center">
                           {!!onCheck && (
@@ -285,6 +285,9 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                               }}
                               {...(isSticky && {
                                 position: 'sticky',
+                                zIndex: columns.length - index_1,
+                                bgColor: 'white',
+                                filter: 'drop-shadow(-4px 0px 8px rgba(0, 0, 0, 0.04))',
                               })}
                               {...(index_1 !== 0 &&
                                 isSticky && {
@@ -294,10 +297,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                                 isSticky && {
                                   left: 0,
                                 })}
-                              zIndex={isSticky ? columns.length - index_1 : 0}
-                              bgColor={isSticky ? 'white' : 'unset'}
                               data-testid="hds.table.body.td"
-                              filter={'drop-shadow(-4px 0px 8px rgba(0, 0, 0, 0.04))'}
                             >
                               <Flex alignItems="center" gap="12px">
                                 {onCheck && (
