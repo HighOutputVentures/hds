@@ -18,7 +18,7 @@ import {
 } from '@chakra-ui/react';
 import { Checkbox } from '@highoutput/hds-forms';
 import { Tooltip } from '@highoutput/hds-tooltip';
-import * as React from 'react';
+import React from 'react';
 import { v4 as uuid } from 'uuid';
 import { useStyles } from './hooks';
 import ArrowDownIcon from './icons/ArrowDownIcon';
@@ -43,7 +43,7 @@ export type ClickContext<T> = {
 };
 
 export type Column<T extends UnknownArray> = {
-  label: string;
+  label: React.ReactNode;
   width?: string;
   tooltip?: React.ReactNode;
   renderRow?: (item: T[number]) => any;
