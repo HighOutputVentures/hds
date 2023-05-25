@@ -184,7 +184,9 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                       <Th
                         key={uuid()}
                         width={width}
-                        position={'sticky'}
+                        {...(isSticky && {
+                          position: 'sticky',
+                        })}
                         {...(index !== 0 &&
                           isSticky && {
                             right: 0,
@@ -281,7 +283,9 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                               onClick={() => {
                                 onClick?.({ item });
                               }}
-                              position={'sticky'}
+                              {...(isSticky && {
+                                position: 'sticky',
+                              })}
                               {...(index_1 !== 0 &&
                                 isSticky && {
                                   right: 0,
