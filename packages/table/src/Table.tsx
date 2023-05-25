@@ -54,6 +54,7 @@ export type Column<T extends UnknownArray> = {
   defaultSort?: SortDirection;
   defaultChecked?: ((item: ArrayItem<T>) => boolean) | boolean;
   isHidden?: boolean;
+  isSticky?: boolean;
 };
 
 export type CheckAllContext<T extends UnknownArray> = {
@@ -161,6 +162,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                       width,
                       onSort,
                       onCheck,
+                      isSticky,
                       onCheckAll,
                       defaultSort = 'desc',
                     },
@@ -171,7 +173,24 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                       !isCheckedAll && !!checkedItems.at(index)?.some((o) => !!o);
 
                     return (
-                      <Th key={uuid()} width={width} data-testid="hds.table.header.th">
+                      <Th
+                        key={uuid()}
+                        width={width}
+                        position={isSticky ? 'sticky' : 'relative'}
+                        {...(index !== 0 &&
+                          isSticky && {
+                            right: 0,
+                          })}
+                        {...(index === 0 &&
+                          isSticky && {
+                            left: 0,
+                          })}
+                        top={0}
+                        zIndex={isSticky ? columns.length - index : 0}
+                        data-testid="hds.table.header.th"
+                        bgColor={isSticky ? '#F9FAFB' : 'unset'}
+                        filter={'drop-shadow(-4px 0px 8px rgba(0, 0, 0, 0.04))'}
+                      >
                         <Flex alignItems="center">
                           {!!onCheck && (
                             <Checkbox
@@ -238,7 +257,14 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                       .filter((col) => !col.isHidden)
                       .map(
                         (
-                          { onSort, onCheck, onClick, defaultChecked, ...others },
+                          {
+                            onSort,
+                            onCheck,
+                            onClick,
+                            isSticky,
+                            defaultChecked,
+                            ...others
+                          },
                           index_1,
                         ) => {
                           const renderRow = others.renderRow ?? ((obj) => String(obj));
@@ -249,7 +275,21 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                               onClick={() => {
                                 onClick?.({ item });
                               }}
+                              position={isSticky ? 'sticky' : 'relative'}
+                              {...(index_1 !== 0 &&
+                                isSticky && {
+                                  left: '0px',
+                                  right: '0px',
+                                })}
+                              {...(index_1 === 0 &&
+                                isSticky && {
+                                  left: 0,
+                                })}
+                              top={0}
+                              zIndex={isSticky ? columns.length - index_1 : 0}
+                              bgColor={isSticky ? 'white' : 'unset'}
                               data-testid="hds.table.body.td"
+                              filter={'drop-shadow(-4px 0px 8px rgba(0, 0, 0, 0.04))'}
                             >
                               <Flex alignItems="center" gap="12px">
                                 {onCheck && (
