@@ -114,7 +114,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
   const shouldShowEmpty = items.length <= 0 && !isLoading;
   const shouldHardLoad = items.length <= 0 && !!isLoading;
   const shouldSoftLoad = items.length >= 1 && !!isLoading;
-
+  const hasStickyCols = columns.map((col) => col.isSticky);
   const SoftLoader = () => (!renderLoader ? <SoftLoaderDefault /> : renderLoader);
   const HardLoader = () =>
     !renderLoader ? <HardLoaderDefault numOfCols={totalColumns} /> : renderLoader;
@@ -153,9 +153,11 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
           data-testid="hds.table"
           suppressHydrationWarning
           sx={styles.table}
-          position={'sticky'}
-          left={0}
-          right={0}
+          {...(hasStickyCols && {
+            position: 'sticky',
+            left: 0,
+            right: 0,
+          })}
         >
           <Thead data-testid="hds.table.header">
             <Tr data-testid="hds.table.header.tr">
@@ -189,15 +191,9 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                           zIndex: columns.length - index,
                           bgColor: '#F9FAFB',
                           filter: 'drop-shadow(-4px 0px 8px rgba(0, 0, 0, 0.04))',
+                          right: index !== 0 ? 0 : 'unset',
+                          left: index === 0 ? 0 : 'unset',
                         })}
-                        {...(index !== 0 &&
-                          isSticky && {
-                            right: 0,
-                          })}
-                        {...(index === 0 &&
-                          isSticky && {
-                            left: 0,
-                          })}
                         data-testid="hds.table.header.th"
                       >
                         <Flex alignItems="center">
@@ -288,15 +284,9 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                                 zIndex: columns.length - index_1,
                                 bgColor: 'white',
                                 filter: 'drop-shadow(-4px 0px 8px rgba(0, 0, 0, 0.04))',
+                                right: index_1 !== 0 ? 0 : 'unset',
+                                left: index_1 === 0 ? 0 : 'unset',
                               })}
-                              {...(index_1 !== 0 &&
-                                isSticky && {
-                                  right: 0,
-                                })}
-                              {...(index_1 === 0 &&
-                                isSticky && {
-                                  left: 0,
-                                })}
                               data-testid="hds.table.body.td"
                             >
                               <Flex alignItems="center" gap="12px">
