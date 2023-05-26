@@ -38,7 +38,7 @@ export default function GroupPagination({
   onChange,
   hasJumpTo,
   onChangeJumpValue,
-  direction = 'row-reverse',
+  direction = 'row',
   sizes,
   ...props
 }: GroupPaginationProps & SystemStyleObject) {
