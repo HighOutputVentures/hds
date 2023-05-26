@@ -63,7 +63,6 @@ const packages = [
   'forms',
   'hds',
   'icons',
-  'loading-indicator',
   'metrics',
   'modal',
   'pagination',

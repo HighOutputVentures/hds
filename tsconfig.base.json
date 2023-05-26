@@ -30,7 +30,6 @@
       "@highoutput/hds-file-upload": ["packages/file-upload/src/index.ts"],
       "@highoutput/hds-forms": ["packages/forms/src/index.ts"],
       "@highoutput/hds-icons": ["packages/icons/src/index.ts"],
-      "@highoutput/hds-loading-indicator": ["packages/loading-indicator/src/index.ts"],
       "@highoutput/hds-metrics": ["packages/metrics/src/index.ts"],
       "@highoutput/hds-modal": ["packages/modal/src/index.ts"],
       "@highoutput/hds-pagination": ["packages/pagination/src/index.ts"],
