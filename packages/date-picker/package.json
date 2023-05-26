@@ -1,6 +1,6 @@
 {
   "name": "@highoutput/hds-date-picker",
-  "version": "0.3.6",
+  "version": "0.3.9",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@floating-ui/react": "0.23.1",
-    "@highoutput/hds-forms": "^0.3.6",
+    "@highoutput/hds-forms": "^0.3.9",
     "date-fns": "2.29.3",
     "uuid": "9.0.0"
   },
