@@ -21,6 +21,7 @@ export const Default = Template.bind({});
 
 Default.args = {
   ...Default.args,
+  defaultIndex: 2,
   items: [
     {
       label: 'My details',

@@ -10,6 +10,8 @@ type Item = {
 type Placement = 'center' | 'end' | 'start';
 
 export interface ButtonTabsProps {
+  index?: number;
+  onChange?(newValue: number): void;
   items?: Item[];
   isFitted?: boolean;
   placement?: Placement;
@@ -20,17 +22,19 @@ export interface ButtonTabsProps {
    */
   isInverted?: boolean;
   preferMounted?: boolean;
+  defaultIndex?: number;
 }
 
 export default function ButtonTabs({
+  index,
+  onChange,
   items = [],
   isFitted,
   placement = 'start',
   isInverted,
   preferMounted,
+  defaultIndex,
 }: ButtonTabsProps) {
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
-
   const tablist = React.useMemo(() => {
     return (
       <TabList justifyContent={placement} data-testid="hds.button-tabs.list">
@@ -91,8 +95,9 @@ export default function ButtonTabs({
       margin={0}
       padding={0}
       isFitted={isFitted}
-      index={selectedIndex}
-      onChange={setSelectedIndex}
+      index={index}
+      onChange={onChange}
+      defaultIndex={defaultIndex}
       {...(!preferMounted && {
         isLazy: true,
         lazyBehavior: 'unmount',
