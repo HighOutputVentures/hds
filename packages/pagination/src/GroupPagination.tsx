@@ -3,12 +3,17 @@ import {
   Button,
   ButtonGroup,
   Flex,
+  HStack,
   Icon,
+  Input,
+  SystemProps,
   SystemStyleObject,
+  Text,
 } from '@chakra-ui/react';
 import { ArrowLeftIcon, ArrowRightIcon } from '@highoutput/hds-icons';
 import * as pagination from '@zag-js/pagination';
 import { normalizeProps, useMachine } from '@zag-js/react';
+import ChevronRightIcon from 'packages/carousel/src/ChevronRightIcon';
 import * as React from 'react';
 import { v4 as uuid } from 'uuid';
 import { Select } from './Select';
@@ -20,6 +25,9 @@ export type GroupPaginationProps = {
   pageSize: number;
   count: number;
   sizes?: number[];
+  hasJumpTo?: boolean;
+  onChangeJumpValue?: (value: number) => void;
+  direction?: SystemProps['flexDirection'] | undefined;
   onChange?: (value: { page: number; pageSize: number }) => void;
 };
 
@@ -28,12 +36,15 @@ export default function GroupPagination({
   pageSize,
   count,
   onChange,
+  hasJumpTo,
+  onChangeJumpValue,
+  direction = 'row-reverse',
   sizes,
   ...props
 }: GroupPaginationProps & SystemStyleObject) {
   const id = React.useId();
   const styles = useStyles('group');
-
+  const [jumpValue, setJumpValue] = React.useState(1);
   const [state, send] = useMachine(
     pagination.machine({
       id,
@@ -48,7 +59,7 @@ export default function GroupPagination({
 
   return (
     <Box sx={props}>
-      <Flex gap={4} alignItems="center">
+      <Flex gap={4} alignItems="center" direction={direction}>
         {!!sizes && (
           <Box width="130px" flexShrink={0} flexGrow={0}>
             <Select
@@ -66,7 +77,42 @@ export default function GroupPagination({
             />
           </Box>
         )}
-
+        {hasJumpTo && (
+          <Flex gap="4px">
+            <HStack spacing={'12px'}>
+              <Text color="black" fontSize={'14px'} fontWeight={500}>
+                Jump to page
+              </Text>
+              <Input
+                width="62px"
+                height="40px"
+                boxShadow={'0px 1px 2px rgba(16, 24, 40, 0.05)'}
+                border="1px solid #F0F0F0"
+                borderRadius={'4px'}
+                bg="white"
+                color="neutrals.300"
+                textAlign={'center'}
+                type="number"
+                onChange={(e) => setJumpValue(+e.target.value)}
+              />
+            </HStack>
+            <Button
+              color="neutrals.700"
+              boxShadow={'0px 1px 2px rgba(16, 24, 40, 0.05)'}
+              border="1px solid #D6D6D6"
+              borderRadius={'4px'}
+              w="62px"
+              bg="white"
+              pr="12px"
+              onClick={() => onChangeJumpValue?.(jumpValue)}
+            >
+              <Text fontSize={'14px'} pr="2px">
+                Go
+              </Text>
+              <Icon as={ChevronRightIcon} height={'16px'} width="16px" />
+            </Button>
+          </Flex>
+        )}
         <ButtonGroup
           variant="unstyled"
           spacing={0}
