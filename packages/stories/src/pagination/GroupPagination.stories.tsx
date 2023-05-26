@@ -18,6 +18,7 @@ const Template: StoryFn<typeof GroupPagination> = (args) => {
       <GroupPagination
         page={args.page}
         pageSize={args.pageSize}
+        hasJumpTo
         count={args.count}
         sizes={[10, 20, 30, 40, 50]}
         onChange={({ page, pageSize }) => {
