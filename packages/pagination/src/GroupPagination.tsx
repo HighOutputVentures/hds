@@ -26,7 +26,6 @@ export type GroupPaginationProps = {
   count: number;
   sizes?: number[];
   hasJumpTo?: boolean;
-  onChangeJumpValue?: (value: number) => void;
   direction?: SystemProps['flexDirection'] | undefined;
   onChange?: (value: { page: number; pageSize: number }) => void;
 };
@@ -37,7 +36,6 @@ export default function GroupPagination({
   count,
   onChange,
   hasJumpTo,
-  onChangeJumpValue,
   direction = 'row',
   sizes,
   ...props
@@ -104,7 +102,7 @@ export default function GroupPagination({
               w="62px"
               bg="white"
               pr="12px"
-              onClick={() => onChangeJumpValue?.(jumpValue)}
+              onClick={() => onChange?.({ page: jumpValue, pageSize })}
             >
               <Text fontSize={'14px'} pr="2px">
                 Go
