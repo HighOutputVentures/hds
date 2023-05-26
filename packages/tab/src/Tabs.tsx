@@ -1,5 +1,6 @@
 import {
   Box,
+  Tabs as ChakraTabs,
   Flex,
   SystemStyleObject,
   Tab,
@@ -7,7 +8,6 @@ import {
   TabList,
   TabPanel,
   TabPanels,
-  Tabs as ChakraTabs,
 } from '@chakra-ui/react';
 import * as React from 'react';
 import { v4 as uuid } from 'uuid';
@@ -23,24 +23,28 @@ type Placement = 'start' | 'end' | 'center';
 type Orientation = 'vertical' | 'horizontal';
 
 export type TabsProps = {
+  index?: number;
+  onChange?(newValue: number): void;
   items?: Item[];
   variant?: Variant;
   isFitted?: boolean;
   placement?: Placement;
   orientation?: Orientation;
   preferMounted?: boolean;
+  defaultIndex?: number;
 };
 
 export default function Tabs({
+  index,
+  onChange,
   items,
   variant = 'underlined',
   isFitted,
   placement = 'start',
   orientation = 'horizontal',
   preferMounted,
+  defaultIndex,
 }: TabsProps) {
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
-
   /*
    * force "horizontal" orientation if variant is "underlined"
    */
@@ -58,8 +62,9 @@ export default function Tabs({
       orientation={orientation}
       variant="unstyled"
       isFitted={isFitted}
-      index={selectedIndex}
-      onChange={setSelectedIndex}
+      index={index}
+      onChange={onChange}
+      defaultIndex={defaultIndex}
       /**
        *
        * User opts to prerender tab contents
@@ -83,7 +88,7 @@ export default function Tabs({
               <Badge
                 count={badgeCount}
                 variant={variant}
-                isSelected={args[0] === selectedIndex}
+                isSelected={args[0] === index}
               />
             )}
           </Tab>
