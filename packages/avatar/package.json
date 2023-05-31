@@ -1,6 +1,6 @@
 {
   "name": "@highoutput/hds-avatar",
-  "version": "0.3.8",
+  "version": "0.3.4",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
