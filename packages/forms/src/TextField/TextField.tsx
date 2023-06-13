@@ -1,5 +1,4 @@
 import {
-  IconProps,
   Input,
   InputGroup,
   InputLeftElement,
@@ -30,11 +29,8 @@ type Picked = Pick<
 
 type Base = {
   size?: Size;
-  type: React.HTMLInputTypeAttribute | undefined;
   leftIcon?: JSX.Element;
   rightIcon?: JSX.Element;
-  hidePasswordIcon: JSX.Element;
-  showPasswordIcon: JSX.Element;
   __fieldTestId?: string;
 };
 
@@ -46,10 +42,7 @@ export default React.forwardRef<HTMLInputElement, TextFieldProps>(function TextF
 ) {
   const {
     size,
-    type,
     name,
-    hidePasswordIcon,
-    showPasswordIcon,
     value,
     defaultValue,
     placeholder,
@@ -69,7 +62,7 @@ export default React.forwardRef<HTMLInputElement, TextFieldProps>(function TextF
   } = props;
 
   const styles = useStyles({ size, hasLeftIcon: !!leftIcon });
-  const [showPassword, setShowPassword] = React.useState(false);
+
   return (
     <FormGroup {...others}>
       <InputGroup>
@@ -96,32 +89,11 @@ export default React.forwardRef<HTMLInputElement, TextFieldProps>(function TextF
           onKeyPress={onKeyPress}
           sx={styles.field}
           data-testid={__fieldTestId}
-          type={!showPassword ? type : 'text'}
         />
 
-        {!!rightIcon && type !== 'password' && (
+        {!!rightIcon && (
           <InputRightElement sx={styles.rightIcon({ isDisabled: others.isDisabled })}>
             {React.cloneElement<any>(rightIcon, { sx: styles.icon() })}
-          </InputRightElement>
-        )}
-        {type === 'password' && (
-          <InputRightElement sx={styles.rightIcon({ isClickable: true })}>
-            {hidePasswordIcon &&
-              showPassword &&
-              React.cloneElement<IconProps>(hidePasswordIcon, {
-                sx: styles.icon(),
-                onClick: () => setShowPassword((prev) => !prev),
-                key: 'hide',
-                'aria-label': 'hide-password',
-              })}
-            {showPasswordIcon &&
-              !showPassword &&
-              React.cloneElement<IconProps>(showPasswordIcon, {
-                sx: styles.icon(),
-                onClick: () => setShowPassword((prev) => !prev),
-                key: 'show',
-                'aria-label': 'show-password',
-              })}
           </InputRightElement>
         )}
       </InputGroup>
