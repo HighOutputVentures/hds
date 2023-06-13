@@ -3,9 +3,9 @@ import {
   autoUpdate,
   flip,
   FloatingPortal,
+  size as floatingSize,
   offset,
   shift,
-  size as floatingSize,
   useFloating,
 } from '@floating-ui/react';
 import { useSelect } from 'downshift';
@@ -17,7 +17,7 @@ import ChevronDownIcon from '../icons/ChevronDownIcon';
 import { Prettify, Size } from '../types';
 
 export type Option = {
-  label: string;
+  label: React.ReactNode;
   value: string | number;
 };
 
