@@ -416,6 +416,5 @@ export {
   type WrapProps,
 } from '@chakra-ui/react';
 export { Global, type GlobalProps } from '@emotion/react';
-export { motion } from 'framer-motion';
-export { default as ThemeProvider, type ThemeProviderProps } from './ThemeProvider';
-export { default as theme } from './theme';
+export * from './components';
+export * from './theme';

@@ -1,8 +1,7 @@
 import { ThemeConfig } from '@chakra-ui/react';
 
-const config: ThemeConfig = {
+export const config: ThemeConfig = {
   initialColorMode: 'light',
   useSystemColorMode: false,
+  cssVarPrefix: 'sf',
 };
-
-export default config;

@@ -1,14 +1,14 @@
 import { extendTheme } from '@chakra-ui/react';
-import breakpoints from './breakpoints';
-import colors from './colors';
-import components from './components';
-import config from './config';
-import fonts from './fonts';
-import fontSizes from './fontSizes';
-import styles from './styles';
-import zIndices from './zIndices';
+import { breakpoints } from './breakpoints';
+import { colors } from './colors';
+import { components } from './components';
+import { config } from './config';
+import { fontSizes } from './fontSizes';
+import { fonts } from './fonts';
+import { styles } from './styles';
+import { zIndices } from './zIndices';
 
-const theme = extendTheme({
+export const theme = extendTheme({
   config,
   styles,
   colors,
@@ -18,5 +18,3 @@ const theme = extendTheme({
   zIndices,
   breakpoints,
 });
-
-export default theme;

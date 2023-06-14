@@ -12,6 +12,10 @@
     "./nextjs": {
       "import": "./nextjs.mjs",
       "require": "./nextjs.js"
+    },
+    "./framer": {
+      "import": "./framer.mjs",
+      "require": "./framer.js"
     }
   },
   "dependencies": {

@@ -4,12 +4,10 @@ import { Menu } from './menu';
 import { Skeleton } from './skeleton';
 import { Text } from './text';
 
-const components = {
+export const components = {
   Text,
   Heading,
   Drawer,
   Menu,
   Skeleton,
 };
-
-export default components;
