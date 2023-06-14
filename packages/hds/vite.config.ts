@@ -21,9 +21,11 @@ export default defineConfig({
   build: {
     ssr: true,
     lib: {
-      entry: 'src/index.ts',
+      entry: {
+        index: 'src/index.ts',
+        nextjs: 'src/nextjs.ts',
+      },
       name: 'hds',
-      fileName: 'index',
       formats: ['es', 'cjs'],
     },
     rollupOptions: {
