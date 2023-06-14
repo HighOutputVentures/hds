@@ -1,6 +1,6 @@
 import { Styles } from '@chakra-ui/theme-tools';
 
-const styles: Styles = {
+export const styles: Styles = {
   global: {
     html: {
       scrollBehavior: 'smooth',
@@ -13,5 +13,3 @@ const styles: Styles = {
     },
   },
 };
-
-export default styles;

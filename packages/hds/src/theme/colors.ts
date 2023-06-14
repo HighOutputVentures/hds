@@ -1,4 +1,4 @@
-const colors = {
+export const colors = {
   'brand.primary': {
     900: '#520187',
     800: '#5E1C9E',
@@ -107,5 +107,3 @@ const colors = {
     50: '#ECFDF5',
   },
 };
-
-export default colors;
