@@ -313,11 +313,15 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                                 right: index_1 !== 0 ? 0 : 'unset',
                                 left: index_1 === 0 ? 0 : 'unset',
                               })}
-                              data-testid="hds.table.body.td"
                               {...(rowCheckedIdx.includes(index_0) &&
                                 selectedRowHighlightColor && {
                                   bgColor: selectedRowHighlightColor,
                                 })}
+                              {...(hasHoverEffect &&
+                                isSticky && {
+                                  bgColor: '#FAFAFA',
+                                })}
+                              data-testid="hds.table.body.td"
                             >
                               <Flex alignItems="center" gap="12px">
                                 {onCheck && (
