@@ -75,6 +75,7 @@ export type TableBaseProps<T extends UnknownArray> = {
   renderHeader?: React.ReactNode;
   renderFooter?: React.ReactNode;
   isBordered?: boolean;
+  highlightColor?: string;
 };
 
 export type TableProps<T extends UnknownArray> = TableBaseProps<T> &
@@ -87,6 +88,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
     isLoading,
     renderLoader,
     renderHeader,
+    highlightColor = '#E0F2FF',
     renderFooter,
     isBordered,
     borderColor = 'Gray.200',
@@ -115,6 +117,21 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
   const shouldHardLoad = items.length <= 0 && !!isLoading;
   const shouldSoftLoad = items.length >= 1 && !!isLoading;
   const hasStickyCols = columns.map((col) => col.isSticky);
+
+  const rowCheckedIdx = checkedItems
+    .map((innerArray) => {
+      const indexesData = innerArray.reduce((indexes: number[], value, index) => {
+        if (value) {
+          indexes.push(index);
+        }
+        return indexes;
+      }, []);
+      return indexesData;
+    })
+    .flatMap((idx) => idx)
+    .filter((value, idx, arrVal) => arrVal.indexOf(value) === idx);
+  console.log(rowCheckedIdx);
+  console.log(items);
   const SoftLoader = () => (!renderLoader ? <SoftLoaderDefault /> : renderLoader);
   const HardLoader = () =>
     !renderLoader ? <HardLoaderDefault numOfCols={totalColumns} /> : renderLoader;
@@ -171,6 +188,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                       tooltip,
                       width,
                       onSort,
+
                       onCheck,
                       isSticky,
                       onCheckAll,
@@ -256,7 +274,11 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
             {shouldShowTable &&
               items.map((item, index_0) => {
                 return (
-                  <Tr key={uuid()} data-testid="hds.table.body.tr">
+                  <Tr
+                    key={uuid()}
+                    data-testid="hds.table.body.tr"
+                    bgColor={rowCheckedIdx.includes(index_0) ? highlightColor : 'white'}
+                  >
                     {columns
                       .filter((col) => !col.isHidden)
                       .map(
@@ -288,6 +310,9 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                                 left: index_1 === 0 ? 0 : 'unset',
                               })}
                               data-testid="hds.table.body.td"
+                              bgColor={
+                                rowCheckedIdx.includes(index_0) ? highlightColor : 'white'
+                              }
                             >
                               <Flex alignItems="center" gap="12px">
                                 {onCheck && (
