@@ -130,7 +130,8 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
     })
     .flatMap((idx) => idx)
     .filter((value, idx, arrVal) => arrVal.indexOf(value) === idx);
-
+  console.log(rowCheckedIdx);
+  console.log(items);
   const SoftLoader = () => (!renderLoader ? <SoftLoaderDefault /> : renderLoader);
   const HardLoader = () =>
     !renderLoader ? <HardLoaderDefault numOfCols={totalColumns} /> : renderLoader;
@@ -276,9 +277,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                   <Tr
                     key={uuid()}
                     data-testid="hds.table.body.tr"
-                    bgColor={
-                      rowCheckedIdx[index_0] === index_0 ? highlightColor : 'white'
-                    }
+                    bgColor={rowCheckedIdx.includes(index_0) ? highlightColor : 'white'}
                   >
                     {columns
                       .filter((col) => !col.isHidden)
@@ -312,9 +311,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                               })}
                               data-testid="hds.table.body.td"
                               bgColor={
-                                rowCheckedIdx[index_0] === index_0
-                                  ? highlightColor
-                                  : 'white'
+                                rowCheckedIdx.includes(index_0) ? highlightColor : 'white'
                               }
                             >
                               <Flex alignItems="center" gap="12px">
