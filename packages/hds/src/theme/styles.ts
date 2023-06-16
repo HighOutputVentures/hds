@@ -9,7 +9,6 @@ export const styles: Styles = {
       minH: '100vh',
       color: 'neutrals.900',
       bgColor: 'white',
-      scrollBehavior: 'smooth',
     },
   },
 };

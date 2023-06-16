@@ -1,14 +1,14 @@
 import { MultiStyleConfig } from '@chakra-ui/react';
 
-export const Drawer: MultiStyleConfig = {
+export const Modal: MultiStyleConfig = {
   parts: [
+    'header',
     'overlay',
     'dialogContainer',
     'dialog',
-    'header',
     'closeButton',
-    'footer',
     'body',
+    'footer',
   ],
   baseStyle: {
     overlay: {
@@ -16,7 +16,7 @@ export const Drawer: MultiStyleConfig = {
       backdropFilter: 'blur(8px)',
     },
     dialog: {
-      p: '24px',
+      p: '16px',
     },
     body: {
       p: 0,
@@ -31,8 +31,8 @@ export const Drawer: MultiStyleConfig = {
       p: '6px',
       w: 'fit-content',
       h: 'fit-content',
-      top: '12px',
-      right: '12px',
+      top: '16px',
+      right: '16px',
       color: 'neutral.600',
       _hover: {
         bg: 'blackAlpha.100',
@@ -40,4 +40,5 @@ export const Drawer: MultiStyleConfig = {
       },
     },
   },
+  sizes: {},
 };

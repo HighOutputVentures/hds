@@ -9,12 +9,12 @@ export const Skeleton: StyleConfig = {
     rounded: 'md',
 
     _light: {
-      [$startColor.variable]: colors.neutrals['100'],
-      [$endColor.variable]: colors.neutrals['300'],
+      [$startColor.variable]: colors.neutral['100'],
+      [$endColor.variable]: colors.neutral['300'],
     },
     _dark: {
-      [$startColor.variable]: colors.neutrals['800'],
-      [$endColor.variable]: colors.neutrals['600'],
+      [$startColor.variable]: colors.neutral['800'],
+      [$endColor.variable]: colors.neutral['600'],
     },
   },
 };
