@@ -1,8 +1,9 @@
 import { ThemeProvider } from '@highoutput/hds';
+import { Badge } from '@highoutput/hds-badge';
 import { SelectField } from '@highoutput/hds-forms';
 import { useState } from '@storybook/addons';
 import { Meta, StoryFn } from '@storybook/react';
-
+import { RenderOption } from 'packages/forms/src/SelectField/SelectField';
 const Story: Meta<typeof SelectField> = {
   title: 'Components/Forms/SelectField',
   component: SelectField,
@@ -33,7 +34,15 @@ const options = [
 
 const Template: StoryFn<typeof SelectField> = (args) => {
   const [state, setState] = useState(options[0].value);
-
+  const valueOpt: RenderOption<{ value: Color; label: string }> = ({ label, value }) => {
+    return value === Color.Red ? (
+      <Badge accent="error" label="Red" />
+    ) : value === Color.Blue ? (
+      <Badge accent="blue" label={label} />
+    ) : (
+      <Badge accent="success" label={label} />
+    );
+  };
   return (
     <ThemeProvider>
       <SelectField<{
@@ -42,6 +51,8 @@ const Template: StoryFn<typeof SelectField> = (args) => {
       }>
         {...args}
         options={options}
+        renderOption={valueOpt}
+        renderValue={valueOpt}
         value={state}
         onChange={setState}
       />

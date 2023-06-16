@@ -3,9 +3,9 @@ import {
   autoUpdate,
   flip,
   FloatingPortal,
+  size as floatingSize,
   offset,
   shift,
-  size as floatingSize,
   useFloating,
 } from '@floating-ui/react';
 import { useSelect } from 'downshift';
@@ -21,7 +21,7 @@ export type Option = {
   value: string | number;
 };
 
-type RenderOption<T extends Option> = (item: T) => JSX.Element;
+export type RenderOption<T extends Option> = (item: T) => JSX.Element;
 
 type SelectFieldBaseProps<T extends Option> = {
   name?: string;
@@ -32,6 +32,7 @@ type SelectFieldBaseProps<T extends Option> = {
   placeholder?: string;
   leftIcon?: JSX.Element;
   renderOption?: RenderOption<T>;
+  renderValue?: RenderOption<T>;
   __fieldTestId?: string;
   __optionTestId?: string | ((item: T) => string);
 };
@@ -56,6 +57,7 @@ function SelectField<T extends Option>(
     placeholder,
     zIndex = 'modal',
     renderOption = (item) => <chakra.div>{String(item.label)}</chakra.div>,
+    renderValue = (item) => <chakra.div>{String(item.label)}</chakra.div>,
     __fieldTestId = 'hds.select-field.input',
     __optionTestId = 'hds.select-field.option',
     ...formGroupProps
@@ -176,7 +178,7 @@ function SelectField<T extends Option>(
                 }),
               }}
             >
-              {selectedItem ? selectedItem.label : placeholder}
+              {selectedItem ? renderValue(selectedItem) : placeholder}
             </chakra.div>
 
             <chakra.div

@@ -75,6 +75,8 @@ export type TableBaseProps<T extends UnknownArray> = {
   renderHeader?: React.ReactNode;
   renderFooter?: React.ReactNode;
   isBordered?: boolean;
+  selectedRowHighlightColor?: string;
+  hasHoverEffect?: boolean;
 };
 
 export type TableProps<T extends UnknownArray> = TableBaseProps<T> &
@@ -87,6 +89,8 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
     isLoading,
     renderLoader,
     renderHeader,
+    selectedRowHighlightColor,
+    hasHoverEffect,
     renderFooter,
     isBordered,
     borderColor = 'Gray.200',
@@ -97,6 +101,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
     isBordered,
     borderColor,
     hasBottomRowBorder: !!renderFooter,
+    hasHoverEffect,
   });
 
   const [checkedItems, setCheckedItems] = React.useState(() => {
@@ -115,6 +120,19 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
   const shouldHardLoad = items.length <= 0 && !!isLoading;
   const shouldSoftLoad = items.length >= 1 && !!isLoading;
   const hasStickyCols = columns.map((col) => col.isSticky);
+
+  const rowCheckedIdx = checkedItems
+    .map((innerArray) => {
+      const indexesData = innerArray.reduce((indexes: number[], value, index) => {
+        if (value) {
+          indexes.push(index);
+        }
+        return indexes;
+      }, []);
+      return indexesData;
+    })
+    .flatMap((idx) => idx)
+    .filter((value, idx, arrVal) => arrVal.indexOf(value) === idx);
   const SoftLoader = () => (!renderLoader ? <SoftLoaderDefault /> : renderLoader);
   const HardLoader = () =>
     !renderLoader ? <HardLoaderDefault numOfCols={totalColumns} /> : renderLoader;
@@ -171,6 +189,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                       tooltip,
                       width,
                       onSort,
+
                       onCheck,
                       isSticky,
                       onCheckAll,
@@ -256,7 +275,14 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
             {shouldShowTable &&
               items.map((item, index_0) => {
                 return (
-                  <Tr key={uuid()} data-testid="hds.table.body.tr">
+                  <Tr
+                    key={uuid()}
+                    data-testid="hds.table.body.tr"
+                    {...(rowCheckedIdx.includes(index_0) &&
+                      selectedRowHighlightColor && {
+                        bgColor: selectedRowHighlightColor,
+                      })}
+                  >
                     {columns
                       .filter((col) => !col.isHidden)
                       .map(
@@ -282,11 +308,15 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                               {...(isSticky && {
                                 position: 'sticky',
                                 zIndex: columns.length - index_1,
-                                bgColor: 'white',
                                 filter: 'drop-shadow(-4px 0px 8px rgba(0, 0, 0, 0.04))',
                                 right: index_1 !== 0 ? 0 : 'unset',
                                 left: index_1 === 0 ? 0 : 'unset',
+                                bgColor: 'white',
                               })}
+                              {...(rowCheckedIdx.includes(index_0) &&
+                                selectedRowHighlightColor && {
+                                  bgColor: selectedRowHighlightColor,
+                                })}
                               data-testid="hds.table.body.td"
                             >
                               <Flex alignItems="center" gap="12px">
