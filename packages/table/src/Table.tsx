@@ -75,7 +75,8 @@ export type TableBaseProps<T extends UnknownArray> = {
   renderHeader?: React.ReactNode;
   renderFooter?: React.ReactNode;
   isBordered?: boolean;
-  highlightColor?: string;
+  selectedRowHighlightColor?: string;
+  hasHoverEffect?: boolean;
 };
 
 export type TableProps<T extends UnknownArray> = TableBaseProps<T> &
@@ -88,7 +89,8 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
     isLoading,
     renderLoader,
     renderHeader,
-    highlightColor = '#E0F2FF',
+    selectedRowHighlightColor,
+    hasHoverEffect,
     renderFooter,
     isBordered,
     borderColor = 'Gray.200',
@@ -99,6 +101,7 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
     isBordered,
     borderColor,
     hasBottomRowBorder: !!renderFooter,
+    hasHoverEffect,
   });
 
   const [checkedItems, setCheckedItems] = React.useState(() => {
@@ -130,8 +133,6 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
     })
     .flatMap((idx) => idx)
     .filter((value, idx, arrVal) => arrVal.indexOf(value) === idx);
-  console.log(rowCheckedIdx);
-  console.log(items);
   const SoftLoader = () => (!renderLoader ? <SoftLoaderDefault /> : renderLoader);
   const HardLoader = () =>
     !renderLoader ? <HardLoaderDefault numOfCols={totalColumns} /> : renderLoader;
@@ -277,7 +278,10 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                   <Tr
                     key={uuid()}
                     data-testid="hds.table.body.tr"
-                    bgColor={rowCheckedIdx.includes(index_0) ? highlightColor : 'white'}
+                    {...(rowCheckedIdx.includes(index_0) &&
+                      selectedRowHighlightColor && {
+                        bgColor: selectedRowHighlightColor,
+                      })}
                   >
                     {columns
                       .filter((col) => !col.isHidden)
@@ -304,15 +308,16 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                               {...(isSticky && {
                                 position: 'sticky',
                                 zIndex: columns.length - index_1,
-                                bgColor: 'white',
                                 filter: 'drop-shadow(-4px 0px 8px rgba(0, 0, 0, 0.04))',
                                 right: index_1 !== 0 ? 0 : 'unset',
                                 left: index_1 === 0 ? 0 : 'unset',
+                                bgColor: 'white',
                               })}
+                              {...(rowCheckedIdx.includes(index_0) &&
+                                selectedRowHighlightColor && {
+                                  bgColor: selectedRowHighlightColor,
+                                })}
                               data-testid="hds.table.body.td"
-                              bgColor={
-                                rowCheckedIdx.includes(index_0) ? highlightColor : 'white'
-                              }
                             >
                               <Flex alignItems="center" gap="12px">
                                 {onCheck && (

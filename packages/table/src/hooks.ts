@@ -4,12 +4,14 @@ type UseStylesArg = {
   isBordered?: boolean;
   borderColor: any;
   hasBottomRowBorder: boolean;
+  hasHoverEffect?: boolean;
 };
 
 export function useStyles({
   isBordered,
   borderColor = 'Gray.200',
   hasBottomRowBorder,
+  hasHoverEffect = false,
 }: UseStylesArg) {
   const container: SystemStyleObject = {
     position: 'relative',
@@ -86,6 +88,16 @@ export function useStyles({
           },
         },
       }),
+    },
+    tbody: {
+      tr: {
+        ...(hasHoverEffect && {
+          _hover: {
+            bgColor: '#FAFAFA',
+            position: 'sticky',
+          },
+        }),
+      },
     },
   };
 
