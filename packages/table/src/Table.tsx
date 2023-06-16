@@ -274,10 +274,6 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
           <Tbody position="relative" data-testid="hds.table.body">
             {shouldShowTable &&
               items.map((item, index_0) => {
-                // const hasStickCol = columns[index_0].isSticky;
-                // console.log(columns);
-                // console.log(items);
-                // console.log(hasStickCol, 'sticky');
                 return (
                   <Tr
                     key={uuid()}
