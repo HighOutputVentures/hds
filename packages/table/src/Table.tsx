@@ -274,6 +274,10 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
           <Tbody position="relative" data-testid="hds.table.body">
             {shouldShowTable &&
               items.map((item, index_0) => {
+                // const hasStickCol = columns[index_0].isSticky;
+                // console.log(columns);
+                // console.log(items);
+                // console.log(hasStickCol, 'sticky');
                 return (
                   <Tr
                     key={uuid()}
@@ -308,18 +312,14 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                               {...(isSticky && {
                                 position: 'sticky',
                                 zIndex: columns.length - index_1,
-                                bgColor: 'white',
                                 filter: 'drop-shadow(-4px 0px 8px rgba(0, 0, 0, 0.04))',
                                 right: index_1 !== 0 ? 0 : 'unset',
                                 left: index_1 === 0 ? 0 : 'unset',
+                                bgColor: 'white',
                               })}
                               {...(rowCheckedIdx.includes(index_0) &&
                                 selectedRowHighlightColor && {
                                   bgColor: selectedRowHighlightColor,
-                                })}
-                              {...(hasHoverEffect &&
-                                isSticky && {
-                                  bgColor: '#FAFAFA',
                                 })}
                               data-testid="hds.table.body.td"
                             >
