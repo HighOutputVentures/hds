@@ -68,7 +68,7 @@ const headings = {
   },
 };
 
-const paragraphs = {
+const paragraphs__future = {
   'paragraph-xxl': {
     fontSize: '32px',
     lineHeight: '48px',
@@ -102,7 +102,7 @@ const paragraphs = {
   },
 };
 
-const paragraphs__legacy = Object.entries(paragraphs).reduce<Record<string, any>>(
+const paragraphs__legacy = Object.entries(paragraphs__future).reduce<Record<string, any>>(
   (obj, pair) => {
     const sfx = '-default';
     const key = pair[0] + sfx;
@@ -111,13 +111,13 @@ const paragraphs__legacy = Object.entries(paragraphs).reduce<Record<string, any>
     return { ...obj, [key]: val };
   },
   {},
-) as Record<`${keyof typeof paragraphs}-default`, any>;
+) as Record<`${keyof typeof paragraphs__future}-default`, any>;
 
 export const Text: StyleConfig = {
   sizes: {
     ...labels,
     ...headings,
-    ...paragraphs,
+    ...paragraphs__future,
     ...paragraphs__legacy,
   },
   defaultProps: {

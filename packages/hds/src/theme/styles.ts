@@ -7,7 +7,7 @@ export const styles: Styles = {
     },
     body: {
       minH: '100vh',
-      color: 'neutrals.900',
+      color: 'neutral.900',
       bgColor: 'white',
     },
   },

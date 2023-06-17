@@ -1,5 +1,7 @@
 import { MultiStyleConfig } from '@chakra-ui/react';
 
+const chakraIconClassname = '.chakra-icon';
+
 export const Breadcrumb: MultiStyleConfig = {
   parts: ['container', 'link', 'list', 'separator'],
   baseStyle({ colorScheme }) {
@@ -33,5 +35,3 @@ export const Breadcrumb: MultiStyleConfig = {
     colorScheme: 'primary',
   },
 };
-
-const chakraIconClassname = '.chakra-icon';

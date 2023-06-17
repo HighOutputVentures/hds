@@ -1,4 +1,5 @@
 import { MultiStyleConfig, cssVar } from '@chakra-ui/react';
+import { createObjectFromKeysWithSameProps } from './_utils';
 
 const $shadow = cssVar('checkbox-shadow');
 
@@ -22,20 +23,26 @@ export const Checkbox: MultiStyleConfig = {
               borderColor: `${colorScheme}.700`,
             },
           },
-          _checked: {
-            color: `${colorScheme}.700`,
-            bgColor: `${colorScheme}.500`,
-            borderColor: `${colorScheme}.700`,
-            _hover: {
+
+          ...createObjectFromKeysWithSameProps(
+            {
+              color: `${colorScheme}.700`,
               bgColor: `${colorScheme}.500`,
               borderColor: `${colorScheme}.700`,
+              _hover: {
+                bgColor: `${colorScheme}.500`,
+                borderColor: `${colorScheme}.700`,
+              },
+              _focus: {
+                borderColor: `${colorScheme}.700`,
+                boxShadow: $shadow.reference,
+              },
             },
-            _focus: {
-              borderColor: `${colorScheme}.700`,
-              boxShadow: $shadow.reference,
-            },
-          },
-          [$shadow.variable]: '0px 0px 0px 4px ' + theme[colorScheme]?.['100'],
+            '_checked',
+            '_indeterminate',
+          ),
+
+          [$shadow.variable]: '0px 0px 0px 4px ' + theme.colors[colorScheme]?.[100],
         },
       };
     },

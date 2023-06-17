@@ -1,5 +1,5 @@
 import { MultiStyleConfig, cssVar } from '@chakra-ui/react';
-import { applyOpacity } from '../../utils/theme';
+import { applyOpacity } from './_utils';
 
 const $shadow = cssVar('menu-shadow');
 
@@ -17,8 +17,8 @@ export const Menu: MultiStyleConfig = {
         boxShadow: $shadow.reference,
 
         [$shadow.variable]: [
-          '0px 12px 16px -4px ' + applyOpacity(theme.colors.gray[900], 8),
-          '0px 4px 6px -2px ' + applyOpacity(theme.colors.gray[900], 3),
+          '0px 12px 16px -4px ' + applyOpacity(theme.colors.gray?.[900], 8),
+          '0px 4px 6px -2px ' + applyOpacity(theme.colors.gray?.[900], 3),
         ].join(),
       },
       item: {

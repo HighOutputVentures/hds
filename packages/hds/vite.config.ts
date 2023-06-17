@@ -25,6 +25,7 @@ export default defineConfig({
         index: 'src/index.ts',
         nextjs: 'src/nextjs.ts',
         framer: 'src/framer.ts',
+        emotion: 'src/emotion.ts',
       },
       name: 'hds',
       formats: ['es', 'cjs'],

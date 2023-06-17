@@ -1,46 +1,37 @@
+import { ChevronRightIcon } from '@chakra-ui/icons';
 import { faker } from '@faker-js/faker';
 import {
+  Avatar,
+  AvatarGroup,
+  Badge,
   Box,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  Checkbox,
   Flex,
-  Heading,
   HStack,
+  Heading,
+  IconButton,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
+  Table,
+  Tbody,
+  Td,
   Text,
-  useDisclosure,
-  VStack,
+  Th,
+  Thead,
+  Tr,
+  VisuallyHidden,
+  chakra,
 } from '@highoutput/hds';
-import { useNotification } from '@highoutput/hds-alerts';
-import { AvatarLabel } from '@highoutput/hds-avatar';
-import { Badge } from '@highoutput/hds-badge';
-import { Breadcrumbs } from '@highoutput/hds-breadcrumbs';
-import { DatePickerInput, RangeDatePickerDropdown } from '@highoutput/hds-date-picker';
-import {
-  Button,
-  IconButton,
-  PasswordField,
-  SelectField,
-  TextField,
-} from '@highoutput/hds-forms';
-import { DotsVerticalIcon, PrimaryIcon, TrashErrorIcon } from '@highoutput/hds-icons';
-import { Modal } from '@highoutput/hds-modal';
-import { Pagination } from '@highoutput/hds-pagination';
-import { Table } from '@highoutput/hds-table';
-import { useToast } from '@highoutput/hds-toast';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { format } from 'date-fns';
+import { DotsVerticalIcon, HomeIcon } from '@highoutput/hds-icons';
 import { GetServerSideProps } from 'next';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import { Controller, useForm } from 'react-hook-form';
-import * as yup from 'yup';
-import AddIcon from '../components/AddIcon';
 import { withLayout } from '../components/Layout';
 
-type User = {
+interface User {
   id: string;
   name: string;
   email: string;
@@ -48,7 +39,7 @@ type User = {
   avatar: string;
   teams: string[];
   isVerified: boolean;
-};
+}
 
 function mockUser() {
   return {
@@ -76,314 +67,103 @@ function mockUser() {
   };
 }
 
-type Props = {
+interface Props {
   users: User[];
-};
+}
 
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
-  const users = new Array(3).fill(null).map((_) => {
-    return mockUser();
-  });
+  const users = new Array(5).fill(null).map((_) => mockUser());
 
-  return {
-    props: {
-      users,
-    },
-  };
+  return { props: { users } };
 };
 
 function Index({ users }: Props) {
-  const router = useRouter();
-  const notify = useNotification();
-
-  useEffect(() => {
-    let timeout: NodeJS.Timeout;
-
-    timeout = setTimeout(() => {
-      notify({
-        icon: <PrimaryIcon />,
-        title: <>We&rsquo;ve just released a new update!</>,
-        okayButton: 'Changelog',
-        description: (
-          <>Check out the all new dashboard view. Pages and exports now load faster.</>
-        ),
-        closeButton: 'Dismiss',
-      });
-    }, 1500);
-
-    return () => {
-      if (timeout) clearTimeout(timeout);
-    };
-  }, []);
-
-  const [dateRange, setDateRange] = useState<{ start: Date; until: Date } | undefined>();
-
   return (
     <>
-      <Breadcrumbs
-        as={Link}
-        homeHref="/"
-        items={[
-          {
-            href: '/',
-            label: 'Dashboard',
-            isActive: true,
-          },
-        ]}
-      />
+      <Breadcrumb separator={<ChevronRightIcon w={4} h={4} />}>
+        <BreadcrumbItem>
+          <BreadcrumbLink>
+            <HomeIcon />
+            <VisuallyHidden>Home</VisuallyHidden>
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem isCurrentPage>
+          <BreadcrumbLink>Users</BreadcrumbLink>
+        </BreadcrumbItem>
+      </Breadcrumb>
 
-      <Table
-        mt={8}
-        items={users}
-        columns={[
-          {
-            label: 'Name',
-            renderRow({ id, avatar, name, username }) {
-              return (
-                <AvatarLabel
-                  src={avatar}
-                  name={name}
-                  supportText={`@${username}`}
-                  onClick={() => {
-                    router.push(`/users/${id}`);
-                  }}
-                />
-              );
-            },
-            onCheck() {},
-            onSort() {},
-          },
-          {
-            label: 'Email',
-            tooltip: 'This is a hint',
-            renderRow({ email }) {
-              return <Text>{email}</Text>;
-            },
-          },
-          {
-            label: 'Teams',
-            renderRow({ teams }) {
-              return (
+      <Table mt={8}>
+        <Thead>
+          <Tr>
+            <Th>
+              <HStack>
+                <Checkbox size="sm" isIndeterminate />
+                <chakra.span>User</chakra.span>
+              </HStack>
+            </Th>
+            <Th>Email</Th>
+            <Th>Besties</Th>
+            <Th>Teams</Th>
+            <Th>Actions</Th>
+          </Tr>
+        </Thead>
+
+        <Tbody>
+          {users.map(({ id, name, avatar, username, email, teams }, idx) => (
+            <Tr key={id}>
+              <Td>
+                <Flex alignItems="center">
+                  <Checkbox size="sm" isChecked={idx % 2 === 0} />
+                  <Avatar mr={1} ml={2} size="sm" src={avatar} name={name} />
+                  <Box>
+                    <Heading
+                      size="paragraph-sm"
+                      fontWeight="medium"
+                      lineHeight="none"
+                      color="neutral.800"
+                    >
+                      {name}
+                    </Heading>
+                    <Text color="neutral.500" size="label-xxs" lineHeight="short">
+                      @{username}
+                    </Text>
+                  </Box>
+                </Flex>
+              </Td>
+              <Td>{email}</Td>
+              <Td>
+                <AvatarGroup size="sm" max={5}>
+                  {Array.from({ length: 8 }).map((_, idx) => (
+                    <Avatar src={`https://i.pravatar.cc/150?u=${idx}`} />
+                  ))}
+                </AvatarGroup>
+              </Td>
+              <Td>
                 <HStack>
-                  {teams.map((team) => (
-                    <Badge key={team} label={team} />
+                  {teams.map((team, idx) => (
+                    <Badge key={`${id}${idx}team`}>{team}</Badge>
                   ))}
                 </HStack>
-              );
-            },
-          },
-          {
-            label: 'Actions',
-            renderRow() {
-              return (
+              </Td>
+              <Td>
                 <Menu>
                   <MenuButton
                     as={IconButton}
                     size="md"
                     variant="unstyled"
-                    icon={<DotsVerticalIcon w={6} h={6} />}
+                    icon={<DotsVerticalIcon w={5} h={5} />}
                   />
 
                   <MenuList>
                     <MenuItem>Edit</MenuItem>
-                    <DeleteItem />
+                    <MenuItem>Delete</MenuItem>
                   </MenuList>
                 </Menu>
-              );
-            },
-          },
-        ]}
-        renderHeader={
-          <Flex>
-            <Box>
-              <Heading size="header-4">Users</Heading>
-              <Text size="paragraph-sm-default" color="neutrals.600">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed, amet?
-              </Text>
-            </Box>
-
-            <Box flexGrow={1} />
-
-            <HStack spacing={3}>
-              <RangeDatePickerDropdown value={dateRange} onApply={setDateRange}>
-                {({ onToggle }) => (
-                  <Button accent="gray" variant="outline" onClick={onToggle}>
-                    {dateRange
-                      ? `
-                      ${format(dateRange.start, 'MMM dd')} - 
-                      ${format(dateRange.until, 'MMM dd')}
-                      `.trim()
-                      : 'Select Dates'}
-                  </Button>
-                )}
-              </RangeDatePickerDropdown>
-
-              <CreateUser />
-            </HStack>
-          </Flex>
-        }
-        renderFooter={
-          <Pagination
-            variant="relay"
-            count={100}
-            page={1}
-            pageSize={10}
-            sizes={[10, 20, 30]}
-            onChange={() => {}}
-          />
-        }
-      />
-    </>
-  );
-}
-
-const schema = yup.object({
-  name: yup.string().required(),
-  username: yup.string().required(),
-  password: yup.string().required(),
-  dateOfBirth: yup.string().required(),
-  gender: yup.string().oneOf(['male', 'female']).required(),
-});
-
-function CreateUser() {
-  const toast = useToast();
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
-  const { register, control, formState, reset, handleSubmit } = useForm<
-    yup.InferType<typeof schema>
-  >({
-    shouldFocusError: true,
-    shouldUnregister: true,
-    resolver: yupResolver(schema),
-    defaultValues: {
-      name: '',
-      username: '',
-      password: '',
-      dateOfBirth: '',
-      gender: 'male',
-    },
-  });
-
-  const onSubmit = handleSubmit(async (data) => {
-    await new Promise((resolve) => {
-      setTimeout(resolve, 5000);
-    });
-
-    toast.success('New user has been added');
-    onClose();
-    reset();
-  });
-
-  return (
-    <>
-      <Button onClick={onOpen}>Create User</Button>
-
-      <Modal
-        isOpen={isOpen}
-        onCancel={onClose}
-        icon={<AddIcon />}
-        title="Add new user"
-        message="Fill out the form to add new members to your platform."
-        okayButtonLabel="Continue"
-        onOkay={onSubmit}
-        isLoading={formState.isSubmitting}
-        width="475px"
-        padding="12px"
-      >
-        <VStack spacing={4} pt={4}>
-          <TextField
-            label="Name"
-            placeholder="Name"
-            error={formState.errors.name?.message}
-            {...register('name')}
-          />
-          <TextField
-            label="Username"
-            placeholder="Username"
-            error={formState.errors.username?.message}
-            {...register('username')}
-          />
-          <PasswordField
-            label="Password"
-            placeholder="Password"
-            error={formState.errors.password?.message}
-            {...register('password')}
-          />
-          <Controller
-            name="dateOfBirth"
-            control={control}
-            render={({ field, fieldState }) => (
-              <DatePickerInput
-                error={fieldState.error?.message}
-                label="Birthday"
-                placeholder="Birthday"
-                value={field.value ? new Date(field.value) : undefined}
-                onChange={(newValue) =>
-                  field.onChange({
-                    target: {
-                      value: newValue.toISOString(),
-                    },
-                  })
-                }
-              />
-            )}
-          />
-
-          <Controller
-            name="gender"
-            control={control}
-            render={({ field, fieldState }) => (
-              <SelectField
-                value={field.value}
-                error={fieldState.error?.message}
-                label="Gender"
-                placeholder="Gender"
-                options={[
-                  {
-                    label: 'Male',
-                    value: 'male',
-                  },
-                  {
-                    label: 'Female',
-                    value: 'female',
-                  },
-                ]}
-                onChange={(newValue) => {
-                  field.onChange({
-                    target: {
-                      value: newValue,
-                    },
-                  });
-                }}
-              />
-            )}
-          />
-        </VStack>
-      </Modal>
-    </>
-  );
-}
-
-function DeleteItem() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
-  const toast = useToast();
-
-  return (
-    <>
-      <MenuItem onClick={onOpen}>Delete</MenuItem>
-
-      <Modal
-        icon={<TrashErrorIcon w={10} h={10} />}
-        isOpen={isOpen}
-        onCancel={onClose}
-        onOkay={() => {
-          toast.success('User has been deleted');
-          onClose();
-        }}
-        title="Delete User"
-        message="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, nemo?"
-      />
+              </Td>
+            </Tr>
+          ))}
+        </Tbody>
+      </Table>
     </>
   );
 }

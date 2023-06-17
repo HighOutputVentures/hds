@@ -1,28 +1,37 @@
 import { faker } from '@faker-js/faker';
 import {
+  Avatar,
+  AvatarBadge,
   Box,
+  Button,
+  Drawer,
+  DrawerBody,
+  DrawerContent,
+  DrawerOverlay,
   HStack,
+  Heading,
   Icon,
+  IconButton,
   Menu,
   MenuButton,
   MenuDivider,
   MenuItem,
   MenuList,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Text,
+  useDisclosure,
 } from '@highoutput/hds';
-import { Avatar, AvatarLabel } from '@highoutput/hds-avatar';
-import { Button, IconButton } from '@highoutput/hds-forms';
 import {
   BellIcon,
   ChevronDownIcon,
-  ErrorFilmIcon,
-  ErrorFolderIcon,
   ExitIcon,
   SettingIcon,
   UserIcon,
-  WarningFolderIcon,
 } from '@highoutput/hds-icons';
-import { SlideoutMenu } from '@highoutput/hds-slideout-menu';
-import { Tabs } from '@highoutput/hds-tab';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -61,7 +70,6 @@ export function Header() {
         <Menu placement="bottom">
           <MenuButton
             as={Button}
-            variant="ghost"
             rightIcon={<ChevronDownIcon w={4} h={4} />}
             isActive={router.pathname.startsWith('/users')}
           >
@@ -69,10 +77,10 @@ export function Header() {
           </MenuButton>
 
           <MenuList w="200px">
-            <MenuItem icon={<ErrorFolderIcon w={6} h={6} />}>Menu option 1</MenuItem>
-            <MenuItem icon={<WarningFolderIcon w={6} h={6} />}>Menu option 2</MenuItem>
+            <MenuItem>Menu option 1</MenuItem>
+            <MenuItem>Menu option 2</MenuItem>
             <MenuDivider />
-            <MenuItem icon={<ErrorFilmIcon w={6} h={6} />}>Menu option 3</MenuItem>
+            <MenuItem>Menu option 3</MenuItem>
           </MenuList>
         </Menu>
 
@@ -114,15 +122,25 @@ function UserMenu() {
 
   return (
     <Menu>
-      <MenuButton as={Avatar} size="sm" src={user.avatar} />
+      <MenuButton>
+        <Avatar size="sm" src={user.avatar}>
+          <AvatarBadge />
+        </Avatar>
+      </MenuButton>
 
       <MenuList w="250px">
         <MenuItem>
-          <AvatarLabel
-            src={user.avatar}
-            name={user.name}
-            supportText={`@${user.username}`}
-          />
+          <HStack>
+            <Avatar size="sm" src={user.avatar} name={user.name} />
+            <Box>
+              <Heading size="paragraph-sm" fontWeight="medium">
+                {user.name}
+              </Heading>
+              <Text size="label-xs" color="neutral.700">
+                @{user.username}
+              </Text>
+            </Box>
+          </HStack>
         </MenuItem>
         <MenuDivider />
         <MenuItem icon={<UserIcon />}>View Profile</MenuItem>
@@ -142,47 +160,37 @@ function UserMenu() {
 }
 
 function Notifications() {
+  const disclosure = useDisclosure();
+
   return (
-    <SlideoutMenu
-      gutter={{
-        top: 65, // header height,
-      }}
-      renderTrigger={({ isOpen, onToggle }) => (
-        <IconButton
-          size="md"
-          variant="unstyled"
-          icon={<BellIcon w={6} h={6} />}
-          onClick={onToggle}
-          isActive={isOpen}
-        />
-      )}
-    >
-      <Box p={8}>
-        <Tabs
-          items={[
-            {
-              label: 'All',
-              render() {
-                return <Box py={4}>All</Box>;
-              },
-            },
-            {
-              label: 'Emails',
-              badgeCount: 1,
-              render() {
-                return <Box py={4}>Emails</Box>;
-              },
-            },
-            {
-              label: 'Others',
-              badgeCount: 3,
-              render() {
-                return <Box py={4}>Others</Box>;
-              },
-            },
-          ]}
-        />
-      </Box>
-    </SlideoutMenu>
+    <>
+      <IconButton
+        aria-label=""
+        variant="unstyled"
+        icon={<BellIcon w={5} h={5} />}
+        onClick={disclosure.onOpen}
+      />
+
+      <Drawer size="sm" isOpen={disclosure.isOpen} onClose={disclosure.onClose}>
+        <DrawerOverlay mt="65px" />
+        <DrawerContent mt="65px">
+          <DrawerBody>
+            <Tabs>
+              <TabList>
+                <Tab>All</Tab>
+                <Tab>Emails</Tab>
+                <Tab>Others</Tab>
+              </TabList>
+
+              <TabPanels>
+                <TabPanel>Hello</TabPanel>
+                <TabPanel>Hello Again!</TabPanel>
+                <TabPanel>Ok, Bye!</TabPanel>
+              </TabPanels>
+            </Tabs>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
+    </>
   );
 }

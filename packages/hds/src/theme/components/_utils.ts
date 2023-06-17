@@ -11,7 +11,10 @@ const isRGB = (color: string) => color.startsWith('rgb(');
  *
  */
 export function applyOpacity(color: string, opacity: number): string {
-  color = color.trim().toLowerCase();
+  if (!(typeof color === 'string' && typeof opacity === 'number')) return '';
+
+  color = color.trim();
+  color = color.toLowerCase();
 
   if (isHEX(color)) {
     color = color.slice(1);
@@ -40,4 +43,35 @@ export function applyOpacity(color: string, opacity: number): string {
   }
 
   return color;
+}
+
+/**
+ *
+ * @example
+ *
+ * const obj = createObjectFromKeysWithSameProps(
+ *  {
+ *    prop1: 1,
+ *    prop2: 2,
+ *  },
+ *  'key1',
+ *  'key2',
+ *  'key3',
+ * );
+ *
+ * console.log(obj.key1) // { prop1: 1, prop2: 2 }
+ * console.log(obj.key2) // { prop1: 1, prop2: 2 }
+ * console.log(obj.key3) // { prop1: 1, prop2: 2 }
+ *
+ */
+export function createObjectFromKeysWithSameProps<
+  T extends Record<string, any>,
+  K extends string,
+>(props: T, ...keys: K[]) {
+  return keys.reduce<Partial<Record<K, T>>>((obj, key) => {
+    return {
+      ...obj,
+      [key]: props,
+    };
+  }, {}) as { [P in K]: T };
 }
