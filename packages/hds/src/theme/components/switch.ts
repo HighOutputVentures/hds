@@ -15,7 +15,7 @@ export const Switch: MultiStyleConfig = {
       container: {
         [$diff.variable]: diffValue,
         [$translateX.variable]: $diff.reference,
-        [$shadow.variable]: '0px 0px 0px 4px ' + theme.colors['primary']?.[100],
+        [$shadow.variable]: `0px 0px 0px 4px ${theme.colors['primary']?.[100]}`,
       },
       track: {
         padding: '2px',
@@ -75,10 +75,9 @@ export const Switch: MultiStyleConfig = {
         height: [$height.reference],
         bgColor: 'white',
         transition: 'all 300ms ease-in-out',
-        boxShadow: [
-          '0px 1px 3px ' + applyOpacity(theme.colors.gray?.[900], 10),
-          +'0px 1px 2px ' + applyOpacity(theme.colors.gray?.[900], 6),
-        ].join(),
+        boxShadow:
+          `0px 1px 3px ${applyOpacity(theme.colors.gray?.[900], 10)},` +
+          `0px 1px 2px ${applyOpacity(theme.colors.gray?.[900], 6)}`,
         _checked: {
           transform: `translateX(${$translateX.reference})`,
         },

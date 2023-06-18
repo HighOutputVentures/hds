@@ -20,8 +20,10 @@ export const Slider: MultiStyleConfig = {
         border: '1.5px solid',
         borderColor: 'primary.700',
         _focus: {
-          boxShadow:
-            '0px 0px 0px 3px ' + applyOpacity(theme.colors[colorScheme]?.[100], 80),
+          boxShadow: `0px 0px 0px 3px ${applyOpacity(
+            theme.colors[colorScheme]?.[100],
+            80,
+          )}`,
         },
       },
     };

@@ -2,13 +2,13 @@ import { MultiStyleConfig } from '@chakra-ui/react';
 
 export const Modal: MultiStyleConfig = {
   parts: [
-    'header',
-    'overlay',
     'dialogContainer',
     'dialog',
-    'closeButton',
     'body',
+    'header',
     'footer',
+    'overlay',
+    'closeButton',
   ],
   baseStyle: {
     overlay: {
@@ -16,7 +16,7 @@ export const Modal: MultiStyleConfig = {
       backdropFilter: 'blur(8px)',
     },
     dialog: {
-      p: '16px',
+      p: '24px',
     },
     body: {
       p: 0,

@@ -42,7 +42,7 @@ export const Checkbox: MultiStyleConfig = {
             '_indeterminate',
           ),
 
-          [$shadow.variable]: '0px 0px 0px 4px ' + theme.colors[colorScheme]?.[100],
+          [$shadow.variable]: `0px 0px 0px 4px ${theme.colors[colorScheme]?.[100]}`,
         },
       };
     },

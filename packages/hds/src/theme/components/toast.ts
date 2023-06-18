@@ -1,6 +1,6 @@
 import { AlertStatus, MultiStyleConfig, StyleFunctionProps } from '@chakra-ui/react';
 
-const closeButtonIconCls = '.chakra-toast__svg';
+const closeButtonIconClassname = '.chakra-toast__svg';
 
 export const Toast: MultiStyleConfig = {
   parts: ['container', 'icon', 'content', 'title', 'description', 'closeButton'],
@@ -70,7 +70,7 @@ export const Toast: MultiStyleConfig = {
         lineHeight: '20px',
       },
       closeButton: {
-        [closeButtonIconCls]: {
+        [closeButtonIconClassname]: {
           w: 5,
           h: 5,
         },

@@ -81,7 +81,8 @@ export const Table: MultiStyleConfig = {
         fontWeight: 'medium',
       },
       td: {
-        p: 4,
+        py: 3,
+        px: 4,
         fontSize: 'sm',
         lineHeight: '20px',
         letterSpacing: '0.02em',

@@ -1,13 +1,12 @@
-import { faker } from '@faker-js/faker';
 import {
   Avatar,
   AvatarBadge,
   Box,
-  Button,
   Drawer,
   DrawerBody,
   DrawerContent,
   DrawerOverlay,
+  Flex,
   HStack,
   Heading,
   Icon,
@@ -17,36 +16,40 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
+  Portal,
+  Spacer,
   Tab,
   TabList,
   TabPanel,
   TabPanels,
   Tabs,
   Text,
+  VisuallyHidden,
+  chakra,
   useDisclosure,
 } from '@highoutput/hds';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { Number123Icon } from 'packages/hds/src/components/Toast/icons';
+import { users } from '../fixtures';
+import Logo from './Logo';
 import {
   BellIcon,
   ChevronDownIcon,
-  ExitIcon,
-  SettingIcon,
-  UserIcon,
-} from '@highoutput/hds-icons';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import Logo from './Logo';
+  PowerIcon,
+  SettingsIcon,
+  UserShareIcon,
+} from './icons';
 
 export function Header() {
   const router = useRouter();
 
   return (
-    <Box
+    <Flex
       as="header"
       h="65px"
       px={6}
       py={4}
-      display="flex"
       alignItems="center"
       borderBottom="1px"
       borderColor="neutrals.200"
@@ -63,66 +66,92 @@ export function Header() {
       />
 
       <HStack spacing={4}>
-        <Button as={Link} href="/" variant="ghost" isActive={router.pathname === '/'}>
+        <NavButton as={Link} href="/" data-active={router.pathname === '/' || undefined}>
           Dashboard
-        </Button>
+        </NavButton>
 
         <Menu placement="bottom">
-          <MenuButton
-            as={Button}
-            rightIcon={<ChevronDownIcon w={4} h={4} />}
-            isActive={router.pathname.startsWith('/users')}
-          >
-            Users
-          </MenuButton>
+          {({ isOpen }) => (
+            <>
+              <MenuButton
+                as={NavButton}
+                data-active={router.pathname.startsWith('/users') || undefined}
+              >
+                <chakra.div display="flex" alignItems="center" gap={1}>
+                  <chakra.span>Users</chakra.span>
+                  <chakra.svg
+                    as={ChevronDownIcon}
+                    w={4}
+                    h={4}
+                    display="inline-block"
+                    transition="all 150ms ease-in-out"
+                    _expanded={{
+                      transform: 'rotate(180deg)',
+                    }}
+                    data-expanded={isOpen || undefined}
+                  />
+                </chakra.div>
+              </MenuButton>
 
-          <MenuList w="200px">
-            <MenuItem>Menu option 1</MenuItem>
-            <MenuItem>Menu option 2</MenuItem>
-            <MenuDivider />
-            <MenuItem>Menu option 3</MenuItem>
-          </MenuList>
+              <Portal>
+                <MenuList w="175px">
+                  <MenuItem icon={<Icon as={Number123Icon} />}>Menu option 1</MenuItem>
+                  <MenuItem icon={<Icon as={Number123Icon} />}>Menu option 2</MenuItem>
+                  <MenuDivider />
+                  <MenuItem icon={<Icon as={Number123Icon} />}>Menu option 3</MenuItem>
+                </MenuList>
+              </Portal>
+            </>
+          )}
         </Menu>
 
-        <Button
+        <NavButton
           as={Link}
           href="/orders"
-          variant="ghost"
-          isActive={router.pathname === '/orders'}
+          data-active={router.pathname === '/orders' || undefined}
         >
           Orders
-        </Button>
+        </NavButton>
       </HStack>
 
-      <Box flexGrow={1} />
+      <Spacer />
 
-      <HStack spacing={4}>
+      <Flex gap={4} alignItems="center">
         <Notifications />
         <UserMenu />
-      </HStack>
-    </Box>
+      </Flex>
+    </Flex>
   );
 }
 
+const NavButton = chakra('button', {
+  baseStyle: {
+    px: 3,
+    py: 1,
+    letterSpacing: '0.02em',
+    rounded: 'md',
+    display: 'flex',
+    alignItems: 'center',
+    gap: 2,
+    _hover: {
+      bg: 'primary.50',
+    },
+    _active: {
+      bg: 'primary.100',
+      color: 'primary.900',
+    },
+  },
+});
+
+const user = users[0];
+
 function UserMenu() {
   const router = useRouter();
-  const [user, setUser] = useState<{
-    name?: string;
-    username?: string;
-    avatar?: string;
-  }>({});
-
-  useEffect(() => {
-    setUser({
-      name: faker.name.fullName(),
-      avatar: faker.internet.avatar(),
-      username: faker.internet.userName(),
-    });
-  }, []);
 
   return (
     <Menu>
       <MenuButton>
+        <VisuallyHidden>Toggle Profile Menu</VisuallyHidden>
         <Avatar size="sm" src={user.avatar}>
           <AvatarBadge />
         </Avatar>
@@ -143,11 +172,11 @@ function UserMenu() {
           </HStack>
         </MenuItem>
         <MenuDivider />
-        <MenuItem icon={<UserIcon />}>View Profile</MenuItem>
-        <MenuItem icon={<SettingIcon />}>Settings</MenuItem>
+        <MenuItem icon={<UserShareIcon />}>View Profile</MenuItem>
+        <MenuItem icon={<SettingsIcon />}>Settings</MenuItem>
         <MenuDivider />
         <MenuItem
-          icon={<ExitIcon />}
+          icon={<PowerIcon />}
           onClick={() => {
             router.push('/login');
           }}
@@ -165,9 +194,9 @@ function Notifications() {
   return (
     <>
       <IconButton
-        aria-label=""
+        aria-label="Toggle Notifications"
         variant="unstyled"
-        icon={<BellIcon w={5} h={5} />}
+        icon={<Icon as={BellIcon} w={6} h={6} />}
         onClick={disclosure.onOpen}
       />
 

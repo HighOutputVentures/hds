@@ -102,6 +102,7 @@ const paragraphs__future = {
   },
 };
 
+/* Backwards compatibility */
 const paragraphs__legacy = Object.entries(paragraphs__future).reduce<Record<string, any>>(
   (obj, pair) => {
     const sfx = '-default';

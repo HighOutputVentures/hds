@@ -7,8 +7,8 @@ const $lineHeight = cssVar('sf-avatar-lineheight');
 const $letterSpacing = cssVar('sf-avatar-letterspacing');
 const $badgeSize = cssVar('sf-avatar-badge-size');
 
-const iconCls = '.chakra-avatar__svg';
-const excessCls = '.chakra-avatar__excess';
+const genericIconClassname = '.chakra-avatar__svg';
+const excessClassname = '.chakra-avatar__excess';
 
 export const Avatar: MultiStyleConfig = {
   parts: ['badge', 'container', 'excessLabel', 'group', 'label'],
@@ -20,7 +20,7 @@ export const Avatar: MultiStyleConfig = {
         h: $size.reference,
         color: 'gray.600',
         bgColor: 'gray.50',
-        [iconCls]: {
+        [genericIconClassname]: {
           color: 'gray.600',
         },
       },
@@ -59,9 +59,11 @@ export const Avatar: MultiStyleConfig = {
         order: 1,
       },
       group: {
+        w: 'fit-content',
         display: 'flex',
         flexDir: 'unset',
-        [`& > *:not(${excessCls})`]: {
+        justifyContent: 'start',
+        [`& > *:not(${excessClassname})`]: {
           m: 0,
           mr: '-8px',
           order: 0,

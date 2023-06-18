@@ -16,10 +16,9 @@ export const Menu: MultiStyleConfig = {
         minWidth: '175px',
         boxShadow: $shadow.reference,
 
-        [$shadow.variable]: [
-          '0px 12px 16px -4px ' + applyOpacity(theme.colors.gray?.[900], 8),
-          '0px 4px 6px -2px ' + applyOpacity(theme.colors.gray?.[900], 3),
-        ].join(),
+        [$shadow.variable]:
+          `0px 12px 16px -4px ${applyOpacity(theme.colors.gray?.[900], 8)},` +
+          `0px 4px 6px -2px ${applyOpacity(theme.colors.gray?.[900], 3)}`,
       },
       item: {
         gap: '12px',

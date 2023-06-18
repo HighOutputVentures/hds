@@ -16,7 +16,7 @@ export const PinInput: StyleConfig = {
         lineHeight: '48px',
         letterSpacing: '-0.015em',
         textAlign: 'center',
-        boxShadow: '0px 1px 2px ' + applyOpacity(theme.colors.gray?.[900], 5),
+        boxShadow: `0px 1px 2px ${applyOpacity(theme.colors.gray?.[900], 5)}`,
 
         _placeholder: {
           color: 'neutral.500',
@@ -26,10 +26,9 @@ export const PinInput: StyleConfig = {
         },
         _focus: {
           borderColor: `${colorScheme}.700`,
-          boxShadow: [
-            '0px 4px 8px -2px ' + applyOpacity(theme.colors.gray?.[900], 10),
-            '0px 2px 4px -2px ' + applyOpacity(theme.colors.gray?.[900], 6),
-          ].join(),
+          boxShadow:
+            `0px 4px 8px -2px ${applyOpacity(theme.colors.gray?.[900], 10)},` +
+            `0px 2px 4px -2px ${applyOpacity(theme.colors.gray?.[900], 6)}`,
         },
         _disabled: {
           color: 'neutral.200',

@@ -203,6 +203,7 @@ export {
   VisuallyHidden,
   Wrap,
   WrapItem,
+  calc,
   chakra,
   createStandaloneToast,
   createStylesContext,

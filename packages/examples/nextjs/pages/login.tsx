@@ -31,6 +31,7 @@ import {
   Textarea,
   Tooltip,
   VStack,
+  chakra,
   useToast,
 } from '@highoutput/hds';
 import { PropsWithChildren } from 'react';
@@ -143,9 +144,15 @@ export default function LoginPage() {
         Login
       </Button>
 
+      <Button w="full" mt={4} variant="outline" colorScheme="gray">
+        Register
+      </Button>
+
       <Box mt={4}>
         <Tooltip label="Hello world!" hasArrow>
-          Hover me
+          <chakra.span fontSize="xs" fontWeight="medium" color="neutral.600">
+            Hover me
+          </chakra.span>
         </Tooltip>
       </Box>
     </Wrapper>

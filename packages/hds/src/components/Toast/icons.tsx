@@ -1,108 +1,4 @@
-import { ToastProviderProps, chakra, useId, useMultiStyleConfig } from '@chakra-ui/react';
 import * as React from 'react';
-import { omit } from '../utils/omit';
-
-type D = NonNullable<ToastProviderProps['defaultOptions']>;
-type R = NonNullable<D['render']>;
-type P = Parameters<R>[0];
-
-export type ToastProps = { [K in keyof P]: P[K] } & {};
-
-export function Toast(props: ToastProps) {
-  const {
-    size,
-    title,
-    description,
-    status = 'success',
-    variant = 'subtle',
-    isClosable = true,
-    onClose,
-    render,
-    styleConfig,
-    orientation,
-    ...others
-  } = props;
-
-  const colorScheme = others.colorScheme ?? getColorScheme(status);
-
-  const styles = useMultiStyleConfig('Toast', {
-    size,
-    variant,
-    colorScheme,
-    orientation,
-    styleConfig,
-  });
-
-  const uuid = useId();
-  const rootId = others.id?.toString() ?? uuid;
-  const descId = rootId + '-desc';
-  const titleId = rootId + '-title';
-
-  if (render) return render(omit(props, 'render'));
-
-  return (
-    <chakra.div id={rootId} role="alert" __css={styles.container}>
-      <chakra.svg as={getIcon(status)} __css={styles.icon} />
-
-      <chakra.div __css={styles.content}>
-        {title && (
-          <chakra.div id={titleId} __css={styles.title}>
-            {title}
-          </chakra.div>
-        )}
-
-        {description && (
-          <chakra.div id={descId} __css={styles.description}>
-            {description}
-          </chakra.div>
-        )}
-      </chakra.div>
-
-      {isClosable && (
-        <chakra.button
-          type="button"
-          aria-label="Close alert"
-          onClick={onClose}
-          __css={styles.closeButton}
-        >
-          <chakra.svg as={XMarkIcon} className="chakra-toast__svg" />
-        </chakra.button>
-      )}
-    </chakra.div>
-  );
-}
-
-function getColorScheme(status: ToastProps['status']) {
-  switch (status) {
-    case 'info':
-      return 'primary';
-    case 'error':
-      return 'error';
-    case 'loading':
-      return 'neutral';
-    case 'success':
-      return 'success';
-    case 'warning':
-      return 'warning';
-  }
-}
-
-function getIcon(status: ToastProps['status']) {
-  switch (status) {
-    case 'error':
-      return ExclamationCircleIcon;
-    case 'info':
-      return InformationCircleIcon;
-    case 'warning':
-      return ExclamationTriangleIcon;
-    case 'success':
-      return CheckCircleIcon;
-    case 'loading':
-      return SpinnerIcon;
-    default:
-      return;
-  }
-}
 
 export function CheckCircleIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -138,7 +34,7 @@ export function ExclamationCircleIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function XMarkIcon(props: React.SVGProps<SVGSVGElement>) {
+export function XMarkIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -155,7 +51,7 @@ function XMarkIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function InformationCircleIcon(props: React.SVGProps<SVGSVGElement>) {
+export function InformationCircleIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -172,7 +68,7 @@ function InformationCircleIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function ExclamationTriangleIcon(props: React.SVGProps<SVGSVGElement>) {
+export function ExclamationTriangleIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -189,7 +85,7 @@ function ExclamationTriangleIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function SpinnerIcon(props: React.SVGProps<SVGSVGElement>) {
+export function SpinnerIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -218,3 +114,28 @@ function SpinnerIcon(props: React.SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+export const Number123Icon = React.forwardRef<
+  SVGSVGElement,
+  React.SVGProps<SVGSVGElement>
+>((props, ref) => {
+  return (
+    <svg
+      ref={ref}
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="m3 10l2-2v8m4-8h3a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h3m4-8h2.5A1.5 1.5 0 0 1 21 9.5v1a1.5 1.5 0 0 1-1.5 1.5H18h1.5a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5H17"
+      ></path>
+    </svg>
+  );
+});

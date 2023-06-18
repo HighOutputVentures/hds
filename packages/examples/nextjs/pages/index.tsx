@@ -1,5 +1,3 @@
-import { ChevronRightIcon } from '@chakra-ui/icons';
-import { faker } from '@faker-js/faker';
 import {
   Avatar,
   AvatarGroup,
@@ -8,82 +6,72 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
+  Button,
+  ButtonGroup,
   Checkbox,
   Flex,
+  FormControl,
+  FormLabel,
   HStack,
   Heading,
+  Icon,
   IconButton,
+  Input,
+  InputGroup,
+  InputLeftElement,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Spacer,
   Table,
   Tbody,
   Td,
   Text,
   Th,
   Thead,
+  Tooltip,
   Tr,
+  VStack,
   VisuallyHidden,
   chakra,
+  useDisclosure,
 } from '@highoutput/hds';
-import { DotsVerticalIcon, HomeIcon } from '@highoutput/hds-icons';
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import { withLayout } from '../components/Layout';
-
-interface User {
-  id: string;
-  name: string;
-  email: string;
-  username: string;
-  avatar: string;
-  teams: string[];
-  isVerified: boolean;
-}
-
-function mockUser() {
-  return {
-    id: faker.datatype.uuid(),
-    name: faker.name.fullName(),
-    email: faker.internet.email(),
-    avatar: faker.internet.avatar(),
-    username: faker.internet.userName(),
-    teams: faker.helpers.arrayElements(
-      [
-        'Design',
-        'Engineer',
-        'Marketing',
-        'BizOps',
-        'Advante',
-        'PH Wallet',
-        'EU Wallet',
-        'BrandSonic',
-        'TalentStories',
-        'Her Vietname',
-      ],
-      3,
-    ),
-    isVerified: faker.datatype.boolean(),
-  };
-}
+import {
+  ChevronRightIcon,
+  SmartHomeIcon,
+  UserCogIcon,
+  UserEditIcon,
+  UserPlusIcon,
+  UserSearchIcon,
+  UserXIcon,
+} from '../components/icons';
+import { users } from '../fixtures';
 
 interface Props {
-  users: User[];
+  users: Array<typeof users[number]>;
 }
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
-  const users = new Array(5).fill(null).map((_) => mockUser());
-
+export const getStaticProps: GetStaticProps<Props> = async () => {
   return { props: { users } };
 };
 
 function Index({ users }: Props) {
   return (
     <>
-      <Breadcrumb separator={<ChevronRightIcon w={4} h={4} />}>
+      <Breadcrumb separator={<Icon as={ChevronRightIcon} />}>
         <BreadcrumbItem>
           <BreadcrumbLink>
-            <HomeIcon />
+            <Icon as={SmartHomeIcon} w={5} h={5} />
             <VisuallyHidden>Home</VisuallyHidden>
           </BreadcrumbLink>
         </BreadcrumbItem>
@@ -92,7 +80,30 @@ function Index({ users }: Props) {
         </BreadcrumbItem>
       </Breadcrumb>
 
-      <Table mt={8}>
+      <Flex mt={4} alignItems="center">
+        <Box>
+          <Heading>Users</Heading>
+          <Text size="label-xs" color="neutral.600">
+            Mange Users
+          </Text>
+        </Box>
+
+        <Spacer />
+
+        <InputGroup w="300px" mr={3}>
+          <InputLeftElement>
+            <Icon as={UserSearchIcon} w={5} h={5} />
+          </InputLeftElement>
+          <Input placeholder="Search" />
+        </InputGroup>
+
+        <ButtonGroup isAttached variant="outline" colorScheme="gray">
+          <CreateUser />
+          <IconButton aria-label="" icon={<Icon as={UserSearchIcon} w={5} h={5} />} />
+        </ButtonGroup>
+      </Flex>
+
+      <Table mt={4}>
         <Thead>
           <Tr>
             <Th>
@@ -102,7 +113,14 @@ function Index({ users }: Props) {
               </HStack>
             </Th>
             <Th>Email</Th>
-            <Th>Besties</Th>
+            <Th>
+              <HStack>
+                <chakra.span>Friends</chakra.span>
+                <Tooltip label="Need help?" hasArrow>
+                  <Icon />
+                </Tooltip>
+              </HStack>
+            </Th>
             <Th>Teams</Th>
             <Th>Actions</Th>
           </Tr>
@@ -134,14 +152,19 @@ function Index({ users }: Props) {
               <Td>
                 <AvatarGroup size="sm" max={5}>
                   {Array.from({ length: 8 }).map((_, idx) => (
-                    <Avatar src={`https://i.pravatar.cc/150?u=${idx}`} />
+                    <Avatar key={idx} src={`https://i.pravatar.cc/80?u${id}${idx}`} />
                   ))}
                 </AvatarGroup>
               </Td>
               <Td>
-                <HStack>
+                <HStack spacing={1}>
                   {teams.map((team, idx) => (
-                    <Badge key={`${id}${idx}team`}>{team}</Badge>
+                    <Badge
+                      key={`${id}${idx}team`}
+                      colorScheme={getBadgeAccentViaTeam(team)}
+                    >
+                      {team}
+                    </Badge>
                   ))}
                 </HStack>
               </Td>
@@ -151,12 +174,16 @@ function Index({ users }: Props) {
                     as={IconButton}
                     size="md"
                     variant="unstyled"
-                    icon={<DotsVerticalIcon w={5} h={5} />}
+                    aria-label="Open user menu"
+                    icon={<Icon as={UserCogIcon} />}
+                    _active={{
+                      color: 'primary.700',
+                    }}
                   />
 
                   <MenuList>
-                    <MenuItem>Edit</MenuItem>
-                    <MenuItem>Delete</MenuItem>
+                    <MenuItem icon={<Icon as={UserEditIcon} />}>Edit</MenuItem>
+                    <MenuItem icon={<Icon as={UserXIcon} />}>Delete</MenuItem>
                   </MenuList>
                 </Menu>
               </Td>
@@ -166,6 +193,82 @@ function Index({ users }: Props) {
       </Table>
     </>
   );
+}
+
+function CreateUser() {
+  const disclosure = useDisclosure();
+
+  return (
+    <>
+      <IconButton
+        aria-label=""
+        onClick={disclosure.onOpen}
+        icon={<Icon as={UserPlusIcon} w={5} h={5} />}
+      />
+
+      <Modal isOpen={disclosure.isOpen} onClose={disclosure.onClose}>
+        <ModalOverlay />
+        <ModalContent as={chakra.form}>
+          <ModalCloseButton />
+          <ModalHeader>
+            <Heading size="label-md" fontWeight="medium">
+              Create new user
+            </Heading>
+            <Text mt={1} size="label-xs" color="neutral.600" fontWeight="normal">
+              Fill out the form to add new members to your platform.
+            </Text>
+          </ModalHeader>
+
+          <ModalBody mt={8}>
+            <VStack spacing={4}>
+              <FormControl>
+                <FormLabel>Name</FormLabel>
+                <Input placeholder="John Doe" />
+              </FormControl>
+              <FormControl>
+                <FormLabel>Username</FormLabel>
+                <Input placeholder="johndoe" />
+              </FormControl>
+              <FormControl>
+                <FormLabel>Password</FormLabel>
+                <Input />
+              </FormControl>
+            </VStack>
+          </ModalBody>
+          <ModalFooter mt={6} display="flex" gap={2}>
+            <Button w="full" onClick={disclosure.onClose}>
+              Cancel
+            </Button>
+            <Button
+              w="full"
+              variant="solid"
+              colorScheme="primary"
+              onClick={disclosure.onClose}
+            >
+              Submit
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
+  );
+}
+
+function getBadgeAccentViaTeam(team: String) {
+  switch (team.toUpperCase()) {
+    case 'QA':
+      return 'blue';
+    case 'FRONTEND':
+      return 'indigo';
+    case 'BACKEND':
+      return 'purple';
+    case 'DEVOPS':
+      return 'gray-blue';
+    case 'DESIGN':
+      return 'rose';
+    default:
+      return 'gray';
+  }
 }
 
 export default withLayout(Index);

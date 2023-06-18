@@ -54,7 +54,7 @@ export const Input: MultiStyleConfig = {
             },
           },
 
-          [$shadow.variable]: '0px 1px 2px ' + applyOpacity(theme.colors.gray?.[900], 5),
+          [$shadow.variable]: `0px 1px 2px ${applyOpacity(theme.colors.gray?.[900], 5)}`,
         },
       };
     },
