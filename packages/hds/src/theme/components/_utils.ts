@@ -75,3 +75,15 @@ export function createObjectFromKeysWithSameProps<
     };
   }, {}) as { [P in K]: T };
 }
+
+export function isGrayish(colorScheme = '') {
+  const grayishColorSchemes = [
+    //
+    'gray',
+    'Gray',
+    'neutral',
+    'neutrals',
+  ];
+
+  return grayishColorSchemes.includes(colorScheme);
+}

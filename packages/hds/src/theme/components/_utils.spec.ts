@@ -1,4 +1,4 @@
-import { applyOpacity, createObjectFromKeysWithSameProps } from './_utils';
+import { applyOpacity, createObjectFromKeysWithSameProps, isGrayish } from './_utils';
 
 describe("'applyOpacity'", () => {
   it('should correctly convert a valid HEX color with opacity', () => {
@@ -39,5 +39,25 @@ describe("'createObjectFromKeysWithSameProps'", () => {
       key2: { prop1: 1, prop2: 2 },
       key3: { prop1: 1, prop2: 2 },
     });
+  });
+});
+
+describe("'isGrayish'", () => {
+  test('isGrayish returns true for valid grayish color schemes', () => {
+    expect(isGrayish('gray')).toBe(true);
+    expect(isGrayish('Gray')).toBe(true);
+    expect(isGrayish('neutral')).toBe(true);
+    expect(isGrayish('neutrals')).toBe(true);
+  });
+
+  test('isGrayish returns false for invalid color schemes', () => {
+    expect(isGrayish('red')).toBe(false);
+    expect(isGrayish('blue')).toBe(false);
+    expect(isGrayish('green')).toBe(false);
+    expect(isGrayish('yellow')).toBe(false);
+  });
+
+  test('isGrayish returns false when no color scheme is provided', () => {
+    expect(isGrayish()).toBe(false);
   });
 });

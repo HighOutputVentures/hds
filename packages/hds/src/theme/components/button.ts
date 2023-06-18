@@ -1,6 +1,6 @@
 import { StyleConfig } from '@chakra-ui/react';
 import { runIfFn } from '../../utils/runIfFn';
-import { applyOpacity } from './_utils';
+import { applyOpacity, isGrayish } from './_utils';
 import { Input } from './input';
 
 /*
@@ -240,15 +240,3 @@ export const Button: StyleConfig = {
     colorScheme: 'primary',
   },
 };
-
-function isGrayish(colorScheme = '') {
-  const grayishColorSchemes = [
-    //
-    'gray',
-    'Gray',
-    'neutral',
-    'neutrals',
-  ];
-
-  return grayishColorSchemes.includes(colorScheme);
-}
