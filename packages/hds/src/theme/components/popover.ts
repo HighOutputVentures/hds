@@ -1,5 +1,5 @@
 import { MultiStyleConfig, cssVar } from '@chakra-ui/react';
-import { applyOpacity } from '../../utils/theme';
+import { applyOpacity } from './_utils';
 
 const $bg = cssVar('popover-bg');
 const $fg1 = cssVar('popover-fg');
@@ -21,23 +21,22 @@ export const Popover: MultiStyleConfig = {
         lineHeight: '18px',
         boxShadow: $shadow.reference,
 
-        [$bg.variable]: theme.colors.neutral[900],
-        [$fg1.variable]: theme.colors.neutral[100],
-        [$fg2.variable]: theme.colors.neutral[300],
+        [$bg.variable]: theme.colors.neutral?.[900],
+        [$fg1.variable]: theme.colors.neutral?.[100],
+        [$fg2.variable]: theme.colors.neutral?.[300],
         [$arrowBg.variable]: $bg.reference,
-        [$shadow.variable]: [
-          '0px 12px 16px -4px ' + applyOpacity(theme.colors.gray[900], 8),
-          '0px 4px 6px -2px ' + applyOpacity(theme.colors.gray[900], 3),
-        ].join(),
+        [$shadow.variable]:
+          `0px 12px 16px -4px ${applyOpacity(theme.colors.gray?.[900], 8)},` +
+          `0px 4px 6px -2px ${applyOpacity(theme.colors.gray?.[900], 3)}`,
 
         _dark: {
           [$bg.variable]: theme.colors.white,
-          [$fg1.variable]: theme.colors.neutral[700],
-          [$fg2.variable]: theme.colors.neutral[600],
+          [$fg1.variable]: theme.colors.neutral?.[700],
+          [$fg2.variable]: theme.colors.neutral?.[600],
           [$arrowBg.variable]: $bg.reference,
 
           border: '1px',
-          borderColor: theme.colors.gray[100],
+          borderColor: theme.colors.gray?.[100],
         },
       },
       header: {

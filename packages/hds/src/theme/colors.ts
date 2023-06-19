@@ -1,7 +1,5 @@
 const colors__future = {
-  /*
-   * Removing chakra colors here
-   */
+  /* Remove chakra colors here */
   red: null,
   teal: null,
   cyan: null,
@@ -221,10 +219,12 @@ const colors__future = {
 
   black: '#000000',
   white: '#FFFFFF',
-  overlay: '#344054b3' /* gray[700] w/ 0.7 opacity */,
+  overlay: '#344054b3',
 };
 
+/* Backwards compatibility */
 const colors__legacy = {
+  Gray: colors__future.gray,
   neutrals: colors__future.neutral,
   'brand.primary': colors__future.primary,
   'interface.error': colors__future.error,

@@ -10,5 +10,8 @@ export const FormError: MultiStyleConfig = {
       lineHeight: '14px',
       letterSpacing: '0.02em',
     },
+    icon: {
+      color: 'error.700',
+    },
   },
 };

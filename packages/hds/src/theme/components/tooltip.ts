@@ -1,6 +1,5 @@
 import { StyleConfig, cssVar } from '@chakra-ui/react';
-import { applyOpacity } from '../../utils/theme';
-import { colors } from '../colors';
+import { applyOpacity } from './_utils';
 
 const $fgColor = cssVar('tooltip-fg');
 const $bgColor = cssVar('tooltip-bg');
@@ -20,21 +19,20 @@ export const Tooltip: StyleConfig = {
       bgColor: $bgColor.reference,
       boxShadow: $shadow.reference,
 
-      [$fgColor.variable]: colors.neutral[100],
-      [$bgColor.variable]: colors.neutral[900],
+      [$fgColor.variable]: theme.colors.neutral?.[100],
+      [$bgColor.variable]: theme.colors.neutral?.[900],
       [$arrowBg.variable]: $bgColor.reference,
-      [$shadow.variable]: [
-        '0px 12px 16px -4px ' + applyOpacity(theme.colors.gray[900], 8),
-        '0px 4px 6px -2px ' + applyOpacity(theme.colors.gray[900], 3),
-      ].join(),
+      [$shadow.variable]:
+        `0px 12px 16px -4px ${applyOpacity(theme.colors.gray?.[900], 8)},` +
+        `0px 4px 6px -2px ${applyOpacity(theme.colors.gray?.[900], 3)}`,
 
       _dark: {
-        [$fgColor.variable]: colors.gray[700],
-        [$bgColor.variable]: colors.white,
+        [$fgColor.variable]: theme.colors.gray?.[700],
+        [$bgColor.variable]: theme.colors.white,
         [$arrowBg.variable]: $bgColor.reference,
 
         border: '1px',
-        borderColor: colors.gray[100],
+        borderColor: theme.colors.gray?.[100],
       },
     };
   },

@@ -1,5 +1,5 @@
 import { MultiStyleConfig, cssVar } from '@chakra-ui/react';
-import { applyOpacity } from '../../utils/theme';
+import { applyOpacity } from './_utils';
 
 const $shadow = cssVar('input-field-shadow');
 
@@ -54,7 +54,7 @@ export const Input: MultiStyleConfig = {
             },
           },
 
-          [$shadow.variable]: '0px 1px 2px ' + applyOpacity(theme['gray']?.['900'], 5),
+          [$shadow.variable]: `0px 1px 2px ${applyOpacity(theme.colors.gray?.[900], 5)}`,
         },
       };
     },

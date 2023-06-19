@@ -1,6 +1,5 @@
 import { MultiStyleConfig, calc, cssVar } from '@chakra-ui/react';
-import { applyOpacity } from '../../utils/theme';
-import { colors } from '../colors';
+import { applyOpacity } from './_utils';
 
 const $width = cssVar('switch-track-width');
 const $height = cssVar('switch-track-height');
@@ -16,7 +15,7 @@ export const Switch: MultiStyleConfig = {
       container: {
         [$diff.variable]: diffValue,
         [$translateX.variable]: $diff.reference,
-        [$shadow.variable]: '0px 0px 0px 4px ' + theme.colors['primary']?.[100],
+        [$shadow.variable]: `0px 0px 0px 4px ${theme.colors['primary']?.[100]}`,
       },
       track: {
         padding: '2px',
@@ -26,10 +25,9 @@ export const Switch: MultiStyleConfig = {
 
         bgColor: 'neutral.200',
         _hover: {
-          bgColor: 'neutral.100',
+          bgColor: 'neutral.300',
         },
         _focus: {
-          bgColor: 'gray.50',
           boxShadow: $shadow.reference,
         },
         _checked: {
@@ -77,10 +75,9 @@ export const Switch: MultiStyleConfig = {
         height: [$height.reference],
         bgColor: 'white',
         transition: 'all 300ms ease-in-out',
-        boxShadow: [
-          '0px 1px 3px ' + applyOpacity(colors.gray[900], 10),
-          +'0px 1px 2px ' + applyOpacity(colors.gray[900], 6),
-        ].join(),
+        boxShadow:
+          `0px 1px 3px ${applyOpacity(theme.colors.gray?.[900], 10)},` +
+          `0px 1px 2px ${applyOpacity(theme.colors.gray?.[900], 6)}`,
         _checked: {
           transform: `translateX(${$translateX.reference})`,
         },

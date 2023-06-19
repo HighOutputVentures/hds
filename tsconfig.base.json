@@ -16,6 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@highoutput/hds": ["packages/hds/src/index.ts"],
+      "@highoutput/hds/emotion": ["packages/hds/src/emotion.ts"],
+      "@highoutput/hds/framer": ["packages/hds/src/framer.ts"],
+      "@highoutput/hds/nextjs": ["packages/hds/src/nextjs.ts"],
       "@highoutput/hds-alerts": ["packages/alerts/src/index.ts"],
       "@highoutput/hds-auth": ["packages/auth/src/index.ts"],
       "@highoutput/hds-avatar": ["packages/avatar/src/index.ts"],

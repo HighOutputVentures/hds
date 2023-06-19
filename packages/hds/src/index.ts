@@ -203,6 +203,7 @@ export {
   VisuallyHidden,
   Wrap,
   WrapItem,
+  calc,
   chakra,
   createStandaloneToast,
   createStylesContext,
@@ -230,6 +231,7 @@ export {
   useMergeRefs,
   useMultiStyleConfig,
   useOutsideClick,
+  usePopper,
   usePrefersReducedMotion,
   useStyleConfig,
   useTheme,
@@ -349,6 +351,7 @@ export {
   type ProgressLabelProps,
   type ProgressProps,
   type ProgressTrackProps,
+  type PropsOf,
   type RadioGroupProps,
   type RadioProps,
   type RangeSliderInnerTrackProps,
@@ -389,6 +392,7 @@ export {
   type StepTitleProps,
   type StepperProps,
   type StyleConfig,
+  type StyleFunctionProps,
   type SwitchProps,
   type TabIndicatorProps,
   type TabListProps,
@@ -418,6 +422,7 @@ export {
   type WrapItemProps,
   type WrapProps,
 } from '@chakra-ui/react';
-export { Global, type GlobalProps } from '@emotion/react';
+
 export * from './components';
+export * from './config';
 export * from './theme';
