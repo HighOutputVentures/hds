@@ -1,61 +1,21 @@
-name: PR
-
+name: CI
 on:
+  push:
+    branches:
+      - master
   pull_request:
     branches:
       - master
-    types:
-      - opened
-      - reopened
-      - synchronize
 
 jobs:
-  install:
+  main:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: npm-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
-          restore-keys: npm-${{ runner.os }}-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18.14.2'
-          cache: 'npm'
-      - uses: actions/cache@v3
-        id: node-modules-cache
-        with:
-          path: ./node_modules
-          key: npm-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
-      - run: npm ci
-        if: steps.node-modules-cache.outputs.cache-hit != 'true'
-
-  test:
-    runs-on: ubuntu-latest
-    needs:
-      - install
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18.14.2'
-          cache: 'npm'
-      - uses: actions/cache@v3
-        with:
-          path: ./node_modules
-          key: npm-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
       - uses: nrwl/nx-set-shas@v3
-      - uses: actions/cache@v3
-        with:
-          path: node_modules/.cache/nx
-          key: nx-${{ runner.os }}-${{ github.sha }}
-          restore-keys: nx-${{ runner.os }}
-      - name: lint
-        run: npx nx affected --target=lint --base=remotes/origin/master --parallel --maxParallel=5 --exclude=examples-nextjs --nx-bail
-      - name: test
-        run: npx nx affected --target=test --base=remotes/origin/master --parallel --maxParallel=5 --exclude=examples-nextjs --nx-bail
+      - run: npm ci
+      - run: npx nx format:check
+      - run: npx nx affected -t lint --parallel=3
+      - run: npx nx affected -t test --parallel=3 --configuration=ci
