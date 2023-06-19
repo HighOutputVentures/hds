@@ -1,21 +1,21 @@
 name: CI
 on:
   push:
-    branches:
-      - master
+    branches: [master]
   pull_request:
-    branches:
-      - master
+    branches: [master]
 
 jobs:
   main:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.14.2]
+
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - uses: nrwl/nx-set-shas@v3
+      - run: git fetch --no-tags --prune --depth=5 origin master
       - run: npm ci
-      - run: npx nx format:check
-      - run: npx nx affected -t lint --parallel=3
-      - run: npx nx affected -t test --parallel=3 --configuration=ci
+      - run: npx nx affected -t lint -- --base=origin/master --head=HEAD
+      - run: npx nx affected -t test -- --base=origin/master --head=HEAD
