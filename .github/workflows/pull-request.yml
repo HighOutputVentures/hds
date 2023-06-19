@@ -17,5 +17,5 @@ jobs:
       - uses: actions/checkout@v2
       - run: git fetch --no-tags --prune --depth=5 origin master
       - run: npm ci
-      - run: npx nx affected -t lint -- --base=origin/master --head=HEAD
-      - run: npx nx affected -t test -- --base=origin/master --head=HEAD
+      - run: npx nx affected --target=lint
+      - run: npx nx affected --target=test
