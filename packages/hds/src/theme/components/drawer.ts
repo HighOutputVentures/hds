@@ -1,9 +1,10 @@
-export const Drawer = {
-  parts: ['closeButton'],
-  baseStyle: {
-    closeButton: {
-      _focus: { boxShadow: 'none' },
-      color: 'gray.800',
-    },
+import { MultiStyleConfig } from '@chakra-ui/react';
+import { runIfFn } from '../../utils/runIfFn';
+import { Modal } from './modal';
+
+export const Drawer: MultiStyleConfig = {
+  parts: Modal.parts,
+  baseStyle(ctx) {
+    return runIfFn(Modal.baseStyle, ctx) ?? {};
   },
 };
