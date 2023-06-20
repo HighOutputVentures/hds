@@ -14,8 +14,8 @@ export const Badge: StyleConfig = {
   variants: {
     subtle({ colorScheme }) {
       return {
+        bg: `${colorScheme}.50`,
         color: `${colorScheme}.700`,
-        bgColor: `${colorScheme}.50`,
       };
     },
   },

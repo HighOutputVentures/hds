@@ -8,7 +8,7 @@ export const PinInput: StyleConfig = {
   variants: {
     outline({ theme, colorScheme }) {
       return {
-        color: 'primary.700',
+        color: `${colorScheme}.700`,
         border: '1px',
         borderColor: 'neutral.500',
         fontSize: '44px',

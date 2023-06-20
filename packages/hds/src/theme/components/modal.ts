@@ -12,7 +12,7 @@ export const Modal: MultiStyleConfig = {
   ],
   baseStyle: {
     overlay: {
-      bgColor: 'overlay',
+      bg: 'overlay',
       backdropFilter: 'blur(8px)',
     },
     dialog: {

@@ -63,8 +63,8 @@ export const Tabs: MultiStyleConfig = {
             mr: 4,
           },
           _selected: {
+            bg: `${colorScheme}.500`,
             color: `${colorScheme}.700`,
-            bgColor: `${colorScheme}.500`,
             borderColor: `${colorScheme}.700`,
           },
         },
