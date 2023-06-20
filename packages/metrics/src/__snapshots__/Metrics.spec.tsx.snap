@@ -8,10 +8,10 @@ exports[`Metrics renders correctly with negative metric change 1`] = `
     data-testid="hds.metrics-card.container"
   >
     <div
-      class="chakra-stack css-1a8w4xd"
+      class="chakra-stack css-joacsv"
     >
       <div
-        class="chakra-stack css-84zodg"
+        class="chakra-stack css-1igwmid"
       >
         <p
           class="chakra-text css-0"
@@ -50,10 +50,10 @@ exports[`Metrics renders correctly with negative metric change 1`] = `
       </svg>
     </div>
     <div
-      class="chakra-stack css-s2mkdb"
+      class="chakra-stack css-107g5vq"
     >
       <div
-        class="chakra-stack css-i1m1ot"
+        class="chakra-stack css-et7t18"
       >
         <p
           class="chakra-text css-g89h0y"
@@ -62,7 +62,7 @@ exports[`Metrics renders correctly with negative metric change 1`] = `
           $1,000
         </p>
         <div
-          class="chakra-stack css-bjqmq7"
+          class="chakra-stack css-afnsmu"
           data-testid="hds.metrics-card.text"
         >
           <svg
@@ -112,10 +112,10 @@ exports[`Metrics renders correctly with positive metric change 1`] = `
     data-testid="hds.metrics-card.container"
   >
     <div
-      class="chakra-stack css-1a8w4xd"
+      class="chakra-stack css-joacsv"
     >
       <div
-        class="chakra-stack css-84zodg"
+        class="chakra-stack css-1igwmid"
       >
         <p
           class="chakra-text css-0"
@@ -154,10 +154,10 @@ exports[`Metrics renders correctly with positive metric change 1`] = `
       </svg>
     </div>
     <div
-      class="chakra-stack css-s2mkdb"
+      class="chakra-stack css-107g5vq"
     >
       <div
-        class="chakra-stack css-i1m1ot"
+        class="chakra-stack css-et7t18"
       >
         <p
           class="chakra-text css-g89h0y"
@@ -166,7 +166,7 @@ exports[`Metrics renders correctly with positive metric change 1`] = `
           $1,000
         </p>
         <div
-          class="chakra-stack css-bjqmq7"
+          class="chakra-stack css-afnsmu"
           data-testid="hds.metrics-card.text"
         >
           <svg
