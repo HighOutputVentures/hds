@@ -6,15 +6,17 @@ import { config } from './config';
 import { fontSizes } from './fontSizes';
 import { fonts } from './fonts';
 import { styles } from './styles';
+import { textStyles } from './textStyles';
 import { zIndices } from './zIndices';
 
 export const theme = extendTheme({
   config,
   styles,
   colors,
-  fonts,
-  fontSizes,
-  components,
-  zIndices,
   breakpoints,
+  fonts,
+  components,
+  fontSizes,
+  textStyles,
+  zIndices,
 });

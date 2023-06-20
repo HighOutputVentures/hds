@@ -5,10 +5,18 @@ import { Header } from './Header';
 
 export default function Layout({ children }: PropsWithChildren) {
   return (
-    <>
+    <Box minW="container.md">
       <Header />
-      <Box p={16}>{children}</Box>
-    </>
+
+      <Box
+        p={{
+          base: 6,
+          lg: 8,
+        }}
+      >
+        {children}
+      </Box>
+    </Box>
   );
 }
 

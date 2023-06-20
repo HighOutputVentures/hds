@@ -1,391 +1,274 @@
-import { faker } from '@faker-js/faker';
 import {
+  Avatar,
+  AvatarGroup,
+  Badge,
   Box,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  Button,
+  ButtonGroup,
+  Checkbox,
   Flex,
-  Heading,
+  FormControl,
+  FormLabel,
   HStack,
+  Heading,
+  Icon,
+  IconButton,
+  Input,
+  InputGroup,
+  InputLeftElement,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Spacer,
+  Table,
+  Tbody,
+  Td,
   Text,
-  useDisclosure,
+  Th,
+  Thead,
+  Tooltip,
+  Tr,
   VStack,
+  VisuallyHidden,
+  chakra,
+  useDisclosure,
 } from '@highoutput/hds';
-import { useNotification } from '@highoutput/hds-alerts';
-import { AvatarLabel } from '@highoutput/hds-avatar';
-import { Badge } from '@highoutput/hds-badge';
-import { Breadcrumbs } from '@highoutput/hds-breadcrumbs';
-import { DatePickerInput, RangeDatePickerDropdown } from '@highoutput/hds-date-picker';
-import {
-  Button,
-  IconButton,
-  PasswordField,
-  SelectField,
-  TextField,
-} from '@highoutput/hds-forms';
-import { DotsVerticalIcon, PrimaryIcon, TrashErrorIcon } from '@highoutput/hds-icons';
-import { Modal } from '@highoutput/hds-modal';
-import { Pagination } from '@highoutput/hds-pagination';
-import { Table } from '@highoutput/hds-table';
-import { useToast } from '@highoutput/hds-toast';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { format } from 'date-fns';
-import { GetServerSideProps } from 'next';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import { Controller, useForm } from 'react-hook-form';
-import * as yup from 'yup';
-import AddIcon from '../components/AddIcon';
+import { GetStaticProps } from 'next';
 import { withLayout } from '../components/Layout';
+import {
+  ChevronRightIcon,
+  SmartHomeIcon,
+  UserCogIcon,
+  UserEditIcon,
+  UserPlusIcon,
+  UserSearchIcon,
+  UserXIcon,
+} from '../components/icons';
+import { users } from '../fixtures';
 
-type User = {
-  id: string;
-  name: string;
-  email: string;
-  username: string;
-  avatar: string;
-  teams: string[];
-  isVerified: boolean;
-};
-
-function mockUser() {
-  return {
-    id: faker.datatype.uuid(),
-    name: faker.name.fullName(),
-    email: faker.internet.email(),
-    avatar: faker.internet.avatar(),
-    username: faker.internet.userName(),
-    teams: faker.helpers.arrayElements(
-      [
-        'Design',
-        'Engineer',
-        'Marketing',
-        'BizOps',
-        'Advante',
-        'PH Wallet',
-        'EU Wallet',
-        'BrandSonic',
-        'TalentStories',
-        'Her Vietname',
-      ],
-      3,
-    ),
-    isVerified: faker.datatype.boolean(),
-  };
+interface Props {
+  users: Array<typeof users[number]>;
 }
 
-type Props = {
-  users: User[];
-};
-
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
-  const users = new Array(3).fill(null).map((_) => {
-    return mockUser();
-  });
-
-  return {
-    props: {
-      users,
-    },
-  };
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  return { props: { users } };
 };
 
 function Index({ users }: Props) {
-  const router = useRouter();
-  const notify = useNotification();
-
-  useEffect(() => {
-    let timeout: NodeJS.Timeout;
-
-    timeout = setTimeout(() => {
-      notify({
-        icon: <PrimaryIcon />,
-        title: <>We&rsquo;ve just released a new update!</>,
-        okayButton: 'Changelog',
-        description: (
-          <>Check out the all new dashboard view. Pages and exports now load faster.</>
-        ),
-        closeButton: 'Dismiss',
-      });
-    }, 1500);
-
-    return () => {
-      if (timeout) clearTimeout(timeout);
-    };
-  }, []);
-
-  const [dateRange, setDateRange] = useState<{ start: Date; until: Date } | undefined>();
-
   return (
     <>
-      <Breadcrumbs
-        as={Link}
-        homeHref="/"
-        items={[
-          {
-            href: '/',
-            label: 'Dashboard',
-            isActive: true,
-          },
-        ]}
-      />
+      <Breadcrumb separator={<Icon as={ChevronRightIcon} />}>
+        <BreadcrumbItem>
+          <BreadcrumbLink>
+            <Icon as={SmartHomeIcon} w={5} h={5} />
+            <VisuallyHidden>Home</VisuallyHidden>
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem isCurrentPage>
+          <BreadcrumbLink>Users</BreadcrumbLink>
+        </BreadcrumbItem>
+      </Breadcrumb>
 
-      <Table
-        mt={8}
-        items={users}
-        columns={[
-          {
-            label: 'Name',
-            renderRow({ id, avatar, name, username }) {
-              return (
-                <AvatarLabel
-                  src={avatar}
-                  name={name}
-                  supportText={`@${username}`}
-                  onClick={() => {
-                    router.push(`/users/${id}`);
-                  }}
-                />
-              );
-            },
-            onCheck() {},
-            onSort() {},
-          },
-          {
-            label: 'Email',
-            tooltip: 'This is a hint',
-            renderRow({ email }) {
-              return <Text>{email}</Text>;
-            },
-          },
-          {
-            label: 'Teams',
-            renderRow({ teams }) {
-              return (
-                <HStack>
-                  {teams.map((team) => (
-                    <Badge key={team} label={team} />
+      <Flex mt={4} alignItems="center">
+        <Box>
+          <Heading>Users</Heading>
+          <Text size="label-xs" color="neutral.600">
+            Mange Users
+          </Text>
+        </Box>
+
+        <Spacer />
+
+        <InputGroup w="300px" mr={3}>
+          <InputLeftElement>
+            <Icon as={UserSearchIcon} w={5} h={5} />
+          </InputLeftElement>
+          <Input placeholder="Search" />
+        </InputGroup>
+
+        <ButtonGroup isAttached variant="outline" colorScheme="gray">
+          <CreateUser />
+          <IconButton aria-label="" icon={<Icon as={UserSearchIcon} w={5} h={5} />} />
+        </ButtonGroup>
+      </Flex>
+
+      <Table mt={4}>
+        <Thead>
+          <Tr>
+            <Th>
+              <HStack>
+                <Checkbox size="sm" isIndeterminate />
+                <chakra.span>User</chakra.span>
+              </HStack>
+            </Th>
+            <Th>Email</Th>
+            <Th>
+              <HStack>
+                <chakra.span>Friends</chakra.span>
+                <Tooltip label="Need help?" hasArrow>
+                  <Icon />
+                </Tooltip>
+              </HStack>
+            </Th>
+            <Th>Teams</Th>
+            <Th>Actions</Th>
+          </Tr>
+        </Thead>
+
+        <Tbody>
+          {users.map(({ id, name, avatar, username, email, teams }, idx) => (
+            <Tr key={id}>
+              <Td>
+                <Flex alignItems="center">
+                  <Checkbox size="sm" isChecked={idx % 2 === 0} />
+                  <Avatar mr={1} ml={2} size="sm" src={avatar} name={name} />
+                  <Box>
+                    <Heading
+                      size="paragraph-sm"
+                      fontWeight="medium"
+                      lineHeight="none"
+                      color="neutral.800"
+                    >
+                      {name}
+                    </Heading>
+                    <Text color="neutral.500" size="label-xxs" lineHeight="short">
+                      @{username}
+                    </Text>
+                  </Box>
+                </Flex>
+              </Td>
+              <Td>{email}</Td>
+              <Td>
+                <AvatarGroup size="sm" max={5}>
+                  {Array.from({ length: 8 }).map((_, idx) => (
+                    <Avatar key={idx} src={`https://i.pravatar.cc/80?u${id}${idx}`} />
+                  ))}
+                </AvatarGroup>
+              </Td>
+              <Td>
+                <HStack spacing={1}>
+                  {teams.map((team, idx) => (
+                    <Badge
+                      key={`${id}${idx}team`}
+                      colorScheme={getBadgeAccentViaTeam(team)}
+                    >
+                      {team}
+                    </Badge>
                   ))}
                 </HStack>
-              );
-            },
-          },
-          {
-            label: 'Actions',
-            renderRow() {
-              return (
+              </Td>
+              <Td>
                 <Menu>
                   <MenuButton
                     as={IconButton}
                     size="md"
                     variant="unstyled"
-                    icon={<DotsVerticalIcon w={6} h={6} />}
+                    aria-label="Open user menu"
+                    icon={<Icon as={UserCogIcon} />}
+                    _active={{
+                      color: 'primary.700',
+                    }}
                   />
 
                   <MenuList>
-                    <MenuItem>Edit</MenuItem>
-                    <DeleteItem />
+                    <MenuItem icon={<Icon as={UserEditIcon} />}>Edit</MenuItem>
+                    <MenuItem icon={<Icon as={UserXIcon} />}>Delete</MenuItem>
                   </MenuList>
                 </Menu>
-              );
-            },
-          },
-        ]}
-        renderHeader={
-          <Flex>
-            <Box>
-              <Heading size="header-4">Users</Heading>
-              <Text size="paragraph-sm-default" color="neutrals.600">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed, amet?
-              </Text>
-            </Box>
-
-            <Box flexGrow={1} />
-
-            <HStack spacing={3}>
-              <RangeDatePickerDropdown value={dateRange} onApply={setDateRange}>
-                {({ onToggle }) => (
-                  <Button accent="gray" variant="outline" onClick={onToggle}>
-                    {dateRange
-                      ? `
-                      ${format(dateRange.start, 'MMM dd')} - 
-                      ${format(dateRange.until, 'MMM dd')}
-                      `.trim()
-                      : 'Select Dates'}
-                  </Button>
-                )}
-              </RangeDatePickerDropdown>
-
-              <CreateUser />
-            </HStack>
-          </Flex>
-        }
-        renderFooter={
-          <Pagination
-            variant="relay"
-            count={100}
-            page={1}
-            pageSize={10}
-            sizes={[10, 20, 30]}
-            onChange={() => {}}
-          />
-        }
-      />
+              </Td>
+            </Tr>
+          ))}
+        </Tbody>
+      </Table>
     </>
   );
 }
 
-const schema = yup.object({
-  name: yup.string().required(),
-  username: yup.string().required(),
-  password: yup.string().required(),
-  dateOfBirth: yup.string().required(),
-  gender: yup.string().oneOf(['male', 'female']).required(),
-});
-
 function CreateUser() {
-  const toast = useToast();
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
-  const { register, control, formState, reset, handleSubmit } = useForm<
-    yup.InferType<typeof schema>
-  >({
-    shouldFocusError: true,
-    shouldUnregister: true,
-    resolver: yupResolver(schema),
-    defaultValues: {
-      name: '',
-      username: '',
-      password: '',
-      dateOfBirth: '',
-      gender: 'male',
-    },
-  });
-
-  const onSubmit = handleSubmit(async (data) => {
-    await new Promise((resolve) => {
-      setTimeout(resolve, 5000);
-    });
-
-    toast.success('New user has been added');
-    onClose();
-    reset();
-  });
+  const disclosure = useDisclosure();
 
   return (
     <>
-      <Button onClick={onOpen}>Create User</Button>
+      <IconButton
+        aria-label=""
+        onClick={disclosure.onOpen}
+        icon={<Icon as={UserPlusIcon} w={5} h={5} />}
+      />
 
-      <Modal
-        isOpen={isOpen}
-        onCancel={onClose}
-        icon={<AddIcon />}
-        title="Add new user"
-        message="Fill out the form to add new members to your platform."
-        okayButtonLabel="Continue"
-        onOkay={onSubmit}
-        isLoading={formState.isSubmitting}
-        width="475px"
-        padding="12px"
-      >
-        <VStack spacing={4} pt={4}>
-          <TextField
-            label="Name"
-            placeholder="Name"
-            error={formState.errors.name?.message}
-            {...register('name')}
-          />
-          <TextField
-            label="Username"
-            placeholder="Username"
-            error={formState.errors.username?.message}
-            {...register('username')}
-          />
-          <PasswordField
-            label="Password"
-            placeholder="Password"
-            error={formState.errors.password?.message}
-            {...register('password')}
-          />
-          <Controller
-            name="dateOfBirth"
-            control={control}
-            render={({ field, fieldState }) => (
-              <DatePickerInput
-                error={fieldState.error?.message}
-                label="Birthday"
-                placeholder="Birthday"
-                value={field.value ? new Date(field.value) : undefined}
-                onChange={(newValue) =>
-                  field.onChange({
-                    target: {
-                      value: newValue.toISOString(),
-                    },
-                  })
-                }
-              />
-            )}
-          />
+      <Modal isOpen={disclosure.isOpen} onClose={disclosure.onClose}>
+        <ModalOverlay />
+        <ModalContent as={chakra.form}>
+          <ModalCloseButton />
+          <ModalHeader>
+            <Heading size="label-md" fontWeight="medium">
+              Create new user
+            </Heading>
+            <Text mt={1} size="label-xs" color="neutral.600" fontWeight="normal">
+              Fill out the form to add new members to your platform.
+            </Text>
+          </ModalHeader>
 
-          <Controller
-            name="gender"
-            control={control}
-            render={({ field, fieldState }) => (
-              <SelectField
-                value={field.value}
-                error={fieldState.error?.message}
-                label="Gender"
-                placeholder="Gender"
-                options={[
-                  {
-                    label: 'Male',
-                    value: 'male',
-                  },
-                  {
-                    label: 'Female',
-                    value: 'female',
-                  },
-                ]}
-                onChange={(newValue) => {
-                  field.onChange({
-                    target: {
-                      value: newValue,
-                    },
-                  });
-                }}
-              />
-            )}
-          />
-        </VStack>
+          <ModalBody mt={8}>
+            <VStack spacing={4}>
+              <FormControl>
+                <FormLabel>Name</FormLabel>
+                <Input placeholder="John Doe" />
+              </FormControl>
+              <FormControl>
+                <FormLabel>Username</FormLabel>
+                <Input placeholder="johndoe" />
+              </FormControl>
+              <FormControl>
+                <FormLabel>Password</FormLabel>
+                <Input />
+              </FormControl>
+            </VStack>
+          </ModalBody>
+          <ModalFooter mt={6} display="flex" gap={2}>
+            <Button w="full" onClick={disclosure.onClose}>
+              Cancel
+            </Button>
+            <Button
+              w="full"
+              variant="solid"
+              colorScheme="primary"
+              onClick={disclosure.onClose}
+            >
+              Submit
+            </Button>
+          </ModalFooter>
+        </ModalContent>
       </Modal>
     </>
   );
 }
 
-function DeleteItem() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
-  const toast = useToast();
-
-  return (
-    <>
-      <MenuItem onClick={onOpen}>Delete</MenuItem>
-
-      <Modal
-        icon={<TrashErrorIcon w={10} h={10} />}
-        isOpen={isOpen}
-        onCancel={onClose}
-        onOkay={() => {
-          toast.success('User has been deleted');
-          onClose();
-        }}
-        title="Delete User"
-        message="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, nemo?"
-      />
-    </>
-  );
+function getBadgeAccentViaTeam(team: String) {
+  switch (team.toUpperCase()) {
+    case 'QA':
+      return 'blue';
+    case 'FRONTEND':
+      return 'indigo';
+    case 'BACKEND':
+      return 'purple';
+    case 'DEVOPS':
+      return 'gray-blue';
+    case 'DESIGN':
+      return 'rose';
+    default:
+      return 'gray';
+  }
 }
 
 export default withLayout(Index);
