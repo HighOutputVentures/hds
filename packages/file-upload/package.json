@@ -1,6 +1,6 @@
 {
   "name": "@highoutput/hds-file-upload",
-  "version": "0.2.9",
+  "version": "0.2.11",
   "license": "MIT",
   "main": "./index.js",
   "types": "./index.d.ts",
