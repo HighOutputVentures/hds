@@ -72,8 +72,8 @@ export const Switch: MultiStyleConfig = {
       },
       thumb: {
         bg: 'white',
-        width: [$height.reference],
-        height: [$height.reference],
+        width: $height.reference,
+        height: $height.reference,
         transition: 'all 300ms ease-in-out',
         boxShadow:
           `0px 1px 3px ${applyOpacity(theme.colors.gray?.[900], 10)},` +
