@@ -10,7 +10,7 @@ export const Table: MultiStyleConfig = {
         [$border.variable]: theme.colors.gray?.[200],
       },
       thead: {
-        bgColor: 'gray.50',
+        bg: 'gray.50',
       },
       th: {
         px: 3,

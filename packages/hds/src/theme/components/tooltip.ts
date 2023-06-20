@@ -11,12 +11,12 @@ export const Tooltip: StyleConfig = {
     return {
       py: '4px',
       px: '12px',
+      bg: $bgColor.reference,
+      color: $fgColor.reference,
       rounded: '4px',
       fontSize: '12px',
       fontWeight: 'medium',
       lineHeight: '18px',
-      color: $fgColor.reference,
-      bgColor: $bgColor.reference,
       boxShadow: $shadow.reference,
 
       [$fgColor.variable]: theme.colors.neutral?.[100],

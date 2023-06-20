@@ -12,25 +12,25 @@ export const Checkbox: MultiStyleConfig = {
           border: '1px',
           borderColor: 'neutral.300',
           _hover: {
-            bgColor: `${colorScheme}.500`,
+            bg: `${colorScheme}.500`,
             borderColor: `${colorScheme}.700`,
           },
           _focus: {
             borderColor: `${colorScheme}.500`,
             boxShadow: $shadow.reference,
             _hover: {
-              bgColor: `${colorScheme}.500`,
+              bg: `${colorScheme}.500`,
               borderColor: `${colorScheme}.700`,
             },
           },
 
           ...createObjectFromKeysWithSameProps(
             {
+              bg: `${colorScheme}.500`,
               color: `${colorScheme}.700`,
-              bgColor: `${colorScheme}.500`,
               borderColor: `${colorScheme}.700`,
               _hover: {
-                bgColor: `${colorScheme}.500`,
+                bg: `${colorScheme}.500`,
                 borderColor: `${colorScheme}.700`,
               },
               _focus: {

@@ -29,13 +29,13 @@ export const Button: StyleConfig = {
 
     solid({ theme, colorScheme }) {
       return {
+        bg: `${colorScheme}.700`,
         color: 'neutral.100',
         transition: 'all 300ms ease-in-out',
         boxShadow: `0px 1px 2px ${applyOpacity(theme.colors.gray?.[900], 5)}`,
-        bgColor: `${colorScheme}.700`,
 
         _hover: {
-          bgColor: `${colorScheme}.900`,
+          bg: `${colorScheme}.900`,
         },
 
         _focus: {
@@ -45,7 +45,7 @@ export const Button: StyleConfig = {
         },
 
         _disabled: {
-          bgColor: `${colorScheme}.500`,
+          bg: `${colorScheme}.500`,
           opacity: 1,
         },
       };

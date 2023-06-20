@@ -4,9 +4,9 @@ export const Tag: MultiStyleConfig = {
   parts: ['container', 'label', 'closeButton'],
   baseStyle: {
     container: {
+      bg: 'white',
       border: '1px',
       borderColor: 'neutral.200',
-      bgColor: 'white',
       rounded: '6px',
     },
     label: {
