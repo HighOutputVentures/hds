@@ -29,15 +29,17 @@ import {
   TagCloseButton,
   TagLabel,
   Textarea,
+  TimeInput,
   Tooltip,
   VStack,
   chakra,
   useToast,
 } from '@highoutput/hds';
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useState } from 'react';
 
 export default function LoginPage() {
   const toast = useToast();
+  const [time, setTime] = useState('00:00:00');
 
   return (
     <Wrapper>
@@ -95,6 +97,19 @@ export default function LoginPage() {
           <RangeSliderThumb index={0} />
           <RangeSliderThumb index={1} />
         </RangeSlider>
+      </Box>
+
+      <Box mt={4} placeholder="Enter time">
+        <chakra.div>{time}</chakra.div>
+
+        <FormControl mt={4}>
+          <FormLabel>Time</FormLabel>
+          <TimeInput
+            /* this component can also be uncontrolled */
+            value={time}
+            onChange={setTime}
+          />
+        </FormControl>
       </Box>
 
       <HStack mt={4} spacing={1}>
