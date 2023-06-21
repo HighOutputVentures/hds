@@ -104,7 +104,11 @@ export default function LoginPage() {
 
         <FormControl mt={4}>
           <FormLabel>Time</FormLabel>
-          <TimeInput />
+          <TimeInput
+            /* this component can also be uncontrolled */
+            value={time}
+            onChange={setTime}
+          />
         </FormControl>
       </Box>
 
