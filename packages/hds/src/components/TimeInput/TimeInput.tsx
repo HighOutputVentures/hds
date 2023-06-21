@@ -116,10 +116,8 @@ export const TimeInput = forwardRef<TimeInputProps, 'input'>(
   },
 );
 
-function ensureTimeString(subject: unknown) {
-  return typeof subject === 'string' && /^\d{2}:\d{2}:\d{2}$/.test(subject)
-    ? subject
-    : '00:00:00';
+function ensureTimeString(subject?: string) {
+  return !subject ? subject : /^\d{2}:\d{2}:\d{2}$/.test(subject) ? subject : '00:00:00';
 }
 
 function formTimeUnit(n: string | number) {
