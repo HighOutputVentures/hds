@@ -19,9 +19,9 @@ export interface TimeInputProps extends Assign<InputProps, BaseProps> {}
 export const TimeInput = forwardRef<TimeInputProps, 'input'>(
   ({ value, onChange, defaultValue, onKeyDown, ...props }, ref) => {
     const [controlledValue, controlledOnChange] = useControllableState({
-      value,
+      value: ensureTimeString(value),
+      defaultValue: ensureTimeString(defaultValue) ?? '00:00:00',
       onChange,
-      defaultValue: defaultValue ?? '00:00:00',
     });
 
     const [cursorPosition, setCursorPosition] = React.useState(0);
@@ -78,9 +78,9 @@ export const TimeInput = forwardRef<TimeInputProps, 'input'>(
         currCursorPos = currCursorPos + 1;
       }
 
-      h = formTimeUnit(clamp(parseInt(h), 0, 23));
-      m = formTimeUnit(clamp(parseInt(m), 0, 59));
-      s = formTimeUnit(clamp(parseInt(s), 0, 59));
+      h = formTimeUnit(clamp(Number(h), 0, 23));
+      m = formTimeUnit(clamp(Number(m), 0, 59));
+      s = formTimeUnit(clamp(Number(s), 0, 59));
 
       const newValue = [h, m, s].join(':');
 
@@ -115,6 +115,12 @@ export const TimeInput = forwardRef<TimeInputProps, 'input'>(
     );
   },
 );
+
+function ensureTimeString(subject: unknown) {
+  return typeof subject === 'string' && /^\d{2}:\d{2}:\d{2}$/.test(subject)
+    ? subject
+    : '00:00:00';
+}
 
 function formTimeUnit(n: string | number) {
   return n.toString().padStart(2, '0');
