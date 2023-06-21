@@ -19,6 +19,7 @@ export type ToastProps = { [K in keyof P]: P[K] } & {};
 export function Toast(props: ToastProps): ReactNode {
   const {
     size,
+    icon,
     title,
     description,
     status = 'success',
@@ -49,8 +50,8 @@ export function Toast(props: ToastProps): ReactNode {
   if (render) return render(omit(props, 'render'));
 
   return (
-    <chakra.div id={rootId} role="alert" __css={styles.container}>
-      <chakra.svg as={getIcon(status)} __css={styles.icon} />
+    <chakra.div id={rootId} __css={styles.container}>
+      {icon ?? <chakra.svg as={getIcon(status)} __css={styles.icon} />}
 
       <chakra.div __css={styles.content}>
         {title && (
