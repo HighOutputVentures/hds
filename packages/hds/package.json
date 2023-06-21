@@ -24,6 +24,11 @@
       "types": "./emotion.d.ts",
       "import": "./emotion.mjs",
       "require": "./emotion.js"
+    },
+    "./components": {
+      "types": "./components.d.ts",
+      "import": "./components.mjs",
+      "require": "./components.js"
     }
   },
   "dependencies": {
