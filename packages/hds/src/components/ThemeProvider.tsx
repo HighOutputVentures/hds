@@ -5,6 +5,7 @@ import { InterFont } from './Fonts';
 
 export interface ThemeProviderProps extends ChakraProviderProps {}
 
+/** @deprecated */
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, ...props }) => {
   return (
     <ChakraProvider theme={extendTheme(props.theme ?? {}, theme)}>
