@@ -50,7 +50,7 @@ export function Toast(props: ToastProps): ReactNode {
   if (render) return render(omit(props, 'render'));
 
   return (
-    <chakra.div id={rootId} __css={styles.container}>
+    <chakra.div id={rootId} data-testid="hds.toast" __css={styles.container}>
       {icon ?? <chakra.svg as={getIcon(status)} __css={styles.icon} />}
 
       <chakra.div __css={styles.content}>

@@ -15,7 +15,7 @@ describe('Toast', () => {
       />,
     );
 
-    const toastElement = screen.getByRole('alert');
+    const toastElement = screen.getByTestId('hds.alert');
     const titleElement = screen.getByText('Success');
     const descriptionElement = screen.getByText('This is a successful toast message.');
 
