@@ -1,6 +1,6 @@
 {
   "name": "@highoutput/hds",
-  "version": "0.3.25",
+  "version": "0.3.26",
   "license": "MIT",
   "main": "./index.js",
   "types": "./index.d.ts",
