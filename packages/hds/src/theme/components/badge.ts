@@ -3,6 +3,8 @@ import { StyleConfig } from '@chakra-ui/react';
 export const Badge: StyleConfig = {
   baseStyle() {
     return {
+      display: 'flex',
+      alignItems: 'center',
       rounded: '16px',
       fontSize: '14px',
       fontWeight: 'normal',
@@ -16,6 +18,17 @@ export const Badge: StyleConfig = {
       return {
         bg: `${colorScheme}.50`,
         color: `${colorScheme}.700`,
+
+        '&[data-indicator]': {
+          _before: {
+            w: '6px',
+            h: '6px',
+            mr: '6px',
+            bg: `${colorScheme}.500`,
+            content: '""',
+            rounded: 'full',
+          },
+        },
       };
     },
   },
