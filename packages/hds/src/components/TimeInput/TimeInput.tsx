@@ -7,6 +7,7 @@ import {
 } from '@chakra-ui/react';
 import * as React from 'react';
 import { Assign } from '../../types';
+import { runIfFn } from '../../utils/runIfFn';
 
 interface BaseProps {
   value?: string;
@@ -17,14 +18,15 @@ interface BaseProps {
 export interface TimeInputProps extends Assign<InputProps, BaseProps> {}
 
 export const TimeInput = forwardRef<TimeInputProps, 'input'>(
-  ({ value, onChange, defaultValue, onKeyDown, ...props }, ref) => {
+  ({ value, onChange, defaultValue = '00:00:00', onKeyDown, ...props }, ref) => {
     const [controlledValue, controlledOnChange] = useControllableState({
       value: ensureTimeString(value),
-      defaultValue: ensureTimeString(defaultValue) ?? '00:00:00',
+      defaultValue: ensureTimeString(defaultValue),
       onChange,
     });
 
     const [cursorPosition, setCursorPosition] = React.useState(0);
+
     const inputRef = React.useRef<HTMLInputElement>(null);
     const mergedRef = useMergeRefs(inputRef, ref);
 
@@ -109,7 +111,7 @@ export const TimeInput = forwardRef<TimeInputProps, 'input'>(
             e.stopPropagation();
           }
 
-          onKeyDown?.(e);
+          runIfFn(onKeyDown, e);
         }}
         {...props}
       />
