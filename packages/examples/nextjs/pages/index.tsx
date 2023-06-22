@@ -162,6 +162,7 @@ function Index({ users }: Props) {
                     <Badge
                       key={`${id}${idx}team`}
                       colorScheme={getBadgeAccentViaTeam(team)}
+                      data-indicator
                     >
                       {team}
                     </Badge>
