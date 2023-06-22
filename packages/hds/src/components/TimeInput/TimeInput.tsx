@@ -101,6 +101,7 @@ export const TimeInput = forwardRef<TimeInputProps, 'input'>(
               'ArrowLeft',
               'ArrowRight',
               'Enter',
+              'Tab',
               ...'1234567890'.split(''),
             ].includes(e.key)
           ) {

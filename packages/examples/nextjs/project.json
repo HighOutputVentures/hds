@@ -29,6 +29,7 @@
       "configurations": {
         "development": {
           "buildTarget": "examples-nextjs:build:development",
+          "port": 3000,
           "dev": true
         },
         "production": {
