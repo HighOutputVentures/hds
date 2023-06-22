@@ -11,6 +11,16 @@ export const Badge: StyleConfig = {
       lineHeight: '14px',
       letterSpacing: '0.02em',
       textTransform: 'none',
+
+      '&[data-indicator]': {
+        _before: {
+          w: '6px',
+          h: '6px',
+          mr: '6px',
+          content: '""',
+          rounded: 'full',
+        },
+      },
     };
   },
   variants: {
@@ -21,12 +31,7 @@ export const Badge: StyleConfig = {
 
         '&[data-indicator]': {
           _before: {
-            w: '6px',
-            h: '6px',
-            mr: '6px',
             bg: `${colorScheme}.500`,
-            content: '""',
-            rounded: 'full',
           },
         },
       };
