@@ -1,14 +1,15 @@
 import { Box, Text } from '@chakra-ui/react';
-import * as React from 'react';
 import Avatar, { AvatarProps } from './Avatar';
 
 type Size = 'sm' | 'md' | 'lg' | 'xl';
 
+/** @deprecated */
 export interface AvatarLabelProps extends AvatarProps {
   size?: Size;
   supportText?: string;
 }
 
+/** @deprecated */
 export default function AvatarLabel(props: AvatarLabelProps) {
   const { size = 'md', name, supportText, ...others } = props;
 

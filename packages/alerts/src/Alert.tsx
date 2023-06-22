@@ -1,12 +1,12 @@
 import {
-  Alert as ChakraAlert,
   AlertDescription,
   AlertIcon,
   AlertTitle,
-  chakra,
+  Alert as ChakraAlert,
   Fade,
   Icon,
   SystemStyleObject,
+  chakra,
 } from '@chakra-ui/react';
 import { ComponentProps, ReactNode } from 'react';
 import CheckCircleIcon from './CheckCircleIcon';
@@ -17,6 +17,7 @@ import InformationCircleIcon from './InformationCircle';
 
 type Accent = 'primary' | 'warning' | 'success' | 'error' | 'gray';
 
+/** @deprecated */
 export interface AlertProps {
   isOpen?: boolean;
   accent?: Accent;
@@ -37,6 +38,7 @@ export interface AlertProps {
   __secondaryBtnTestId?: string;
 }
 
+/** @deprecated */
 export function Alert(props: AlertProps & SystemStyleObject) {
   const {
     accent = 'primary',

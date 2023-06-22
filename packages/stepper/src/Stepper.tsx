@@ -1,6 +1,6 @@
 import { Flex, Text, VStack } from '@chakra-ui/react';
 import { Checkbox } from '@highoutput/hds-forms';
-import React, { PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 
 type Item = {
   label: string;
@@ -11,6 +11,7 @@ type Size = 'sm' | 'md' | 'lg' | 'xl';
 
 type Orientation = 'horizontal' | 'vertical';
 
+/** @deprecated */
 export interface StepperProps {
   size?: Size;
   items?: Item[];
@@ -25,6 +26,7 @@ export interface StepperProps {
   spacing?: string;
 }
 
+/** @deprecated */
 const Stepper = ({
   size = 'lg',
   items = [],

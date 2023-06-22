@@ -16,6 +16,7 @@ type CarouselSize = 'md' | 'lg';
 
 type CarouselVariant = 'dot' | 'dash';
 
+/** @deprecated */
 export type CarouselProps<T extends unknown[]> = SystemStyleObject & {
   items: T;
   size?: CarouselSize;
@@ -29,6 +30,7 @@ export type CarouselProps<T extends unknown[]> = SystemStyleObject & {
   __indicatorTestId?: string;
 };
 
+/** @deprecated */
 export default function Carousel<T extends unknown[]>({
   variant = 'dot',
   size = 'md',

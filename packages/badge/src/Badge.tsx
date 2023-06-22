@@ -4,6 +4,7 @@ import { BadgeAccent, BadgeSize } from './types';
 import useBadgeStyle from './useBadgeStyle';
 import { clone } from './utils';
 
+/** @deprecated */
 export interface BadgeProps {
   size?: BadgeSize;
   label: string;
@@ -16,6 +17,7 @@ export interface BadgeProps {
   __badgeLabelTestId?: string;
 }
 
+/** @deprecated */
 export const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(function Badge(
   {
     label,

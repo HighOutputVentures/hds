@@ -10,6 +10,7 @@ import CloseIcon from './CloseIcon';
 
 type Size = 'sm' | 'md';
 
+/** @deprecated */
 export type NotificationProps = {
   size?: Size;
   icon?: JSX.Element;
@@ -30,6 +31,7 @@ export type NotificationProps = {
   __closeBtnTestId?: string;
 };
 
+/** @deprecated */
 export function Notification({
   icon,
   title,

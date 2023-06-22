@@ -8,6 +8,7 @@ const color = {
   textColor: { gray: '#6B7280', purple: '#6B46C1' },
 };
 
+/** @deprecated */
 export interface FileUpload {
   accepts?: string;
   onChange?: ChangeHandler;
@@ -16,6 +17,7 @@ export interface FileUpload {
   __testId?: string;
 }
 
+/** @deprecated */
 const FileUpload: FC<FileUpload> = ({
   accepts,
   onChange,

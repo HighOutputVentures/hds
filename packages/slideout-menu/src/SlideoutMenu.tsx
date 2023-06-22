@@ -33,6 +33,7 @@ interface Gutter {
   bottom?: number;
 }
 
+/** @deprecated */
 export interface SlideoutMenuProps extends BaseProps {
   gutter?: Gutter;
   children?: RenderComponent | React.ReactNode;
@@ -42,6 +43,7 @@ export interface SlideoutMenuProps extends BaseProps {
   hasCloseButton?: boolean;
 }
 
+/** @deprecated */
 export function SlideoutMenu(props: SlideoutMenuProps) {
   const {
     gutter,

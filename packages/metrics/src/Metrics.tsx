@@ -1,14 +1,15 @@
-import { FC } from 'react';
 import { Box, Button, Flex, HStack, Icon, Text, VStack } from '@chakra-ui/react';
-import * as React from 'react';
 import {
   DotsVerticalIcon,
-  NegativeChartIcon,
-  PositiveChartIcon,
-  PositiveArrowIcon,
   NegativeArrowIcon,
+  NegativeChartIcon,
+  PositiveArrowIcon,
+  PositiveChartIcon,
 } from '@highoutput/hds-icons';
+import * as React from 'react';
+import { FC } from 'react';
 
+/** @deprecated */
 export interface MetricsProps {
   /** Percentage change of Metric */
   percentage: number;
@@ -31,6 +32,7 @@ export interface MetricsProps {
   __metricChartTestId?: string;
 }
 
+/** @deprecated */
 const Metrics: FC<MetricsProps> = ({
   percentage,
   metricChange,

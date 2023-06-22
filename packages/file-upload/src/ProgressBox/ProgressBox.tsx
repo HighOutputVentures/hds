@@ -14,6 +14,7 @@ const sizes = {
   lg: 'lg',
 };
 
+/** @deprecated */
 export interface ProgressBox {
   size?: 'lg' | 'md' | 'sm' | 'xs';
   value?: number;
@@ -23,6 +24,7 @@ export interface ProgressBox {
   onTryAgain?: (data: Record<string, any>) => void;
 }
 
+/** @deprecated */
 const ProgressBox: FC<ProgressBox> = ({
   size = 'sm',
   value,

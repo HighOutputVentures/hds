@@ -1,13 +1,13 @@
 import {
   Box,
+  Modal as ChakraModal,
+  ModalProps as ChakraModalProps,
   Flex,
   Heading,
-  Modal as ChakraModal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
   ModalOverlay,
-  ModalProps as ChakraModalProps,
   Spacer,
   SystemStyleObject,
   Text,
@@ -40,6 +40,7 @@ type TestingProps = {
   __okayButtonTestId?: string;
 };
 
+/** @deprecated */
 export type ModalProps = {
   size?: Size;
   icon?: JSX.Element;
@@ -78,6 +79,8 @@ export type ModalProps = {
  * >
  *   This is a custom children
  * </Modal>
+ *
+ * @deprecated
  */
 export function Modal(props: ModalProps) {
   const {

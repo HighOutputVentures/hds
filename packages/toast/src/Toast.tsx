@@ -3,6 +3,7 @@ import { CheckCircleIcon, InfoCircleIcon } from '@highoutput/hds-icons';
 import * as React from 'react';
 import XIcon from './XIcon';
 
+/** @deprecated */
 export type RenderToast = NonNullable<UseToastOptions['render']>;
 
 const defaultProps = {
@@ -10,6 +11,7 @@ const defaultProps = {
   description: '',
 };
 
+/** @deprecated */
 export const Toast: RenderToast = (props) => {
   const { status, description, onClose } = Object.assign(defaultProps, props);
 
