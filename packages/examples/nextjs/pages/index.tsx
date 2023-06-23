@@ -138,7 +138,7 @@ function Index({ users }: Props) {
                     size="sm"
                     src={avatar}
                     name={name}
-                    icon={<GenericAvatarIcon w={4} h={4} />}
+                    icon={<GenericAvatarIcon />}
                   />
 
                   <Box>

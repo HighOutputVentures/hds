@@ -1,7 +1,8 @@
 import { chakra, forwardRef, HTMLChakraProps } from '@chakra-ui/react';
+import { clsx } from '../utils/clsx';
 
 export const GenericAvatarIcon = forwardRef<HTMLChakraProps<'svg'>, 'svg'>(
-  (props, ref) => (
+  ({ className, ...props }, ref) => (
     <chakra.svg
       ref={ref}
       width={4}
@@ -9,6 +10,7 @@ export const GenericAvatarIcon = forwardRef<HTMLChakraProps<'svg'>, 'svg'>(
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={clsx('chakra-avatar__svg', className)}
       {...props}
     >
       <path

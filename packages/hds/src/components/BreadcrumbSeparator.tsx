@@ -4,9 +4,10 @@ import {
   HTMLChakraProps,
   useBreadcrumbStyles,
 } from '@chakra-ui/react';
+import { clsx } from '../utils/clsx';
 
 export const BreadcrumbSeparator = forwardRef<HTMLChakraProps<'svg'>, 'svg'>(
-  ({ spacing, ...props }, ref) => {
+  ({ className, ...props }, ref) => {
     const styles = useBreadcrumbStyles();
 
     return (
@@ -16,7 +17,7 @@ export const BreadcrumbSeparator = forwardRef<HTMLChakraProps<'svg'>, 'svg'>(
           viewBox="0 0 16 16"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="chakra-icon"
+          className={clsx('chakra-icon', className)}
           {...props}
         >
           <path
