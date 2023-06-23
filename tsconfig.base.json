@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@highoutput/hds": ["packages/hds/src/index.ts"],
+      "@highoutput/hds/components": ["packages/hds/src/components/index.ts"],
       "@highoutput/hds-alerts": ["packages/alerts/src/index.ts"],
       "@highoutput/hds-auth": ["packages/auth/src/index.ts"],
       "@highoutput/hds-avatar": ["packages/avatar/src/index.ts"],

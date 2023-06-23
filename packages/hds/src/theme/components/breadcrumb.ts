@@ -1,14 +1,20 @@
 import { MultiStyleConfig } from '@chakra-ui/react';
 
-const separatorIconClassname = '.chakra-icon';
-
 export const Breadcrumb: MultiStyleConfig = {
-  parts: ['container', 'link', 'list', 'separator'],
+  parts: ['container', 'link', 'list', 'item', 'separator'],
   baseStyle({ colorScheme }) {
     return {
       list: {
-        fontSize: 'sm',
+        gap: '14px',
+        display: 'flex',
+        alignItems: 'center',
         lineHeight: '14px',
+        fontSize: 'sm',
+      },
+      item: {
+        gap: '14px',
+        display: 'flex',
+        alignItems: 'center',
       },
       link: {
         color: 'neutral.600',
@@ -22,11 +28,13 @@ export const Breadcrumb: MultiStyleConfig = {
         },
       },
       separator: {
-        mx: '14px',
+        mx: 0,
         color: 'neutral.300',
-        [separatorIconClassname]: {
-          w: '20px',
-          h: '20px',
+        display: 'flex',
+
+        '& .chakra-icon': {
+          w: 5,
+          h: 5,
         },
       },
     };

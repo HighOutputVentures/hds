@@ -44,10 +44,10 @@ import {
   chakra,
   useDisclosure,
 } from '@highoutput/hds';
+import { BreadcrumbSeparator, GenericAvatarIcon } from '@highoutput/hds/components';
 import { GetStaticProps } from 'next';
 import { withLayout } from '../components/Layout';
 import {
-  ChevronRightIcon,
   SmartHomeIcon,
   UserCogIcon,
   UserEditIcon,
@@ -68,7 +68,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 function Index({ users }: Props) {
   return (
     <>
-      <Breadcrumb separator={<Icon as={ChevronRightIcon} />}>
+      <Breadcrumb separator={<BreadcrumbSeparator />}>
         <BreadcrumbItem>
           <BreadcrumbLink>
             <Icon as={SmartHomeIcon} w={5} h={5} />
@@ -132,7 +132,15 @@ function Index({ users }: Props) {
               <Td>
                 <Flex alignItems="center">
                   <Checkbox size="sm" isChecked={idx % 2 === 0} />
-                  <Avatar mr={1} ml={2} size="sm" src={avatar} name={name} />
+                  <Avatar
+                    mr={1}
+                    ml={2}
+                    size="sm"
+                    src={avatar}
+                    name={name}
+                    icon={<GenericAvatarIcon w={4} h={4} />}
+                  />
+
                   <Box>
                     <Heading
                       size="paragraph-sm"
@@ -152,7 +160,11 @@ function Index({ users }: Props) {
               <Td>
                 <AvatarGroup size="sm" max={5}>
                   {Array.from({ length: 8 }).map((_, idx) => (
-                    <Avatar key={idx} src={`https://i.pravatar.cc/80?u${id}${idx}`} />
+                    <Avatar
+                      key={idx}
+                      src={`https://i.pravatar.cc/80?u${id}${idx}`}
+                      icon={<GenericAvatarIcon w={4} h={4} />}
+                    />
                   ))}
                 </AvatarGroup>
               </Td>
