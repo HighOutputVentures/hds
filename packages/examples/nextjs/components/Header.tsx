@@ -7,6 +7,7 @@ import {
   DrawerContent,
   DrawerOverlay,
   Flex,
+  GenericAvatarIcon,
   HStack,
   Heading,
   Icon,
@@ -152,7 +153,7 @@ function UserMenu() {
     <Menu>
       <MenuButton>
         <VisuallyHidden>Toggle Profile Menu</VisuallyHidden>
-        <Avatar size="sm" src={user.avatar}>
+        <Avatar size="sm" src={user.avatar} icon={<GenericAvatarIcon />}>
           <AvatarBadge />
         </Avatar>
       </MenuButton>
