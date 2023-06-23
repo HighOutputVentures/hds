@@ -32,6 +32,10 @@ export const Badge: StyleConfig = {
         '&[data-indicator]': {
           _before: {
             bg: `${colorScheme}.500`,
+
+            ...(isBrandColorScheme(colorScheme) && {
+              bg: `${colorScheme}.700`,
+            }),
           },
         },
       };
@@ -57,3 +61,15 @@ export const Badge: StyleConfig = {
     colorScheme: 'primary',
   },
 };
+
+const isBrandColorScheme = (colorScheme: string) =>
+  [
+    'error',
+    'primary',
+    'success',
+    'warning',
+    'interface.error',
+    'interface.primary',
+    'interface.success',
+    'interface.warning',
+  ].includes(colorScheme);

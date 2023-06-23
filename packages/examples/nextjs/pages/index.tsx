@@ -258,13 +258,13 @@ function CreateUser() {
 function getBadgeAccentViaTeam(team: String) {
   switch (team.toUpperCase()) {
     case 'QA':
-      return 'blue';
+      return 'primary';
     case 'FRONTEND':
-      return 'indigo';
+      return 'error';
     case 'BACKEND':
-      return 'purple';
+      return 'warning';
     case 'DEVOPS':
-      return 'gray-blue';
+      return 'success';
     case 'DESIGN':
       return 'rose';
     default:
