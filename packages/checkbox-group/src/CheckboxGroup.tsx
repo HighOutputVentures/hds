@@ -44,9 +44,11 @@ type CheckboxGroupBaseProps<T extends unknown[]> = {
     }
 );
 
+/** @deprecated */
 export type CheckboxGroupProps<T extends unknown[]> = SystemStyleObject &
   CheckboxGroupBaseProps<T>;
 
+/** @deprecated */
 export default function CheckboxGroup<T extends unknown[]>(props: CheckboxGroupProps<T>) {
   const {
     variant = 'circle',

@@ -16,6 +16,7 @@ import { useCheckboxStyleConfig, useStyles } from './hooks';
 
 type Size = 'sm' | 'md' | 'lg';
 
+/** @deprecated */
 export type TagProps = {
   label: string;
   size?: Size;
@@ -34,6 +35,7 @@ export type TagProps = {
   __testId?: string;
 };
 
+/** @deprecated */
 export default React.forwardRef<HTMLDivElement, TagProps>(function HdsTag(props, ref) {
   const {
     icon,

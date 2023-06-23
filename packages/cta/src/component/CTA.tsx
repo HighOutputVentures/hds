@@ -1,15 +1,16 @@
-import React, { FC, ReactElement } from 'react';
+import { EmailIcon } from '@chakra-ui/icons';
 import {
   Box,
-  Text,
+  Button,
   Flex,
+  Input,
   InputGroup,
   InputLeftElement,
-  Input,
-  Button,
+  Text,
 } from '@chakra-ui/react';
-import { EmailIcon } from '@chakra-ui/icons';
+import { FC, ReactElement } from 'react';
 
+/** @deprecated */
 export interface CTAProps {
   header?: string;
   subHeader?: string;
@@ -21,6 +22,7 @@ export interface CTAProps {
   isSubscription?: boolean;
 }
 
+/** @deprecated */
 const CTA: FC<CTAProps> = ({
   header,
   subHeader,

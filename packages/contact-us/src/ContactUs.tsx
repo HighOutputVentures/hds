@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { postJson } from './utils';
 
+/** @deprecated */
 export interface ContactUsProps {
   /**
    * The api url where we will send the http request
@@ -15,6 +16,7 @@ export interface ContactUsProps {
   url: string;
 }
 
+/** @deprecated */
 export const ContactUs: React.FC<ContactUsProps> = ({ url }) => {
   const toast = useToast();
 

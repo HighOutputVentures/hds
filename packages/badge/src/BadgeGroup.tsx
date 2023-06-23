@@ -7,6 +7,7 @@ import { clone } from './utils';
 type BadgeGroupAccent = 'primary' | 'gray' | 'error' | 'warning' | 'success';
 type BadgeGroupVariant = 'dark' | 'light' | 'default';
 
+/** @deprecated */
 export interface BadgeGroupProps {
   size?: BadgeGroupSize;
   accent?: BadgeGroupAccent;
@@ -21,6 +22,7 @@ export interface BadgeGroupProps {
   onClick?(): void;
 }
 
+/** @deprecated */
 export function BadgeGroup({
   icon,
   title,

@@ -1,10 +1,11 @@
-import { As, Avatar as ChakraAvatar, AvatarBadge, Box, Icon } from '@chakra-ui/react';
+import { As, AvatarBadge, Box, Avatar as ChakraAvatar, Icon } from '@chakra-ui/react';
 import * as React from 'react';
 import { useStyles } from './hooks';
 import UserIcon from './icons/UserIcon';
 import VerifiedIcon from './icons/VerifiedIcon';
 import { Size } from './types';
 
+/** @deprecated */
 export interface AvatarProps {
   src?: string;
   name?: string;
@@ -20,6 +21,7 @@ export interface AvatarProps {
   __zIndex?: number | string;
 }
 
+/** @deprecated */
 export default React.forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
   props,
   ref,

@@ -22,6 +22,7 @@ type Variant = 'solid' | 'plain' | 'underlined';
 type Placement = 'start' | 'end' | 'center';
 type Orientation = 'vertical' | 'horizontal';
 
+/** @deprecated */
 export type TabsProps = {
   index?: number;
   onChange?(newValue: number): void;
@@ -34,6 +35,7 @@ export type TabsProps = {
   defaultIndex?: number;
 };
 
+/** @deprecated */
 export default function Tabs({
   index,
   onChange,

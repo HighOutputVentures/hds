@@ -9,6 +9,7 @@ type Item = {
 
 type Placement = 'center' | 'end' | 'start';
 
+/** @deprecated */
 export interface ButtonTabsProps {
   index?: number;
   onChange?(newValue: number): void;
@@ -25,6 +26,7 @@ export interface ButtonTabsProps {
   defaultIndex?: number;
 }
 
+/** @deprecated */
 export default function ButtonTabs({
   index,
   onChange,

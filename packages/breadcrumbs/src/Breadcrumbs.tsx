@@ -21,6 +21,7 @@ type Item = {
   isDisabled?: boolean;
 };
 
+/** @deprecated */
 export type BreadcrumbProps = {
   as?: As;
   items?: Item[];
@@ -29,6 +30,7 @@ export type BreadcrumbProps = {
   withAccent?: boolean;
 };
 
+/** @deprecated */
 export default React.forwardRef<HTMLDivElement, BreadcrumbProps & SystemStyleObject>(
   function HdsBreadcrumbs(props, ref) {
     const {

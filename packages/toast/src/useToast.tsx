@@ -1,17 +1,20 @@
-import { ToastId, useToast as _, UseToastOptions } from '@chakra-ui/react';
+import { ToastId, UseToastOptions, useToast as _ } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { Toast } from './Toast';
 
+/** @deprecated */
 export type UseToastFnConfig = Pick<
   UseToastOptions,
   'duration' | 'position' | 'isClosable' | 'onCloseComplete'
 >;
 
+/** @deprecated */
 export type UseToastFn = (
   message: string | ReactNode,
   config?: Partial<UseToastFnConfig>,
 ) => ToastId;
 
+/** @deprecated */
 export type UseToastReturn = {
   error: UseToastFn;
   success: UseToastFn;
@@ -19,6 +22,7 @@ export type UseToastReturn = {
 };
 
 /**
+ *
  *
  * Default toast options. Can also be used in ThemeProvider
  *
@@ -34,6 +38,9 @@ export type UseToastReturn = {
  * ...
  * </ThemeProvider>
  * ```
+ *
+ * @deprecated
+ *
  */
 export const defaultToastConfig: UseToastOptions = {
   position: 'top',
@@ -44,6 +51,7 @@ export const defaultToastConfig: UseToastOptions = {
   status: 'success',
 };
 
+/** @deprecated */
 export function useToast(): UseToastReturn {
   const toast = _(defaultToastConfig);
 

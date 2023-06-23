@@ -9,10 +9,12 @@ import {
   UsernamePasswordLoginFormProps,
 } from './UsernamePasswordLoginForm';
 
+/** @deprecated */
 export type CredentialLoginFormProps =
   | ({ variant: 'name-password' } & UsernamePasswordLoginFormProps)
   | ({ variant: 'email-password' } & EmailPasswordLoginFormProps);
 
+/** @deprecated */
 export const CredentialLoginForm: FC<CredentialLoginFormProps> = (props) => {
   switch (props.variant) {
     case 'email-password':

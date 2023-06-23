@@ -12,6 +12,7 @@ type Item = {
   name?: string;
 };
 
+/** @deprecated */
 export interface AvatarGroupProps<T extends Item> {
   max?: number;
   size?: Size;
@@ -20,6 +21,7 @@ export interface AvatarGroupProps<T extends Item> {
   onAddButtonClick?(items: Item[]): void;
 }
 
+/** @deprecated */
 export default function HdsAvatarGroup<T extends Item>(props: AvatarGroupProps<T>) {
   const {
     max = 5,

@@ -1,14 +1,15 @@
 import {
   Box,
+  Tooltip as ChakraTooltip,
   PlacementWithLogical,
   Text,
-  Tooltip as ChakraTooltip,
 } from '@chakra-ui/react';
 import * as React from 'react';
 import { invariant } from 'shared/utils';
 
 type ColorScheme = 'dark' | 'light';
 
+/** @deprecated */
 export interface TooltipProps {
   label: React.ReactNode;
   children: React.ReactNode;
@@ -18,6 +19,7 @@ export interface TooltipProps {
   supportingText?: string;
 }
 
+/** @deprecated */
 export function Tooltip(props: TooltipProps) {
   const {
     label,

@@ -4,6 +4,7 @@ import { Button } from '@highoutput/hds-forms';
 import { FC, ReactElement } from 'react';
 import CloudIcon from './CloudIcon';
 
+/** @deprecated */
 export type EmptyStateProps = Omit<SystemStyleObject, 'onSubmit'> & {
   icon?: ReactElement;
   header: string;
@@ -17,6 +18,7 @@ export type EmptyStateProps = Omit<SystemStyleObject, 'onSubmit'> & {
   onSubmit?(): void;
 };
 
+/** @deprecated */
 const EmptyState: FC<EmptyStateProps> = (props) => {
   const {
     icon = <Icon as={CloudIcon} w="220px" h="160px" />,
