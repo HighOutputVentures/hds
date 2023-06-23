@@ -1,6 +1,6 @@
 {
   "name": "@highoutput/hds-contact-us",
-  "version": "0.3.14",
+  "version": "0.3.15",
   "license": "MIT",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -13,7 +13,7 @@
   "dependencies": {
     "@highoutput/hds-forms": "^0.4.4",
     "@highoutput/hds-icons": "*",
-    "@highoutput/hds-toast": "^0.3.9",
+    "@highoutput/hds-toast": "^0.3.10",
     "@hookform/resolvers": "3.1.0",
     "react-hook-form": "7.43.9",
     "yup": "1.1.1"

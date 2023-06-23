@@ -1,6 +1,6 @@
 {
   "name": "@highoutput/hds-table",
-  "version": "0.3.17",
+  "version": "0.3.18",
   "license": "MIT",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@highoutput/hds-forms": "^0.4.4",
-    "@highoutput/hds-tooltip": "*",
+    "@highoutput/hds-tooltip": "^0.3.3",
     "uuid": "9.0.0"
   },
   "publishConfig": {
