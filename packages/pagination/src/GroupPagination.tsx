@@ -87,7 +87,7 @@ export default function GroupPagination({
                 boxShadow={'0px 1px 2px rgba(16, 24, 40, 0.05)'}
                 border="1px solid #F0F0F0"
                 borderRadius={'4px'}
-                arai-label="jump.to.page.input"
+                arai-label="Pagination Jump to page input field"
                 bg="white"
                 color="neutrals.300"
                 textAlign={'center'}
@@ -100,7 +100,7 @@ export default function GroupPagination({
               boxShadow={'0px 1px 2px rgba(16, 24, 40, 0.05)'}
               border="1px solid #D6D6D6"
               borderRadius={'4px'}
-              aria-label="jump.to.go.btn"
+              aria-label="Pagination Go Jump to Button"
               w="62px"
               bg="white"
               pr="12px"
