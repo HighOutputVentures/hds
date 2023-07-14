@@ -105,6 +105,7 @@ export function Select<T extends string | number>({
         borderColor="neutrals.300"
         height="40px"
         width="full"
+        arai-label="pagination.select.button"
         rounded="lg"
         display="flex"
         alignItems="center"
