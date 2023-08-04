@@ -82,6 +82,10 @@ describe('Table', () => {
           isChecked: expect.any(Boolean),
           item: expect.any(Object),
         }),
+        expect.objectContaining({
+          action: expect.any(String),
+          data: expect.any(Object),
+        }),
       );
     });
 

@@ -33,6 +33,13 @@ export type SortContext = {
   direction: SortDirection;
 };
 
+type Action = 'checked' | 'un_checked';
+
+export type ActionMeta<T> = {
+  action: Action;
+  data: T;
+};
+
 export type CheckContext<T> = {
   item: T;
   isChecked: boolean;
@@ -49,7 +56,10 @@ export type Column<T extends UnknownArray> = {
   renderRow?: (item: T[number]) => any;
   onSort?(context: SortContext): void;
   onClick?(context: ClickContext<ArrayItem<T>>): void;
-  onCheck?(context: CheckContext<ArrayItem<T>>): void;
+  onCheck?(
+    context: CheckContext<ArrayItem<T>>,
+    actionMeta?: ActionMeta<ArrayItem<T>>,
+  ): void;
   onCheckAll?(context: CheckAllContext<T>): void;
   defaultSort?: SortDirection;
   defaultChecked?: ((item: ArrayItem<T>) => boolean) | boolean;
@@ -327,7 +337,13 @@ export default function HdsTable<T extends UnknownArray>(props: TableProps<T>) {
                                     isChecked={checkedItems[index_1][index_0]}
                                     onChange={(e) => {
                                       const isChecked = e.target.checked;
-                                      onCheck({ isChecked, item });
+                                      const actionMeta = {
+                                        action: (e.target.checked
+                                          ? 'checked'
+                                          : 'un_checked') as Action,
+                                        data: item,
+                                      };
+                                      onCheck({ isChecked, item }, actionMeta);
                                       setCheckedItems((i) => {
                                         return i.map((j, idx_0) => {
                                           return idx_0 === index_1

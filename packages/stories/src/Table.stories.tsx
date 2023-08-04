@@ -135,8 +135,18 @@ Default.args = {
       onSort({ direction }) {
         alert(direction);
       },
-      onCheck({ isChecked, item }) {
-        alert(item.name + ' ' + (isChecked ? 'Checked' : 'Unchecked'));
+      onCheck({ isChecked, item }, actionMeta) {
+        alert(
+          item.name +
+            ' ' +
+            (isChecked ? 'Checked' : 'Unchecked') +
+            ' ' +
+            'action: ' +
+            actionMeta?.action +
+            ' ' +
+            'data: ' +
+            actionMeta?.data.name,
+        );
       },
       onCheckAll() {
         alert('All users (Checked)');
