@@ -60,7 +60,7 @@ export type Column<T extends UnknownArray> = {
     context: CheckContext<ArrayItem<T>>,
     actionMeta?: ActionMeta<ArrayItem<T>>,
   ): void;
-  onCheckAll?(context: CheckAllContext<T>, actionMeta?: ActionMeta<ArrayItem<T>>): void;
+  onCheckAll?(context: CheckAllContext<T>): void;
   defaultSort?: SortDirection;
   defaultChecked?: ((item: ArrayItem<T>) => boolean) | boolean;
   isHidden?: boolean;
