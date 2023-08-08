@@ -32,16 +32,11 @@
     }
   },
   "dependencies": {
-    "@chakra-ui/icons": "2.0.18",
-    "@chakra-ui/next-js": "2.1.4",
-    "@chakra-ui/react": "2.7.1",
-    "@emotion/react": "11.10.6",
-    "@emotion/styled": "11.10.6",
-    "framer-motion": "10.12.4"
-  },
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "@chakra-ui/next-js": "2.1.5",
+    "@chakra-ui/react": "2.8.0",
+    "@emotion/react": "11.11.1",
+    "@emotion/styled": "11.11.0",
+    "framer-motion": "10.15.1"
   },
   "publishConfig": {
     "access": "public",

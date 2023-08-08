@@ -14,9 +14,11 @@ exports[`Snapshot (Tabs) Should match snapshot 1`] = `
   >
     <button
       aria-controls="tabs-:r0:--tabpanel--1"
+      aria-disabled={false}
       aria-selected={false}
       className="chakra-tabs__tab css-9btmlu"
       data-testid="hds.tabs.tab"
+      disabled={false}
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
       onFocus={[Function]}
@@ -32,9 +34,11 @@ exports[`Snapshot (Tabs) Should match snapshot 1`] = `
     </button>
     <button
       aria-controls="tabs-:r0:--tabpanel--1"
+      aria-disabled={false}
       aria-selected={false}
       className="chakra-tabs__tab css-9btmlu"
       data-testid="hds.tabs.tab"
+      disabled={false}
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
       onFocus={[Function]}
@@ -50,9 +54,11 @@ exports[`Snapshot (Tabs) Should match snapshot 1`] = `
     </button>
     <button
       aria-controls="tabs-:r0:--tabpanel--1"
+      aria-disabled={false}
       aria-selected={false}
       className="chakra-tabs__tab css-9btmlu"
       data-testid="hds.tabs.tab"
+      disabled={false}
       id="tabs-:r0:--tab--1"
       onClick={[Function]}
       onFocus={[Function]}
