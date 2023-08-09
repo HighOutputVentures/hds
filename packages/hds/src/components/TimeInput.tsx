@@ -6,8 +6,8 @@ import {
   useMergeRefs,
 } from '@chakra-ui/react';
 import * as React from 'react';
-import { Assign } from '../../types';
-import { runIfFn } from '../../utils/runIfFn';
+import { Assign } from '../types';
+import { runIfFn } from '../utils/runIfFn';
 
 interface BaseProps {
   value?: string;

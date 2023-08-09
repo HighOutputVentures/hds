@@ -23,10 +23,8 @@ export default defineConfig({
     lib: {
       entry: {
         index: 'src/index.ts',
-        nextjs: 'src/nextjs.ts',
         framer: 'src/framer.ts',
         emotion: 'src/emotion.ts',
-        components: 'src/components/index.ts',
       },
       name: 'hds',
       formats: ['es', 'cjs'],

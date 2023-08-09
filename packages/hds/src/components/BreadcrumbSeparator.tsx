@@ -23,7 +23,7 @@ export const BreadcrumbSeparator = forwardRef<HTMLChakraProps<'svg'>, 'svg'>(
           <path
             d="M6.66675 12.3333L10.6667 8.33331L6.66675 4.33331"
             stroke="currentColor"
-            strokeWidth="1.33333"
+            strokeWidth="1.66667"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
