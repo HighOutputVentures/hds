@@ -1,5 +1,5 @@
+import { ChakraProvider } from '@chakra-ui/react';
 import { faker } from '@faker-js/faker';
-import { ThemeProvider } from '@highoutput/hds';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import NumberField from './NumberField';
@@ -9,9 +9,9 @@ const mockedOnChange = jest.fn();
 describe('NumberField', () => {
   beforeEach(() => {
     render(
-      <ThemeProvider>
+      <ChakraProvider>
         <NumberField onChange={mockedOnChange} />
-      </ThemeProvider>,
+      </ChakraProvider>,
     );
   });
 
