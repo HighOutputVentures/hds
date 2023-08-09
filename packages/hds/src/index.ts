@@ -214,6 +214,7 @@ export {
   omitThemingProps,
   shouldForwardProp,
   useBoolean,
+  useBreadcrumbStyles,
   useBreakpoint,
   useBreakpointValue,
   useClipboard,
