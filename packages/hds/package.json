@@ -10,11 +10,6 @@
       "import": "./index.mjs",
       "require": "./index.js"
     },
-    "./nextjs": {
-      "types": "./nextjs.d.ts",
-      "import": "./nextjs.mjs",
-      "require": "./nextjs.js"
-    },
     "./framer": {
       "types": "./framer.d.ts",
       "import": "./framer.mjs",
@@ -24,15 +19,9 @@
       "types": "./emotion.d.ts",
       "import": "./emotion.mjs",
       "require": "./emotion.js"
-    },
-    "./components": {
-      "types": "./components.d.ts",
-      "import": "./components.mjs",
-      "require": "./components.js"
     }
   },
   "dependencies": {
-    "@chakra-ui/next-js": "2.1.5",
     "@chakra-ui/react": "2.8.0",
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
