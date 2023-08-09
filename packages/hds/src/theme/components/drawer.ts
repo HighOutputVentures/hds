@@ -1,4 +1,4 @@
-import { MultiStyleConfig } from '@chakra-ui/react';
+import type { MultiStyleConfig } from '@chakra-ui/react';
 import { runIfFn } from '../../utils/runIfFn';
 import { Modal } from './modal';
 

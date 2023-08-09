@@ -1,4 +1,5 @@
-import { MultiStyleConfig, cssVar } from '@chakra-ui/react';
+import type { MultiStyleConfig} from '@chakra-ui/react';
+import { cssVar } from '@chakra-ui/react';
 import { applyOpacity } from './_utils';
 
 const $bg = cssVar('popover-bg');

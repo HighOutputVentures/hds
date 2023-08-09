@@ -1,4 +1,4 @@
-import { StyleConfig } from '@chakra-ui/react';
+import type { StyleConfig } from '@chakra-ui/react';
 import { applyOpacity } from './_utils';
 
 export const PinInput: StyleConfig = {

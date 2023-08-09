@@ -1,4 +1,4 @@
-import { StyleConfig } from '@chakra-ui/react';
+import type { StyleConfig } from '@chakra-ui/react';
 import { runIfFn } from '../../utils/runIfFn';
 import { Input } from './input';
 

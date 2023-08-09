@@ -1,4 +1,5 @@
-import { cssVar, StyleConfig } from '@chakra-ui/react';
+import type { StyleConfig } from '@chakra-ui/react';
+import { cssVar } from '@chakra-ui/react';
 
 const $startColor = cssVar('skeleton-start-color');
 const $endColor = cssVar('skeleton-end-color');

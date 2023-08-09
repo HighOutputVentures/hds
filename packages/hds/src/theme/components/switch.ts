@@ -1,4 +1,5 @@
-import { MultiStyleConfig, calc, cssVar } from '@chakra-ui/react';
+import type { MultiStyleConfig} from '@chakra-ui/react';
+import { calc, cssVar } from '@chakra-ui/react';
 import { applyOpacity } from './_utils';
 
 const $width = cssVar('switch-track-width');
