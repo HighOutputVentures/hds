@@ -1,4 +1,4 @@
-import { AlertStatus, MultiStyleConfig, StyleFunctionProps } from '@chakra-ui/react';
+import type { AlertStatus, MultiStyleConfig, StyleFunctionProps } from '@chakra-ui/react';
 
 const closeButtonIconClassname = '.chakra-toast__svg';
 

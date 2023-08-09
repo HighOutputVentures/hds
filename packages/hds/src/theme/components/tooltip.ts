@@ -1,4 +1,5 @@
-import { StyleConfig, cssVar } from '@chakra-ui/react';
+import type { StyleConfig} from '@chakra-ui/react';
+import { cssVar } from '@chakra-ui/react';
 import { applyOpacity } from './_utils';
 
 const $fgColor = cssVar('tooltip-fg');

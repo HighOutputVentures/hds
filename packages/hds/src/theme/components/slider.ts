@@ -1,4 +1,4 @@
-import { MultiStyleConfig } from '@chakra-ui/react';
+import type { MultiStyleConfig } from '@chakra-ui/react';
 import { applyOpacity } from './_utils';
 
 export const Slider: MultiStyleConfig = {

@@ -1,4 +1,4 @@
-import { StyleConfig } from '@chakra-ui/react';
+import type { StyleConfig } from '@chakra-ui/react';
 import { Text } from './text';
 
 export const Heading: StyleConfig = {

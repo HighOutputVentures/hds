@@ -1,4 +1,5 @@
-import { chakra, forwardRef, HTMLChakraProps } from '@chakra-ui/react';
+import type { HTMLChakraProps } from '@chakra-ui/react';
+import { chakra, forwardRef } from '@chakra-ui/react';
 import { clsx } from '../utils/clsx';
 
 export const GenericAvatarIcon = forwardRef<HTMLChakraProps<'svg'>, 'svg'>(

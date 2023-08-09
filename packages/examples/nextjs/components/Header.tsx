@@ -31,7 +31,6 @@ import {
 } from '@highoutput/hds';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Number123Icon } from 'packages/hds/src/components/Toast/icons';
 import { users } from '../fixtures';
 import Logo from './Logo';
 import {
@@ -96,10 +95,10 @@ export function Header() {
 
               <Portal>
                 <MenuList w="175px">
-                  <MenuItem icon={<Icon as={Number123Icon} />}>Menu option 1</MenuItem>
-                  <MenuItem icon={<Icon as={Number123Icon} />}>Menu option 2</MenuItem>
+                  <MenuItem>Menu option 1</MenuItem>
+                  <MenuItem>Menu option 2</MenuItem>
                   <MenuDivider />
-                  <MenuItem icon={<Icon as={Number123Icon} />}>Menu option 3</MenuItem>
+                  <MenuItem>Menu option 3</MenuItem>
                 </MenuList>
               </Portal>
             </>

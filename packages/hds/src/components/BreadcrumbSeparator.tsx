@@ -1,9 +1,5 @@
-import {
-  chakra,
-  forwardRef,
-  HTMLChakraProps,
-  useBreadcrumbStyles,
-} from '@chakra-ui/react';
+import type { HTMLChakraProps } from '@chakra-ui/react';
+import { chakra, forwardRef, useBreadcrumbStyles } from '@chakra-ui/react';
 import { clsx } from '../utils/clsx';
 
 export const BreadcrumbSeparator = forwardRef<HTMLChakraProps<'svg'>, 'svg'>(
